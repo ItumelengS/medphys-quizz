@@ -1,59 +1,56 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { storage } from "@/lib/storage";
-import { getSections } from "@/lib/questions";
 import { getXpProgress } from "@/lib/scoring";
-import type { AppState } from "@/lib/types";
+import type { DbSection } from "@/lib/types";
 import SectionMasteryRing from "@/components/SectionMasteryRing";
 import ProgressBar from "@/components/ProgressBar";
 
+interface StatsData {
+  profile: { xp: number; display_name: string } | null;
+  stats: {
+    total_answered: number;
+    total_correct: number;
+    games_played: number;
+    best_score: number | null;
+    best_streak: number;
+    daily_streak: number;
+  } | null;
+  sections: DbSection[];
+  sectionMastery: Record<string, { shown: number; correct: number; percent: number }>;
+  activityMap: Record<string, number>;
+}
+
 export default function StatsPage() {
-  const [state, setState] = useState<AppState | null>(null);
+  const { data: session } = useSession();
+  const [statsData, setStatsData] = useState<StatsData | null>(null);
 
   useEffect(() => {
-    setState(storage.getState());
-  }, []);
+    if (!session) return;
+    fetch("/api/stats")
+      .then((r) => r.json())
+      .then((data) => setStatsData(data));
+  }, [session]);
 
-  if (!state) return null;
+  if (!statsData) return null;
 
-  const sections = getSections();
-  const xpInfo = getXpProgress(state.player.xp);
-  const accuracy =
-    state.stats.totalAnswered > 0
-      ? Math.round((state.stats.totalCorrect / state.stats.totalAnswered) * 100)
-      : 0;
-
-  function getSectionMastery(sectionId: string): { shown: number; correct: number; percent: number } {
-    let shown = 0;
-    let correct = 0;
-    for (const [id, record] of Object.entries(state!.questionHistory)) {
-      if (id.startsWith(sectionId)) {
-        shown += record.timesShown;
-        correct += record.timesCorrect;
-      }
-    }
-    return { shown, correct, percent: shown > 0 ? Math.round((correct / shown) * 100) : 0 };
-  }
+  const xp = statsData.profile?.xp || 0;
+  const xpInfo = getXpProgress(xp);
+  const stats = statsData.stats;
+  const totalAnswered = stats?.total_answered || 0;
+  const totalCorrect = stats?.total_correct || 0;
+  const accuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
 
   // Activity calendar (last 30 days)
-  const activityMap = new Map<string, number>();
-  for (const record of Object.values(state.questionHistory)) {
-    if (record.lastShown) {
-      const day = record.lastShown.split("T")[0];
-      activityMap.set(day, (activityMap.get(day) || 0) + 1);
-    }
-  }
-
   const last30Days: { date: string; count: number }[] = [];
   for (let i = 29; i >= 0; i--) {
     const d = new Date();
     d.setDate(d.getDate() - i);
     const dateStr = d.toISOString().split("T")[0];
-    last30Days.push({ date: dateStr, count: activityMap.get(dateStr) || 0 });
+    last30Days.push({ date: dateStr, count: statsData.activityMap[dateStr] || 0 });
   }
-
   const maxActivity = Math.max(1, ...last30Days.map((d) => d.count));
 
   return (
@@ -71,7 +68,7 @@ export default function StatsPage() {
           <span className="text-3xl">{xpInfo.current.icon}</span>
           <div>
             <div className="font-bold">{xpInfo.current.title}</div>
-            <div className="font-mono text-sm text-accent">{state.player.xp.toLocaleString()} XP</div>
+            <div className="font-mono text-sm text-accent">{xp.toLocaleString()} XP</div>
           </div>
         </div>
         <ProgressBar progress={xpInfo.progressPercent} />
@@ -84,20 +81,20 @@ export default function StatsPage() {
 
       {/* Overview stats */}
       <div className="animate-fade-up stagger-1 grid grid-cols-2 gap-3 mb-6">
-        <StatCard label="Questions Answered" value={state.stats.totalAnswered.toLocaleString()} />
+        <StatCard label="Questions Answered" value={totalAnswered.toLocaleString()} />
         <StatCard label="Accuracy" value={`${accuracy}%`} />
-        <StatCard label="Games Played" value={state.stats.gamesPlayed.toLocaleString()} />
-        <StatCard label="Best Streak" value={state.stats.bestStreak.toString()} />
-        <StatCard label="Daily Streak" value={`${state.stats.dailyStreak}d`} />
-        <StatCard label="Total XP" value={state.player.xp.toLocaleString()} />
+        <StatCard label="Games Played" value={(stats?.games_played || 0).toLocaleString()} />
+        <StatCard label="Best Streak" value={(stats?.best_streak || 0).toString()} />
+        <StatCard label="Daily Streak" value={`${stats?.daily_streak || 0}d`} />
+        <StatCard label="Total XP" value={xp.toLocaleString()} />
       </div>
 
       {/* Section mastery */}
       <div className="animate-fade-up stagger-2 mb-6">
         <h2 className="text-lg font-bold mb-3">Section Mastery</h2>
         <div className="space-y-2">
-          {sections.map((section) => {
-            const m = getSectionMastery(section.id);
+          {(statsData.sections || []).map((section) => {
+            const m = statsData.sectionMastery[section.id] || { shown: 0, correct: 0, percent: 0 };
             return (
               <div
                 key={section.id}

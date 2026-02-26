@@ -1,58 +1,64 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { getSections, getSectionQuestionCount, getTotalQuestionCount } from "@/lib/questions";
-import { storage } from "@/lib/storage";
 import { getXpProgress, getStreakEmoji } from "@/lib/scoring";
-import { getDueQuestions } from "@/lib/spaced-repetition";
-import { getAllQuestions } from "@/lib/questions";
-import { getTodayDateString, getNextDailyReset, formatCountdown } from "@/lib/daily-seed";
-import type { AppState } from "@/lib/types";
+import { getNextDailyReset, formatCountdown } from "@/lib/daily-seed";
+import type { DbSection } from "@/lib/types";
 import ProgressBar from "@/components/ProgressBar";
 import SectionMasteryRing from "@/components/SectionMasteryRing";
 
+interface StatsData {
+  profile: { xp: number; display_name: string } | null;
+  stats: {
+    daily_streak: number;
+    total_answered: number;
+  } | null;
+  sections: DbSection[];
+  sectionMastery: Record<string, { shown: number; correct: number; percent: number }>;
+}
+
 export default function HomePage() {
-  const router = useRouter();
-  const [state, setState] = useState<AppState | null>(null);
+  const { data: session } = useSession();
+  const [statsData, setStatsData] = useState<StatsData | null>(null);
+  const [dueCount, setDueCount] = useState(0);
+  const [dailyCompleted, setDailyCompleted] = useState(false);
   const [countdown, setCountdown] = useState("");
+  const [totalQuestions, setTotalQuestions] = useState(0);
 
   useEffect(() => {
-    const s = storage.getState();
-    if (!s.player.name) {
-      router.replace("/register");
-      return;
-    }
-    setState(s);
+    if (!session) return;
+
+    fetch("/api/stats")
+      .then((r) => r.json())
+      .then((data) => setStatsData(data));
+
+    fetch("/api/review/due")
+      .then((r) => r.json())
+      .then((data) => setDueCount(Array.isArray(data) ? data.length : 0));
+
+    fetch("/api/quiz/daily")
+      .then((r) => r.json())
+      .then((data) => setDailyCompleted(!!data.locked));
+
+    fetch("/api/questions")
+      .then((r) => r.json())
+      .then((data) => setTotalQuestions(Array.isArray(data) ? data.length : 0));
+
     setCountdown(formatCountdown(getNextDailyReset()));
     const timer = setInterval(() => {
       setCountdown(formatCountdown(getNextDailyReset()));
     }, 60000);
     return () => clearInterval(timer);
-  }, [router]);
+  }, [session]);
 
-  if (!state) return null;
+  if (!session || !statsData) return null;
 
-  const sections = getSections();
-  const xpInfo = getXpProgress(state.player.xp);
-  const dailyCompleted = state.dailyChallenge.lastCompletedDate === getTodayDateString();
-
-  const allIds = getAllQuestions().map((q) => q.id);
-  const dueCount = getDueQuestions(state.questionHistory, allIds).length;
-
-  function getSectionMastery(sectionId: string): number {
-    if (!state) return 0;
-    let shown = 0;
-    let correct = 0;
-    for (const [id, record] of Object.entries(state.questionHistory)) {
-      if (id.startsWith(sectionId)) {
-        shown += record.timesShown;
-        correct += record.timesCorrect;
-      }
-    }
-    return shown > 0 ? Math.round((correct / shown) * 100) : 0;
-  }
+  const xp = statsData.profile?.xp || 0;
+  const xpInfo = getXpProgress(xp);
+  const sections = statsData.sections || [];
+  const dailyStreak = statsData.stats?.daily_streak || 0;
 
   return (
     <main className="min-h-dvh pb-24 px-4 pt-6 max-w-lg mx-auto">
@@ -64,9 +70,8 @@ export default function HomePage() {
           </span>{" "}
           <span className="text-text-primary">Speed Quiz</span>
         </h1>
-
         <div className="mt-2 text-text-secondary text-sm">
-          {state.player.name}
+          {statsData.profile?.display_name || session.user?.name}
         </div>
       </div>
 
@@ -84,7 +89,7 @@ export default function HomePage() {
           </div>
           <div className="text-right">
             <div className="font-mono text-sm font-bold text-accent">
-              {state.player.xp.toLocaleString()} XP
+              {xp.toLocaleString()} XP
             </div>
             {xpInfo.next && (
               <div className="text-text-dim text-xs font-mono">
@@ -118,9 +123,9 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            {state.stats.dailyStreak > 0 && (
+            {dailyStreak > 0 && (
               <div className="flex items-center gap-1 text-gold font-mono text-sm font-bold">
-                {getStreakEmoji(state.stats.dailyStreak)} {state.stats.dailyStreak}d
+                {getStreakEmoji(dailyStreak)} {dailyStreak}d
               </div>
             )}
           </div>
@@ -152,7 +157,7 @@ export default function HomePage() {
             <div>
               <div className="text-lg font-bold text-accent">⚡ All Topics</div>
               <div className="text-text-secondary text-xs mt-1">
-                {getTotalQuestionCount()} questions across {sections.length} sections
+                {totalQuestions} questions across {sections.length} sections
               </div>
             </div>
             <div className="text-text-dim text-2xl">→</div>
@@ -163,8 +168,7 @@ export default function HomePage() {
       {/* Section grid */}
       <div className="grid grid-cols-2 gap-3">
         {sections.map((section, i) => {
-          const mastery = getSectionMastery(section.id);
-          const count = getSectionQuestionCount(section.id);
+          const mastery = statsData.sectionMastery[section.id]?.percent || 0;
 
           return (
             <Link
@@ -188,7 +192,7 @@ export default function HomePage() {
                 <div className="font-semibold text-sm text-text-primary mb-0.5">
                   {section.name}
                 </div>
-                <div className="text-text-dim text-xs">{count} questions</div>
+                <div className="text-text-dim text-xs">{section.description}</div>
               </div>
             </Link>
           );

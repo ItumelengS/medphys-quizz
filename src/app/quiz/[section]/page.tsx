@@ -2,18 +2,13 @@
 
 import { useEffect, useState, useCallback, useRef, use } from "react";
 import { useRouter } from "next/navigation";
-import { pickQuestions, getSection, shuffleArray } from "@/lib/questions";
-import { storage } from "@/lib/storage";
+import { useSession } from "next-auth/react";
 import {
   calculatePoints,
   calculateXp,
   getCareerLevel,
 } from "@/lib/scoring";
-import {
-  updateQuestionRecord,
-  createQuestionRecord,
-} from "@/lib/spaced-repetition";
-import type { Question, AnswerRecord } from "@/lib/types";
+import type { DbQuestion, AnswerRecord } from "@/lib/types";
 import TimerRing from "@/components/TimerRing";
 import ChoiceButton from "@/components/ChoiceButton";
 import QuestionCard from "@/components/QuestionCard";
@@ -26,6 +21,15 @@ const QUESTIONS_PER_ROUND = 20;
 const ADVANCE_DELAY = 800;
 const WRONG_DELAY = 2000;
 
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function QuizPage({
   params,
 }: {
@@ -33,17 +37,16 @@ export default function QuizPage({
 }) {
   const { section: sectionId } = use(params);
   const router = useRouter();
-  const section = sectionId === "all" ? null : getSection(sectionId);
-  const sectionColor = section?.color || "#00e5a0";
-  const sectionName = section?.name || "All Topics";
+  const { data: session } = useSession();
 
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [sectionInfo, setSectionInfo] = useState<{ name: string; color: string; icon: string } | null>(null);
+  const [questions, setQuestions] = useState<DbQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [points, setPoints] = useState(0);
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
-  const [, setAnswers] = useState<AnswerRecord[]>([]);
+  const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [timeRemaining, setTimeRemaining] = useState(TIMER_SECONDS);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -53,13 +56,26 @@ export default function QuizPage({
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Initialize questions
+  const sectionColor = sectionInfo?.color || "#00e5a0";
+  const sectionName = sectionInfo?.name || (sectionId === "all" ? "All Topics" : sectionId);
+
+  // Fetch section info and questions
   useEffect(() => {
-    const qs = pickQuestions(sectionId, QUESTIONS_PER_ROUND);
-    setQuestions(qs);
-    if (qs.length > 0) {
-      setShuffledChoices(shuffleArray(qs[0].c));
+    if (sectionId !== "all") {
+      fetch("/api/sections")
+        .then((r) => r.json())
+        .then((sections) => {
+          const s = sections.find((sec: { id: string }) => sec.id === sectionId);
+          if (s) setSectionInfo({ name: s.name, color: s.color, icon: s.icon });
+        });
     }
+
+    fetch(`/api/questions?section=${sectionId}&shuffle=true&limit=${QUESTIONS_PER_ROUND}`)
+      .then((r) => r.json())
+      .then((qs) => {
+        setQuestions(qs);
+        if (qs.length > 0) setShuffledChoices(shuffleArray(qs[0].choices));
+      });
   }, [sectionId]);
 
   const currentQuestion = questions[currentIndex];
@@ -110,7 +126,6 @@ export default function QuizPage({
       setPoints((p) => p + earned);
       setPointsPopup(earned);
       setTimeout(() => setPointsPopup(null), 600);
-      // Haptic
       if (typeof navigator !== "undefined" && "vibrate" in navigator) {
         navigator.vibrate(10);
       }
@@ -121,20 +136,10 @@ export default function QuizPage({
       }
     }
 
-    // Update spaced repetition
-    const state = storage.getState();
-    const qId = currentQuestion.id;
-    const record = state.questionHistory[qId] || createQuestionRecord(qId);
-    const updated = updateQuestionRecord(record, correct);
-    storage.updateState((s) => ({
-      ...s,
-      questionHistory: { ...s.questionHistory, [qId]: updated },
-    }));
-
     setAnswers((a) => [
       ...a,
       {
-        questionId: qId,
+        questionId: currentQuestion.id,
         selectedAnswer: selected,
         correct,
         timeRemaining: time,
@@ -148,7 +153,7 @@ export default function QuizPage({
 
   function handleSelectAnswer(choice: string) {
     if (selectedAnswer !== null || !currentQuestion) return;
-    const correct = choice === currentQuestion.a;
+    const correct = choice === currentQuestion.answer;
     processAnswer(choice, correct, timeRemaining);
   }
 
@@ -161,51 +166,43 @@ export default function QuizPage({
     setCurrentIndex(nextIndex);
     setSelectedAnswer(null);
     setShowExplanation(false);
-    setShuffledChoices(shuffleArray(questions[nextIndex].c));
+    setShuffledChoices(shuffleArray(questions[nextIndex].choices));
   }
 
   function finishQuiz() {
     setIsFinished(true);
 
-    const state = storage.getState();
-    const prevLevel = getCareerLevel(state.player.xp);
-    const xpResult = calculateXp(points, "speed", score, questions.length, state.stats.dailyStreak);
+    const prevXp = session?.user?.xp || 0;
+    const prevLevel = getCareerLevel(prevXp);
+    const xpResult = calculateXp(points, "speed", score, questions.length, 0);
 
-    const newState = storage.updateState((s) => ({
-      ...s,
-      player: { ...s.player, xp: s.player.xp + xpResult.totalXp },
-      stats: {
-        ...s.stats,
-        totalAnswered: s.stats.totalAnswered + questions.length,
-        totalCorrect: s.stats.totalCorrect + score,
-        gamesPlayed: s.stats.gamesPlayed + 1,
-        bestScore:
-          s.stats.bestScore === null
-            ? score
-            : Math.max(s.stats.bestScore, score),
-        bestStreak: Math.max(s.stats.bestStreak, bestStreak),
-      },
+    // Submit results to API
+    const submitAnswers = answers.concat([]).map((a) => ({
+      questionId: a.questionId,
+      correct: a.correct,
+      timeRemaining: a.timeRemaining,
+      pointsEarned: a.pointsEarned,
     }));
 
-    // Add leaderboard entry
-    storage.addLeaderboardEntry({
-      id: Date.now().toString(),
-      playerName: newState.player.name,
-      score,
-      total: questions.length,
-      points,
-      bestStreak,
-      section: sectionId,
-      sectionName,
-      date: new Date().toISOString(),
-      mode: "speed",
+    fetch("/api/quiz/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        answers: submitAnswers,
+        score,
+        total: questions.length,
+        points,
+        bestStreak,
+        section: sectionId,
+        sectionName,
+        mode: "speed",
+      }),
     });
 
-    const newLevel = getCareerLevel(newState.player.xp);
+    const newLevel = getCareerLevel(prevXp + xpResult.totalXp);
     const leveledUp = newLevel.level > prevLevel.level;
 
-    // Navigate to results
-    const params = new URLSearchParams({
+    const resultParams = new URLSearchParams({
       score: score.toString(),
       total: questions.length.toString(),
       points: points.toString(),
@@ -219,7 +216,7 @@ export default function QuizPage({
       perfectBonus: xpResult.perfectBonusXp.toString(),
       leveledUp: leveledUp ? newLevel.level.toString() : "",
     });
-    router.push(`/results?${params.toString()}`);
+    router.push(`/results?${resultParams.toString()}`);
   }
 
   if (questions.length === 0) {
@@ -234,7 +231,7 @@ export default function QuizPage({
 
   function getChoiceState(choice: string) {
     if (selectedAnswer === null) return "idle" as const;
-    if (choice === currentQuestion.a) {
+    if (choice === currentQuestion.answer) {
       return choice === selectedAnswer
         ? ("selected-correct" as const)
         : ("reveal-correct" as const);
@@ -248,7 +245,7 @@ export default function QuizPage({
       {/* Top bar */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <span className="text-lg">{section?.icon || "⚡"}</span>
+          <span className="text-lg">{sectionInfo?.icon || "⚡"}</span>
           <span className="text-sm font-semibold text-text-primary">{sectionName}</span>
         </div>
         <div className="flex items-center gap-3">
@@ -279,11 +276,10 @@ export default function QuizPage({
       {/* Question */}
       <div className="relative mb-6">
         <QuestionCard
-          question={currentQuestion.q}
+          question={currentQuestion.question}
           questionNumber={currentIndex + 1}
           totalQuestions={questions.length}
         />
-        {/* Points popup */}
         {pointsPopup && (
           <div className="absolute -top-2 right-0 animate-points-fly font-mono font-bold text-accent text-lg">
             +{pointsPopup}
@@ -307,16 +303,16 @@ export default function QuizPage({
       {/* Explanation */}
       {showExplanation && selectedAnswer !== null && (
         <ExplanationCard
-          explanation={currentQuestion.e}
-          correct={selectedAnswer === currentQuestion.a}
-          correctAnswer={currentQuestion.a}
+          explanation={currentQuestion.explanation}
+          correct={selectedAnswer === currentQuestion.answer}
+          correctAnswer={currentQuestion.answer}
         />
       )}
-      {selectedAnswer !== null && selectedAnswer === currentQuestion.a && (
+      {selectedAnswer !== null && selectedAnswer === currentQuestion.answer && (
         <ExplanationCard
-          explanation={currentQuestion.e}
+          explanation={currentQuestion.explanation}
           correct={true}
-          correctAnswer={currentQuestion.a}
+          correctAnswer={currentQuestion.answer}
         />
       )}
     </main>

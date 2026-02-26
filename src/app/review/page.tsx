@@ -2,19 +2,13 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { getAllQuestions, shuffleArray } from "@/lib/questions";
-import { getDueQuestions } from "@/lib/spaced-repetition";
-import { storage } from "@/lib/storage";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 import {
   calculateXp,
   getCareerLevel,
 } from "@/lib/scoring";
-import {
-  updateQuestionRecord,
-  createQuestionRecord,
-} from "@/lib/spaced-repetition";
-import Link from "next/link";
-import type { Question } from "@/lib/types";
+import type { DbQuestion } from "@/lib/types";
 import TimerRing from "@/components/TimerRing";
 import ChoiceButton from "@/components/ChoiceButton";
 import QuestionCard from "@/components/QuestionCard";
@@ -22,37 +16,41 @@ import ExplanationCard from "@/components/ExplanationCard";
 import ProgressBar from "@/components/ProgressBar";
 
 const TIMER_SECONDS = 30;
-const ADVANCE_DELAY = 2500; // Longer in review since we always show explanation
-const MAX_REVIEW = 20;
+const ADVANCE_DELAY = 2500;
+
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export default function ReviewPage() {
   const router = useRouter();
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const { data: session } = useSession();
+  const [questions, setQuestions] = useState<DbQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [timeRemaining, setTimeRemaining] = useState(TIMER_SECONDS);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [shuffledChoices, setShuffledChoices] = useState<string[]>([]);
   const [noQuestions, setNoQuestions] = useState(false);
+  const [reviewAnswers, setReviewAnswers] = useState<{ questionId: string; correct: boolean }[]>([]);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const state = storage.getState();
-    const allQuestions = getAllQuestions();
-    const allIds = allQuestions.map((q) => q.id);
-    const dueIds = getDueQuestions(state.questionHistory, allIds).slice(0, MAX_REVIEW);
-
-    if (dueIds.length === 0) {
-      setNoQuestions(true);
-      return;
-    }
-
-    const dueQuestions = dueIds
-      .map((id) => allQuestions.find((q) => q.id === id))
-      .filter(Boolean) as Question[];
-
-    setQuestions(dueQuestions);
-    if (dueQuestions.length > 0) setShuffledChoices(shuffleArray(dueQuestions[0].c));
+    fetch("/api/review/due")
+      .then((r) => r.json())
+      .then((data) => {
+        if (!Array.isArray(data) || data.length === 0) {
+          setNoQuestions(true);
+          return;
+        }
+        setQuestions(data);
+        if (data.length > 0) setShuffledChoices(shuffleArray(data[0].choices));
+      });
   }, []);
 
   const currentQuestion = questions[currentIndex];
@@ -85,21 +83,14 @@ export default function ReviewPage() {
     setSelectedAnswer(selected);
     if (correct) setScore((s) => s + 1);
 
-    const state = storage.getState();
-    const qId = currentQuestion.id;
-    const record = state.questionHistory[qId] || createQuestionRecord(qId);
-    const updated = updateQuestionRecord(record, correct);
-    storage.updateState((s) => ({
-      ...s,
-      questionHistory: { ...s.questionHistory, [qId]: updated },
-    }));
+    setReviewAnswers((a) => [...a, { questionId: currentQuestion.id, correct }]);
 
     setTimeout(() => advance(), ADVANCE_DELAY);
   }
 
   function handleSelectAnswer(choice: string) {
     if (selectedAnswer !== null || !currentQuestion) return;
-    processAnswer(choice, choice === currentQuestion.a);
+    processAnswer(choice, choice === currentQuestion.answer);
   }
 
   function advance() {
@@ -110,28 +101,28 @@ export default function ReviewPage() {
     const nextIndex = currentIndex + 1;
     setCurrentIndex(nextIndex);
     setSelectedAnswer(null);
-    setShuffledChoices(shuffleArray(questions[nextIndex].c));
+    setShuffledChoices(shuffleArray(questions[nextIndex].choices));
   }
 
   function finishReview() {
-    const state = storage.getState();
-    const prevLevel = getCareerLevel(state.player.xp);
-    const xpResult = calculateXp(0, "review", score, questions.length, state.stats.dailyStreak);
+    const prevXp = session?.user?.xp || 0;
+    const prevLevel = getCareerLevel(prevXp);
+    const xpResult = calculateXp(0, "review", score, questions.length, 0);
 
-    const newState = storage.updateState((s) => ({
-      ...s,
-      player: { ...s.player, xp: s.player.xp + xpResult.totalXp },
-      stats: {
-        ...s.stats,
-        totalAnswered: s.stats.totalAnswered + questions.length,
-        totalCorrect: s.stats.totalCorrect + score,
-      },
-    }));
+    fetch("/api/review/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        answers: reviewAnswers,
+        score,
+        total: questions.length,
+      }),
+    });
 
-    const newLevel = getCareerLevel(newState.player.xp);
+    const newLevel = getCareerLevel(prevXp + xpResult.totalXp);
     const leveledUp = newLevel.level > prevLevel.level;
 
-    const params = new URLSearchParams({
+    const resultParams = new URLSearchParams({
       score: score.toString(),
       total: questions.length.toString(),
       points: "0",
@@ -145,7 +136,7 @@ export default function ReviewPage() {
       perfectBonus: xpResult.perfectBonusXp.toString(),
       leveledUp: leveledUp ? newLevel.level.toString() : "",
     });
-    router.push(`/results?${params.toString()}`);
+    router.push(`/results?${resultParams.toString()}`);
   }
 
   if (noQuestions) {
@@ -165,7 +156,7 @@ export default function ReviewPage() {
 
   function getChoiceState(choice: string) {
     if (selectedAnswer === null) return "idle" as const;
-    if (choice === currentQuestion.a) {
+    if (choice === currentQuestion.answer) {
       return choice === selectedAnswer ? "selected-correct" as const : "reveal-correct" as const;
     }
     if (choice === selectedAnswer) return "selected-wrong" as const;
@@ -192,7 +183,7 @@ export default function ReviewPage() {
       </div>
 
       <div className="mb-6">
-        <QuestionCard question={currentQuestion.q} questionNumber={currentIndex + 1} totalQuestions={questions.length} />
+        <QuestionCard question={currentQuestion.question} questionNumber={currentIndex + 1} totalQuestions={questions.length} />
       </div>
 
       <div className="grid grid-cols-1 gap-3 mb-4">
@@ -201,12 +192,11 @@ export default function ReviewPage() {
         ))}
       </div>
 
-      {/* Always show explanation in review mode */}
       {selectedAnswer !== null && (
         <ExplanationCard
-          explanation={currentQuestion.e}
-          correct={selectedAnswer === currentQuestion.a}
-          correctAnswer={currentQuestion.a}
+          explanation={currentQuestion.explanation}
+          correct={selectedAnswer === currentQuestion.answer}
+          correctAnswer={currentQuestion.answer}
           alwaysShow
         />
       )}

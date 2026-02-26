@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -43,7 +44,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {children}
+        <SessionProvider>{children}</SessionProvider>
         <script
           dangerouslySetInnerHTML={{
             __html: `

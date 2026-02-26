@@ -2,26 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { storage } from "@/lib/storage";
-import type { LeaderboardEntry } from "@/lib/types";
+import type { DbLeaderboardEntry } from "@/lib/types";
 
 type Tab = "all" | "daily" | "speed";
 
 export default function LeaderboardPage() {
-  const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
-
-  useEffect(() => {
-    setEntries(storage.getState().leaderboard);
-  }, []);
+  const [entries, setEntries] = useState<DbLeaderboardEntry[]>([]);
   const [tab, setTab] = useState<Tab>("all");
 
-  const filtered = entries.filter((e) => {
-    if (tab === "all") return true;
-    if (tab === "daily") return e.mode === "daily";
-    return e.mode === "speed";
-  });
+  useEffect(() => {
+    const mode = tab === "all" ? "" : `?mode=${tab}`;
+    fetch(`/api/leaderboard${mode}`)
+      .then((r) => r.json())
+      .then((data) => setEntries(Array.isArray(data) ? data : []));
+  }, [tab]);
 
-  const bestScore = filtered.length > 0 ? Math.max(...filtered.map((e) => e.points)) : 0;
+  const bestScore = entries.length > 0 ? Math.max(...entries.map((e) => e.points)) : 0;
 
   function getMedal(index: number): string {
     if (index === 0) return "🥇";
@@ -56,14 +52,14 @@ export default function LeaderboardPage() {
         ))}
       </div>
 
-      {filtered.length === 0 ? (
+      {entries.length === 0 ? (
         <div className="text-center py-16">
           <div className="text-4xl mb-3">🏅</div>
           <p className="text-text-secondary text-sm">No scores yet. Play a quiz to get started!</p>
         </div>
       ) : (
         <div className="space-y-2">
-          {filtered.map((entry, i) => (
+          {entries.map((entry, i) => (
             <div
               key={entry.id}
               className={`animate-fade-up flex items-center gap-3 p-3 rounded-xl border ${
@@ -78,10 +74,10 @@ export default function LeaderboardPage() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="font-semibold text-sm text-text-primary truncate">
-                  {entry.sectionName}
+                  {entry.player_name}
                 </div>
                 <div className="text-text-dim text-xs">
-                  {new Date(entry.date).toLocaleDateString()}
+                  {entry.section_name} · {new Date(entry.played_at).toLocaleDateString()}
                 </div>
               </div>
               <div className="text-right">

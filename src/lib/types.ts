@@ -1,3 +1,6 @@
+import "next-auth";
+
+// ── JSON file types (used by seed script) ──────────────────
 export interface Question {
   id: string;
   q: string;
@@ -26,6 +29,76 @@ export interface QuestionBank {
   questions: Record<string, Question[]>;
 }
 
+// ── DB-aligned types ───────────────────────────────────────
+export interface DbSection {
+  id: string;
+  name: string;
+  icon: string;
+  color: string;
+  description: string;
+  sort_order: number;
+}
+
+export interface DbQuestion {
+  id: string;
+  section_id: string;
+  question: string;
+  answer: string;
+  choices: string[];
+  explanation: string;
+}
+
+export interface DbProfile {
+  id: string;
+  display_name: string;
+  xp: number;
+  role: "player" | "admin";
+}
+
+export interface DbUserStats {
+  user_id: string;
+  total_answered: number;
+  total_correct: number;
+  games_played: number;
+  best_score: number | null;
+  best_streak: number;
+  daily_streak: number;
+  last_daily_date: string | null;
+}
+
+export interface DbQuestionHistory {
+  user_id: string;
+  question_id: string;
+  times_shown: number;
+  times_correct: number;
+  ease_factor: number;
+  interval: number;
+  next_due: string;
+  streak: number;
+  last_shown: string;
+}
+
+export interface DbLeaderboardEntry {
+  id: string;
+  user_id: string;
+  player_name: string;
+  score: number;
+  total: number;
+  points: number;
+  best_streak: number;
+  section: string;
+  section_name: string;
+  mode: "speed" | "daily" | "review";
+  played_at: string;
+}
+
+export interface DbDailyChallenge {
+  user_id: string;
+  last_completed_date: string | null;
+  last_score: number | null;
+}
+
+// ── Spaced repetition (client-side computation) ────────────
 export interface QuestionRecord {
   questionId: string;
   timesShown: number;
@@ -37,6 +110,7 @@ export interface QuestionRecord {
   streak: number;
 }
 
+// ── Leaderboard (client-facing) ────────────────────────────
 export interface LeaderboardEntry {
   id: string;
   playerName: string;
@@ -50,30 +124,7 @@ export interface LeaderboardEntry {
   mode: "speed" | "daily" | "review";
 }
 
-export interface AppState {
-  version: number;
-  player: {
-    name: string;
-    xp: number;
-    createdAt: string;
-  };
-  stats: {
-    totalAnswered: number;
-    totalCorrect: number;
-    gamesPlayed: number;
-    bestScore: number | null;
-    bestStreak: number;
-    dailyStreak: number;
-    lastDailyDate: string | null;
-  };
-  leaderboard: LeaderboardEntry[];
-  questionHistory: Record<string, QuestionRecord>;
-  dailyChallenge: {
-    lastCompletedDate: string | null;
-    score: number | null;
-  };
-}
-
+// ── Career levels ──────────────────────────────────────────
 export interface CareerLevel {
   level: number;
   title: string;
@@ -81,6 +132,7 @@ export interface CareerLevel {
   icon: string;
 }
 
+// ── Quiz state (client) ────────────────────────────────────
 export interface QuizState {
   questions: Question[];
   currentIndex: number;
@@ -102,3 +154,25 @@ export interface AnswerRecord {
   timeRemaining: number;
   pointsEarned: number;
 }
+
+// ── NextAuth type extensions ───────────────────────────────
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+      role: string;
+      displayName: string;
+      xp: number;
+    };
+  }
+
+  interface User {
+    role?: string;
+    displayName?: string;
+    xp?: number;
+  }
+}
+

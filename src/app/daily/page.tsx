@@ -2,20 +2,15 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { getDailyQuestions, getTodayDateString, getNextDailyReset, formatCountdown } from "@/lib/daily-seed";
-import { shuffleArray } from "@/lib/questions";
-import { storage } from "@/lib/storage";
+import { getNextDailyReset, formatCountdown } from "@/lib/daily-seed";
 import {
   calculatePoints,
   calculateXp,
   getCareerLevel,
 } from "@/lib/scoring";
-import {
-  updateQuestionRecord,
-  createQuestionRecord,
-} from "@/lib/spaced-repetition";
-import type { Question, AnswerRecord } from "@/lib/types";
+import type { DbQuestion, AnswerRecord } from "@/lib/types";
 import TimerRing from "@/components/TimerRing";
 import ChoiceButton from "@/components/ChoiceButton";
 import QuestionCard from "@/components/QuestionCard";
@@ -27,17 +22,28 @@ const TIMER_SECONDS = 12;
 const ADVANCE_DELAY = 800;
 const WRONG_DELAY = 2000;
 
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function DailyPage() {
   const router = useRouter();
+  const { data: session } = useSession();
   const [locked, setLocked] = useState(false);
+  const [lockedScore, setLockedScore] = useState<number | null>(null);
   const [countdown, setCountdown] = useState("");
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<DbQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [points, setPoints] = useState(0);
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
-  const [, setAnswers] = useState<AnswerRecord[]>([]);
+  const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [timeRemaining, setTimeRemaining] = useState(TIMER_SECONDS);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -46,16 +52,20 @@ export default function DailyPage() {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const state = storage.getState();
-    const today = getTodayDateString();
-    if (state.dailyChallenge.lastCompletedDate === today) {
-      setLocked(true);
-      setCountdown(formatCountdown(getNextDailyReset()));
-      return;
-    }
-    const qs = getDailyQuestions();
-    setQuestions(qs);
-    if (qs.length > 0) setShuffledChoices(shuffleArray(qs[0].c));
+    fetch("/api/quiz/daily")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.locked) {
+          setLocked(true);
+          setLockedScore(data.score);
+          setCountdown(formatCountdown(getNextDailyReset()));
+        } else if (data.questions) {
+          setQuestions(data.questions);
+          if (data.questions.length > 0) {
+            setShuffledChoices(shuffleArray(data.questions[0].choices));
+          }
+        }
+      });
   }, []);
 
   const currentQuestion = questions[currentIndex];
@@ -100,16 +110,13 @@ export default function DailyPage() {
       setShowExplanation(true);
     }
 
-    const state = storage.getState();
-    const qId = currentQuestion.id;
-    const record = state.questionHistory[qId] || createQuestionRecord(qId);
-    const updated = updateQuestionRecord(record, correct);
-    storage.updateState((s) => ({
-      ...s,
-      questionHistory: { ...s.questionHistory, [qId]: updated },
-    }));
-
-    setAnswers((a) => [...a, { questionId: qId, selectedAnswer: selected, correct, timeRemaining: time, pointsEarned: earned }]);
+    setAnswers((a) => [...a, {
+      questionId: currentQuestion.id,
+      selectedAnswer: selected,
+      correct,
+      timeRemaining: time,
+      pointsEarned: earned,
+    }]);
 
     const delay = correct ? ADVANCE_DELAY : WRONG_DELAY;
     setTimeout(() => advance(), delay);
@@ -117,7 +124,7 @@ export default function DailyPage() {
 
   function handleSelectAnswer(choice: string) {
     if (selectedAnswer !== null || !currentQuestion) return;
-    const correct = choice === currentQuestion.a;
+    const correct = choice === currentQuestion.answer;
     processAnswer(choice, correct, timeRemaining);
   }
 
@@ -130,55 +137,41 @@ export default function DailyPage() {
     setCurrentIndex(nextIndex);
     setSelectedAnswer(null);
     setShowExplanation(false);
-    setShuffledChoices(shuffleArray(questions[nextIndex].c));
+    setShuffledChoices(shuffleArray(questions[nextIndex].choices));
   }
 
   function finishDaily() {
-    const today = getTodayDateString();
-    const state = storage.getState();
-    const prevLevel = getCareerLevel(state.player.xp);
+    const prevXp = session?.user?.xp || 0;
+    const prevLevel = getCareerLevel(prevXp);
 
-    // Calculate daily streak
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayStr = yesterday.toISOString().split("T")[0];
-    const wasYesterday = state.dailyChallenge.lastCompletedDate === yesterdayStr;
-    const newDailyStreak = wasYesterday ? state.stats.dailyStreak + 1 : 1;
+    const xpResult = calculateXp(points, "daily", score, questions.length, 1);
 
-    const xpResult = calculateXp(points, "daily", score, questions.length, newDailyStreak);
-
-    const newState = storage.updateState((s) => ({
-      ...s,
-      player: { ...s.player, xp: s.player.xp + xpResult.totalXp },
-      stats: {
-        ...s.stats,
-        totalAnswered: s.stats.totalAnswered + questions.length,
-        totalCorrect: s.stats.totalCorrect + score,
-        gamesPlayed: s.stats.gamesPlayed + 1,
-        dailyStreak: newDailyStreak,
-        lastDailyDate: today,
-        bestStreak: Math.max(s.stats.bestStreak, bestStreak),
-      },
-      dailyChallenge: { lastCompletedDate: today, score },
+    const submitAnswers = answers.map((a) => ({
+      questionId: a.questionId,
+      correct: a.correct,
+      timeRemaining: a.timeRemaining,
+      pointsEarned: a.pointsEarned,
     }));
 
-    storage.addLeaderboardEntry({
-      id: Date.now().toString(),
-      playerName: newState.player.name,
-      score,
-      total: questions.length,
-      points,
-      bestStreak,
-      section: "daily",
-      sectionName: "Daily Challenge",
-      date: new Date().toISOString(),
-      mode: "daily",
+    fetch("/api/quiz/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        answers: submitAnswers,
+        score,
+        total: questions.length,
+        points,
+        bestStreak,
+        section: "daily",
+        sectionName: "Daily Challenge",
+        mode: "daily",
+      }),
     });
 
-    const newLevel = getCareerLevel(newState.player.xp);
+    const newLevel = getCareerLevel(prevXp + xpResult.totalXp);
     const leveledUp = newLevel.level > prevLevel.level;
 
-    const params = new URLSearchParams({
+    const resultParams = new URLSearchParams({
       score: score.toString(),
       total: questions.length.toString(),
       points: points.toString(),
@@ -192,7 +185,7 @@ export default function DailyPage() {
       perfectBonus: xpResult.perfectBonusXp.toString(),
       leveledUp: leveledUp ? newLevel.level.toString() : "",
     });
-    router.push(`/results?${params.toString()}`);
+    router.push(`/results?${resultParams.toString()}`);
   }
 
   if (locked) {
@@ -201,6 +194,9 @@ export default function DailyPage() {
         <div className="text-6xl mb-4">🏆</div>
         <h1 className="text-2xl font-black text-gold mb-2">Challenge Complete!</h1>
         <p className="text-text-secondary mb-4">Come back tomorrow for a new challenge.</p>
+        {lockedScore !== null && (
+          <p className="text-gold font-mono text-lg mb-2">Score: {lockedScore}/10</p>
+        )}
         <p className="font-mono text-gold text-lg mb-8">Next in {countdown}</p>
         <Link href="/" className="px-8 py-3 rounded-xl font-bold border border-gold/30 text-gold hover:bg-gold-dim transition-all">
           Home
@@ -215,7 +211,7 @@ export default function DailyPage() {
 
   function getChoiceState(choice: string) {
     if (selectedAnswer === null) return "idle" as const;
-    if (choice === currentQuestion.a) {
+    if (choice === currentQuestion.answer) {
       return choice === selectedAnswer ? "selected-correct" as const : "reveal-correct" as const;
     }
     if (choice === selectedAnswer) return "selected-wrong" as const;
@@ -224,7 +220,6 @@ export default function DailyPage() {
 
   return (
     <main className="min-h-dvh px-4 pt-4 pb-8 max-w-lg mx-auto">
-      {/* Top bar - gold themed */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <span className="text-lg">🏆</span>
@@ -249,7 +244,7 @@ export default function DailyPage() {
       </div>
 
       <div className="relative mb-6">
-        <QuestionCard question={currentQuestion.q} questionNumber={currentIndex + 1} totalQuestions={questions.length} />
+        <QuestionCard question={currentQuestion.question} questionNumber={currentIndex + 1} totalQuestions={questions.length} />
         {pointsPopup && (
           <div className="absolute -top-2 right-0 animate-points-fly font-mono font-bold text-gold text-lg">+{pointsPopup}</div>
         )}
@@ -262,10 +257,10 @@ export default function DailyPage() {
       </div>
 
       {showExplanation && selectedAnswer !== null && (
-        <ExplanationCard explanation={currentQuestion.e} correct={false} correctAnswer={currentQuestion.a} />
+        <ExplanationCard explanation={currentQuestion.explanation} correct={false} correctAnswer={currentQuestion.answer} />
       )}
-      {selectedAnswer !== null && selectedAnswer === currentQuestion.a && (
-        <ExplanationCard explanation={currentQuestion.e} correct={true} correctAnswer={currentQuestion.a} />
+      {selectedAnswer !== null && selectedAnswer === currentQuestion.answer && (
+        <ExplanationCard explanation={currentQuestion.explanation} correct={true} correctAnswer={currentQuestion.answer} />
       )}
     </main>
   );

@@ -18,13 +18,33 @@ export async function GET() {
     supabase.from("sections").select("*").order("sort_order"),
   ]);
 
-  // Calculate section mastery from question_history
+  // Calculate section mastery by joining question_history with questions table
   const history = historyRes.data || [];
   const sectionMastery: Record<string, { shown: number; correct: number; percent: number }> = {};
 
+  // Build a map of question_id -> section_id from the questions table
+  const questionIds = history.map((h) => h.question_id);
+  const questionSectionMap: Record<string, string> = {};
+
+  if (questionIds.length > 0) {
+    // Fetch in batches to avoid query size limits
+    const batchSize = 500;
+    for (let i = 0; i < questionIds.length; i += batchSize) {
+      const batch = questionIds.slice(i, i + batchSize);
+      const { data: questions } = await supabase
+        .from("questions")
+        .select("id, section_id")
+        .in("id", batch);
+
+      for (const q of questions || []) {
+        questionSectionMap[q.id] = q.section_id;
+      }
+    }
+  }
+
   for (const section of sectionsRes.data || []) {
-    const sectionHistory = history.filter((h) =>
-      h.question_id.startsWith(section.id)
+    const sectionHistory = history.filter(
+      (h) => questionSectionMap[h.question_id] === section.id
     );
     const shown = sectionHistory.reduce((s, h) => s + h.times_shown, 0);
     const correct = sectionHistory.reduce((s, h) => s + h.times_correct, 0);

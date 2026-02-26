@@ -20,7 +20,7 @@ export interface Section {
 export interface QuestionBank {
   meta: {
     version: string;
-    totalQuestions: number;
+    totalQuestions?: number;
     lastUpdated: string;
     author: string;
     notes: string;

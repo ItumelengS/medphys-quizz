@@ -7,6 +7,9 @@ import {
   calculatePoints,
   calculateXp,
   getCareerLevel,
+  isCalculationQuestion,
+  getAdaptiveTimer,
+  TIMER_WRONG_RECOVERY,
 } from "@/lib/scoring";
 import type { DbQuestion, AnswerRecord } from "@/lib/types";
 import TimerRing from "@/components/TimerRing";
@@ -53,6 +56,7 @@ export default function QuizPage({
   const [shuffledChoices, setShuffledChoices] = useState<string[]>([]);
   const [pointsPopup, setPointsPopup] = useState<number | null>(null);
   const [isFinished, setIsFinished] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -80,11 +84,16 @@ export default function QuizPage({
 
   const currentQuestion = questions[currentIndex];
 
+  // Compute adaptive timer for current question
+  const currentTimerTotal = currentQuestion
+    ? getAdaptiveTimer(TIMER_SECONDS, correctCount, isCalculationQuestion(currentQuestion.question))
+    : TIMER_SECONDS;
+
   // Timer
   useEffect(() => {
     if (!currentQuestion || selectedAnswer !== null || isFinished) return;
 
-    setTimeRemaining(TIMER_SECONDS);
+    setTimeRemaining(currentTimerTotal);
     timerRef.current = setInterval(() => {
       setTimeRemaining((prev) => {
         if (prev <= 0.1) {
@@ -100,7 +109,7 @@ export default function QuizPage({
       if (timerRef.current) clearInterval(timerRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex, currentQuestion, isFinished]);
+  }, [currentIndex, currentQuestion, isFinished, currentTimerTotal]);
 
   const handleTimeout = useCallback(() => {
     if (!currentQuestion || selectedAnswer !== null) return;
@@ -124,6 +133,7 @@ export default function QuizPage({
     if (correct) {
       setScore((s) => s + 1);
       setPoints((p) => p + earned);
+      setCorrectCount((c) => c + 1);
       setPointsPopup(earned);
       setTimeout(() => setPointsPopup(null), 600);
       if (typeof navigator !== "undefined" && "vibrate" in navigator) {
@@ -131,6 +141,8 @@ export default function QuizPage({
       }
     } else {
       setShowExplanation(true);
+      // Recover some time on wrong answer (applied to next question's correctCount)
+      setCorrectCount((c) => Math.max(0, c - Math.ceil(TIMER_WRONG_RECOVERY / 1.5)));
       if (typeof navigator !== "undefined" && "vibrate" in navigator) {
         navigator.vibrate([10, 50, 10]);
       }
@@ -240,6 +252,8 @@ export default function QuizPage({
     return "disabled" as const;
   }
 
+  const isCalc = isCalculationQuestion(currentQuestion.question);
+
   return (
     <main className="min-h-dvh px-4 pt-4 pb-8 max-w-lg mx-auto">
       {/* Top bar */}
@@ -262,7 +276,14 @@ export default function QuizPage({
 
       {/* Timer & Score */}
       <div className="flex items-center justify-between mt-4 mb-6">
-        <TimerRing timeRemaining={timeRemaining} totalTime={TIMER_SECONDS} />
+        <div className="relative">
+          <TimerRing timeRemaining={timeRemaining} totalTime={currentTimerTotal} />
+          {isCalc && (
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-mono text-bauhaus-yellow uppercase tracking-wider">
+              calc
+            </div>
+          )}
+        </div>
         <div className="text-right">
           <div className="font-mono text-2xl font-bold text-text-primary">
             {score}/{currentIndex + (selectedAnswer !== null ? 1 : 0)}

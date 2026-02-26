@@ -116,6 +116,25 @@ export function getStreakEmoji(streak: number): string {
   return "";
 }
 
+const CALC_KEYWORDS = /\b(calculate|compute|determine the value|find the|what is the dose|how many|formula|equation|solve|derive|evaluate|half.?life|decay constant|activity|exposure rate|inverse square|attenuation)\b/i;
+
+export function isCalculationQuestion(questionText: string): boolean {
+  return CALC_KEYWORDS.test(questionText);
+}
+
+export const TIMER_SHRINK = 1.5;
+export const TIMER_SHRINK_MIN = 5;
+export const TIMER_WRONG_RECOVERY = 2;
+
+export function getAdaptiveTimer(
+  baseTime: number,
+  correctCount: number,
+  isCalc: boolean
+): number {
+  if (isCalc) return baseTime;
+  return Math.max(TIMER_SHRINK_MIN, baseTime - correctCount * TIMER_SHRINK);
+}
+
 export function getSectionMasteryColor(percent: number): string {
   if (percent >= 90) return "#16a34a";
   if (percent >= 75) return "#2563eb";

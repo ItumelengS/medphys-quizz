@@ -9,6 +9,9 @@ import {
   calculatePoints,
   calculateXp,
   getCareerLevel,
+  isCalculationQuestion,
+  getAdaptiveTimer,
+  TIMER_WRONG_RECOVERY,
 } from "@/lib/scoring";
 import type { DbQuestion, AnswerRecord } from "@/lib/types";
 import TimerRing from "@/components/TimerRing";
@@ -49,6 +52,7 @@ export default function DailyPage() {
   const [showExplanation, setShowExplanation] = useState(false);
   const [shuffledChoices, setShuffledChoices] = useState<string[]>([]);
   const [pointsPopup, setPointsPopup] = useState<number | null>(null);
+  const [correctCount, setCorrectCount] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
@@ -70,9 +74,14 @@ export default function DailyPage() {
 
   const currentQuestion = questions[currentIndex];
 
+  // Compute adaptive timer for current question
+  const currentTimerTotal = currentQuestion
+    ? getAdaptiveTimer(TIMER_SECONDS, correctCount, isCalculationQuestion(currentQuestion.question))
+    : TIMER_SECONDS;
+
   useEffect(() => {
     if (!currentQuestion || selectedAnswer !== null || locked) return;
-    setTimeRemaining(TIMER_SECONDS);
+    setTimeRemaining(currentTimerTotal);
     timerRef.current = setInterval(() => {
       setTimeRemaining((prev) => {
         if (prev <= 0.1) {
@@ -85,7 +94,7 @@ export default function DailyPage() {
     }, 100);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex, currentQuestion, locked]);
+  }, [currentIndex, currentQuestion, locked, currentTimerTotal]);
 
   const handleTimeout = useCallback(() => {
     if (!currentQuestion || selectedAnswer !== null) return;
@@ -104,10 +113,12 @@ export default function DailyPage() {
     if (correct) {
       setScore((s) => s + 1);
       setPoints((p) => p + earned);
+      setCorrectCount((c) => c + 1);
       setPointsPopup(earned);
       setTimeout(() => setPointsPopup(null), 600);
     } else {
       setShowExplanation(true);
+      setCorrectCount((c) => Math.max(0, c - Math.ceil(TIMER_WRONG_RECOVERY / 1.5)));
     }
 
     setAnswers((a) => [...a, {
@@ -218,6 +229,8 @@ export default function DailyPage() {
     return "disabled" as const;
   }
 
+  const isCalc = isCalculationQuestion(currentQuestion.question);
+
   return (
     <main className="min-h-dvh px-4 pt-4 pb-8 max-w-lg mx-auto">
       <div className="flex items-center justify-between mb-4">
@@ -234,7 +247,14 @@ export default function DailyPage() {
       <ProgressBar progress={((currentIndex + 1) / questions.length) * 100} color="#eab308" />
 
       <div className="flex items-center justify-between mt-4 mb-6">
-        <TimerRing timeRemaining={timeRemaining} totalTime={TIMER_SECONDS} />
+        <div className="relative">
+          <TimerRing timeRemaining={timeRemaining} totalTime={currentTimerTotal} />
+          {isCalc && (
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-mono text-bauhaus-yellow uppercase tracking-wider">
+              calc
+            </div>
+          )}
+        </div>
         <div className="text-right">
           <div className="font-mono text-2xl font-bold text-text-primary">
             {score}/{currentIndex + (selectedAnswer !== null ? 1 : 0)}

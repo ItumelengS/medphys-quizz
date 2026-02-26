@@ -8,6 +8,7 @@ import { getNextDailyReset, formatCountdown } from "@/lib/daily-seed";
 import type { DbSection } from "@/lib/types";
 import ProgressBar from "@/components/ProgressBar";
 import SectionMasteryRing from "@/components/SectionMasteryRing";
+import DonationCard from "@/components/DonationCard";
 
 interface StatsData {
   profile: { xp: number; display_name: string } | null;
@@ -131,6 +132,27 @@ export default function HomePage() {
         </div>
       </Link>
 
+      {/* Arena Tournament */}
+      <Link href="/tournaments" className="block animate-fade-up stagger-2 mb-4">
+        <div
+          className="p-4 rounded-none border-2 border-bauhaus-red/40 transition-all hover:border-l-4 hover:border-l-bauhaus-red"
+          style={{ background: "rgba(220, 38, 38, 0.05)" }}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">⚔️</span>
+              <div>
+                <div className="font-bold text-bauhaus-red text-sm uppercase tracking-wider">Arena Tournaments</div>
+                <div className="text-text-secondary text-xs font-light">
+                  Blitz · Rapid · Marathon — compete live
+                </div>
+              </div>
+            </div>
+            <div className="w-2 h-2 rounded-full bg-bauhaus-red animate-pulse" />
+          </div>
+        </div>
+      </Link>
+
       {/* Review badge */}
       {dueCount > 0 && (
         <Link href="/review" className="block animate-fade-up stagger-3 mb-6">
@@ -198,9 +220,18 @@ export default function HomePage() {
         })}
       </div>
 
+      {/* Donation */}
+      <div className="mt-6 mb-4 animate-fade-up stagger-10">
+        <DonationCard />
+      </div>
+
       {/* Bottom nav */}
       <div className="fixed bottom-0 left-0 right-0 border-t-2 border-bauhaus-blue bg-bg">
         <div className="max-w-lg mx-auto flex justify-around py-3 px-4">
+          <Link href="/tournaments" className="flex flex-col items-center gap-1 text-text-secondary hover:text-text-primary transition-colors">
+            <span className="text-lg">⚔️</span>
+            <span className="text-xs uppercase tracking-wider">Arena</span>
+          </Link>
           <Link href="/leaderboard" className="flex flex-col items-center gap-1 text-text-secondary hover:text-text-primary transition-colors">
             <span className="text-lg">🏅</span>
             <span className="text-xs uppercase tracking-wider">Leaderboard</span>

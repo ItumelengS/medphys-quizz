@@ -98,6 +98,41 @@ export interface DbDailyChallenge {
   last_score: number | null;
 }
 
+// ── Tournament types ─────────────────────────────────────────
+export interface DbTournament {
+  id: string;
+  type: "blitz" | "rapid" | "marathon";
+  starts_at: string;
+  ends_at: string;
+  status: "upcoming" | "active" | "finished";
+  config: Record<string, unknown>;
+}
+
+export interface DbTournamentParticipant {
+  tournament_id: string;
+  user_id: string;
+  display_name: string;
+  total_points: number;
+  rounds_played: number;
+  best_round_score: number;
+  fire_streak: number;
+  current_fire_streak: number;
+  berserk_rounds: number;
+}
+
+export interface DbTournamentRound {
+  id: string;
+  tournament_id: string;
+  user_id: string;
+  score: number;
+  total: number;
+  points_earned: number;
+  berserk: boolean;
+  time_bonus: number;
+  fire_multiplier: number;
+  played_at: string;
+}
+
 // ── Spaced repetition (client-side computation) ────────────
 export interface QuestionRecord {
   questionId: string;

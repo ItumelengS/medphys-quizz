@@ -56,7 +56,7 @@ export default function QuizPage({
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const sectionColor = sectionInfo?.color || "#00e5a0";
+  const sectionColor = sectionInfo?.color || "#2563eb";
   const sectionName = sectionInfo?.name || (sectionId === "all" ? "All Topics" : sectionId);
 
   // Fetch section info and questions
@@ -246,11 +246,11 @@ export default function QuizPage({
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <span className="text-lg">{sectionInfo?.icon || "⚡"}</span>
-          <span className="text-sm font-semibold text-text-primary">{sectionName}</span>
+          <span className="text-sm font-bold text-text-primary uppercase tracking-wider">{sectionName}</span>
         </div>
         <div className="flex items-center gap-3">
           <StreakBadge streak={streak} />
-          <div className="font-mono text-sm font-bold text-accent">{points}</div>
+          <div className="font-mono text-sm font-bold text-bauhaus-blue">{points}</div>
         </div>
       </div>
 
@@ -281,7 +281,7 @@ export default function QuizPage({
           totalQuestions={questions.length}
         />
         {pointsPopup && (
-          <div className="absolute -top-2 right-0 animate-points-fly font-mono font-bold text-accent text-lg">
+          <div className="absolute -top-2 right-0 animate-points-fly font-mono font-bold text-bauhaus-blue text-lg">
             +{pointsPopup}
           </div>
         )}

@@ -192,13 +192,13 @@ export default function DailyPage() {
     return (
       <main className="min-h-dvh flex flex-col items-center justify-center px-4 max-w-lg mx-auto text-center">
         <div className="text-6xl mb-4">🏆</div>
-        <h1 className="text-2xl font-black text-gold mb-2">Challenge Complete!</h1>
-        <p className="text-text-secondary mb-4">Come back tomorrow for a new challenge.</p>
+        <h1 className="text-2xl font-black text-bauhaus-yellow mb-2 uppercase tracking-wider">Challenge Complete!</h1>
+        <p className="text-text-secondary mb-4 font-light">Come back tomorrow for a new challenge.</p>
         {lockedScore !== null && (
-          <p className="text-gold font-mono text-lg mb-2">Score: {lockedScore}/10</p>
+          <p className="text-bauhaus-yellow font-mono text-lg mb-2">Score: {lockedScore}/10</p>
         )}
-        <p className="font-mono text-gold text-lg mb-8">Next in {countdown}</p>
-        <Link href="/" className="px-8 py-3 rounded-xl font-bold border border-gold/30 text-gold hover:bg-gold-dim transition-all">
+        <p className="font-mono text-bauhaus-yellow text-lg mb-8">Next in {countdown}</p>
+        <Link href="/" className="px-8 py-3 rounded-none font-bold border-2 border-bauhaus-yellow/30 text-bauhaus-yellow hover:bg-gold-dim transition-all">
           Home
         </Link>
       </main>
@@ -223,15 +223,15 @@ export default function DailyPage() {
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <span className="text-lg">🏆</span>
-          <span className="text-sm font-semibold text-gold">Daily Challenge</span>
+          <span className="text-sm font-bold text-bauhaus-yellow uppercase tracking-wider">Daily Challenge</span>
         </div>
         <div className="flex items-center gap-3">
           <StreakBadge streak={streak} />
-          <div className="font-mono text-sm font-bold text-gold">{points}</div>
+          <div className="font-mono text-sm font-bold text-bauhaus-yellow">{points}</div>
         </div>
       </div>
 
-      <ProgressBar progress={((currentIndex + 1) / questions.length) * 100} color="#f59e0b" />
+      <ProgressBar progress={((currentIndex + 1) / questions.length) * 100} color="#eab308" />
 
       <div className="flex items-center justify-between mt-4 mb-6">
         <TimerRing timeRemaining={timeRemaining} totalTime={TIMER_SECONDS} />
@@ -246,13 +246,13 @@ export default function DailyPage() {
       <div className="relative mb-6">
         <QuestionCard question={currentQuestion.question} questionNumber={currentIndex + 1} totalQuestions={questions.length} />
         {pointsPopup && (
-          <div className="absolute -top-2 right-0 animate-points-fly font-mono font-bold text-gold text-lg">+{pointsPopup}</div>
+          <div className="absolute -top-2 right-0 animate-points-fly font-mono font-bold text-bauhaus-yellow text-lg">+{pointsPopup}</div>
         )}
       </div>
 
       <div className="grid grid-cols-1 gap-3 mb-4">
         {shuffledChoices.map((choice) => (
-          <ChoiceButton key={choice} text={choice} state={getChoiceState(choice)} onClick={() => handleSelectAnswer(choice)} sectionColor="#f59e0b" />
+          <ChoiceButton key={choice} text={choice} state={getChoiceState(choice)} onClick={() => handleSelectAnswer(choice)} sectionColor="#eab308" />
         ))}
       </div>
 

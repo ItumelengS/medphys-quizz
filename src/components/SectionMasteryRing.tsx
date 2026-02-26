@@ -12,7 +12,7 @@ interface SectionMasteryRingProps {
 export default function SectionMasteryRing({
   percent,
   size = 48,
-  strokeWidth = 3,
+  strokeWidth = 4,
   showLabel = true,
 }: SectionMasteryRingProps) {
   const radius = (size - strokeWidth) / 2;
@@ -38,7 +38,7 @@ export default function SectionMasteryRing({
           fill="none"
           stroke={color}
           strokeWidth={strokeWidth}
-          strokeLinecap="round"
+          strokeLinecap="butt"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
           style={{ transition: "stroke-dashoffset 0.5s ease-out" }}

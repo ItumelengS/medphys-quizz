@@ -117,8 +117,8 @@ export function getStreakEmoji(streak: number): string {
 }
 
 export function getSectionMasteryColor(percent: number): string {
-  if (percent >= 90) return "#00e5a0";
-  if (percent >= 75) return "#60a5fa";
-  if (percent >= 50) return "#f97316";
-  return "#ef4444";
+  if (percent >= 90) return "#16a34a";
+  if (percent >= 75) return "#2563eb";
+  if (percent >= 50) return "#eab308";
+  return "#dc2626";
 }

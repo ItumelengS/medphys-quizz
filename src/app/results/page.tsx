@@ -61,47 +61,50 @@ function ResultsContent() {
       )}
 
       <div className="animate-fade-up text-center mb-8">
-        <div className="text-6xl mb-4">{grade}</div>
+        {/* Geometric circle frame around grade emoji */}
+        <div className="inline-flex items-center justify-center w-24 h-24 border-4 border-bauhaus-blue rounded-full mb-4">
+          <span className="text-5xl">{grade}</span>
+        </div>
         <h1 className="text-4xl font-black text-text-primary mb-1">
           {animatedScore}/{total}
         </h1>
-        <p className="text-text-secondary text-sm">{sectionName}</p>
-        <p className="text-text-dim text-xs mt-1">
+        <p className="text-text-secondary text-sm font-light">{sectionName}</p>
+        <p className="text-text-dim text-xs mt-1 uppercase tracking-widest">
           {mode === "daily" ? "Daily Challenge" : mode === "review" ? "Review" : "Speed Round"}
         </p>
       </div>
 
       {/* Stats grid */}
       <div className="animate-fade-up stagger-1 grid grid-cols-2 gap-3 mb-6">
-        <StatCard label="Accuracy" value={`${accuracy}%`} />
-        <StatCard label="Points" value={animatedPoints.toLocaleString()} />
-        <StatCard label="Best Streak" value={bestStreak.toString()} />
-        <StatCard label="XP Earned" value={`+${xp}`} accent />
+        <StatCard label="Accuracy" value={`${accuracy}%`} barColor="#2563eb" />
+        <StatCard label="Points" value={animatedPoints.toLocaleString()} barColor="#eab308" />
+        <StatCard label="Best Streak" value={bestStreak.toString()} barColor="#dc2626" />
+        <StatCard label="XP Earned" value={`+${xp}`} barColor="#16a34a" accent />
       </div>
 
       {/* XP Breakdown */}
-      <div className="animate-fade-up stagger-2 rounded-xl bg-surface border border-surface-border p-4 mb-6">
-        <div className="text-sm font-semibold text-text-primary mb-3">XP Breakdown</div>
+      <div className="animate-fade-up stagger-2 rounded-none bg-surface border-2 border-surface-border border-l-4 border-l-bauhaus-blue p-4 mb-6">
+        <div className="text-sm font-bold text-text-primary mb-3 uppercase tracking-wider">XP Breakdown</div>
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
-            <span className="text-text-secondary">Base XP</span>
+            <span className="text-text-secondary font-light">Base XP</span>
             <span className="font-mono text-text-primary">+{baseXp}</span>
           </div>
           {perfectBonus > 0 && (
             <div className="flex justify-between">
-              <span className="text-text-secondary">Perfect round!</span>
-              <span className="font-mono text-accent">+{perfectBonus}</span>
+              <span className="text-text-secondary font-light">Perfect round!</span>
+              <span className="font-mono text-bauhaus-blue">+{perfectBonus}</span>
             </div>
           )}
           {bonusXp > 0 && bonusXp !== perfectBonus && (
             <div className="flex justify-between">
-              <span className="text-text-secondary">Bonus</span>
-              <span className="font-mono text-accent">+{bonusXp - perfectBonus}</span>
+              <span className="text-text-secondary font-light">Bonus</span>
+              <span className="font-mono text-bauhaus-blue">+{bonusXp - perfectBonus}</span>
             </div>
           )}
-          <div className="flex justify-between border-t border-surface-border pt-2 font-bold">
+          <div className="flex justify-between border-t-2 border-surface-border pt-2 font-bold">
             <span className="text-text-primary">Total</span>
-            <span className="font-mono text-accent">+{xp}</span>
+            <span className="font-mono text-bauhaus-blue">+{xp}</span>
           </div>
         </div>
       </div>
@@ -110,14 +113,14 @@ function ResultsContent() {
       <div className="animate-fade-up stagger-3 flex flex-col gap-3">
         <Link
           href={`/quiz/${section}`}
-          className="block w-full text-center py-3.5 rounded-xl font-bold text-bg transition-all hover:opacity-90 active:scale-95"
-          style={{ background: "#00e5a0" }}
+          className="block w-full text-center py-3.5 rounded-none font-bold text-white transition-all hover:opacity-90 active:scale-95"
+          style={{ background: "#2563eb" }}
         >
           Play Again
         </Link>
         <Link
           href="/"
-          className="block w-full text-center py-3.5 rounded-xl font-bold text-text-primary border border-surface-border hover:bg-surface transition-all active:scale-95"
+          className="block w-full text-center py-3.5 rounded-none font-bold text-text-primary border-2 border-surface-border hover:bg-surface transition-all active:scale-95"
         >
           Home
         </Link>
@@ -130,19 +133,24 @@ function StatCard({
   label,
   value,
   accent,
+  barColor,
 }: {
   label: string;
   value: string;
   accent?: boolean;
+  barColor?: string;
 }) {
   return (
-    <div className="rounded-xl bg-surface border border-surface-border p-3 text-center">
+    <div className="rounded-none bg-surface border-2 border-surface-border p-3 text-center relative overflow-hidden">
+      {barColor && (
+        <div className="absolute top-0 left-0 right-0 h-1" style={{ background: barColor }} />
+      )}
       <div
-        className={`font-mono text-xl font-bold ${accent ? "text-accent" : "text-text-primary"}`}
+        className={`font-mono text-xl font-bold mt-1 ${accent ? "text-success" : "text-text-primary"}`}
       >
         {value}
       </div>
-      <div className="text-text-dim text-xs mt-1">{label}</div>
+      <div className="text-text-dim text-xs mt-1 uppercase tracking-wider">{label}</div>
     </div>
   );
 }

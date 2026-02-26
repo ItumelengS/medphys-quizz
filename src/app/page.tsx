@@ -65,30 +65,29 @@ export default function HomePage() {
       {/* Header */}
       <div className="animate-fade-up mb-6">
         <h1 className="text-3xl font-black">
-          <span className="bg-gradient-to-r from-accent to-[#60a5fa] bg-clip-text text-transparent">
-            MedPhys
-          </span>{" "}
+          <span className="text-bauhaus-blue">MedPhys</span>{" "}
           <span className="text-text-primary">Speed Quiz</span>
         </h1>
-        <div className="mt-2 text-text-secondary text-sm">
+        <div className="w-12 h-1 bg-bauhaus-yellow mt-2 mb-1" />
+        <div className="text-text-secondary text-sm font-light">
           {statsData.profile?.display_name || session.user?.name}
         </div>
       </div>
 
       {/* Level & XP */}
-      <div className="animate-fade-up stagger-1 mb-6 p-4 rounded-2xl bg-surface border border-surface-border">
+      <div className="animate-fade-up stagger-1 mb-6 p-4 rounded-none bg-surface border-2 border-surface-border border-l-4 border-l-bauhaus-blue">
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
             <span className="text-2xl">{xpInfo.current.icon}</span>
             <div>
               <div className="font-bold text-sm">{xpInfo.current.title}</div>
-              <div className="text-text-secondary text-xs font-mono">
+              <div className="text-text-secondary text-xs font-mono uppercase tracking-widest">
                 Level {xpInfo.current.level}
               </div>
             </div>
           </div>
           <div className="text-right">
-            <div className="font-mono text-sm font-bold text-accent">
+            <div className="font-mono text-sm font-bold text-bauhaus-blue">
               {xp.toLocaleString()} XP
             </div>
             {xpInfo.next && (
@@ -104,19 +103,19 @@ export default function HomePage() {
       {/* Daily Challenge */}
       <Link href="/daily" className="block animate-fade-up stagger-2 mb-4">
         <div
-          className={`p-4 rounded-2xl border-2 transition-all hover:-translate-y-0.5 ${
+          className={`p-4 rounded-none border-2 transition-all hover:border-l-4 hover:border-l-bauhaus-yellow ${
             dailyCompleted
-              ? "border-gold/20 opacity-75"
-              : "border-gold/40 hover:border-gold/60"
+              ? "border-bauhaus-yellow/20 opacity-75"
+              : "border-bauhaus-yellow/40"
           }`}
-          style={{ background: "rgba(245, 158, 11, 0.05)" }}
+          style={{ background: "rgba(234, 179, 8, 0.05)" }}
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <span className="text-2xl">🏆</span>
               <div>
-                <div className="font-bold text-gold text-sm">Daily Challenge</div>
-                <div className="text-text-secondary text-xs">
+                <div className="font-bold text-bauhaus-yellow text-sm uppercase tracking-wider">Daily Challenge</div>
+                <div className="text-text-secondary text-xs font-light">
                   {dailyCompleted
                     ? `Done! Next in ${countdown}`
                     : "10 questions, 12s timer"}
@@ -124,7 +123,7 @@ export default function HomePage() {
               </div>
             </div>
             {dailyStreak > 0 && (
-              <div className="flex items-center gap-1 text-gold font-mono text-sm font-bold">
+              <div className="flex items-center gap-1 text-bauhaus-yellow font-mono text-sm font-bold">
                 {getStreakEmoji(dailyStreak)} {dailyStreak}d
               </div>
             )}
@@ -135,10 +134,10 @@ export default function HomePage() {
       {/* Review badge */}
       {dueCount > 0 && (
         <Link href="/review" className="block animate-fade-up stagger-3 mb-6">
-          <div className="p-3 rounded-xl bg-surface border border-accent/20 flex items-center justify-between hover:-translate-y-0.5 transition-all">
+          <div className="p-3 rounded-none bg-surface border-2 border-bauhaus-blue/20 flex items-center justify-between hover:border-l-4 hover:border-l-bauhaus-blue transition-all">
             <div className="flex items-center gap-2">
               <span>🔄</span>
-              <span className="text-sm font-semibold text-accent">
+              <span className="text-sm font-semibold text-bauhaus-blue">
                 {dueCount} due for review
               </span>
             </div>
@@ -150,13 +149,13 @@ export default function HomePage() {
       {/* All Topics hero card */}
       <Link href="/quiz/all" className="block animate-fade-up stagger-3 mb-4">
         <div
-          className="p-5 rounded-2xl border border-accent/20 hover:-translate-y-0.5 transition-all"
-          style={{ background: "rgba(0, 229, 160, 0.03)" }}
+          className="p-5 rounded-none border-2 border-bauhaus-blue/20 hover:border-l-4 hover:border-l-bauhaus-blue transition-all"
+          style={{ background: "rgba(37, 99, 235, 0.03)" }}
         >
           <div className="flex items-center justify-between">
             <div>
-              <div className="text-lg font-bold text-accent">⚡ All Topics</div>
-              <div className="text-text-secondary text-xs mt-1">
+              <div className="text-lg font-black text-bauhaus-blue uppercase tracking-wider">All Topics</div>
+              <div className="text-text-secondary text-xs mt-1 font-light">
                 {totalQuestions} questions across {sections.length} sections
               </div>
             </div>
@@ -177,7 +176,7 @@ export default function HomePage() {
               className={`animate-fade-up stagger-${Math.min(i + 4, 10)}`}
             >
               <div
-                className="p-4 rounded-xl border hover:-translate-y-0.5 transition-all h-full"
+                className="p-4 rounded-none border-2 hover:border-l-4 hover:border-l-bauhaus-yellow transition-all h-full"
                 style={{
                   background: `${section.color}08`,
                   borderColor: `${section.color}26`,
@@ -189,10 +188,10 @@ export default function HomePage() {
                     <SectionMasteryRing percent={mastery} size={32} strokeWidth={2.5} />
                   )}
                 </div>
-                <div className="font-semibold text-sm text-text-primary mb-0.5">
+                <div className="font-bold text-sm text-text-primary mb-0.5">
                   {section.name}
                 </div>
-                <div className="text-text-dim text-xs">{section.description}</div>
+                <div className="text-text-dim text-xs font-light">{section.description}</div>
               </div>
             </Link>
           );
@@ -200,15 +199,15 @@ export default function HomePage() {
       </div>
 
       {/* Bottom nav */}
-      <div className="fixed bottom-0 left-0 right-0 border-t border-surface-border bg-bg/80 backdrop-blur-lg">
+      <div className="fixed bottom-0 left-0 right-0 border-t-2 border-bauhaus-blue bg-bg">
         <div className="max-w-lg mx-auto flex justify-around py-3 px-4">
           <Link href="/leaderboard" className="flex flex-col items-center gap-1 text-text-secondary hover:text-text-primary transition-colors">
             <span className="text-lg">🏅</span>
-            <span className="text-xs">Leaderboard</span>
+            <span className="text-xs uppercase tracking-wider">Leaderboard</span>
           </Link>
           <Link href="/stats" className="flex flex-col items-center gap-1 text-text-secondary hover:text-text-primary transition-colors">
             <span className="text-lg">📊</span>
-            <span className="text-xs">Stats</span>
+            <span className="text-xs uppercase tracking-wider">Stats</span>
           </Link>
         </div>
       </div>

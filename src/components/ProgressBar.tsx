@@ -8,19 +8,19 @@ interface ProgressBarProps {
 
 export default function ProgressBar({
   progress,
-  color = "#00e5a0",
-  height = 4,
+  color = "#2563eb",
+  height = 6,
 }: ProgressBarProps) {
   return (
     <div
-      className="w-full rounded-full overflow-hidden"
+      className="w-full overflow-hidden"
       style={{ height, background: "rgba(255,255,255,0.06)" }}
     >
       <div
-        className="h-full rounded-full transition-all duration-500 ease-out"
+        className="h-full transition-all duration-500 ease-out"
         style={{
           width: `${Math.min(100, Math.max(0, progress))}%`,
-          background: `linear-gradient(90deg, ${color}, #00e5a0)`,
+          background: color,
         }}
       />
     </div>

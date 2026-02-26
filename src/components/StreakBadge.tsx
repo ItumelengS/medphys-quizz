@@ -15,18 +15,18 @@ export default function StreakBadge({ streak }: StreakBadgeProps) {
 
   return (
     <div
-      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-mono text-sm font-bold
+      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none font-mono text-sm font-bold
         ${isHot ? "animate-shake" : streak >= 5 ? "animate-pulse-glow" : ""}
       `}
       style={{
-        background: "rgba(245, 158, 11, 0.15)",
-        border: "1px solid rgba(245, 158, 11, 0.3)",
-        color: "#fbbf24",
+        background: "rgba(234, 179, 8, 0.15)",
+        border: "2px solid rgba(234, 179, 8, 0.3)",
+        color: "#eab308",
       }}
     >
       <span>{emoji}</span>
       <span>{streak}</span>
-      <span className="text-xs opacity-75">×{multiplier}</span>
+      <span className="text-xs opacity-75">x{multiplier}</span>
     </div>
   );
 }

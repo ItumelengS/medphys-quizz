@@ -11,7 +11,7 @@ export default function TimerRing({
   totalTime,
   size = 72,
 }: TimerRingProps) {
-  const strokeWidth = 4;
+  const strokeWidth = 6;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const progress = timeRemaining / totalTime;
@@ -19,10 +19,10 @@ export default function TimerRing({
 
   const color =
     progress > 0.5
-      ? "#00e5a0"
+      ? "#16a34a"
       : progress > 0.25
-        ? "#fbbf24"
-        : "#ef4444";
+        ? "#eab308"
+        : "#dc2626";
 
   return (
     <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
@@ -46,7 +46,7 @@ export default function TimerRing({
           fill="none"
           stroke={color}
           strokeWidth={strokeWidth}
-          strokeLinecap="round"
+          strokeLinecap="butt"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
           style={{ transition: "stroke-dashoffset 0.3s linear, stroke 0.5s ease" }}

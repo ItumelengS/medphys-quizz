@@ -8,11 +8,15 @@ interface LevelUpModalProps {
   onClose: () => void;
 }
 
+const SHAPES = ["circle", "square", "triangle"] as const;
+const COLORS = ["#dc2626", "#2563eb", "#eab308"];
+
 export default function LevelUpModal({ level, onClose }: LevelUpModalProps) {
   const [confettiPieces] = useState(() =>
     Array.from({ length: 20 }).map((_, i) => ({
       left: `${Math.random() * 100}%`,
-      background: ["#00e5a0", "#fbbf24", "#f472b6", "#60a5fa", "#c084fc"][i % 5],
+      color: COLORS[i % 3],
+      shape: SHAPES[i % 3],
       animation: `confetti-fall ${1.5 + Math.random() * 2}s ease-out ${Math.random() * 0.5}s forwards`,
     }))
   );
@@ -20,37 +24,54 @@ export default function LevelUpModal({ level, onClose }: LevelUpModalProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: "rgba(6, 10, 20, 0.9)", backdropFilter: "blur(8px)" }}
+      style={{ background: "rgba(10, 10, 10, 0.92)" }}
     >
       {/* Confetti */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {confettiPieces.map((piece, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 rounded-full"
+            className="absolute"
             style={{
               left: piece.left,
               top: "-10px",
-              background: piece.background,
               animation: piece.animation,
             }}
-          />
+          >
+            {piece.shape === "circle" && (
+              <div className="w-3 h-3 rounded-full" style={{ background: piece.color }} />
+            )}
+            {piece.shape === "square" && (
+              <div className="w-3 h-3" style={{ background: piece.color }} />
+            )}
+            {piece.shape === "triangle" && (
+              <div
+                style={{
+                  width: 0,
+                  height: 0,
+                  borderLeft: "6px solid transparent",
+                  borderRight: "6px solid transparent",
+                  borderBottom: `10px solid ${piece.color}`,
+                }}
+              />
+            )}
+          </div>
         ))}
       </div>
 
       <div className="animate-scale-in text-center max-w-sm">
         <div className="text-6xl mb-4">{level.icon}</div>
-        <h2 className="text-2xl font-black text-accent mb-2">Level Up!</h2>
-        <p className="text-text-primary text-lg font-bold mb-1">
+        <h2 className="text-2xl font-black text-bauhaus-blue mb-2 uppercase tracking-widest">Level Up!</h2>
+        <p className="text-text-primary text-lg font-light mb-1">
           You are now a
         </p>
-        <p className="text-3xl font-black mb-6" style={{ color: "#fbbf24" }}>
+        <p className="text-3xl font-black mb-6" style={{ color: "#eab308" }}>
           {level.title}
         </p>
         <button
           onClick={onClose}
-          className="px-8 py-3 rounded-xl font-bold text-bg transition-all hover:opacity-90 active:scale-95"
-          style={{ background: "#00e5a0" }}
+          className="px-8 py-3 rounded-none font-bold text-white transition-all hover:opacity-90 active:scale-95"
+          style={{ background: "#2563eb" }}
         >
           Continue
         </button>

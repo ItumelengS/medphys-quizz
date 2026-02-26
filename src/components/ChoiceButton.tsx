@@ -11,17 +11,17 @@ export default function ChoiceButton({
   text,
   state,
   onClick,
-  sectionColor = "#00e5a0",
+  sectionColor = "#2563eb",
 }: ChoiceButtonProps) {
   const baseClasses =
-    "w-full px-4 py-3.5 rounded-xl text-left text-sm font-medium transition-all duration-200 border cursor-pointer select-none";
+    "w-full px-4 py-3.5 rounded-none text-left text-sm font-light transition-all duration-200 border-2 cursor-pointer select-none";
 
   let stateClasses = "";
   let style: React.CSSProperties = {};
 
   switch (state) {
     case "idle":
-      stateClasses = "hover:-translate-y-0.5 active:scale-[0.98]";
+      stateClasses = "hover:border-l-4 hover:border-l-bauhaus-yellow active:scale-[0.98]";
       style = {
         background: `${sectionColor}08`,
         borderColor: `${sectionColor}26`,
@@ -31,24 +31,24 @@ export default function ChoiceButton({
     case "selected-correct":
       stateClasses = "animate-pulse-glow";
       style = {
-        background: "rgba(0, 229, 160, 0.15)",
-        borderColor: "#00e5a0",
-        color: "#00e5a0",
+        background: "rgba(22, 163, 74, 0.15)",
+        borderColor: "#16a34a",
+        color: "#16a34a",
       };
       break;
     case "selected-wrong":
       stateClasses = "animate-shake";
       style = {
-        background: "rgba(239, 68, 68, 0.15)",
-        borderColor: "#ef4444",
-        color: "#ef4444",
+        background: "rgba(220, 38, 38, 0.15)",
+        borderColor: "#dc2626",
+        color: "#dc2626",
       };
       break;
     case "reveal-correct":
       style = {
-        background: "rgba(0, 229, 160, 0.1)",
-        borderColor: "rgba(0, 229, 160, 0.4)",
-        color: "#00e5a0",
+        background: "rgba(22, 163, 74, 0.1)",
+        borderColor: "rgba(22, 163, 74, 0.4)",
+        color: "#16a34a",
       };
       break;
     case "disabled":

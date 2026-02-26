@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #060a14;
+  --bg: #0a0a0a;
   --surface: rgba(255, 255, 255, 0.025);
-  --surface-border: rgba(255, 255, 255, 0.06);
-  --accent: #00e5a0;
-  --accent-dim: rgba(0, 229, 160, 0.15);
-  --error: #ef4444;
-  --error-dim: rgba(239, 68, 68, 0.15);
+  --surface-border: rgba(255, 255, 255, 0.12);
+  --accent: #2563eb;
+  --accent-dim: rgba(37, 99, 235, 0.15);
+  --error: #dc2626;
+  --error-dim: rgba(220, 38, 38, 0.15);
   --text-primary: #e8ecf4;
   --text-secondary: #7a8599;
   --text-dim: #3d4756;
-  --gold: #f59e0b;
-  --gold-dim: rgba(245, 158, 11, 0.15);
+  --gold: #eab308;
+  --gold-dim: rgba(234, 179, 8, 0.15);
+  --bauhaus-red: #dc2626;
+  --bauhaus-blue: #2563eb;
+  --bauhaus-yellow: #eab308;
+  --success: #16a34a;
 }
 
 @theme inline {
@@ -28,6 +32,10 @@
   --color-text-dim: var(--text-dim);
   --color-gold: var(--gold);
   --color-gold-dim: var(--gold-dim);
+  --color-bauhaus-red: var(--bauhaus-red);
+  --color-bauhaus-blue: var(--bauhaus-blue);
+  --color-bauhaus-yellow: var(--bauhaus-yellow);
+  --color-success: var(--success);
   --font-sans: var(--font-outfit);
   --font-mono: var(--font-jetbrains-mono);
 }
@@ -42,6 +50,10 @@ body {
   font-family: var(--font-outfit), sans-serif;
   min-height: 100dvh;
   overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse 600px 400px at 10% 90%, rgba(37, 99, 235, 0.04), transparent),
+    radial-gradient(ellipse 500px 300px at 90% 10%, rgba(220, 38, 38, 0.03), transparent),
+    radial-gradient(ellipse 400px 300px at 50% 50%, rgba(234, 179, 8, 0.02), transparent);
 }
 
 /* Scrollbar */
@@ -53,7 +65,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--text-dim);
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 /* Animations */
@@ -81,10 +93,10 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(0, 229, 160, 0.4);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
   }
   50% {
-    box-shadow: 0 0 20px 4px rgba(0, 229, 160, 0.2);
+    box-shadow: 0 0 20px 4px rgba(37, 99, 235, 0.2);
   }
 }
 
@@ -153,3 +165,25 @@ body {
 .stagger-8 { animation-delay: 0.4s; }
 .stagger-9 { animation-delay: 0.45s; }
 .stagger-10 { animation-delay: 0.5s; }
+
+/* Bauhaus geometric shape helpers */
+.bauhaus-triangle {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid var(--bauhaus-yellow);
+}
+
+.bauhaus-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bauhaus-red);
+}
+
+.bauhaus-square {
+  width: 18px;
+  height: 18px;
+  background: var(--bauhaus-blue);
+}

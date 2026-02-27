@@ -183,6 +183,29 @@ export default function HomePage() {
         </div>
       </Link>
 
+      {/* Game Variants */}
+      <Link href="/games" className="block animate-fade-up stagger-2 mb-4">
+        <div
+          className="p-4 rounded-none border-2 border-bauhaus-blue/40 transition-all hover:border-l-4 hover:border-l-bauhaus-blue"
+          style={{ background: "rgba(37, 99, 235, 0.05)" }}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🎮</span>
+              <div>
+                <div className="font-bold text-bauhaus-blue text-sm uppercase tracking-wider">Game Variants</div>
+                <div className="text-text-secondary text-xs font-light">
+                  Sudden Death · Sprint · Crossword
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-1 text-lg">
+              <span>💀</span><span>🏃</span><span>🧩</span>
+            </div>
+          </div>
+        </div>
+      </Link>
+
       {/* Review badge */}
       {dueCount > 0 && (
         <Link href="/review" className="block animate-fade-up stagger-3 mb-6">
@@ -258,6 +281,10 @@ export default function HomePage() {
       {/* Bottom nav */}
       <div className="fixed bottom-0 left-0 right-0 border-t-2 border-bauhaus-blue bg-bg">
         <div className="max-w-lg mx-auto flex justify-around py-3 px-4">
+          <Link href="/games" className="flex flex-col items-center gap-1 text-text-secondary hover:text-text-primary transition-colors">
+            <span className="text-lg">🎮</span>
+            <span className="text-xs uppercase tracking-wider">Games</span>
+          </Link>
           <Link href="/tournaments" className="flex flex-col items-center gap-1 text-text-secondary hover:text-text-primary transition-colors">
             <span className="text-lg">⚔️</span>
             <span className="text-xs uppercase tracking-wider">Arena</span>

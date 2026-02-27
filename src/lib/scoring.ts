@@ -1,4 +1,4 @@
-import type { CareerLevel } from "./types";
+import type { CareerLevel, GameMode } from "./types";
 
 export const CAREER_LEVELS: CareerLevel[] = [
   { level: 1, title: "Intern", xpRequired: 0, icon: "🔬" },
@@ -65,7 +65,7 @@ export function calculatePoints(
 
 export function calculateXp(
   points: number,
-  mode: "speed" | "daily" | "review",
+  mode: GameMode,
   correct: number,
   total: number,
   dailyStreak: number
@@ -85,6 +85,12 @@ export function calculateXp(
     baseXp = correct * 5 + (total - correct) * 2;
   } else if (mode === "daily") {
     baseXp = Math.floor(points * 1.5);
+  } else if (mode === "sudden-death") {
+    baseXp = Math.floor(points * 2.0);
+  } else if (mode === "sprint") {
+    baseXp = Math.floor(points * 1.5);
+  } else if (mode === "crossword") {
+    baseXp = Math.floor(points * 1.8);
   } else {
     baseXp = points;
   }
@@ -98,6 +104,41 @@ export function calculateXp(
     perfectBonusXp,
     totalXp: baseXp + bonusXp,
   };
+}
+
+// ── Variant-specific point calculators ─────────────────────
+
+export function calculateSuddenDeathPoints(
+  correct: boolean,
+  streak: number
+): number {
+  if (!correct) return 0;
+  const base = 15;
+  const multiplier = getStreakMultiplier(streak);
+  return base * multiplier;
+}
+
+export function calculateSprintScore(
+  correct: number,
+  wrong: number,
+  timeRemaining: number
+): number {
+  return correct * 10 - wrong * 2 + Math.floor(timeRemaining) * 2;
+}
+
+export function calculateCrosswordScore(
+  wordsWithoutReveal: number,
+  wordsWithReveal: number,
+  allWords: boolean,
+  timerSelected: boolean,
+  remainingSeconds: number
+): number {
+  let score = wordsWithoutReveal * 20 + wordsWithReveal * 5;
+  if (allWords && wordsWithReveal === 0) score += 75;
+  if (timerSelected && remainingSeconds > 0) {
+    score += Math.floor(remainingSeconds / 10) * 5;
+  }
+  return score;
 }
 
 export function getGradeEmoji(accuracy: number): string {

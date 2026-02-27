@@ -88,7 +88,7 @@ export interface DbLeaderboardEntry {
   best_streak: number;
   section: string;
   section_name: string;
-  mode: "speed" | "daily" | "review";
+  mode: GameMode;
   played_at: string;
 }
 
@@ -145,6 +145,35 @@ export interface QuestionRecord {
   streak: number;
 }
 
+// ── Game variants ──────────────────────────────────────────
+export type GameVariant = "sudden-death" | "sprint" | "crossword";
+export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword";
+
+export interface CrosswordCell {
+  letter: string;
+  wordIndices: number[];
+  x: number;
+  y: number;
+}
+
+export interface CrosswordWord {
+  index: number;
+  clue: string;
+  answer: string;
+  questionId: string;
+  direction: "across" | "down";
+  startX: number;
+  startY: number;
+  cells: { x: number; y: number }[];
+}
+
+export interface CrosswordPuzzle {
+  width: number;
+  height: number;
+  grid: (CrosswordCell | null)[][];
+  words: CrosswordWord[];
+}
+
 // ── Leaderboard (client-facing) ────────────────────────────
 export interface LeaderboardEntry {
   id: string;
@@ -156,7 +185,7 @@ export interface LeaderboardEntry {
   section: string;
   sectionName: string;
   date: string;
-  mode: "speed" | "daily" | "review";
+  mode: GameMode;
 }
 
 // ── Power-ups ──────────────────────────────────────────────
@@ -191,7 +220,7 @@ export interface QuizState {
   streak: number;
   bestStreak: number;
   answers: AnswerRecord[];
-  mode: "speed" | "daily" | "review";
+  mode: GameMode;
   section: string;
   sectionName: string;
   timerSeconds: number;

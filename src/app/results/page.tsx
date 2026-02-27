@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Suspense, useState, useEffect } from "react";
 import { getGradeEmoji, getCareerLevel } from "@/lib/scoring";
+import { getVariantDisplayName } from "@/lib/game-variants";
 import { POWERUP_INFO } from "@/lib/types";
 import type { PowerUpType } from "@/lib/types";
 
@@ -88,7 +89,7 @@ function ResultsContent() {
         </h1>
         <p className="text-text-secondary text-sm font-light">{sectionName}</p>
         <p className="text-text-dim text-xs mt-1 uppercase tracking-widest">
-          {mode === "daily" ? "Daily Challenge" : mode === "review" ? "Review" : "Speed Round"}
+          {getVariantDisplayName(mode)}
         </p>
       </div>
 
@@ -163,7 +164,7 @@ function ResultsContent() {
       {/* Actions */}
       <div className="animate-fade-up stagger-3 flex flex-col gap-3">
         <Link
-          href={`/quiz/${section}`}
+          href={["sudden-death", "sprint", "crossword"].includes(mode) ? `/games/${mode}` : `/quiz/${section}`}
           className="block w-full text-center py-3.5 rounded-none font-bold text-white transition-all hover:opacity-90 active:scale-95"
           style={{ background: "#2563eb" }}
         >

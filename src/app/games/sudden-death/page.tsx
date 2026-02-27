@@ -18,6 +18,7 @@ import QuestionCard from "@/components/QuestionCard";
 import StreakBadge from "@/components/StreakBadge";
 
 const BASE_TIMER = 8;
+const READING_TIME = 5;
 const VICTORY_THRESHOLD = 25;
 const SURVIVAL_BONUS = 150;
 const ADVANCE_DELAY = 600;
@@ -32,6 +33,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 type GamePhase = "ready" | "playing" | "dead" | "victory";
+type QuestionPhase = "reading" | "answering";
 
 export default function SuddenDeathPage() {
   const router = useRouter();
@@ -50,29 +52,65 @@ export default function SuddenDeathPage() {
   const [pointsPopup, setPointsPopup] = useState<number | null>(null);
   const [shakeScreen, setShakeScreen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [questionPhase, setQuestionPhase] = useState<QuestionPhase>("answering");
+  const [readingTimeLeft, setReadingTimeLeft] = useState(READING_TIME);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const readingTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Fetch questions — load extra for progressive difficulty
-  useEffect(() => {
-    fetch(`/api/questions?shuffle=true&limit=50`)
+  // Fetch questions
+  function fetchQuestions() {
+    return fetch(`/api/questions?shuffle=true&limit=50`)
       .then((r) => r.json())
       .then((qs: DbQuestion[]) => {
         setQuestions(qs);
         if (qs.length > 0) setShuffledChoices(shuffleArray(qs[0].choices));
+        return qs;
       });
+  }
+
+  useEffect(() => {
+    fetchQuestions();
   }, []);
 
   const currentQuestion = questions[currentIndex];
   const correctCount = answers.filter((a) => a.correct).length;
+  const isCalc = currentQuestion ? isCalculationQuestion(currentQuestion.question) : false;
 
   const currentTimerTotal = currentQuestion
-    ? getAdaptiveTimer(BASE_TIMER, correctCount, isCalculationQuestion(currentQuestion.question))
+    ? getAdaptiveTimer(BASE_TIMER, correctCount, false)
     : BASE_TIMER;
 
-  // Timer
+  // Reading phase for calculation questions
   useEffect(() => {
     if (phase !== "playing" || !currentQuestion || selectedAnswer !== null) return;
+
+    if (isCalc) {
+      setQuestionPhase("reading");
+      setReadingTimeLeft(READING_TIME);
+      readingTimerRef.current = setInterval(() => {
+        setReadingTimeLeft((prev) => {
+          if (prev <= 0.1) {
+            clearInterval(readingTimerRef.current!);
+            setQuestionPhase("answering");
+            return 0;
+          }
+          return prev - 0.1;
+        });
+      }, 100);
+    } else {
+      setQuestionPhase("answering");
+    }
+
+    return () => {
+      if (readingTimerRef.current) clearInterval(readingTimerRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, phase, currentQuestion]);
+
+  // Answer timer — starts after reading phase ends
+  useEffect(() => {
+    if (phase !== "playing" || !currentQuestion || selectedAnswer !== null || questionPhase !== "answering") return;
 
     setTimeRemaining(currentTimerTotal);
     timerRef.current = setInterval(() => {
@@ -90,10 +128,11 @@ export default function SuddenDeathPage() {
       if (timerRef.current) clearInterval(timerRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex, phase, currentQuestion, currentTimerTotal]);
+  }, [currentIndex, phase, currentQuestion, currentTimerTotal, questionPhase]);
 
   const handleDeath = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
+    if (readingTimerRef.current) clearInterval(readingTimerRef.current);
     if (advanceRef.current) clearTimeout(advanceRef.current);
     setShakeScreen(true);
     setTimeout(() => setShakeScreen(false), 500);
@@ -158,15 +197,18 @@ export default function SuddenDeathPage() {
     setShuffledChoices(shuffleArray(questions[nextIndex].choices));
   }
 
-  function startGame() {
-    setPhase("playing");
+  async function startGame() {
     setCurrentIndex(0);
     setStreak(0);
     setBestStreak(0);
     setPoints(0);
     setAnswers([]);
     setSelectedAnswer(null);
-    if (questions.length > 0) setShuffledChoices(shuffleArray(questions[0].choices));
+    setQuestionPhase("answering");
+    // Re-fetch to get a fresh shuffled set — no repeats across retries
+    const qs = await fetchQuestions();
+    if (qs.length > 0) setShuffledChoices(shuffleArray(qs[0].choices));
+    setPhase("playing");
   }
 
   async function submitAndNavigate() {
@@ -238,6 +280,7 @@ export default function SuddenDeathPage() {
           </p>
           <div className="flex flex-col gap-2 text-xs text-text-dim mb-8">
             <div>1 life · {BASE_TIMER}s adaptive timer · 2x XP</div>
+            <div>Calculation Qs: {READING_TIME}s to read, then {BASE_TIMER}s to answer</div>
             <div>{SURVIVAL_BONUS} bonus pts for survival</div>
           </div>
           <button
@@ -370,7 +413,27 @@ export default function SuddenDeathPage() {
 
       {/* Timer & Score */}
       <div className="flex items-center justify-between mt-2 mb-6">
-        <TimerRing timeRemaining={timeRemaining} totalTime={currentTimerTotal} />
+        {questionPhase === "reading" ? (
+          <div className="relative flex items-center justify-center" style={{ width: 72, height: 72 }}>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="font-mono font-bold text-lg text-bauhaus-yellow">
+                {Math.ceil(readingTimeLeft)}
+              </span>
+            </div>
+            <svg width={72} height={72} className="-rotate-90">
+              <circle cx={36} cy={36} r={30} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth={6} />
+              <circle
+                cx={36} cy={36} r={30} fill="none" stroke="#eab308" strokeWidth={6}
+                strokeLinecap="butt"
+                strokeDasharray={2 * Math.PI * 30}
+                strokeDashoffset={2 * Math.PI * 30 * (1 - readingTimeLeft / READING_TIME)}
+                style={{ transition: "stroke-dashoffset 0.3s linear" }}
+              />
+            </svg>
+          </div>
+        ) : (
+          <TimerRing timeRemaining={timeRemaining} totalTime={currentTimerTotal} />
+        )}
         <div className="text-right">
           <div className="font-mono text-2xl font-bold text-text-primary">
             {correctCount}
@@ -380,6 +443,15 @@ export default function SuddenDeathPage() {
           </div>
         </div>
       </div>
+
+      {/* Reading phase label */}
+      {questionPhase === "reading" && (
+        <div className="text-center mb-3">
+          <span className="text-bauhaus-yellow text-xs font-mono uppercase tracking-widest animate-pulse">
+            Read the question...
+          </span>
+        </div>
+      )}
 
       {/* Question */}
       <div className="relative mb-6">
@@ -395,18 +467,31 @@ export default function SuddenDeathPage() {
         )}
       </div>
 
-      {/* Choices */}
-      <div className="grid grid-cols-1 gap-3 mb-4">
-        {shuffledChoices.map((choice) => (
-          <ChoiceButton
-            key={choice}
-            text={choice}
-            state={getChoiceState(choice)}
-            onClick={() => handleSelectAnswer(choice)}
-            sectionColor="#dc2626"
-          />
-        ))}
-      </div>
+      {/* Choices — hidden during reading phase */}
+      {questionPhase === "answering" ? (
+        <div className="grid grid-cols-1 gap-3 mb-4">
+          {shuffledChoices.map((choice) => (
+            <ChoiceButton
+              key={choice}
+              text={choice}
+              state={getChoiceState(choice)}
+              onClick={() => handleSelectAnswer(choice)}
+              sectionColor="#dc2626"
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-3 mb-4 opacity-20 pointer-events-none">
+          {shuffledChoices.map((choice) => (
+            <div
+              key={choice}
+              className="w-full px-4 py-3.5 rounded-none border-2 border-surface-border bg-surface/30 text-transparent select-none"
+            >
+              {choice}
+            </div>
+          ))}
+        </div>
+      )}
     </main>
   );
 }

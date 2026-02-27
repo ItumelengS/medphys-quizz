@@ -66,6 +66,7 @@ export async function GET() {
   return NextResponse.json({ locked: false, questions: selected });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function POST(_req: NextRequest) {
   // Daily submit is handled by /api/quiz/submit with mode="daily"
   // This endpoint just checks status

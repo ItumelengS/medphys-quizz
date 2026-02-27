@@ -13,7 +13,7 @@ export interface CrosswordClue {
   difficulty?: "easy" | "medium" | "hard";
 }
 
-// @ts-ignore — array literal too large for TS union inference
+// @ts-expect-error — array literal too large for TS union inference
 export const crosswordClues: CrosswordClue[] = [
   // ══════════════════════════════════════════════════════════════
   // ── Radiation Physics ────────────────────────────────────────

@@ -1,5 +1,5 @@
 export interface TournamentTypeConfig {
-  type: "blitz" | "rapid" | "marathon";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid";
   label: string;
   frequencyHours: number;
   durationMinutes: number;
@@ -9,6 +9,14 @@ export interface TournamentTypeConfig {
   icon: string;
   /** For marathon: fixed UTC hour. Others: repeating every N hours from midnight UTC. */
   fixedHourUTC?: number;
+  /** Crossword tournament: target words per puzzle */
+  wordsTarget?: number;
+  /** Whether this is a crossword tournament type */
+  isCrossword?: boolean;
+  /** Whether this is a sudden-death tournament type */
+  isSuddenDeath?: boolean;
+  /** Whether this is a sprint tournament type */
+  isSprint?: boolean;
 }
 
 export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
@@ -42,6 +50,87 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     color: "var(--bauhaus-yellow)",
     icon: "🏅",
     fixedHourUTC: 18,
+  },
+  "crossword-blitz": {
+    type: "crossword-blitz",
+    label: "Crossword Blitz",
+    frequencyHours: 3,
+    durationMinutes: 10,
+    timerSeconds: 300,
+    questionsPerRound: 1,
+    color: "#3b82f6",
+    icon: "🧩",
+    isCrossword: true,
+    wordsTarget: 20,
+  },
+  "crossword-rapid": {
+    type: "crossword-rapid",
+    label: "Crossword Rapid",
+    frequencyHours: 6,
+    durationMinutes: 20,
+    timerSeconds: 600,
+    questionsPerRound: 1,
+    color: "#6366f1",
+    icon: "🧩",
+    isCrossword: true,
+    wordsTarget: 20,
+  },
+  "crossword-marathon": {
+    type: "crossword-marathon",
+    label: "Crossword Marathon",
+    frequencyHours: 24,
+    durationMinutes: 45,
+    timerSeconds: 900,
+    questionsPerRound: 1,
+    color: "#8b5cf6",
+    icon: "🧩",
+    fixedHourUTC: 12,
+    isCrossword: true,
+    wordsTarget: 20,
+  },
+  "sudden-death-blitz": {
+    type: "sudden-death-blitz",
+    label: "Sudden Death Blitz",
+    frequencyHours: 3,
+    durationMinutes: 15,
+    timerSeconds: 8,
+    questionsPerRound: 25,
+    color: "#991b1b",
+    icon: "💀",
+    isSuddenDeath: true,
+  },
+  "sudden-death-rapid": {
+    type: "sudden-death-rapid",
+    label: "Sudden Death Rapid",
+    frequencyHours: 6,
+    durationMinutes: 30,
+    timerSeconds: 8,
+    questionsPerRound: 25,
+    color: "#7f1d1d",
+    icon: "💀",
+    isSuddenDeath: true,
+  },
+  "sprint-blitz": {
+    type: "sprint-blitz",
+    label: "Sprint Blitz",
+    frequencyHours: 2,
+    durationMinutes: 15,
+    timerSeconds: 60,
+    questionsPerRound: 50,
+    color: "#ca8a04",
+    icon: "🏃",
+    isSprint: true,
+  },
+  "sprint-rapid": {
+    type: "sprint-rapid",
+    label: "Sprint Rapid",
+    frequencyHours: 4,
+    durationMinutes: 30,
+    timerSeconds: 60,
+    questionsPerRound: 50,
+    color: "#a16207",
+    icon: "🏃",
+    isSprint: true,
   },
 };
 

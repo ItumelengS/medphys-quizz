@@ -7,11 +7,25 @@ export async function GET(req: NextRequest) {
   const section = searchParams.get("section");
   const shuffle = searchParams.get("shuffle") === "true";
   const limit = parseInt(searchParams.get("limit") || "0") || undefined;
+  const difficulty = searchParams.get("difficulty");
+  const minDifficulty = searchParams.get("minDifficulty");
+  const maxDifficulty = searchParams.get("maxDifficulty");
 
   let query = supabase.from("questions").select("*");
 
   if (section && section !== "all") {
     query = query.eq("section_id", section);
+  }
+
+  if (difficulty) {
+    query = query.eq("difficulty", parseInt(difficulty));
+  } else {
+    if (minDifficulty) {
+      query = query.gte("difficulty", parseInt(minDifficulty));
+    }
+    if (maxDifficulty) {
+      query = query.lte("difficulty", parseInt(maxDifficulty));
+    }
   }
 
   const { data, error } = await query;

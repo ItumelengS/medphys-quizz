@@ -6,28 +6,23 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { generateCrossword } from "@/lib/crossword-generator";
 import { calculateCrosswordScore, calculateXp } from "@/lib/scoring";
-import { getCrosswordClues, getCrosswordCategories } from "@/lib/crossword-clues";
-import type { CrosswordPuzzle, DbQuestion, DbSection } from "@/lib/types";
+import type { CrosswordPuzzle, DbCrosswordClue } from "@/lib/types";
 import CrosswordGrid from "@/components/CrosswordGrid";
 
 type Phase = "setup" | "playing" | "complete";
 type TimerOption = null | 300 | 600 | 900;
-type ClueSource = "quiz" | "crossword";
 
 export default function CrosswordPage() {
   const router = useRouter();
   const { data: session } = useSession();
 
   const [phase, setPhase] = useState<Phase>("setup");
-  const [sections, setSections] = useState<DbSection[]>([]);
-  const [clueSource, setClueSource] = useState<ClueSource>("crossword");
-  const [selectedSection, setSelectedSection] = useState<string>("all");
+  const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [timerOption, setTimerOption] = useState<TimerOption>(null);
   const [puzzle, setPuzzle] = useState<CrosswordPuzzle | null>(null);
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState("");
-  const crosswordCategories = getCrosswordCategories();
 
   // Game state
   const [timeElapsed, setTimeElapsed] = useState(0);
@@ -36,16 +31,16 @@ export default function CrosswordPage() {
   const [wordsRevealed, setWordsRevealed] = useState(0);
   const [allDone, setAllDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [questionIds, setQuestionIds] = useState<string[]>([]);
+  const [clueIds, setClueIds] = useState<string[]>([]);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
 
-  // Fetch sections
+  // Fetch categories from DB
   useEffect(() => {
-    fetch("/api/sections")
+    fetch("/api/crossword-clues/categories")
       .then((r) => r.json())
-      .then((data) => setSections(Array.isArray(data) ? data : []));
+      .then((data) => setCategories(Array.isArray(data) ? data : []));
   }, []);
 
   async function generatePuzzle() {
@@ -53,50 +48,34 @@ export default function CrosswordPage() {
     setError("");
 
     try {
-      let entries: { answer: string; clue: string; questionId: string }[];
+      const params = new URLSearchParams({ limit: "50" });
+      if (selectedCategory !== "all") params.set("category", selectedCategory);
 
-      if (clueSource === "crossword") {
-        const clues = getCrosswordClues(
-          selectedCategory !== "all" ? selectedCategory : undefined,
-          30
-        );
-        if (clues.length < 10) {
-          setError("Not enough clues in this category for a crossword.");
-          setGenerating(false);
-          return;
-        }
-        entries = clues.map((c) => ({
-          answer: c.answer,
-          clue: c.clue,
-          questionId: c.id,
-        }));
-      } else {
-        const url = `/api/questions?section=${selectedSection}&shuffle=true&limit=30`;
-        const res = await fetch(url);
-        const qs: DbQuestion[] = await res.json();
+      const res = await fetch(`/api/crossword-clues?${params}`);
+      const clues: DbCrosswordClue[] = await res.json();
 
-        if (qs.length < 10) {
-          setError("Not enough questions in this section for a crossword.");
-          setGenerating(false);
-          return;
-        }
-        entries = qs.map((q) => ({
-          answer: q.answer,
-          clue: q.question,
-          questionId: q.id,
-        }));
+      if (clues.length < 10) {
+        setError("Not enough clues in this category for a crossword.");
+        setGenerating(false);
+        return;
       }
+
+      const entries = clues.map((c) => ({
+        answer: c.answer,
+        clue: c.clue,
+        questionId: c.id,
+      }));
 
       const result = generateCrossword(entries);
 
       if (!result || result.words.length < 6) {
-        setError("Could not generate a good crossword. Try a different section.");
+        setError("Could not generate a good crossword. Try a different category.");
         setGenerating(false);
         return;
       }
 
       setPuzzle(result);
-      setQuestionIds(result.words.map((w) => w.questionId));
+      setClueIds(result.words.map((w) => w.questionId));
       setWordsCompleted(0);
       setWordsRevealed(0);
       setAllDone(false);
@@ -176,8 +155,8 @@ export default function CrosswordPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           variant: "crossword",
-          answers: questionIds.map((qid) => ({
-            questionId: qid,
+          answers: clueIds.map((cid) => ({
+            questionId: cid,
             correct: true,
             timeRemaining: 0,
             pointsEarned: 0,
@@ -186,10 +165,8 @@ export default function CrosswordPage() {
           total: totalWords,
           points,
           bestStreak: 0,
-          section: clueSource === "crossword" ? selectedCategory : selectedSection,
-          sectionName: clueSource === "crossword"
-            ? (selectedCategory === "all" ? "All Categories" : selectedCategory)
-            : (selectedSection === "all" ? "All Topics" : sections.find((s) => s.id === selectedSection)?.name || selectedSection),
+          section: selectedCategory,
+          sectionName: selectedCategory === "all" ? "All Categories" : selectedCategory,
           durationSeconds: timeElapsed,
           metadata: {
             wordsWithoutReveal,
@@ -201,15 +178,13 @@ export default function CrosswordPage() {
       });
     }
 
-    const sName = clueSource === "crossword"
-      ? (selectedCategory === "all" ? "Crossword" : `Crossword — ${selectedCategory}`)
-      : (selectedSection === "all" ? "Crossword" : `Crossword — ${sections.find((s) => s.id === selectedSection)?.name || ""}`);
+    const sName = selectedCategory === "all" ? "Crossword" : `Crossword — ${selectedCategory}`;
     const resultParams = new URLSearchParams({
       score: wordsCompleted.toString(),
       total: totalWords.toString(),
       points: points.toString(),
       bestStreak: "0",
-      section: selectedSection,
+      section: selectedCategory,
       sectionName: sName,
       mode: "crossword",
       xp: xpResult.totalXp.toString(),
@@ -239,102 +214,40 @@ export default function CrosswordPage() {
           <h1 className="text-3xl font-black text-bauhaus-blue mb-2">CROSSWORD</h1>
           <div className="w-12 h-1 bg-bauhaus-blue mx-auto mb-3" />
           <p className="text-text-secondary text-sm font-light">
-            Medical physics crossword. Fill the grid using quiz question clues.
+            Medical physics crossword. Fill the grid using crossword-style clues.
           </p>
         </div>
 
-        {/* Source toggle */}
+        {/* Category picker */}
         <div className="mb-6">
           <label className="text-xs text-text-dim uppercase tracking-wider font-bold mb-2 block">
-            Clue Source
+            Category
           </label>
           <div className="grid grid-cols-2 gap-2">
             <button
-              onClick={() => setClueSource("crossword")}
+              onClick={() => setSelectedCategory("all")}
               className={`p-3 rounded-none text-sm font-bold border-2 transition-all ${
-                clueSource === "crossword"
+                selectedCategory === "all"
                   ? "border-bauhaus-blue text-bauhaus-blue bg-bauhaus-blue/10"
                   : "border-surface-border text-text-secondary hover:bg-surface"
               }`}
             >
-              🧩 Crossword Clues
+              All Categories
             </button>
-            <button
-              onClick={() => setClueSource("quiz")}
-              className={`p-3 rounded-none text-sm font-bold border-2 transition-all ${
-                clueSource === "quiz"
-                  ? "border-bauhaus-blue text-bauhaus-blue bg-bauhaus-blue/10"
-                  : "border-surface-border text-text-secondary hover:bg-surface"
-              }`}
-            >
-              📝 Quiz Questions
-            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`p-3 rounded-none text-sm font-bold border-2 transition-all text-left ${
+                  selectedCategory === cat
+                    ? "border-bauhaus-blue text-bauhaus-blue bg-bauhaus-blue/10"
+                    : "border-surface-border text-text-secondary hover:bg-surface"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
-          <p className="text-text-dim text-xs mt-1.5">
-            {clueSource === "crossword"
-              ? "Standalone crossword-style clues with concise hints."
-              : "Clues from the quiz question bank."}
-          </p>
-        </div>
-
-        {/* Category / Section picker */}
-        <div className="mb-6">
-          <label className="text-xs text-text-dim uppercase tracking-wider font-bold mb-2 block">
-            {clueSource === "crossword" ? "Category" : "Topic"}
-          </label>
-          {clueSource === "crossword" ? (
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                onClick={() => setSelectedCategory("all")}
-                className={`p-3 rounded-none text-sm font-bold border-2 transition-all ${
-                  selectedCategory === "all"
-                    ? "border-bauhaus-blue text-bauhaus-blue bg-bauhaus-blue/10"
-                    : "border-surface-border text-text-secondary hover:bg-surface"
-                }`}
-              >
-                All Categories
-              </button>
-              {crosswordCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`p-3 rounded-none text-sm font-bold border-2 transition-all text-left ${
-                    selectedCategory === cat
-                      ? "border-bauhaus-blue text-bauhaus-blue bg-bauhaus-blue/10"
-                      : "border-surface-border text-text-secondary hover:bg-surface"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                onClick={() => setSelectedSection("all")}
-                className={`p-3 rounded-none text-sm font-bold border-2 transition-all ${
-                  selectedSection === "all"
-                    ? "border-bauhaus-blue text-bauhaus-blue bg-bauhaus-blue/10"
-                    : "border-surface-border text-text-secondary hover:bg-surface"
-                }`}
-              >
-                All Topics
-              </button>
-              {sections.map((s) => (
-                <button
-                  key={s.id}
-                  onClick={() => setSelectedSection(s.id)}
-                  className={`p-3 rounded-none text-sm font-bold border-2 transition-all text-left ${
-                    selectedSection === s.id
-                      ? "border-bauhaus-blue text-bauhaus-blue bg-bauhaus-blue/10"
-                      : "border-surface-border text-text-secondary hover:bg-surface"
-                  }`}
-                >
-                  <span className="mr-1">{s.icon}</span> {s.name}
-                </button>
-              ))}
-            </div>
-          )}
         </div>
 
         {/* Timer picker */}

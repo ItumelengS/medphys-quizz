@@ -7,6 +7,7 @@ export interface Question {
   a: string;
   c: string[];
   e: string;
+  d: number;
 }
 
 export interface Section {
@@ -46,6 +47,7 @@ export interface DbQuestion {
   answer: string;
   choices: string[];
   explanation: string;
+  difficulty: number;
 }
 
 export interface DbProfile {
@@ -101,7 +103,7 @@ export interface DbDailyChallenge {
 // ── Tournament types ─────────────────────────────────────────
 export interface DbTournament {
   id: string;
-  type: "blitz" | "rapid" | "marathon";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid";
   starts_at: string;
   ends_at: string;
   status: "upcoming" | "active" | "finished";
@@ -131,6 +133,14 @@ export interface DbTournamentRound {
   time_bonus: number;
   fire_multiplier: number;
   played_at: string;
+}
+
+// ── Crossword clues (standalone table) ───────────────────
+export interface DbCrosswordClue {
+  id: string;
+  clue: string;
+  answer: string;
+  category: string;
 }
 
 // ── Spaced repetition (client-side computation) ────────────

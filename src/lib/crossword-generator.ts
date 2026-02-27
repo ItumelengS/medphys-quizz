@@ -14,10 +14,10 @@ interface Placement {
   intersections: number;
 }
 
-const GRID_SIZE = 15;
-const TARGET_MIN = 8;
-const TARGET_MAX = 12;
-const MAX_ATTEMPTS = 3;
+const GRID_SIZE = 20;
+const TARGET_MIN = 15;
+const TARGET_MAX = 20;
+const MAX_ATTEMPTS = 5;
 
 export function generateCrossword(
   entries: WordEntry[]

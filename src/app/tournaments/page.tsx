@@ -95,19 +95,59 @@ export default function TournamentLobby() {
   function getColorClass(type: string) {
     if (type === "blitz") return "border-l-bauhaus-red";
     if (type === "rapid") return "border-l-bauhaus-blue";
+    if (type === "crossword-blitz") return "border-l-blue-500";
+    if (type === "crossword-rapid") return "border-l-indigo-500";
+    if (type === "crossword-marathon") return "border-l-violet-500";
+    if (type.startsWith("sudden-death-")) return "border-l-red-900";
+    if (type.startsWith("sprint-")) return "border-l-yellow-600";
     return "border-l-bauhaus-yellow";
   }
 
   function getTextColorClass(type: string) {
     if (type === "blitz") return "text-bauhaus-red";
     if (type === "rapid") return "text-bauhaus-blue";
+    if (type === "crossword-blitz") return "text-blue-500";
+    if (type === "crossword-rapid") return "text-indigo-500";
+    if (type === "crossword-marathon") return "text-violet-500";
+    if (type.startsWith("sudden-death-")) return "text-red-900";
+    if (type.startsWith("sprint-")) return "text-yellow-600";
     return "text-bauhaus-yellow";
   }
 
   function getBgStyle(type: string) {
     if (type === "blitz") return { background: "rgba(220, 38, 38, 0.05)" };
     if (type === "rapid") return { background: "rgba(37, 99, 235, 0.05)" };
+    if (type === "crossword-blitz") return { background: "rgba(59, 130, 246, 0.05)" };
+    if (type === "crossword-rapid") return { background: "rgba(99, 102, 241, 0.05)" };
+    if (type === "crossword-marathon") return { background: "rgba(139, 92, 246, 0.05)" };
+    if (type.startsWith("sudden-death-")) return { background: "rgba(127, 29, 29, 0.05)" };
+    if (type.startsWith("sprint-")) return { background: "rgba(202, 138, 4, 0.05)" };
     return { background: "rgba(234, 179, 8, 0.05)" };
+  }
+
+  function isCrosswordType(type: string) {
+    return type.startsWith("crossword-");
+  }
+
+  function isSuddenDeathType(type: string) {
+    return type.startsWith("sudden-death-");
+  }
+
+  function isSprintType(type: string) {
+    return type.startsWith("sprint-");
+  }
+
+  function getTypeDescription(type: string, config: ReturnType<typeof getTypeConfig>) {
+    if (isCrosswordType(type)) {
+      return `${Math.floor(config.timerSeconds / 60)}min timer · ${config.wordsTarget || 20} words`;
+    }
+    if (isSuddenDeathType(type)) {
+      return `1 life · ${config.timerSeconds}s adaptive · survive 25`;
+    }
+    if (isSprintType(type)) {
+      return `${config.timerSeconds}s clock · -3s wrong penalty`;
+    }
+    return `${config.timerSeconds}s timer · ${config.questionsPerRound} questions`;
   }
 
   return (
@@ -160,7 +200,7 @@ export default function TournamentLobby() {
                     <TournamentTimeRemaining target={t.ends_at} />
                   </div>
                   <div className="flex items-center justify-between text-xs text-text-secondary">
-                    <span>{config.timerSeconds}s timer · {config.questionsPerRound} questions</span>
+                    <span>{getTypeDescription(t.type, config)}</span>
                     <span>{t.participant_count} players</span>
                   </div>
                 </button>
@@ -197,7 +237,7 @@ export default function TournamentLobby() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between text-xs text-text-dim">
-                    <span>{config.timerSeconds}s timer · {config.questionsPerRound}q · {config.durationMinutes}min</span>
+                    <span>{getTypeDescription(t.type, config)} · {config.durationMinutes}min</span>
                     <span>{t.participant_count} joined</span>
                   </div>
                 </button>

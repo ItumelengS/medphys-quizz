@@ -95,22 +95,54 @@ export default function TournamentDetailPage({
   const isFinished = tournament.status === "finished";
   const hasJoined = !!userRecord;
 
+  const isCrossword = tournament.type.startsWith("crossword-");
+  const isSuddenDeath = tournament.type.startsWith("sudden-death-");
+  const isSprint = tournament.type.startsWith("sprint-");
+
   function getColorClass(type: string) {
     if (type === "blitz") return "text-bauhaus-red";
     if (type === "rapid") return "text-bauhaus-blue";
+    if (type === "crossword-blitz") return "text-blue-500";
+    if (type === "crossword-rapid") return "text-indigo-500";
+    if (type === "crossword-marathon") return "text-violet-500";
+    if (type === "sudden-death-blitz") return "text-red-900";
+    if (type === "sudden-death-rapid") return "text-red-950";
+    if (type === "sprint-blitz") return "text-yellow-600";
+    if (type === "sprint-rapid") return "text-yellow-700";
     return "text-bauhaus-yellow";
   }
 
   function getBorderColor(type: string) {
     if (type === "blitz") return "border-bauhaus-red";
     if (type === "rapid") return "border-bauhaus-blue";
+    if (type === "crossword-blitz") return "border-blue-500";
+    if (type === "crossword-rapid") return "border-indigo-500";
+    if (type === "crossword-marathon") return "border-violet-500";
+    if (type === "sudden-death-blitz" || type === "sudden-death-rapid") return "border-red-900";
+    if (type === "sprint-blitz" || type === "sprint-rapid") return "border-yellow-600";
     return "border-bauhaus-yellow";
   }
 
   function getBgStyle(type: string) {
     if (type === "blitz") return { background: "rgba(220, 38, 38, 0.08)" };
     if (type === "rapid") return { background: "rgba(37, 99, 235, 0.08)" };
+    if (type === "crossword-blitz") return { background: "rgba(59, 130, 246, 0.08)" };
+    if (type === "crossword-rapid") return { background: "rgba(99, 102, 241, 0.08)" };
+    if (type === "crossword-marathon") return { background: "rgba(139, 92, 246, 0.08)" };
+    if (type.startsWith("sudden-death-")) return { background: "rgba(127, 29, 29, 0.08)" };
+    if (type.startsWith("sprint-")) return { background: "rgba(202, 138, 4, 0.08)" };
     return { background: "rgba(234, 179, 8, 0.08)" };
+  }
+
+  function getAccentBg(type: string) {
+    if (type === "blitz") return "bg-bauhaus-red";
+    if (type === "rapid") return "bg-bauhaus-blue";
+    if (type === "crossword-blitz") return "bg-blue-500";
+    if (type === "crossword-rapid") return "bg-indigo-500";
+    if (type === "crossword-marathon") return "bg-violet-500";
+    if (type.startsWith("sudden-death-")) return "bg-red-900";
+    if (type.startsWith("sprint-")) return "bg-yellow-600";
+    return "bg-bauhaus-yellow";
   }
 
   return (
@@ -127,11 +159,18 @@ export default function TournamentDetailPage({
               {config.label} Arena
             </h1>
             <div className="text-text-secondary text-xs font-mono">
-              {config.timerSeconds}s · {config.questionsPerRound}q · {config.durationMinutes}min
+              {isCrossword
+                ? `${Math.floor(config.timerSeconds / 60)}min · ${config.wordsTarget || 20} words · ${config.durationMinutes}min`
+                : isSuddenDeath
+                  ? `1 life · ${config.timerSeconds}s adaptive · ${config.durationMinutes}min`
+                  : isSprint
+                    ? `${config.timerSeconds}s clock · -3s penalty · ${config.durationMinutes}min`
+                    : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
+              }
             </div>
           </div>
         </div>
-        <div className={`w-12 h-1 mt-2 ${tournament.type === "blitz" ? "bg-bauhaus-red" : tournament.type === "rapid" ? "bg-bauhaus-blue" : "bg-bauhaus-yellow"}`} />
+        <div className={`w-12 h-1 mt-2 ${getAccentBg(tournament.type)}`} />
       </div>
 
       {/* Status banner */}
@@ -293,11 +332,20 @@ export default function TournamentDetailPage({
                 💀 Berserk
               </button>
               <button
-                onClick={() => router.push(`/tournaments/${id}/play?berserk=${berserk}`)}
+                onClick={() => {
+                  const playPath = isCrossword
+                    ? `/tournaments/${id}/play-crossword?berserk=${berserk}`
+                    : isSuddenDeath
+                      ? `/tournaments/${id}/play-sudden-death?berserk=${berserk}`
+                      : isSprint
+                        ? `/tournaments/${id}/play-sprint?berserk=${berserk}`
+                        : `/tournaments/${id}/play?berserk=${berserk}`;
+                  router.push(playPath);
+                }}
                 className={`flex-1 py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest transition-all ${getBorderColor(tournament.type)} hover:scale-[1.01]`}
                 style={getBgStyle(tournament.type)}
               >
-                Play Round
+                {isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : "Play Round"}
               </button>
             </div>
           )}

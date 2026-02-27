@@ -20,6 +20,9 @@ export async function GET() {
           timerSeconds: config.timerSeconds,
           questionsPerRound: config.questionsPerRound,
           durationMinutes: config.durationMinutes,
+          ...(config.isCrossword ? { isCrossword: true, wordsTarget: config.wordsTarget } : {}),
+          ...(config.isSuddenDeath ? { isSuddenDeath: true } : {}),
+          ...(config.isSprint ? { isSprint: true } : {}),
         },
       },
       { onConflict: "type,starts_at", ignoreDuplicates: true }

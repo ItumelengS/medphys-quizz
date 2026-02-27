@@ -32,6 +32,7 @@ interface RawQuestion {
   a: string;
   c: string[];
   e: string;
+  d: number;
 }
 
 interface RawSection {
@@ -81,6 +82,7 @@ async function seed() {
       answer: q.a,
       choices: q.c,
       explanation: q.e,
+      difficulty: q.d ?? 5,
     }));
 
     const { error: qErr } = await supabase

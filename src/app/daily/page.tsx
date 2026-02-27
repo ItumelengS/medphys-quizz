@@ -8,7 +8,6 @@ import { getNextDailyReset, formatCountdown } from "@/lib/daily-seed";
 import {
   calculatePoints,
   calculateXp,
-  getCareerLevel,
   isCalculationQuestion,
   getAdaptiveTimer,
   TIMER_WRONG_RECOVERY,
@@ -152,9 +151,6 @@ export default function DailyPage() {
   }
 
   function finishDaily() {
-    const prevXp = session?.user?.xp || 0;
-    const prevLevel = getCareerLevel(prevXp);
-
     const xpResult = calculateXp(points, "daily", score, questions.length, 1);
 
     const submitAnswers = answers.map((a) => ({
@@ -179,9 +175,6 @@ export default function DailyPage() {
       }),
     });
 
-    const newLevel = getCareerLevel(prevXp + xpResult.totalXp);
-    const leveledUp = newLevel.level > prevLevel.level;
-
     const resultParams = new URLSearchParams({
       score: score.toString(),
       total: questions.length.toString(),
@@ -194,7 +187,6 @@ export default function DailyPage() {
       baseXp: xpResult.baseXp.toString(),
       bonusXp: xpResult.bonusXp.toString(),
       perfectBonus: xpResult.perfectBonusXp.toString(),
-      leveledUp: leveledUp ? newLevel.level.toString() : "",
     });
     router.push(`/results?${resultParams.toString()}`);
   }

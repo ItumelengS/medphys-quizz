@@ -22,7 +22,7 @@ export async function GET() {
           durationMinutes: config.durationMinutes,
         },
       },
-      { onConflict: "idx_tournaments_type_starts", ignoreDuplicates: true }
+      { onConflict: "type,starts_at", ignoreDuplicates: true }
     );
   }
 

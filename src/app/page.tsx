@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { getXpProgress, getStreakEmoji } from "@/lib/scoring";
+import { getXpProgress, getStreakEmoji, getConfirmedCareerLevel, isExamReady, getCareerLevel } from "@/lib/scoring";
 import { getNextDailyReset, formatCountdown } from "@/lib/daily-seed";
 import type { DbSection } from "@/lib/types";
 import ProgressBar from "@/components/ProgressBar";
@@ -11,7 +11,7 @@ import SectionMasteryRing from "@/components/SectionMasteryRing";
 import DonationCard from "@/components/DonationCard";
 
 interface StatsData {
-  profile: { xp: number; display_name: string } | null;
+  profile: { xp: number; display_name: string; confirmed_level: number } | null;
   stats: {
     daily_streak: number;
     total_answered: number;
@@ -57,7 +57,10 @@ export default function HomePage() {
   if (!session || !statsData) return null;
 
   const xp = statsData.profile?.xp || 0;
+  const confirmedLevel = statsData.profile?.confirmed_level || 1;
+  const confirmedCareer = getConfirmedCareerLevel(confirmedLevel);
   const xpInfo = getXpProgress(xp);
+  const examReady = isExamReady(xp, confirmedLevel);
   const sections = statsData.sections || [];
   const dailyStreak = statsData.stats?.daily_streak || 0;
 
@@ -76,14 +79,14 @@ export default function HomePage() {
       </div>
 
       {/* Level & XP */}
-      <div className="animate-fade-up stagger-1 mb-6 p-4 rounded-none bg-surface border-2 border-surface-border border-l-4 border-l-bauhaus-blue">
+      <div className={`animate-fade-up stagger-1 mb-6 p-4 rounded-none bg-surface border-2 border-surface-border border-l-4 ${examReady ? "border-l-bauhaus-yellow" : "border-l-bauhaus-blue"}`}>
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">{xpInfo.current.icon}</span>
+            <span className="text-2xl">{confirmedCareer.icon}</span>
             <div>
-              <div className="font-bold text-sm">{xpInfo.current.title}</div>
+              <div className="font-bold text-sm">{confirmedCareer.title}</div>
               <div className="text-text-secondary text-xs font-mono uppercase tracking-widest">
-                Level {xpInfo.current.level}
+                Level {confirmedCareer.level}
               </div>
             </div>
           </div>
@@ -91,15 +94,42 @@ export default function HomePage() {
             <div className="font-mono text-sm font-bold text-bauhaus-blue">
               {xp.toLocaleString()} XP
             </div>
-            {xpInfo.next && (
+            {examReady ? (
+              <div className="text-bauhaus-yellow text-xs font-mono font-bold uppercase animate-pulse">
+                Exam Ready
+              </div>
+            ) : xpInfo.next ? (
               <div className="text-text-dim text-xs font-mono">
                 {xpInfo.xpToNext.toLocaleString()} to {xpInfo.next.title}
               </div>
-            )}
+            ) : null}
           </div>
         </div>
-        <ProgressBar progress={xpInfo.progressPercent} />
+        <ProgressBar progress={examReady ? 100 : xpInfo.progressPercent} color={examReady ? "#eab308" : undefined} />
       </div>
+
+      {/* Level-Up Exam Card */}
+      {examReady && (
+        <Link href="/level-up" className="block animate-fade-up stagger-1 mb-4">
+          <div
+            className="p-4 rounded-none border-2 border-bauhaus-yellow transition-all hover:border-l-4 hover:border-l-bauhaus-yellow"
+            style={{ background: "rgba(234, 179, 8, 0.08)" }}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🎯</span>
+                <div>
+                  <div className="font-bold text-bauhaus-yellow text-sm uppercase tracking-wider">Level-Up Exam</div>
+                  <div className="text-text-secondary text-xs font-light">
+                    Pass to become {getCareerLevel(xp).title}
+                  </div>
+                </div>
+              </div>
+              <div className="text-bauhaus-yellow font-bold text-lg animate-pulse">→</div>
+            </div>
+          </div>
+        </Link>
+      )}
 
       {/* Daily Challenge */}
       <Link href="/daily" className="block animate-fade-up stagger-2 mb-4">

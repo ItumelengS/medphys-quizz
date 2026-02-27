@@ -65,7 +65,10 @@ export async function GET() {
   }
 
   return NextResponse.json({
-    profile: profileRes.data,
+    profile: {
+      ...profileRes.data,
+      confirmed_level: profileRes.data?.confirmed_level || 1,
+    },
     stats: statsRes.data,
     sections: sectionsRes.data,
     sectionMastery,

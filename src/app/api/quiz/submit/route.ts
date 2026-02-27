@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 import { calculateXp } from "@/lib/scoring";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
+import { parseInventory, awardPowerUp } from "@/lib/powerups";
 
 interface AnswerPayload {
   questionId: string;
@@ -126,7 +127,7 @@ export async function POST(req: NextRequest) {
   // 6. Add leaderboard entry
   const { data: profile } = await supabase
     .from("profiles")
-    .select("display_name, xp")
+    .select("display_name, xp, powerups")
     .eq("id", userId)
     .single();
 
@@ -142,9 +143,56 @@ export async function POST(req: NextRequest) {
     mode,
   });
 
+  // 7. Award power-ups
+  const awardedPowerUps: string[] = [];
+  let currentInventory = parseInventory(profile?.powerups);
+
+  // Get current games_played count to check "every 5 quizzes"
+  const { data: currentStats } = await supabase
+    .from("user_stats")
+    .select("games_played")
+    .eq("user_id", userId)
+    .single();
+
+  const gamesPlayed = currentStats?.games_played || 0;
+  if (gamesPlayed > 0 && gamesPlayed % 5 === 0) {
+    const result = awardPowerUp(currentInventory);
+    if (result.awarded) {
+      currentInventory = result.updated;
+      awardedPowerUps.push(result.awarded);
+    }
+  }
+
+  // Perfect score bonus power-up
+  if (score === total && total > 0) {
+    const result = awardPowerUp(currentInventory);
+    if (result.awarded) {
+      currentInventory = result.updated;
+      awardedPowerUps.push(result.awarded);
+    }
+  }
+
+  // Daily streak milestones (3, 7, 14)
+  if (isDailyMode && [3, 7, 14].includes(dailyStreak)) {
+    const result = awardPowerUp(currentInventory);
+    if (result.awarded) {
+      currentInventory = result.updated;
+      awardedPowerUps.push(result.awarded);
+    }
+  }
+
+  // Update powerups in profile if any were awarded
+  if (awardedPowerUps.length > 0) {
+    await supabase
+      .from("profiles")
+      .update({ powerups: currentInventory })
+      .eq("id", userId);
+  }
+
   return NextResponse.json({
     xp: xpResult,
     newTotalXp: profile ? profile.xp + xpResult.totalXp : xpResult.totalXp,
     dailyStreak,
+    awardedPowerUps,
   });
 }

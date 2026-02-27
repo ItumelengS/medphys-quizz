@@ -159,6 +159,21 @@ export interface LeaderboardEntry {
   mode: "speed" | "daily" | "review";
 }
 
+// ── Power-ups ──────────────────────────────────────────────
+export type PowerUpType = "fifty_fifty" | "time_freeze";
+
+export interface PowerUpInventory {
+  fifty_fifty: number;
+  time_freeze: number;
+}
+
+export const POWERUP_INFO: Record<PowerUpType, { name: string; icon: string; description: string }> = {
+  fifty_fifty: { name: "50/50", icon: "✂️", description: "Eliminates 2 wrong answers" },
+  time_freeze: { name: "Time Freeze", icon: "⏸️", description: "Pauses timer for 5 seconds" },
+};
+
+export const MAX_POWERUP_STOCK = 3;
+
 // ── Career levels ──────────────────────────────────────────
 export interface CareerLevel {
   level: number;

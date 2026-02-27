@@ -3,8 +3,9 @@
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Suspense, useState, useEffect } from "react";
-import { getGradeEmoji, CAREER_LEVELS } from "@/lib/scoring";
-import LevelUpModal from "@/components/LevelUpModal";
+import { getGradeEmoji, getCareerLevel } from "@/lib/scoring";
+import { POWERUP_INFO } from "@/lib/types";
+import type { PowerUpType } from "@/lib/types";
 
 function ResultsContent() {
   const searchParams = useSearchParams();
@@ -19,18 +20,44 @@ function ResultsContent() {
   const baseXp = parseInt(searchParams.get("baseXp") || "0");
   const bonusXp = parseInt(searchParams.get("bonusXp") || "0");
   const perfectBonus = parseInt(searchParams.get("perfectBonus") || "0");
-  const leveledUpStr = searchParams.get("leveledUp") || "";
 
   const accuracy = total > 0 ? Math.round((score / total) * 100) : 0;
   const grade = getGradeEmoji(accuracy);
 
-  const [showLevelUp, setShowLevelUp] = useState(false);
   const [animatedScore, setAnimatedScore] = useState(0);
   const [animatedPoints, setAnimatedPoints] = useState(0);
+  const [examReady, setExamReady] = useState(false);
+  const [awardedPowerUps, setAwardedPowerUps] = useState<PowerUpType[]>([]);
+  const [showPowerUpBanner, setShowPowerUpBanner] = useState(false);
 
+  // Check exam readiness
   useEffect(() => {
-    if (leveledUpStr) setShowLevelUp(true);
-  }, [leveledUpStr]);
+    fetch("/api/stats")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.profile) {
+          const confirmedLevel = data.profile.confirmed_level || 1;
+          const xpLevel = getCareerLevel(data.profile.xp);
+          if (xpLevel.level > confirmedLevel) {
+            setExamReady(true);
+          }
+        }
+      });
+  }, []);
+
+  // Check for awarded power-ups from the quiz submission response
+  useEffect(() => {
+    const powerUpsParam = searchParams.get("powerups");
+    if (powerUpsParam) {
+      try {
+        const parsed = JSON.parse(powerUpsParam) as PowerUpType[];
+        if (parsed.length > 0) {
+          setAwardedPowerUps(parsed);
+          setShowPowerUpBanner(true);
+        }
+      } catch { /* ignore */ }
+    }
+  }, [searchParams]);
 
   // Animate numbers
   useEffect(() => {
@@ -50,18 +77,9 @@ function ResultsContent() {
     return () => clearInterval(interval);
   }, [score, points]);
 
-  const levelUpLevel = leveledUpStr
-    ? CAREER_LEVELS.find((l) => l.level === parseInt(leveledUpStr))
-    : null;
-
   return (
     <main className="min-h-dvh px-4 pt-8 pb-8 max-w-lg mx-auto">
-      {showLevelUp && levelUpLevel && (
-        <LevelUpModal level={levelUpLevel} onClose={() => setShowLevelUp(false)} />
-      )}
-
       <div className="animate-fade-up text-center mb-8">
-        {/* Geometric circle frame around grade emoji */}
         <div className="inline-flex items-center justify-center w-24 h-24 border-4 border-bauhaus-blue rounded-full mb-4">
           <span className="text-5xl">{grade}</span>
         </div>
@@ -73,6 +91,39 @@ function ResultsContent() {
           {mode === "daily" ? "Daily Challenge" : mode === "review" ? "Review" : "Speed Round"}
         </p>
       </div>
+
+      {/* Power-up Award Banner */}
+      {showPowerUpBanner && awardedPowerUps.length > 0 && (
+        <div className="animate-fade-up mb-6 p-4 rounded-none bg-surface border-2 border-bauhaus-yellow border-l-4 border-l-bauhaus-yellow">
+          <div className="text-sm font-bold text-bauhaus-yellow mb-2 uppercase tracking-wider">Power-Up Earned!</div>
+          <div className="flex gap-3">
+            {awardedPowerUps.map((type, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <span className="text-xl">{POWERUP_INFO[type].icon}</span>
+                <span className="text-sm text-text-primary font-medium">{POWERUP_INFO[type].name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Exam Ready Banner */}
+      {examReady && (
+        <Link href="/level-up" className="block animate-fade-up mb-6">
+          <div className="p-4 rounded-none border-2 border-bauhaus-yellow transition-all hover:border-l-4 hover:border-l-bauhaus-yellow" style={{ background: "rgba(234, 179, 8, 0.08)" }}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🎯</span>
+                <div>
+                  <div className="font-bold text-bauhaus-yellow text-sm uppercase tracking-wider">Exam Ready!</div>
+                  <div className="text-text-secondary text-xs font-light">Take your level-up exam now</div>
+                </div>
+              </div>
+              <div className="text-bauhaus-yellow font-bold text-lg animate-pulse">→</div>
+            </div>
+          </div>
+        </Link>
+      )}
 
       {/* Stats grid */}
       <div className="animate-fade-up stagger-1 grid grid-cols-2 gap-3 mb-6">

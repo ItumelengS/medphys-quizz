@@ -2,12 +2,12 @@ import type { CareerLevel } from "./types";
 
 export const CAREER_LEVELS: CareerLevel[] = [
   { level: 1, title: "Intern", xpRequired: 0, icon: "🔬" },
-  { level: 2, title: "Registrar", xpRequired: 500, icon: "📖" },
-  { level: 3, title: "Medical Physicist", xpRequired: 1500, icon: "⚛️" },
-  { level: 4, title: "Senior Physicist", xpRequired: 3500, icon: "🎯" },
-  { level: 5, title: "Chief Physicist", xpRequired: 7000, icon: "👨‍🔬" },
-  { level: 6, title: "Consultant", xpRequired: 12000, icon: "🏅" },
-  { level: 7, title: "Professor", xpRequired: 20000, icon: "🎓" },
+  { level: 2, title: "Registrar", xpRequired: 1000, icon: "📖" },
+  { level: 3, title: "Medical Physicist", xpRequired: 4000, icon: "⚛️" },
+  { level: 4, title: "Senior Physicist", xpRequired: 10000, icon: "🎯" },
+  { level: 5, title: "Chief Physicist", xpRequired: 25000, icon: "👨‍🔬" },
+  { level: 6, title: "Consultant", xpRequired: 50000, icon: "🏅" },
+  { level: 7, title: "Professor", xpRequired: 100000, icon: "🎓" },
 ];
 
 export function getCareerLevel(xp: number): CareerLevel {
@@ -78,8 +78,8 @@ export function calculateXp(
 } {
   let baseXp = 0;
   let bonusXp = 0;
-  const dailyBonusXp = mode === "daily" ? dailyStreak * 10 : 0;
-  const perfectBonusXp = correct === total && total > 0 ? 100 : 0;
+  const dailyBonusXp = mode === "daily" ? dailyStreak * 5 : 0;
+  const perfectBonusXp = correct === total && total > 0 ? 50 : 0;
 
   if (mode === "review") {
     baseXp = correct * 5 + (total - correct) * 2;
@@ -133,6 +133,15 @@ export function getAdaptiveTimer(
 ): number {
   if (isCalc) return baseTime;
   return Math.max(TIMER_SHRINK_MIN, baseTime - correctCount * TIMER_SHRINK);
+}
+
+export function isExamReady(xp: number, confirmedLevel: number): boolean {
+  const xpLevel = getCareerLevel(xp);
+  return xpLevel.level > confirmedLevel;
+}
+
+export function getConfirmedCareerLevel(confirmedLevel: number): CareerLevel {
+  return CAREER_LEVELS.find((l) => l.level === confirmedLevel) || CAREER_LEVELS[0];
 }
 
 export function getSectionMasteryColor(percent: number): string {

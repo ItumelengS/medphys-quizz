@@ -58,16 +58,13 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
 
   const activeWord = getActiveWord();
 
-  // Clue number map
+  // Clue number map: position key → clue number
   const clueNumMap = useMemo(() => {
     const map = new Map<string, number>();
-    const sorted = [...words].sort((a, b) => a.startY - b.startY || a.startX - b.startX);
-    let num = 0;
-    for (const w of sorted) {
+    for (const w of words) {
       const key = `${w.startX},${w.startY}`;
       if (!map.has(key)) {
-        num++;
-        map.set(key, num);
+        map.set(key, w.index);
       }
     }
     return map;
@@ -78,8 +75,8 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
   useEffect(() => {
     function calc() {
       const vw = window.innerWidth;
-      const maxGrid = Math.min(vw - 32, 500);
-      setCellSize(Math.max(24, Math.min(36, Math.floor(maxGrid / width))));
+      const maxGrid = Math.min(vw - 32, 480);
+      setCellSize(Math.max(26, Math.min(40, Math.floor(maxGrid / width))));
     }
     calc();
     window.addEventListener("resize", calc);
@@ -109,7 +106,6 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
         }));
       } else {
         moveCursor(-1);
-        // Clear the cell we moved to
         setTimeout(() => {
           setSelectedCell((sel) => {
             if (sel) {
@@ -240,6 +236,8 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
   const downClues = words.filter((w) => w.direction === "down").sort((a, b) => a.index - b.index);
 
   const gridWidth = cellSize * width;
+  const numFontSize = Math.max(9, cellSize * 0.3);
+  const letterFontSize = Math.max(14, cellSize * 0.5);
 
   return (
     <div className="select-none">
@@ -266,24 +264,20 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
         }}
       />
 
-      {/* Active clue banner — NYT style */}
+      {/* Active clue banner */}
       <div
-        className="mb-4 flex items-start gap-3 px-4 py-3 transition-all duration-200"
+        className="mb-4 px-4 py-3 transition-all duration-200"
         style={{
-          background: activeWord ? "rgba(37, 99, 235, 0.06)" : "rgba(255,255,255,0.02)",
+          background: activeWord ? "rgba(37, 99, 235, 0.08)" : "transparent",
           borderLeft: activeWord ? "3px solid #3b82f6" : "3px solid transparent",
+          minHeight: 56,
         }}
       >
         {activeWord ? (
-          <>
+          <div className="flex items-start gap-3">
             <span
-              className="shrink-0 inline-flex items-center justify-center font-bold text-white rounded-sm"
-              style={{
-                width: 28,
-                height: 28,
-                fontSize: 13,
-                background: "#3b82f6",
-              }}
+              className="shrink-0 inline-flex items-center justify-center font-mono font-bold text-white rounded-sm"
+              style={{ width: 26, height: 26, fontSize: 12, background: "#3b82f6" }}
             >
               {activeWord.index}
             </span>
@@ -293,21 +287,22 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
               </div>
               <div className="text-sm text-text-primary leading-snug">{activeWord.clue}</div>
             </div>
-          </>
+          </div>
         ) : (
-          <span className="text-text-dim text-sm italic">Tap a cell to begin</span>
+          <span className="text-text-dim text-sm">Tap a cell to begin</span>
         )}
       </div>
 
-      {/* Grid — NYT-style black & white */}
-      <div className="flex justify-center mb-4">
+      {/* Grid */}
+      <div className="flex justify-center mb-5">
         <div
           ref={gridRef}
           className="relative"
           style={{
             width: gridWidth + 2,
-            border: "2px solid #1a1a2e",
-            background: "#1a1a2e",
+            border: "2px solid #222",
+            background: "#222",
+            boxShadow: "0 2px 12px rgba(0,0,0,0.3)",
           }}
           onClick={() => inputRef.current?.focus()}
         >
@@ -319,7 +314,7 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
                   return (
                     <div
                       key={x}
-                      style={{ width: cellSize, height: cellSize, background: "#1a1a2e" }}
+                      style={{ width: cellSize, height: cellSize, background: "#222" }}
                     />
                   );
                 }
@@ -331,29 +326,26 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
                 const isComplete = cell.wordIndices.some((wi) => completedWords.has(wi));
                 const clueNum = clueNumMap.get(k);
 
-                // NYT color palette
                 let bg: string;
                 if (isSelected) {
-                  bg = "#fbbf24"; // gold cursor
+                  bg = "#fbbf24";
                 } else if (inWord) {
-                  bg = "#a5d8ff"; // light blue word highlight
+                  bg = "#dbeafe";
                 } else if (isComplete) {
-                  bg = "#d1fae5"; // soft green completed
+                  bg = "#d1fae5";
                 } else {
-                  bg = "#ffffff"; // white cell
+                  bg = "#ffffff";
                 }
 
                 let textColor: string;
-                if (isSelected) {
-                  textColor = "#1a1a2e";
-                } else if (state?.revealed) {
+                if (state?.revealed) {
                   textColor = "#3b82f6";
                 } else if (state?.wrong) {
                   textColor = "#dc2626";
                 } else if (state?.pencil) {
                   textColor = "#9ca3af";
                 } else {
-                  textColor = "#1a1a2e";
+                  textColor = "#111";
                 }
 
                 return (
@@ -364,8 +356,8 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
                       width: cellSize,
                       height: cellSize,
                       background: bg,
-                      borderRight: "1px solid #c4c4c4",
-                      borderBottom: "1px solid #c4c4c4",
+                      borderRight: "1px solid #bbb",
+                      borderBottom: "1px solid #bbb",
                       transition: "background 0.1s ease",
                     }}
                     onClick={(e) => {
@@ -373,39 +365,43 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
                       handleCellClick(x, y);
                     }}
                   >
-                    {/* Clue number */}
-                    {clueNum && (
+                    {/* Clue number — top-left, tight positioning */}
+                    {clueNum !== undefined && (
                       <span
-                        className="absolute font-sans font-bold leading-none pointer-events-none"
+                        className="absolute font-mono font-bold leading-none pointer-events-none"
                         style={{
                           top: 1,
                           left: 2,
-                          fontSize: Math.max(8, cellSize * 0.28),
-                          color: isSelected ? "#92400e" : "#555",
+                          fontSize: numFontSize,
+                          color: isSelected ? "#92400e" : "#666",
+                          lineHeight: 1,
                         }}
                       >
                         {clueNum}
                       </span>
                     )}
-                    {/* Letter */}
-                    <span
-                      className="absolute inset-0 flex items-center justify-center font-serif font-bold pointer-events-none"
-                      style={{
-                        fontSize: Math.max(14, cellSize * 0.52),
-                        color: textColor,
-                        paddingTop: clueNum ? 3 : 0,
-                      }}
-                    >
-                      {state?.value || ""}
-                    </span>
-                    {/* Wrong indicator */}
+                    {/* Letter — centered, shifted down when number present */}
+                    {state?.value && (
+                      <span
+                        className="absolute inset-0 flex items-center justify-center font-bold pointer-events-none"
+                        style={{
+                          fontSize: letterFontSize,
+                          color: textColor,
+                          paddingTop: clueNum ? Math.max(2, numFontSize * 0.5) : 0,
+                          fontFamily: "system-ui, -apple-system, sans-serif",
+                        }}
+                      >
+                        {state.value}
+                      </span>
+                    )}
+                    {/* Wrong marker */}
                     {state?.wrong && (
                       <svg
                         className="absolute pointer-events-none"
-                        style={{ top: 2, right: 2, width: cellSize * 0.25, height: cellSize * 0.25 }}
+                        style={{ top: 2, right: 2, width: cellSize * 0.22, height: cellSize * 0.22 }}
                         viewBox="0 0 10 10"
                       >
-                        <line x1="0" y1="10" x2="10" y2="0" stroke="#dc2626" strokeWidth="1.5" />
+                        <line x1="0" y1="10" x2="10" y2="0" stroke="#dc2626" strokeWidth="2" />
                       </svg>
                     )}
                   </div>
@@ -416,107 +412,109 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
         </div>
       </div>
 
-      {/* Toolbar — clean, minimal */}
+      {/* Toolbar */}
       <div className="flex items-center justify-center gap-2 mb-6">
         <button
           onClick={handleCheck}
-          className="px-4 py-2 text-xs font-semibold uppercase tracking-wider border border-gray-600 text-gray-300 hover:bg-white/5 active:scale-95 transition-all"
+          className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-surface-border text-text-secondary hover:bg-surface active:scale-95 transition-all"
         >
           Check
         </button>
         <button
           onClick={handleRevealWord}
           disabled={!activeWord}
-          className="px-4 py-2 text-xs font-semibold uppercase tracking-wider border border-blue-500/40 text-blue-400 hover:bg-blue-500/10 active:scale-95 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+          className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-bauhaus-blue/40 text-bauhaus-blue hover:bg-bauhaus-blue/10 active:scale-95 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
         >
           Reveal
         </button>
         <button
           onClick={() => setPencilMode(!pencilMode)}
-          className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider border transition-all active:scale-95 ${
+          className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 transition-all active:scale-95 ${
             pencilMode
-              ? "border-amber-400 text-amber-400 bg-amber-400/10"
-              : "border-gray-600 text-gray-400 hover:bg-white/5"
+              ? "border-bauhaus-yellow text-bauhaus-yellow bg-bauhaus-yellow/10"
+              : "border-surface-border text-text-secondary hover:bg-surface"
           }`}
         >
           {pencilMode ? "Pencil On" : "Pencil"}
         </button>
       </div>
 
-      {/* Clue lists — NYT two-column layout */}
+      {/* Clue lists */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Across */}
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400 pb-2 mb-2 border-b border-blue-400/20">
+          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-bauhaus-blue pb-2 mb-1 border-b-2 border-bauhaus-blue/20">
             Across
           </h3>
-          <ol className="space-y-0">
+          <div className="space-y-0">
             {acrossClues.map((w) => {
               const isActive = activeWord?.index === w.index && activeWord?.direction === "across";
               const done = completedWords.has(w.index);
               return (
-                <li key={`a-${w.index}`}>
-                  <button
-                    onClick={() => {
-                      setSelectedCell({ x: w.startX, y: w.startY });
-                      setDirection("across");
-                      inputRef.current?.focus();
-                    }}
-                    className={`w-full text-left px-2.5 py-1.5 text-[13px] leading-relaxed transition-colors ${
-                      isActive
-                        ? "bg-blue-500/10 text-text-primary"
-                        : done
-                          ? "text-gray-500 line-through decoration-gray-600"
-                          : "text-gray-300 hover:bg-white/[0.03]"
-                    }`}
-                    style={isActive ? { borderLeft: "2px solid #3b82f6", paddingLeft: 8 } : { borderLeft: "2px solid transparent", paddingLeft: 8 }}
-                  >
-                    <span className={`font-bold tabular-nums mr-1.5 ${isActive ? "text-blue-400" : done ? "text-gray-600" : "text-gray-400"}`}>
-                      {w.index}
-                    </span>
-                    {w.clue}
-                  </button>
-                </li>
+                <button
+                  key={`a-${w.index}`}
+                  onClick={() => {
+                    setSelectedCell({ x: w.startX, y: w.startY });
+                    setDirection("across");
+                    inputRef.current?.focus();
+                  }}
+                  className={`w-full text-left px-3 py-2 text-[13px] leading-relaxed transition-colors flex gap-2 ${
+                    isActive
+                      ? "bg-bauhaus-blue/10 text-text-primary"
+                      : done
+                        ? "text-text-dim line-through decoration-surface-border"
+                        : "text-text-secondary hover:bg-surface/50"
+                  }`}
+                  style={{
+                    borderLeft: isActive ? "3px solid #3b82f6" : "3px solid transparent",
+                  }}
+                >
+                  <span className={`font-mono font-bold shrink-0 w-6 text-right ${isActive ? "text-bauhaus-blue" : done ? "text-text-dim" : "text-text-secondary"}`}>
+                    {w.index}
+                  </span>
+                  <span>{w.clue}</span>
+                </button>
               );
             })}
-          </ol>
+          </div>
         </div>
 
         {/* Down */}
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400 pb-2 mb-2 border-b border-blue-400/20">
+          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-bauhaus-blue pb-2 mb-1 border-b-2 border-bauhaus-blue/20">
             Down
           </h3>
-          <ol className="space-y-0">
+          <div className="space-y-0">
             {downClues.map((w) => {
               const isActive = activeWord?.index === w.index && activeWord?.direction === "down";
               const done = completedWords.has(w.index);
               return (
-                <li key={`d-${w.index}`}>
-                  <button
-                    onClick={() => {
-                      setSelectedCell({ x: w.startX, y: w.startY });
-                      setDirection("down");
-                      inputRef.current?.focus();
-                    }}
-                    className={`w-full text-left px-2.5 py-1.5 text-[13px] leading-relaxed transition-colors ${
-                      isActive
-                        ? "bg-blue-500/10 text-text-primary"
-                        : done
-                          ? "text-gray-500 line-through decoration-gray-600"
-                          : "text-gray-300 hover:bg-white/[0.03]"
-                    }`}
-                    style={isActive ? { borderLeft: "2px solid #3b82f6", paddingLeft: 8 } : { borderLeft: "2px solid transparent", paddingLeft: 8 }}
-                  >
-                    <span className={`font-bold tabular-nums mr-1.5 ${isActive ? "text-blue-400" : done ? "text-gray-600" : "text-gray-400"}`}>
-                      {w.index}
-                    </span>
-                    {w.clue}
-                  </button>
-                </li>
+                <button
+                  key={`d-${w.index}`}
+                  onClick={() => {
+                    setSelectedCell({ x: w.startX, y: w.startY });
+                    setDirection("down");
+                    inputRef.current?.focus();
+                  }}
+                  className={`w-full text-left px-3 py-2 text-[13px] leading-relaxed transition-colors flex gap-2 ${
+                    isActive
+                      ? "bg-bauhaus-blue/10 text-text-primary"
+                      : done
+                        ? "text-text-dim line-through decoration-surface-border"
+                        : "text-text-secondary hover:bg-surface/50"
+                  }`}
+                  style={{
+                    borderLeft: isActive ? "3px solid #3b82f6" : "3px solid transparent",
+                  }}
+                >
+                  <span className={`font-mono font-bold shrink-0 w-6 text-right ${isActive ? "text-bauhaus-blue" : done ? "text-text-dim" : "text-text-secondary"}`}>
+                    {w.index}
+                  </span>
+                  <span>{w.clue}</span>
+                </button>
               );
             })}
-          </ol>
+          </div>
         </div>
       </div>
     </div>

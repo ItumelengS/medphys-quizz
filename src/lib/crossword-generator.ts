@@ -96,20 +96,12 @@ export function generateCrossword(
     }
   }
 
-  // Build words with adjusted coordinates
+  // Build words with adjusted coordinates (no cell tagging yet)
   const words: CrosswordWord[] = placed.map((pw, idx) => {
     const cells = pw.cells.map((c) => ({
       x: c.x - minX,
       y: c.y - minY,
     }));
-
-    // Tag cells with word indices
-    for (const cell of cells) {
-      const gridCell = outputGrid[cell.y]?.[cell.x];
-      if (gridCell) {
-        gridCell.wordIndices.push(idx);
-      }
-    }
 
     return {
       index: idx,
@@ -137,6 +129,16 @@ export function generateCrossword(
       numberMap.set(key, clueNum);
     }
     words[s.i].index = numberMap.get(key)!;
+  }
+
+  // Now tag cells with the final clue-number indices
+  for (const word of words) {
+    for (const cell of word.cells) {
+      const gridCell = outputGrid[cell.y]?.[cell.x];
+      if (gridCell) {
+        gridCell.wordIndices.push(word.index);
+      }
+    }
   }
 
   return { width, height, grid: outputGrid, words };

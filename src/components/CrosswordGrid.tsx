@@ -181,22 +181,6 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
     }
   }
 
-  function handleCheck() {
-    setCellStates((prev) => {
-      const updated = { ...prev };
-      for (const word of words) {
-        for (let i = 0; i < word.cells.length; i++) {
-          const c = word.cells[i];
-          const k = `${c.x},${c.y}`;
-          const state = updated[k];
-          if (state && state.value !== "") {
-            updated[k] = { ...state, checked: true, wrong: state.value !== word.answer[i] };
-          }
-        }
-      }
-      return updated;
-    });
-  }
 
 
   useEffect(() => {
@@ -401,12 +385,6 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
 
       {/* Toolbar */}
       <div className="flex items-center justify-center gap-2 mb-6">
-        <button
-          onClick={handleCheck}
-          className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-surface-border text-text-secondary hover:bg-surface active:scale-95 transition-all"
-        >
-          Check
-        </button>
         <button
           onClick={() => setPencilMode(!pencilMode)}
           className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 transition-all active:scale-95 ${

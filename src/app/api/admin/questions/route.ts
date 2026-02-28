@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
+import { validateStructural } from "@/lib/validate-questions";
+import type { DbQuestion } from "@/lib/types";
 
 async function requireAdmin() {
   const session = await auth();
@@ -35,11 +37,21 @@ export async function POST(req: NextRequest) {
   if (!ctx) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
   const body = await req.json();
-  const { id, section_id, question, answer, choices, explanation } = body;
+  const { id, section_id, question, answer, choices, explanation, difficulty } = body;
+
+  // Structural validation
+  const q: DbQuestion = { id, section_id, question, answer, choices, explanation, difficulty: difficulty ?? 5 };
+  const validation = validateStructural(q);
+  if (!validation.valid) {
+    return NextResponse.json(
+      { error: "Validation failed", details: validation.errors },
+      { status: 400 }
+    );
+  }
 
   const { data, error } = await ctx.supabase
     .from("questions")
-    .insert({ id, section_id, question, answer, choices, explanation })
+    .insert(q)
     .select()
     .single();
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -11,14 +11,16 @@ interface TournamentWithCount extends DbTournament {
   participant_count: number;
 }
 
-function Countdown({ target }: { target: string }) {
+function Countdown({ target, onReached }: { target: string; onReached?: () => void }) {
   const [text, setText] = useState("");
 
   useEffect(() => {
+    let fired = false;
     function update() {
       const diff = new Date(target).getTime() - Date.now();
       if (diff <= 0) {
         setText("Starting...");
+        if (!fired && onReached) { fired = true; onReached(); }
         return;
       }
       const h = Math.floor(diff / 3600000);
@@ -29,7 +31,7 @@ function Countdown({ target }: { target: string }) {
     update();
     const iv = setInterval(update, 1000);
     return () => clearInterval(iv);
-  }, [target]);
+  }, [target, onReached]);
 
   return <span className="font-mono">{text}</span>;
 }
@@ -62,7 +64,7 @@ export default function TournamentLobby() {
   const [tournaments, setTournaments] = useState<TournamentWithCount[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const fetchTournaments = useCallback(() => {
     fetch("/api/tournaments")
       .then((r) => r.json())
       .then((data) => {
@@ -70,18 +72,13 @@ export default function TournamentLobby() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-
-    // Refresh every 30s
-    const iv = setInterval(() => {
-      fetch("/api/tournaments")
-        .then((r) => r.json())
-        .then((data) => {
-          if (Array.isArray(data)) setTournaments(data);
-        });
-    }, 30000);
-
-    return () => clearInterval(iv);
   }, []);
+
+  useEffect(() => {
+    fetchTournaments();
+    const iv = setInterval(fetchTournaments, 30000);
+    return () => clearInterval(iv);
+  }, [fetchTournaments]);
 
   if (!session) return null;
 
@@ -233,7 +230,7 @@ export default function TournamentLobby() {
                       </span>
                     </div>
                     <div className="text-text-secondary text-xs">
-                      Starts in <Countdown target={t.starts_at} />
+                      Starts in <Countdown target={t.starts_at} onReached={fetchTournaments} />
                     </div>
                   </div>
                   <div className="flex items-center justify-between text-xs text-text-dim">

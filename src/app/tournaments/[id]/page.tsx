@@ -15,12 +15,17 @@ interface TournamentDetail {
   userRank: number | null;
 }
 
-function Countdown({ target }: { target: string }) {
+function Countdown({ target, onReached }: { target: string; onReached?: () => void }) {
   const [text, setText] = useState("");
   useEffect(() => {
+    let fired = false;
     function update() {
       const diff = new Date(target).getTime() - Date.now();
-      if (diff <= 0) { setText("Now!"); return; }
+      if (diff <= 0) {
+        setText("Now!");
+        if (!fired && onReached) { fired = true; onReached(); }
+        return;
+      }
       const h = Math.floor(diff / 3600000);
       const m = Math.floor((diff % 3600000) / 60000);
       const s = Math.floor((diff % 60000) / 1000);
@@ -29,7 +34,7 @@ function Countdown({ target }: { target: string }) {
     update();
     const iv = setInterval(update, 1000);
     return () => clearInterval(iv);
-  }, [target]);
+  }, [target, onReached]);
   return <span className="font-mono">{text}</span>;
 }
 
@@ -190,7 +195,7 @@ export default function TournamentDetailPage({
           <div className="text-center">
             <div className="text-text-secondary text-xs uppercase tracking-wider mb-1">Starts in</div>
             <div className={`text-2xl font-mono font-bold ${getColorClass(tournament.type)}`}>
-              <Countdown target={tournament.starts_at} />
+              <Countdown target={tournament.starts_at} onReached={fetchDetail} />
             </div>
           </div>
         )}

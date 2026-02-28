@@ -36,7 +36,8 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
   const [direction, setDirection] = useState<"across" | "down">("across");
   const [pencilMode, setPencilMode] = useState(false);
   const [completedWords, setCompletedWords] = useState<Set<number>>(new Set());
-  const [revealedWords, setRevealedWords] = useState<Set<number>>(new Set());
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [revealedWords, _setRevealedWords] = useState<Set<number>>(new Set());
   const inputRef = useRef<HTMLInputElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -197,20 +198,6 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
     });
   }
 
-  function handleRevealWord() {
-    if (!activeWord) return;
-    setRevealedWords((prev) => new Set(prev).add(activeWord.index));
-    setCellStates((prev) => {
-      const updated = { ...prev };
-      for (let i = 0; i < activeWord.cells.length; i++) {
-        const c = activeWord.cells[i];
-        const k = `${c.x},${c.y}`;
-        updated[k] = { value: activeWord.answer[i], pencil: false, revealed: true, checked: false, wrong: false };
-      }
-      setTimeout(() => checkWordCompletion(updated), 0);
-      return updated;
-    });
-  }
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -419,13 +406,6 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
           className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-surface-border text-text-secondary hover:bg-surface active:scale-95 transition-all"
         >
           Check
-        </button>
-        <button
-          onClick={handleRevealWord}
-          disabled={!activeWord}
-          className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-bauhaus-blue/40 text-bauhaus-blue hover:bg-bauhaus-blue/10 active:scale-95 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-        >
-          Reveal
         </button>
         <button
           onClick={() => setPencilMode(!pencilMode)}

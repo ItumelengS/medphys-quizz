@@ -23,15 +23,20 @@ export async function GET() {
   const supabase = createServiceClient();
   const userId = session.user.id;
 
-  // Get user profile to determine difficulty range
+  // Get user profile to determine difficulty range + last exam questions
   const { data: profile } = await supabase
     .from("profiles")
-    .select("powerups, xp, confirmed_level")
+    .select("powerups, xp, confirmed_level, last_exam_questions")
     .eq("id", userId)
     .single();
 
   const confirmedLevel = profile?.confirmed_level || 1;
   const { min, max } = getExamDifficultyRange(confirmedLevel);
+
+  // Exclude questions from the last exam attempt to prevent repeats
+  const lastExamIds = new Set<string>(
+    Array.isArray(profile?.last_exam_questions) ? profile.last_exam_questions : []
+  );
 
   // Get user's question history to find weak-spot questions
   const { data: history } = await supabase
@@ -45,7 +50,7 @@ export async function GET() {
   for (const h of history || []) {
     seenQuestionIds.add(h.question_id);
     const ratio = h.times_shown > 0 ? h.times_correct / h.times_shown : 0;
-    if (ratio < 0.6) {
+    if (ratio < 0.6 && !lastExamIds.has(h.question_id)) {
       hardQuestionIds.push(h.question_id);
     }
   }
@@ -76,11 +81,12 @@ export async function GET() {
       .lte("difficulty", max)
       .limit(500);
 
+    // Exclude last exam questions from both pools
     const unseen = (poolQuestions || []).filter(
-      (q) => !seenQuestionIds.has(q.id) && !selectedIds.has(q.id)
+      (q) => !seenQuestionIds.has(q.id) && !selectedIds.has(q.id) && !lastExamIds.has(q.id)
     );
     const seen = (poolQuestions || []).filter(
-      (q) => seenQuestionIds.has(q.id) && !selectedIds.has(q.id) && !hardQuestionIds.includes(q.id)
+      (q) => seenQuestionIds.has(q.id) && !selectedIds.has(q.id) && !hardQuestionIds.includes(q.id) && !lastExamIds.has(q.id)
     );
 
     const filler = [...shuffle(unseen), ...shuffle(seen)].slice(0, remaining);

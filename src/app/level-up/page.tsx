@@ -120,11 +120,12 @@ export default function LevelUpExamPage() {
     setSelectedAnswer(selected);
     setFailedQuestion({ question: currentQuestion, selected });
     const questionsRemaining = questions.length - (currentIndex + 1);
+    const questionIds = questions.map((q) => q.id);
     // Submit failure
     fetch("/api/level-up/complete", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ passed: false, powerupsUsed, questionsRemaining }),
+      body: JSON.stringify({ passed: false, powerupsUsed, questionsRemaining, questionIds }),
     })
       .then((r) => r.json())
       .then((data) => {
@@ -164,10 +165,11 @@ export default function LevelUpExamPage() {
   }
 
   function handleExamPassed() {
+    const questionIds = questions.map((q) => q.id);
     fetch("/api/level-up/complete", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ passed: true, powerupsUsed }),
+      body: JSON.stringify({ passed: true, powerupsUsed, questionIds }),
     });
     setPhase("success");
   }

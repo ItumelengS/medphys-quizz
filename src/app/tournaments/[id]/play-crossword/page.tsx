@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import CrosswordGrid from "@/components/CrosswordGrid";
+import type { PuzzleSubmitResult } from "@/components/CrosswordGrid";
 import type { CrosswordPuzzle } from "@/lib/types";
 
 type Phase = "loading" | "playing" | "submitting" | "results";
@@ -95,17 +96,15 @@ export default function PlayCrosswordPage({
     };
   }, [phase, timerSeconds]);
 
-  const handleWordComplete = useCallback((_wordIndex: number, revealed: boolean) => {
-    if (revealed) {
-      setWordsRevealed((r) => r + 1);
+  const handlePuzzleSubmit = useCallback((result: PuzzleSubmitResult) => {
+    if (result.allCorrect) {
+      setWordsCompleted(result.wordsCorrect);
+      setWordsRevealed(result.wordsWithHint);
+      setAllDone(true);
+      if (timerRef.current) clearInterval(timerRef.current);
+      setPhase("submitting");
     }
-    setWordsCompleted((c) => c + 1);
-  }, []);
-
-  const handleAllComplete = useCallback(() => {
-    setAllDone(true);
-    if (timerRef.current) clearInterval(timerRef.current);
-    setPhase("submitting");
+    // If not all correct, grid shows feedback — user keeps playing
   }, []);
 
   // Submit round when phase becomes "submitting"
@@ -325,8 +324,7 @@ export default function PlayCrosswordPage({
 
       <CrosswordGrid
         puzzle={puzzle}
-        onWordComplete={handleWordComplete}
-        onAllComplete={handleAllComplete}
+        onPuzzleSubmit={handlePuzzleSubmit}
       />
     </main>
   );

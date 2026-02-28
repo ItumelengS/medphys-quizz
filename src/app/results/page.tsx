@@ -21,6 +21,7 @@ function ResultsContent() {
   const baseXp = parseInt(searchParams.get("baseXp") || "0");
   const bonusXp = parseInt(searchParams.get("bonusXp") || "0");
   const perfectBonus = parseInt(searchParams.get("perfectBonus") || "0");
+  const penalized = searchParams.get("penalized") === "1";
 
   const accuracy = total > 0 ? Math.round((score / total) * 100) : 0;
   const grade = getGradeEmoji(accuracy);
@@ -131,33 +132,70 @@ function ResultsContent() {
         <StatCard label="Accuracy" value={`${accuracy}%`} barColor="#2563eb" />
         <StatCard label="Points" value={animatedPoints.toLocaleString()} barColor="#eab308" />
         <StatCard label="Best Streak" value={bestStreak.toString()} barColor="#dc2626" />
-        <StatCard label="XP Earned" value={`+${xp}`} barColor="#16a34a" accent />
+        <StatCard
+          label={penalized ? "XP Lost" : "XP Earned"}
+          value={penalized ? `${xp}` : `+${xp}`}
+          barColor={penalized ? "#dc2626" : "#16a34a"}
+          accent={!penalized}
+        />
       </div>
 
+      {/* Penalty Warning */}
+      {penalized && (
+        <div className="animate-fade-up stagger-2 mb-4 p-4 rounded-none border-2 border-bauhaus-red/40 border-l-4 border-l-bauhaus-red" style={{ background: "rgba(220, 38, 38, 0.06)" }}>
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">⚠️</span>
+            <div>
+              <div className="font-bold text-bauhaus-red text-sm uppercase tracking-wider">Below 70% — XP Penalty</div>
+              <div className="text-text-secondary text-xs font-light mt-0.5">
+                HPCSA requires 70% to earn CEUs. Score above 70% to gain XP.
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* XP Breakdown */}
-      <div className="animate-fade-up stagger-2 rounded-none bg-surface border-2 border-surface-border border-l-4 border-l-bauhaus-blue p-4 mb-6">
-        <div className="text-sm font-bold text-text-primary mb-3 uppercase tracking-wider">XP Breakdown</div>
+      <div className={`animate-fade-up stagger-2 rounded-none bg-surface border-2 border-surface-border border-l-4 p-4 mb-6 ${penalized ? "border-l-bauhaus-red" : "border-l-bauhaus-blue"}`}>
+        <div className="text-sm font-bold text-text-primary mb-3 uppercase tracking-wider">
+          {penalized ? "XP Penalty" : "XP Breakdown"}
+        </div>
         <div className="space-y-2 text-sm">
-          <div className="flex justify-between">
-            <span className="text-text-secondary font-light">Base XP</span>
-            <span className="font-mono text-text-primary">+{baseXp}</span>
-          </div>
-          {perfectBonus > 0 && (
-            <div className="flex justify-between">
-              <span className="text-text-secondary font-light">Perfect round!</span>
-              <span className="font-mono text-bauhaus-blue">+{perfectBonus}</span>
-            </div>
+          {penalized ? (
+            <>
+              <div className="flex justify-between">
+                <span className="text-text-secondary font-light">Accuracy</span>
+                <span className="font-mono text-bauhaus-red">{accuracy}% (need 70%)</span>
+              </div>
+              <div className="flex justify-between border-t-2 border-surface-border pt-2 font-bold">
+                <span className="text-text-primary">XP Lost</span>
+                <span className="font-mono text-bauhaus-red">{xp}</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex justify-between">
+                <span className="text-text-secondary font-light">Base XP</span>
+                <span className="font-mono text-text-primary">+{baseXp}</span>
+              </div>
+              {perfectBonus > 0 && (
+                <div className="flex justify-between">
+                  <span className="text-text-secondary font-light">Perfect round!</span>
+                  <span className="font-mono text-bauhaus-blue">+{perfectBonus}</span>
+                </div>
+              )}
+              {bonusXp > 0 && bonusXp !== perfectBonus && (
+                <div className="flex justify-between">
+                  <span className="text-text-secondary font-light">Bonus</span>
+                  <span className="font-mono text-bauhaus-blue">+{bonusXp - perfectBonus}</span>
+                </div>
+              )}
+              <div className="flex justify-between border-t-2 border-surface-border pt-2 font-bold">
+                <span className="text-text-primary">Total</span>
+                <span className="font-mono text-bauhaus-blue">+{xp}</span>
+              </div>
+            </>
           )}
-          {bonusXp > 0 && bonusXp !== perfectBonus && (
-            <div className="flex justify-between">
-              <span className="text-text-secondary font-light">Bonus</span>
-              <span className="font-mono text-bauhaus-blue">+{bonusXp - perfectBonus}</span>
-            </div>
-          )}
-          <div className="flex justify-between border-t-2 border-surface-border pt-2 font-bold">
-            <span className="text-text-primary">Total</span>
-            <span className="font-mono text-bauhaus-blue">+{xp}</span>
-          </div>
         </div>
       </div>
 

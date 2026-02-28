@@ -175,6 +175,12 @@ export default function DailyPage() {
       }),
     });
 
+    const dailyAccuracy = questions.length > 0 ? score / questions.length : 0;
+    const dailyPenalized = dailyAccuracy < 0.7;
+    const dailyXpChange = dailyPenalized
+      ? -Math.ceil((0.7 - dailyAccuracy) * questions.length * 5)
+      : xpResult.totalXp;
+
     const resultParams = new URLSearchParams({
       score: score.toString(),
       total: questions.length.toString(),
@@ -183,10 +189,11 @@ export default function DailyPage() {
       section: "daily",
       sectionName: "Daily Challenge",
       mode: "daily",
-      xp: xpResult.totalXp.toString(),
+      xp: dailyXpChange.toString(),
       baseXp: xpResult.baseXp.toString(),
       bonusXp: xpResult.bonusXp.toString(),
       perfectBonus: xpResult.perfectBonusXp.toString(),
+      penalized: dailyPenalized ? "1" : "0",
     });
     router.push(`/results?${resultParams.toString()}`);
   }

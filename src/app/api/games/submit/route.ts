@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
-import { calculateXp } from "@/lib/scoring";
+import { calculateXp, calculateXpWithPenalty } from "@/lib/scoring";
+import { applyXpChange } from "@/lib/apply-xp";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 import { parseInventory, awardPowerUp } from "@/lib/powerups";
 import type { GameVariant, GameMode } from "@/lib/types";
@@ -80,14 +81,12 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  // 2. Calculate XP
+  // 2. Calculate XP (with 70% penalty rule)
   const xpResult = calculateXp(points, mode, score, total, 0);
+  const { xpChange, penalized } = calculateXpWithPenalty(score, total, xpResult.totalXp);
 
-  // 3. Update profile XP
-  await supabase.rpc("increment_xp", {
-    p_user_id: userId,
-    p_amount: xpResult.totalXp,
-  });
+  // 3. Apply XP change (handles penalty + level demotion)
+  const { newXp, demoted, newConfirmedLevel } = await applyXpChange(userId, xpChange);
 
   // 4. Update user stats
   await supabase.rpc("update_user_stats_after_quiz", {
@@ -168,7 +167,11 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({
     xp: xpResult,
-    newTotalXp: profile ? profile.xp + xpResult.totalXp : xpResult.totalXp,
+    xpChange,
+    penalized,
+    demoted,
+    newConfirmedLevel,
+    newTotalXp: newXp,
     awardedPowerUps,
   });
 }

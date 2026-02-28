@@ -8,6 +8,7 @@ import { generateCrossword } from "@/lib/crossword-generator";
 import { calculateCrosswordScore, calculateXp } from "@/lib/scoring";
 import type { CrosswordPuzzle, DbCrosswordClue } from "@/lib/types";
 import CrosswordGrid from "@/components/CrosswordGrid";
+import type { PuzzleSubmitResult } from "@/components/CrosswordGrid";
 
 type Phase = "setup" | "playing" | "complete";
 type TimerOption = null | 300 | 600 | 900;
@@ -27,8 +28,7 @@ export default function CrosswordPage() {
   // Game state
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
-  const [wordsCompleted, setWordsCompleted] = useState(0);
-  const [wordsRevealed, setWordsRevealed] = useState(0);
+  const [puzzleResult, setPuzzleResult] = useState<PuzzleSubmitResult | null>(null);
   const [allDone, setAllDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [clueIds, setClueIds] = useState<string[]>([]);
@@ -76,8 +76,7 @@ export default function CrosswordPage() {
 
       setPuzzle(result);
       setClueIds(result.words.map((w) => w.questionId));
-      setWordsCompleted(0);
-      setWordsRevealed(0);
+      setPuzzleResult(null);
       setAllDone(false);
       setTimeElapsed(0);
 
@@ -117,37 +116,34 @@ export default function CrosswordPage() {
     };
   }, [phase, timerOption, allDone]);
 
-  const handleWordComplete = useCallback((_wordIndex: number, revealed: boolean) => {
-    if (revealed) {
-      setWordsRevealed((r) => r + 1);
-    }
-    setWordsCompleted((c) => c + 1);
-  }, []);
+  const handlePuzzleSubmit = useCallback((result: PuzzleSubmitResult) => {
+    setPuzzleResult(result);
 
-  const handleAllComplete = useCallback(() => {
-    setAllDone(true);
-    if (timerRef.current) clearInterval(timerRef.current);
-    setPhase("complete");
+    if (result.allCorrect) {
+      setAllDone(true);
+      if (timerRef.current) clearInterval(timerRef.current);
+      setPhase("complete");
+    }
   }, []);
 
   async function submitAndNavigate() {
-    if (submitting || !puzzle) return;
+    if (submitting || !puzzle || !puzzleResult) return;
     setSubmitting(true);
 
-    const wordsWithoutReveal = wordsCompleted - wordsRevealed;
-    const totalWords = puzzle.words.length;
-    const allWords = wordsCompleted === totalWords;
+    const { wordsCorrect, totalWords, wordsWithHint, hintsUsed } = puzzleResult;
+    const wordsWithoutHint = wordsCorrect - wordsWithHint;
     const remaining = timeRemaining ?? 0;
 
     const points = calculateCrosswordScore(
-      wordsWithoutReveal,
-      wordsRevealed,
-      allWords,
+      wordsWithoutHint,
+      wordsWithHint,
+      true, // only reachable when allCorrect
       timerOption !== null,
-      remaining
+      remaining,
+      hintsUsed
     );
 
-    const xpResult = calculateXp(points, "crossword", wordsCompleted, totalWords, 0);
+    const xpResult = calculateXp(points, "crossword", wordsCorrect, totalWords, 0);
 
     if (session?.user?.id) {
       await fetch("/api/games/submit", {
@@ -161,7 +157,7 @@ export default function CrosswordPage() {
             timeRemaining: 0,
             pointsEarned: 0,
           })),
-          score: wordsCompleted,
+          score: wordsCorrect,
           total: totalWords,
           points,
           bestStreak: 0,
@@ -169,10 +165,11 @@ export default function CrosswordPage() {
           sectionName: selectedCategory === "all" ? "All Categories" : selectedCategory,
           durationSeconds: timeElapsed,
           metadata: {
-            wordsWithoutReveal,
-            wordsRevealed,
+            wordsWithoutHint,
+            wordsWithHint,
+            hintsUsed,
             timerOption,
-            allComplete: allWords,
+            allComplete: true,
           },
         }),
       });
@@ -180,7 +177,7 @@ export default function CrosswordPage() {
 
     const sName = selectedCategory === "all" ? "Crossword" : `Crossword — ${selectedCategory}`;
     const resultParams = new URLSearchParams({
-      score: wordsCompleted.toString(),
+      score: wordsCorrect.toString(),
       total: totalWords.toString(),
       points: points.toString(),
       bestStreak: "0",
@@ -191,6 +188,7 @@ export default function CrosswordPage() {
       baseXp: xpResult.baseXp.toString(),
       bonusXp: xpResult.bonusXp.toString(),
       perfectBonus: xpResult.perfectBonusXp.toString(),
+      penalized: "0",
     });
     router.push(`/results?${resultParams.toString()}`);
   }
@@ -290,29 +288,28 @@ export default function CrosswordPage() {
   }
 
   // Complete screen
-  if (phase === "complete") {
-    const totalWords = puzzle?.words.length || 0;
-    const wordsWithoutReveal = wordsCompleted - wordsRevealed;
+  if (phase === "complete" && puzzleResult) {
+    const { wordsCorrect, totalWords, wordsWithHint, hintsUsed } = puzzleResult;
+    const wordsWithoutHint = wordsCorrect - wordsWithHint;
     const remaining = timeRemaining ?? 0;
     const points = calculateCrosswordScore(
-      wordsWithoutReveal,
-      wordsRevealed,
-      wordsCompleted === totalWords,
+      wordsWithoutHint,
+      wordsWithHint,
+      true,
       timerOption !== null,
-      remaining
+      remaining,
+      hintsUsed
     );
 
     return (
       <main className="min-h-dvh px-4 pt-6 pb-8 max-w-lg mx-auto flex flex-col items-center justify-center">
-        <span className="text-7xl mb-4">{wordsCompleted === totalWords ? "🏆" : "🧩"}</span>
-        <h1 className="text-3xl font-black text-bauhaus-blue mb-2">
-          {wordsCompleted === totalWords ? "COMPLETE!" : "TIME'S UP"}
-        </h1>
+        <span className="text-7xl mb-4">🏆</span>
+        <h1 className="text-3xl font-black text-bauhaus-blue mb-2">COMPLETE!</h1>
         <div className="w-12 h-1 bg-bauhaus-blue mx-auto mb-6" />
 
         <div className="grid grid-cols-2 gap-4 mb-6 text-center">
           <div>
-            <div className="font-mono text-2xl font-bold text-success">{wordsCompleted}</div>
+            <div className="font-mono text-2xl font-bold text-success">{wordsCorrect}/{totalWords}</div>
             <div className="text-text-dim text-xs uppercase">Words</div>
           </div>
           <div>
@@ -324,18 +321,18 @@ export default function CrosswordPage() {
             <div className="text-text-dim text-xs uppercase">Time</div>
           </div>
           <div>
-            <div className="font-mono text-2xl font-bold text-bauhaus-yellow">{wordsRevealed}</div>
-            <div className="text-text-dim text-xs uppercase">Revealed</div>
+            <div className="font-mono text-2xl font-bold text-bauhaus-yellow">{hintsUsed}</div>
+            <div className="text-text-dim text-xs uppercase">Hints Used</div>
           </div>
         </div>
 
-        {wordsCompleted === totalWords && wordsRevealed === 0 && (
+        {hintsUsed === 0 && (
           <div className="text-bauhaus-yellow text-sm font-mono mb-4">+75 perfect bonus!</div>
         )}
 
         <div className="flex gap-3">
           <button
-            onClick={() => { setPhase("setup"); setPuzzle(null); }}
+            onClick={() => { setPhase("setup"); setPuzzle(null); setPuzzleResult(null); }}
             className="px-6 py-3 rounded-none font-bold text-white bg-bauhaus-blue hover:opacity-90 active:scale-95 transition-all"
           >
             New Puzzle
@@ -348,6 +345,28 @@ export default function CrosswordPage() {
             {submitting ? "Saving..." : "Results"}
           </button>
         </div>
+      </main>
+    );
+  }
+
+  // Timer ran out without solving
+  if (phase === "complete" && !puzzleResult) {
+    return (
+      <main className="min-h-dvh px-4 pt-6 pb-8 max-w-lg mx-auto flex flex-col items-center justify-center">
+        <span className="text-7xl mb-4">🧩</span>
+        <h1 className="text-3xl font-black text-bauhaus-blue mb-2">TIME&apos;S UP</h1>
+        <div className="w-12 h-1 bg-bauhaus-blue mx-auto mb-6" />
+
+        <p className="text-text-secondary text-sm mb-6 text-center">
+          The puzzle wasn&apos;t completed in time. No XP awarded for incomplete crosswords.
+        </p>
+
+        <button
+          onClick={() => { setPhase("setup"); setPuzzle(null); setPuzzleResult(null); }}
+          className="px-6 py-3 rounded-none font-bold text-white bg-bauhaus-blue hover:opacity-90 active:scale-95 transition-all"
+        >
+          Try Again
+        </button>
       </main>
     );
   }
@@ -366,9 +385,6 @@ export default function CrosswordPage() {
           <span className="text-sm font-bold text-bauhaus-blue uppercase tracking-wider">Crossword</span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-text-dim text-xs">
-            {wordsCompleted}/{puzzle.words.length} words
-          </span>
           <span className="font-mono text-sm font-bold" style={{ color: timerColor }}>
             {timerOption
               ? formatTime(timeRemaining ?? 0)
@@ -380,8 +396,7 @@ export default function CrosswordPage() {
 
       <CrosswordGrid
         puzzle={puzzle}
-        onWordComplete={handleWordComplete}
-        onAllComplete={handleAllComplete}
+        onPuzzleSubmit={handlePuzzleSubmit}
       />
     </main>
   );

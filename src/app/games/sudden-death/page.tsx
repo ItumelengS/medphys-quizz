@@ -265,6 +265,12 @@ export default function SuddenDeathPage() {
       });
     }
 
+    const sdAccuracy = finalTotal > 0 ? finalScore / finalTotal : 0;
+    const sdPenalized = sdAccuracy < 0.7;
+    const sdXpChange = sdPenalized
+      ? -Math.ceil((0.7 - sdAccuracy) * finalTotal * 5)
+      : xpResult.totalXp;
+
     const resultParams = new URLSearchParams({
       score: finalScore.toString(),
       total: finalTotal.toString(),
@@ -273,10 +279,11 @@ export default function SuddenDeathPage() {
       section: "all",
       sectionName: "Sudden Death",
       mode: "sudden-death",
-      xp: xpResult.totalXp.toString(),
+      xp: sdXpChange.toString(),
       baseXp: xpResult.baseXp.toString(),
       bonusXp: xpResult.bonusXp.toString(),
       perfectBonus: xpResult.perfectBonusXp.toString(),
+      penalized: sdPenalized ? "1" : "0",
     });
     router.push(`/results?${resultParams.toString()}`);
   }

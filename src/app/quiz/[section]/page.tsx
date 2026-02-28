@@ -208,6 +208,12 @@ export default function QuizPage({
       }),
     });
 
+    const accuracy = questions.length > 0 ? score / questions.length : 0;
+    const penalized = accuracy < 0.7;
+    const xpChange = penalized
+      ? -Math.ceil((0.7 - accuracy) * questions.length * 5)
+      : xpResult.totalXp;
+
     const resultParams = new URLSearchParams({
       score: score.toString(),
       total: questions.length.toString(),
@@ -216,10 +222,11 @@ export default function QuizPage({
       section: sectionId,
       sectionName,
       mode: "speed",
-      xp: xpResult.totalXp.toString(),
+      xp: xpChange.toString(),
       baseXp: xpResult.baseXp.toString(),
       bonusXp: xpResult.bonusXp.toString(),
       perfectBonus: xpResult.perfectBonusXp.toString(),
+      penalized: penalized ? "1" : "0",
     });
     router.push(`/results?${resultParams.toString()}`);
   }

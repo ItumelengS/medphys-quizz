@@ -3,21 +3,27 @@
 import { useState, useCallback, useEffect, useRef, useMemo } from "react";
 import type { CrosswordPuzzle, CrosswordWord } from "@/lib/types";
 
+export interface PuzzleSubmitResult {
+  allCorrect: boolean;
+  wordsCorrect: number;
+  totalWords: number;
+  wordsWithHint: number;
+  hintsUsed: number;
+}
+
 interface CrosswordGridProps {
   puzzle: CrosswordPuzzle;
-  onWordComplete: (wordIndex: number, revealed: boolean) => void;
-  onAllComplete: () => void;
+  onPuzzleSubmit: (result: PuzzleSubmitResult) => void;
 }
 
 interface CellState {
   value: string;
   pencil: boolean;
   revealed: boolean;
-  checked: boolean;
   wrong: boolean;
 }
 
-export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }: CrosswordGridProps) {
+export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridProps) {
   const { width, height, grid, words } = puzzle;
 
   const [cellStates, setCellStates] = useState<Record<string, CellState>>(() => {
@@ -25,7 +31,7 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
         if (grid[y][x]) {
-          states[`${x},${y}`] = { value: "", pencil: false, revealed: false, checked: false, wrong: false };
+          states[`${x},${y}`] = { value: "", pencil: false, revealed: false, wrong: false };
         }
       }
     }
@@ -35,9 +41,10 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
   const [selectedCell, setSelectedCell] = useState<{ x: number; y: number } | null>(null);
   const [direction, setDirection] = useState<"across" | "down">("across");
   const [pencilMode, setPencilMode] = useState(false);
-  const [completedWords, setCompletedWords] = useState<Set<number>>(new Set());
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [revealedWords, _setRevealedWords] = useState<Set<number>>(new Set());
+  const [correctWords, setCorrectWords] = useState<Set<number>>(new Set());
+  const [hintedWords, setHintedWords] = useState<Set<number>>(new Set());
+  const [hintsUsed, setHintsUsed] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -100,10 +107,11 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
     if (key === "Backspace") {
       const k = `${selectedCell.x},${selectedCell.y}`;
       const current = cellStates[k];
+      if (current?.revealed) return; // don't delete hinted letters
       if (current?.value) {
         setCellStates((prev) => ({
           ...prev,
-          [k]: { ...prev[k], value: "", wrong: false, checked: false },
+          [k]: { ...prev[k], value: "", wrong: false },
         }));
       } else {
         moveCursor(-1);
@@ -111,10 +119,13 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
           setSelectedCell((sel) => {
             if (sel) {
               const nk = `${sel.x},${sel.y}`;
-              setCellStates((prev) => ({
-                ...prev,
-                [nk]: { ...prev[nk], value: "", wrong: false, checked: false },
-              }));
+              setCellStates((prev) => {
+                if (prev[nk]?.revealed) return prev; // don't delete hinted letters
+                return {
+                  ...prev,
+                  [nk]: { ...prev[nk], value: "", wrong: false },
+                };
+              });
             }
             return sel;
           });
@@ -137,14 +148,19 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
     if (!/^[A-Z]$/.test(letter)) return;
 
     const k = `${selectedCell.x},${selectedCell.y}`;
-    setCellStates((prev) => {
-      const updated = {
-        ...prev,
-        [k]: { ...prev[k], value: letter, pencil: pencilMode, wrong: false, checked: false },
-      };
-      setTimeout(() => checkWordCompletion(updated), 0);
-      return updated;
-    });
+    if (cellStates[k]?.revealed) {
+      // skip over hinted cells
+      moveCursor(1);
+      return;
+    }
+
+    setCellStates((prev) => ({
+      ...prev,
+      [k]: { ...prev[k], value: letter, pencil: pencilMode, wrong: false },
+    }));
+
+    // Clear submitted state when user edits after a failed submit
+    if (submitted) setSubmitted(false);
 
     moveCursor(1);
   }
@@ -159,44 +175,93 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
     }
   }
 
-  function checkWordCompletion(states: Record<string, CellState>) {
-    const newCompleted = new Set(completedWords);
-    let changed = false;
+  function handleHint() {
+    if (!activeWord || correctWords.has(activeWord.index)) return;
 
-    for (const word of words) {
-      if (newCompleted.has(word.index)) continue;
-      const allFilled = word.cells.every((c) => states[`${c.x},${c.y}`]?.value !== "");
-      if (!allFilled) continue;
-      const allCorrect = word.cells.every((c, i) => states[`${c.x},${c.y}`]?.value === word.answer[i]);
-      if (allCorrect) {
-        newCompleted.add(word.index);
-        changed = true;
-        onWordComplete(word.index, revealedWords.has(word.index));
-      }
-    }
+    // Find unrevealed cells that don't already have the correct letter
+    const candidates = activeWord.cells
+      .map((c, i) => ({ c, i }))
+      .filter(({ c, i }) => {
+        const state = cellStates[`${c.x},${c.y}`];
+        return !state?.revealed && state?.value !== activeWord.answer[i];
+      });
 
-    if (changed) {
-      setCompletedWords(newCompleted);
-      if (newCompleted.size === words.length) onAllComplete();
-    }
+    if (candidates.length === 0) return;
+
+    const pick = candidates[Math.floor(Math.random() * candidates.length)];
+    const k = `${pick.c.x},${pick.c.y}`;
+    const correctLetter = activeWord.answer[pick.i];
+
+    setCellStates((prev) => ({
+      ...prev,
+      [k]: { ...prev[k], value: correctLetter, revealed: true, pencil: false, wrong: false },
+    }));
+
+    setHintedWords((prev) => new Set(prev).add(activeWord.index));
+    setHintsUsed((h) => h + 1);
+    if (submitted) setSubmitted(false);
   }
 
+  function handleSubmitPuzzle() {
+    setSubmitted(true);
+    const newCorrect = new Set(correctWords);
+    let allCorrect = true;
 
+    setCellStates((prev) => {
+      const updated = { ...prev };
+
+      for (const word of words) {
+        if (newCorrect.has(word.index)) continue;
+
+        const wordCorrect = word.cells.every(
+          (c, i) => updated[`${c.x},${c.y}`]?.value === word.answer[i]
+        );
+
+        if (wordCorrect) {
+          newCorrect.add(word.index);
+        } else {
+          allCorrect = false;
+          // Mark wrong cells
+          for (let i = 0; i < word.cells.length; i++) {
+            const c = word.cells[i];
+            const k = `${c.x},${c.y}`;
+            if (updated[k].value && updated[k].value !== word.answer[i]) {
+              updated[k] = { ...updated[k], wrong: true };
+            }
+          }
+        }
+      }
+
+      return updated;
+    });
+
+    setCorrectWords(newCorrect);
+
+    onPuzzleSubmit({
+      allCorrect,
+      wordsCorrect: newCorrect.size,
+      totalWords: words.length,
+      wordsWithHint: [...newCorrect].filter((wi) => hintedWords.has(wi)).length,
+      hintsUsed,
+    });
+  }
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
+      // Skip if the hidden input is focused — it handles its own events
+      const fromInput = e.target === inputRef.current;
       if (e.key === "Tab") { e.preventDefault(); handleKeyInput("Tab"); return; }
-      if (e.key === "Backspace") { e.preventDefault(); handleKeyInput("Backspace"); return; }
+      if (e.key === "Backspace" && !fromInput) { e.preventDefault(); handleKeyInput("Backspace"); return; }
       if (e.key === "ArrowRight") { e.preventDefault(); setDirection("across"); moveCursor(1); return; }
       if (e.key === "ArrowLeft") { e.preventDefault(); setDirection("across"); moveCursor(-1); return; }
       if (e.key === "ArrowDown") { e.preventDefault(); setDirection("down"); moveCursor(1); return; }
       if (e.key === "ArrowUp") { e.preventDefault(); setDirection("down"); moveCursor(-1); return; }
-      if (e.key.length === 1) handleKeyInput(e.key);
+      if (e.key.length === 1 && !fromInput) handleKeyInput(e.key);
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCell, direction, activeWord, pencilMode]);
+  }, [selectedCell, direction, activeWord, pencilMode, submitted]);
 
   function isInActiveWord(x: number, y: number): boolean {
     if (!activeWord) return false;
@@ -209,6 +274,15 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
   const gridWidth = cellSize * width;
   const numFontSize = Math.max(9, cellSize * 0.3);
   const letterFontSize = Math.max(14, cellSize * 0.5);
+
+  // Check if all cells are filled (for enabling submit button)
+  const allFilled = useMemo(() => {
+    return words.every((word) =>
+      word.cells.every((c) => cellStates[`${c.x},${c.y}`]?.value !== "")
+    );
+  }, [cellStates, words]);
+
+  const allSolved = correctWords.size === words.length;
 
   return (
     <div className="select-none">
@@ -294,16 +368,18 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
                 const state = cellStates[k];
                 const isSelected = selectedCell?.x === x && selectedCell?.y === y;
                 const inWord = isInActiveWord(x, y);
-                const isComplete = cell.wordIndices.some((wi) => completedWords.has(wi));
+                const isCorrectWord = cell.wordIndices.some((wi) => correctWords.has(wi));
                 const clueNum = clueNumMap.get(k);
 
                 let bg: string;
                 if (isSelected) {
                   bg = "#fbbf24";
+                } else if (state?.wrong) {
+                  bg = "#fecaca"; // light red for wrong cells
+                } else if (isCorrectWord) {
+                  bg = "#d1fae5"; // green for correct words
                 } else if (inWord) {
                   bg = "#dbeafe";
-                } else if (isComplete) {
-                  bg = "#d1fae5";
                 } else {
                   bg = "#ffffff";
                 }
@@ -313,6 +389,8 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
                   textColor = "#3b82f6";
                 } else if (state?.wrong) {
                   textColor = "#dc2626";
+                } else if (isCorrectWord) {
+                  textColor = "#16a34a";
                 } else if (state?.pencil) {
                   textColor = "#9ca3af";
                 } else {
@@ -329,7 +407,7 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
                       background: bg,
                       borderRight: "1px solid #bbb",
                       borderBottom: "1px solid #bbb",
-                      transition: "background 0.1s ease",
+                      transition: "background 0.15s ease",
                     }}
                     onClick={(e) => {
                       e.stopPropagation();
@@ -395,7 +473,28 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
         >
           {pencilMode ? "Pencil On" : "Pencil"}
         </button>
+        <button
+          onClick={handleHint}
+          disabled={!activeWord || correctWords.has(activeWord?.index ?? -1) || allSolved}
+          className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-surface-border text-text-secondary hover:bg-surface transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+        >
+          Hint (-5pts)
+        </button>
+        <button
+          onClick={handleSubmitPuzzle}
+          disabled={!allFilled || allSolved}
+          className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-bauhaus-blue text-bauhaus-blue hover:bg-bauhaus-blue/10 transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+        >
+          {allSolved ? "Solved!" : "Submit Puzzle"}
+        </button>
       </div>
+
+      {/* Feedback after submit */}
+      {submitted && !allSolved && (
+        <div className="text-center mb-4 px-4 py-2 border-2 border-bauhaus-red/30 text-bauhaus-red text-sm font-bold">
+          Some words are wrong — incorrect cells are highlighted in red. Fix them and resubmit.
+        </div>
+      )}
 
       {/* Clue lists */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -407,7 +506,7 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
           <div className="space-y-0">
             {acrossClues.map((w) => {
               const isActive = activeWord?.index === w.index && activeWord?.direction === "across";
-              const done = completedWords.has(w.index);
+              const done = correctWords.has(w.index);
               return (
                 <button
                   key={`a-${w.index}`}
@@ -445,7 +544,7 @@ export default function CrosswordGrid({ puzzle, onWordComplete, onAllComplete }:
           <div className="space-y-0">
             {downClues.map((w) => {
               const isActive = activeWord?.index === w.index && activeWord?.direction === "down";
-              const done = completedWords.has(w.index);
+              const done = correctWords.has(w.index);
               return (
                 <button
                   key={`d-${w.index}`}

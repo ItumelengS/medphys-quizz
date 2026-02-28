@@ -174,18 +174,26 @@ export default function SprintPage() {
       });
     }
 
+    const sprintTotal = correct + wrong;
+    const sprintAccuracy = sprintTotal > 0 ? correct / sprintTotal : 0;
+    const sprintPenalized = sprintAccuracy < 0.7;
+    const sprintXpChange = sprintPenalized
+      ? -Math.ceil((0.7 - sprintAccuracy) * sprintTotal * 5)
+      : xpResult.totalXp;
+
     const resultParams = new URLSearchParams({
       score: correct.toString(),
-      total: (correct + wrong).toString(),
+      total: sprintTotal.toString(),
       points: Math.max(0, finalPoints).toString(),
       bestStreak: "0",
       section: "all",
       sectionName: "Sprint",
       mode: "sprint",
-      xp: xpResult.totalXp.toString(),
+      xp: sprintXpChange.toString(),
       baseXp: xpResult.baseXp.toString(),
       bonusXp: xpResult.bonusXp.toString(),
       perfectBonus: xpResult.perfectBonusXp.toString(),
+      penalized: sprintPenalized ? "1" : "0",
     });
     router.push(`/results?${resultParams.toString()}`);
   }

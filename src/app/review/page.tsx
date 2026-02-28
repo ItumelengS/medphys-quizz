@@ -119,8 +119,14 @@ export default function ReviewPage() {
       }),
     });
 
-    const newLevel = getCareerLevel(prevXp + xpResult.totalXp);
-    const leveledUp = newLevel.level > prevLevel.level;
+    const reviewAccuracy = questions.length > 0 ? score / questions.length : 0;
+    const reviewPenalized = reviewAccuracy < 0.7;
+    const reviewXpChange = reviewPenalized
+      ? -Math.ceil((0.7 - reviewAccuracy) * questions.length * 5)
+      : xpResult.totalXp;
+
+    const newLevel = getCareerLevel(Math.max(0, prevXp + reviewXpChange));
+    const leveledUp = !reviewPenalized && newLevel.level > prevLevel.level;
 
     const resultParams = new URLSearchParams({
       score: score.toString(),
@@ -130,11 +136,12 @@ export default function ReviewPage() {
       section: "review",
       sectionName: "Spaced Review",
       mode: "review",
-      xp: xpResult.totalXp.toString(),
+      xp: reviewXpChange.toString(),
       baseXp: xpResult.baseXp.toString(),
       bonusXp: xpResult.bonusXp.toString(),
       perfectBonus: xpResult.perfectBonusXp.toString(),
       leveledUp: leveledUp ? newLevel.level.toString() : "",
+      penalized: reviewPenalized ? "1" : "0",
     });
     router.push(`/results?${resultParams.toString()}`);
   }

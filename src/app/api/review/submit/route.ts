@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
-import { calculateXp } from "@/lib/scoring";
+import { calculateXp, calculateXpWithPenalty } from "@/lib/scoring";
+import { applyXpChange } from "@/lib/apply-xp";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 
 export async function POST(req: NextRequest) {
@@ -65,12 +66,10 @@ export async function POST(req: NextRequest) {
     .single();
 
   const xpResult = calculateXp(0, "review", score, total, stats?.daily_streak || 0);
+  const { xpChange, penalized } = calculateXpWithPenalty(score, total, xpResult.totalXp);
 
-  // Update XP
-  await supabase.rpc("increment_xp", {
-    p_user_id: userId,
-    p_amount: xpResult.totalXp,
-  });
+  // Apply XP change (handles penalty + level demotion)
+  const { newXp, demoted, newConfirmedLevel } = await applyXpChange(userId, xpChange);
 
   // Update stats
   await supabase.rpc("update_user_stats_after_quiz", {
@@ -80,15 +79,12 @@ export async function POST(req: NextRequest) {
     p_best_streak: 0,
   });
 
-  // Get updated XP
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("xp")
-    .eq("id", userId)
-    .single();
-
   return NextResponse.json({
     xp: xpResult,
-    newTotalXp: profile?.xp || 0,
+    xpChange,
+    penalized,
+    demoted,
+    newConfirmedLevel,
+    newTotalXp: newXp,
   });
 }

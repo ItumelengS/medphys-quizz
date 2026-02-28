@@ -106,6 +106,41 @@ export function calculateXp(
   };
 }
 
+// ── XP penalty system (HPCSA 70% rule) ────────────────────
+
+export const XP_PASS_THRESHOLD = 0.7; // 70% accuracy required
+
+/**
+ * Below 70% accuracy: lose XP proportional to how far below threshold.
+ * Above 70%: gain XP normally.
+ */
+export function calculateXpWithPenalty(
+  score: number,
+  total: number,
+  normalXp: number
+): { xpChange: number; penalized: boolean } {
+  if (total === 0) return { xpChange: 0, penalized: false };
+
+  const accuracy = score / total;
+  if (accuracy >= XP_PASS_THRESHOLD) {
+    return { xpChange: normalXp, penalized: false };
+  }
+
+  // Penalty scales with distance below 70%
+  const deficit = XP_PASS_THRESHOLD - accuracy;
+  const penalty = Math.ceil(deficit * total * 5);
+  return { xpChange: -penalty, penalized: true };
+}
+
+/**
+ * After applying XP change, check if confirmed_level should drop.
+ * Returns the correct confirmed_level for the given XP.
+ */
+export function getCorrectConfirmedLevel(xp: number, currentConfirmedLevel: number): number {
+  const xpLevel = getCareerLevel(xp).level;
+  return Math.min(currentConfirmedLevel, xpLevel);
+}
+
 // ── Variant-specific point calculators ─────────────────────
 
 export function calculateSuddenDeathPoints(
@@ -127,18 +162,20 @@ export function calculateSprintScore(
 }
 
 export function calculateCrosswordScore(
-  wordsWithoutReveal: number,
-  wordsWithReveal: number,
+  wordsWithoutHint: number,
+  wordsWithHint: number,
   allWords: boolean,
   timerSelected: boolean,
-  remainingSeconds: number
+  remainingSeconds: number,
+  hintsUsed: number = 0
 ): number {
-  let score = wordsWithoutReveal * 20 + wordsWithReveal * 5;
-  if (allWords && wordsWithReveal === 0) score += 75;
+  let score = wordsWithoutHint * 20 + wordsWithHint * 10;
+  score -= hintsUsed * 5;
+  if (allWords && hintsUsed === 0) score += 75;
   if (timerSelected && remainingSeconds > 0) {
     score += Math.floor(remainingSeconds / 10) * 5;
   }
-  return score;
+  return Math.max(0, score);
 }
 
 export function getGradeEmoji(accuracy: number): string {

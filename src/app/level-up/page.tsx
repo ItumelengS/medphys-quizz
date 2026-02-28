@@ -113,16 +113,23 @@ export default function LevelUpExamPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentQuestion, selectedAnswer]);
 
+  const [xpPenalty, setXpPenalty] = useState(0);
+
   function failExam(selected: string | null) {
     if (timerRef.current) clearInterval(timerRef.current);
     setSelectedAnswer(selected);
     setFailedQuestion({ question: currentQuestion, selected });
+    const questionsRemaining = questions.length - (currentIndex + 1);
     // Submit failure
     fetch("/api/level-up/complete", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ passed: false, powerupsUsed }),
-    });
+      body: JSON.stringify({ passed: false, powerupsUsed, questionsRemaining }),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.xpPenalty) setXpPenalty(data.xpPenalty);
+      });
     setTimeout(() => setPhase("fail"), 1500);
   }
 
@@ -430,6 +437,11 @@ export default function LevelUpExamPage() {
           <p className="text-text-secondary font-light">
             You got {score} out of {questions.length} before failing.
           </p>
+          {xpPenalty > 0 && (
+            <p className="text-bauhaus-red text-sm font-bold mt-2">
+              −{xpPenalty} XP penalty
+            </p>
+          )}
           <p className="text-text-dim text-sm mt-1">Keep practicing and try again!</p>
         </div>
 

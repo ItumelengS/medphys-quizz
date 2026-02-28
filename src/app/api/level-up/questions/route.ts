@@ -1,8 +1,18 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
+import { getExamDifficultyRange } from "@/lib/scoring";
 
 const EXAM_QUESTION_COUNT = 10;
+const SELECT_COLS = "id, section_id, question, answer, choices, explanation, difficulty";
+
+function shuffle<T>(arr: T[]): T[] {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 export async function GET() {
   const session = await auth();
@@ -13,13 +23,22 @@ export async function GET() {
   const supabase = createServiceClient();
   const userId = session.user.id;
 
-  // Get user's question history to find "hard" questions
+  // Get user profile to determine difficulty range
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("powerups, xp, confirmed_level")
+    .eq("id", userId)
+    .single();
+
+  const confirmedLevel = profile?.confirmed_level || 1;
+  const { min, max } = getExamDifficultyRange(confirmedLevel);
+
+  // Get user's question history to find weak-spot questions
   const { data: history } = await supabase
     .from("question_history")
     .select("question_id, times_shown, times_correct")
     .eq("user_id", userId);
 
-  // Build a set of question IDs the user has struggled with (low accuracy)
   const hardQuestionIds: string[] = [];
   const seenQuestionIds = new Set<string>();
 
@@ -31,69 +50,44 @@ export async function GET() {
     }
   }
 
-  // Fetch hard questions the user got wrong before
-  let hardQuestions: Array<{ id: string; section_id: string; question: string; answer: string; choices: string[]; explanation: string }> = [];
+  // Fetch weak-spot questions, filtered to the level's difficulty range
+  let hardQuestions: Array<{ id: string; section_id: string; question: string; answer: string; choices: string[]; explanation: string; difficulty: number }> = [];
   if (hardQuestionIds.length > 0) {
     const { data } = await supabase
       .from("questions")
-      .select("id, section_id, question, answer, choices, explanation")
-      .in("id", hardQuestionIds.slice(0, 50));
+      .select(SELECT_COLS)
+      .in("id", hardQuestionIds.slice(0, 50))
+      .gte("difficulty", min)
+      .lte("difficulty", max);
     hardQuestions = data || [];
   }
 
-  // Shuffle hard questions
-  for (let i = hardQuestions.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [hardQuestions[i], hardQuestions[j]] = [hardQuestions[j], hardQuestions[i]];
-  }
+  const selected = shuffle(hardQuestions).slice(0, EXAM_QUESTION_COUNT);
 
-  const selected = hardQuestions.slice(0, EXAM_QUESTION_COUNT);
-
-  // If we need more questions, fill with unseen questions from varied sections
+  // Fill remaining slots with level-appropriate questions
   if (selected.length < EXAM_QUESTION_COUNT) {
     const remaining = EXAM_QUESTION_COUNT - selected.length;
     const selectedIds = new Set(selected.map((q) => q.id));
 
-    // Get all sections for breadth
-    const { data: allQuestions } = await supabase
+    const { data: poolQuestions } = await supabase
       .from("questions")
-      .select("id, section_id, question, answer, choices, explanation")
+      .select(SELECT_COLS)
+      .gte("difficulty", min)
+      .lte("difficulty", max)
       .limit(500);
 
-    // Prefer unseen, then mix
-    const unseen = (allQuestions || []).filter(
+    const unseen = (poolQuestions || []).filter(
       (q) => !seenQuestionIds.has(q.id) && !selectedIds.has(q.id)
     );
-    const seen = (allQuestions || []).filter(
+    const seen = (poolQuestions || []).filter(
       (q) => seenQuestionIds.has(q.id) && !selectedIds.has(q.id) && !hardQuestionIds.includes(q.id)
     );
 
-    // Shuffle both pools
-    for (let i = unseen.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [unseen[i], unseen[j]] = [unseen[j], unseen[i]];
-    }
-    for (let i = seen.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [seen[i], seen[j]] = [seen[j], seen[i]];
-    }
-
-    const filler = [...unseen, ...seen].slice(0, remaining);
+    const filler = [...shuffle(unseen), ...shuffle(seen)].slice(0, remaining);
     selected.push(...filler);
   }
 
-  // Final shuffle
-  for (let i = selected.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [selected[i], selected[j]] = [selected[j], selected[i]];
-  }
-
-  // Get user powerups
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("powerups, xp")
-    .eq("id", userId)
-    .single();
+  shuffle(selected);
 
   return NextResponse.json({
     questions: selected,

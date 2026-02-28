@@ -15,9 +15,10 @@ export async function POST(req: NextRequest) {
   const supabase = createServiceClient();
   const body = await req.json();
 
-  const { passed, powerupsUsed } = body as {
+  const { passed, powerupsUsed, questionsRemaining } = body as {
     passed: boolean;
     powerupsUsed: PowerUpInventory;
+    questionsRemaining?: number;
   };
 
   const { data: profile } = await supabase
@@ -42,11 +43,20 @@ export async function POST(req: NextRequest) {
   }
 
   if (!passed) {
+    const XP_PENALTY_PER_QUESTION = 10;
+    const remaining = Math.max(0, questionsRemaining ?? 0);
+    const xpPenalty = remaining * XP_PENALTY_PER_QUESTION;
+    const newXp = Math.max(0, (profile.xp || 0) - xpPenalty);
+
     await supabase
       .from("profiles")
-      .update({ powerups: newInventory })
+      .update({ powerups: newInventory, xp: newXp })
       .eq("id", userId);
-    return NextResponse.json({ success: false, message: "Exam failed. Try again!" });
+    return NextResponse.json({
+      success: false,
+      message: "Exam failed. Try again!",
+      xpPenalty,
+    });
   }
 
   // Check eligibility

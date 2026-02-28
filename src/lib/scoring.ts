@@ -176,6 +176,19 @@ export function getAdaptiveTimer(
   return Math.max(TIMER_SHRINK_MIN, baseTime - correctCount * TIMER_SHRINK);
 }
 
+// Difficulty range for each level-up exam (confirmed_level → next level)
+export function getExamDifficultyRange(confirmedLevel: number): { min: number; max: number } {
+  switch (confirmedLevel) {
+    case 1: return { min: 1, max: 3 };   // Intern → Registrar
+    case 2: return { min: 2, max: 5 };   // Registrar → Medical Physicist
+    case 3: return { min: 4, max: 7 };   // Medical Physicist → Senior
+    case 4: return { min: 5, max: 8 };   // Senior → Chief
+    case 5: return { min: 7, max: 9 };   // Chief → Consultant
+    case 6: return { min: 8, max: 10 };  // Consultant → Professor
+    default: return { min: 1, max: 10 };
+  }
+}
+
 export function isExamReady(xp: number, confirmedLevel: number): boolean {
   const xpLevel = getCareerLevel(xp);
   return xpLevel.level > confirmedLevel;

@@ -122,7 +122,7 @@ export default function ReviewPage() {
     const reviewAccuracy = questions.length > 0 ? score / questions.length : 0;
     const reviewPenalized = reviewAccuracy < 0.7;
     const reviewXpChange = reviewPenalized
-      ? -Math.ceil((0.7 - reviewAccuracy) * questions.length * 5)
+      ? -Math.ceil((0.7 - reviewAccuracy) * questions.length * 12)
       : xpResult.totalXp;
 
     const newLevel = getCareerLevel(Math.max(0, prevXp + reviewXpChange));

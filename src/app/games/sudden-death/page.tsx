@@ -268,7 +268,7 @@ export default function SuddenDeathPage() {
     const sdAccuracy = finalTotal > 0 ? finalScore / finalTotal : 0;
     const sdPenalized = sdAccuracy < 0.7;
     const sdXpChange = sdPenalized
-      ? -Math.ceil((0.7 - sdAccuracy) * finalTotal * 5)
+      ? -Math.ceil((0.7 - sdAccuracy) * finalTotal * 12)
       : xpResult.totalXp;
 
     const resultParams = new URLSearchParams({

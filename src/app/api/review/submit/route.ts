@@ -66,7 +66,27 @@ export async function POST(req: NextRequest) {
     .single();
 
   const xpResult = calculateXp(0, "review", score, total, stats?.daily_streak || 0);
-  const { xpChange, penalized } = calculateXpWithPenalty(score, total, xpResult.totalXp);
+
+  const { data: userProfile } = await supabase
+    .from("profiles")
+    .select("confirmed_level")
+    .eq("id", userId)
+    .single();
+  const confirmedLevel = userProfile?.confirmed_level ?? 1;
+
+  const wrongIds = answers.filter((a: { correct: boolean; questionId: string }) => !a.correct).map((a: { questionId: string }) => a.questionId);
+  let wrongDifficulties: number[] = [];
+  if (wrongIds.length > 0) {
+    const { data: wrongQs } = await supabase
+      .from("questions")
+      .select("difficulty")
+      .in("id", wrongIds);
+    wrongDifficulties = (wrongQs || []).map((q) => q.difficulty);
+  }
+
+  const { xpChange, penalized } = calculateXpWithPenalty(
+    score, total, xpResult.totalXp, confirmedLevel, wrongDifficulties
+  );
 
   // Apply XP change (handles penalty + level demotion)
   const { newXp, demoted, newConfirmedLevel } = await applyXpChange(userId, xpChange);

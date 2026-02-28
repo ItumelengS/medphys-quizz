@@ -106,18 +106,34 @@ export function calculateXp(
   };
 }
 
-// ── XP penalty system (HPCSA 70% rule) ────────────────────
+// ── XP penalty system (HPCSA 70% rule + ELO-style weighting) ──
 
 export const XP_PASS_THRESHOLD = 0.7; // 70% accuracy required
 
 /**
- * Below 70% accuracy: lose XP proportional to how far below threshold.
+ * Get the expected difficulty midpoint for a player's confirmed level.
+ * Used to weight penalties: wrong on easy questions = bigger loss.
+ */
+export function getExpectedDifficulty(confirmedLevel: number): number {
+  const range = getExamDifficultyRange(confirmedLevel);
+  return (range.min + range.max) / 2;
+}
+
+/**
+ * Below 70% accuracy: lose XP. Penalty is ELO-weighted by question difficulty.
+ * - Wrong on easy questions (below your level) → bigger penalty
+ * - Wrong on hard questions (above your level) → smaller penalty
  * Above 70%: gain XP normally.
+ *
+ * wrongDifficulties: difficulty values of each incorrectly answered question.
+ * If empty/undefined, falls back to flat penalty.
  */
 export function calculateXpWithPenalty(
   score: number,
   total: number,
-  normalXp: number
+  normalXp: number,
+  confirmedLevel: number = 1,
+  wrongDifficulties: number[] = []
 ): { xpChange: number; penalized: boolean } {
   if (total === 0) return { xpChange: 0, penalized: false };
 
@@ -126,10 +142,27 @@ export function calculateXpWithPenalty(
     return { xpChange: normalXp, penalized: false };
   }
 
-  // Penalty scales with distance below 70%
-  const deficit = XP_PASS_THRESHOLD - accuracy;
-  const penalty = Math.ceil(deficit * total * 5);
-  return { xpChange: -penalty, penalized: true };
+  // ELO-style: weight each wrong answer by how far below your level it is
+  // Base penalty scales with level — higher rank = more to lose
+  const expected = getExpectedDifficulty(confirmedLevel);
+  const basePenalty = 5 + confirmedLevel * 3;
+
+  let penalty = 0;
+  if (wrongDifficulties.length > 0) {
+    for (const diff of wrongDifficulties) {
+      // Easy question wrong → multiplier > 1 (lose more)
+      // Hard question wrong → multiplier < 1 (lose less)
+      // Clamp between 0.5x and 2.5x
+      const multiplier = Math.max(0.5, Math.min(2.5, 1 + (expected - diff) * 0.3));
+      penalty += basePenalty * multiplier;
+    }
+  } else {
+    // Fallback: flat penalty if no difficulty data
+    const deficit = XP_PASS_THRESHOLD - accuracy;
+    penalty = deficit * total * basePenalty;
+  }
+
+  return { xpChange: -Math.ceil(penalty), penalized: true };
 }
 
 /**

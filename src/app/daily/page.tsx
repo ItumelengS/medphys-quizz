@@ -178,7 +178,7 @@ export default function DailyPage() {
     const dailyAccuracy = questions.length > 0 ? score / questions.length : 0;
     const dailyPenalized = dailyAccuracy < 0.7;
     const dailyXpChange = dailyPenalized
-      ? -Math.ceil((0.7 - dailyAccuracy) * questions.length * 5)
+      ? -Math.ceil((0.7 - dailyAccuracy) * questions.length * 12)
       : xpResult.totalXp;
 
     const resultParams = new URLSearchParams({

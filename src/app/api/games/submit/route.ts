@@ -81,9 +81,29 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  // 2. Calculate XP (with 70% penalty rule)
+  // 2. Calculate XP (with 70% penalty rule + ELO weighting)
   const xpResult = calculateXp(points, mode, score, total, 0);
-  const { xpChange, penalized } = calculateXpWithPenalty(score, total, xpResult.totalXp);
+
+  const { data: userProfile } = await supabase
+    .from("profiles")
+    .select("confirmed_level")
+    .eq("id", userId)
+    .single();
+  const confirmedLevel = userProfile?.confirmed_level ?? 1;
+
+  const wrongIds = answers.filter((a) => !a.correct).map((a) => a.questionId);
+  let wrongDifficulties: number[] = [];
+  if (wrongIds.length > 0) {
+    const { data: wrongQs } = await supabase
+      .from("questions")
+      .select("difficulty")
+      .in("id", wrongIds);
+    wrongDifficulties = (wrongQs || []).map((q) => q.difficulty);
+  }
+
+  const { xpChange, penalized } = calculateXpWithPenalty(
+    score, total, xpResult.totalXp, confirmedLevel, wrongDifficulties
+  );
 
   // 3. Apply XP change (handles penalty + level demotion)
   const { newXp, demoted, newConfirmedLevel } = await applyXpChange(userId, xpChange);

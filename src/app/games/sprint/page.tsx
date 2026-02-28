@@ -178,7 +178,7 @@ export default function SprintPage() {
     const sprintAccuracy = sprintTotal > 0 ? correct / sprintTotal : 0;
     const sprintPenalized = sprintAccuracy < 0.7;
     const sprintXpChange = sprintPenalized
-      ? -Math.ceil((0.7 - sprintAccuracy) * sprintTotal * 5)
+      ? -Math.ceil((0.7 - sprintAccuracy) * sprintTotal * 12)
       : xpResult.totalXp;
 
     const resultParams = new URLSearchParams({

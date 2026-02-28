@@ -2167,6 +2167,135 @@ export const crosswordClues: CrosswordClue[] = [
   { id: "cw-3024", clue: "Flatness deviation: maximum variation in beam profile within central 80%", answer: "FLATDEV", category: "Quality Assurance", difficulty: "medium" },
   { id: "cw-3025", clue: "Symmetry: maximum ratio of doses at symmetric points across beam axis", answer: "SYMMETRY", category: "Quality Assurance", difficulty: "easy" },
   { id: "cw-3026", clue: "Field size definition: distance between 50% dose points on beam profile", answer: "FIFTYPERCENT", category: "Quality Assurance", difficulty: "medium" },
+
+  // ── New clues cw-3027 to cw-3126 ──────────────────────────────────
+  // Radiation Physics
+  { id: "cw-3027", clue: "Minimum photon energy to create an electron-positron pair", answer: "THRESHOLD", category: "Radiation Physics", difficulty: "medium" },
+  { id: "cw-3028", clue: "Electromagnetic radiation emitted during nuclear de-excitation", answer: "GAMMA", category: "Radiation Physics", difficulty: "easy" },
+  { id: "cw-3029", clue: "Ratio of scattered to primary radiation intensity", answer: "SPR", category: "Radiation Physics", difficulty: "hard" },
+  { id: "cw-3030", clue: "Particle with same mass as electron but positive charge", answer: "POSITRON", category: "Radiation Physics", difficulty: "easy" },
+  { id: "cw-3031", clue: "Coherent scattering with no energy transfer to medium", answer: "RAYLEIGH", category: "Radiation Physics", difficulty: "medium" },
+  { id: "cw-3032", clue: "Quantity describing energy transferred per unit path length", answer: "LET", category: "Radiation Physics", difficulty: "easy" },
+  { id: "cw-3033", clue: "Emission of characteristic X-ray after inner shell ionization", answer: "FLUORESCENCE", category: "Radiation Physics", difficulty: "medium" },
+  { id: "cw-3034", clue: "Process where neutron is captured and gamma ray emitted", answer: "CAPTURE", category: "Radiation Physics", difficulty: "hard" },
+
+  // Radiotherapy
+  { id: "cw-3035", clue: "Treatment technique using a single direct radiation field", answer: "SSD", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3036", clue: "High dose region shaped to conform to tumor volume", answer: "HOTSPOT", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3037", clue: "Beam arrangement using opposed parallel fields", answer: "PARALLEL", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3038", clue: "Stereotactic body radiation therapy abbreviation", answer: "SBRT", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3039", clue: "Volume receiving at least 95% of prescribed dose", answer: "COVERAGE", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3040", clue: "Radioactive isotope used in permanent prostate implants", answer: "IODINE", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3041", clue: "Technique delivering dose from many arc angles continuously", answer: "VMAT", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3042", clue: "External beam unit using cobalt-60 as radiation source", answer: "COBALT", category: "Radiotherapy", difficulty: "easy" },
+
+  // Dosimetry
+  { id: "cw-3043", clue: "Bragg-Gray cavity theory relates dose in medium to dose in ___", answer: "CAVITY", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3044", clue: "Correction factor for ion recombination in ionization chambers", answer: "PION", category: "Dosimetry", difficulty: "hard" },
+  { id: "cw-3045", clue: "Material used as buildup cap for megavoltage beam calibration", answer: "ACRYLIC", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3046", clue: "TRS-398 protocol quantity: absorbed dose to water", answer: "ABSORBED", category: "Dosimetry", difficulty: "easy" },
+  { id: "cw-3047", clue: "Film darkening proportional to radiation exposure", answer: "OPTICAL", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3048", clue: "Type of chamber with very small sensitive volume for small fields", answer: "MICRO", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3049", clue: "Luminescent dosimeter requiring heating to read signal", answer: "TLD", category: "Dosimetry", difficulty: "easy" },
+  { id: "cw-3050", clue: "Spencer-Attix theory improvement over Bragg-Gray for electron range", answer: "SPENCER", category: "Dosimetry", difficulty: "hard" },
+
+  // Treatment Planning
+  { id: "cw-3051", clue: "Algorithm using pencil beam kernels for dose computation", answer: "PENCILBEAM", category: "Treatment Planning", difficulty: "medium" },
+  { id: "cw-3052", clue: "Optimization method adjusting MLC leaf positions iteratively", answer: "INVERSE", category: "Treatment Planning", difficulty: "medium" },
+  { id: "cw-3053", clue: "CT number calibration curve relating HU to electron density", answer: "CALIBRATION", category: "Treatment Planning", difficulty: "easy" },
+  { id: "cw-3054", clue: "Dose calculation grid resolution in treatment planning", answer: "GRIDSIZE", category: "Treatment Planning", difficulty: "medium" },
+  { id: "cw-3055", clue: "Structure contoured around target to account for setup error", answer: "PTV", category: "Treatment Planning", difficulty: "easy" },
+  { id: "cw-3056", clue: "Monte Carlo method uses random sampling for dose calculation", answer: "MONTECARLO", category: "Treatment Planning", difficulty: "easy" },
+  { id: "cw-3057", clue: "Collapsed cone convolution algorithm for heterogeneity correction", answer: "COLLAPSEDCONE", category: "Treatment Planning", difficulty: "hard" },
+  { id: "cw-3058", clue: "Digitally reconstructed radiograph from CT data for verification", answer: "DRR", category: "Treatment Planning", difficulty: "easy" },
+
+  // Quality Assurance
+  { id: "cw-3059", clue: "Device used to verify MLC leaf position accuracy", answer: "PICKET", category: "Quality Assurance", difficulty: "medium" },
+  { id: "cw-3060", clue: "Constancy check comparing current output to baseline value", answer: "BASELINE", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3061", clue: "Geometric test using spoke pattern to check radiation isocentre", answer: "STARSHOT", category: "Quality Assurance", difficulty: "medium" },
+  { id: "cw-3062", clue: "End-to-end test phantom simulating complete treatment workflow", answer: "ENDTOEND", category: "Quality Assurance", difficulty: "medium" },
+  { id: "cw-3063", clue: "Tolerance level for daily linac output variation, typically 3%", answer: "TOLERANCE", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3064", clue: "Winston-Lutz test evaluates coincidence of radiation and mechanical ___", answer: "ISOCENTRE", category: "Quality Assurance", difficulty: "medium" },
+  { id: "cw-3065", clue: "TG-142 report specifying linac QA frequencies and tolerances", answer: "TGONEFORTYTWO", category: "Quality Assurance", difficulty: "hard" },
+
+  // Diagnostic Imaging
+  { id: "cw-3066", clue: "Imaging artifact caused by patient motion during scan", answer: "MOTION", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3067", clue: "CT reconstruction method using filtered back projection", answer: "FBP", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3068", clue: "MRI contrast mechanism based on spin-lattice relaxation", answer: "TONE", category: "Diagnostic Imaging", difficulty: "hard" },
+  { id: "cw-3069", clue: "Flat panel detector used in modern digital radiography", answer: "FLATPANEL", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3070", clue: "Measure of spatial resolution in imaging: line pairs per mm", answer: "LINEPAIRS", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3071", clue: "Imaging modality using sound waves for real-time visualization", answer: "ULTRASOUND", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3072", clue: "Windowing in CT adjusts display level and ___", answer: "WIDTH", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3073", clue: "Noise metric in CT: standard deviation in uniform phantom region", answer: "STDDEV", category: "Diagnostic Imaging", difficulty: "hard" },
+
+  // Radiation Protection
+  { id: "cw-3074", clue: "Principle to keep doses as low as reasonably achievable", answer: "ALARA", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3075", clue: "Concrete or lead barrier attenuating primary radiation beam", answer: "SHIELDING", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3076", clue: "Device worn by radiation workers to monitor cumulative dose", answer: "BADGE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3077", clue: "Annual occupational effective dose limit in most countries: 20 mSv", answer: "LIMIT", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3078", clue: "Survey meter used to measure ambient dose equivalent rate", answer: "SURVEY", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3079", clue: "Controlled area requiring restricted access due to radiation levels", answer: "CONTROLLED", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3080", clue: "Tenth-value layer: thickness reducing intensity by factor of ten", answer: "TVL", category: "Radiation Protection", difficulty: "hard" },
+
+  // Radiobiology
+  { id: "cw-3081", clue: "Cell survival curve model with linear and quadratic components", answer: "LQ", category: "Radiobiology", difficulty: "easy" },
+  { id: "cw-3082", clue: "Oxygen enhancement ratio for increased radiosensitivity", answer: "OER", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3083", clue: "Time factor allowing normal tissue repair between fractions", answer: "REPAIR", category: "Radiobiology", difficulty: "easy" },
+  { id: "cw-3084", clue: "Hypoxic cells are more ___ to radiation damage", answer: "RESISTANT", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3085", clue: "Redistribution of cells into radiosensitive phases between fractions", answer: "REASSORTMENT", category: "Radiobiology", difficulty: "hard" },
+  { id: "cw-3086", clue: "Biologically effective dose accounting for fractionation effects", answer: "BED", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3087", clue: "Stochastic effect with no dose threshold: cancer ___", answer: "INDUCTION", category: "Radiobiology", difficulty: "hard" },
+  { id: "cw-3088", clue: "Tissue response occurring weeks to months after irradiation", answer: "LATE", category: "Radiobiology", difficulty: "easy" },
+
+  // Clinical Workflow
+  { id: "cw-3089", clue: "Patient immobilization device molded from thermoplastic material", answer: "MASK", category: "Clinical Workflow", difficulty: "easy" },
+  { id: "cw-3090", clue: "Daily image guidance using cone beam CT before treatment", answer: "CBCT", category: "Clinical Workflow", difficulty: "easy" },
+  { id: "cw-3091", clue: "Chart round reviewing each patient treatment plan and progress", answer: "CHARTROUND", category: "Clinical Workflow", difficulty: "medium" },
+  { id: "cw-3092", clue: "Independent dose calculation to verify treatment plan accuracy", answer: "SECONDCHECK", category: "Clinical Workflow", difficulty: "medium" },
+  { id: "cw-3093", clue: "Simulation session where CT scan is acquired for planning", answer: "SIMULATION", category: "Clinical Workflow", difficulty: "easy" },
+  { id: "cw-3094", clue: "Protocol for transferring treatment plans between systems: DICOM RT", answer: "DICOM", category: "Clinical Workflow", difficulty: "medium" },
+  { id: "cw-3095", clue: "Timeout procedure verifying correct patient, site, and plan", answer: "TIMEOUT", category: "Clinical Workflow", difficulty: "hard" },
+
+  // Industrial Radiography
+  { id: "cw-3096", clue: "Iridium-192 source used for industrial weld inspection", answer: "IRIDIUM", category: "Industrial Radiography", difficulty: "easy" },
+  { id: "cw-3097", clue: "Radiographic technique examining pipe weld integrity", answer: "WELD", category: "Industrial Radiography", difficulty: "easy" },
+  { id: "cw-3098", clue: "Image quality indicator placed on specimen to assess radiograph quality", answer: "IQI", category: "Industrial Radiography", difficulty: "medium" },
+  { id: "cw-3099", clue: "Collimator device guiding industrial source into exposure position", answer: "PROJECTOR", category: "Industrial Radiography", difficulty: "hard" },
+  { id: "cw-3100", clue: "Exclusion zone established around active radiography site", answer: "EXCLUSION", category: "Industrial Radiography", difficulty: "medium" },
+  { id: "cw-3101", clue: "Non-destructive testing method using penetrating radiation", answer: "NDT", category: "Industrial Radiography", difficulty: "medium" },
+  { id: "cw-3102", clue: "Guide tube connecting source projector to exposure head", answer: "GUIDETUBE", category: "Industrial Radiography", difficulty: "hard" },
+
+  // Nuclear Medicine
+  { id: "cw-3103", clue: "Technetium-99m: most widely used radionuclide in nuclear medicine", answer: "TECHNETIUM", category: "Nuclear Medicine", difficulty: "easy" },
+  { id: "cw-3104", clue: "PET imaging detects coincident annihilation ___", answer: "PHOTONS", category: "Nuclear Medicine", difficulty: "medium" },
+  { id: "cw-3105", clue: "Radiopharmaceutical accumulation proportional to metabolic activity", answer: "UPTAKE", category: "Nuclear Medicine", difficulty: "easy" },
+  { id: "cw-3106", clue: "Gamma camera component converting light to electrical signal", answer: "PMT", category: "Nuclear Medicine", difficulty: "hard" },
+  { id: "cw-3107", clue: "SPECT imaging technique rotating gamma camera around patient", answer: "SPECT", category: "Nuclear Medicine", difficulty: "easy" },
+  { id: "cw-3108", clue: "Lutetium-177 therapeutic radionuclide for neuroendocrine tumors", answer: "LUTETIUM", category: "Nuclear Medicine", difficulty: "hard" },
+  { id: "cw-3109", clue: "Standardized uptake value quantifying tracer concentration in PET", answer: "SUV", category: "Nuclear Medicine", difficulty: "medium" },
+
+  // Nuclear Power
+  { id: "cw-3110", clue: "Chain reaction sustained at constant rate in critical reactor", answer: "CRITICAL", category: "Nuclear Power", difficulty: "medium" },
+  { id: "cw-3111", clue: "Material slowing neutrons to thermal energies in reactor core", answer: "MODERATOR", category: "Nuclear Power", difficulty: "easy" },
+  { id: "cw-3112", clue: "Control rods absorbing neutrons to regulate fission rate", answer: "CONTROL", category: "Nuclear Power", difficulty: "easy" },
+  { id: "cw-3113", clue: "Spent nuclear fuel storage pool providing radiation shielding", answer: "SPENTFUEL", category: "Nuclear Power", difficulty: "medium" },
+  { id: "cw-3114", clue: "Containment structure preventing release of radioactive material", answer: "CONTAINMENT", category: "Nuclear Power", difficulty: "medium" },
+  { id: "cw-3115", clue: "Fissile isotope comprising about 0.7% of natural uranium", answer: "URANIUMTF", category: "Nuclear Power", difficulty: "hard" },
+  { id: "cw-3116", clue: "Reactor coolant transferring heat from core to steam generator", answer: "COOLANT", category: "Nuclear Power", difficulty: "easy" },
+
+  // General
+  { id: "cw-3117", clue: "International body setting radiation protection standards", answer: "ICRP", category: "General", difficulty: "medium" },
+  { id: "cw-3118", clue: "Half-life: time for radioactivity to decrease by ___", answer: "HALF", category: "General", difficulty: "easy" },
+  { id: "cw-3119", clue: "Unit of radioactivity equal to one disintegration per second", answer: "BECQUEREL", category: "General", difficulty: "easy" },
+  { id: "cw-3120", clue: "Electromagnetic spectrum region between UV and gamma rays", answer: "XRAY", category: "General", difficulty: "easy" },
+  { id: "cw-3121", clue: "Decay constant related to half-life by natural logarithm of two", answer: "LAMBDA", category: "General", difficulty: "hard" },
+  { id: "cw-3122", clue: "Atomic number: count of protons in a nucleus", answer: "ATOMIC", category: "General", difficulty: "easy" },
+  { id: "cw-3123", clue: "Inverse square law governs intensity decrease with ___", answer: "DISTANCE", category: "General", difficulty: "medium" },
+
+  // Pioneers
+  { id: "cw-3124", clue: "Nobel laureate who discovered radioactivity in uranium salts", answer: "BECQUEREL", category: "Pioneers", difficulty: "medium" },
+  { id: "cw-3125", clue: "Physicist who developed the cyclotron particle accelerator", answer: "LAWRENCE", category: "Pioneers", difficulty: "hard" },
+  { id: "cw-3126", clue: "Scientist who discovered the neutron in 1932", answer: "CHADWICK", category: "Pioneers", difficulty: "hard" },
 ];
 
 /** Get all unique categories */

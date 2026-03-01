@@ -91,6 +91,8 @@ export function calculateXp(
     baseXp = Math.floor(points * 1.5);
   } else if (mode === "crossword") {
     baseXp = Math.floor(points * 1.8);
+  } else if (mode === "match") {
+    baseXp = Math.floor(points * 1.6);
   } else {
     baseXp = points;
   }
@@ -209,6 +211,18 @@ export function calculateCrosswordScore(
     score += Math.floor(remainingSeconds / 10) * 5;
   }
   return Math.max(0, score);
+}
+
+export function calculateMatchScore(
+  pairs: number,
+  moves: number,
+  timeSeconds: number
+): number {
+  const base = pairs * 20;
+  const extraMoves = Math.max(0, moves - pairs);
+  const movePenalty = extraMoves * 3;
+  const timeBonus = Math.max(0, 300 - timeSeconds);
+  return Math.max(0, base - movePenalty + timeBonus);
 }
 
 export function getGradeEmoji(accuracy: number): string {

@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
   const body = (await req.json()) as GameSubmission;
   const { variant, answers, score, total, points, bestStreak, section, sectionName, durationSeconds, metadata } = body;
 
-  if (!["sudden-death", "sprint", "crossword"].includes(variant)) {
+  if (!["sudden-death", "sprint", "crossword", "match"].includes(variant)) {
     return NextResponse.json({ error: "Invalid variant" }, { status: 400 });
   }
 

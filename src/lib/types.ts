@@ -103,7 +103,7 @@ export interface DbDailyChallenge {
 // ── Tournament types ─────────────────────────────────────────
 export interface DbTournament {
   id: string;
-  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid";
   starts_at: string;
   ends_at: string;
   status: "upcoming" | "active" | "finished";
@@ -163,8 +163,8 @@ export interface QuestionRecord {
 }
 
 // ── Game variants ──────────────────────────────────────────
-export type GameVariant = "sudden-death" | "sprint" | "crossword";
-export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword";
+export type GameVariant = "sudden-death" | "sprint" | "crossword" | "match";
+export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword" | "match";
 
 export interface CrosswordCell {
   letter: string;

@@ -1,5 +1,5 @@
 export interface TournamentTypeConfig {
-  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid";
   label: string;
   frequencyHours: number;
   durationMinutes: number;
@@ -17,6 +17,10 @@ export interface TournamentTypeConfig {
   isSuddenDeath?: boolean;
   /** Whether this is a sprint tournament type */
   isSprint?: boolean;
+  /** Whether this is a match/memory tournament type */
+  isMatch?: boolean;
+  /** Number of pairs for match tournaments */
+  pairsCount?: number;
 }
 
 export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
@@ -131,6 +135,30 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     color: "#a16207",
     icon: "🏃",
     isSprint: true,
+  },
+  "match-blitz": {
+    type: "match-blitz",
+    label: "Match Blitz",
+    frequencyHours: 3,
+    durationMinutes: 15,
+    timerSeconds: 300,
+    questionsPerRound: 8,
+    color: "#8b5cf6",
+    icon: "🃏",
+    isMatch: true,
+    pairsCount: 8,
+  },
+  "match-rapid": {
+    type: "match-rapid",
+    label: "Match Rapid",
+    frequencyHours: 6,
+    durationMinutes: 30,
+    timerSeconds: 600,
+    questionsPerRound: 12,
+    color: "#7c3aed",
+    icon: "🃏",
+    isMatch: true,
+    pairsCount: 12,
   },
 };
 

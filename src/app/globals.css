@@ -2,15 +2,15 @@
 
 :root {
   --bg: #0a0a0a;
-  --surface: rgba(255, 255, 255, 0.025);
-  --surface-border: rgba(255, 255, 255, 0.12);
+  --surface: rgba(255, 255, 255, 0.055);
+  --surface-border: rgba(255, 255, 255, 0.18);
   --accent: #2563eb;
   --accent-dim: rgba(37, 99, 235, 0.15);
   --error: #dc2626;
   --error-dim: rgba(220, 38, 38, 0.15);
   --text-primary: #e8ecf4;
-  --text-secondary: #7a8599;
-  --text-dim: #3d4756;
+  --text-secondary: #9ba8bd;
+  --text-dim: #5a6578;
   --gold: #eab308;
   --gold-dim: rgba(234, 179, 8, 0.15);
   --bauhaus-red: #dc2626;

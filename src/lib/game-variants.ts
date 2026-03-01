@@ -56,6 +56,21 @@ export const VARIANT_CONFIGS: Record<GameVariant, VariantConfig> = {
       "Optional timer: None / 5min / 10min / 15min",
     ],
   },
+  match: {
+    id: "match",
+    name: "Match",
+    icon: "🃏",
+    description: "Flip cards and match questions to their answers. Test your memory.",
+    color: "#8b5cf6",
+    xpMultiplier: 1.6,
+    rules: [
+      "Cards are face-down — flip 2 at a time",
+      "Match a question card with its correct answer",
+      "Matched pairs stay revealed",
+      "Fewer moves = higher score",
+      "Time bonus for finishing quickly",
+    ],
+  },
 };
 
 export const VARIANT_LIST = Object.values(VARIANT_CONFIGS);
@@ -65,6 +80,7 @@ export function getVariantDisplayName(mode: string): string {
     case "sudden-death": return "Sudden Death";
     case "sprint": return "Sprint";
     case "crossword": return "Crossword";
+    case "match": return "Match";
     case "speed": return "Speed Round";
     case "daily": return "Daily Challenge";
     case "review": return "Review";

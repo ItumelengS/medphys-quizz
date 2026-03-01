@@ -23,6 +23,7 @@ export async function GET() {
           ...(config.isCrossword ? { isCrossword: true, wordsTarget: config.wordsTarget } : {}),
           ...(config.isSuddenDeath ? { isSuddenDeath: true } : {}),
           ...(config.isSprint ? { isSprint: true } : {}),
+          ...(config.isMatch ? { isMatch: true, pairsCount: config.pairsCount } : {}),
         },
       },
       { onConflict: "type,starts_at", ignoreDuplicates: true }

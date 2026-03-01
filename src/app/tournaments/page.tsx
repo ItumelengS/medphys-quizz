@@ -141,6 +141,7 @@ export default function TournamentLobby() {
     if (type === "crossword-marathon") return "border-l-violet-500";
     if (type.startsWith("sudden-death-")) return "border-l-red-900";
     if (type.startsWith("sprint-")) return "border-l-yellow-600";
+    if (type.startsWith("match-")) return "border-l-violet-500";
     return "border-l-bauhaus-yellow";
   }
 
@@ -152,6 +153,7 @@ export default function TournamentLobby() {
     if (type === "crossword-marathon") return "text-violet-500";
     if (type.startsWith("sudden-death-")) return "text-red-900";
     if (type.startsWith("sprint-")) return "text-yellow-600";
+    if (type.startsWith("match-")) return "text-violet-500";
     return "text-bauhaus-yellow";
   }
 
@@ -163,6 +165,7 @@ export default function TournamentLobby() {
     if (type === "crossword-marathon") return "rgba(139, 92, 246, 0.06)";
     if (type.startsWith("sudden-death-")) return "rgba(127, 29, 29, 0.06)";
     if (type.startsWith("sprint-")) return "rgba(202, 138, 4, 0.06)";
+    if (type.startsWith("match-")) return "rgba(139, 92, 246, 0.06)";
     return "rgba(234, 179, 8, 0.06)";
   }
 
@@ -175,6 +178,9 @@ export default function TournamentLobby() {
     }
     if (type.startsWith("sprint-")) {
       return `${config.timerSeconds}s · -3s penalty`;
+    }
+    if (type.startsWith("match-")) {
+      return `${config.pairsCount || 8} pairs · memory`;
     }
     return `${config.timerSeconds}s · ${config.questionsPerRound}Q`;
   }

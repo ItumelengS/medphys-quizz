@@ -202,7 +202,7 @@ function ResultsContent() {
       {/* Actions */}
       <div className="animate-fade-up stagger-3 flex flex-col gap-3">
         <Link
-          href={["sudden-death", "sprint", "crossword"].includes(mode) ? `/games/${mode}` : `/quiz/${section}`}
+          href={["sudden-death", "sprint", "crossword", "match"].includes(mode) ? `/games/${mode}` : `/quiz/${section}`}
           className="block w-full text-center py-3.5 rounded-none font-bold text-white transition-all hover:opacity-90 active:scale-95"
           style={{ background: "#2563eb" }}
         >

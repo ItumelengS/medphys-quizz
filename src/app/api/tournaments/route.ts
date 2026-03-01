@@ -36,7 +36,14 @@ export async function GET() {
     .eq("status", "active")
     .lt("ends_at", now.toISOString());
 
-  // Transition upcoming tournaments that have started
+  // Transition upcoming tournaments whose window has fully passed (never went active)
+  await supabase
+    .from("tournaments")
+    .update({ status: "finished" })
+    .eq("status", "upcoming")
+    .lt("ends_at", now.toISOString());
+
+  // Transition upcoming tournaments that have started (and are still within their window)
   await supabase
     .from("tournaments")
     .update({ status: "active" })
@@ -55,7 +62,7 @@ export async function GET() {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  // Attach participant counts
+  // Attach participant counts for active/upcoming
   const ids = (tournaments || []).map((t) => t.id);
   const counts: Record<string, number> = {};
 
@@ -75,5 +82,40 @@ export async function GET() {
     participant_count: counts[t.id] || 0,
   }));
 
-  return NextResponse.json(result);
+  // Fetch last 5 finished tournaments with winner info
+  const { data: finishedRaw } = await supabase
+    .from("tournaments")
+    .select("*")
+    .eq("status", "finished")
+    .order("ends_at", { ascending: false })
+    .limit(5);
+
+  const finished = await Promise.all(
+    (finishedRaw || []).map(async (t) => {
+      // Get participant count
+      const { count } = await supabase
+        .from("tournament_participants")
+        .select("*", { count: "exact", head: true })
+        .eq("tournament_id", t.id);
+
+      // Get top scorer
+      const { data: top } = await supabase
+        .from("tournament_participants")
+        .select("display_name, total_points")
+        .eq("tournament_id", t.id)
+        .order("total_points", { ascending: false })
+        .limit(1);
+
+      const winner = top && top.length > 0 ? top[0] : null;
+
+      return {
+        ...t,
+        participant_count: count || 0,
+        winner_name: winner?.display_name || null,
+        winner_points: winner?.total_points || null,
+      };
+    })
+  );
+
+  return NextResponse.json({ tournaments: result, finished });
 }

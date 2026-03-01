@@ -110,6 +110,12 @@ export interface DbTournament {
   config: Record<string, unknown>;
 }
 
+export interface FinishedTournamentWithWinner extends DbTournament {
+  participant_count: number;
+  winner_name: string | null;
+  winner_points: number | null;
+}
+
 export interface DbTournamentParticipant {
   tournament_id: string;
   user_id: string;
@@ -141,6 +147,7 @@ export interface DbCrosswordClue {
   clue: string;
   answer: string;
   category: string;
+  difficulty: string;
 }
 
 // ── Spaced repetition (client-side computation) ────────────

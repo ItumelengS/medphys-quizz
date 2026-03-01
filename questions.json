@@ -1,199 +1,4236 @@
 {
   "meta": {
     "version": "1.0.0",
-    "totalQuestions": 144,
-    "lastUpdated": "2026-02-24",
+    "totalQuestions": 329,
+    "lastUpdated": "2026-03-01",
     "author": "MedPhys Speed Quiz",
     "notes": "Each question needs: id (unique), q (question text), a (correct answer — MUST exactly match one choice), c (4 choices), s (section id), e (explanation shown after answering wrong). To add questions: just append to the section array. To add a section: add to 'sections' and create matching array in 'questions'."
   },
-
   "sections": [
-    { "id": "srt", "name": "SRT & Small Fields", "icon": "🎯", "color": "#f472b6", "description": "Stereotactic, TRS-483, Winston-Lutz" },
-    { "id": "qa", "name": "QA & Tolerances", "icon": "📋", "color": "#60a5fa", "description": "TG-142, gamma, daily checks" },
-    { "id": "equip", "name": "Equipment", "icon": "⚙️", "color": "#fbbf24", "description": "Varian, Elekta, MLC, dose rates" },
-    { "id": "eclipse", "name": "Eclipse & TPS", "icon": "💻", "color": "#c084fc", "description": "AAA, AcurosXB, beam models" },
-    { "id": "dosimetry", "name": "Dosimetry", "icon": "☢️", "color": "#fb923c", "description": "TRS-398, calibration, corrections" },
-    { "id": "nucmed", "name": "Nuclear Medicine", "icon": "⚛️", "color": "#2dd4bf", "description": "Gamma cameras, PET, radiopharmaceuticals" },
-    { "id": "diag", "name": "Diagnostic Radiology", "icon": "🩻", "color": "#38bdf8", "description": "X-ray, CT, mammography, dose metrics" },
-    { "id": "radiobio", "name": "Radiobiology", "icon": "🧬", "color": "#a3e635", "description": "LQ model, fractionation, OER, RBE" },
-    { "id": "radprot", "name": "Radiation Protection", "icon": "🛡️", "color": "#f97316", "description": "Shielding, dose limits, ALARA" },
-    { "id": "regs", "name": "SA Regulatory", "icon": "🏛️", "color": "#34d399", "description": "SAHPRA, HPCSA, SASQART" }
+    {
+      "id": "srt",
+      "name": "SRT & Small Fields",
+      "icon": "🎯",
+      "color": "#f472b6",
+      "description": "Stereotactic, TRS-483, Winston-Lutz"
+    },
+    {
+      "id": "qa",
+      "name": "QA & Tolerances",
+      "icon": "📋",
+      "color": "#60a5fa",
+      "description": "TG-142, gamma, daily checks"
+    },
+    {
+      "id": "equip",
+      "name": "Equipment",
+      "icon": "⚙️",
+      "color": "#fbbf24",
+      "description": "Varian, Elekta, MLC, dose rates"
+    },
+    {
+      "id": "eclipse",
+      "name": "Eclipse & TPS",
+      "icon": "💻",
+      "color": "#c084fc",
+      "description": "AAA, AcurosXB, beam models"
+    },
+    {
+      "id": "dosimetry",
+      "name": "Dosimetry",
+      "icon": "☢️",
+      "color": "#fb923c",
+      "description": "TRS-398, calibration, corrections"
+    },
+    {
+      "id": "nucmed",
+      "name": "Nuclear Medicine",
+      "icon": "⚛️",
+      "color": "#2dd4bf",
+      "description": "Gamma cameras, PET, radiopharmaceuticals"
+    },
+    {
+      "id": "diag",
+      "name": "Diagnostic Radiology",
+      "icon": "🩻",
+      "color": "#38bdf8",
+      "description": "X-ray, CT, mammography, dose metrics"
+    },
+    {
+      "id": "radiobio",
+      "name": "Radiobiology",
+      "icon": "🧬",
+      "color": "#a3e635",
+      "description": "LQ model, fractionation, OER, RBE"
+    },
+    {
+      "id": "radprot",
+      "name": "Radiation Protection",
+      "icon": "🛡️",
+      "color": "#f97316",
+      "description": "Shielding, dose limits, ALARA"
+    },
+    {
+      "id": "regs",
+      "name": "SA Regulatory",
+      "icon": "🏛️",
+      "color": "#34d399",
+      "description": "SAHPRA, HPCSA, SASQART"
+    }
   ],
-
   "questions": {
-
     "srt": [
-      { "id": "srt01", "q": "SRS Winston-Lutz tolerance?", "a": "≤ 1 mm", "c": ["≤ 0.5 mm", "≤ 1 mm", "≤ 2 mm", "≤ 3 mm"], "e": "SRS demands sub-mm precision. Winston-Lutz verifies radiation and mechanical isocentre coincidence." },
-      { "id": "srt02", "q": "Small-field dosimetry protocol?", "a": "TRS-483", "c": ["TG-51", "TRS-398", "TRS-483", "TG-106"], "e": "IAEA TRS-483 provides the framework for reference and relative dosimetry of small and non-standard fields." },
-      { "id": "srt03", "q": "SBRT motion management threshold?", "a": "> 5 mm", "c": ["> 2 mm", "> 5 mm", "> 10 mm", "> 15 mm"], "e": "If tumour motion exceeds 5 mm on 4D-CT, active management (gating, DIBH, compression) is required." },
-      { "id": "srt04", "q": "FFF beam profile shape?", "a": "Peaked (non-flat)", "c": ["Flat", "Peaked (non-flat)", "Concave", "Saddle-shaped"], "e": "Without the flattening filter the beam has a peaked forward intensity, sharper penumbra, and lower out-of-field dose." },
-      { "id": "srt05", "q": "SRS planning grid size?", "a": "≤ 2 mm", "c": ["≤ 1 mm", "≤ 2 mm", "≤ 2.5 mm", "≤ 5 mm"], "e": "Small targets require fine calculation grids. 1 mm ideal for SRS; 2 mm acceptable for SBRT." },
-      { "id": "srt06", "q": "Ideal conformity index?", "a": "1.0", "c": ["0", "0.5", "1.0", "2.0"], "e": "CI = prescription isodose volume / target volume. A value of 1.0 means perfect conformity." },
-      { "id": "srt07", "q": "SBRT fractionation (SASQART)?", "a": "≥ 5 Gy, ≤ 5 fx", "c": ["≥ 2 Gy, ≤ 30 fx", "≥ 5 Gy, ≤ 5 fx", "≥ 8 Gy, ≤ 3 fx", "≥ 10 Gy, 1 fx"], "e": "SASQART 2025 defines SBRT as ≥ 5 Gy per fraction in ≤ 5 fractions. SRS is single-fraction intracranial." },
-      { "id": "srt08", "q": "E2E test is?", "a": "CT → plan → deliver → measure", "c": ["Output check", "CT → plan → deliver → measure", "MLC calibration", "Beam scan"], "e": "End-to-end tests the full clinical chain using an anthropomorphic phantom. Gold standard for SRT commissioning." },
-      { "id": "srt09", "q": "Gradient index measures?", "a": "Dose falloff steepness", "c": ["Target coverage", "Dose falloff steepness", "OAR sparing", "Output constancy"], "e": "GI = V50%/Vprescription. Lower GI = steeper dose falloff = better sparing of surrounding tissue." },
-      { "id": "srt10", "q": "TG-101 covers?", "a": "SBRT/SRS guidance", "c": ["Linac QA", "IMRT commissioning", "SBRT/SRS guidance", "Shielding"], "e": "AAPM TG-101 provides comprehensive guidance for SBRT including tolerances, QA, and clinical protocols." },
-      { "id": "srt11", "q": "TRS-483 small-field condition #1?", "a": "Loss of lateral CPE", "c": ["Loss of lateral CPE", "Detector saturation", "Beam hardening", "Penumbra widening"], "e": "When field size < lateral electron range, charged particle equilibrium is lost, invalidating standard dosimetry." },
-      { "id": "srt12", "q": "Recommended SRS detector?", "a": "microDiamond", "c": ["Farmer chamber", "microDiamond", "Parallel plate", "Pencil chamber"], "e": "PTW 60019 microDiamond has ~0.004 mm³ sensitive volume — ideal for small-field output factors per TRS-483." },
-      { "id": "srt13", "q": "Paddick CI penalises?", "a": "Over- and under-coverage", "c": ["Only underdose", "Only overdose", "Over- and under-coverage", "Conformity only"], "e": "PCI = (TV_PIV)²/(TV × PIV). Unlike simple CI, it penalises both target miss and excessive irradiation." },
-      { "id": "srt14", "q": "Frame-based vs frameless SRS?", "a": "Frameless is current standard", "c": ["Frame-based is standard", "Frameless is current standard", "No difference", "Frameless is experimental"], "e": "Frameless SRS with thermoplastic masks + IGRT is now standard. SASQART: sole laser positioning no longer acceptable." },
-      { "id": "srt15", "q": "SBRT isocenter tolerance?", "a": "≤ 2 mm", "c": ["≤ 0.5 mm", "≤ 1 mm", "≤ 2 mm", "≤ 5 mm"], "e": "SBRT allows slightly larger tolerance than SRS (≤ 1 mm) due to larger PTV margins, but still tight." }
+      {
+        "id": "srt01",
+        "q": "SRS Winston-Lutz tolerance?",
+        "a": "≤ 1 mm",
+        "c": [
+          "≤ 0.5 mm",
+          "≤ 1 mm",
+          "≤ 2 mm",
+          "≤ 3 mm"
+        ],
+        "e": "SRS demands sub-mm precision. Winston-Lutz verifies radiation and mechanical isocentre coincidence."
+      },
+      {
+        "id": "srt02",
+        "q": "Small-field dosimetry protocol?",
+        "a": "TRS-483",
+        "c": [
+          "TG-51",
+          "TRS-398",
+          "TRS-483",
+          "TG-106"
+        ],
+        "e": "IAEA TRS-483 provides the framework for reference and relative dosimetry of small and non-standard fields."
+      },
+      {
+        "id": "srt03",
+        "q": "SBRT motion management threshold?",
+        "a": "> 5 mm",
+        "c": [
+          "> 2 mm",
+          "> 5 mm",
+          "> 10 mm",
+          "> 15 mm"
+        ],
+        "e": "If tumour motion exceeds 5 mm on 4D-CT, active management (gating, DIBH, compression) is required."
+      },
+      {
+        "id": "srt04",
+        "q": "FFF beam profile shape?",
+        "a": "Peaked (non-flat)",
+        "c": [
+          "Flat",
+          "Peaked (non-flat)",
+          "Concave",
+          "Saddle-shaped"
+        ],
+        "e": "Without the flattening filter the beam has a peaked forward intensity, sharper penumbra, and lower out-of-field dose."
+      },
+      {
+        "id": "srt05",
+        "q": "SRS planning grid size?",
+        "a": "≤ 2 mm",
+        "c": [
+          "≤ 1 mm",
+          "≤ 2 mm",
+          "≤ 2.5 mm",
+          "≤ 5 mm"
+        ],
+        "e": "Small targets require fine calculation grids. 1 mm ideal for SRS; 2 mm acceptable for SBRT."
+      },
+      {
+        "id": "srt06",
+        "q": "Ideal conformity index?",
+        "a": "1.0",
+        "c": [
+          "0",
+          "0.5",
+          "1.0",
+          "2.0"
+        ],
+        "e": "CI = prescription isodose volume / target volume. A value of 1.0 means perfect conformity."
+      },
+      {
+        "id": "srt07",
+        "q": "SBRT fractionation (SASQART)?",
+        "a": "≥ 5 Gy, ≤ 5 fx",
+        "c": [
+          "≥ 2 Gy, ≤ 30 fx",
+          "≥ 5 Gy, ≤ 5 fx",
+          "≥ 8 Gy, ≤ 3 fx",
+          "≥ 10 Gy, 1 fx"
+        ],
+        "e": "SASQART 2025 defines SBRT as ≥ 5 Gy per fraction in ≤ 5 fractions. SRS is single-fraction intracranial."
+      },
+      {
+        "id": "srt08",
+        "q": "E2E test is?",
+        "a": "CT → plan → deliver → measure",
+        "c": [
+          "Output check",
+          "CT → plan → deliver → measure",
+          "MLC calibration",
+          "Beam scan"
+        ],
+        "e": "End-to-end tests the full clinical chain using an anthropomorphic phantom. Gold standard for SRT commissioning."
+      },
+      {
+        "id": "srt09",
+        "q": "Gradient index measures?",
+        "a": "Dose falloff steepness",
+        "c": [
+          "Target coverage",
+          "Dose falloff steepness",
+          "OAR sparing",
+          "Output constancy"
+        ],
+        "e": "GI = V50%/Vprescription. Lower GI = steeper dose falloff = better sparing of surrounding tissue."
+      },
+      {
+        "id": "srt10",
+        "q": "TG-101 covers?",
+        "a": "SBRT/SRS guidance",
+        "c": [
+          "Linac QA",
+          "IMRT commissioning",
+          "SBRT/SRS guidance",
+          "Shielding"
+        ],
+        "e": "AAPM TG-101 provides comprehensive guidance for SBRT including tolerances, QA, and clinical protocols."
+      },
+      {
+        "id": "srt11",
+        "q": "TRS-483 small-field condition #1?",
+        "a": "Loss of lateral CPE",
+        "c": [
+          "Loss of lateral CPE",
+          "Detector saturation",
+          "Beam hardening",
+          "Penumbra widening"
+        ],
+        "e": "When field size < lateral electron range, charged particle equilibrium is lost, invalidating standard dosimetry."
+      },
+      {
+        "id": "srt12",
+        "q": "Recommended SRS detector?",
+        "a": "microDiamond",
+        "c": [
+          "Farmer chamber",
+          "microDiamond",
+          "Parallel plate",
+          "Pencil chamber"
+        ],
+        "e": "PTW 60019 microDiamond has ~0.004 mm³ sensitive volume — ideal for small-field output factors per TRS-483."
+      },
+      {
+        "id": "srt13",
+        "q": "Paddick CI penalises?",
+        "a": "Over- and under-coverage",
+        "c": [
+          "Only underdose",
+          "Only overdose",
+          "Over- and under-coverage",
+          "Conformity only"
+        ],
+        "e": "PCI = (TV_PIV)²/(TV × PIV). Unlike simple CI, it penalises both target miss and excessive irradiation."
+      },
+      {
+        "id": "srt14",
+        "q": "Frame-based vs frameless SRS?",
+        "a": "Frameless is current standard",
+        "c": [
+          "Frame-based is standard",
+          "Frameless is current standard",
+          "No difference",
+          "Frameless is experimental"
+        ],
+        "e": "Frameless SRS with thermoplastic masks + IGRT is now standard. SASQART: sole laser positioning no longer acceptable."
+      },
+      {
+        "id": "srt15",
+        "q": "SBRT isocenter tolerance?",
+        "a": "≤ 2 mm",
+        "c": [
+          "≤ 0.5 mm",
+          "≤ 1 mm",
+          "≤ 2 mm",
+          "≤ 5 mm"
+        ],
+        "e": "SBRT allows slightly larger tolerance than SRS (≤ 1 mm) due to larger PTV margins, but still tight."
+      },
+      {
+        "id": "srt16",
+        "q": "CyberKnife tracking method?",
+        "a": "Real-time kV image guidance",
+        "c": [
+          "Cone-beam CT repositioning",
+          "Real-time kV image guidance",
+          "Optical surface monitoring",
+          "Respiratory gating only"
+        ],
+        "e": "CyberKnife uses orthogonal kV imaging to track fiducials or bony anatomy in real-time, correcting the robotic arm during delivery.",
+        "d": 5
+      },
+      {
+        "id": "srt17",
+        "q": "Gamma Knife source isotope?",
+        "a": "Co-60",
+        "c": [
+          "Cs-137",
+          "Co-60",
+          "Ir-192",
+          "I-125"
+        ],
+        "e": "Leksell Gamma Knife uses ~192 Co-60 sources arranged in a hemisphere to converge on a stereotactic target.",
+        "d": 3
+      },
+      {
+        "id": "srt18",
+        "q": "SBRT lung typical dose?",
+        "a": "54 Gy in 3 fractions",
+        "c": [
+          "60 Gy in 30 fx",
+          "54 Gy in 3 fractions",
+          "70 Gy in 35 fx",
+          "20 Gy in 5 fx"
+        ],
+        "e": "RTOG 0236 established 54 Gy/3 fx for peripheral T1-T2 NSCLC. Central lesions require more conservative fractionation.",
+        "d": 5
+      },
+      {
+        "id": "srt19",
+        "q": "ITV accounts for?",
+        "a": "Respiratory tumour motion",
+        "c": [
+          "Setup uncertainty",
+          "Respiratory tumour motion",
+          "Organ deformation",
+          "Machine isocentre error"
+        ],
+        "e": "Internal Target Volume encompasses all CTV positions across the breathing cycle, typically defined from 4D-CT.",
+        "d": 4
+      },
+      {
+        "id": "srt20",
+        "q": "DIBH stands for?",
+        "a": "Deep Inspiration Breath Hold",
+        "c": [
+          "Digital Image Beam Holding",
+          "Deep Inspiration Breath Hold",
+          "Dose Intensity Beam Hardening",
+          "Dynamic Intensity Beam Hold"
+        ],
+        "e": "Patient holds breath at deep inspiration to immobilise the tumour and move heart away from the treatment field (e.g., left breast).",
+        "d": 3
+      },
+      {
+        "id": "srt21",
+        "q": "V12Gy constraint in brain SRS?",
+        "a": "Radionecrosis risk predictor",
+        "c": [
+          "Target coverage metric",
+          "Radionecrosis risk predictor",
+          "OAR maximum dose",
+          "Conformity index variant"
+        ],
+        "e": "Volume receiving ≥12 Gy correlates with symptomatic radionecrosis risk. V12 < 10 cm³ is generally considered safe.",
+        "d": 6
+      },
+      {
+        "id": "srt22",
+        "q": "ExacTrac uses?",
+        "a": "IR + stereoscopic kV X-rays",
+        "c": [
+          "CBCT volumetric imaging",
+          "IR + stereoscopic kV X-rays",
+          "MR-guided positioning",
+          "Ultrasound-guided setup"
+        ],
+        "e": "Brainlab ExacTrac combines infrared surface tracking with stereoscopic kV X-ray imaging for 6DOF correction.",
+        "d": 5
+      },
+      {
+        "id": "srt23",
+        "q": "TRS-483 field output correction factor?",
+        "a": "k_Qclin,Qmsr",
+        "c": [
+          "k_Q",
+          "k_s",
+          "k_Qclin,Qmsr",
+          "k_TP"
+        ],
+        "e": "The detector-specific output correction factor converts readings in small clinical fields relative to the machine-specific reference field.",
+        "d": 7
+      },
+      {
+        "id": "srt24",
+        "q": "SBRT spine typical constraint?",
+        "a": "Cord Dmax < 14 Gy (1 fx)",
+        "c": [
+          "Cord mean dose < 5 Gy",
+          "Cord Dmax < 14 Gy (1 fx)",
+          "Cord V20Gy < 10% volume",
+          "Cord Dmax < 30 Gy total"
+        ],
+        "e": "Single-fraction spine SBRT limits cord point max to ~14 Gy (0.03cc). Multi-fraction limits are proportionally higher.",
+        "d": 7
+      },
+      {
+        "id": "srt25",
+        "q": "CALC: GI = V50%/V100%. If V50% = 30 cm³ and V100% = 10 cm³, GI = ?",
+        "a": "3.0",
+        "c": [
+          "0.33",
+          "2.0",
+          "3.0",
+          "5.0"
+        ],
+        "e": "Gradient Index = 30/10 = 3.0. Lower is better — indicates steeper dose falloff around the target.",
+        "d": 5
+      },
+      {
+        "id": "srt26",
+        "q": "Adaptive radiotherapy advantage in SBRT?",
+        "a": "Accounts for inter-fraction anatomy changes",
+        "c": [
+          "Faster delivery times",
+          "Accounts for inter-fraction anatomy changes",
+          "Reduces treatment cost",
+          "Eliminates need for immobilisation"
+        ],
+        "e": "Adaptive RT re-optimises plans based on daily anatomy (e.g., Ethos, MR-Linac), critical for abdominal SBRT where organs shift.",
+        "d": 5
+      },
+      {
+        "id": "srt27",
+        "q": "MR-Linac advantage for SBRT?",
+        "a": "Real-time soft tissue visualisation",
+        "c": [
+          "Higher dose rate than conventional",
+          "Real-time soft tissue visualisation",
+          "No need for treatment planning",
+          "Eliminates respiratory motion"
+        ],
+        "e": "MR-Linac (e.g., Elekta Unity, ViewRay) provides continuous MR imaging during delivery — superior soft tissue contrast without ionising radiation.",
+        "d": 5
+      },
+      {
+        "id": "srt28",
+        "q": "Prescription isodose for SRS (typical)?",
+        "a": "50-80%",
+        "c": [
+          "95-100%",
+          "80-90%",
+          "50-80%",
+          "30-50%"
+        ],
+        "e": "SRS often prescribes to a lower isodose line (50-80%) to achieve steep dose gradients and hot spots within the target.",
+        "d": 5
+      },
+      {
+        "id": "srt29",
+        "q": "CALC: Paddick CI = (TV_PIV)²/(TV × PIV). TV=5cc, PIV=6cc, TV_PIV=4.5cc. PCI=?",
+        "a": "0.675",
+        "c": [
+          "0.45",
+          "0.675",
+          "0.75",
+          "0.90"
+        ],
+        "e": "PCI = (4.5)² / (5 × 6) = 20.25 / 30 = 0.675. Values closer to 1.0 indicate better conformity.",
+        "d": 7
+      },
+      {
+        "id": "srt30",
+        "q": "Oligometastatic disease SBRT rationale?",
+        "a": "Ablate limited mets, delay systemic Rx",
+        "c": [
+          "Replace chemotherapy entirely",
+          "Ablate limited mets, delay systemic Rx",
+          "Cure all stage IV cancers",
+          "Reduce follow-up imaging need"
+        ],
+        "e": "SBRT to 1-5 oligomets can achieve durable local control, potentially deferring or eliminating the need for systemic therapy.",
+        "d": 4
+      }
     ],
-
     "qa": [
-      { "id": "qa01", "q": "Daily output tolerance?", "a": "± 3%", "c": ["± 1%", "± 2%", "± 3%", "± 5%"], "e": "TG-142 daily output check. Exceeding this requires investigation before treating patients." },
-      { "id": "qa02", "q": "Monthly output tolerance?", "a": "± 2%", "c": ["± 1%", "± 2%", "± 3%", "± 5%"], "e": "Monthly checks use a calibrated chamber. Tighter than daily because measurement is more rigorous." },
-      { "id": "qa03", "q": "Annual calibration accuracy?", "a": "± 1%", "c": ["± 0.5%", "± 1%", "± 2%", "± 3%"], "e": "TRS-398 absolute calibration target. The gold-standard reference that monthly and daily checks anchor to." },
-      { "id": "qa04", "q": "Linac QA TG?", "a": "TG-142", "c": ["TG-51", "TG-142", "TG-119", "TG-106"], "e": "TG-142 replaced TG-40, covering daily/monthly/annual QA tolerances for modern linacs." },
-      { "id": "qa05", "q": "IMRT commissioning TG?", "a": "TG-119", "c": ["TG-142", "TG-119", "TG-101", "TG-218"], "e": "TG-119 provides benchmark plans and confidence limits for IMRT commissioning verification." },
-      { "id": "qa06", "q": "Beam data commissioning TG?", "a": "TG-106", "c": ["TG-142", "TG-119", "TG-106", "TG-51"], "e": "TG-106 covers beam data commissioning: scanning systems, detectors, measurement protocols." },
-      { "id": "qa07", "q": "Standard IMRT gamma criteria?", "a": "3%/3mm ≥ 95%", "c": ["1%/1mm ≥ 99%", "2%/2mm ≥ 97%", "3%/3mm ≥ 95%", "5%/5mm ≥ 90%"], "e": "TG-218 recommends 3%/3mm with ≥ 95% pass as universal tolerance and 90% as action limit." },
-      { "id": "qa08", "q": "Picket fence checks?", "a": "MLC leaf positioning", "c": ["Output", "MLC leaf positioning", "Gantry angle", "kV quality"], "e": "Equally-spaced MLC strips on EPID/film reveal systematic leaf position errors." },
-      { "id": "qa09", "q": "DLG stands for?", "a": "Dosimetric Leaf Gap", "c": ["Dynamic Leaf Gate", "Dosimetric Leaf Gap", "Dose Limiting Grid", "Digital Leaf Gauge"], "e": "Accounts for radiation leaking through rounded MLC leaf ends. Measured via sweeping gap technique." },
-      { "id": "qa10", "q": "TG-218 covers?", "a": "IMRT verification QA", "c": ["Commissioning", "IMRT verification QA", "Electron dosimetry", "Brachytherapy"], "e": "Tolerances and methodology for patient-specific IMRT/VMAT measurement-based verification." },
-      { "id": "qa11", "q": "Imaging-treatment isocenter (SRS)?", "a": "≤ 1 mm", "c": ["≤ 0.5 mm", "≤ 1 mm", "≤ 2 mm", "≤ 3 mm"], "e": "kV CBCT isocenter must coincide with treatment isocenter within 1 mm for SRS." },
-      { "id": "qa12", "q": "Monthly MLC position tolerance?", "a": "± 1 mm", "c": ["± 0.5 mm", "± 1 mm", "± 2 mm", "± 3 mm"], "e": "Each leaf must position within 1 mm of planned. Checked with picket fence and log file analysis." },
-      { "id": "qa13", "q": "TG-275 covers?", "a": "Physics plan review", "c": ["Linac QA", "Physics plan review", "SBRT", "Shielding"], "e": "Strategies for effective physics review of treatment plans — catching errors before delivery." },
-      { "id": "qa14", "q": "Varian MPC checks?", "a": "Output, geometry, beam symmetry", "c": ["MLC only", "Output, geometry, beam symmetry", "Imaging only", "Couch only"], "e": "Machine Performance Check: automated daily QA verifying output, beam characteristics, and geometry." },
-      { "id": "qa15", "q": "Daily laser tolerance (SRS)?", "a": "± 1 mm", "c": ["± 0.5 mm", "± 1 mm", "± 2 mm", "± 3 mm"], "e": "SRS/SBRT laser alignment is tighter than conventional (± 2 mm)." }
+      {
+        "id": "qa01",
+        "q": "Daily output tolerance?",
+        "a": "± 3%",
+        "c": [
+          "± 1%",
+          "± 2%",
+          "± 3%",
+          "± 5%"
+        ],
+        "e": "TG-142 daily output check. Exceeding this requires investigation before treating patients."
+      },
+      {
+        "id": "qa02",
+        "q": "Monthly output tolerance?",
+        "a": "± 2%",
+        "c": [
+          "± 1%",
+          "± 2%",
+          "± 3%",
+          "± 5%"
+        ],
+        "e": "Monthly checks use a calibrated chamber. Tighter than daily because measurement is more rigorous."
+      },
+      {
+        "id": "qa03",
+        "q": "Annual calibration accuracy?",
+        "a": "± 1%",
+        "c": [
+          "± 0.5%",
+          "± 1%",
+          "± 2%",
+          "± 3%"
+        ],
+        "e": "TRS-398 absolute calibration target. The gold-standard reference that monthly and daily checks anchor to."
+      },
+      {
+        "id": "qa04",
+        "q": "Linac QA TG?",
+        "a": "TG-142",
+        "c": [
+          "TG-51",
+          "TG-142",
+          "TG-119",
+          "TG-106"
+        ],
+        "e": "TG-142 replaced TG-40, covering daily/monthly/annual QA tolerances for modern linacs."
+      },
+      {
+        "id": "qa05",
+        "q": "IMRT commissioning TG?",
+        "a": "TG-119",
+        "c": [
+          "TG-142",
+          "TG-119",
+          "TG-101",
+          "TG-218"
+        ],
+        "e": "TG-119 provides benchmark plans and confidence limits for IMRT commissioning verification."
+      },
+      {
+        "id": "qa06",
+        "q": "Beam data commissioning TG?",
+        "a": "TG-106",
+        "c": [
+          "TG-142",
+          "TG-119",
+          "TG-106",
+          "TG-51"
+        ],
+        "e": "TG-106 covers beam data commissioning: scanning systems, detectors, measurement protocols."
+      },
+      {
+        "id": "qa07",
+        "q": "Standard IMRT gamma criteria?",
+        "a": "3%/3mm ≥ 95%",
+        "c": [
+          "1%/1mm ≥ 99%",
+          "2%/2mm ≥ 97%",
+          "3%/3mm ≥ 95%",
+          "5%/5mm ≥ 90%"
+        ],
+        "e": "TG-218 recommends 3%/3mm with ≥ 95% pass as universal tolerance and 90% as action limit."
+      },
+      {
+        "id": "qa08",
+        "q": "Picket fence checks?",
+        "a": "MLC leaf positioning",
+        "c": [
+          "Output",
+          "MLC leaf positioning",
+          "Gantry angle",
+          "kV quality"
+        ],
+        "e": "Equally-spaced MLC strips on EPID/film reveal systematic leaf position errors."
+      },
+      {
+        "id": "qa09",
+        "q": "DLG stands for?",
+        "a": "Dosimetric Leaf Gap",
+        "c": [
+          "Dynamic Leaf Gate",
+          "Dosimetric Leaf Gap",
+          "Dose Limiting Grid",
+          "Digital Leaf Gauge"
+        ],
+        "e": "Accounts for radiation leaking through rounded MLC leaf ends. Measured via sweeping gap technique."
+      },
+      {
+        "id": "qa10",
+        "q": "TG-218 covers?",
+        "a": "IMRT verification QA",
+        "c": [
+          "Commissioning",
+          "IMRT verification QA",
+          "Electron dosimetry",
+          "Brachytherapy"
+        ],
+        "e": "Tolerances and methodology for patient-specific IMRT/VMAT measurement-based verification."
+      },
+      {
+        "id": "qa11",
+        "q": "Imaging-treatment isocenter (SRS)?",
+        "a": "≤ 1 mm",
+        "c": [
+          "≤ 0.5 mm",
+          "≤ 1 mm",
+          "≤ 2 mm",
+          "≤ 3 mm"
+        ],
+        "e": "kV CBCT isocenter must coincide with treatment isocenter within 1 mm for SRS."
+      },
+      {
+        "id": "qa12",
+        "q": "Monthly MLC position tolerance?",
+        "a": "± 1 mm",
+        "c": [
+          "± 0.5 mm",
+          "± 1 mm",
+          "± 2 mm",
+          "± 3 mm"
+        ],
+        "e": "Each leaf must position within 1 mm of planned. Checked with picket fence and log file analysis."
+      },
+      {
+        "id": "qa13",
+        "q": "TG-275 covers?",
+        "a": "Physics plan review",
+        "c": [
+          "Linac QA",
+          "Physics plan review",
+          "SBRT",
+          "Shielding"
+        ],
+        "e": "Strategies for effective physics review of treatment plans — catching errors before delivery."
+      },
+      {
+        "id": "qa14",
+        "q": "Varian MPC checks?",
+        "a": "Output, geometry, symmetry",
+        "c": [
+          "MLC positioning only",
+          "Output, geometry, symmetry",
+          "Imaging quality only",
+          "Couch accuracy only"
+        ],
+        "e": "Machine Performance Check: automated daily QA verifying output, beam characteristics, and geometry."
+      },
+      {
+        "id": "qa15",
+        "q": "Daily laser tolerance (SRS)?",
+        "a": "± 1 mm",
+        "c": [
+          "± 0.5 mm",
+          "± 1 mm",
+          "± 2 mm",
+          "± 3 mm"
+        ],
+        "e": "SRS/SBRT laser alignment is tighter than conventional (± 2 mm)."
+      },
+      {
+        "id": "qa16",
+        "q": "TG-142 kV imaging isocenter tolerance?",
+        "a": "≤ 2 mm (monthly)",
+        "c": [
+          "≤ 0.5 mm",
+          "≤ 1 mm",
+          "≤ 2 mm (monthly)",
+          "≤ 5 mm"
+        ],
+        "e": "Monthly kV/MV imaging-to-treatment isocenter coincidence must be within 2 mm for standard treatments.",
+        "d": 5
+      },
+      {
+        "id": "qa17",
+        "q": "Star shot test checks?",
+        "a": "Radiation isocentre size",
+        "c": [
+          "Output constancy",
+          "Radiation isocentre size",
+          "Beam energy",
+          "Leaf speed"
+        ],
+        "e": "Multiple gantry angles expose a film/EPID at isocentre. The spoke pattern reveals the radiation isocentre diameter.",
+        "d": 4
+      },
+      {
+        "id": "qa18",
+        "q": "Log file analysis for VMAT verifies?",
+        "a": "Actual vs planned MLC/gantry/MU",
+        "c": [
+          "Patient setup only",
+          "Actual vs planned MLC/gantry/MU",
+          "CT number accuracy",
+          "Beam energy spectrum"
+        ],
+        "e": "Machine log files record real-time gantry, MLC, and MU data — can be compared to planned parameters for delivery verification.",
+        "d": 5
+      },
+      {
+        "id": "qa19",
+        "q": "TG-142 annual output calibration tolerance?",
+        "a": "± 1%",
+        "c": [
+          "± 0.5%",
+          "± 1%",
+          "± 2%",
+          "± 3%"
+        ],
+        "e": "Full TRS-398/TG-51 calibration must agree within 1% of the stated output. This is the gold standard.",
+        "d": 4
+      },
+      {
+        "id": "qa20",
+        "q": "Elekta daily QA device?",
+        "a": "iViewGT / QC-3 phantom",
+        "c": [
+          "MPC beam check",
+          "iViewGT / QC-3 phantom",
+          "MapCHECK only",
+          "Farmer chamber only"
+        ],
+        "e": "Elekta uses the QC-3 phantom with iViewGT EPID for daily constancy checks (output, flatness, symmetry).",
+        "d": 5
+      },
+      {
+        "id": "qa21",
+        "q": "Portal dosimetry uses?",
+        "a": "EPID as a 2D dosimeter",
+        "c": [
+          "Film at isocentre",
+          "EPID as a 2D dosimeter",
+          "Ion chamber array",
+          "TLD chips"
+        ],
+        "e": "The EPID panel captures transmitted fluence and compares it to predicted images for IMRT/VMAT QA.",
+        "d": 4
+      },
+      {
+        "id": "qa22",
+        "q": "ArcCHECK is?",
+        "a": "Cylindrical diode array for VMAT QA",
+        "c": [
+          "CT calibration phantom",
+          "Cylindrical diode array for VMAT QA",
+          "Beam scanning device",
+          "kV imaging phantom"
+        ],
+        "e": "Sun Nuclear ArcCHECK: 1386 diodes on a cylindrical surface for 3D composite dose verification of rotational plans.",
+        "d": 4
+      },
+      {
+        "id": "qa23",
+        "q": "TG-142 gantry angle tolerance (daily)?",
+        "a": "± 1°",
+        "c": [
+          "± 0.5°",
+          "± 1°",
+          "± 2°",
+          "± 3°"
+        ],
+        "e": "Digital gantry readout must agree with actual angle within ±1° for daily checks.",
+        "d": 4
+      },
+      {
+        "id": "qa24",
+        "q": "Flatness definition (IEC)?",
+        "a": "(Dmax-Dmin)/(Dmax+Dmin)×100%",
+        "c": [
+          "Dmax / Dcentral axis ratio",
+          "(Dmax-Dmin)/(Dmax+Dmin)×100%",
+          "D80% / D20% dose ratio",
+          "Dcentre / Dedge at 80%"
+        ],
+        "e": "Measured in the flattened region (80% of field width). Monthly tolerance typically ± 2%.",
+        "d": 6
+      },
+      {
+        "id": "qa25",
+        "q": "Symmetry definition?",
+        "a": "Max symmetric point pair ratio",
+        "c": [
+          "Overall Dmax / Dmin ratio",
+          "Max symmetric point pair ratio",
+          "Left versus right output",
+          "Cross-plane flatness value"
+        ],
+        "e": "Ratio of dose at symmetric points about the central axis. Monthly tolerance typically ± 2-3%.",
+        "d": 5
+      },
+      {
+        "id": "qa26",
+        "q": "Winston-Lutz test frequency?",
+        "a": "Monthly (daily for SRS)",
+        "c": [
+          "Annual only",
+          "Monthly (daily for SRS)",
+          "Weekly",
+          "Per-patient"
+        ],
+        "e": "Monthly per TG-142 for standard use. Daily recommended when SRS/SRT patients are being treated.",
+        "d": 4
+      },
+      {
+        "id": "qa27",
+        "q": "CALC: IMRT gamma 3%/3mm result: 520 pass out of 560 points. Pass rate?",
+        "a": "92.9%",
+        "c": [
+          "90.0%",
+          "92.9%",
+          "95.0%",
+          "97.1%"
+        ],
+        "e": "520/560 × 100 = 92.9%. Below TG-218 universal tolerance of 95% — investigation required but above 90% action limit.",
+        "d": 5
+      },
+      {
+        "id": "qa28",
+        "q": "Couch position tolerance (TG-142)?",
+        "a": "± 2 mm / ± 1°",
+        "c": [
+          "± 1 mm / ± 0.5°",
+          "± 2 mm / ± 1°",
+          "± 5 mm / ± 2°",
+          "± 3 mm / ± 1.5°"
+        ],
+        "e": "Monthly verification of couch translational (± 2 mm) and rotational (± 1°) accuracy.",
+        "d": 5
+      },
+      {
+        "id": "qa29",
+        "q": "Baseline shift in output constancy indicates?",
+        "a": "Component degradation or calibration drift",
+        "c": [
+          "Normal expected daily variation",
+          "Component degradation or calibration drift",
+          "Ambient temperature change only",
+          "Measurement detector failure"
+        ],
+        "e": "Gradual output trends may indicate target/waveguide aging, magnetron changes, or chamber degradation. Investigate before it exceeds tolerance.",
+        "d": 6
+      },
+      {
+        "id": "qa30",
+        "q": "Independent MU check purpose?",
+        "a": "Verify TPS MU calculation independently",
+        "c": [
+          "Replace patient-specific QA",
+          "Verify TPS MU calculation independently",
+          "Check machine output",
+          "Validate CT calibration"
+        ],
+        "e": "Second-check calculation using independent algorithm or hand calculation. Catches TPS input and modelling errors.",
+        "d": 4
+      }
     ],
-
     "equip": [
-      { "id": "eq01", "q": "TrueBeam 10 FFF dose rate?", "a": "2400 MU/min", "c": ["800 MU/min", "1400 MU/min", "2400 MU/min", "600 MU/min"], "e": "Highest clinical dose rate — enables fast SRS/SBRT treatments." },
-      { "id": "eq02", "q": "Halcyon architecture?", "a": "O-ring (bore)", "c": ["C-arm", "O-ring (bore)", "Gantry-free", "Robotic arm"], "e": "Enclosed O-ring gantry: faster rotation but limits non-coplanar access." },
-      { "id": "eq03", "q": "Halcyon electrons?", "a": "No — 6 FFF only", "c": ["6, 9, 12 MeV", "6 MeV only", "No — 6 FFF only", "Optional"], "e": "Only 6 FFF photons. No electron beams, no energy selection." },
-      { "id": "eq04", "q": "Halcyon beam model?", "a": "Pre-configured (golden)", "c": ["User-configured", "Pre-configured (golden)", "No model needed", "Monte Carlo"], "e": "Varian provides a pre-validated 'golden' beam dataset. Limited user tuning." },
-      { "id": "eq05", "q": "Millennium 120 central leaf width?", "a": "5 mm", "c": ["2.5 mm", "5 mm", "7.5 mm", "10 mm"], "e": "Central 20 pairs at 5 mm, outer 20 pairs at 10 mm." },
-      { "id": "eq06", "q": "HD120 central leaf width?", "a": "2.5 mm", "c": ["2.5 mm", "5 mm", "1 mm", "3 mm"], "e": "32 central pairs at 2.5 mm — superior conformity for small SRS targets." },
-      { "id": "eq07", "q": "Halcyon gantry speed?", "a": "4 RPM", "c": ["1 RPM", "2 RPM", "4 RPM", "6 RPM"], "e": "4× faster than TrueBeam (1 RPM). Rapid VMAT but coplanar only." },
-      { "id": "eq08", "q": "Halcyon leaf transmission?", "a": "~0.4%", "c": ["~0.4%", "~1.4%", "~2.5%", "~5%"], "e": "Dual-layer SX2 MLC stacks two offset banks, reducing leakage vs single-layer." },
-      { "id": "eq09", "q": "Millennium leaf transmission?", "a": "~1.4%", "c": ["~0.4%", "~1.4%", "~2.5%", "~5%"], "e": "Single-layer tungsten. Higher leakage than SX2 but within tolerance." },
-      { "id": "eq10", "q": "ARIA is?", "a": "Oncology information system", "c": ["Eclipse plugin", "Oncology information system", "MLC tool", "QA phantom"], "e": "Manages patient data, scheduling, and record & verify." },
-      { "id": "eq11", "q": "Halcyon max field?", "a": "28 × 28 cm²", "c": ["20 × 20 cm²", "28 × 28 cm²", "40 × 40 cm²", "36 × 36 cm²"], "e": "Bore geometry limits field size. Insufficient for some large palliative fields." },
-      { "id": "eq12", "q": "TrueBeam max field?", "a": "40 × 40 cm²", "c": ["28 × 28 cm²", "36 × 36 cm²", "40 × 40 cm²", "30 × 30 cm²"], "e": "C-arm allows full 40 × 40 — handles all standard and large-field techniques." },
-      { "id": "eq13", "q": "Ethos is?", "a": "Adaptive RT on Halcyon", "c": ["New TPS", "Adaptive RT on Halcyon", "kV upgrade", "MLC type"], "e": "AI auto-contouring for online adaptive replanning, built on Halcyon hardware." },
-      { "id": "eq14", "q": "TrueBeam 6 FFF dose rate?", "a": "1400 MU/min", "c": ["800 MU/min", "1400 MU/min", "2400 MU/min", "600 MU/min"], "e": "Commonly used for breast and abdominal SBRT." },
-      { "id": "eq15", "q": "Halcyon: non-coplanar arcs?", "a": "No — coplanar only", "c": ["Yes", "No — coplanar only", "With upgrade", "Only in Ethos"], "e": "O-ring design prevents couch kicks — unsuitable for intracranial SRS." }
+      {
+        "id": "eq01",
+        "q": "TrueBeam 10 FFF dose rate?",
+        "a": "2400 MU/min",
+        "c": [
+          "800 MU/min",
+          "1400 MU/min",
+          "2400 MU/min",
+          "600 MU/min"
+        ],
+        "e": "Highest clinical dose rate — enables fast SRS/SBRT treatments."
+      },
+      {
+        "id": "eq02",
+        "q": "Halcyon architecture?",
+        "a": "O-ring (bore)",
+        "c": [
+          "C-arm",
+          "O-ring (bore)",
+          "Gantry-free",
+          "Robotic arm"
+        ],
+        "e": "Enclosed O-ring gantry: faster rotation but limits non-coplanar access."
+      },
+      {
+        "id": "eq03",
+        "q": "Halcyon electrons?",
+        "a": "No — 6 FFF only",
+        "c": [
+          "6, 9, 12 MeV",
+          "6 MeV only",
+          "No — 6 FFF only",
+          "Optional"
+        ],
+        "e": "Only 6 FFF photons. No electron beams, no energy selection."
+      },
+      {
+        "id": "eq04",
+        "q": "Halcyon beam model?",
+        "a": "Pre-configured (golden)",
+        "c": [
+          "User-configured",
+          "Pre-configured (golden)",
+          "No model needed",
+          "Monte Carlo"
+        ],
+        "e": "Varian provides a pre-validated 'golden' beam dataset. Limited user tuning."
+      },
+      {
+        "id": "eq05",
+        "q": "Millennium 120 central leaf width?",
+        "a": "5 mm",
+        "c": [
+          "2.5 mm",
+          "5 mm",
+          "7.5 mm",
+          "10 mm"
+        ],
+        "e": "Central 20 pairs at 5 mm, outer 20 pairs at 10 mm."
+      },
+      {
+        "id": "eq06",
+        "q": "HD120 central leaf width?",
+        "a": "2.5 mm",
+        "c": [
+          "2.5 mm",
+          "5 mm",
+          "1 mm",
+          "3 mm"
+        ],
+        "e": "32 central pairs at 2.5 mm — superior conformity for small SRS targets."
+      },
+      {
+        "id": "eq07",
+        "q": "Halcyon gantry speed?",
+        "a": "4 RPM",
+        "c": [
+          "1 RPM",
+          "2 RPM",
+          "4 RPM",
+          "6 RPM"
+        ],
+        "e": "4× faster than TrueBeam (1 RPM). Rapid VMAT but coplanar only."
+      },
+      {
+        "id": "eq08",
+        "q": "Halcyon leaf transmission?",
+        "a": "~0.4%",
+        "c": [
+          "~0.4%",
+          "~1.4%",
+          "~2.5%",
+          "~5%"
+        ],
+        "e": "Dual-layer SX2 MLC stacks two offset banks, reducing leakage vs single-layer."
+      },
+      {
+        "id": "eq09",
+        "q": "Millennium leaf transmission?",
+        "a": "~1.4%",
+        "c": [
+          "~0.4%",
+          "~1.4%",
+          "~2.5%",
+          "~5%"
+        ],
+        "e": "Single-layer tungsten. Higher leakage than SX2 but within tolerance."
+      },
+      {
+        "id": "eq10",
+        "q": "ARIA is?",
+        "a": "Oncology information system",
+        "c": [
+          "Eclipse plugin",
+          "Oncology information system",
+          "MLC tool",
+          "QA phantom"
+        ],
+        "e": "Manages patient data, scheduling, and record & verify."
+      },
+      {
+        "id": "eq11",
+        "q": "Halcyon max field?",
+        "a": "28 × 28 cm²",
+        "c": [
+          "20 × 20 cm²",
+          "28 × 28 cm²",
+          "40 × 40 cm²",
+          "36 × 36 cm²"
+        ],
+        "e": "Bore geometry limits field size. Insufficient for some large palliative fields."
+      },
+      {
+        "id": "eq12",
+        "q": "TrueBeam max field?",
+        "a": "40 × 40 cm²",
+        "c": [
+          "28 × 28 cm²",
+          "36 × 36 cm²",
+          "40 × 40 cm²",
+          "30 × 30 cm²"
+        ],
+        "e": "C-arm allows full 40 × 40 — handles all standard and large-field techniques."
+      },
+      {
+        "id": "eq13",
+        "q": "Ethos is?",
+        "a": "Adaptive RT on Halcyon",
+        "c": [
+          "New TPS",
+          "Adaptive RT on Halcyon",
+          "kV upgrade",
+          "MLC type"
+        ],
+        "e": "AI auto-contouring for online adaptive replanning, built on Halcyon hardware."
+      },
+      {
+        "id": "eq14",
+        "q": "TrueBeam 6 FFF dose rate?",
+        "a": "1400 MU/min",
+        "c": [
+          "800 MU/min",
+          "1400 MU/min",
+          "2400 MU/min",
+          "600 MU/min"
+        ],
+        "e": "Commonly used for breast and abdominal SBRT."
+      },
+      {
+        "id": "eq15",
+        "q": "Halcyon: non-coplanar arcs?",
+        "a": "No — coplanar only",
+        "c": [
+          "Yes",
+          "No — coplanar only",
+          "With upgrade",
+          "Only in Ethos"
+        ],
+        "e": "O-ring design prevents couch kicks — unsuitable for intracranial SRS."
+      },
+      {
+        "id": "eq16",
+        "q": "Elekta Versa HD max dose rate (FFF)?",
+        "a": "2200 MU/min (10 FFF)",
+        "c": [
+          "1400 MU/min",
+          "2200 MU/min (10 FFF)",
+          "2400 MU/min",
+          "600 MU/min"
+        ],
+        "e": "Elekta Versa HD offers FFF at 6 and 10 MV. 10 FFF reaches 2200 MU/min.",
+        "d": 5
+      },
+      {
+        "id": "eq17",
+        "q": "Elekta Agility MLC leaf width?",
+        "a": "5 mm (all 160 leaves)",
+        "c": [
+          "2.5 mm",
+          "5 mm (all 160 leaves)",
+          "10 mm",
+          "Variable 5/10 mm"
+        ],
+        "e": "Agility has 160 leaves all at 5 mm width — uniform resolution across the full 40 cm field.",
+        "d": 4
+      },
+      {
+        "id": "eq18",
+        "q": "Waveguide function in a linac?",
+        "a": "Accelerate electrons with RF",
+        "c": [
+          "Flatten the beam profile",
+          "Accelerate electrons with RF",
+          "Collimate treatment beam",
+          "Generate bremsstrahlung X-rays"
+        ],
+        "e": "Standing or travelling wave accelerating structure uses RF (typically 3 GHz) to push electrons to MeV energies.",
+        "d": 4
+      },
+      {
+        "id": "eq19",
+        "q": "Magnetron vs klystron?",
+        "a": "Magnetron generates, klystron amplifies RF",
+        "c": [
+          "Both generate RF",
+          "Magnetron generates, klystron amplifies RF",
+          "Klystron generates, magnetron amplifies",
+          "They are interchangeable"
+        ],
+        "e": "Magnetrons are cheaper (lower energy linacs). Klystrons amplify an RF signal — used in high-energy machines needing stable output.",
+        "d": 6
+      },
+      {
+        "id": "eq20",
+        "q": "Bending magnet purpose?",
+        "a": "Redirect electrons to isocentre",
+        "c": [
+          "Flatten the beam profile",
+          "Redirect electrons to isocentre",
+          "Generate bremsstrahlung photons",
+          "Focus electron beam tightly"
+        ],
+        "e": "270° achromatic bending magnets redirect and energy-select the electron beam in compact linac heads.",
+        "d": 5
+      },
+      {
+        "id": "eq21",
+        "q": "Target material for X-ray production?",
+        "a": "Tungsten (high Z)",
+        "c": [
+          "Copper",
+          "Aluminium",
+          "Tungsten (high Z)",
+          "Lead"
+        ],
+        "e": "High-Z tungsten maximises bremsstrahlung yield. Also has a high melting point for thermal handling.",
+        "d": 3
+      },
+      {
+        "id": "eq22",
+        "q": "Flattening filter purpose?",
+        "a": "Produce uniform beam profile",
+        "c": [
+          "Increase the dose rate",
+          "Produce uniform beam profile",
+          "Remove neutron contamination",
+          "Reduce beam energy spread"
+        ],
+        "e": "Conical metal filter preferentially attenuates the central beam peak to produce a flat dose profile.",
+        "d": 3
+      },
+      {
+        "id": "eq23",
+        "q": "Monitor chamber function?",
+        "a": "Real-time output/symmetry monitoring",
+        "c": [
+          "Patient dose measurement device",
+          "Real-time output/symmetry monitoring",
+          "Beam energy measurement system",
+          "MLC position readback sensor"
+        ],
+        "e": "Dual sealed ion chambers continuously monitor output (MU) and beam symmetry/flatness during treatment. Beam interlocks if out of tolerance.",
+        "d": 4
+      },
+      {
+        "id": "eq24",
+        "q": "EPID detector material?",
+        "a": "Amorphous silicon (a-Si)",
+        "c": [
+          "NaI(Tl)",
+          "Amorphous silicon (a-Si)",
+          "Film cassette",
+          "CdZnTe"
+        ],
+        "e": "a-Si flat panel with Gd₂O₂S scintillator converts MV X-rays to visible light then to electrical signal for portal imaging.",
+        "d": 5
+      },
+      {
+        "id": "eq25",
+        "q": "Varian RapidArc is?",
+        "a": "Single-arc VMAT delivery",
+        "c": [
+          "Step-and-shoot IMRT",
+          "Single-arc VMAT delivery",
+          "Electron therapy mode",
+          "Tomotherapy technique"
+        ],
+        "e": "Varian's implementation of VMAT — continuous gantry rotation with variable MLC, dose rate, and gantry speed.",
+        "d": 3
+      },
+      {
+        "id": "eq26",
+        "q": "TomoTherapy delivery method?",
+        "a": "Helical fan beam with binary MLC",
+        "c": [
+          "C-arm with standard MLC",
+          "Helical fan beam with binary MLC",
+          "Robotic arm delivery",
+          "Static parallel opposed beams"
+        ],
+        "e": "Accuray TomoTherapy delivers IMRT via a rotating fan beam and binary (open/closed) MLC in a helical pattern, like a CT scanner.",
+        "d": 5
+      },
+      {
+        "id": "eq27",
+        "q": "CBCT imaging dose (typical)?",
+        "a": "~20-50 mGy per scan",
+        "c": [
+          "~0.1 mGy",
+          "~1-5 mGy",
+          "~20-50 mGy per scan",
+          "~200 mGy"
+        ],
+        "e": "kV CBCT delivers non-trivial imaging dose per fraction. Must be justified and included in cumulative dose assessment.",
+        "d": 5
+      },
+      {
+        "id": "eq28",
+        "q": "Surface guided radiation therapy (SGRT) uses?",
+        "a": "3D optical surface imaging for setup",
+        "c": [
+          "Implanted fiducial markers",
+          "3D optical surface imaging for setup",
+          "Ultrasound body scanning",
+          "External laser measurements"
+        ],
+        "e": "Systems like AlignRT/IDENTIFY project and track the patient surface optically — enables markerless setup and intra-fraction monitoring.",
+        "d": 4
+      },
+      {
+        "id": "eq29",
+        "q": "Electron applicator function?",
+        "a": "Collimate and define electron field",
+        "c": [
+          "Accelerate electrons",
+          "Collimate and define electron field",
+          "Flatten electron beam",
+          "Monitor dose output"
+        ],
+        "e": "Electron cones/applicators are attached to the linac head to define the treatment field and reduce scatter contamination.",
+        "d": 3
+      },
+      {
+        "id": "eq30",
+        "q": "6DOF couch correction means?",
+        "a": "3 translations + 3 rotations",
+        "c": [
+          "6 translations only",
+          "3 translations + 3 rotations",
+          "6 rotations only",
+          "6 gantry angles"
+        ],
+        "e": "Six Degrees of Freedom: lateral, longitudinal, vertical shifts plus pitch, roll, yaw rotations for precise patient repositioning.",
+        "d": 3
+      }
     ],
-
     "eclipse": [
-      { "id": "ec01", "q": "AcurosXB solves?", "a": "LBTE", "c": ["Schrödinger", "LBTE", "Monte Carlo", "Pencil beam"], "e": "Linear Boltzmann Transport Equation — deterministic solver for photon and electron transport in heterogeneous media." },
-      { "id": "ec02", "q": "AAA limitation in lung?", "a": "Overestimates 5-15%", "c": ["Underestimates 5-15%", "Overestimates 5-15%", "No limitation", "Crashes"], "e": "AAA uses 1D density scaling — poor electron transport at tissue-lung interfaces." },
-      { "id": "ec03", "q": "AcurosXB dose reporting modes?", "a": "D_m and D_w", "c": ["D_m only", "D_w only", "D_m and D_w", "Relative only"], "e": "Dose-to-medium is physically correct; dose-to-water allows comparison with older algorithms." },
-      { "id": "ec04", "q": "D_m vs D_w: biggest difference in?", "a": "Bone (~3-5%)", "c": ["Water", "Lung", "Bone (~3-5%)", "Air"], "e": "Bone has very different stopping power ratios. D_m and D_w converge in soft tissue." },
-      { "id": "ec05", "q": "Eclipse default grid size?", "a": "2.5 mm", "c": ["1 mm", "2 mm", "2.5 mm", "5 mm"], "e": "Must be reduced to ≤ 2 mm for SBRT and ≤ 1 mm for SRS." },
-      { "id": "ec06", "q": "DLG measurement method?", "a": "Sweeping gap", "c": ["Picket fence", "Sweeping gap", "Star shot", "Output ratio"], "e": "Dynamic sliding windows with known gap widths. Extrapolate dose to zero gap = DLG." },
-      { "id": "ec07", "q": "NTO in Eclipse?", "a": "Normal Tissue Objective", "c": ["New Treatment Optimiser", "Normal Tissue Objective", "Nominal Target Outline", "Non-Target OAR"], "e": "Automatically reduces dose to all non-target tissue. Use it in every optimisation." },
-      { "id": "ec08", "q": "Van Herk margin formula?", "a": "M = 2.5Σ + 0.7σ", "c": ["M = 2Σ + σ", "M = 2.5Σ + 0.7σ", "M = 3Σ + 0.5σ", "M = Σ + 2σ"], "e": "Ensures minimum CTV dose ≥ 95% for 90% of patients. Σ = systematic, σ = random error SD." },
-      { "id": "ec09", "q": "Jaw tracking in VMAT does?", "a": "Reduces scatter/leakage", "c": ["Speeds delivery", "Reduces scatter/leakage", "Improves imaging", "Locks jaws"], "e": "Jaws follow MLC aperture dynamically. Enable for SBRT to improve OAR sparing." },
-      { "id": "ec10", "q": "HI formula?", "a": "(D2% − D98%) / D50%", "c": ["D50% / Dprescribed", "(D2% − D98%) / D50%", "Dmax / Dmin", "D95% / D5%"], "e": "Lower = more uniform dose. Some inhomogeneity acceptable in SRT." },
-      { "id": "ec11", "q": "VMAT vs IMRT delivery?", "a": "VMAT is faster", "c": ["IMRT is faster", "VMAT is faster", "Same speed", "Depends on energy"], "e": "Continuous rotation with simultaneous modulation. Typically 2-3 min vs 10-15 for step-and-shoot." },
-      { "id": "ec12", "q": "CT calibration curve maps?", "a": "HU to electron density", "c": ["HU to dose", "HU to electron density", "Dose to MU", "MU to HU"], "e": "Site-specific HU-to-density table. Wrong curve = systematic dose errors in every plan." },
-      { "id": "ec13", "q": "Wrong CT curve causes?", "a": "Systematic dose errors", "c": ["Nothing", "Systematic dose errors", "Image artefacts only", "MLC errors"], "e": "Overestimate density → underestimate dose. Most critical in lung and bone." },
-      { "id": "ec14", "q": "Ring structure controls?", "a": "Dose falloff gradient", "c": ["Target coverage", "Dose falloff gradient", "Beam shaping", "MLC speed"], "e": "Donut around PTV for optimisation. Tighter ring = steeper falloff." },
-      { "id": "ec15", "q": "Plan modulation factor?", "a": "Total MU / prescribed cGy", "c": ["Dose rate / MU", "Total MU / prescribed cGy", "Arcs × segments", "Field size ratio"], "e": "High modulation (>3-4×) = complex MLC motion, higher delivery uncertainty." }
+      {
+        "id": "ec01",
+        "q": "AcurosXB solves?",
+        "a": "LBTE",
+        "c": [
+          "Schrödinger",
+          "LBTE",
+          "Monte Carlo",
+          "Pencil beam"
+        ],
+        "e": "Linear Boltzmann Transport Equation — deterministic solver for photon and electron transport in heterogeneous media."
+      },
+      {
+        "id": "ec02",
+        "q": "AAA limitation in lung?",
+        "a": "Overestimates 5-15%",
+        "c": [
+          "Underestimates 5-15%",
+          "Overestimates 5-15%",
+          "No limitation",
+          "Crashes"
+        ],
+        "e": "AAA uses 1D density scaling — poor electron transport at tissue-lung interfaces."
+      },
+      {
+        "id": "ec03",
+        "q": "AcurosXB dose reporting modes?",
+        "a": "D_m and D_w",
+        "c": [
+          "D_m only",
+          "D_w only",
+          "D_m and D_w",
+          "Relative only"
+        ],
+        "e": "Dose-to-medium is physically correct; dose-to-water allows comparison with older algorithms."
+      },
+      {
+        "id": "ec04",
+        "q": "D_m vs D_w: biggest difference in?",
+        "a": "Bone (~3-5%)",
+        "c": [
+          "Water",
+          "Lung",
+          "Bone (~3-5%)",
+          "Air"
+        ],
+        "e": "Bone has very different stopping power ratios. D_m and D_w converge in soft tissue."
+      },
+      {
+        "id": "ec05",
+        "q": "Eclipse default grid size?",
+        "a": "2.5 mm",
+        "c": [
+          "1 mm",
+          "2 mm",
+          "2.5 mm",
+          "5 mm"
+        ],
+        "e": "Must be reduced to ≤ 2 mm for SBRT and ≤ 1 mm for SRS."
+      },
+      {
+        "id": "ec06",
+        "q": "DLG measurement method?",
+        "a": "Sweeping gap",
+        "c": [
+          "Picket fence",
+          "Sweeping gap",
+          "Star shot",
+          "Output ratio"
+        ],
+        "e": "Dynamic sliding windows with known gap widths. Extrapolate dose to zero gap = DLG."
+      },
+      {
+        "id": "ec07",
+        "q": "NTO in Eclipse?",
+        "a": "Normal Tissue Objective",
+        "c": [
+          "New Treatment Optimiser",
+          "Normal Tissue Objective",
+          "Nominal Target Outline",
+          "Non-Target OAR"
+        ],
+        "e": "Automatically reduces dose to all non-target tissue. Use it in every optimisation."
+      },
+      {
+        "id": "ec08",
+        "q": "Van Herk margin formula?",
+        "a": "M = 2.5Σ + 0.7σ",
+        "c": [
+          "M = 2Σ + σ",
+          "M = 2.5Σ + 0.7σ",
+          "M = 3Σ + 0.5σ",
+          "M = Σ + 2σ"
+        ],
+        "e": "Ensures minimum CTV dose ≥ 95% for 90% of patients. Σ = systematic, σ = random error SD."
+      },
+      {
+        "id": "ec09",
+        "q": "Jaw tracking in VMAT does?",
+        "a": "Reduces scatter/leakage",
+        "c": [
+          "Speeds delivery",
+          "Reduces scatter/leakage",
+          "Improves imaging",
+          "Locks jaws"
+        ],
+        "e": "Jaws follow MLC aperture dynamically. Enable for SBRT to improve OAR sparing."
+      },
+      {
+        "id": "ec10",
+        "q": "HI formula?",
+        "a": "(D2% − D98%) / D50%",
+        "c": [
+          "D50% / Dprescribed",
+          "(D2% − D98%) / D50%",
+          "Dmax / Dmin",
+          "D95% / D5%"
+        ],
+        "e": "Lower = more uniform dose. Some inhomogeneity acceptable in SRT."
+      },
+      {
+        "id": "ec11",
+        "q": "VMAT vs IMRT delivery?",
+        "a": "VMAT is faster",
+        "c": [
+          "IMRT is faster",
+          "VMAT is faster",
+          "Same speed",
+          "Depends on energy"
+        ],
+        "e": "Continuous rotation with simultaneous modulation. Typically 2-3 min vs 10-15 for step-and-shoot."
+      },
+      {
+        "id": "ec12",
+        "q": "CT calibration curve maps?",
+        "a": "HU to electron density",
+        "c": [
+          "HU to dose",
+          "HU to electron density",
+          "Dose to MU",
+          "MU to HU"
+        ],
+        "e": "Site-specific HU-to-density table. Wrong curve = systematic dose errors in every plan."
+      },
+      {
+        "id": "ec13",
+        "q": "Wrong CT curve causes?",
+        "a": "Systematic dose errors",
+        "c": [
+          "Nothing",
+          "Systematic dose errors",
+          "Image artefacts only",
+          "MLC errors"
+        ],
+        "e": "Overestimate density → underestimate dose. Most critical in lung and bone."
+      },
+      {
+        "id": "ec14",
+        "q": "Ring structure controls?",
+        "a": "Dose falloff gradient",
+        "c": [
+          "Target coverage",
+          "Dose falloff gradient",
+          "Beam shaping",
+          "MLC speed"
+        ],
+        "e": "Donut around PTV for optimisation. Tighter ring = steeper falloff."
+      },
+      {
+        "id": "ec15",
+        "q": "Plan modulation factor?",
+        "a": "Total MU / prescribed cGy",
+        "c": [
+          "Dose rate / MU",
+          "Total MU / prescribed cGy",
+          "Arcs × segments",
+          "Field size ratio"
+        ],
+        "e": "High modulation (>3-4×) = complex MLC motion, higher delivery uncertainty."
+      },
+      {
+        "id": "ec16",
+        "q": "Photon Optimizer (PO) in Eclipse does?",
+        "a": "VMAT inverse optimisation",
+        "c": [
+          "Forward planning only",
+          "VMAT inverse optimisation",
+          "Electron beam planning",
+          "CT reconstruction"
+        ],
+        "e": "PO optimises simultaneously over MLC, gantry speed, and dose rate for arc-based IMRT/VMAT plans.",
+        "d": 4
+      },
+      {
+        "id": "ec17",
+        "q": "Multi-resolution dose calculation (MRDC)?",
+        "a": "Coarse grid far, fine grid near target",
+        "c": [
+          "Same resolution grid everywhere",
+          "Coarse grid far, fine grid near target",
+          "Calculates only inside the PTV",
+          "Random Monte Carlo sampling method"
+        ],
+        "e": "Speeds up optimisation by using fine grids near targets/OARs and coarser grids elsewhere.",
+        "d": 5
+      },
+      {
+        "id": "ec18",
+        "q": "Bolus in Eclipse planning?",
+        "a": "Increase surface dose with slab",
+        "c": [
+          "Compensate for air gap effect",
+          "Increase surface dose with slab",
+          "Correct CT image artefacts",
+          "Modify beam energy spectrum"
+        ],
+        "e": "Bolus draws the dmax buildup region closer to the skin surface. Must be placed physically on the patient too.",
+        "d": 3
+      },
+      {
+        "id": "ec19",
+        "q": "Structure margin expansion is?",
+        "a": "Isotropic/anisotropic contour growth",
+        "c": [
+          "Dose calculation boundary limit",
+          "Isotropic/anisotropic contour growth",
+          "Treatment field size adjustment",
+          "Calculation grid resolution change"
+        ],
+        "e": "CTV→PTV margins can be uniform (isotropic) or direction-specific (anisotropic) to account for different error sources.",
+        "d": 3
+      },
+      {
+        "id": "ec20",
+        "q": "Eclipse plan sum limitation?",
+        "a": "Deformable registration needed for different CTs",
+        "c": [
+          "Cannot sum plans at all in Eclipse",
+          "Deformable registration needed for different CTs",
+          "Limited to combining only two plans",
+          "Only available for photon beam plans"
+        ],
+        "e": "Summing plans on different CT datasets requires deformable image registration (DIR) to map dose between anatomies.",
+        "d": 5
+      },
+      {
+        "id": "ec21",
+        "q": "DVH type: differential vs cumulative?",
+        "a": "Cumulative: volume≥dose; Differential: volume at dose",
+        "c": [
+          "They display identical information always",
+          "Cumulative: volume≥dose; Differential: volume at dose",
+          "Differential DVH is always preferred clinically",
+          "Cumulative DVH is never used in practice"
+        ],
+        "e": "Cumulative DVH (standard clinical use) shows what percentage of structure receives at least a given dose.",
+        "d": 4
+      },
+      {
+        "id": "ec22",
+        "q": "PRV stands for?",
+        "a": "Planning organ at Risk Volume",
+        "c": [
+          "Primary Radiation Volume",
+          "Planning organ at Risk Volume",
+          "Prescribed Reference Volume",
+          "Peripheral Risk Vicinity"
+        ],
+        "e": "ICRU concept: OAR + margin for geometric uncertainty, analogous to CTV→PTV for targets.",
+        "d": 4
+      },
+      {
+        "id": "ec23",
+        "q": "ICRU 83 dose reporting recommendation?",
+        "a": "D50% (median dose) to target",
+        "c": [
+          "Dmax to target",
+          "D50% (median dose) to target",
+          "Dmin to target",
+          "Mean dose to target"
+        ],
+        "e": "ICRU 83 recommends reporting D50% (near-median) as the primary dose descriptor for IMRT plans.",
+        "d": 5
+      },
+      {
+        "id": "ec24",
+        "q": "Heterogeneity correction importance?",
+        "a": "Critical for lung/bone dose accuracy",
+        "c": [
+          "Only cosmetic improvement",
+          "Critical for lung/bone dose accuracy",
+          "Only for electron beams",
+          "Not needed with modern TPS"
+        ],
+        "e": "Without heterogeneity corrections, lung tumour doses can be overestimated by 10-20%. AcurosXB handles this better than AAA.",
+        "d": 5
+      },
+      {
+        "id": "ec25",
+        "q": "CALC: HI = (D2% − D98%)/D50%. D2%=72Gy, D98%=65Gy, D50%=70Gy. HI=?",
+        "a": "0.10",
+        "c": [
+          "0.07",
+          "0.10",
+          "0.14",
+          "0.20"
+        ],
+        "e": "HI = (72-65)/70 = 7/70 = 0.10. Lower values indicate more homogeneous dose. Typical VMAT plans achieve 0.05-0.15.",
+        "d": 5
+      },
+      {
+        "id": "ec26",
+        "q": "Collimator angle optimisation helps?",
+        "a": "Reduce T&G effect, improve OAR sparing",
+        "c": [
+          "Increase overall dose rate delivery",
+          "Reduce T&G effect, improve OAR sparing",
+          "Simplify plan delivery complexity",
+          "Reduce total treatment time only"
+        ],
+        "e": "Rotating the collimator can align MLC travel direction to better spare critical structures and reduce interleaf leakage patterns.",
+        "d": 6
+      },
+      {
+        "id": "ec27",
+        "q": "Dose volume constraint D95% ≥ 95% means?",
+        "a": "95% of volume receives ≥ 95% Rx dose",
+        "c": [
+          "95% of dose delivered to 95% of OAR",
+          "95% of volume receives ≥ 95% Rx dose",
+          "Maximum point dose limited to 95%",
+          "95 Gy delivered to 95% of volume"
+        ],
+        "e": "Standard target coverage constraint: at least 95% of the PTV should receive 95% of the prescription dose.",
+        "d": 3
+      },
+      {
+        "id": "ec28",
+        "q": "Couch model in Eclipse?",
+        "a": "Accounts for couch attenuation in dose calc",
+        "c": [
+          "Only for collision detection",
+          "Accounts for couch attenuation in dose calc",
+          "Cosmetic display only",
+          "Not available in Eclipse"
+        ],
+        "e": "Treatment couch structures model beam attenuation through the couch (~2-6% for posterior beams), improving dose accuracy.",
+        "d": 4
+      },
+      {
+        "id": "ec29",
+        "q": "VMAT dual arc advantage over single arc?",
+        "a": "More modulation, better OAR sparing",
+        "c": [
+          "Faster overall treatment time",
+          "More modulation, better OAR sparing",
+          "Lower total MU delivery needed",
+          "Simpler patient-specific plan QA"
+        ],
+        "e": "Two arcs provide more modulation degrees of freedom, especially for complex targets like H&N with many OAR constraints.",
+        "d": 4
+      },
+      {
+        "id": "ec30",
+        "q": "Plan complexity metrics include?",
+        "a": "MCS, aperture irregularity, MU/cGy",
+        "c": [
+          "Only total monitor units count",
+          "MCS, aperture irregularity, MU/cGy",
+          "Only number of segments matters",
+          "Only total treatment time ratio"
+        ],
+        "e": "Modulation Complexity Score (MCS), aperture irregularity, and MU/cGy ratio help predict deliverability and QA pass rates.",
+        "d": 6
+      }
     ],
-
     "dosimetry": [
-      { "id": "do01", "q": "TRS-398 beam quality specifier?", "a": "TPR₂₀,₁₀", "c": ["%dd(10)x", "TPR₂₀,₁₀", "D₁₀/D₂₀", "PDD₂₀"], "e": "Tissue-Phantom Ratio at 20 and 10 cm depth. Used to select k_Q." },
-      { "id": "do02", "q": "N_D,w is?", "a": "Dose-to-water coefficient", "c": ["Neutron factor", "Dose-to-water coefficient", "Noise ratio", "Normalisation factor"], "e": "Absorbed dose to water calibration coefficient, traceable to a primary standards lab." },
-      { "id": "do03", "q": "Two-voltage technique measures?", "a": "Recombination (k_s)", "c": ["Energy", "Recombination (k_s)", "kV quality", "MLC positions"], "e": "Measure at V and V/2 to quantify incomplete ion collection. Critical for FFF." },
-      { "id": "do04", "q": "k_TP corrects for?", "a": "Temperature/pressure", "c": ["Beam quality", "Temperature/pressure", "Polarity", "Cable leakage"], "e": "Air density varies with T and P. Must measure at time of calibration." },
-      { "id": "do05", "q": "TRS-398 photon uncertainty?", "a": "~1.5%", "c": ["~0.5%", "~1.5%", "~3%", "~5%"], "e": "Combined standard uncertainty of ~1.5% (1σ). The floor of our accuracy." },
-      { "id": "do06", "q": "SA dosimetry protocol?", "a": "TRS-398", "c": ["TG-51", "TRS-398", "TRS-483", "TG-106"], "e": "South Africa follows IAEA TRS-398. TG-51 is the North American equivalent." },
-      { "id": "do07", "q": "TRS-398 vs TG-51: SA uses?", "a": "TRS-398", "c": ["TG-51", "TRS-398", "Both equally", "Neither"], "e": "Both N_D,w-based. TRS-398 uses TPR₂₀,₁₀; TG-51 uses %dd(10)x." },
-      { "id": "do08", "q": "k_Q depends on?", "a": "Beam quality & chamber type", "c": ["Temperature only", "Beam quality & chamber type", "Field size", "Depth"], "e": "Tabulated per chamber model and beam quality. Corrects relative to Co-60 calibration." },
-      { "id": "do09", "q": "Reference field for photon cal?", "a": "10 × 10 cm²", "c": ["5 × 5 cm²", "10 × 10 cm²", "20 × 20 cm²", "3 × 3 cm²"], "e": "Universal reference condition at SSD 100 cm or SAD 100 cm." },
-      { "id": "do10", "q": "Reference depth (TRS-398)?", "a": "10 cm", "c": ["5 cm", "10 cm", "dmax", "20 cm"], "e": "Deep enough to avoid contaminant electrons." },
-      { "id": "do11", "q": "Polarity correction measures?", "a": "Charge collection asymmetry", "c": ["Temperature effect", "Charge collection asymmetry", "Stem leakage", "Cable loss"], "e": "Reverse polarity and average. Corrects for stem and cable irradiation effects." },
-      { "id": "do12", "q": "Why k_s matters more for FFF?", "a": "Higher dose-per-pulse", "c": ["Lower energy", "Higher dose-per-pulse", "Wider field", "More scatter"], "e": "More dose per pulse → more recombination → larger correction." }
+      {
+        "id": "do01",
+        "q": "TRS-398 beam quality specifier?",
+        "a": "TPR₂₀,₁₀",
+        "c": [
+          "%dd(10)x",
+          "TPR₂₀,₁₀",
+          "D₁₀/D₂₀",
+          "PDD₂₀"
+        ],
+        "e": "Tissue-Phantom Ratio at 20 and 10 cm depth. Used to select k_Q."
+      },
+      {
+        "id": "do02",
+        "q": "N_D,w is?",
+        "a": "Dose-to-water coefficient",
+        "c": [
+          "Neutron factor",
+          "Dose-to-water coefficient",
+          "Noise ratio",
+          "Normalisation factor"
+        ],
+        "e": "Absorbed dose to water calibration coefficient, traceable to a primary standards lab."
+      },
+      {
+        "id": "do03",
+        "q": "Two-voltage technique measures?",
+        "a": "Recombination (k_s)",
+        "c": [
+          "Energy",
+          "Recombination (k_s)",
+          "kV quality",
+          "MLC positions"
+        ],
+        "e": "Measure at V and V/2 to quantify incomplete ion collection. Critical for FFF."
+      },
+      {
+        "id": "do04",
+        "q": "k_TP corrects for?",
+        "a": "Temperature/pressure",
+        "c": [
+          "Beam quality",
+          "Temperature/pressure",
+          "Polarity",
+          "Cable leakage"
+        ],
+        "e": "Air density varies with T and P. Must measure at time of calibration."
+      },
+      {
+        "id": "do05",
+        "q": "TRS-398 photon uncertainty?",
+        "a": "~1.5%",
+        "c": [
+          "~0.5%",
+          "~1.5%",
+          "~3%",
+          "~5%"
+        ],
+        "e": "Combined standard uncertainty of ~1.5% (1σ). The floor of our accuracy."
+      },
+      {
+        "id": "do06",
+        "q": "SA dosimetry protocol?",
+        "a": "TRS-398",
+        "c": [
+          "TG-51",
+          "TRS-398",
+          "TRS-483",
+          "TG-106"
+        ],
+        "e": "South Africa follows IAEA TRS-398. TG-51 is the North American equivalent."
+      },
+      {
+        "id": "do07",
+        "q": "TRS-398 vs TG-51: SA uses?",
+        "a": "TRS-398",
+        "c": [
+          "TG-51",
+          "TRS-398",
+          "Both equally",
+          "Neither"
+        ],
+        "e": "Both N_D,w-based. TRS-398 uses TPR₂₀,₁₀; TG-51 uses %dd(10)x."
+      },
+      {
+        "id": "do08",
+        "q": "k_Q depends on?",
+        "a": "Beam quality & chamber type",
+        "c": [
+          "Temperature only",
+          "Beam quality & chamber type",
+          "Field size",
+          "Depth"
+        ],
+        "e": "Tabulated per chamber model and beam quality. Corrects relative to Co-60 calibration."
+      },
+      {
+        "id": "do09",
+        "q": "Reference field for photon cal?",
+        "a": "10 × 10 cm²",
+        "c": [
+          "5 × 5 cm²",
+          "10 × 10 cm²",
+          "20 × 20 cm²",
+          "3 × 3 cm²"
+        ],
+        "e": "Universal reference condition at SSD 100 cm or SAD 100 cm."
+      },
+      {
+        "id": "do10",
+        "q": "Reference depth (TRS-398)?",
+        "a": "10 cm",
+        "c": [
+          "5 cm",
+          "10 cm",
+          "dmax",
+          "20 cm"
+        ],
+        "e": "Deep enough to avoid contaminant electrons."
+      },
+      {
+        "id": "do11",
+        "q": "Polarity correction measures?",
+        "a": "Charge collection asymmetry",
+        "c": [
+          "Temperature effect",
+          "Charge collection asymmetry",
+          "Stem leakage",
+          "Cable loss"
+        ],
+        "e": "Reverse polarity and average. Corrects for stem and cable irradiation effects."
+      },
+      {
+        "id": "do12",
+        "q": "Why k_s matters more for FFF?",
+        "a": "Higher dose-per-pulse",
+        "c": [
+          "Lower energy",
+          "Higher dose-per-pulse",
+          "Wider field",
+          "More scatter"
+        ],
+        "e": "More dose per pulse → more recombination → larger correction."
+      },
+      {
+        "id": "do13",
+        "q": "Farmer chamber volume?",
+        "a": "~0.6 cm³",
+        "c": [
+          "~0.01 cm³",
+          "~0.1 cm³",
+          "~0.6 cm³",
+          "~1.0 cm³"
+        ],
+        "e": "Standard reference chamber for absolute dosimetry. Too large for small fields (< 4×4 cm²) — use smaller detectors.",
+        "d": 3
+      },
+      {
+        "id": "do14",
+        "q": "Parallel plate chamber use?",
+        "a": "Electron beam dosimetry",
+        "c": [
+          "Photon beam only",
+          "Electron beam dosimetry",
+          "Neutron dosimetry",
+          "kV dosimetry only"
+        ],
+        "e": "Thin entrance window minimises perturbation in electron beams. Required for electron energies where cylindrical chambers have too much perturbation.",
+        "d": 4
+      },
+      {
+        "id": "do15",
+        "q": "CALC: Chamber reading 25.6 nC, N_D,w = 4.88 cGy/nC, k_Q = 0.993, k_TP = 1.005, k_s = 1.003, k_pol = 1.001. Dose?",
+        "a": "123.5 cGy",
+        "c": [
+          "121.2 cGy",
+          "123.5 cGy",
+          "125.0 cGy",
+          "128.3 cGy"
+        ],
+        "e": "D = M × N_D,w × k_Q × k_TP × k_s × k_pol = 25.6 × 4.88 × 0.993 × 1.005 × 1.003 × 1.001 ≈ 123.5 cGy.",
+        "d": 8
+      },
+      {
+        "id": "do16",
+        "q": "Electrometer function?",
+        "a": "Measure ion chamber charge output",
+        "c": [
+          "Generate the radiation beam",
+          "Measure ion chamber charge output",
+          "Control linac dose rate output",
+          "Display patient absorbed dose"
+        ],
+        "e": "High-sensitivity electrometer measures picocoulomb-level charges from ionisation chambers with high precision.",
+        "d": 3
+      },
+      {
+        "id": "do17",
+        "q": "Cross-calibration procedure?",
+        "a": "Calibrate field chamber against reference chamber",
+        "c": [
+          "Calibrate linac against Co-60",
+          "Calibrate field chamber against reference chamber",
+          "Calibrate TPS against measurements",
+          "Calibrate CT scanner HU values"
+        ],
+        "e": "A field chamber used daily is cross-calibrated against the primary reference chamber to establish its own calibration coefficient.",
+        "d": 5
+      },
+      {
+        "id": "do18",
+        "q": "PDD depends on?",
+        "a": "Energy, field size, SSD, depth",
+        "c": [
+          "Energy only",
+          "Energy and depth only",
+          "Energy, field size, SSD, depth",
+          "Field size only"
+        ],
+        "e": "Percentage Depth Dose varies with all four parameters. Larger fields and higher energies shift dmax deeper.",
+        "d": 4
+      },
+      {
+        "id": "do19",
+        "q": "TMR vs PDD advantage?",
+        "a": "TMR is SSD-independent",
+        "c": [
+          "PDD is SSD-independent",
+          "TMR is SSD-independent",
+          "They are identical",
+          "TMR only works for electrons"
+        ],
+        "e": "Tissue-Maximum Ratio is defined at SAD setup and doesn't depend on SSD — preferred for isocentric calculations.",
+        "d": 5
+      },
+      {
+        "id": "do20",
+        "q": "Output factor (S_cp)?",
+        "a": "Dose ratio: field size vs 10×10 ref",
+        "c": [
+          "Absolute dose calibration factor",
+          "Dose ratio: field size vs 10×10 ref",
+          "Beam energy quality indicator",
+          "Patient scatter correction only"
+        ],
+        "e": "Total scatter factor S_cp = S_c × S_p combines collimator scatter (S_c) and phantom scatter (S_p) relative to reference field.",
+        "d": 5
+      },
+      {
+        "id": "do21",
+        "q": "Film dosimetry advantage?",
+        "a": "High-resolution 2D dose mapping",
+        "c": [
+          "Energy-independent dose reading",
+          "High-resolution 2D dose mapping",
+          "Real-time immediate readout",
+          "No calibration curve needed"
+        ],
+        "e": "Radiochromic film (EBT3/EBT-XD) provides sub-mm spatial resolution 2D dose distributions. Needs careful calibration and handling.",
+        "d": 4
+      },
+      {
+        "id": "do22",
+        "q": "Alanine dosimetry used for?",
+        "a": "Independent postal dose audit (EPR)",
+        "c": [
+          "Daily output constancy checks",
+          "Independent postal dose audit (EPR)",
+          "Patient in-vivo dose measurement",
+          "Small-field output measurement"
+        ],
+        "e": "Alanine pellets read by EPR spectroscopy — used by IAEA/NPL for postal dose audit programs. Very stable, near water-equivalent.",
+        "d": 6
+      },
+      {
+        "id": "do23",
+        "q": "In-vivo dosimetry purpose?",
+        "a": "Verify dose delivered to patient",
+        "c": [
+          "Replace treatment planning",
+          "Verify dose delivered to patient",
+          "Calibrate the linac",
+          "Check room shielding"
+        ],
+        "e": "Detectors (diodes, MOSFETs, OSLDs) placed on or in the patient measure actual delivered dose as an independent safety check.",
+        "d": 3
+      },
+      {
+        "id": "do24",
+        "q": "Diode vs ion chamber for relative dosimetry?",
+        "a": "Diode has higher sensitivity per volume",
+        "c": [
+          "Ion chamber is more sensitive",
+          "Diode has higher sensitivity per volume",
+          "They are equivalent",
+          "Diode cannot measure dose"
+        ],
+        "e": "Silicon diodes are ~18,000× more sensitive per unit volume than air — ideal for relative measurements in small volumes.",
+        "d": 5
+      },
+      {
+        "id": "do25",
+        "q": "Water phantom scanning system measures?",
+        "a": "PDD, profiles, output factors",
+        "c": [
+          "Patient dose only",
+          "PDD, profiles, output factors",
+          "Room scatter only",
+          "Beam energy spectrum"
+        ],
+        "e": "3D water tank with motorised detector scanning provides beam data for TPS commissioning: depth doses, cross-profiles, and output factors.",
+        "d": 3
+      },
+      {
+        "id": "do26",
+        "q": "CALC: k_TP = (273.15 + T)/(273.15 + 22) × 101.33/P. At T=24°C, P=100.5 kPa, k_TP=?",
+        "a": "1.014",
+        "c": [
+          "0.986",
+          "1.000",
+          "1.014",
+          "1.028"
+        ],
+        "e": "k_TP = (297.15/295.15) × (101.33/100.5) = 1.00678 × 1.00826 ≈ 1.014. Warmer air is less dense → larger correction.",
+        "d": 7
+      },
+      {
+        "id": "do27",
+        "q": "Effective point of measurement for cylindrical chamber?",
+        "a": "Shifted upstream by 0.6 × cavity radius",
+        "c": [
+          "Located at geometric cavity centre",
+          "Shifted upstream by 0.6 × cavity radius",
+          "Located at chamber entrance tip",
+          "Shifted downstream by 0.6 × radius"
+        ],
+        "e": "The effective point of measurement is shifted 0.6 times the cavity radius toward the source to account for the gradient effect.",
+        "d": 6
+      }
     ],
-
     "nucmed": [
-      { "id": "nm01", "q": "Tc-99m half-life?", "a": "6.01 hours", "c": ["2 hours", "6.01 hours", "12 hours", "73 hours"], "e": "Ideal for imaging: long enough for prep and scanning, short enough for low patient dose." },
-      { "id": "nm02", "q": "Tc-99m gamma energy?", "a": "140 keV", "c": ["80 keV", "140 keV", "364 keV", "511 keV"], "e": "Optimal for NaI(Tl) detection — good tissue penetration with efficient collimation." },
-      { "id": "nm03", "q": "PET annihilation photon energy?", "a": "511 keV", "c": ["140 keV", "364 keV", "511 keV", "662 keV"], "e": "Positron + electron → two 511 keV photons at 180° — basis of PET coincidence detection." },
-      { "id": "nm04", "q": "F-18 FDG half-life?", "a": "110 min", "c": ["20 min", "68 min", "110 min", "6 hours"], "e": "Long enough for synthesis, transport, uptake and scanning. Most widely used PET tracer." },
-      { "id": "nm05", "q": "I-131 half-life?", "a": "8.02 days", "c": ["6 hours", "2.7 days", "8.02 days", "14 days"], "e": "Used for thyroid ablation therapy. Long half-life requires radiation protection precautions." },
-      { "id": "nm06", "q": "I-131 primary gamma energy?", "a": "364 keV", "c": ["140 keV", "364 keV", "511 keV", "662 keV"], "e": "Also emits beta particles (therapeutic). The 364 keV gamma enables post-therapy imaging." },
-      { "id": "nm07", "q": "Gamma camera collimator (general)?", "a": "Parallel hole", "c": ["Pinhole", "Parallel hole", "Fan beam", "Cone beam"], "e": "Most common general-purpose. Pinhole for thyroid; fan beam for brain SPECT." },
-      { "id": "nm08", "q": "SPECT stands for?", "a": "Single Photon Emission CT", "c": ["Standard Photon Emission CT", "Single Photon Emission CT", "Spectral Photon Enhanced CT", "Single Positron Emission CT"], "e": "Camera rotates to acquire projections, reconstructed into 3D." },
-      { "id": "nm09", "q": "PET spatial resolution (clinical)?", "a": "4-6 mm", "c": ["1-2 mm", "4-6 mm", "10-12 mm", "15-20 mm"], "e": "Limited by positron range, photon non-collinearity, and crystal size." },
-      { "id": "nm10", "q": "Mo-99 generator is called?", "a": "Moly cow", "c": ["Technetium trap", "Moly cow", "Isotope mill", "Gamma source"], "e": "'Milked' daily. Mo-99 (66h) decays to Tc-99m on an alumina column." },
-      { "id": "nm11", "q": "PET detector material (common)?", "a": "LSO / LYSO", "c": ["NaI(Tl)", "LSO / LYSO", "BGO only", "CsI(Tl)"], "e": "Fast timing, high light output, good stopping power for 511 keV." },
-      { "id": "nm12", "q": "Gamma camera detector material?", "a": "NaI(Tl)", "c": ["NaI(Tl)", "LSO", "CdZnTe", "Si(Li)"], "e": "Thallium-doped sodium iodide: excellent light yield at 140 keV." },
-      { "id": "nm13", "q": "MUGA scan assesses?", "a": "Cardiac ejection fraction", "c": ["Lung perfusion", "Cardiac ejection fraction", "Bone density", "Thyroid uptake"], "e": "Tc-99m-labelled RBCs imaged through cardiac cycle to calculate LVEF." },
-      { "id": "nm14", "q": "Ga-68 half-life?", "a": "68 min", "c": ["13 min", "68 min", "110 min", "6 hours"], "e": "Generator-produced. Enables PET without a cyclotron — used for PSMA and DOTATATE." },
-      { "id": "nm15", "q": "Lu-177 therapy treats?", "a": "Neuroendocrine / prostate (PSMA)", "c": ["Thyroid cancer", "Neuroendocrine / prostate (PSMA)", "Breast cancer", "Brain mets"], "e": "Lutathera (DOTATATE) and Pluvicto (PSMA) — landmark theranostic treatments." }
+      {
+        "id": "nm01",
+        "q": "Tc-99m half-life?",
+        "a": "6.01 hours",
+        "c": [
+          "2 hours",
+          "6.01 hours",
+          "12 hours",
+          "73 hours"
+        ],
+        "e": "Ideal for imaging: long enough for prep and scanning, short enough for low patient dose."
+      },
+      {
+        "id": "nm02",
+        "q": "Tc-99m gamma energy?",
+        "a": "140 keV",
+        "c": [
+          "80 keV",
+          "140 keV",
+          "364 keV",
+          "511 keV"
+        ],
+        "e": "Optimal for NaI(Tl) detection — good tissue penetration with efficient collimation."
+      },
+      {
+        "id": "nm03",
+        "q": "PET annihilation photon energy?",
+        "a": "511 keV",
+        "c": [
+          "140 keV",
+          "364 keV",
+          "511 keV",
+          "662 keV"
+        ],
+        "e": "Positron + electron → two 511 keV photons at 180° — basis of PET coincidence detection."
+      },
+      {
+        "id": "nm04",
+        "q": "F-18 FDG half-life?",
+        "a": "110 min",
+        "c": [
+          "20 min",
+          "68 min",
+          "110 min",
+          "6 hours"
+        ],
+        "e": "Long enough for synthesis, transport, uptake and scanning. Most widely used PET tracer."
+      },
+      {
+        "id": "nm05",
+        "q": "I-131 half-life?",
+        "a": "8.02 days",
+        "c": [
+          "6 hours",
+          "2.7 days",
+          "8.02 days",
+          "14 days"
+        ],
+        "e": "Used for thyroid ablation therapy. Long half-life requires radiation protection precautions."
+      },
+      {
+        "id": "nm06",
+        "q": "I-131 primary gamma energy?",
+        "a": "364 keV",
+        "c": [
+          "140 keV",
+          "364 keV",
+          "511 keV",
+          "662 keV"
+        ],
+        "e": "Also emits beta particles (therapeutic). The 364 keV gamma enables post-therapy imaging."
+      },
+      {
+        "id": "nm07",
+        "q": "Gamma camera collimator (general)?",
+        "a": "Parallel hole",
+        "c": [
+          "Pinhole",
+          "Parallel hole",
+          "Fan beam",
+          "Cone beam"
+        ],
+        "e": "Most common general-purpose. Pinhole for thyroid; fan beam for brain SPECT."
+      },
+      {
+        "id": "nm08",
+        "q": "SPECT stands for?",
+        "a": "Single Photon Emission CT",
+        "c": [
+          "Standard Photon Emission CT",
+          "Single Photon Emission CT",
+          "Spectral Photon Enhanced CT",
+          "Single Positron Emission CT"
+        ],
+        "e": "Camera rotates to acquire projections, reconstructed into 3D."
+      },
+      {
+        "id": "nm09",
+        "q": "PET spatial resolution (clinical)?",
+        "a": "4-6 mm",
+        "c": [
+          "1-2 mm",
+          "4-6 mm",
+          "10-12 mm",
+          "15-20 mm"
+        ],
+        "e": "Limited by positron range, photon non-collinearity, and crystal size."
+      },
+      {
+        "id": "nm10",
+        "q": "Mo-99 generator is called?",
+        "a": "Moly cow",
+        "c": [
+          "Technetium trap",
+          "Moly cow",
+          "Isotope mill",
+          "Gamma source"
+        ],
+        "e": "'Milked' daily. Mo-99 (66h) decays to Tc-99m on an alumina column."
+      },
+      {
+        "id": "nm11",
+        "q": "PET detector material (common)?",
+        "a": "LSO / LYSO",
+        "c": [
+          "NaI(Tl)",
+          "LSO / LYSO",
+          "BGO only",
+          "CsI(Tl)"
+        ],
+        "e": "Fast timing, high light output, good stopping power for 511 keV."
+      },
+      {
+        "id": "nm12",
+        "q": "Gamma camera detector material?",
+        "a": "NaI(Tl)",
+        "c": [
+          "NaI(Tl)",
+          "LSO",
+          "CdZnTe",
+          "Si(Li)"
+        ],
+        "e": "Thallium-doped sodium iodide: excellent light yield at 140 keV."
+      },
+      {
+        "id": "nm13",
+        "q": "MUGA scan assesses?",
+        "a": "Cardiac ejection fraction",
+        "c": [
+          "Lung perfusion",
+          "Cardiac ejection fraction",
+          "Bone density",
+          "Thyroid uptake"
+        ],
+        "e": "Tc-99m-labelled RBCs imaged through cardiac cycle to calculate LVEF."
+      },
+      {
+        "id": "nm14",
+        "q": "Ga-68 half-life?",
+        "a": "68 min",
+        "c": [
+          "13 min",
+          "68 min",
+          "110 min",
+          "6 hours"
+        ],
+        "e": "Generator-produced. Enables PET without a cyclotron — used for PSMA and DOTATATE."
+      },
+      {
+        "id": "nm15",
+        "q": "Lu-177 therapy treats?",
+        "a": "Neuroendocrine/prostate (PSMA)",
+        "c": [
+          "Thyroid cancer ablation",
+          "Neuroendocrine/prostate (PSMA)",
+          "Breast cancer treatment",
+          "Brain metastases therapy"
+        ],
+        "e": "Lutathera (DOTATATE) and Pluvicto (PSMA) — landmark theranostic treatments."
+      },
+      {
+        "id": "nm16",
+        "q": "Theranostics concept?",
+        "a": "Same molecule for diagnosis and therapy",
+        "c": [
+          "Combined CT and MRI scan",
+          "Same molecule for diagnosis and therapy",
+          "Dual-energy imaging technique",
+          "Therapeutic ultrasound"
+        ],
+        "e": "Pair diagnostic isotope (e.g., Ga-68) with therapeutic isotope (e.g., Lu-177) on the same targeting molecule. See-then-treat paradigm.",
+        "d": 4
+      },
+      {
+        "id": "nm17",
+        "q": "SUV in PET stands for?",
+        "a": "Standardized Uptake Value",
+        "c": [
+          "Signal Uniformity Value",
+          "Standardized Uptake Value",
+          "Spatial Unit Variance",
+          "Spectral Uptake Verification"
+        ],
+        "e": "SUV normalises tracer uptake by injected activity and body weight. SUV > 2.5 often suggests malignancy for FDG-PET.",
+        "d": 4
+      },
+      {
+        "id": "nm18",
+        "q": "Time-of-flight (TOF) PET advantage?",
+        "a": "Better signal-to-noise ratio",
+        "c": [
+          "Higher spatial resolution",
+          "Better signal-to-noise ratio",
+          "Faster scan acquisition",
+          "Lower injected activity"
+        ],
+        "e": "TOF localises the annihilation event along the LOR using timing differences, improving effective sensitivity and SNR.",
+        "d": 6
+      },
+      {
+        "id": "nm19",
+        "q": "Ra-223 therapy mechanism?",
+        "a": "Alpha emitter targeting bone metastases",
+        "c": [
+          "Beta emitter for thyroid",
+          "Alpha emitter targeting bone metastases",
+          "Gamma emitter for imaging",
+          "Neutron therapy for brain"
+        ],
+        "e": "Radium-223 (Xofigo) is a calcium-mimetic alpha emitter that incorporates into bone remodelling sites — treats castration-resistant prostate cancer bone mets.",
+        "d": 5
+      },
+      {
+        "id": "nm20",
+        "q": "Gamma camera energy window for Tc-99m?",
+        "a": "±10-15% around 140 keV",
+        "c": [
+          "±5% around 80 keV",
+          "±10-15% around 140 keV",
+          "±20% around 511 keV",
+          "±10% around 364 keV"
+        ],
+        "e": "Photopeak window centered at 140 keV captures primary photons while rejecting scatter.",
+        "d": 4
+      },
+      {
+        "id": "nm21",
+        "q": "CZT detector advantage over NaI?",
+        "a": "Better energy resolution, compact size",
+        "c": [
+          "Cheaper manufacturing and cost",
+          "Better energy resolution, compact size",
+          "Higher scintillation light output",
+          "Larger available crystal sizes"
+        ],
+        "e": "Cadmium Zinc Telluride (CZT) is a semiconductor — direct conversion with superior energy resolution (~5% vs 10% for NaI). Used in cardiac SPECT.",
+        "d": 6
+      },
+      {
+        "id": "nm22",
+        "q": "Y-90 therapy application?",
+        "a": "Radioembolisation for liver tumours",
+        "c": [
+          "Thyroid ablation treatment",
+          "Radioembolisation for liver tumours",
+          "Bone pain palliation therapy",
+          "Lymphoma targeted treatment"
+        ],
+        "e": "Y-90 microspheres (SIR-Spheres/TheraSphere) are injected into hepatic artery to deliver localised beta radiation to liver tumours.",
+        "d": 5
+      },
+      {
+        "id": "nm23",
+        "q": "Dose calibrator measures?",
+        "a": "Assay radiopharmaceutical activity",
+        "c": [
+          "Measure area dose rate levels",
+          "Assay radiopharmaceutical activity",
+          "Calculate patient absorbed dose",
+          "Determine beam energy level"
+        ],
+        "e": "Well-type ionisation chamber calibrated in Bq/MBq to assay radiopharmaceutical activity before patient administration.",
+        "d": 3
+      },
+      {
+        "id": "nm24",
+        "q": "CALC: Tc-99m initial activity 800 MBq. Activity after 12 hours?",
+        "a": "200 MBq",
+        "c": [
+          "100 MBq",
+          "200 MBq",
+          "400 MBq",
+          "600 MBq"
+        ],
+        "e": "12 hours = 2 half-lives (T½ = 6.01 hr). A = 800 × (½)² = 800/4 = 200 MBq.",
+        "d": 4
+      },
+      {
+        "id": "nm25",
+        "q": "MIBG scan target?",
+        "a": "Neuroendocrine tumours (phaeo/neuroblastoma)",
+        "c": [
+          "Bone metastases and skeletal lesions",
+          "Neuroendocrine tumours (phaeo/neuroblastoma)",
+          "Cardiac function and wall motion",
+          "Lung perfusion and ventilation scan"
+        ],
+        "e": "I-123/I-131 MIBG (meta-iodobenzylguanidine) is taken up by adrenergic tissue — images and treats neuroblastoma and phaeochromocytoma.",
+        "d": 5
+      },
+      {
+        "id": "nm26",
+        "q": "Attenuation correction in PET uses?",
+        "a": "CT-based attenuation map",
+        "c": [
+          "No correction needed",
+          "CT-based attenuation map",
+          "Ge-68 transmission scan only",
+          "Patient weight estimate"
+        ],
+        "e": "PET/CT uses the CT data to generate attenuation correction factors for each LOR, improving quantitative accuracy.",
+        "d": 4
+      },
+      {
+        "id": "nm27",
+        "q": "Scatter window method in SPECT?",
+        "a": "Triple-energy window (TEW)",
+        "c": [
+          "No scatter correction",
+          "Triple-energy window (TEW)",
+          "Single broad window",
+          "CT-based only"
+        ],
+        "e": "TEW uses two narrow windows flanking the photopeak to estimate scatter contribution within the main window.",
+        "d": 6
+      },
+      {
+        "id": "nm28",
+        "q": "Thyroid uptake probe measures?",
+        "a": "% of I-131/I-123 uptake by thyroid",
+        "c": [
+          "Thyroid gland size via ultrasound",
+          "% of I-131/I-123 uptake by thyroid",
+          "Thyroid blood flow measurement",
+          "Thyroid gland temperature reading"
+        ],
+        "e": "NaI(Tl) probe counts over thyroid vs standard to determine fractional uptake — guides I-131 therapy dosing.",
+        "d": 4
+      },
+      {
+        "id": "nm29",
+        "q": "PET ring diameter effect?",
+        "a": "Larger ring = less sensitivity, fits larger patients",
+        "c": [
+          "No effect on imaging performance at all",
+          "Larger ring = less sensitivity, fits larger patients",
+          "Smaller ring is always clinically better",
+          "Ring size only affects spatial resolution"
+        ],
+        "e": "Solid angle subtended by detectors decreases with larger rings (lower geometric efficiency), but larger bores accommodate bigger patients.",
+        "d": 6
+      },
+      {
+        "id": "nm30",
+        "q": "CALC: I-131 treatment activity for thyroid ablation (typical)?",
+        "a": "1110-3700 MBq (30-100 mCi)",
+        "c": [
+          "37 MBq (1 mCi)",
+          "370 MBq (10 mCi)",
+          "1110-3700 MBq (30-100 mCi)",
+          "7400 MBq (200 mCi)"
+        ],
+        "e": "Ablation of thyroid remnants after surgery typically uses 1.1-3.7 GBq. Higher activities for metastatic disease.",
+        "d": 5
+      }
     ],
-
     "diag": [
-      { "id": "dg01", "q": "Mammography anode material?", "a": "Molybdenum / Tungsten", "c": ["Copper", "Molybdenum / Tungsten", "Rhodium only", "Lead"], "e": "Mo produces 17-20 keV characteristic X-rays optimal for breast contrast." },
-      { "id": "dg02", "q": "CT dose metric for volume?", "a": "CTDIvol", "c": ["DAP", "CTDIvol", "DLP", "ESE"], "e": "Average dose in a standard phantom for a single rotation. Measured in mGy." },
-      { "id": "dg03", "q": "CT dose metric for exam length?", "a": "DLP", "c": ["CTDIvol", "DLP", "DAP", "Entrance dose"], "e": "Dose-Length Product = CTDIvol × scan length (mGy·cm)." },
-      { "id": "dg04", "q": "Effective dose unit?", "a": "mSv", "c": ["mGy", "mSv", "mR", "MU"], "e": "Uses tissue weighting factors to estimate stochastic risk from partial-body exposure." },
-      { "id": "dg05", "q": "Fluoroscopy dose metric?", "a": "DAP (Dose Area Product)", "c": ["CTDIvol", "DAP (Dose Area Product)", "DLP", "ESE"], "e": "DAP (Gy·cm²) captures both dose intensity and beam area." },
-      { "id": "dg06", "q": "Typical chest X-ray effective dose?", "a": "~0.02 mSv", "c": ["~0.001 mSv", "~0.02 mSv", "~1 mSv", "~7 mSv"], "e": "One of the lowest medical exposures. The reference unit for public communication." },
-      { "id": "dg07", "q": "Typical CT abdomen effective dose?", "a": "~8-10 mSv", "c": ["~0.5 mSv", "~2 mSv", "~8-10 mSv", "~25 mSv"], "e": "Equivalent to ~400-500 chest X-rays. Justification and optimisation essential." },
-      { "id": "dg08", "q": "Hounsfield unit of water?", "a": "0 HU", "c": ["-1000 HU", "0 HU", "100 HU", "1000 HU"], "e": "Water = 0 by definition. Air = -1000. Dense bone ~+1000." },
-      { "id": "dg09", "q": "Hounsfield unit of air?", "a": "-1000 HU", "c": ["-1000 HU", "-500 HU", "0 HU", "-100 HU"], "e": "HU = 1000 × (μ_tissue - μ_water) / μ_water." },
-      { "id": "dg10", "q": "Heel effect occurs in?", "a": "X-ray tube anode", "c": ["Collimator", "X-ray tube anode", "Image receptor", "Grid"], "e": "X-rays from deeper in the anode are more attenuated → intensity variation." },
-      { "id": "dg11", "q": "AEC stands for?", "a": "Automatic Exposure Control", "c": ["Automatic Energy Control", "Automatic Exposure Control", "Automated Emission Check", "Anode Excitation Current"], "e": "Terminates exposure when detector receives sufficient signal for diagnostic quality." },
-      { "id": "dg12", "q": "kVp affects primarily?", "a": "Contrast & penetration", "c": ["Spatial resolution", "Contrast & penetration", "Focal spot size", "Detector efficiency"], "e": "Higher kVp = more penetrating beam, lower contrast. Trade-off with patient dose." },
-      { "id": "dg13", "q": "mAs affects primarily?", "a": "Quantity of radiation (dose)", "c": ["Beam energy", "Quantity of radiation (dose)", "Beam penetration", "Image contrast"], "e": "Doubling mAs doubles dose and halves quantum noise." },
-      { "id": "dg14", "q": "Digital detector types (name 2)?", "a": "CR (PSP) and DR (flat panel)", "c": ["Film and screen", "CR (PSP) and DR (flat panel)", "Image intensifier only", "CCD only"], "e": "CR uses photostimulable phosphor plates; DR uses amorphous silicon or selenium flat panels." },
-      { "id": "dg15", "q": "Nyquist frequency relates to?", "a": "Spatial resolution limit", "c": ["Dose efficiency", "Spatial resolution limit", "Contrast", "Noise"], "e": "Maximum spatial frequency a detector can resolve = 1/(2 × pixel pitch)." }
+      {
+        "id": "dg01",
+        "q": "Mammography anode material?",
+        "a": "Molybdenum / Tungsten",
+        "c": [
+          "Copper",
+          "Molybdenum / Tungsten",
+          "Rhodium only",
+          "Lead"
+        ],
+        "e": "Mo produces 17-20 keV characteristic X-rays optimal for breast contrast."
+      },
+      {
+        "id": "dg02",
+        "q": "CT dose metric for volume?",
+        "a": "CTDIvol",
+        "c": [
+          "DAP",
+          "CTDIvol",
+          "DLP",
+          "ESE"
+        ],
+        "e": "Average dose in a standard phantom for a single rotation. Measured in mGy."
+      },
+      {
+        "id": "dg03",
+        "q": "CT dose metric for exam length?",
+        "a": "DLP",
+        "c": [
+          "CTDIvol",
+          "DLP",
+          "DAP",
+          "Entrance dose"
+        ],
+        "e": "Dose-Length Product = CTDIvol × scan length (mGy·cm)."
+      },
+      {
+        "id": "dg04",
+        "q": "Effective dose unit?",
+        "a": "mSv",
+        "c": [
+          "mGy",
+          "mSv",
+          "mR",
+          "MU"
+        ],
+        "e": "Uses tissue weighting factors to estimate stochastic risk from partial-body exposure."
+      },
+      {
+        "id": "dg05",
+        "q": "Fluoroscopy dose metric?",
+        "a": "DAP (Dose Area Product)",
+        "c": [
+          "CTDIvol",
+          "DAP (Dose Area Product)",
+          "DLP",
+          "ESE"
+        ],
+        "e": "DAP (Gy·cm²) captures both dose intensity and beam area."
+      },
+      {
+        "id": "dg06",
+        "q": "Typical chest X-ray effective dose?",
+        "a": "~0.02 mSv",
+        "c": [
+          "~0.001 mSv",
+          "~0.02 mSv",
+          "~1 mSv",
+          "~7 mSv"
+        ],
+        "e": "One of the lowest medical exposures. The reference unit for public communication."
+      },
+      {
+        "id": "dg07",
+        "q": "Typical CT abdomen effective dose?",
+        "a": "~8-10 mSv",
+        "c": [
+          "~0.5 mSv",
+          "~2 mSv",
+          "~8-10 mSv",
+          "~25 mSv"
+        ],
+        "e": "Equivalent to ~400-500 chest X-rays. Justification and optimisation essential."
+      },
+      {
+        "id": "dg08",
+        "q": "Hounsfield unit of water?",
+        "a": "0 HU",
+        "c": [
+          "-1000 HU",
+          "0 HU",
+          "100 HU",
+          "1000 HU"
+        ],
+        "e": "Water = 0 by definition. Air = -1000. Dense bone ~+1000."
+      },
+      {
+        "id": "dg09",
+        "q": "Hounsfield unit of air?",
+        "a": "-1000 HU",
+        "c": [
+          "-1000 HU",
+          "-500 HU",
+          "0 HU",
+          "-100 HU"
+        ],
+        "e": "HU = 1000 × (μ_tissue - μ_water) / μ_water."
+      },
+      {
+        "id": "dg10",
+        "q": "Heel effect occurs in?",
+        "a": "X-ray tube anode",
+        "c": [
+          "Collimator",
+          "X-ray tube anode",
+          "Image receptor",
+          "Grid"
+        ],
+        "e": "X-rays from deeper in the anode are more attenuated → intensity variation."
+      },
+      {
+        "id": "dg11",
+        "q": "AEC stands for?",
+        "a": "Automatic Exposure Control",
+        "c": [
+          "Automatic Energy Control",
+          "Automatic Exposure Control",
+          "Automated Emission Check",
+          "Anode Excitation Current"
+        ],
+        "e": "Terminates exposure when detector receives sufficient signal for diagnostic quality."
+      },
+      {
+        "id": "dg12",
+        "q": "kVp affects primarily?",
+        "a": "Contrast & penetration",
+        "c": [
+          "Spatial resolution",
+          "Contrast & penetration",
+          "Focal spot size",
+          "Detector efficiency"
+        ],
+        "e": "Higher kVp = more penetrating beam, lower contrast. Trade-off with patient dose."
+      },
+      {
+        "id": "dg13",
+        "q": "mAs affects primarily?",
+        "a": "Quantity of radiation (dose)",
+        "c": [
+          "Beam energy",
+          "Quantity of radiation (dose)",
+          "Beam penetration",
+          "Image contrast"
+        ],
+        "e": "Doubling mAs doubles dose and halves quantum noise."
+      },
+      {
+        "id": "dg14",
+        "q": "Digital detector types (name 2)?",
+        "a": "CR (PSP) and DR (flat panel)",
+        "c": [
+          "Film and screen",
+          "CR (PSP) and DR (flat panel)",
+          "Image intensifier only",
+          "CCD only"
+        ],
+        "e": "CR uses photostimulable phosphor plates; DR uses amorphous silicon or selenium flat panels."
+      },
+      {
+        "id": "dg15",
+        "q": "Nyquist frequency relates to?",
+        "a": "Spatial resolution limit",
+        "c": [
+          "Dose efficiency",
+          "Spatial resolution limit",
+          "Contrast",
+          "Noise"
+        ],
+        "e": "Maximum spatial frequency a detector can resolve = 1/(2 × pixel pitch)."
+      },
+      {
+        "id": "dg16",
+        "q": "DQE stands for?",
+        "a": "Detective Quantum Efficiency",
+        "c": [
+          "Dose Quality Estimate",
+          "Detective Quantum Efficiency",
+          "Digital Quality Enhancement",
+          "Detector Quench Effect"
+        ],
+        "e": "DQE measures how efficiently a detector converts incident X-ray quanta to useful signal. Higher DQE = better image quality per dose.",
+        "d": 5
+      },
+      {
+        "id": "dg17",
+        "q": "CT reconstruction algorithm (standard)?",
+        "a": "Filtered back projection (FBP)",
+        "c": [
+          "Simple back projection",
+          "Filtered back projection (FBP)",
+          "Maximum likelihood",
+          "Direct Fourier"
+        ],
+        "e": "FBP applies a ramp filter before back-projecting to remove blurring. Iterative reconstruction is increasingly replacing FBP.",
+        "d": 4
+      },
+      {
+        "id": "dg18",
+        "q": "Iterative reconstruction advantage?",
+        "a": "Lower noise at same dose (dose saving)",
+        "c": [
+          "Faster computation and processing",
+          "Lower noise at same dose (dose saving)",
+          "Always better spatial resolution",
+          "Simpler mathematical algorithm"
+        ],
+        "e": "Iterative methods model noise and physics more accurately, enabling 20-40% dose reduction while maintaining image quality.",
+        "d": 5
+      },
+      {
+        "id": "dg19",
+        "q": "Beam hardening artefact cause?",
+        "a": "Low-energy photon preferential absorption",
+        "c": [
+          "Patient involuntary motion blur",
+          "Low-energy photon preferential absorption",
+          "Detector element malfunction error",
+          "Image reconstruction algorithm bug"
+        ],
+        "e": "Polychromatic beam loses low-energy photons passing through dense structures, shifting the mean energy upward and causing cupping/streak artefacts.",
+        "d": 5
+      },
+      {
+        "id": "dg20",
+        "q": "CT number accuracy tolerance?",
+        "a": "±4 HU for water",
+        "c": [
+          "±1 HU",
+          "±4 HU for water",
+          "±10 HU",
+          "±20 HU"
+        ],
+        "e": "Water should read 0 ± 4 HU. Deviations indicate calibration issues affecting dose calculations when CT is used for RT planning.",
+        "d": 5
+      },
+      {
+        "id": "dg21",
+        "q": "Anti-scatter grid purpose?",
+        "a": "Reduce scatter radiation at detector",
+        "c": [
+          "Increase overall patient dose",
+          "Reduce scatter radiation at detector",
+          "Improve spatial resolution limit",
+          "Filter out low-energy photons"
+        ],
+        "e": "Lead strips absorb scatter photons (typically moving at oblique angles) while transmitting primary photons, improving contrast.",
+        "d": 3
+      },
+      {
+        "id": "dg22",
+        "q": "Grid ratio definition?",
+        "a": "Height of lead strips / gap between strips",
+        "c": [
+          "Number of strips per cm",
+          "Height of lead strips / gap between strips",
+          "Grid frequency / strip width",
+          "Lead content percentage"
+        ],
+        "e": "Higher grid ratios (e.g., 12:1) absorb more scatter but require higher exposure. Common values: 8:1 to 12:1.",
+        "d": 5
+      },
+      {
+        "id": "dg23",
+        "q": "Mammography compressed breast thickness (typical)?",
+        "a": "4-6 cm",
+        "c": [
+          "1-2 cm",
+          "4-6 cm",
+          "8-10 cm",
+          "12-15 cm"
+        ],
+        "e": "Compression reduces breast thickness to 4-6 cm, improving contrast, reducing dose, and separating overlapping structures.",
+        "d": 3
+      },
+      {
+        "id": "dg24",
+        "q": "Dual-energy CT application?",
+        "a": "Material decomposition, virtual non-contrast",
+        "c": [
+          "Only faster scanning acquisition",
+          "Material decomposition, virtual non-contrast",
+          "Higher spatial resolution always",
+          "Lower radiation dose guaranteed"
+        ],
+        "e": "Two energy datasets enable material characterisation (e.g., iodine mapping, uric acid detection) and virtual non-contrast images.",
+        "d": 6
+      },
+      {
+        "id": "dg25",
+        "q": "MTF measures?",
+        "a": "Resolution vs spatial frequency function",
+        "c": [
+          "Dose efficiency measurement metric",
+          "Resolution vs spatial frequency function",
+          "Contrast-to-noise ratio indicator",
+          "Patient throughput rate metric"
+        ],
+        "e": "Modulation Transfer Function quantifies how well a system preserves contrast at different spatial frequencies. MTF=1 at zero frequency.",
+        "d": 6
+      },
+      {
+        "id": "dg26",
+        "q": "Tube loading (heat units) depends on?",
+        "a": "kVp × mA × time × rectification factor",
+        "c": [
+          "Peak kilovoltage setting only",
+          "Tube current-time product only",
+          "kVp × mA × time × rectification factor",
+          "Focal spot size setting only"
+        ],
+        "e": "Heat generated in the anode limits continuous use. Rotating anodes dissipate heat more effectively than stationary.",
+        "d": 5
+      },
+      {
+        "id": "dg27",
+        "q": "CALC: Patient effective dose from CT scan. DLP=600 mGy·cm, k-factor=0.015 mSv/(mGy·cm). Effective dose?",
+        "a": "9 mSv",
+        "c": [
+          "6 mSv",
+          "9 mSv",
+          "12 mSv",
+          "15 mSv"
+        ],
+        "e": "E = DLP × k = 600 × 0.015 = 9 mSv. k-factors are region-specific (abdomen ≈ 0.015, head ≈ 0.0021).",
+        "d": 5
+      },
+      {
+        "id": "dg28",
+        "q": "Windowing in CT adjusts?",
+        "a": "Display contrast & brightness (WW/WL)",
+        "c": [
+          "Actual radiation dose to patient",
+          "Display contrast & brightness (WW/WL)",
+          "Image spatial resolution setting",
+          "CT scan protocol parameters"
+        ],
+        "e": "Window Width controls contrast range; Window Level (centre) controls brightness. Lung window: WW=1500, WL=-600. Bone: WW=2000, WL=300.",
+        "d": 3
+      },
+      {
+        "id": "dg29",
+        "q": "Focal spot size affects?",
+        "a": "Geometric unsharpness (resolution)",
+        "c": [
+          "Dose detection efficiency only",
+          "Geometric unsharpness (resolution)",
+          "Image contrast properties only",
+          "Detector response sensitivity"
+        ],
+        "e": "Smaller focal spot = sharper image but lower tube loading capacity. Mammography uses 0.1-0.3 mm focal spots.",
+        "d": 4
+      },
+      {
+        "id": "dg30",
+        "q": "Pitch in helical CT definition?",
+        "a": "Table travel per rotation / collimation",
+        "c": [
+          "Peak voltage / current ratio value",
+          "Table travel per rotation / collimation",
+          "Slice thickness / pixel size ratio",
+          "Rotation time / scan length ratio"
+        ],
+        "e": "Pitch > 1: gaps between rotations (faster, lower dose). Pitch < 1: overlapping data (slower, higher dose, better quality).",
+        "d": 5
+      }
     ],
-
     "radiobio": [
-      { "id": "rb01", "q": "Linear-quadratic model formula?", "a": "S = e^(−αD − βD²)", "c": ["S = e^(−αD)", "S = e^(−αD − βD²)", "S = 1 − e^(−D)", "S = αD + βD²"], "e": "α = single-hit kills (linear), β = two-hit kills (quadratic). Foundation of fractionation theory." },
-      { "id": "rb02", "q": "α/β ratio for late-responding tissue?", "a": "~3 Gy", "c": ["~1 Gy", "~3 Gy", "~10 Gy", "~20 Gy"], "e": "Late tissues (spinal cord, lung) are more sensitive to fraction size — the basis for conventional 2 Gy fractionation." },
-      { "id": "rb03", "q": "α/β ratio for early-responding tissue?", "a": "~10 Gy", "c": ["~1 Gy", "~3 Gy", "~10 Gy", "~20 Gy"], "e": "Fast-dividing tissues (tumours, skin, mucosa) are less sensitive to fraction size changes." },
-      { "id": "rb04", "q": "4 R's of radiobiology?", "a": "Repair, Redistribution, Repopulation, Reoxygenation", "c": ["Repair, Redistribution, Repopulation, Reoxygenation", "Repair, Rejection, Regrowth, Recovery", "Resistance, Repair, Redistribution, Rejection", "Reoxygenation, Recovery, Resistance, Repair"], "e": "The biological rationale for fractionation — each R favours tumour kill over normal tissue damage." },
-      { "id": "rb05", "q": "OER stands for?", "a": "Oxygen Enhancement Ratio", "c": ["Optical Emission Ratio", "Oxygen Enhancement Ratio", "Output Energy Ratio", "Organ Equivalence Ratio"], "e": "Ratio of doses needed for same effect in hypoxic vs oxygenated cells." },
-      { "id": "rb06", "q": "OER for photons is approximately?", "a": "2.5 - 3.0", "c": ["1.0", "1.5", "2.5 - 3.0", "5.0"], "e": "Hypoxic cells need 2.5-3× more dose. Reoxygenation between fractions helps overcome this." },
-      { "id": "rb07", "q": "RBE stands for?", "a": "Relative Biological Effectiveness", "c": ["Radiation Beam Energy", "Relative Biological Effectiveness", "Relative Beam Efficiency", "Radiobiological Effect"], "e": "Compares biological effect of different radiation types relative to a reference (250 kVp X-rays)." },
-      { "id": "rb08", "q": "RBE reference radiation?", "a": "250 kVp X-rays", "c": ["Co-60", "250 kVp X-rays", "Cs-137", "6 MV photons"], "e": "Historical standard. RBE = Dose(reference) / Dose(test) for same biological effect." },
-      { "id": "rb09", "q": "LET stands for?", "a": "Linear Energy Transfer", "c": ["Low Energy Threshold", "Linear Energy Transfer", "Lateral Emission Transfer", "Logarithmic Energy Transformation"], "e": "Energy deposited per unit path length (keV/μm). Higher LET = more biological damage per track." },
-      { "id": "rb10", "q": "High-LET radiation example?", "a": "Alpha particles", "c": ["X-rays", "Electrons", "Alpha particles", "Gamma rays"], "e": "Alphas deposit ~100 keV/μm vs ~0.2 keV/μm for photons. Dense ionisation = more lethal." },
-      { "id": "rb11", "q": "TCP stands for?", "a": "Tumour Control Probability", "c": ["Total Control Percentage", "Tumour Control Probability", "Treatment Completion Plan", "Tissue Complication Probability"], "e": "Probability of eradicating all clonogenic tumour cells. Sigmoid function of dose." },
-      { "id": "rb12", "q": "NTCP stands for?", "a": "Normal Tissue Complication Probability", "c": ["Normal Tissue Control Probability", "Normal Tissue Complication Probability", "Non-Target Complication Percentage", "Nominal Tissue Cure Probability"], "e": "Probability of causing a specific complication. Also a sigmoid function of dose." },
-      { "id": "rb13", "q": "Therapeutic ratio is?", "a": "TCP / NTCP", "c": ["Dose / Volume", "TCP / NTCP", "α / β", "OER / RBE"], "e": "Wider separation = better. RT aims to maximise TCP while keeping NTCP acceptably low." },
-      { "id": "rb14", "q": "BED formula?", "a": "BED = nd(1 + d/(α/β))", "c": ["BED = nD", "BED = nd(1 + d/(α/β))", "BED = D × RBE", "BED = αD + βD²"], "e": "Biologically Effective Dose. Allows comparison of different fractionation schedules." },
-      { "id": "rb15", "q": "Prostate cancer α/β?", "a": "~1.5 Gy (low)", "c": ["~1.5 Gy (low)", "~3 Gy", "~10 Gy", "~20 Gy"], "e": "Unusually low — prostate tumours behave like late-responding tissue. Supports hypofractionation." }
+      {
+        "id": "rb01",
+        "q": "Linear-quadratic model formula?",
+        "a": "S = e^(−αD − βD²)",
+        "c": [
+          "S = e^(−αD)",
+          "S = e^(−αD − βD²)",
+          "S = 1 − e^(−D)",
+          "S = αD + βD²"
+        ],
+        "e": "α = single-hit kills (linear), β = two-hit kills (quadratic). Foundation of fractionation theory."
+      },
+      {
+        "id": "rb02",
+        "q": "α/β ratio for late-responding tissue?",
+        "a": "~3 Gy",
+        "c": [
+          "~1 Gy",
+          "~3 Gy",
+          "~10 Gy",
+          "~20 Gy"
+        ],
+        "e": "Late tissues (spinal cord, lung) are more sensitive to fraction size — the basis for conventional 2 Gy fractionation."
+      },
+      {
+        "id": "rb03",
+        "q": "α/β ratio for early-responding tissue?",
+        "a": "~10 Gy",
+        "c": [
+          "~1 Gy",
+          "~3 Gy",
+          "~10 Gy",
+          "~20 Gy"
+        ],
+        "e": "Fast-dividing tissues (tumours, skin, mucosa) are less sensitive to fraction size changes."
+      },
+      {
+        "id": "rb04",
+        "q": "4 R's of radiobiology?",
+        "a": "Repair, Redistribution, Repopulation, Reoxygenation",
+        "c": [
+          "Repair, Redistribution, Repopulation, Reoxygenation",
+          "Repair, Rejection, Regrowth, Recovery",
+          "Resistance, Repair, Redistribution, Rejection",
+          "Reoxygenation, Recovery, Resistance, Repair"
+        ],
+        "e": "The biological rationale for fractionation — each R favours tumour kill over normal tissue damage."
+      },
+      {
+        "id": "rb05",
+        "q": "OER stands for?",
+        "a": "Oxygen Enhancement Ratio",
+        "c": [
+          "Optical Emission Ratio",
+          "Oxygen Enhancement Ratio",
+          "Output Energy Ratio",
+          "Organ Equivalence Ratio"
+        ],
+        "e": "Ratio of doses needed for same effect in hypoxic vs oxygenated cells."
+      },
+      {
+        "id": "rb06",
+        "q": "OER for photons is approximately?",
+        "a": "2.5 - 3.0",
+        "c": [
+          "1.0",
+          "1.5",
+          "2.5 - 3.0",
+          "5.0"
+        ],
+        "e": "Hypoxic cells need 2.5-3× more dose. Reoxygenation between fractions helps overcome this."
+      },
+      {
+        "id": "rb07",
+        "q": "RBE stands for?",
+        "a": "Relative Biological Effectiveness",
+        "c": [
+          "Radiation Beam Energy",
+          "Relative Biological Effectiveness",
+          "Relative Beam Efficiency",
+          "Radiobiological Effect"
+        ],
+        "e": "Compares biological effect of different radiation types relative to a reference (250 kVp X-rays)."
+      },
+      {
+        "id": "rb08",
+        "q": "RBE reference radiation?",
+        "a": "250 kVp X-rays",
+        "c": [
+          "Co-60",
+          "250 kVp X-rays",
+          "Cs-137",
+          "6 MV photons"
+        ],
+        "e": "Historical standard. RBE = Dose(reference) / Dose(test) for same biological effect."
+      },
+      {
+        "id": "rb09",
+        "q": "LET stands for?",
+        "a": "Linear Energy Transfer",
+        "c": [
+          "Low Energy Threshold",
+          "Linear Energy Transfer",
+          "Lateral Emission Transfer",
+          "Logarithmic Energy Transformation"
+        ],
+        "e": "Energy deposited per unit path length (keV/μm). Higher LET = more biological damage per track."
+      },
+      {
+        "id": "rb10",
+        "q": "High-LET radiation example?",
+        "a": "Alpha particles",
+        "c": [
+          "X-rays",
+          "Electrons",
+          "Alpha particles",
+          "Gamma rays"
+        ],
+        "e": "Alphas deposit ~100 keV/μm vs ~0.2 keV/μm for photons. Dense ionisation = more lethal."
+      },
+      {
+        "id": "rb11",
+        "q": "TCP stands for?",
+        "a": "Tumour Control Probability",
+        "c": [
+          "Total Control Percentage",
+          "Tumour Control Probability",
+          "Treatment Completion Plan",
+          "Tissue Complication Probability"
+        ],
+        "e": "Probability of eradicating all clonogenic tumour cells. Sigmoid function of dose."
+      },
+      {
+        "id": "rb12",
+        "q": "NTCP stands for?",
+        "a": "Normal Tissue Complication Probability",
+        "c": [
+          "Normal Tissue Control Probability",
+          "Normal Tissue Complication Probability",
+          "Non-Target Complication Percentage",
+          "Nominal Tissue Cure Probability"
+        ],
+        "e": "Probability of causing a specific complication. Also a sigmoid function of dose."
+      },
+      {
+        "id": "rb13",
+        "q": "Therapeutic ratio is?",
+        "a": "TCP / NTCP",
+        "c": [
+          "Dose / Volume",
+          "TCP / NTCP",
+          "α / β",
+          "OER / RBE"
+        ],
+        "e": "Wider separation = better. RT aims to maximise TCP while keeping NTCP acceptably low."
+      },
+      {
+        "id": "rb14",
+        "q": "BED formula?",
+        "a": "BED = nd(1 + d/(α/β))",
+        "c": [
+          "BED = nD",
+          "BED = nd(1 + d/(α/β))",
+          "BED = D × RBE",
+          "BED = αD + βD²"
+        ],
+        "e": "Biologically Effective Dose. Allows comparison of different fractionation schedules."
+      },
+      {
+        "id": "rb15",
+        "q": "Prostate cancer α/β?",
+        "a": "~1.5 Gy (low)",
+        "c": [
+          "~1.5 Gy (low)",
+          "~3 Gy",
+          "~10 Gy",
+          "~20 Gy"
+        ],
+        "e": "Unusually low — prostate tumours behave like late-responding tissue. Supports hypofractionation."
+      },
+      {
+        "id": "rb16",
+        "q": "Cell cycle most radiosensitive phase?",
+        "a": "M and late G2",
+        "c": [
+          "G1",
+          "S phase",
+          "M and late G2",
+          "G0"
+        ],
+        "e": "Mitosis and late G2 have condensed chromosomes and reduced repair capacity — most vulnerable to radiation damage.",
+        "d": 4
+      },
+      {
+        "id": "rb17",
+        "q": "Cell cycle most radioresistant phase?",
+        "a": "Late S phase",
+        "c": [
+          "G1",
+          "Late S phase",
+          "M phase",
+          "G2"
+        ],
+        "e": "Late S phase has active homologous recombination repair and sister chromatids available as templates.",
+        "d": 5
+      },
+      {
+        "id": "rb18",
+        "q": "Oxygen fixation hypothesis?",
+        "a": "O₂ makes DNA damage permanent (fixes radicals)",
+        "c": [
+          "O₂ prevents all radiation DNA damage",
+          "O₂ makes DNA damage permanent (fixes radicals)",
+          "O₂ actively repairs damaged DNA strands",
+          "O₂ completely blocks radiation effects"
+        ],
+        "e": "Oxygen reacts with radiation-produced free radicals on DNA, making the damage irreparable. Without O₂, the radical can be chemically restored.",
+        "d": 5
+      },
+      {
+        "id": "rb19",
+        "q": "Accelerated repopulation begins at (H&N)?",
+        "a": "~4 weeks into treatment",
+        "c": [
+          "Day 1",
+          "~2 weeks",
+          "~4 weeks into treatment",
+          "~6 weeks"
+        ],
+        "e": "After ~28 days, surviving tumour clonogens proliferate faster. This is why treatment breaks and prolongation are detrimental.",
+        "d": 6
+      },
+      {
+        "id": "rb20",
+        "q": "EQD2 formula?",
+        "a": "EQD2 = D(d+α/β)/(2+α/β)",
+        "c": [
+          "EQD2 = total dose D × d / 2",
+          "EQD2 = D(d+α/β)/(2+α/β)",
+          "EQD2 = BED × α/β ratio",
+          "EQD2 = D / (1 + d/αβ)"
+        ],
+        "e": "Equivalent Dose in 2 Gy fractions. Converts any schedule to its equivalent in standard 2 Gy fractions for comparison.",
+        "d": 6
+      },
+      {
+        "id": "rb21",
+        "q": "CALC: BED for 50 Gy in 5 fx, α/β = 10 Gy?",
+        "a": "100 Gy₁₀",
+        "c": [
+          "80 Gy₁₀",
+          "100 Gy₁₀",
+          "120 Gy₁₀",
+          "150 Gy₁₀"
+        ],
+        "e": "d = 50/5 = 10 Gy per fraction. BED = nd(1 + d/(α/β)) = 50 × (1 + 10/10) = 50 × 2 = 100 Gy₁₀.",
+        "d": 6
+      },
+      {
+        "id": "rb22",
+        "q": "Sublethal damage repair half-time?",
+        "a": "~1-2 hours",
+        "c": [
+          "~5 minutes",
+          "~1-2 hours",
+          "~6 hours",
+          "~24 hours"
+        ],
+        "e": "Most sublethal damage is repaired within 1-2 hours. This is why fractions are spaced ≥6 hours apart (≥3 half-times).",
+        "d": 5
+      },
+      {
+        "id": "rb23",
+        "q": "Bystander effect?",
+        "a": "Unirradiated cells near irradiated cells show damage",
+        "c": [
+          "All cells receive equal dose",
+          "Unirradiated cells near irradiated cells show damage",
+          "Only directly hit cells are affected",
+          "Radiation has no indirect effects"
+        ],
+        "e": "Irradiated cells release signalling molecules that can induce DNA damage, apoptosis, or genomic instability in neighbouring unirradiated cells.",
+        "d": 6
+      },
+      {
+        "id": "rb24",
+        "q": "Abscopal effect?",
+        "a": "Distant unirradiated tumour regression",
+        "c": [
+          "Local tumour volume shrinkage",
+          "Distant unirradiated tumour regression",
+          "Increased tumour growth rate",
+          "Adjacent normal organ damage"
+        ],
+        "e": "Rare phenomenon where localised radiation triggers immune response causing regression of metastases outside the treatment field.",
+        "d": 6
+      },
+      {
+        "id": "rb25",
+        "q": "DSB stands for?",
+        "a": "Double Strand Break",
+        "c": [
+          "Dose-Surface Barrier",
+          "Double Strand Break",
+          "Distal Scatter Boundary",
+          "Direct Signal Beam"
+        ],
+        "e": "DSBs are the most lethal form of DNA damage. A single unrepaired DSB can kill a cell. Repaired by NHEJ or HR.",
+        "d": 3
+      },
+      {
+        "id": "rb26",
+        "q": "NHEJ repair mechanism?",
+        "a": "Non-Homologous End Joining (error-prone)",
+        "c": [
+          "Normal Homologous End Junction",
+          "Non-Homologous End Joining (error-prone)",
+          "Nuclear Hydrogen Exchange Junction",
+          "Nucleotide Hybridisation End Joining"
+        ],
+        "e": "NHEJ directly ligates broken DNA ends without a template — fast but error-prone. Dominant repair pathway in mammalian cells.",
+        "d": 5
+      },
+      {
+        "id": "rb27",
+        "q": "Tumour hypoxia effect on RT?",
+        "a": "Increases radioresistance",
+        "c": [
+          "Increases radiosensitivity",
+          "Increases radioresistance",
+          "No effect on response",
+          "Improves local control"
+        ],
+        "e": "Hypoxic tumour cells require 2.5-3× higher dose for equivalent kill. Strategies: fractionation (reoxygenation), hypoxic sensitisers, carbogen breathing.",
+        "d": 4
+      },
+      {
+        "id": "rb28",
+        "q": "CALC: EQD2 for 30 Gy / 10 fx, α/β = 3 Gy?",
+        "a": "36 Gy",
+        "c": [
+          "30 Gy",
+          "36 Gy",
+          "42 Gy",
+          "50 Gy"
+        ],
+        "e": "d = 3 Gy per fraction. EQD2 = D × (d + α/β)/(2 + α/β) = 30 × (3+3)/(2+3) = 30 × 6/5 = 36 Gy.",
+        "d": 7
+      },
+      {
+        "id": "rb29",
+        "q": "Radiosensitiser example?",
+        "a": "Cisplatin (concurrent chemoRT)",
+        "c": [
+          "Amifostine",
+          "Cisplatin (concurrent chemoRT)",
+          "Vitamin C",
+          "Lead shielding"
+        ],
+        "e": "Cisplatin inhibits DNA repair and synergises with radiation. Standard for H&N, cervix, lung chemoradiation.",
+        "d": 4
+      },
+      {
+        "id": "rb30",
+        "q": "Radioprotector example?",
+        "a": "Amifostine (radical scavenger)",
+        "c": [
+          "Cisplatin (DNA crosslinker)",
+          "Amifostine (radical scavenger)",
+          "5-FU (antimetabolite drug)",
+          "Carboplatin (alkylating agent)"
+        ],
+        "e": "Amifostine (WR-2721) is a thiol compound that scavenges free radicals, selectively protecting normal tissues over tumours.",
+        "d": 5
+      }
     ],
-
     "radprot": [
-      { "id": "rp01", "q": "ALARA stands for?", "a": "As Low As Reasonably Achievable", "c": ["As Low As Readily Available", "As Low As Reasonably Achievable", "All Levels Are Routinely Assessed", "Acute Limits And Radiation Assessments"], "e": "The overarching principle: minimise dose consistent with practical constraints." },
-      { "id": "rp02", "q": "Three principles of radiation protection?", "a": "Time, Distance, Shielding", "c": ["Time, Distance, Shielding", "kVp, mAs, Filtration", "Dose, Volume, Fractionation", "Energy, Fluence, Exposure"], "e": "Minimise time, maximise distance (inverse square), interpose shielding." },
-      { "id": "rp03", "q": "Inverse square law: double distance →", "a": "¼ dose", "c": ["½ dose", "¼ dose", "⅛ dose", "Same dose"], "e": "Dose ∝ 1/r². Double the distance = quarter the dose. The most powerful protection tool." },
-      { "id": "rp04", "q": "Primary barrier shielding material?", "a": "Concrete or lead", "c": ["Wood", "Concrete or lead", "Glass", "Aluminium only"], "e": "High-Z materials attenuate MV beams. Concrete is most common; lead for space-constrained areas." },
-      { "id": "rp05", "q": "HVL stands for?", "a": "Half-Value Layer", "c": ["High-Voltage Limit", "Half-Value Layer", "Hazard Verification Level", "Heavy Voltage Load"], "e": "Thickness of material to reduce beam intensity by 50%. Depends on energy and material." },
-      { "id": "rp06", "q": "TVL stands for?", "a": "Tenth-Value Layer", "c": ["Total Value Layer", "Tenth-Value Layer", "Transmission Verification Level", "Tissue Volume Layer"], "e": "Reduces beam to 10%. TVL ≈ 3.32 × HVL." },
-      { "id": "rp07", "q": "TVL reduces beam to?", "a": "10% (factor of 10)", "c": ["50%", "10% (factor of 10)", "1%", "0.1%"], "e": "One TVL = factor of 10 reduction. Two TVLs = factor of 100, etc." },
-      { "id": "rp08", "q": "Shielding design report?", "a": "NCRP 151", "c": ["NCRP 49", "NCRP 116", "NCRP 147", "NCRP 151"], "e": "NCRP 151 covers structural shielding design for megavoltage RT facilities." },
-      { "id": "rp09", "q": "Workload (W) unit?", "a": "Gy/week at 1 m", "c": ["mSv/year", "Gy/week at 1 m", "MU/hour", "R/min"], "e": "Total dose output at 1 m from source per week. Key input for shielding calculations." },
-      { "id": "rp10", "q": "Use factor (U) for primary wall?", "a": "¼ (typical)", "c": ["1", "½", "¼ (typical)", "1/16"], "e": "Fraction of time beam is directed at that wall. ¼ assumes 4 cardinal gantry angles." },
-      { "id": "rp11", "q": "Occupancy factor (T) for office next door?", "a": "1 (full occupancy)", "c": ["1 (full occupancy)", "½", "¼", "1/16"], "e": "T=1 for areas with permanent occupants. Lower for corridors (¼), toilets (1/16)." },
-      { "id": "rp12", "q": "Neutron contamination risk starts at?", "a": "> 10 MV photons", "c": ["> 4 MV", "> 6 MV", "> 10 MV photons", "> 18 MeV electrons"], "e": "Photonuclear threshold ~8-10 MV. Requires additional shielding (polyethylene, borated materials)." },
-      { "id": "rp13", "q": "Area monitor for linac room?", "a": "Ion chamber survey meter", "c": ["Geiger-Müller only", "Ion chamber survey meter", "Film badge", "TLD ring"], "e": "IC survey meters give accurate dose rate readings across the energy range." },
-      { "id": "rp14", "q": "Personal dosimeter types (name 2)?", "a": "TLD and OSL", "c": ["Film and screen", "TLD and OSL", "Ion chamber only", "Scintillator pair"], "e": "TLD (thermoluminescence) and OSL (optically stimulated luminescence) are standard personal monitors." },
-      { "id": "rp15", "q": "Maze in bunker design reduces?", "a": "Scattered/leakage at door", "c": ["Primary beam only", "Scattered/leakage at door", "Noise", "Ozone"], "e": "Multiple scattering events along the maze attenuate dose to manageable levels at the entrance." }
+      {
+        "id": "rp01",
+        "q": "ALARA stands for?",
+        "a": "As Low As Reasonably Achievable",
+        "c": [
+          "As Low As Readily Available",
+          "As Low As Reasonably Achievable",
+          "All Levels Are Routinely Assessed",
+          "Acute Limits And Radiation Assessments"
+        ],
+        "e": "The overarching principle: minimise dose consistent with practical constraints."
+      },
+      {
+        "id": "rp02",
+        "q": "Three principles of radiation protection?",
+        "a": "Time, Distance, Shielding",
+        "c": [
+          "Time, Distance, Shielding",
+          "kVp, mAs, Filtration",
+          "Dose, Volume, Fractionation",
+          "Energy, Fluence, Exposure"
+        ],
+        "e": "Minimise time, maximise distance (inverse square), interpose shielding."
+      },
+      {
+        "id": "rp03",
+        "q": "Inverse square law: double distance →",
+        "a": "¼ dose",
+        "c": [
+          "½ dose",
+          "¼ dose",
+          "⅛ dose",
+          "Same dose"
+        ],
+        "e": "Dose ∝ 1/r². Double the distance = quarter the dose. The most powerful protection tool."
+      },
+      {
+        "id": "rp04",
+        "q": "Primary barrier shielding material?",
+        "a": "Concrete or lead",
+        "c": [
+          "Wood",
+          "Concrete or lead",
+          "Glass",
+          "Aluminium only"
+        ],
+        "e": "High-Z materials attenuate MV beams. Concrete is most common; lead for space-constrained areas."
+      },
+      {
+        "id": "rp05",
+        "q": "HVL stands for?",
+        "a": "Half-Value Layer",
+        "c": [
+          "High-Voltage Limit",
+          "Half-Value Layer",
+          "Hazard Verification Level",
+          "Heavy Voltage Load"
+        ],
+        "e": "Thickness of material to reduce beam intensity by 50%. Depends on energy and material."
+      },
+      {
+        "id": "rp06",
+        "q": "TVL stands for?",
+        "a": "Tenth-Value Layer",
+        "c": [
+          "Total Value Layer",
+          "Tenth-Value Layer",
+          "Transmission Verification Level",
+          "Tissue Volume Layer"
+        ],
+        "e": "Reduces beam to 10%. TVL ≈ 3.32 × HVL."
+      },
+      {
+        "id": "rp07",
+        "q": "TVL reduces beam to?",
+        "a": "10% (factor of 10)",
+        "c": [
+          "50%",
+          "10% (factor of 10)",
+          "1%",
+          "0.1%"
+        ],
+        "e": "One TVL = factor of 10 reduction. Two TVLs = factor of 100, etc."
+      },
+      {
+        "id": "rp08",
+        "q": "Shielding design report?",
+        "a": "NCRP 151",
+        "c": [
+          "NCRP 49",
+          "NCRP 116",
+          "NCRP 147",
+          "NCRP 151"
+        ],
+        "e": "NCRP 151 covers structural shielding design for megavoltage RT facilities."
+      },
+      {
+        "id": "rp09",
+        "q": "Workload (W) unit?",
+        "a": "Gy/week at 1 m",
+        "c": [
+          "mSv/year",
+          "Gy/week at 1 m",
+          "MU/hour",
+          "R/min"
+        ],
+        "e": "Total dose output at 1 m from source per week. Key input for shielding calculations."
+      },
+      {
+        "id": "rp10",
+        "q": "Use factor (U) for primary wall?",
+        "a": "¼ (typical)",
+        "c": [
+          "1",
+          "½",
+          "¼ (typical)",
+          "1/16"
+        ],
+        "e": "Fraction of time beam is directed at that wall. ¼ assumes 4 cardinal gantry angles."
+      },
+      {
+        "id": "rp11",
+        "q": "Occupancy factor (T) for office next door?",
+        "a": "1 (full occupancy)",
+        "c": [
+          "1 (full occupancy)",
+          "½",
+          "¼",
+          "1/16"
+        ],
+        "e": "T=1 for areas with permanent occupants. Lower for corridors (¼), toilets (1/16)."
+      },
+      {
+        "id": "rp12",
+        "q": "Neutron contamination risk starts at?",
+        "a": "> 10 MV photons",
+        "c": [
+          "> 4 MV",
+          "> 6 MV",
+          "> 10 MV photons",
+          "> 18 MeV electrons"
+        ],
+        "e": "Photonuclear threshold ~8-10 MV. Requires additional shielding (polyethylene, borated materials)."
+      },
+      {
+        "id": "rp13",
+        "q": "Area monitor for linac room?",
+        "a": "Ion chamber survey meter",
+        "c": [
+          "Geiger-Müller only",
+          "Ion chamber survey meter",
+          "Film badge",
+          "TLD ring"
+        ],
+        "e": "IC survey meters give accurate dose rate readings across the energy range."
+      },
+      {
+        "id": "rp14",
+        "q": "Personal dosimeter types (name 2)?",
+        "a": "TLD and OSL",
+        "c": [
+          "Film and screen",
+          "TLD and OSL",
+          "Ion chamber only",
+          "Scintillator pair"
+        ],
+        "e": "TLD (thermoluminescence) and OSL (optically stimulated luminescence) are standard personal monitors."
+      },
+      {
+        "id": "rp15",
+        "q": "Maze in bunker design reduces?",
+        "a": "Scattered/leakage at door",
+        "c": [
+          "Primary beam only",
+          "Scattered/leakage at door",
+          "Noise",
+          "Ozone"
+        ],
+        "e": "Multiple scattering events along the maze attenuate dose to manageable levels at the entrance."
+      },
+      {
+        "id": "rp16",
+        "q": "Secondary barrier attenuates?",
+        "a": "Scatter and leakage radiation",
+        "c": [
+          "Primary beam only",
+          "Scatter and leakage radiation",
+          "Neutrons only",
+          "Patient scatter only"
+        ],
+        "e": "Secondary barriers are thinner than primary because they shield against lower-energy scatter and head leakage (~0.1% of primary).",
+        "d": 4
+      },
+      {
+        "id": "rp17",
+        "q": "Head leakage limit (linac)?",
+        "a": "≤ 0.1% of useful beam at 1 m",
+        "c": [
+          "≤ 0.01%",
+          "≤ 0.1% of useful beam at 1 m",
+          "≤ 1%",
+          "≤ 5%"
+        ],
+        "e": "IEC standard: leakage radiation at 1 m from source must not exceed 0.1% of the maximum dose rate of the useful beam.",
+        "d": 5
+      },
+      {
+        "id": "rp18",
+        "q": "Effective dose calculation uses?",
+        "a": "Tissue weighting factors (w_T)",
+        "c": [
+          "Absorbed dose only",
+          "Tissue weighting factors (w_T)",
+          "Radiation weighting only",
+          "Distance from source"
+        ],
+        "e": "E = Σ w_T × H_T. Tissue weighting factors sum to 1.0 and reflect relative radiation sensitivity of different organs.",
+        "d": 4
+      },
+      {
+        "id": "rp19",
+        "q": "Equivalent dose calculation uses?",
+        "a": "Radiation weighting factor (w_R)",
+        "c": [
+          "Tissue weighting factor",
+          "Radiation weighting factor (w_R)",
+          "Quality factor only",
+          "Dose rate factor"
+        ],
+        "e": "H_T = Σ w_R × D_T,R. w_R = 1 for photons/electrons, 20 for alpha particles, 2.5-21 for neutrons (energy-dependent).",
+        "d": 5
+      },
+      {
+        "id": "rp20",
+        "q": "w_R for photons and electrons?",
+        "a": "1",
+        "c": [
+          "1",
+          "5",
+          "10",
+          "20"
+        ],
+        "e": "Low-LET radiations (photons, electrons) have w_R = 1. The absorbed dose in Gy equals equivalent dose in Sv.",
+        "d": 3
+      },
+      {
+        "id": "rp21",
+        "q": "w_R for alpha particles?",
+        "a": "20",
+        "c": [
+          "1",
+          "5",
+          "10",
+          "20"
+        ],
+        "e": "High-LET alpha particles cause dense ionisation tracks — 20× more biologically damaging per unit dose than photons.",
+        "d": 4
+      },
+      {
+        "id": "rp22",
+        "q": "Radiation area monitoring: passive vs active?",
+        "a": "Passive: TLD/film; Active: ion chamber/GM",
+        "c": [
+          "Both use ion chambers",
+          "Passive: TLD/film; Active: ion chamber/GM",
+          "Passive gives real-time readings",
+          "Active uses TLD badges"
+        ],
+        "e": "Passive dosimeters integrate dose over time. Active monitors give real-time readings with alarms for dose rate thresholds.",
+        "d": 4
+      },
+      {
+        "id": "rp23",
+        "q": "Controlled area signage requirement?",
+        "a": "Trefoil symbol + access restrictions",
+        "c": [
+          "No special signage is needed",
+          "Trefoil symbol + access restrictions",
+          "Simple 'No Entry' sign only",
+          "Red flashing warning light only"
+        ],
+        "e": "International radiation trefoil symbol, radiation type, dose rate information, and controlled access measures are required.",
+        "d": 3
+      },
+      {
+        "id": "rp24",
+        "q": "Emergency procedure for stuck source (brachy)?",
+        "a": "Evacuate, shield, call physics/RPO",
+        "c": [
+          "Wait for source to decay",
+          "Evacuate, shield, call physics/RPO",
+          "Pull applicator out immediately",
+          "Turn off room lights"
+        ],
+        "e": "Stuck HDR source: evacuate patient area, maximise distance, use emergency container if available, contact physicist and RPO immediately.",
+        "d": 5
+      },
+      {
+        "id": "rp25",
+        "q": "CALC: Annual dose to office (100% occupancy). Dose rate at wall = 0.5 µSv/hr. Hours/year = 2000. Annual dose?",
+        "a": "1.0 mSv",
+        "c": [
+          "0.5 mSv",
+          "1.0 mSv",
+          "2.0 mSv",
+          "5.0 mSv"
+        ],
+        "e": "D = 0.5 µSv/hr × 2000 hr = 1000 µSv = 1.0 mSv. At the public limit — shielding is just adequate.",
+        "d": 5
+      },
+      {
+        "id": "rp26",
+        "q": "Neutron shielding material?",
+        "a": "Polyethylene / borated polyethylene",
+        "c": [
+          "Lead shielding material only",
+          "Polyethylene / borated polyethylene",
+          "Steel plate shielding only",
+          "Aluminium sheet shielding"
+        ],
+        "e": "Hydrogen-rich materials (poly) thermalise fast neutrons. Boron-10 then captures thermal neutrons via ¹⁰B(n,α)⁷Li reaction.",
+        "d": 5
+      },
+      {
+        "id": "rp27",
+        "q": "Ozone production concern in linac bunkers?",
+        "a": "Ventilation must clear O₃ between treatments",
+        "c": [
+          "O₃ is not produced by linacs",
+          "Ventilation must clear O₃ between treatments",
+          "O₃ is beneficial for patients",
+          "Only at energies > 18 MV"
+        ],
+        "e": "UV and ionising radiation produces ozone (O₃) from air. NCRP 151 recommends ventilation providing 6-10 air changes per hour.",
+        "d": 5
+      },
+      {
+        "id": "rp28",
+        "q": "CALC: Need to reduce 50 mSv/hr to 0.05 mSv/hr. Transmission = ?",
+        "a": "0.001 (10⁻³)",
+        "c": [
+          "0.01 (10⁻²)",
+          "0.001 (10⁻³)",
+          "0.0001 (10⁻⁴)",
+          "0.1 (10⁻¹)"
+        ],
+        "e": "T = 0.05/50 = 0.001 = 10⁻³. Need 3 TVLs of shielding. TVL₁ may differ from TVL_eq for the material.",
+        "d": 5
+      },
+      {
+        "id": "rp29",
+        "q": "Direct-shielded door vs maze design?",
+        "a": "Direct-shielded door is heavier but saves space",
+        "c": [
+          "Maze is always preferred",
+          "Direct-shielded door is heavier but saves space",
+          "Direct door is always cheaper",
+          "They provide equal protection"
+        ],
+        "e": "Mazeless designs use massive shielded doors (several tonnes) — saves floor space but requires motorised door systems.",
+        "d": 5
+      },
+      {
+        "id": "rp30",
+        "q": "Instantaneous dose rate (IDR) interlock?",
+        "a": "Terminates beam if area dose rate exceeded",
+        "c": [
+          "Monitors patient dose only",
+          "Terminates beam if area dose rate exceeded",
+          "Controls beam energy",
+          "Measures cumulative dose"
+        ],
+        "e": "Area radiation monitors with IDR interlocks automatically stop beam delivery if dose rate outside the bunker exceeds preset thresholds.",
+        "d": 4
+      }
     ],
-
     "regs": [
-      { "id": "rg01", "q": "Occupational dose/yr (SA)?", "a": "20 mSv", "c": ["5 mSv", "10 mSv", "20 mSv", "50 mSv"], "e": "ICRP/SA limit. Max 50 in any single year, 100 over 5 consecutive years." },
-      { "id": "rg02", "q": "Controlled area limit?", "a": "≤ 5 mSv/yr", "c": ["≤ 1 mSv/yr", "≤ 5 mSv/yr", "≤ 20 mSv/yr", "≤ 50 mSv/yr"], "e": "Areas requiring access control and monitoring for radiation workers." },
-      { "id": "rg03", "q": "Uncontrolled area limit?", "a": "≤ 1 mSv/yr", "c": ["≤ 0.5 mSv/yr", "≤ 1 mSv/yr", "≤ 5 mSv/yr", "≤ 20 mSv/yr"], "e": "Public areas — corridors, waiting rooms, offices. Same as public dose limit." },
-      { "id": "rg04", "q": "SASQART published by?", "a": "SAMPS/SAAPMB", "c": ["SAHPRA", "HPCSA", "SAMPS/SAAPMB", "IAEA"], "e": "South African Standards for Quality Assurance in Radiotherapy — the national QA guideline." },
-      { "id": "rg05", "q": "SA radiation legislation?", "a": "Hazardous Substances Act (1973)", "c": ["National Health Act", "Hazardous Substances Act (1973)", "Medicines Act", "Nuclear Energy Act"], "e": "Act 15 of 1973, Group IV hazardous substances. Governs all non-nuclear radiation use." },
-      { "id": "rg06", "q": "Pregnant worker limit?", "a": "2 mSv lower abdomen", "c": ["1 mSv total", "2 mSv lower abdomen", "5 mSv total", "0.5 mSv/month"], "e": "For remainder of pregnancy once declared. Protects the embryo/fetus." },
-      { "id": "rg07", "q": "SSDL stands for?", "a": "Secondary Standard Dosimetry Lab", "c": ["Safety Standard Dose Level", "Secondary Standard Dosimetry Lab", "SA Standard Dose Limit", "Stereotactic Standard Lab"], "e": "Provides traceable calibrations for clinical dosimeters in SA." },
-      { "id": "rg08", "q": "Professional registration body?", "a": "HPCSA", "c": ["SAHPRA", "HPCSA", "SAMPS", "SAAPMB"], "e": "Health Professions Council of SA — registers medical physicists and other health professionals." },
-      { "id": "rg09", "q": "Equipment licensing body?", "a": "SAHPRA", "c": ["SAHPRA", "HPCSA", "SAMPS", "DoH"], "e": "SA Health Products Regulatory Authority — licenses all radiation-emitting equipment." },
-      { "id": "rg10", "q": "5-year cumulative dose limit?", "a": "100 mSv", "c": ["50 mSv", "100 mSv", "150 mSv", "200 mSv"], "e": "Ensures average ≤ 20 mSv/yr even if single years exceed it." },
-      { "id": "rg11", "q": "Max dose in any single year?", "a": "50 mSv", "c": ["20 mSv", "30 mSv", "50 mSv", "100 mSv"], "e": "Flexibility clause: up to 50 mSv in one year if 5-year average stays ≤ 20 mSv." },
-      { "id": "rg12", "q": "Public annual dose limit?", "a": "1 mSv", "c": ["0.5 mSv", "1 mSv", "5 mSv", "20 mSv"], "e": "ICRP recommended and adopted in SA. Excludes medical and natural background." }
+      {
+        "id": "rg01",
+        "q": "Occupational dose/yr (SA)?",
+        "a": "20 mSv",
+        "c": [
+          "5 mSv",
+          "10 mSv",
+          "20 mSv",
+          "50 mSv"
+        ],
+        "e": "ICRP/SA limit. Max 50 in any single year, 100 over 5 consecutive years."
+      },
+      {
+        "id": "rg02",
+        "q": "Controlled area limit?",
+        "a": "≤ 5 mSv/yr",
+        "c": [
+          "≤ 1 mSv/yr",
+          "≤ 5 mSv/yr",
+          "≤ 20 mSv/yr",
+          "≤ 50 mSv/yr"
+        ],
+        "e": "Areas requiring access control and monitoring for radiation workers."
+      },
+      {
+        "id": "rg03",
+        "q": "Uncontrolled area limit?",
+        "a": "≤ 1 mSv/yr",
+        "c": [
+          "≤ 0.5 mSv/yr",
+          "≤ 1 mSv/yr",
+          "≤ 5 mSv/yr",
+          "≤ 20 mSv/yr"
+        ],
+        "e": "Public areas — corridors, waiting rooms, offices. Same as public dose limit."
+      },
+      {
+        "id": "rg04",
+        "q": "SASQART published by?",
+        "a": "SAMPS/SAAPMB",
+        "c": [
+          "SAHPRA",
+          "HPCSA",
+          "SAMPS/SAAPMB",
+          "IAEA"
+        ],
+        "e": "South African Standards for Quality Assurance in Radiotherapy — the national QA guideline."
+      },
+      {
+        "id": "rg05",
+        "q": "SA radiation legislation?",
+        "a": "Hazardous Substances Act (1973)",
+        "c": [
+          "National Health Act (2003)",
+          "Hazardous Substances Act (1973)",
+          "Medicines and Related Act",
+          "Nuclear Energy Act (1999)"
+        ],
+        "e": "Act 15 of 1973, Group IV hazardous substances. Governs all non-nuclear radiation use."
+      },
+      {
+        "id": "rg06",
+        "q": "Pregnant worker limit?",
+        "a": "2 mSv lower abdomen",
+        "c": [
+          "1 mSv total",
+          "2 mSv lower abdomen",
+          "5 mSv total",
+          "0.5 mSv/month"
+        ],
+        "e": "For remainder of pregnancy once declared. Protects the embryo/fetus."
+      },
+      {
+        "id": "rg07",
+        "q": "SSDL stands for?",
+        "a": "Secondary Standard Dosimetry Lab",
+        "c": [
+          "Safety Standard Dose Level",
+          "Secondary Standard Dosimetry Lab",
+          "SA Standard Dose Limit",
+          "Stereotactic Standard Lab"
+        ],
+        "e": "Provides traceable calibrations for clinical dosimeters in SA."
+      },
+      {
+        "id": "rg08",
+        "q": "Professional registration body?",
+        "a": "HPCSA",
+        "c": [
+          "SAHPRA",
+          "HPCSA",
+          "SAMPS",
+          "SAAPMB"
+        ],
+        "e": "Health Professions Council of SA — registers medical physicists and other health professionals."
+      },
+      {
+        "id": "rg09",
+        "q": "Equipment licensing body?",
+        "a": "SAHPRA",
+        "c": [
+          "SAHPRA",
+          "HPCSA",
+          "SAMPS",
+          "DoH"
+        ],
+        "e": "SA Health Products Regulatory Authority — licenses all radiation-emitting equipment."
+      },
+      {
+        "id": "rg10",
+        "q": "5-year cumulative dose limit?",
+        "a": "100 mSv",
+        "c": [
+          "50 mSv",
+          "100 mSv",
+          "150 mSv",
+          "200 mSv"
+        ],
+        "e": "Ensures average ≤ 20 mSv/yr even if single years exceed it."
+      },
+      {
+        "id": "rg11",
+        "q": "Max dose in any single year?",
+        "a": "50 mSv",
+        "c": [
+          "20 mSv",
+          "30 mSv",
+          "50 mSv",
+          "100 mSv"
+        ],
+        "e": "Flexibility clause: up to 50 mSv in one year if 5-year average stays ≤ 20 mSv."
+      },
+      {
+        "id": "rg12",
+        "q": "Public annual dose limit?",
+        "a": "1 mSv",
+        "c": [
+          "0.5 mSv",
+          "1 mSv",
+          "5 mSv",
+          "20 mSv"
+        ],
+        "e": "ICRP recommended and adopted in SA. Excludes medical and natural background."
+      },
+      {
+        "id": "rg67",
+        "q": "HPCSA registration category for medical physicists?",
+        "a": "Medical Physicist (diag/therapeutic)",
+        "c": [
+          "Radiographer registration category",
+          "Medical Physicist (diag/therapeutic)",
+          "Clinical Technologist category",
+          "Radiation Therapist category"
+        ],
+        "e": "HPCSA registers medical physicists under the Professional Board for Radiography and Clinical Technology, with subspecialties in diagnostic or therapeutic physics.",
+        "d": 3
+      },
+      {
+        "id": "rg68",
+        "q": "CEU points required per HPCSA cycle?",
+        "a": "30 CEUs per cycle",
+        "c": [
+          "15 CEUs per cycle",
+          "30 CEUs per cycle",
+          "60 CEUs per cycle",
+          "45 CEUs per cycle"
+        ],
+        "e": "HPCSA requires 30 Continuing Education Units per cycle for medical physicists. At least 5 must be in ethics, human rights, or medical law.",
+        "d": 4
+      },
+      {
+        "id": "rg69",
+        "q": "HPCSA CEU cycle length?",
+        "a": "12 months",
+        "c": [
+          "6 months",
+          "12 months",
+          "24 months",
+          "36 months"
+        ],
+        "e": "The HPCSA CPD cycle runs for 12 months. Practitioners must accumulate the required CEUs within each annual cycle.",
+        "d": 3
+      },
+      {
+        "id": "rg70",
+        "q": "Minimum ethics CEUs per HPCSA cycle?",
+        "a": "5 CEUs in ethics",
+        "c": [
+          "2 CEUs in ethics",
+          "5 CEUs in ethics",
+          "10 CEUs in ethics",
+          "No ethics minimum"
+        ],
+        "e": "HPCSA mandates at least 5 CEUs in ethics, human rights, or medical law per cycle to maintain registration.",
+        "d": 5
+      },
+      {
+        "id": "rg71",
+        "q": "SAHPRA replaced which body?",
+        "a": "Medicines Control Council (MCC)",
+        "c": [
+          "HPCSA regulatory arm",
+          "Medicines Control Council (MCC)",
+          "National Health Laboratory Service",
+          "Medical Research Council"
+        ],
+        "e": "SAHPRA (South African Health Products Regulatory Authority) replaced the MCC in 2018, taking over regulation of medicines, medical devices, and radiation-emitting equipment.",
+        "d": 3
+      },
+      {
+        "id": "rg72",
+        "q": "SAHPRA regulates radiation equipment under which Act?",
+        "a": "Hazardous Substances Act (Act 15 of 1973)",
+        "c": [
+          "National Health Act (Act 61 of 2003)",
+          "Hazardous Substances Act (Act 15 of 1973)",
+          "Nuclear Energy Act (Act 46 of 1999)",
+          "Medicines and Related Substances Act"
+        ],
+        "e": "SAHPRA regulates Group III and IV hazardous substances under the Hazardous Substances Act. Group IV covers radioactive materials and radiation-generating equipment.",
+        "d": 5
+      },
+      {
+        "id": "rg73",
+        "q": "Group IV hazardous substances include?",
+        "a": "Radioactive materials and X-ray equipment",
+        "c": [
+          "Flammable chemicals and solvents",
+          "Radioactive materials and X-ray equipment",
+          "Biological waste and pathogens",
+          "Pharmaceutical drugs and medicines"
+        ],
+        "e": "Group IV of the Hazardous Substances Act specifically covers radioactive materials, radiation-generating equipment, and electronic products emitting radiation.",
+        "d": 4
+      },
+      {
+        "id": "rg74",
+        "q": "NNR regulates which facilities?",
+        "a": "Nuclear installations and vessels",
+        "c": [
+          "All hospitals with X-ray units",
+          "Nuclear installations and vessels",
+          "Medical device manufacturers",
+          "All radiation therapy centres"
+        ],
+        "e": "The National Nuclear Regulator (NNR) regulates nuclear installations (reactors, enrichment plants) and nuclear vessels under the National Nuclear Regulator Act (Act 47 of 1999).",
+        "d": 5
+      },
+      {
+        "id": "rg75",
+        "q": "Who issues a licence for a new linac installation?",
+        "a": "SAHPRA (Radiation Control)",
+        "c": [
+          "HPCSA registration board",
+          "SAHPRA (Radiation Control)",
+          "National Nuclear Regulator",
+          "Provincial Health Department"
+        ],
+        "e": "SAHPRA's Radiation Control Directorate issues licences for radiation-emitting equipment including linacs, under the Hazardous Substances Act.",
+        "d": 4
+      },
+      {
+        "id": "rg76",
+        "q": "ICRP 103 tissue weighting factor for gonads?",
+        "a": "0.08",
+        "c": [
+          "0.20",
+          "0.12",
+          "0.08",
+          "0.05"
+        ],
+        "e": "ICRP 103 reduced the gonad weighting factor from 0.20 (ICRP 60) to 0.08, reflecting updated evidence on hereditary risk.",
+        "d": 6
+      },
+      {
+        "id": "rg77",
+        "q": "ICRP 103 tissue weighting factor for breast?",
+        "a": "0.12",
+        "c": [
+          "0.05",
+          "0.08",
+          "0.12",
+          "0.20"
+        ],
+        "e": "ICRP 103 increased breast weighting from 0.05 to 0.12, recognising higher radiation-induced cancer risk in breast tissue.",
+        "d": 6
+      },
+      {
+        "id": "rg78",
+        "q": "CALC: Worker receives 15 mSv in year 1 and 18 mSv in year 2. Max allowed in year 3 to stay within 5-year limit?",
+        "a": "50 mSv",
+        "c": [
+          "17 mSv",
+          "50 mSv",
+          "67 mSv",
+          "32 mSv"
+        ],
+        "e": "The 5-year limit is 100 mSv, and the single-year cap is 50 mSv. After 33 mSv in 2 years, 67 mSv remains over 3 years, but the annual cap of 50 mSv applies.",
+        "d": 7
+      },
+      {
+        "id": "rg79",
+        "q": "CALC: How many TVLs to reduce dose rate from 40 mSv/hr to 0.04 mSv/hr?",
+        "a": "3 TVLs",
+        "c": [
+          "2 TVLs",
+          "3 TVLs",
+          "4 TVLs",
+          "5 TVLs"
+        ],
+        "e": "40 / 0.04 = 1000 = 10³, so 3 TVLs are needed. Each TVL reduces intensity by a factor of 10.",
+        "d": 5
+      },
+      {
+        "id": "rg80",
+        "q": "CALC: Source at 1 m gives 8 mSv/hr. Dose rate at 4 m?",
+        "a": "0.5 mSv/hr",
+        "c": [
+          "2.0 mSv/hr",
+          "1.0 mSv/hr",
+          "0.5 mSv/hr",
+          "0.25 mSv/hr"
+        ],
+        "e": "Inverse square law: 8 × (1/4)² = 8 × 1/16 = 0.5 mSv/hr. Distance is the most effective protection tool.",
+        "d": 4
+      },
+      {
+        "id": "rg81",
+        "q": "ICRP 103 annual eye lens dose limit for workers?",
+        "a": "20 mSv",
+        "c": [
+          "15 mSv",
+          "20 mSv",
+          "50 mSv",
+          "150 mSv"
+        ],
+        "e": "ICRP revised the lens limit from 150 mSv to 20 mSv/year (averaged over 5 years, max 50 in a single year) based on cataract data.",
+        "d": 6
+      },
+      {
+        "id": "rg82",
+        "q": "Annual extremity dose limit for workers?",
+        "a": "500 mSv",
+        "c": [
+          "150 mSv",
+          "250 mSv",
+          "500 mSv",
+          "1000 mSv"
+        ],
+        "e": "Hands, feet, and skin of extremities have a higher limit of 500 mSv/year because of their lower radiation sensitivity.",
+        "d": 5
+      },
+      {
+        "id": "rg83",
+        "q": "Radiation Protection Officer (RPO) must be appointed when?",
+        "a": "At every licensed radiation facility",
+        "c": [
+          "Only at nuclear installations",
+          "At every licensed radiation facility",
+          "Only when dose exceeds 5 mSv/yr",
+          "Only at facilities with sealed sources"
+        ],
+        "e": "SA regulations require every facility holding a radiation licence to appoint a qualified RPO responsible for the radiation protection programme.",
+        "d": 4
+      },
+      {
+        "id": "rg84",
+        "q": "Key RPO responsibility?",
+        "a": "Ensure compliance with licence conditions",
+        "c": [
+          "Prescribe radiation treatment doses",
+          "Ensure compliance with licence conditions",
+          "Manufacture radiation equipment",
+          "Issue HPCSA registrations"
+        ],
+        "e": "The RPO oversees personal dosimetry, area monitoring, waste management, incident reporting, and ensures all licence conditions are met.",
+        "d": 3
+      },
+      {
+        "id": "rg85",
+        "q": "Personal dosimetry monitoring frequency in SA?",
+        "a": "Monthly (routine)",
+        "c": [
+          "Weekly readout",
+          "Monthly (routine)",
+          "Quarterly readout",
+          "Annual readout only"
+        ],
+        "e": "Personal dosimeters (TLD/OSL) are exchanged and read monthly in SA. This allows timely detection of elevated exposures.",
+        "d": 4
+      },
+      {
+        "id": "rg86",
+        "q": "Investigation level for personal dosimetry in SA?",
+        "a": "Above 1 mSv per month",
+        "c": [
+          "Above 0.1 mSv per month",
+          "Above 1 mSv per month",
+          "Above 5 mSv per month",
+          "Above 20 mSv per month"
+        ],
+        "e": "Doses exceeding approximately 1 mSv per monitoring period trigger an investigation to identify causes and implement corrective actions.",
+        "d": 6
+      },
+      {
+        "id": "rg87",
+        "q": "CALC: Pregnant worker declared at 8 weeks. Remaining pregnancy ~32 weeks. Max dose rate to abdomen?",
+        "a": "0.0625 mSv/week",
+        "c": [
+          "0.125 mSv/week",
+          "0.0625 mSv/week",
+          "0.25 mSv/week",
+          "0.50 mSv/week"
+        ],
+        "e": "Limit is 2 mSv to lower abdomen for remainder of pregnancy. 2 mSv / 32 weeks = 0.0625 mSv/week.",
+        "d": 7
+      },
+      {
+        "id": "rg88",
+        "q": "IAEA BSS document number?",
+        "a": "GSR Part 3",
+        "c": [
+          "Safety Series 115",
+          "GSR Part 3",
+          "GS-R-2",
+          "SSR-6"
+        ],
+        "e": "The IAEA General Safety Requirements Part 3 (GSR Part 3, 2014) replaced Safety Series 115 as the international Basic Safety Standards for radiation protection.",
+        "d": 6
+      },
+      {
+        "id": "rg89",
+        "q": "ICRP 105 covers?",
+        "a": "Radiation protection in medicine",
+        "c": [
+          "Occupational dose limits",
+          "Radiation protection in medicine",
+          "Environmental monitoring",
+          "Transport of radioactive materials"
+        ],
+        "e": "ICRP Publication 105 provides guidance on radiation protection specific to medical exposures, including justification and optimisation for patients.",
+        "d": 5
+      },
+      {
+        "id": "rg90",
+        "q": "Three principles of ICRP radiation protection system?",
+        "a": "Justification, optimisation, dose limitation",
+        "c": [
+          "Time, distance, shielding",
+          "Justification, optimisation, dose limitation",
+          "Detection, prevention, mitigation",
+          "Monitoring, recording, reporting"
+        ],
+        "e": "ICRP 103 establishes justification (net benefit), optimisation (ALARA), and dose limitation (for workers/public, not patients) as the three pillars.",
+        "d": 3
+      },
+      {
+        "id": "rg91",
+        "q": "Dose limits apply to which exposure category?",
+        "a": "Occupational and public, not medical",
+        "c": [
+          "Medical exposures only",
+          "Occupational and public, not medical",
+          "All exposure categories equally",
+          "Only occupational exposures"
+        ],
+        "e": "ICRP dose limits apply to planned occupational and public exposures. Medical patient exposures are governed by justification and optimisation, not dose limits.",
+        "d": 5
+      },
+      {
+        "id": "rg92",
+        "q": "CALC: Shielding reduces dose rate from 200 mSv/hr to 0.2 mSv/hr. How many HVLs?",
+        "a": "~10 HVLs",
+        "c": [
+          "~5 HVLs",
+          "~7 HVLs",
+          "~10 HVLs",
+          "~13 HVLs"
+        ],
+        "e": "200/0.2 = 1000. Since 2^n = 1000, n = log₂(1000) ≈ 10 HVLs. Alternatively, 3 TVLs = 3 × 3.32 HVLs ≈ 10 HVLs.",
+        "d": 7
+      },
+      {
+        "id": "rg93",
+        "q": "Incident reporting timeframe for overexposure in SA?",
+        "a": "Within 24 hours to SAHPRA",
+        "c": [
+          "Within 1 hour to HPCSA",
+          "Within 24 hours to SAHPRA",
+          "Within 7 days to DoH",
+          "Within 30 days to NNR"
+        ],
+        "e": "Significant radiation incidents must be reported to SAHPRA within 24 hours. A detailed investigation report follows within a specified timeframe.",
+        "d": 6
+      },
+      {
+        "id": "rg94",
+        "q": "What triggers a radiation incident investigation?",
+        "a": "Dose exceeding prescribed limits or unintended exposure",
+        "c": [
+          "Any measurable personnel dose reading",
+          "Dose exceeding prescribed limits or unintended exposure",
+          "Equipment malfunction without exposure",
+          "Routine elevated background readings"
+        ],
+        "e": "Incidents include overexposures to workers/public, misadministrations to patients, loss of sources, and any unplanned or unintended radiation exposure.",
+        "d": 4
+      },
+      {
+        "id": "rg95",
+        "q": "Transport of radioactive materials is governed by?",
+        "a": "IAEA SSR-6 (SA adopts)",
+        "c": [
+          "ICRP 103 only",
+          "IAEA SSR-6 (SA adopts)",
+          "NCRP 151 guidelines",
+          "WHO transport manual"
+        ],
+        "e": "South Africa adopts the IAEA Regulations for the Safe Transport of Radioactive Material (SSR-6) for packaging, labelling, and transport requirements.",
+        "d": 5
+      },
+      {
+        "id": "rg96",
+        "q": "Transport Index (TI) on a package indicates?",
+        "a": "Maximum dose rate at 1 m in mSv/hr × 100",
+        "c": [
+          "Mass of radioactive contents in grams",
+          "Maximum dose rate at 1 m in mSv/hr × 100",
+          "Number of half-lives remaining",
+          "Activity in multiples of exemption level"
+        ],
+        "e": "The TI is determined from the maximum radiation level at 1 metre from the package surface, controlling vehicle loading and spacing.",
+        "d": 7
+      },
+      {
+        "id": "rg97",
+        "q": "White-I transport label: max surface dose rate?",
+        "a": "0.005 mSv/hr",
+        "c": [
+          "0.005 mSv/hr",
+          "0.05 mSv/hr",
+          "0.5 mSv/hr",
+          "2.0 mSv/hr"
+        ],
+        "e": "Category I-White has the lowest surface dose rate limit (5 µSv/hr) and a TI of 0. Yellow-II and Yellow-III allow progressively higher levels.",
+        "d": 7
+      },
+      {
+        "id": "rg98",
+        "q": "Yellow-II transport label: max TI?",
+        "a": "1.0",
+        "c": [
+          "0",
+          "1.0",
+          "5.0",
+          "10.0"
+        ],
+        "e": "Yellow-II packages have TI ≤ 1.0 and surface dose rate ≤ 0.5 mSv/hr. Yellow-III allows TI up to 10.",
+        "d": 7
+      },
+      {
+        "id": "rg99",
+        "q": "CALC: Source with activity 400 MBq and dose rate constant Γ = 0.1 µSv·m²/(MBq·hr). Dose rate at 2 m?",
+        "a": "10 µSv/hr",
+        "c": [
+          "5 µSv/hr",
+          "10 µSv/hr",
+          "20 µSv/hr",
+          "40 µSv/hr"
+        ],
+        "e": "Dose rate = Γ × A / d² = 0.1 × 400 / 4 = 10 µSv/hr. The dose rate constant relates activity to dose rate at unit distance.",
+        "d": 6
+      },
+      {
+        "id": "rg100",
+        "q": "Record retention for personal dosimetry in SA?",
+        "a": "Until worker reaches age 75 or 30 years",
+        "c": [
+          "5 years after last exposure",
+          "Until worker reaches age 75 or 30 years",
+          "10 years after employment ends",
+          "Permanently with no disposal"
+        ],
+        "e": "SA regulations require dose records to be kept until the worker reaches 75 years of age or for 30 years after the last recorded dose, whichever is longer.",
+        "d": 6
+      },
+      {
+        "id": "rg101",
+        "q": "Radiation equipment QC records must be kept for?",
+        "a": "Duration of equipment use plus 3 years",
+        "c": [
+          "1 year after each test",
+          "Duration of equipment use plus 3 years",
+          "5 years maximum",
+          "Only while licence is active"
+        ],
+        "e": "QC records should be retained for the operational life of the equipment plus an additional period (typically 3 years) to support audits and inspections.",
+        "d": 5
+      },
+      {
+        "id": "rg102",
+        "q": "Environmental monitoring at a radiation facility includes?",
+        "a": "Area dose rate surveys and contamination checks",
+        "c": [
+          "Only air temperature and humidity",
+          "Area dose rate surveys and contamination checks",
+          "Noise level measurements only",
+          "Electromagnetic field surveys only"
+        ],
+        "e": "Environmental monitoring involves regular area dose rate measurements, surface contamination monitoring (for unsealed sources), and air monitoring where applicable.",
+        "d": 4
+      },
+      {
+        "id": "rg103",
+        "q": "CALC: Worker accumulates 18, 22, 15, 20 mSv over 4 years. Max allowed in year 5?",
+        "a": "25 mSv",
+        "c": [
+          "20 mSv",
+          "25 mSv",
+          "45 mSv",
+          "50 mSv"
+        ],
+        "e": "5-year limit is 100 mSv. Sum of 4 years = 75 mSv. Remaining = 25 mSv. Although 50 mSv is the annual cap, the 5-year constraint limits year 5 to 25 mSv.",
+        "d": 8
+      },
+      {
+        "id": "rg104",
+        "q": "SA radiation facility must have which document?",
+        "a": "Radiation Protection Programme (RPP)",
+        "c": [
+          "ISO 9001 certification",
+          "Radiation Protection Programme (RPP)",
+          "WHO facility accreditation",
+          "IAEA peer review report"
+        ],
+        "e": "Every licensed facility must establish and maintain a documented RPP covering policies, procedures, responsibilities, and emergency arrangements.",
+        "d": 4
+      },
+      {
+        "id": "rg105",
+        "q": "QMS requirement for radiation therapy in SA?",
+        "a": "Documented quality management system",
+        "c": [
+          "Optional quality improvement plan",
+          "Documented quality management system",
+          "Annual external ISO audit only",
+          "Verbal quality agreement only"
+        ],
+        "e": "SA regulations and SASQART require a documented QMS covering all aspects of radiation therapy from referral to treatment completion and follow-up.",
+        "d": 5
+      },
+      {
+        "id": "rg106",
+        "q": "ICRP dose constraint concept means?",
+        "a": "Prospective upper bound for optimisation",
+        "c": [
+          "Absolute legal dose limit",
+          "Prospective upper bound for optimisation",
+          "Retrospective dose assessment",
+          "Emergency reference level"
+        ],
+        "e": "Dose constraints are set below dose limits as a prospective tool to guide optimisation (ALARA). They are not limits but planning targets.",
+        "d": 6
+      },
+      {
+        "id": "rg107",
+        "q": "CALC: Room requires 2.5 TVLs of lead shielding. TVL = 5.7 cm. Required thickness?",
+        "a": "14.25 cm",
+        "c": [
+          "11.40 cm",
+          "14.25 cm",
+          "17.10 cm",
+          "28.50 cm"
+        ],
+        "e": "Thickness = 2.5 × 5.7 cm = 14.25 cm. Each TVL reduces dose by a factor of 10, so 2.5 TVLs gives a factor of ~316.",
+        "d": 5
+      },
+      {
+        "id": "rg108",
+        "q": "Authorisation to practice as medical physicist in SA requires?",
+        "a": "HPCSA registration and facility licence",
+        "c": [
+          "University degree only",
+          "HPCSA registration and facility licence",
+          "IAEA certification only",
+          "SAMPS membership only"
+        ],
+        "e": "A medical physicist must hold HPCSA registration and work at a facility with a valid SAHPRA radiation licence. Both individual and institutional authorisation are required.",
+        "d": 4
+      },
+      {
+        "id": "rg109",
+        "q": "Trainee medical physicist (registrar) supervision requirement?",
+        "a": "Direct supervision by registered physicist",
+        "c": [
+          "No supervision after year 1",
+          "Direct supervision by registered physicist",
+          "Remote supervision is sufficient",
+          "Self-supervision with logbook"
+        ],
+        "e": "HPCSA requires registrars to work under the direct supervision of a registered medical physicist throughout their training period.",
+        "d": 3
+      },
+      {
+        "id": "rg110",
+        "q": "HPCSA medical physics internship duration?",
+        "a": "2 years",
+        "c": [
+          "1 year",
+          "2 years",
+          "3 years",
+          "4 years"
+        ],
+        "e": "The HPCSA-accredited medical physics internship (registrar training) is 2 years, during which candidates must complete clinical rotations and a logbook.",
+        "d": 3
+      },
+      {
+        "id": "rg111",
+        "q": "CALC: Background dose rate is 0.1 µSv/hr. Worker spends 2000 hr/yr in area with 5 µSv/hr. Annual occupational dose?",
+        "a": "9.8 mSv",
+        "c": [
+          "10.0 mSv",
+          "9.8 mSv",
+          "10.2 mSv",
+          "5.0 mSv"
+        ],
+        "e": "Occupational dose = (5 - 0.1) × 2000 = 4.9 × 2000 = 9800 µSv = 9.8 mSv. Background is subtracted for occupational dose assessment.",
+        "d": 7
+      },
+      {
+        "id": "rg112",
+        "q": "Patient dose reference levels (DRLs) are?",
+        "a": "Investigation levels, not dose limits",
+        "c": [
+          "Strict upper dose limits for patients",
+          "Investigation levels, not dose limits",
+          "Minimum required doses",
+          "Average department doses"
+        ],
+        "e": "DRLs are set at the 75th percentile of facility doses for standard procedures. Exceeding them triggers investigation but is not a violation.",
+        "d": 5
+      },
+      {
+        "id": "rg113",
+        "q": "Skin dose limit for workers (SA)?",
+        "a": "500 mSv/yr",
+        "c": [
+          "50 mSv/yr",
+          "150 mSv/yr",
+          "500 mSv/yr",
+          "1000 mSv/yr"
+        ],
+        "e": "The annual equivalent dose limit for the skin is 500 mSv, averaged over any 1 cm² area, consistent with ICRP 103 recommendations.",
+        "d": 5
+      },
+      {
+        "id": "rg114",
+        "q": "CALC: Ir-192 source, 370 GBq. Dose rate constant = 0.113 mSv·m²/(GBq·hr). Dose rate at 0.5 m?",
+        "a": "167.2 mSv/hr",
+        "c": [
+          "41.8 mSv/hr",
+          "83.6 mSv/hr",
+          "167.2 mSv/hr",
+          "334.4 mSv/hr"
+        ],
+        "e": "Dose rate = 0.113 × 370 / (0.5)² = 41.81 / 0.25 = 167.2 mSv/hr. High dose rates demand strict time and distance controls.",
+        "d": 8
+      },
+      {
+        "id": "rg115",
+        "q": "Sealed source leak test frequency?",
+        "a": "Every 6 months",
+        "c": [
+          "Monthly",
+          "Every 6 months",
+          "Annually",
+          "Every 2 years"
+        ],
+        "e": "Sealed sources must undergo wipe tests at least every 6 months to detect any leakage of radioactive material, as required by SA licence conditions.",
+        "d": 5
+      },
+      {
+        "id": "rg116",
+        "q": "Disposal of disused sealed sources in SA?",
+        "a": "Return to supplier or NECSA",
+        "c": [
+          "Bury on hospital grounds",
+          "Return to supplier or NECSA",
+          "Dispose in municipal waste",
+          "Store indefinitely on site"
+        ],
+        "e": "Disused sealed sources must be returned to the supplier or transferred to NECSA (South African Nuclear Energy Corporation) for safe management and disposal.",
+        "d": 4
+      }
     ]
   }
 }

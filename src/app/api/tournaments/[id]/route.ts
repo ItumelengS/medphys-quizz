@@ -19,6 +19,14 @@ export async function GET(
     .eq("status", "active")
     .lt("ends_at", now);
 
+  // Upcoming tournament whose window fully passed without going active
+  await supabase
+    .from("tournaments")
+    .update({ status: "finished" })
+    .eq("id", id)
+    .eq("status", "upcoming")
+    .lt("ends_at", now);
+
   await supabase
     .from("tournaments")
     .update({ status: "active" })

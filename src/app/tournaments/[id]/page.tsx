@@ -15,14 +15,16 @@ interface TournamentDetail {
   userRank: number | null;
 }
 
-function Countdown({ target, onReached }: { target: string; onReached?: () => void }) {
+function Countdown({ target, onReached, expiredText = "Now!", prefix }: { target: string; onReached?: () => void; expiredText?: string; prefix?: string }) {
   const [text, setText] = useState("");
+  const [expired, setExpired] = useState(false);
   useEffect(() => {
     let fired = false;
     function update() {
       const diff = new Date(target).getTime() - Date.now();
       if (diff <= 0) {
-        setText("Now!");
+        setText(expiredText);
+        setExpired(true);
         if (!fired && onReached) { fired = true; onReached(); }
         return;
       }
@@ -34,8 +36,8 @@ function Countdown({ target, onReached }: { target: string; onReached?: () => vo
     update();
     const iv = setInterval(update, 1000);
     return () => clearInterval(iv);
-  }, [target, onReached]);
-  return <span className="font-mono">{text}</span>;
+  }, [target, onReached, expiredText]);
+  return <span className="font-mono">{expired ? text : prefix ? `${prefix} ${text}` : text}</span>;
 }
 
 export default function TournamentDetailPage({
@@ -187,15 +189,14 @@ export default function TournamentDetailPage({
               <span className="font-bold text-sm uppercase tracking-wider text-success">Live</span>
             </div>
             <div className="text-text-secondary text-sm">
-              Ends in <Countdown target={tournament.ends_at} />
+              <Countdown target={tournament.ends_at} expiredText="Ended" prefix="Ends in" />
             </div>
           </div>
         )}
         {isUpcoming && (
           <div className="text-center">
-            <div className="text-text-secondary text-xs uppercase tracking-wider mb-1">Starts in</div>
             <div className={`text-2xl font-mono font-bold ${getColorClass(tournament.type)}`}>
-              <Countdown target={tournament.starts_at} onReached={fetchDetail} />
+              <Countdown target={tournament.starts_at} onReached={fetchDetail} expiredText="Starting now..." prefix="Starts in" />
             </div>
           </div>
         )}

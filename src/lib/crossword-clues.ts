@@ -2296,6 +2296,166 @@ export const crosswordClues: CrosswordClue[] = [
   { id: "cw-3124", clue: "Nobel laureate who discovered radioactivity in uranium salts", answer: "BECQUEREL", category: "Pioneers", difficulty: "medium" },
   { id: "cw-3125", clue: "Physicist who developed the cyclotron particle accelerator", answer: "LAWRENCE", category: "Pioneers", difficulty: "hard" },
   { id: "cw-3126", clue: "Scientist who discovered the neutron in 1932", answer: "CHADWICK", category: "Pioneers", difficulty: "hard" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── South African Medical Physics ─────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3127", clue: "SA body that registers medical physicists (abbr.)", answer: "HPCSA", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3128", clue: "SA authority that licences radiation equipment (abbr.)", answer: "SAHPRA", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3129", clue: "SA nuclear energy corporation managing radioactive waste", answer: "NECSA", category: "Nuclear Power", difficulty: "medium" },
+  { id: "cw-3130", clue: "SA national QA standards for radiotherapy (abbr.)", answer: "SASQART", category: "Quality Assurance", difficulty: "medium" },
+  { id: "cw-3131", clue: "SA medical physics professional society (abbr.)", answer: "SAMPS", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3132", clue: "SA Act governing radiation-emitting substances: ___ Substances Act", answer: "HAZARDOUS", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3133", clue: "Continuing education units required by HPCSA (abbr.)", answer: "CEU", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3134", clue: "Nuclear regulator for reactors and installations in SA (abbr.)", answer: "NNR", category: "Nuclear Power", difficulty: "medium" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── Stereotactic & Advanced RT ────────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3135", clue: "Single-fraction intracranial radiosurgery (abbr.)", answer: "SRS", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3136", clue: "Stereotactic body radiation therapy (abbr.)", answer: "SBRT", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3137", clue: "Robotic radiosurgery system by Accuray", answer: "CYBERKNIFE", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3138", clue: "Leksell device using multiple Co-60 sources for brain SRS", answer: "GAMMAKNIFE", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3139", clue: "Deep inspiration breath hold technique (abbr.)", answer: "DIBH", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3140", clue: "Internal target volume accounts for tumour ___", answer: "MOTION", category: "Treatment Planning", difficulty: "easy" },
+  { id: "cw-3141", clue: "Helical IMRT system that delivers like a CT scanner", answer: "TOMOTHERAPY", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3142", clue: "Adaptive RT platform built on Halcyon hardware", answer: "ETHOS", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3143", clue: "Surface-guided RT system for markerless setup (brand)", answer: "ALIGNRT", category: "Radiotherapy", difficulty: "hard" },
+  { id: "cw-3144", clue: "Six degrees of freedom correction: translations plus ___", answer: "ROTATIONS", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3145", clue: "Limited metastatic disease treatable with SBRT: oligo___", answer: "METASTATIC", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3146", clue: "Brainlab positioning system combining IR and kV X-rays", answer: "EXACTRAC", category: "Radiotherapy", difficulty: "hard" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── Treatment Planning Concepts ───────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3147", clue: "Deterministic solver of linear Boltzmann transport equation", answer: "ACUROS", category: "Treatment Planning", difficulty: "hard" },
+  { id: "cw-3148", clue: "Eclipse analytical anisotropic algorithm (abbr.)", answer: "AAA", category: "Treatment Planning", difficulty: "easy" },
+  { id: "cw-3149", clue: "Dose-volume histogram (abbr.)", answer: "DVH", category: "Treatment Planning", difficulty: "easy" },
+  { id: "cw-3150", clue: "Plan quality metric: dose ___ index for target uniformity", answer: "HOMOGENEITY", category: "Treatment Planning", difficulty: "medium" },
+  { id: "cw-3151", clue: "ICRU volume: planning organ at ___ volume", answer: "RISK", category: "Treatment Planning", difficulty: "easy" },
+  { id: "cw-3152", clue: "Van Herk margin formula variable for systematic error (Greek letter)", answer: "SIGMA", category: "Treatment Planning", difficulty: "medium" },
+  { id: "cw-3153", clue: "Eclipse tool that reduces dose to all non-target tissue (abbr.)", answer: "NTO", category: "Treatment Planning", difficulty: "medium" },
+  { id: "cw-3154", clue: "CT calibration curve converts HU to electron ___", answer: "DENSITY", category: "Treatment Planning", difficulty: "easy" },
+  { id: "cw-3155", clue: "Mapping dose between different CT anatomies: ___ image registration", answer: "DEFORMABLE", category: "Treatment Planning", difficulty: "medium" },
+  { id: "cw-3156", clue: "ICRU report 83 recommends reporting D___ percent as target dose", answer: "FIFTY", category: "Treatment Planning", difficulty: "hard" },
+  { id: "cw-3157", clue: "Collimator angle optimisation reduces tongue and ___ effect", answer: "GROOVE", category: "Treatment Planning", difficulty: "medium" },
+  { id: "cw-3158", clue: "Modulation complexity ___ predicts plan deliverability", answer: "SCORE", category: "Treatment Planning", difficulty: "medium" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── Dosimetry & Calibration ───────────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3159", clue: "Standard reference ion chamber with ~0.6 cc volume", answer: "FARMER", category: "Dosimetry", difficulty: "easy" },
+  { id: "cw-3160", clue: "Thin-window chamber for electron beam dosimetry: ___ plate", answer: "PARALLEL", category: "Dosimetry", difficulty: "easy" },
+  { id: "cw-3161", clue: "Device that measures charge collected by an ion chamber", answer: "ELECTROMETER", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3162", clue: "Radiochromic film commonly used for dosimetry (model)", answer: "GAFCHROMIC", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3163", clue: "Dosimeter read by electron paramagnetic resonance", answer: "ALANINE", category: "Dosimetry", difficulty: "hard" },
+  { id: "cw-3164", clue: "Semiconductor detector ~18000x more sensitive per volume than air", answer: "DIODE", category: "Dosimetry", difficulty: "easy" },
+  { id: "cw-3165", clue: "Correction factor for air temperature and pressure changes", answer: "KTP", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3166", clue: "Two-voltage method measures ion ___ losses", answer: "RECOMBINATION", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3167", clue: "Beam quality index using ratio at 20 and 10 cm depth (abbr.)", answer: "TPR", category: "Dosimetry", difficulty: "medium" },
+  { id: "cw-3168", clue: "Output ___ relates dose at any field size to the reference 10x10", answer: "FACTOR", category: "Dosimetry", difficulty: "easy" },
+  { id: "cw-3169", clue: "Effective point of measurement shifts upstream by 0.6 times cavity ___", answer: "RADIUS", category: "Dosimetry", difficulty: "hard" },
+  { id: "cw-3170", clue: "Percentage depth ___ varies with energy, SSD, and field size", answer: "DOSE", category: "Dosimetry", difficulty: "easy" },
+  { id: "cw-3171", clue: "3D motorised detector scanning tank used for beam commissioning", answer: "PHANTOM", category: "Dosimetry", difficulty: "easy" },
+  { id: "cw-3172", clue: "Small-field detector with near-zero volume: micro___", answer: "DIAMOND", category: "Dosimetry", difficulty: "medium" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── Nuclear Medicine Extended ─────────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3173", clue: "Same-molecule diagnosis and therapy paradigm", answer: "THERANOSTICS", category: "Nuclear Medicine", difficulty: "medium" },
+  { id: "cw-3174", clue: "PET uptake metric normalised by body weight (abbr.)", answer: "SUV", category: "Nuclear Medicine", difficulty: "easy" },
+  { id: "cw-3175", clue: "Y-90 microsphere liver therapy: radio___", answer: "EMBOLISATION", category: "Nuclear Medicine", difficulty: "hard" },
+  { id: "cw-3176", clue: "Alpha-emitting bone-targeting radium isotope (number)", answer: "RADIUM", category: "Nuclear Medicine", difficulty: "medium" },
+  { id: "cw-3177", clue: "Well-type chamber for assaying radiopharmaceutical activity: dose ___", answer: "CALIBRATOR", category: "Nuclear Medicine", difficulty: "medium" },
+  { id: "cw-3178", clue: "Semiconductor detector with superior energy resolution for cardiac SPECT (abbr.)", answer: "CZT", category: "Nuclear Medicine", difficulty: "hard" },
+  { id: "cw-3179", clue: "PET timing technique that localises annihilation along the line of response (abbr.)", answer: "TOF", category: "Nuclear Medicine", difficulty: "medium" },
+  { id: "cw-3180", clue: "Neuroendocrine imaging agent: meta-iodobenzyl___ (abbr.)", answer: "MIBG", category: "Nuclear Medicine", difficulty: "medium" },
+  { id: "cw-3181", clue: "Generator-produced Ga-68 enables PET without a ___", answer: "CYCLOTRON", category: "Nuclear Medicine", difficulty: "medium" },
+  { id: "cw-3182", clue: "Scatter correction using three energy windows (abbr.)", answer: "TEW", category: "Nuclear Medicine", difficulty: "hard" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── Radiobiology Extended ─────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3183", clue: "Most radiosensitive cell cycle phase", answer: "MITOSIS", category: "Radiobiology", difficulty: "easy" },
+  { id: "cw-3184", clue: "Most radioresistant cell cycle phase: late ___", answer: "SYNTHESIS", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3185", clue: "Oxygen makes radiation damage permanent: oxygen ___ hypothesis", answer: "FIXATION", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3186", clue: "Biologically effective dose (abbr.)", answer: "BED", category: "Radiobiology", difficulty: "easy" },
+  { id: "cw-3187", clue: "Equivalent dose in 2 Gy fractions (abbr.)", answer: "EQD", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3188", clue: "Unirradiated cells showing damage from nearby irradiated cells: ___ effect", answer: "BYSTANDER", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3189", clue: "Distant tumour regression after local RT: ___ effect", answer: "ABSCOPAL", category: "Radiobiology", difficulty: "hard" },
+  { id: "cw-3190", clue: "Most lethal DNA lesion: double strand ___", answer: "BREAK", category: "Radiobiology", difficulty: "easy" },
+  { id: "cw-3191", clue: "Error-prone DNA repair: non-homologous end ___ (abbr.)", answer: "NHEJ", category: "Radiobiology", difficulty: "hard" },
+  { id: "cw-3192", clue: "Accelerated tumour cell division starting ~4 weeks into RT", answer: "REPOPULATION", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3193", clue: "Sublethal damage repair half-time is approximately 1-2 ___", answer: "HOURS", category: "Radiobiology", difficulty: "easy" },
+  { id: "cw-3194", clue: "Radiation sensitiser drug used in concurrent chemo-RT", answer: "CISPLATIN", category: "Radiobiology", difficulty: "medium" },
+  { id: "cw-3195", clue: "Free radical scavenger radioprotector drug", answer: "AMIFOSTINE", category: "Radiobiology", difficulty: "hard" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── QA & Equipment Extended ───────────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3196", clue: "Test exposing film at multiple gantry angles to find isocentre: ___ shot", answer: "STAR", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3197", clue: "Cylindrical diode array for rotational delivery QA (brand)", answer: "ARCCHECK", category: "Quality Assurance", difficulty: "medium" },
+  { id: "cw-3198", clue: "Linac QA task group replacing TG-40 (number)", answer: "ONEFOURTY", category: "Quality Assurance", difficulty: "hard" },
+  { id: "cw-3199", clue: "Machine log ___ analysis compares actual vs planned delivery", answer: "FILE", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3200", clue: "Dose comparison metric using distance and dose criteria (Greek letter)", answer: "GAMMA", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3201", clue: "EPID used as a two-dimensional dosimeter: ___ dosimetry", answer: "PORTAL", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3202", clue: "MLC leaf position test using equally-spaced strips: ___ fence", answer: "PICKET", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3203", clue: "Varian automated daily QA system (abbr.)", answer: "MPC", category: "Quality Assurance", difficulty: "medium" },
+  { id: "cw-3204", clue: "Independent second-check calculation verifying TPS output in monitor ___", answer: "UNITS", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3205", clue: "Treatment beam flatness measured in the central 80% of ___ width", answer: "FIELD", category: "Quality Assurance", difficulty: "easy" },
+  { id: "cw-3206", clue: "RF power source that generates microwaves in low-energy linacs", answer: "MAGNETRON", category: "Radiotherapy", difficulty: "hard" },
+  { id: "cw-3207", clue: "RF amplifier used in high-energy linacs", answer: "KLYSTRON", category: "Radiotherapy", difficulty: "hard" },
+  { id: "cw-3208", clue: "Accelerating structure using electromagnetic waves: wave___", answer: "GUIDE", category: "Radiotherapy", difficulty: "medium" },
+  { id: "cw-3209", clue: "High-Z target material for X-ray bremsstrahlung production", answer: "TUNGSTEN", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3210", clue: "Sealed dual ion chamber that monitors output during beam delivery", answer: "MONITOR", category: "Radiotherapy", difficulty: "easy" },
+  { id: "cw-3211", clue: "Cone-beam CT imaging dose per scan: approximately 20-50 milli___", answer: "GRAY", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3212", clue: "EPID flat-panel detector made of amorphous ___", answer: "SILICON", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3213", clue: "Electron cone attached to linac head to define electron treatment ___", answer: "FIELD", category: "Radiotherapy", difficulty: "easy" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── Diagnostic Imaging Extended ───────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3214", clue: "CT reconstruction replacing FBP: ___ reconstruction", answer: "ITERATIVE", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3215", clue: "CT artefact from preferential absorption of low-energy photons: beam ___", answer: "HARDENING", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3216", clue: "Efficiency of converting X-ray quanta to useful signal (abbr.)", answer: "DQE", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3217", clue: "Spatial resolution metric as function of frequency (abbr.)", answer: "MTF", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3218", clue: "Lead strip device between patient and detector to reduce scatter: anti-___ grid", answer: "SCATTER", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3219", clue: "CT technique using two X-ray energies for material decomposition: ___-energy", answer: "DUAL", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3220", clue: "Display adjustment controlling contrast range in CT: window ___", answer: "WIDTH", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3221", clue: "Helical CT parameter: table travel per rotation divided by collimation", answer: "PITCH", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3222", clue: "X-ray tube intensity variation across anode: ___ effect", answer: "HEEL", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3223", clue: "Terminates X-ray exposure when detector has enough signal (abbr.)", answer: "AEC", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3224", clue: "Digital radiography flat panel detector type (abbr.)", answer: "DR", category: "Diagnostic Imaging", difficulty: "easy" },
+  { id: "cw-3225", clue: "Computed radiography uses photostimulable ___ plates", answer: "PHOSPHOR", category: "Diagnostic Imaging", difficulty: "medium" },
+  { id: "cw-3226", clue: "X-ray tube peak voltage controls beam ___ and contrast", answer: "PENETRATION", category: "Diagnostic Imaging", difficulty: "easy" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── Radiation Protection Extended ─────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3227", clue: "Barrier shielding against scatter and leakage only: ___ barrier", answer: "SECONDARY", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3228", clue: "Hydrogen-rich material for neutron thermalisation", answer: "POLYETHYLENE", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3229", clue: "Toxic gas produced in linac bunkers requiring ventilation", answer: "OZONE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3230", clue: "Radiation weighting factor for alpha particles", answer: "TWENTY", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3231", clue: "Linac head leakage limit: 0.1 percent of useful beam at one ___", answer: "METRE", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3232", clue: "Area monitor interlock that terminates beam on high dose rate (abbr.)", answer: "IDR", category: "Radiation Protection", difficulty: "hard" },
+  { id: "cw-3233", clue: "Bunker entrance design using multiple scatter attenuations", answer: "MAZE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3234", clue: "International radiation warning symbol shape", answer: "TREFOIL", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3235", clue: "NCRP report on shielding design for megavoltage therapy (number)", answer: "ONEFIFTYONE", category: "Radiation Protection", difficulty: "hard" },
+  { id: "cw-3236", clue: "Fraction of beam time directed at a specific barrier: ___ factor", answer: "USE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3237", clue: "Fraction of time an area is occupied: ___ factor", answer: "OCCUPANCY", category: "Radiation Protection", difficulty: "easy" },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── Pioneers Extended ─────────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  { id: "cw-3238", clue: "Swedish neurosurgeon who invented the Gamma Knife", answer: "LEKSELL", category: "Pioneers", difficulty: "hard" },
+  { id: "cw-3239", clue: "British physicist who discovered the electron", answer: "THOMSON", category: "Pioneers", difficulty: "medium" },
+  { id: "cw-3240", clue: "German physicist who discovered X-rays in 1895", answer: "ROENTGEN", category: "Pioneers", difficulty: "easy" },
+  { id: "cw-3241", clue: "New Zealand physicist who described the nuclear model of the atom", answer: "RUTHERFORD", category: "Pioneers", difficulty: "medium" },
+  { id: "cw-3242", clue: "Danish physicist who proposed quantised atomic energy levels", answer: "BOHR", category: "Pioneers", difficulty: "easy" },
+  { id: "cw-3243", clue: "Physicist who introduced the concept of radiation dose in roentgens", answer: "VILLARD", category: "Pioneers", difficulty: "hard" },
+  { id: "cw-3244", clue: "American physicist who developed the betatron accelerator", answer: "KERST", category: "Pioneers", difficulty: "hard" },
+  { id: "cw-3245", clue: "Polish-French scientist who coined the term 'radioactivity'", answer: "CURIE", category: "Pioneers", difficulty: "easy" },
+  { id: "cw-3246", clue: "Swedish physicist who measured the charge of the electron (oil drop)", answer: "MILLIKAN", category: "Pioneers", difficulty: "hard" },
 ];
 
 /** Get all unique categories */

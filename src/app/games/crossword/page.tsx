@@ -20,6 +20,7 @@ export default function CrosswordPage() {
   const [phase, setPhase] = useState<Phase>("setup");
   const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedDifficulty, setSelectedDifficulty] = useState<string>("all");
   const [timerOption, setTimerOption] = useState<TimerOption>(null);
   const [puzzle, setPuzzle] = useState<CrosswordPuzzle | null>(null);
   const [generating, setGenerating] = useState(false);
@@ -50,6 +51,7 @@ export default function CrosswordPage() {
     try {
       const params = new URLSearchParams({ limit: "50" });
       if (selectedCategory !== "all") params.set("category", selectedCategory);
+      if (selectedDifficulty !== "all") params.set("difficulty", selectedDifficulty);
 
       const res = await fetch(`/api/crossword-clues?${params}`);
       const clues: DbCrosswordClue[] = await res.json();
@@ -243,6 +245,33 @@ export default function CrosswordPage() {
                 }`}
               >
                 {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Difficulty picker */}
+        <div className="mb-6">
+          <label className="text-xs text-text-dim uppercase tracking-wider font-bold mb-2 block">
+            Difficulty
+          </label>
+          <div className="grid grid-cols-4 gap-2">
+            {([
+              { value: "all", label: "All", active: "border-bauhaus-blue text-bauhaus-blue bg-bauhaus-blue/10" },
+              { value: "easy", label: "Easy", active: "border-success text-success bg-success/10" },
+              { value: "medium", label: "Medium", active: "border-bauhaus-yellow text-bauhaus-yellow bg-bauhaus-yellow/10" },
+              { value: "hard", label: "Hard", active: "border-bauhaus-red text-bauhaus-red bg-bauhaus-red/10" },
+            ] as const).map((opt) => (
+              <button
+                key={opt.value}
+                onClick={() => setSelectedDifficulty(opt.value)}
+                className={`p-3 rounded-none text-sm font-bold border-2 transition-all ${
+                  selectedDifficulty === opt.value
+                    ? opt.active
+                    : "border-surface-border text-text-secondary hover:bg-surface"
+                }`}
+              >
+                {opt.label}
               </button>
             ))}
           </div>

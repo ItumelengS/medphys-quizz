@@ -31,6 +31,7 @@ async function seed() {
     clue: c.clue,
     answer: c.answer,
     category: c.category,
+    difficulty: c.difficulty || "medium",
   }));
 
   console.log(`Seeding ${rows.length} crossword clues...`);

@@ -5,12 +5,17 @@ export async function GET(req: NextRequest) {
   const supabase = createServiceClient();
   const { searchParams } = new URL(req.url);
   const category = searchParams.get("category");
+  const difficulty = searchParams.get("difficulty");
   const limit = parseInt(searchParams.get("limit") || "30") || 30;
 
   let query = supabase.from("crossword_clues").select("*");
 
   if (category && category !== "all") {
     query = query.eq("category", category);
+  }
+
+  if (difficulty && difficulty !== "all") {
+    query = query.eq("difficulty", difficulty);
   }
 
   const { data, error } = await query;

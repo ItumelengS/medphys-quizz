@@ -1,10 +1,10 @@
 {
   "meta": {
     "version": "3.0",
-    "lastUpdated": "2026-03-01",
+    "lastUpdated": "2026-03-02",
     "author": "Phantom Labs",
-    "notes": "1867 questions across 17 sections.",
-    "totalQuestions": 2477
+    "notes": "2597 questions across 17 sections.",
+    "totalQuestions": 2597
   },
   "sections": [
     {
@@ -5761,6 +5761,266 @@
         ],
         "e": "Cyclotron frequency f = qB/(2*pi*m) = (1.6e-19 x 1.5)/(2*pi x 1.67e-27) = 2.4e-19 / 1.049e-26 = 2.29e7 Hz = 22.9 MHz. This non-relativistic frequency is constant and independent of radius. At therapeutic energies (~230 MeV), relativistic effects require frequency modulation (synchrocyclotron).",
         "d": 9
+      },
+      {
+        "id": "eq142",
+        "q": "The flattening filter in a linear accelerator serves to:",
+        "a": "Create a uniform dose profile across the treatment field",
+        "c": [
+          "Increase the beam energy by filtering low-energy photons",
+          "Create a uniform dose profile across the treatment field",
+          "Reduce neutron contamination in the beam output",
+          "Collimate the beam to the desired field size"
+        ],
+        "e": "The conical flattening filter attenuates the forward-peaked bremsstrahlung beam more centrally, producing a flat dose profile. FFF beams omit this for higher dose rates.",
+        "d": 3
+      },
+      {
+        "id": "eq143",
+        "q": "What is the function of the bending magnet in a linear accelerator?",
+        "a": "To deflect the electron beam toward the target or scattering foil",
+        "c": [
+          "To accelerate electrons to treatment energy",
+          "To deflect the electron beam toward the target or scattering foil",
+          "To focus the photon beam onto the patient",
+          "To filter out unwanted photon energies"
+        ],
+        "e": "The bending magnet (typically 90° or 270°) redirects the horizontally accelerated electron beam downward toward the target (photon mode) or scattering foil (electron mode).",
+        "d": 4
+      },
+      {
+        "id": "eq144",
+        "q": "MLC leaf interdigitation refers to:",
+        "a": "Adjacent leaves extending past each other, possible in some MLC designs",
+        "c": [
+          "Leaves moving in opposite directions simultaneously",
+          "Adjacent leaves extending past each other, possible in some MLC designs",
+          "The interlocking mechanism that prevents leaf collision",
+          "Alternating leaf widths in the MLC bank design"
+        ],
+        "e": "Interdigitation allows complex field shapes where adjacent leaves overlap. Not all MLCs support this (e.g., Varian Millennium does not; some newer designs do).",
+        "d": 5
+      },
+      {
+        "id": "eq145",
+        "q": "The waveguide in a linear accelerator:",
+        "a": "Is the structure where electrons are accelerated by microwave fields",
+        "c": [
+          "Transmits the photon beam to the patient",
+          "Is the structure where electrons are accelerated by microwave fields",
+          "Cools the target after bremsstrahlung production",
+          "Shapes the radiation field to match the tumour"
+        ],
+        "e": "The accelerating waveguide contains a series of cavities where microwave power from the magnetron/klystron accelerates electrons to MeV energies.",
+        "d": 4
+      },
+      {
+        "id": "eq146",
+        "q": "What is the purpose of the ion chamber in the linac head?",
+        "a": "To monitor beam output in real-time for accurate dose delivery",
+        "c": [
+          "To generate the therapeutic radiation beam",
+          "To monitor beam output in real-time for accurate dose delivery",
+          "To flatten the beam profile across the field",
+          "To filter out electron contamination from photon beams"
+        ],
+        "e": "The monitor chamber (dual-channel transmission ionisation chamber) measures dose rate and flatness/symmetry in real-time. It controls beam-off when preset MUs are reached.",
+        "d": 3
+      },
+      {
+        "id": "eq147",
+        "q": "CBCT (cone-beam CT) on a linac is primarily used for:",
+        "a": "Volumetric image guidance for patient setup verification before treatment",
+        "c": [
+          "Treatment planning dose calculation with high accuracy",
+          "Volumetric image guidance for patient setup verification before treatment",
+          "Diagnostic quality imaging to replace CT simulation",
+          "Measuring delivered dose during the treatment fraction"
+        ],
+        "e": "CBCT acquires 3D images at the treatment position using the linac kV (or MV) imaging system. Used for soft tissue matching and setup corrections prior to treatment delivery.",
+        "d": 3
+      },
+      {
+        "id": "eq148",
+        "q": "The klystron differs from the magnetron in a linac in that:",
+        "a": "The klystron amplifies microwaves while the magnetron generates them",
+        "c": [
+          "The klystron generates electrons while the magnetron accelerates them",
+          "The klystron amplifies microwaves while the magnetron generates them",
+          "The klystron is used only in low-energy machines below 6 MV",
+          "The klystron is smaller and cheaper than the magnetron"
+        ],
+        "e": "Magnetrons generate microwaves directly (self-oscillating). Klystrons amplify a low-power microwave signal from a separate oscillator. Klystrons are used in higher-energy linacs (≥10 MV).",
+        "d": 5
+      },
+      {
+        "id": "eq149",
+        "q": "The carousel or turret in Elekta linacs contains:",
+        "a": "Multiple scattering foils and applicator inserts for different electron energies",
+        "c": [
+          "Different flattening filters for various photon energies",
+          "Multiple scattering foils and applicator inserts for different electron energies",
+          "Backup ion chambers for redundant dose monitoring",
+          "Various target materials for different treatment modalities"
+        ],
+        "e": "Elekta machines use a carousel with scattering foils matched to each electron energy. The correct foil is rotated into position when selecting an electron beam.",
+        "d": 5
+      },
+      {
+        "id": "eq150",
+        "q": "Portal imaging using the electronic portal imaging device (EPID) provides:",
+        "a": "MV radiographic images for treatment field verification",
+        "c": [
+          "Diagnostic quality images for tumour detection",
+          "MV radiographic images for treatment field verification",
+          "Real-time 3D volumetric imaging of the patient",
+          "Dose measurement replacing ion chambers completely"
+        ],
+        "e": "EPIDs use flat-panel amorphous silicon detectors to acquire MV images. Used for setup verification by comparing with DRRs, and increasingly for transit/exit dosimetry.",
+        "d": 4
+      },
+      {
+        "id": "eq151",
+        "q": "The electron gun in a linac produces electrons by:",
+        "a": "Thermionic emission from a heated cathode filament",
+        "c": [
+          "Photoelectric effect from laser illumination",
+          "Thermionic emission from a heated cathode filament",
+          "Beta decay of a radioactive source",
+          "Pair production in a high-Z target material"
+        ],
+        "e": "The electron gun heats a tungsten or barium-oxide cathode to ~1000°C, causing thermionic emission of electrons. These electrons are then injected into the accelerating waveguide.",
+        "d": 4
+      },
+      {
+        "id": "eq152",
+        "q": "FFF (flattening filter free) beams offer the advantage of:",
+        "a": "Higher dose rates (up to 4× conventional) with reduced head scatter",
+        "c": [
+          "Better beam flatness across large field sizes",
+          "Higher dose rates (up to 4× conventional) with reduced head scatter",
+          "Lower surface dose compared to flattened beams",
+          "Elimination of the need for MLC collimation"
+        ],
+        "e": "FFF beams remove the flattening filter, giving a peaked profile but 2-4× higher dose rate. Reduced head scatter improves out-of-field dose. Ideal for SBRT and SRS treatments.",
+        "d": 4
+      },
+      {
+        "id": "eq153",
+        "q": "The primary collimator in a linac treatment head:",
+        "a": "Defines the maximum circular field size from the bremsstrahlung target",
+        "c": [
+          "Creates the final rectangular treatment field shape",
+          "Defines the maximum circular field size from the bremsstrahlung target",
+          "Monitors beam output and symmetry in real-time",
+          "Filters electron contamination from the photon beam"
+        ],
+        "e": "The primary collimator is a fixed tungsten block with a conical opening that limits the maximum beam angle emerging from the target, reducing leakage radiation.",
+        "d": 4
+      },
+      {
+        "id": "eq154",
+        "q": "Gantry sag in a linear accelerator refers to:",
+        "a": "Mechanical deflection of the gantry under gravity at different rotation angles",
+        "c": [
+          "The decrease in beam output with increasing gantry angle",
+          "Mechanical deflection of the gantry under gravity at different rotation angles",
+          "Electrical drift in the control system over time",
+          "The change in beam quality with gantry rotation"
+        ],
+        "e": "The heavy gantry head deflects slightly under gravity, varying with angle. This affects isocentre accuracy. TG-142 tolerance for gantry rotation isocentre is ≤ 1 mm diameter.",
+        "d": 5
+      },
+      {
+        "id": "eq155",
+        "q": "The backup monitor chamber in a linac serves to:",
+        "a": "Terminate the beam if the primary monitor chamber fails",
+        "c": [
+          "Provide more accurate dose monitoring than the primary",
+          "Terminate the beam if the primary monitor chamber fails",
+          "Measure beam energy during treatment delivery",
+          "Monitor room radiation levels during treatment"
+        ],
+        "e": "Dual redundant chambers ensure safety: if the primary channel fails to terminate the beam at the set MU, the backup (secondary) channel independently stops irradiation.",
+        "d": 3
+      },
+      {
+        "id": "eq156",
+        "q": "The ExacTrac system provides:",
+        "a": "X-ray based real-time patient positioning using stereoscopic kV imaging",
+        "c": [
+          "MRI-guided treatment on a conventional linac",
+          "X-ray based real-time patient positioning using stereoscopic kV imaging",
+          "Ultrasound-guided soft tissue tracking during treatment",
+          "Optical surface monitoring using infrared cameras only"
+        ],
+        "e": "ExacTrac (Brainlab) uses floor-mounted kV X-ray tubes and ceiling detectors for stereoscopic imaging. Provides sub-millimetre positioning for SRS/SBRT with 6DOF corrections.",
+        "d": 5
+      },
+      {
+        "id": "eq157",
+        "q": "What is the typical isocentre accuracy specification for a modern linac?",
+        "a": "≤ 1 mm sphere diameter for all mechanical axes",
+        "c": [
+          "≤ 0.1 mm sphere diameter for all axes",
+          "≤ 1 mm sphere diameter for all mechanical axes",
+          "≤ 5 mm sphere diameter for all axes",
+          "≤ 10 mm sphere diameter for all axes"
+        ],
+        "e": "TG-142 specifies isocentre accuracy (walk-out) of ≤ 1 mm diameter for non-SRS linacs. SRS-capable machines require ≤ 0.75 mm. This includes gantry, collimator, and couch rotation.",
+        "d": 4
+      },
+      {
+        "id": "eq158",
+        "q": "The optical distance indicator (ODI) on a linac is used to:",
+        "a": "Verify source-to-surface distance using a projected light scale",
+        "c": [
+          "Measure the beam energy at the patient surface",
+          "Verify source-to-surface distance using a projected light scale",
+          "Align the laser crosshairs with room lasers",
+          "Display the current monitor unit setting during treatment"
+        ],
+        "e": "The ODI projects a light scale from the gantry head onto the patient surface, showing the SSD. TG-142 tolerance for ODI accuracy is ± 2 mm.",
+        "d": 3
+      },
+      {
+        "id": "eq159",
+        "q": "Interlock systems on a linac include:",
+        "a": "Door, beam energy, collimator position, and couch interlocks that prevent unsafe operation",
+        "c": [
+          "Only the door interlock to prevent room entry during beam",
+          "Door, beam energy, collimator position, and couch interlocks that prevent unsafe operation",
+          "Software-only protections in the treatment management system",
+          "Audio alarms that warn but do not stop the beam"
+        ],
+        "e": "Multiple hardware interlocks ensure safety: door (beam off if open), collimator (prevents excessive field size), gantry/couch position, dose rate, and beam energy verification.",
+        "d": 3
+      },
+      {
+        "id": "eq160",
+        "q": "The virtual wedge (Siemens) creates a wedge profile by:",
+        "a": "Varying the dose rate while one jaw sweeps across the field",
+        "c": [
+          "Inserting a physical metal wedge into the beam path",
+          "Varying the dose rate while one jaw sweeps across the field",
+          "Using the MLC leaves to create a step pattern",
+          "Rotating the collimator during beam delivery"
+        ],
+        "e": "Virtual wedge (Siemens) combines jaw motion with dose rate modulation to create wedge-shaped profiles. Similar in concept to Varian enhanced dynamic wedge (EDW) which moves a jaw at constant dose rate.",
+        "d": 5
+      },
+      {
+        "id": "eq161",
+        "q": "CALC: A linac isocentre test using a star shot pattern shows a maximum spoke deviation of 0.8 mm from the centre. Is this acceptable per TG-142 for non-SRS use?",
+        "a": "Yes, it is within the ≤ 1 mm tolerance for non-SRS linacs",
+        "c": [
+          "No, the tolerance is ≤ 0.5 mm for all clinical linacs",
+          "Yes, it is within the ≤ 1 mm tolerance for non-SRS linacs",
+          "No, the tolerance is ≤ 0.3 mm for non-SRS linacs",
+          "Yes, any result up to 5 mm is clinically acceptable"
+        ],
+        "e": "TG-142 non-SRS tolerance for isocentre (radiation and mechanical) is ≤ 1 mm diameter. 0.8 mm is within this limit. For SRS, the tolerance tightens to ≤ 0.75 mm.",
+        "d": 4
       }
     ],
     "eclipse": [
@@ -24356,6 +24616,266 @@
         ],
         "e": "VMAT delivers treatment in 1-3 arcs rather than 7-9 fixed IMRT fields, reducing delivery time from 15-20 minutes to 3-5 minutes for head and neck cases. Shorter treatment time improves patient comfort, reduces intrafraction motion, and increases patient throughput. Studies show comparable target coverage and OAR sparing between VMAT and fixed-field IMRT.",
         "d": 4
+      },
+      {
+        "id": "3d407",
+        "q": "What is the purpose of a wedge filter in 3D conformal radiotherapy?",
+        "a": "To compensate for tissue obliquity or create a more uniform dose distribution",
+        "c": [
+          "To increase beam energy for deep-seated tumours",
+          "To compensate for tissue obliquity or create a more uniform dose distribution",
+          "To reduce skin dose by hardening the beam spectrum",
+          "To sharpen the beam penumbra at field edges"
+        ],
+        "e": "Wedge filters tilt the isodose lines to compensate for oblique patient surfaces, missing tissue, or to improve dose homogeneity across the target volume.",
+        "d": 3
+      },
+      {
+        "id": "3d408",
+        "q": "In a four-field box technique for pelvis, why are lateral fields weighted less than AP/PA fields?",
+        "a": "Lateral fields traverse more tissue depth, receiving greater attenuation",
+        "c": [
+          "Lateral fields traverse more tissue depth, receiving greater attenuation",
+          "Lateral fields have higher energy and need less monitor units",
+          "AP/PA fields have worse penumbra requiring more dose",
+          "Lateral beams have higher scatter contamination at the surface"
+        ],
+        "e": "The lateral dimension of the pelvis is typically larger than the AP dimension, so lateral beams are attenuated more and weighted accordingly to achieve uniform dose in the target.",
+        "d": 4
+      },
+      {
+        "id": "3d409",
+        "q": "What beam arrangement minimises dose to the spinal cord in a 3DCRT thorax plan?",
+        "a": "Oblique posterior fields angled to avoid the cord",
+        "c": [
+          "Parallel opposed AP/PA fields through the cord",
+          "Oblique posterior fields angled to avoid the cord",
+          "Single direct posterior field at high energy",
+          "Vertex field directed craniocaudally through thorax"
+        ],
+        "e": "Oblique posterior beams can be angled to spare the spinal cord while still covering the mediastinal target. Beam angle selection is critical in 3DCRT for cord avoidance.",
+        "d": 5
+      },
+      {
+        "id": "3d410",
+        "q": "The hinge angle in 3DCRT wedged pair technique refers to:",
+        "a": "The angle between the central axes of two abutting beams",
+        "c": [
+          "The physical wedge angle used in the treatment",
+          "The angle between the central axes of two abutting beams",
+          "The couch rotation angle during treatment delivery",
+          "The collimator angle needed for optimal coverage"
+        ],
+        "e": "The hinge angle is formed between the central axes of two beams. The optimal wedge angle is approximately (180° - hinge angle) / 2 for uniform dose at the junction.",
+        "d": 6
+      },
+      {
+        "id": "3d411",
+        "q": "CALC: For a wedged pair with hinge angle of 120°, what is the optimal wedge angle?",
+        "a": "30°",
+        "c": [
+          "15°",
+          "30°",
+          "45°",
+          "60°"
+        ],
+        "e": "Optimal wedge angle = (180° - hinge angle) / 2 = (180° - 120°) / 2 = 30°. This produces the most uniform dose distribution at the beam intersection.",
+        "d": 5
+      },
+      {
+        "id": "3d412",
+        "q": "What is the primary advantage of using multi-leaf collimators over cerrobend blocks in 3DCRT?",
+        "a": "Faster field shaping without need for custom block fabrication",
+        "c": [
+          "Higher beam energy output per monitor unit delivered",
+          "Faster field shaping without need for custom block fabrication",
+          "Better dose homogeneity within the target volume",
+          "Elimination of penumbra at all field edges"
+        ],
+        "e": "MLCs allow rapid automated field shaping, eliminating the time-consuming process of cutting and mounting custom cerrobend blocks for each field.",
+        "d": 3
+      },
+      {
+        "id": "3d413",
+        "q": "Beam's eye view (BEV) in treatment planning is used to:",
+        "a": "Visualise target and OAR projections from the beam source perspective",
+        "c": [
+          "Calculate the monitor units required for each beam",
+          "Visualise target and OAR projections from the beam source perspective",
+          "Determine the optimal couch position for treatment",
+          "Measure the actual delivered dose during treatment"
+        ],
+        "e": "BEV displays what the beam \"sees\" — the projection of target volumes and organs at risk — helping the planner shape fields and choose beam angles.",
+        "d": 3
+      },
+      {
+        "id": "3d414",
+        "q": "In 3DCRT, the 95% isodose line should ideally:",
+        "a": "Encompass the entire PTV with minimal hot spots",
+        "c": [
+          "Cover only the GTV excluding any margins",
+          "Encompass the entire PTV with minimal hot spots",
+          "Extend well beyond the field borders",
+          "Exclude organs at risk completely from coverage"
+        ],
+        "e": "ICRU 50/62 recommends that the PTV receives between 95% and 107% of the prescribed dose. The 95% isodose should conform to the PTV.",
+        "d": 4
+      },
+      {
+        "id": "3d415",
+        "q": "What is the effect of using higher energy photon beams (15 MV vs 6 MV) for deep pelvic treatments?",
+        "a": "Better depth dose characteristics with reduced skin dose and improved deep target coverage",
+        "c": [
+          "Better depth dose characteristics with reduced skin dose and improved deep target coverage",
+          "Sharper penumbra and better conformality at all depths",
+          "Reduced neutron contamination in the treatment room",
+          "Lower total body dose from internal scatter radiation"
+        ],
+        "e": "Higher energy beams have greater penetration (higher PDD at depth), larger dmax depth, and reduced skin dose — advantageous for deep-seated targets like prostate.",
+        "d": 4
+      },
+      {
+        "id": "3d416",
+        "q": "The field-in-field (FIF) technique in 3DCRT is used to:",
+        "a": "Reduce hot spots by adding smaller subfields that block high-dose regions",
+        "c": [
+          "Create intentional hot spots for tumour dose escalation",
+          "Reduce hot spots by adding smaller subfields that block high-dose regions",
+          "Replace wedges with open fields of different sizes",
+          "Increase treatment delivery speed by combining fields"
+        ],
+        "e": "FIF uses the main field plus smaller subfields (with MLC blocking hot regions) delivered in the same beam direction. This improves homogeneity without physical wedges.",
+        "d": 5
+      },
+      {
+        "id": "3d417",
+        "q": "What is the typical PTV margin expansion from CTV for lung tumours treated with 3DCRT without motion management?",
+        "a": "1.0-1.5 cm to account for respiratory motion and setup uncertainty",
+        "c": [
+          "0.2-0.3 cm as lung tumours are well immobilised",
+          "1.0-1.5 cm to account for respiratory motion and setup uncertainty",
+          "3.0-4.0 cm to cover all possible tumour positions",
+          "No margin is needed if daily imaging is performed"
+        ],
+        "e": "Without motion management (e.g., gating or breath-hold), lung tumour motion can be 1-2 cm in the cranio-caudal direction. The PTV margin must account for this plus setup uncertainty.",
+        "d": 5
+      },
+      {
+        "id": "3d418",
+        "q": "In 3DCRT, what does the conformity index (CI) measure?",
+        "a": "The ratio of treated volume to planning target volume",
+        "c": [
+          "The percentage of dose delivered to the tumour centre",
+          "The ratio of treated volume to planning target volume",
+          "The maximum dose within the target volume",
+          "The time required to deliver the treatment plan"
+        ],
+        "e": "CI = V_treated/V_PTV. A CI of 1.0 indicates perfect conformity. Values >1 indicate irradiation of excess normal tissue beyond the PTV.",
+        "d": 5
+      },
+      {
+        "id": "3d419",
+        "q": "Source-axis distance (SAD) technique differs from SSD technique in that:",
+        "a": "The isocentre is placed within the patient at the target depth",
+        "c": [
+          "The patient is always treated prone instead of supine",
+          "The isocentre is placed within the patient at the target depth",
+          "No inverse square law correction is needed",
+          "Only parallel opposed beams can be used"
+        ],
+        "e": "In SAD (isocentric) technique, the machine isocentre is placed at the tumour depth, allowing easy multi-beam setups. SSD technique places the source at a fixed distance from the skin surface.",
+        "d": 3
+      },
+      {
+        "id": "3d420",
+        "q": "What is the purpose of bolus material in 3DCRT?",
+        "a": "To increase surface dose by reducing skin-sparing effect",
+        "c": [
+          "To shield organs at risk from radiation exposure",
+          "To increase surface dose by reducing skin-sparing effect",
+          "To improve beam penetration to deep targets",
+          "To reduce treatment time by increasing output"
+        ],
+        "e": "Bolus (tissue-equivalent material placed on skin) moves the dmax closer to the surface, increasing skin dose. Used when the target extends to the skin surface (e.g., chest wall, scars).",
+        "d": 3
+      },
+      {
+        "id": "3d421",
+        "q": "CALC: A parallel opposed pair delivers 200 cGy to midplane. If the patient separation is 20 cm and the PDD at 10 cm depth for 6 MV is 67%, what is the approximate dose per field at midplane?",
+        "a": "100 cGy per field at midplane",
+        "c": [
+          "50 cGy per field at midplane",
+          "100 cGy per field at midplane",
+          "134 cGy per field at midplane",
+          "200 cGy per field at midplane"
+        ],
+        "e": "For a parallel opposed pair, each beam contributes half the midplane dose. Total midplane dose = 200 cGy, so each field delivers 100 cGy at midplane.",
+        "d": 4
+      },
+      {
+        "id": "3d422",
+        "q": "Enhanced dynamic wedge (EDW) differs from physical wedge in that:",
+        "a": "It creates the wedge profile by moving one jaw during beam delivery",
+        "c": [
+          "It uses a thicker metal wedge for steeper dose gradients",
+          "It creates the wedge profile by moving one jaw during beam delivery",
+          "It requires a special flattening filter modification",
+          "It can only produce fixed 15° and 30° wedge angles"
+        ],
+        "e": "EDW moves one collimator jaw across the field during irradiation, creating a wedge-shaped dose distribution. This allows any wedge angle from 10° to 60° without physical hardware.",
+        "d": 4
+      },
+      {
+        "id": "3d423",
+        "q": "What is the primary purpose of digitally reconstructed radiographs (DRRs) in 3DCRT?",
+        "a": "To serve as reference images for patient setup verification",
+        "c": [
+          "To replace CT simulation entirely for treatment planning",
+          "To serve as reference images for patient setup verification",
+          "To calculate dose distributions within the patient",
+          "To determine optimal beam energy for each field"
+        ],
+        "e": "DRRs are computed from CT data to simulate radiographic projections. They serve as reference images for comparing with portal images during treatment verification.",
+        "d": 4
+      },
+      {
+        "id": "3d424",
+        "q": "The penumbra in a 3DCRT field is primarily determined by:",
+        "a": "Source size, collimator design, and depth in tissue",
+        "c": [
+          "Only the photon beam energy used for treatment",
+          "Source size, collimator design, and depth in tissue",
+          "The type of immobilisation device used",
+          "The monitor unit calculation algorithm selected"
+        ],
+        "e": "Geometric penumbra depends on source size and SSD. Transmission penumbra comes from collimator edge design. Scatter penumbra increases with depth due to lateral electron transport.",
+        "d": 5
+      },
+      {
+        "id": "3d425",
+        "q": "In 3DCRT breast treatment, the tangential field technique aims to:",
+        "a": "Minimise lung and heart dose while covering the breast tissue",
+        "c": [
+          "Maximise dose to the chest wall muscles",
+          "Minimise lung and heart dose while covering the breast tissue",
+          "Deliver dose exclusively to the nipple-areolar complex",
+          "Avoid any dose to the contralateral breast only"
+        ],
+        "e": "Tangential fields are angled to include breast tissue while limiting the depth of lung included in the field. For left-sided breast, heart avoidance is also critical.",
+        "d": 4
+      },
+      {
+        "id": "3d426",
+        "q": "What is the typical tolerance for MLC leaf position accuracy in 3DCRT?",
+        "a": "± 1 mm from planned position",
+        "c": [
+          "± 0.1 mm from planned position",
+          "± 1 mm from planned position",
+          "± 5 mm from planned position",
+          "± 10 mm from planned position"
+        ],
+        "e": "TG-142 recommends MLC leaf position accuracy of ± 1 mm. This ensures that field shapes conform closely to the planned aperture and maintain dosimetric accuracy.",
+        "d": 5
       }
     ],
     "ultrasound": [
@@ -25866,6 +26386,266 @@
         ],
         "e": "Wavelength = 1540/6,000,000 = 0.2567 mm. Number of cycles = SPL/wavelength = 0.77/0.2567 = 3.0 cycles. Diagnostic imaging pulses typically contain 2-4 cycles to maintain good axial resolution.",
         "d": 4
+      },
+      {
+        "id": "us117",
+        "q": "The acoustic impedance (Z) of a medium is defined as:",
+        "a": "The product of density and speed of sound (Z = ρc)",
+        "c": [
+          "The ratio of frequency to wavelength of sound",
+          "The product of density and speed of sound (Z = ρc)",
+          "The attenuation coefficient divided by frequency",
+          "The amplitude of reflected sound waves only"
+        ],
+        "e": "Acoustic impedance Z = ρc (density × speed of sound). Impedance mismatches at tissue boundaries determine the fraction of reflected vs transmitted ultrasound energy.",
+        "d": 3
+      },
+      {
+        "id": "us118",
+        "q": "What determines the axial resolution of an ultrasound transducer?",
+        "a": "The spatial pulse length (shorter pulses give better axial resolution)",
+        "c": [
+          "The diameter of the transducer crystal element",
+          "The spatial pulse length (shorter pulses give better axial resolution)",
+          "The frame rate of the ultrasound system",
+          "The depth setting selected by the operator"
+        ],
+        "e": "Axial resolution = SPL/2. Shorter pulses (higher frequency, more damping) improve axial resolution. Typical values: 0.5-1.0 mm for diagnostic frequencies.",
+        "d": 4
+      },
+      {
+        "id": "us119",
+        "q": "Doppler ultrasound shift frequency is higher when:",
+        "a": "Blood flow velocity is higher and directed toward the transducer",
+        "c": [
+          "The transducer frequency is lower than 2 MHz",
+          "Blood flow velocity is higher and directed toward the transducer",
+          "The patient is positioned further from the transducer",
+          "The gain setting is increased on the machine"
+        ],
+        "e": "Doppler shift fd = 2f₀v cos(θ)/c. Higher velocity (v) and smaller angle (θ) between beam and flow direction give larger frequency shifts.",
+        "d": 4
+      },
+      {
+        "id": "us120",
+        "q": "Acoustic shadowing in ultrasound occurs behind:",
+        "a": "Highly attenuating or reflecting structures such as calcifications or bone",
+        "c": [
+          "Fluid-filled structures like cysts or bladder",
+          "Highly attenuating or reflecting structures such as calcifications or bone",
+          "Soft tissue interfaces with matched impedance",
+          "Areas of high blood flow velocity"
+        ],
+        "e": "Structures that strongly reflect or absorb sound (gallstones, bone, calcifications) prevent transmission, creating a dark shadow distal to the structure.",
+        "d": 3
+      },
+      {
+        "id": "us121",
+        "q": "The purpose of matching layers on ultrasound transducers is to:",
+        "a": "Reduce impedance mismatch between the crystal and tissue for better energy transfer",
+        "c": [
+          "Increase the operating frequency of the transducer",
+          "Reduce impedance mismatch between the crystal and tissue for better energy transfer",
+          "Filter out harmonic frequencies from the signal",
+          "Protect the crystal from physical damage"
+        ],
+        "e": "Matching layers have impedance between the crystal (high Z ~30 MRayl) and tissue (low Z ~1.5 MRayl), improving acoustic energy transmission into the patient.",
+        "d": 5
+      },
+      {
+        "id": "us122",
+        "q": "CALC: If the speed of sound in soft tissue is 1540 m/s and the pulse-echo round trip time is 130 μs, what is the reflector depth?",
+        "a": "10 cm",
+        "c": [
+          "5 cm",
+          "10 cm",
+          "15 cm",
+          "20 cm"
+        ],
+        "e": "Depth = (c × t)/2 = (1540 × 130×10⁻⁶)/2 = (0.2002)/2 = 0.1001 m ≈ 10 cm. The factor of 2 accounts for the round-trip travel.",
+        "d": 4
+      },
+      {
+        "id": "us123",
+        "q": "Tissue harmonic imaging improves image quality primarily by:",
+        "a": "Using second harmonic frequency signals that have less aberration and clutter",
+        "c": [
+          "Doubling the transmit power to increase penetration depth",
+          "Using second harmonic frequency signals that have less aberration and clutter",
+          "Reducing the frame rate to allow longer signal averaging",
+          "Switching to continuous wave mode instead of pulsed"
+        ],
+        "e": "Harmonics are generated in tissue (not at the surface), so they avoid body wall aberrations. They have narrower beam profiles and less side lobe artifacts.",
+        "d": 6
+      },
+      {
+        "id": "us124",
+        "q": "The Nyquist limit in pulsed Doppler determines:",
+        "a": "The maximum detectable frequency shift, equal to half the PRF",
+        "c": [
+          "The minimum tissue depth that can be imaged",
+          "The maximum detectable frequency shift, equal to half the PRF",
+          "The spatial resolution of the B-mode image",
+          "The maximum number of focal zones available"
+        ],
+        "e": "Nyquist limit = PRF/2. Doppler shifts exceeding this cause aliasing (wrap-around artifact). Higher PRF increases the Nyquist limit but reduces maximum depth.",
+        "d": 5
+      },
+      {
+        "id": "us125",
+        "q": "Speckle in ultrasound images is caused by:",
+        "a": "Constructive and destructive interference of echoes from sub-resolution scatterers",
+        "c": [
+          "Motion of the transducer during image acquisition",
+          "Constructive and destructive interference of echoes from sub-resolution scatterers",
+          "Electronic noise in the receiver amplifier circuits",
+          "Improper coupling between transducer and patient skin"
+        ],
+        "e": "Speckle is a coherent artifact from interference of echoes from scatterers smaller than the wavelength. It degrades contrast resolution but carries tissue signature information.",
+        "d": 5
+      },
+      {
+        "id": "us126",
+        "q": "What is the purpose of time-gain compensation (TGC) in ultrasound?",
+        "a": "To compensate for increasing attenuation with depth by amplifying deeper echoes more",
+        "c": [
+          "To reduce the transmit power for superficial structures",
+          "To compensate for increasing attenuation with depth by amplifying deeper echoes more",
+          "To focus the beam at the selected depth",
+          "To remove Doppler shift artifacts from the image"
+        ],
+        "e": "Sound attenuates as it travels through tissue (~0.5 dB/cm/MHz in soft tissue). TGC applies depth-dependent gain so that similar reflectors appear equally bright regardless of depth.",
+        "d": 3
+      },
+      {
+        "id": "us127",
+        "q": "The elevational (slice thickness) resolution of a linear array transducer is determined by:",
+        "a": "The height of the transducer elements in the elevation plane",
+        "c": [
+          "The number of elements in the linear array",
+          "The height of the transducer elements in the elevation plane",
+          "The pulse repetition frequency setting",
+          "The dynamic range of the receiver"
+        ],
+        "e": "Elevational resolution depends on element height and any acoustic lens focusing in that plane. It is typically the worst of the three resolution dimensions.",
+        "d": 5
+      },
+      {
+        "id": "us128",
+        "q": "CALC: The attenuation coefficient in soft tissue is approximately 0.5 dB/cm/MHz. For a 5 MHz transducer imaging at 8 cm depth, what is the total round-trip attenuation?",
+        "a": "40 dB",
+        "c": [
+          "20 dB",
+          "40 dB",
+          "60 dB",
+          "80 dB"
+        ],
+        "e": "Attenuation = 0.5 dB/cm/MHz × 5 MHz × 16 cm (round trip = 2 × 8 cm) = 40 dB. This is why higher frequencies have limited penetration depth.",
+        "d": 4
+      },
+      {
+        "id": "us129",
+        "q": "Aliasing in colour Doppler can be reduced by:",
+        "a": "Increasing the PRF or using a lower frequency transducer",
+        "c": [
+          "Decreasing the colour box size only",
+          "Increasing the PRF or using a lower frequency transducer",
+          "Adding more acoustic coupling gel",
+          "Reducing the B-mode gain setting"
+        ],
+        "e": "Increasing PRF raises the Nyquist limit. Lower transducer frequency reduces the Doppler shift for the same velocity, keeping it below the Nyquist limit.",
+        "d": 5
+      },
+      {
+        "id": "us130",
+        "q": "What type of ultrasound transducer is best suited for cardiac imaging?",
+        "a": "Phased array with small footprint for intercostal access",
+        "c": [
+          "Large linear array for wide field of view",
+          "Phased array with small footprint for intercostal access",
+          "Convex array designed for abdominal scanning",
+          "High-frequency linear probe for superficial imaging"
+        ],
+        "e": "Phased arrays have a small footprint that fits between ribs while electronically steering the beam to create a wide sector image of the heart.",
+        "d": 3
+      },
+      {
+        "id": "us131",
+        "q": "The mechanical index (MI) in ultrasound indicates the likelihood of:",
+        "a": "Mechanical bioeffects such as cavitation in tissue",
+        "c": [
+          "Thermal tissue damage from acoustic absorption",
+          "Mechanical bioeffects such as cavitation in tissue",
+          "Electromagnetic interference with other equipment",
+          "Transducer crystal fatigue during prolonged use"
+        ],
+        "e": "MI = peak negative pressure / √frequency. Higher MI increases cavitation risk. FDA limits MI to 1.9 for diagnostic ultrasound (except ophthalmic: 0.23).",
+        "d": 5
+      },
+      {
+        "id": "us132",
+        "q": "The thermal index (TI) in ultrasound represents:",
+        "a": "The ratio of acoustic power to that required to raise tissue temperature by 1°C",
+        "c": [
+          "The absolute temperature of the transducer surface",
+          "The ratio of acoustic power to that required to raise tissue temperature by 1°C",
+          "The time required before thermal damage occurs",
+          "The cooling rate of tissue after ultrasound exposure"
+        ],
+        "e": "TI estimates potential for tissue heating. TI = W/W_deg where W_deg is the power needed for 1°C rise. ALARA principle: keep TI and MI as low as reasonably achievable.",
+        "d": 5
+      },
+      {
+        "id": "us133",
+        "q": "Compound imaging in ultrasound improves image quality by:",
+        "a": "Acquiring images from multiple steering angles and averaging them",
+        "c": [
+          "Using two transducers simultaneously at different frequencies",
+          "Acquiring images from multiple steering angles and averaging them",
+          "Combining B-mode and M-mode displays on one screen",
+          "Increasing the transmit voltage to maximum output"
+        ],
+        "e": "Spatial compound imaging steers the beam at multiple angles, averaging the resulting images. This reduces speckle, improves contrast resolution, and fills in acoustic shadows.",
+        "d": 5
+      },
+      {
+        "id": "us134",
+        "q": "What is the typical speed of sound assumed by ultrasound systems for distance calibration?",
+        "a": "1540 m/s (average soft tissue velocity)",
+        "c": [
+          "330 m/s (speed of sound in air)",
+          "1540 m/s (average soft tissue velocity)",
+          "3000 m/s (speed of sound in bone)",
+          "5000 m/s (speed of sound in metal)"
+        ],
+        "e": "All clinical ultrasound systems assume 1540 m/s for distance calculations. Deviations in fat (1450 m/s) or muscle (1580 m/s) cause minor distance errors.",
+        "d": 2
+      },
+      {
+        "id": "us135",
+        "q": "Elastography in ultrasound measures:",
+        "a": "Tissue stiffness by assessing strain or shear wave propagation speed",
+        "c": [
+          "Blood flow velocity in deep vessels accurately",
+          "Tissue stiffness by assessing strain or shear wave propagation speed",
+          "The acoustic output power of the transducer",
+          "Bone mineral density through cortical surfaces"
+        ],
+        "e": "Elastography maps tissue stiffness — stiffer tissues (e.g., tumours) deform less under compression (strain) or propagate shear waves faster. Used for liver fibrosis, breast and thyroid lesions.",
+        "d": 6
+      },
+      {
+        "id": "us136",
+        "q": "CALC: A Doppler ultrasound with transmit frequency 3.5 MHz measures a frequency shift of 2 kHz at an angle of 60°. What is the blood flow velocity? (c = 1540 m/s)",
+        "a": "Approximately 44 cm/s",
+        "c": [
+          "Approximately 22 cm/s",
+          "Approximately 44 cm/s",
+          "Approximately 88 cm/s",
+          "Approximately 176 cm/s"
+        ],
+        "e": "v = fd × c / (2 × f₀ × cos θ) = 2000 × 1540 / (2 × 3.5×10⁶ × 0.5) = 3,080,000 / 3,500,000 = 0.88 m/s... Wait: = 2000×1540/(2×3500000×0.5) = 3080000/3500000 = 0.44 m/s ≈ 44 cm/s.",
+        "d": 6
       }
     ],
     "mri": [
@@ -27506,6 +28286,266 @@
         ],
         "e": "The diffusion tensor has 6 independent elements (symmetric 3x3 matrix), requiring at minimum 6 non-collinear gradient directions plus a b=0 reference.",
         "d": 6
+      },
+      {
+        "id": "mri127",
+        "q": "T1 relaxation time represents the time for:",
+        "a": "Longitudinal magnetisation to recover to 63% of its equilibrium value",
+        "c": [
+          "Transverse magnetisation to decay to 37% of its initial value",
+          "Longitudinal magnetisation to recover to 63% of its equilibrium value",
+          "Complete loss of all MR signal in the tissue",
+          "The RF pulse to reach maximum amplitude"
+        ],
+        "e": "T1 (spin-lattice relaxation) is the time constant for Mz recovery. At time T1, Mz has recovered to 63% (1 - 1/e) of M₀. Fat has short T1 (~250 ms), water has long T1 (~2500 ms).",
+        "d": 3
+      },
+      {
+        "id": "mri128",
+        "q": "The purpose of gradient coils in MRI is to:",
+        "a": "Create linear magnetic field variations for spatial encoding of signals",
+        "c": [
+          "Generate the main static magnetic field for imaging",
+          "Create linear magnetic field variations for spatial encoding of signals",
+          "Transmit radiofrequency pulses to excite protons",
+          "Shield the magnet from external electromagnetic interference"
+        ],
+        "e": "Gradient coils produce linear field variations in x, y, z directions. Slice selection, frequency encoding, and phase encoding all use gradients for spatial localisation.",
+        "d": 3
+      },
+      {
+        "id": "mri129",
+        "q": "Chemical shift artifact in MRI occurs at:",
+        "a": "Fat-water interfaces in the frequency encoding direction",
+        "c": [
+          "All tissue boundaries regardless of composition",
+          "Fat-water interfaces in the frequency encoding direction",
+          "Only within bones containing marrow fat",
+          "Between air and tissue interfaces only"
+        ],
+        "e": "Fat protons resonate ~3.5 ppm lower than water protons. In frequency encoding, this offset causes spatial misregistration at fat-water boundaries. Magnitude increases with field strength.",
+        "d": 5
+      },
+      {
+        "id": "mri130",
+        "q": "The specific absorption rate (SAR) in MRI refers to:",
+        "a": "The rate of RF energy absorption per unit mass of tissue (W/kg)",
+        "c": [
+          "The speed at which images are acquired per second",
+          "The rate of RF energy absorption per unit mass of tissue (W/kg)",
+          "The gradient switching rate during echo planar imaging",
+          "The data sampling rate of the analog-to-digital converter"
+        ],
+        "e": "SAR limits RF heating in patients. IEC limits: whole body 2 W/kg (normal mode), 4 W/kg (first level). SAR increases with B₀², flip angle², and duty cycle.",
+        "d": 4
+      },
+      {
+        "id": "mri131",
+        "q": "K-space in MRI represents:",
+        "a": "The raw spatial frequency data before Fourier transform reconstruction",
+        "c": [
+          "The physical space where the patient is positioned",
+          "The raw spatial frequency data before Fourier transform reconstruction",
+          "The RF coil sensitivity map used for calibration",
+          "The gradient waveform timing diagram"
+        ],
+        "e": "K-space stores acquired data as spatial frequencies. Centre of k-space = contrast/signal information. Periphery = edge detail/resolution. 2D Fourier transform converts k-space to image.",
+        "d": 5
+      },
+      {
+        "id": "mri132",
+        "q": "What causes susceptibility artifacts in MRI?",
+        "a": "Local magnetic field distortions from materials with different magnetic susceptibility",
+        "c": [
+          "Patient motion during the acquisition sequence",
+          "Local magnetic field distortions from materials with different magnetic susceptibility",
+          "Incorrect RF coil tuning and impedance matching",
+          "Gradient nonlinearity at the edges of the FOV"
+        ],
+        "e": "Susceptibility differences (e.g., tissue-air, tissue-metal) cause local B₀ inhomogeneity, leading to signal loss and geometric distortion. Worst at higher field strengths and with EPI sequences.",
+        "d": 5
+      },
+      {
+        "id": "mri133",
+        "q": "In diffusion-weighted imaging (DWI), a high b-value:",
+        "a": "Increases sensitivity to slow diffusion but reduces SNR",
+        "c": [
+          "Improves spatial resolution without affecting signal",
+          "Increases sensitivity to slow diffusion but reduces SNR",
+          "Eliminates T2 weighting from the images entirely",
+          "Reduces scan time by using shorter echo times"
+        ],
+        "e": "b-value determines diffusion weighting sensitivity. Higher b (e.g., 1000-2000 s/mm²) attenuates signal from fast-diffusing water more, highlighting restricted diffusion (e.g., tumours, stroke).",
+        "d": 5
+      },
+      {
+        "id": "mri134",
+        "q": "The Larmor frequency at 3T is approximately:",
+        "a": "128 MHz for hydrogen protons",
+        "c": [
+          "42 MHz for hydrogen protons",
+          "64 MHz for hydrogen protons",
+          "128 MHz for hydrogen protons",
+          "256 MHz for hydrogen protons"
+        ],
+        "e": "Larmor frequency f = γB₀. For hydrogen, γ = 42.58 MHz/T. At 3T: f = 42.58 × 3 = 127.74 ≈ 128 MHz. At 1.5T: ~64 MHz.",
+        "d": 3
+      },
+      {
+        "id": "mri135",
+        "q": "Parallel imaging (e.g., GRAPPA, SENSE) reduces scan time by:",
+        "a": "Undersampling k-space and using coil sensitivity information to reconstruct",
+        "c": [
+          "Increasing gradient strength to sample k-space faster",
+          "Undersampling k-space and using coil sensitivity information to reconstruct",
+          "Reducing the matrix size and field of view equally",
+          "Using multiple RF transmit pulses simultaneously"
+        ],
+        "e": "Parallel imaging skips phase-encode lines in k-space (acceleration factor R). Multi-element coil sensitivity profiles fill in missing data. Trade-off: reduced SNR by factor ~√R.",
+        "d": 6
+      },
+      {
+        "id": "mri136",
+        "q": "The main advantage of 3T over 1.5T MRI is:",
+        "a": "Approximately double the signal-to-noise ratio",
+        "c": [
+          "Approximately double the signal-to-noise ratio",
+          "Reduced susceptibility artifacts near air-tissue interfaces",
+          "Lower RF energy deposition in the patient",
+          "Better compatibility with metallic implants"
+        ],
+        "e": "SNR scales approximately linearly with B₀, so 3T offers ~2× the SNR of 1.5T. However, 3T has increased susceptibility artifacts, SAR (4× higher), and chemical shift effects.",
+        "d": 4
+      },
+      {
+        "id": "mri137",
+        "q": "Flow-related enhancement (entry slice phenomenon) in MRI occurs because:",
+        "a": "Unsaturated spins entering the imaging slice give higher signal than stationary tissue",
+        "c": [
+          "Blood absorbs more RF energy than surrounding tissue",
+          "Unsaturated spins entering the imaging slice give higher signal than stationary tissue",
+          "The gradient coils preferentially encode moving structures",
+          "Flow creates eddy currents that enhance local signal"
+        ],
+        "e": "Stationary spins become partially saturated by repeated RF pulses. Fresh (unsaturated) blood flowing into the slice has full magnetisation, producing bright signal — the basis of TOF MRA.",
+        "d": 5
+      },
+      {
+        "id": "mri138",
+        "q": "Fat suppression using STIR (Short TI Inversion Recovery) works by:",
+        "a": "Setting the inversion time to the null point of fat where its longitudinal magnetisation passes through zero",
+        "c": [
+          "Applying a frequency-selective saturation pulse at the fat resonance",
+          "Setting the inversion time to the null point of fat where its longitudinal magnetisation passes through zero",
+          "Using chemical shift encoding to separate fat and water signals",
+          "Increasing TE to the point where fat signal decays to zero"
+        ],
+        "e": "STIR uses TI ≈ 0.69 × T1_fat (~160 ms at 1.5T). At this TI, fat Mz passes through zero. Non-frequency-selective, so it works even with B₀ inhomogeneity, but also suppresses short-T1 contrast-enhanced tissue.",
+        "d": 5
+      },
+      {
+        "id": "mri139",
+        "q": "Ghosting artifacts in MRI along the phase encoding direction are typically caused by:",
+        "a": "Periodic motion such as respiratory or cardiac motion during acquisition",
+        "c": [
+          "Gradient coil overheating during long sequences",
+          "Periodic motion such as respiratory or cardiac motion during acquisition",
+          "RF interference from external electronic devices",
+          "Inadequate fat suppression in the imaging protocol"
+        ],
+        "e": "Periodic motion creates phase errors that map to discrete ghost copies displaced in the phase-encode direction. Cardiac and respiratory gating/triggering can reduce these artifacts.",
+        "d": 4
+      },
+      {
+        "id": "mri140",
+        "q": "The echo time (TE) primarily affects:",
+        "a": "T2 weighting of the image contrast",
+        "c": [
+          "Spatial resolution of the reconstructed image",
+          "T2 weighting of the image contrast",
+          "The number of slices acquired per TR",
+          "The specific absorption rate of RF energy"
+        ],
+        "e": "Longer TE increases T2 weighting: tissues with short T2 lose signal faster, increasing contrast between tissues with different T2 values. Short TE = proton density or T1-weighted.",
+        "d": 3
+      },
+      {
+        "id": "mri141",
+        "q": "MRI safety Zone IV refers to:",
+        "a": "The magnet room itself where the static magnetic field is always present",
+        "c": [
+          "The public waiting area outside the MRI suite",
+          "The control room where the operator sits",
+          "The patient preparation and screening room",
+          "The magnet room itself where the static magnetic field is always present"
+        ],
+        "e": "ACR zones: Zone I = public, Zone II = interface (waiting), Zone III = controlled access (screening), Zone IV = magnet room. Only screened personnel and patients enter Zone IV.",
+        "d": 3
+      },
+      {
+        "id": "mri142",
+        "q": "What is the quench procedure in MRI?",
+        "a": "Emergency venting of cryogen (liquid helium) to rapidly shut down the superconducting magnet",
+        "c": [
+          "Routine daily warm-up of the magnet for calibration",
+          "Emergency venting of cryogen (liquid helium) to rapidly shut down the superconducting magnet",
+          "Controlled cooling of gradient coils after prolonged scanning",
+          "Software reset of the MRI console operating system"
+        ],
+        "e": "A quench rapidly boils off liquid helium, collapsing the superconducting field. Used in life-threatening emergencies (e.g., patient or person trapped by ferromagnetic object). Expensive to recover.",
+        "d": 4
+      },
+      {
+        "id": "mri143",
+        "q": "Gadolinium-based contrast agents shorten which relaxation time primarily?",
+        "a": "T1, making enhanced tissues appear bright on T1-weighted images",
+        "c": [
+          "T2 only, making tissues appear dark on all sequences",
+          "T1, making enhanced tissues appear bright on T1-weighted images",
+          "Neither T1 nor T2 — they affect proton density only",
+          "Both equally with no preferential effect on either"
+        ],
+        "e": "Gadolinium is paramagnetic, shortening T1 (and T2 to a lesser extent) of nearby water protons. At clinical doses, T1 shortening dominates, producing bright signal on T1W images.",
+        "d": 3
+      },
+      {
+        "id": "mri144",
+        "q": "CALC: If the field of view is 256 mm and the matrix size is 512, what is the pixel size?",
+        "a": "0.5 mm",
+        "c": [
+          "0.25 mm",
+          "0.5 mm",
+          "1.0 mm",
+          "2.0 mm"
+        ],
+        "e": "Pixel size = FOV / matrix = 256 mm / 512 = 0.5 mm. Smaller pixels improve spatial resolution but reduce SNR (less signal per voxel).",
+        "d": 2
+      },
+      {
+        "id": "mri145",
+        "q": "Wrap-around (aliasing) artifact in MRI occurs when:",
+        "a": "Anatomy outside the FOV is mapped back into the image in the phase-encode direction",
+        "c": [
+          "The scan time exceeds the allowed maximum duration",
+          "Anatomy outside the FOV is mapped back into the image in the phase-encode direction",
+          "The RF coil is positioned too far from the patient",
+          "Contrast agent concentration exceeds recommended dose"
+        ],
+        "e": "Phase-encode aliasing occurs when the FOV is smaller than the imaged anatomy. Solutions: increase FOV, use oversampling (no phase wrap), or apply saturation bands.",
+        "d": 4
+      },
+      {
+        "id": "mri146",
+        "q": "The advantage of echo planar imaging (EPI) is:",
+        "a": "Very fast acquisition (entire image in a single shot, ~50-100 ms)",
+        "c": [
+          "Superior spatial resolution compared to spin echo",
+          "Very fast acquisition (entire image in a single shot, ~50-100 ms)",
+          "Complete elimination of all motion artifacts",
+          "Higher SNR than conventional spin echo sequences"
+        ],
+        "e": "EPI acquires all k-space lines after a single excitation using rapid gradient switching. Used for DWI, fMRI, and perfusion imaging. Trade-offs: susceptibility artifacts, limited resolution, geometric distortion.",
+        "d": 5
       }
     ],
     "clinical": [
@@ -30851,6 +31891,266 @@
         ],
         "e": "ITT analysis preserves the benefits of randomization and provides an unbiased estimate of the treatment effect in clinical practice. Per-protocol analysis includes only compliant patients and may introduce bias. ITT is generally considered the primary analysis method.",
         "d": 5
+      },
+      {
+        "id": "st107",
+        "q": "What does a Type I error (α) represent in hypothesis testing?",
+        "a": "Rejecting the null hypothesis when it is actually true (false positive)",
+        "c": [
+          "Failing to reject a false null hypothesis",
+          "Rejecting the null hypothesis when it is actually true (false positive)",
+          "Accepting the alternative hypothesis correctly",
+          "Making a calculation error in the test statistic"
+        ],
+        "e": "Type I error (α) is the probability of incorrectly rejecting H₀. In medical physics, this could mean declaring equipment out of tolerance when it is actually within limits.",
+        "d": 3
+      },
+      {
+        "id": "st108",
+        "q": "In a Shewhart control chart for linac output, the action level is typically set at:",
+        "a": "± 3 standard deviations from the mean",
+        "c": [
+          "± 1 standard deviation from the mean",
+          "± 2 standard deviations from the mean",
+          "± 3 standard deviations from the mean",
+          "± 4 standard deviations from the mean"
+        ],
+        "e": "The ±3σ limits correspond to a 99.7% confidence level. Points beyond this trigger investigation and corrective action. Warning levels are typically at ±2σ.",
+        "d": 4
+      },
+      {
+        "id": "st109",
+        "q": "The Poisson distribution is appropriate for modelling:",
+        "a": "Radioactive decay events in a given time interval",
+        "c": [
+          "Patient weight distribution in a clinic",
+          "Radioactive decay events in a given time interval",
+          "Continuous dose measurements along a beam profile",
+          "Temperature variations in a treatment room"
+        ],
+        "e": "Poisson distribution models the number of events occurring in a fixed interval when events are independent and rare. Radioactive decay is the classic example in medical physics.",
+        "d": 3
+      },
+      {
+        "id": "st110",
+        "q": "CALC: A quality control measurement gives mean = 1.000 Gy, standard deviation = 0.015 Gy, over 25 measurements. What is the standard error of the mean?",
+        "a": "0.003 Gy",
+        "c": [
+          "0.003 Gy",
+          "0.006 Gy",
+          "0.015 Gy",
+          "0.060 Gy"
+        ],
+        "e": "Standard error = σ/√n = 0.015/√25 = 0.015/5 = 0.003 Gy. The SEM quantifies uncertainty in the estimate of the population mean.",
+        "d": 4
+      },
+      {
+        "id": "st111",
+        "q": "The chi-squared test in medical physics QA is commonly used to:",
+        "a": "Test whether observed frequency distributions match expected distributions",
+        "c": [
+          "Calculate the mean dose in a treatment plan",
+          "Test whether observed frequency distributions match expected distributions",
+          "Determine the half-life of a radioactive source",
+          "Measure the linearity of an ionisation chamber"
+        ],
+        "e": "Chi-squared tests compare observed vs expected frequencies. In QA, this can test whether detector response follows expected statistical distributions or whether equipment performance is consistent.",
+        "d": 5
+      },
+      {
+        "id": "st112",
+        "q": "What does the coefficient of variation (CV) express?",
+        "a": "Standard deviation as a percentage of the mean",
+        "c": [
+          "The range divided by the median value",
+          "Standard deviation as a percentage of the mean",
+          "The difference between maximum and minimum values",
+          "The ratio of variance to the sample size"
+        ],
+        "e": "CV = (σ/μ) × 100%. It provides a dimensionless measure of relative variability, useful for comparing precision across measurements with different units or scales.",
+        "d": 3
+      },
+      {
+        "id": "st113",
+        "q": "In gamma analysis, the percentage of points passing 3%/3mm criteria should typically exceed:",
+        "a": "95% for clinical IMRT plan verification",
+        "c": [
+          "80% for all treatment techniques",
+          "90% only for simple 3DCRT plans",
+          "95% for clinical IMRT plan verification",
+          "100% for any acceptable treatment plan"
+        ],
+        "e": "A ≥95% pass rate for 3%/3mm gamma criteria is the widely accepted clinical standard for IMRT/VMAT QA verification, per AAPM TG-218 recommendations.",
+        "d": 4
+      },
+      {
+        "id": "st114",
+        "q": "The paired t-test is appropriate when:",
+        "a": "Comparing two related measurements from the same sample",
+        "c": [
+          "Comparing means from three or more independent groups",
+          "Comparing two related measurements from the same sample",
+          "Testing for correlation between two variables",
+          "Analysing categorical data in a contingency table"
+        ],
+        "e": "Paired t-tests compare two related measurements (e.g., before/after, or two detectors measuring the same beam). Each pair is from the same subject or condition.",
+        "d": 4
+      },
+      {
+        "id": "st115",
+        "q": "CALC: Radioactive source counted for 1 minute gives 10,000 counts. What is the percentage uncertainty (1σ)?",
+        "a": "1.0%",
+        "c": [
+          "0.1%",
+          "0.5%",
+          "1.0%",
+          "10.0%"
+        ],
+        "e": "For Poisson statistics, σ = √N = √10000 = 100. Percentage uncertainty = (100/10000) × 100% = 1.0%. Counting statistics follow √N rule.",
+        "d": 3
+      },
+      {
+        "id": "st116",
+        "q": "What is the purpose of a Bland-Altman plot in medical physics?",
+        "a": "To assess agreement between two measurement methods by plotting differences vs means",
+        "c": [
+          "To display the dose-volume histogram for treatment plans",
+          "To assess agreement between two measurement methods by plotting differences vs means",
+          "To show the relationship between beam energy and depth dose",
+          "To graph the decay curve of radioactive isotopes"
+        ],
+        "e": "Bland-Altman plots show the difference between two methods against their mean. Limits of agreement (mean ± 1.96σ) indicate whether methods can be used interchangeably.",
+        "d": 6
+      },
+      {
+        "id": "st117",
+        "q": "The sensitivity of a radiation survey meter refers to:",
+        "a": "The minimum detectable radiation level above background",
+        "c": [
+          "The maximum dose rate the meter can display",
+          "The minimum detectable radiation level above background",
+          "The speed at which readings stabilise",
+          "The temperature range of operation"
+        ],
+        "e": "Sensitivity (minimum detectable activity/dose rate) determines whether an instrument can detect low-level contamination or radiation. Related to detector efficiency and background count rate.",
+        "d": 4
+      },
+      {
+        "id": "st118",
+        "q": "In ANOVA (Analysis of Variance), the F-statistic compares:",
+        "a": "Between-group variance to within-group variance",
+        "c": [
+          "Sample mean to population mean directly",
+          "Between-group variance to within-group variance",
+          "Maximum value to minimum value in the data",
+          "Standard deviation to standard error of mean"
+        ],
+        "e": "F = MS_between/MS_within. A large F indicates that group means differ more than expected from random variation. Used when comparing 3+ groups (e.g., output from multiple linacs).",
+        "d": 6
+      },
+      {
+        "id": "st119",
+        "q": "Dead time correction in a Geiger-Mueller counter becomes important when:",
+        "a": "Count rates are high enough that events are missed during recovery time",
+        "c": [
+          "The detector battery is running low on charge",
+          "Count rates are high enough that events are missed during recovery time",
+          "Background radiation exceeds the source activity",
+          "The detector is used in a magnetic field environment"
+        ],
+        "e": "GM tubes have dead time (~100-300 μs) after each count. At high count rates, true counts are underestimated. Correction: N_true = N_obs/(1 - N_obs × τ), where τ is dead time.",
+        "d": 5
+      },
+      {
+        "id": "st120",
+        "q": "CALC: A GM counter with dead time τ = 200 μs records 40,000 cps. What is the corrected count rate?",
+        "a": "Approximately 40,330 cps",
+        "c": [
+          "Exactly 40,000 cps — no correction needed",
+          "Approximately 40,330 cps",
+          "Approximately 41,667 cps",
+          "Approximately 50,000 cps"
+        ],
+        "e": "N_true = N_obs/(1 - N_obs × τ) = 40000/(1 - 40000 × 200×10⁻⁶) = 40000/(1 - 0.008) = 40000/0.992 ≈ 40,323 cps ≈ 40,330 cps.",
+        "d": 6
+      },
+      {
+        "id": "st121",
+        "q": "The purpose of a receiver operating characteristic (ROC) curve in diagnostic imaging is to:",
+        "a": "Evaluate diagnostic test performance by plotting sensitivity vs (1-specificity)",
+        "c": [
+          "Measure the spatial resolution of an imaging system",
+          "Evaluate diagnostic test performance by plotting sensitivity vs (1-specificity)",
+          "Calculate the radiation dose delivered during the examination",
+          "Determine the optimal kVp setting for patient imaging"
+        ],
+        "e": "ROC curves plot true positive rate (sensitivity) against false positive rate (1-specificity) at various thresholds. Area under ROC (AUC) quantifies overall diagnostic accuracy.",
+        "d": 6
+      },
+      {
+        "id": "st122",
+        "q": "What is the difference between accuracy and precision in measurement?",
+        "a": "Accuracy is closeness to true value; precision is reproducibility of measurements",
+        "c": [
+          "Accuracy and precision mean exactly the same thing",
+          "Accuracy is closeness to true value; precision is reproducibility of measurements",
+          "Accuracy relates to speed; precision relates to cost",
+          "Accuracy is for analog instruments; precision for digital"
+        ],
+        "e": "A measurement can be precise but inaccurate (systematic error) or accurate but imprecise (random error). Good QA requires both high accuracy and high precision.",
+        "d": 2
+      },
+      {
+        "id": "st123",
+        "q": "The propagation of uncertainty for a product z = xy gives the relative uncertainty as:",
+        "a": "√[(δx/x)² + (δy/y)²]",
+        "c": [
+          "δx + δy",
+          "(δx/x) + (δy/y)",
+          "√[(δx/x)² + (δy/y)²]",
+          "(δx × δy)/(x × y)"
+        ],
+        "e": "For multiplication/division, relative (fractional) uncertainties add in quadrature. For addition/subtraction, absolute uncertainties add in quadrature.",
+        "d": 5
+      },
+      {
+        "id": "st124",
+        "q": "In process control, a trend of 7 consecutive points on one side of the mean on a control chart indicates:",
+        "a": "A systematic shift requiring investigation even if all points are within limits",
+        "c": [
+          "Normal random variation in the measurement process",
+          "A systematic shift requiring investigation even if all points are within limits",
+          "Equipment has failed and must be removed from service",
+          "The control limits need to be recalculated immediately"
+        ],
+        "e": "The \"rule of 7\" (or similar run rules) detects systematic drift before control limits are breached. Western Electric rules use various patterns to detect non-random behaviour.",
+        "d": 5
+      },
+      {
+        "id": "st125",
+        "q": "What is the purpose of regression analysis in medical physics research?",
+        "a": "To model the relationship between dependent and independent variables",
+        "c": [
+          "To calculate the mean and standard deviation of a dataset",
+          "To model the relationship between dependent and independent variables",
+          "To test whether two samples come from the same population",
+          "To rank measurements from smallest to largest value"
+        ],
+        "e": "Linear regression models y = mx + b relationships (e.g., dose vs depth, detector response vs energy). R² indicates the proportion of variance explained by the model.",
+        "d": 4
+      },
+      {
+        "id": "st126",
+        "q": "CALC: Five daily output measurements are: 1.002, 0.998, 1.001, 0.999, 1.000 Gy. What is the sample standard deviation?",
+        "a": "0.0016 Gy",
+        "c": [
+          "0.0010 Gy",
+          "0.0016 Gy",
+          "0.0040 Gy",
+          "0.0158 Gy"
+        ],
+        "e": "Mean = 1.0000. Deviations: 0.002, -0.002, 0.001, -0.001, 0.000. Sum of squares = 0.000010. Variance = 0.000010/4 = 0.0000025. SD = √0.0000025 = 0.00158 ≈ 0.0016 Gy.",
+        "d": 5
       }
     ],
     "anatomy": [
@@ -32361,6 +33661,266 @@
         ],
         "e": "The parameter m describes the steepness of the dose-response curve in the Lyman model.",
         "d": 6
+      },
+      {
+        "id": "an117",
+        "q": "The maximum tolerable dose to the whole brain in conventional fractionation (TD 5/5) is approximately:",
+        "a": "50 Gy in 25 fractions (2 Gy/fraction)",
+        "c": [
+          "30 Gy in 15 fractions for all patients",
+          "50 Gy in 25 fractions (2 Gy/fraction)",
+          "70 Gy in 35 fractions for all patients",
+          "90 Gy with no upper limit for brain"
+        ],
+        "e": "QUANTEC: whole brain TD 5/5 ≈ 50 Gy at 2 Gy/fx. Risk of symptomatic radiation necrosis increases above this. Partial brain can tolerate higher doses depending on volume.",
+        "d": 4
+      },
+      {
+        "id": "an118",
+        "q": "The brachial plexus dose constraint for SBRT is typically:",
+        "a": "Maximum dose ≤ 24 Gy in 3 fractions",
+        "c": [
+          "Maximum dose ≤ 10 Gy in 3 fractions",
+          "Maximum dose ≤ 24 Gy in 3 fractions",
+          "Maximum dose ≤ 50 Gy in 3 fractions",
+          "No dose constraint exists for brachial plexus"
+        ],
+        "e": "AAPM TG-101 recommends brachial plexus Dmax ≤ 24 Gy in 3 fractions for SBRT. Exceeding this increases risk of plexopathy causing arm weakness and pain.",
+        "d": 6
+      },
+      {
+        "id": "an119",
+        "q": "The optic chiasm is located:",
+        "a": "Above the pituitary gland at the base of the brain where optic nerves cross",
+        "c": [
+          "Within the posterior fossa near the cerebellum",
+          "Above the pituitary gland at the base of the brain where optic nerves cross",
+          "In the temporal lobe adjacent to the hippocampus",
+          "Behind the eyeball within the orbital socket"
+        ],
+        "e": "The optic chiasm lies superior to the pituitary fossa (sella turcica). It is a critical OAR in pituitary and parasellar tumour treatments. Max dose ~54 Gy conventional fractionation.",
+        "d": 4
+      },
+      {
+        "id": "an120",
+        "q": "QUANTEC recommends that the mean lung dose (MLD) for bilateral lungs should not exceed:",
+        "a": "20 Gy to keep pneumonitis risk below 20%",
+        "c": [
+          "7 Gy to eliminate any risk of pneumonitis",
+          "20 Gy to keep pneumonitis risk below 20%",
+          "35 Gy which is the absolute maximum tolerable dose",
+          "There is no recommended mean lung dose constraint"
+        ],
+        "e": "QUANTEC: MLD ≤ 20 Gy and V20 ≤ 30-35% correlate with <20% symptomatic pneumonitis risk. These are key constraints in thoracic radiotherapy planning.",
+        "d": 5
+      },
+      {
+        "id": "an121",
+        "q": "The femoral heads dose constraint in pelvic radiotherapy is typically:",
+        "a": "V50 < 5% (no more than 5% volume receiving 50 Gy)",
+        "c": [
+          "Mean dose must be below 20 Gy always",
+          "V50 < 5% (no more than 5% volume receiving 50 Gy)",
+          "Maximum point dose below 30 Gy",
+          "No constraint as femoral heads are not radiosensitive"
+        ],
+        "e": "QUANTEC: V50 < 5% for femoral heads to minimize risk of avascular necrosis (AVN). Some protocols use V40 < 40% or mean dose < 40 Gy.",
+        "d": 5
+      },
+      {
+        "id": "an122",
+        "q": "The parotid gland dose constraint to preserve salivary function is:",
+        "a": "Mean dose < 26 Gy to at least one parotid, or < 20 Gy to both",
+        "c": [
+          "Maximum point dose below 10 Gy",
+          "Mean dose < 26 Gy to at least one parotid, or < 20 Gy to both",
+          "V5 < 50% for both parotid glands",
+          "No constraint exists for parotid glands"
+        ],
+        "e": "QUANTEC: Mean dose <26 Gy to at least one parotid gland preserves salivary flow and reduces xerostomia. Bilateral sparing is preferred when achievable.",
+        "d": 5
+      },
+      {
+        "id": "an123",
+        "q": "The cochlea dose constraint in head and neck radiotherapy is:",
+        "a": "Mean dose < 45 Gy to reduce risk of sensorineural hearing loss",
+        "c": [
+          "Maximum dose < 20 Gy to the cochlea",
+          "Mean dose < 45 Gy to reduce risk of sensorineural hearing loss",
+          "V10 < 100% for both cochleae",
+          "No constraint — hearing is not affected by radiation"
+        ],
+        "e": "QUANTEC: Mean cochlear dose <45 Gy (ideally <35 Gy with concurrent cisplatin) minimizes sensorineural hearing loss risk, especially at high frequencies.",
+        "d": 6
+      },
+      {
+        "id": "an124",
+        "q": "The kidneys dose constraint for bilateral kidney irradiation is:",
+        "a": "Mean dose < 18 Gy to preserve renal function (TD 5/5)",
+        "c": [
+          "Mean dose < 5 Gy for both kidneys combined",
+          "Mean dose < 18 Gy to preserve renal function (TD 5/5)",
+          "V30 < 50% for each kidney separately",
+          "Maximum dose < 10 Gy to either kidney"
+        ],
+        "e": "QUANTEC: Bilateral kidney mean dose <18 Gy or V20 <32%. If one kidney is sacrificed, the remaining kidney should receive mean <18 Gy to maintain adequate renal function.",
+        "d": 5
+      },
+      {
+        "id": "an125",
+        "q": "The penile bulb is contoured as an OAR in prostate radiotherapy to reduce risk of:",
+        "a": "Erectile dysfunction from radiation damage to erectile tissue",
+        "c": [
+          "Urinary incontinence from sphincter damage",
+          "Erectile dysfunction from radiation damage to erectile tissue",
+          "Rectal bleeding from mucosal irritation",
+          "Bone marrow suppression in the pelvis"
+        ],
+        "e": "The penile bulb contains the proximal corpus spongiosum. QUANTEC: mean dose <52.5 Gy or D90 <50 Gy to reduce erectile dysfunction rates.",
+        "d": 5
+      },
+      {
+        "id": "an126",
+        "q": "The small bowel dose constraint in pelvic radiotherapy is:",
+        "a": "V45 < 195 cc (absolute volume receiving ≥ 45 Gy)",
+        "c": [
+          "Mean dose to entire bowel < 20 Gy always",
+          "V45 < 195 cc (absolute volume receiving ≥ 45 Gy)",
+          "Maximum point dose below 35 Gy anywhere",
+          "No constraint — bowel tolerates high doses well"
+        ],
+        "e": "QUANTEC: For small bowel, V45 < 195 cc (volume-based) limits grade 3+ toxicity to <10%. Individual bowel loops should avoid hot spots above 50 Gy.",
+        "d": 5
+      },
+      {
+        "id": "an127",
+        "q": "The lens of the eye has the lowest radiation tolerance of any structure, with a threshold dose of approximately:",
+        "a": "5-10 Gy for cataract formation",
+        "c": [
+          "0.5 Gy — virtually any dose causes cataracts",
+          "5-10 Gy for cataract formation",
+          "30 Gy — similar tolerance to the retina",
+          "50 Gy — same as the optic nerve"
+        ],
+        "e": "The lens is extremely radiosensitive. ICRP now recommends an occupational eye dose limit of 20 mSv/year (reduced from 150 mSv). Therapeutic threshold for cataract is ~5-10 Gy.",
+        "d": 4
+      },
+      {
+        "id": "an128",
+        "q": "The larynx dose constraint in head and neck radiotherapy aims to preserve:",
+        "a": "Voice quality by limiting mean laryngeal dose to < 45 Gy",
+        "c": [
+          "Swallowing function by keeping max dose < 20 Gy",
+          "Voice quality by limiting mean laryngeal dose to < 45 Gy",
+          "Breathing capacity by excluding larynx from all fields",
+          "Taste sensation by sparing the epiglottis"
+        ],
+        "e": "Laryngeal edema and voice changes correlate with mean larynx dose. Keeping mean dose <45 Gy (ideally <40 Gy) reduces dysphonia and aspiration risk.",
+        "d": 5
+      },
+      {
+        "id": "an129",
+        "q": "The heart dose constraint for left-sided breast radiotherapy is:",
+        "a": "Mean heart dose < 4 Gy, V25 < 10%",
+        "c": [
+          "Mean heart dose < 20 Gy with no volume constraint",
+          "Mean heart dose < 4 Gy, V25 < 10%",
+          "Maximum point dose to heart < 2 Gy",
+          "No constraint for heart in breast treatments"
+        ],
+        "e": "QUANTEC: V25 <10% reduces long-term cardiac mortality risk. Darby et al. showed ~7.4% increase in major coronary events per Gy of mean heart dose. Mean <4 Gy is a practical goal.",
+        "d": 5
+      },
+      {
+        "id": "an130",
+        "q": "The hippocampus is spared during whole brain radiotherapy to preserve:",
+        "a": "Neurocognitive function, particularly memory formation",
+        "c": [
+          "Motor function and coordination abilities",
+          "Neurocognitive function, particularly memory formation",
+          "Vision and visual processing capabilities",
+          "Hormonal regulation by the hypothalamus"
+        ],
+        "e": "The hippocampus is critical for memory consolidation. RTOG 0933 showed hippocampal avoidance WBRT (HA-WBRT) preserves memory and QoL compared to standard WBRT.",
+        "d": 4
+      },
+      {
+        "id": "an131",
+        "q": "The esophagus dose constraint in thoracic radiotherapy is:",
+        "a": "Mean dose < 34 Gy or V50 < 40% to limit grade 3+ esophagitis",
+        "c": [
+          "Maximum dose < 15 Gy anywhere on the oesophagus",
+          "Mean dose < 34 Gy or V50 < 40% to limit grade 3+ esophagitis",
+          "V10 < 100% is the only relevant constraint",
+          "No constraint — oesophagus is radioresistant"
+        ],
+        "e": "QUANTEC: Mean oesophageal dose <34 Gy correlates with <5-20% grade 3+ acute esophagitis. Concurrent chemotherapy increases risk at any dose level.",
+        "d": 6
+      },
+      {
+        "id": "an132",
+        "q": "The spinal cord maximum dose tolerance in conventional fractionation is:",
+        "a": "45-50 Gy to keep myelopathy risk below 0.2%",
+        "c": [
+          "20 Gy as any higher dose causes paralysis",
+          "45-50 Gy to keep myelopathy risk below 0.2%",
+          "70 Gy — the cord is relatively radioresistant",
+          "No established limit for spinal cord dose"
+        ],
+        "e": "QUANTEC: Maximum cord dose 45-50 Gy at 2 Gy/fx gives <0.2% myelopathy risk. The 50 Gy limit is widely used. For partial cord, slightly higher doses may be acceptable.",
+        "d": 4
+      },
+      {
+        "id": "an133",
+        "q": "The rectum dose constraint in prostate radiotherapy per QUANTEC is:",
+        "a": "V75 < 15%, V70 < 20%, V65 < 25% for grade 2+ rectal toxicity",
+        "c": [
+          "Mean rectal dose must be below 30 Gy",
+          "V75 < 15%, V70 < 20%, V65 < 25% for grade 2+ rectal toxicity",
+          "Maximum point dose below 60 Gy anywhere",
+          "Only circumferential dose matters for rectal toxicity"
+        ],
+        "e": "QUANTEC provides dose-volume thresholds: V50 <50%, V60 <35%, V65 <25%, V70 <20%, V75 <15%. The rectal wall receives highest dose in posterior prostate approaches.",
+        "d": 6
+      },
+      {
+        "id": "an134",
+        "q": "The liver dose constraint for whole liver irradiation is:",
+        "a": "Mean dose < 30-32 Gy in conventional fractionation",
+        "c": [
+          "Maximum dose < 15 Gy for the entire liver",
+          "Mean dose < 30-32 Gy in conventional fractionation",
+          "V20 < 80% for hepatocellular carcinoma cases",
+          "No constraint exists for liver irradiation"
+        ],
+        "e": "QUANTEC: Mean liver dose <30-32 Gy (conventional fractionation) limits RILD risk to <5%. For SBRT, at least 700 cc of normal liver should receive <15 Gy.",
+        "d": 5
+      },
+      {
+        "id": "an135",
+        "q": "The brainstem maximum dose constraint in conventional fractionation is:",
+        "a": "54 Gy maximum to the entire brainstem",
+        "c": [
+          "30 Gy maximum to prevent any toxicity",
+          "54 Gy maximum to the entire brainstem",
+          "70 Gy — same tolerance as cerebral cortex",
+          "No established dose limit for the brainstem"
+        ],
+        "e": "QUANTEC: Brainstem max dose 54 Gy for entire structure; small volumes (1-10 cc) may tolerate up to 59 Gy. Risk of cranial neuropathy and necrosis above these levels.",
+        "d": 4
+      },
+      {
+        "id": "an136",
+        "q": "The mandible dose constraint in head and neck radiotherapy is important to prevent:",
+        "a": "Osteoradionecrosis (ORN) by limiting V70 and maximum dose",
+        "c": [
+          "Tooth decay which occurs at any radiation dose level",
+          "Osteoradionecrosis (ORN) by limiting V70 and maximum dose",
+          "Temporomandibular joint stiffness from trismus only",
+          "Salivary gland damage within the mandibular body"
+        ],
+        "e": "ORN risk increases significantly with mandible doses >70 Gy. Risk is highest in the posterior body/ramus. Dental extractions should be done pre-RT. V70 to mandible should be minimized.",
+        "d": 5
       }
     ]
   }

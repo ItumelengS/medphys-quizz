@@ -2600,6 +2600,127 @@ export const crosswordClues: CrosswordClue[] = [
   { id: "cw-3364", clue: "Incident reporting system for near-misses and errors in radiotherapy", answer: "INCIDENT", category: "Clinical Workflow", difficulty: "medium" },
   { id: "cw-3365", clue: "Time-out procedure performed before beam-on to verify patient identity", answer: "TIMEOUT", category: "Clinical Workflow", difficulty: "easy" },
   { id: "cw-3366", clue: "Chart round meeting to discuss plan quality and patient progress", answer: "CHARTROUND", category: "Clinical Workflow", difficulty: "medium" },
+
+  // === South African Medical Physics ===
+  // SA Regulatory & Professional Bodies
+  { id: "cw-3367", clue: "South African regulatory body for nuclear energy and radiation safety (abbr.)", answer: "NNR", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3368", clue: "SA health professions council that registers medical physicists (abbr.)", answer: "HPCSA", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3369", clue: "Professional body for medical physicists in South Africa (abbr.)", answer: "SAMP", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3370", clue: "SA government department responsible for health policy and regulation (abbr.)", answer: "DOH", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3371", clue: "SA national standards body that maintains radiation measurement standards (abbr.)", answer: "NMISA", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3372", clue: "Professional registration category for medical physicists in South Africa", answer: "PHYSICIST", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3373", clue: "SA radiation protection legislation governing use of radioactive sources", answer: "NNR ACT", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3374", clue: "SA council responsible for quality standards in healthcare (abbr.)", answer: "OHSC", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3375", clue: "SA agency managing nuclear technology research at Pelindaba (abbr.)", answer: "NECSA", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3376", clue: "Organization coordinating oncology services across SA provinces", answer: "CANSA", category: "SA Medical Physics", difficulty: "easy" },
+
+  // SA Treatment Centres & Institutions
+  { id: "cw-3377", clue: "Johannesburg academic hospital with major radiation oncology department", answer: "CHARLOTTE MAXEKE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3378", clue: "Cape Town hospital housing a leading radiation oncology unit at Groote Schuur", answer: "GROOTE SCHUUR", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3379", clue: "Pretoria academic hospital with comprehensive cancer treatment facilities", answer: "STEVE BIKO", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3380", clue: "Durban hospital with KwaZulu-Natal's largest oncology department", answer: "INKOSI ALBERT LUTHULI", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3381", clue: "Bloemfontein academic hospital serving the Free State oncology patients", answer: "UNIVERSITAS", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3382", clue: "Private SA hospital group operating radiation oncology across multiple sites", answer: "NETCARE", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3383", clue: "SA university in Cape Town training medical physicists at postgraduate level (abbr.)", answer: "UCT", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3384", clue: "SA university in Johannesburg offering medical physics training (abbr.)", answer: "WITS", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3385", clue: "Eastern Cape academic hospital providing oncology services", answer: "DORA NGINZA", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3386", clue: "Soweto hospital with radiation therapy services in Gauteng", answer: "CHRIS HANI BARAGWANATH", category: "SA Medical Physics", difficulty: "hard" },
+
+  // SA Nuclear & Isotope Production
+  { id: "cw-3387", clue: "SA site near Pretoria where nuclear research reactor SAFARI-1 is located", answer: "PELINDABA", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3388", clue: "SA research reactor used to produce medical isotopes like Mo-99", answer: "SAFARI", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3389", clue: "SA company that is a major global supplier of molybdenum-99 (abbr.)", answer: "NTP", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3390", clue: "Medical isotope produced at Pelindaba used in technetium generators", answer: "MOLYBDENUM", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3391", clue: "Daughter isotope from Mo-99 decay used widely in SA nuclear medicine", answer: "TECHNETIUM", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3392", clue: "SA facility producing iodine-131 for thyroid therapy", answer: "NTP RADIOISOTOPES", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3393", clue: "Type of generator shipped from SA globally for Tc-99m production", answer: "MOLYGENERATOR", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3394", clue: "Process used at SAFARI-1 to irradiate targets for isotope production", answer: "FISSION", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3395", clue: "SA supplies approximately this percentage of global Mo-99 demand", answer: "FIFTEEN", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3396", clue: "Enrichment level of uranium targets used in SA medical isotope production (abbr.)", answer: "LEU", category: "SA Medical Physics", difficulty: "hard" },
+
+  // SA Clinical Practice
+  { id: "cw-3397", clue: "Most common cancer treated with radiotherapy in South African women", answer: "CERVICAL", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3398", clue: "HDR brachytherapy technique widely used for cervical cancer in SA", answer: "BRACHYTHERAPY", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3399", clue: "Common SA radiotherapy fractionation scheme using fewer larger fractions", answer: "HYPOFRACTIONATION", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3400", clue: "Challenge in SA oncology due to patients presenting at advanced stages", answer: "LATE PRESENTATION", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3401", clue: "Cobalt-60 teletherapy units still in use at some SA public hospitals", answer: "COBALT", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3402", clue: "HIV-related cancer with high incidence in SA requiring radiotherapy", answer: "KAPOSI", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3403", clue: "Palliative radiotherapy technique commonly used for pain relief in SA", answer: "SINGLE FRACTION", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3404", clue: "2D radiotherapy planning technique still used in resource-limited SA centres", answer: "CONVENTIONAL", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3405", clue: "Cancer type with high burden in SA linked to mining dust exposure", answer: "MESOTHELIOMA", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3406", clue: "SA initiative to improve cancer treatment access in rural communities", answer: "OUTREACH", category: "SA Medical Physics", difficulty: "medium" },
+
+  // SA Equipment & Infrastructure
+  { id: "cw-3407", clue: "Linear accelerator brand commonly installed at SA public hospitals", answer: "ELEKTA", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3408", clue: "CT simulator used for radiotherapy planning in SA oncology departments", answer: "SIMULATOR", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3409", clue: "Treatment planning system widely used across SA radiation oncology centres", answer: "MONACO", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3410", clue: "SA challenge where equipment maintenance is limited by distance and cost", answer: "SERVICE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3411", clue: "Dosimetry audit service available to SA radiotherapy centres (abbr.)", answer: "TLD", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3412", clue: "International audit programme SA centres participate in via IAEA postal dosimetry", answer: "POSTAL AUDIT", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3413", clue: "Power supply challenge affecting SA linac operation and patient treatment", answer: "LOADSHEDDING", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3414", clue: "Backup power system essential for SA radiotherapy during electricity cuts", answer: "UPS", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3415", clue: "Imaging modality increasingly available at SA tertiary hospitals for oncology staging", answer: "PETCT", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3416", clue: "Portal imaging device used for treatment verification on SA linacs (abbr.)", answer: "EPID", category: "SA Medical Physics", difficulty: "medium" },
+
+  // SA Radiation Protection Practice
+  { id: "cw-3417", clue: "SA annual occupational dose limit for radiation workers in millisieverts", answer: "TWENTY", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3418", clue: "Personal monitoring device worn by SA radiation workers", answer: "DOSIMETER", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3419", clue: "SA personal dosimetry service provider based at NECSA", answer: "RPS", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3420", clue: "NNR licence required before operating radiation equipment in SA", answer: "AUTHORISATION", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3421", clue: "SA regulatory requirement for shielding design of new radiotherapy bunkers", answer: "SHIELDING REPORT", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3422", clue: "Radiation safety officer role required at SA licensed radiation facilities (abbr.)", answer: "RSO", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3423", clue: "SA regulatory inspection performed by NNR at licensed radiation facilities", answer: "COMPLIANCE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3424", clue: "Transport regulations for radioactive materials in SA based on IAEA standards", answer: "TRANSPORT", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3425", clue: "SA emergency plan required for Category 1 and 2 radioactive sources", answer: "EMERGENCY PLAN", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3426", clue: "Waste disposal pathway for disused radioactive sources in SA via NECSA", answer: "VAALPUTS", category: "SA Medical Physics", difficulty: "hard" },
+
+  // SA Medical Physics Training & Education
+  { id: "cw-3427", clue: "Minimum degree level required for medical physics registration in SA", answer: "MASTERS", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3428", clue: "SA medical physics clinical training period typically lasting two years", answer: "INTERNSHIP", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3429", clue: "SA medical physics board exam administered by HPCSA for registration", answer: "BOARD EXAM", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3430", clue: "International organization supporting medical physics education in SA (abbr.)", answer: "IAEA", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3431", clue: "IAEA fellowship programme that SA medical physicists can apply for", answer: "FELLOWSHIP", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3432", clue: "SA shortage of qualified medical physicists especially in public sector", answer: "SHORTAGE", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3433", clue: "Continuing professional development required for SA HPCSA registration (abbr.)", answer: "CPD", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3434", clue: "SA university offering medical physics MSc programme in KwaZulu-Natal (abbr.)", answer: "UKZN", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3435", clue: "International medical physics certification body SA recognises (abbr.)", answer: "IOMP", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3436", clue: "African regional medical physics organization SA participates in (abbr.)", answer: "FAMPO", category: "SA Medical Physics", difficulty: "hard" },
+
+  // SA QA & Standards
+  { id: "cw-3437", clue: "IAEA protocol used for absorbed dose calibration in SA radiotherapy (abbr. with number)", answer: "TRS398", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3438", clue: "Primary standard dosimetry laboratory providing calibrations for SA (abbr.)", answer: "NMISA", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3439", clue: "Ionization chamber calibration traceable to SA national standards", answer: "CALIBRATION", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3440", clue: "Daily QA device used on SA linacs to check beam output consistency", answer: "DAILY QA", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3441", clue: "Annual comprehensive QA performed on SA linacs including beam data verification", answer: "ANNUAL QA", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3442", clue: "SA tolerance level for linac output constancy check in percentage", answer: "THREE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3443", clue: "Film-based 2D dosimetry system used for IMRT QA in SA centres", answer: "GAFCHROMIC", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3444", clue: "Phantom used for end-to-end testing in SA radiotherapy departments", answer: "ANTHROPOMORPHIC", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3445", clue: "SA requirement for independent dose calculation check before treatment", answer: "INDEPENDENT CHECK", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3446", clue: "Gamma analysis criterion commonly used for IMRT QA in SA (percentage/mm)", answer: "THREE THREE", category: "SA Medical Physics", difficulty: "hard" },
+
+  // SA Diagnostic & Nuclear Medicine Practice
+  { id: "cw-3447", clue: "Most common nuclear medicine procedure performed in SA hospitals", answer: "BONE SCAN", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3448", clue: "Thyroid imaging radioisotope widely available in SA nuclear medicine", answer: "PERTECHNETATE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3449", clue: "SA guideline framework for diagnostic reference levels in radiology (abbr.)", answer: "DRL", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3450", clue: "Mammography screening programme challenges in SA due to resource constraints", answer: "SCREENING", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3451", clue: "Mobile X-ray units used in SA rural healthcare facilities", answer: "MOBILE", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3452", clue: "SA regulatory requirement for X-ray room shielding assessment", answer: "SHIELDING SURVEY", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3453", clue: "Fluoroscopy dose management concern in SA interventional radiology", answer: "FLUOROSCOPY", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3454", clue: "SA paediatric radiology challenge requiring adapted imaging protocols", answer: "PAEDIATRIC", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3455", clue: "Digital radiography transition replacing film-screen systems across SA", answer: "DIGITAL", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3456", clue: "SA nuclear medicine therapy using I-131 for differentiated thyroid cancer", answer: "RADIOIODINE", category: "SA Medical Physics", difficulty: "medium" },
+
+  // SA Geography & Cancer Burden
+  { id: "cw-3457", clue: "SA province with the most radiation oncology facilities", answer: "GAUTENG", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3458", clue: "SA province with significant oncology access challenges due to rural geography", answer: "LIMPOPO", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3459", clue: "SA national cancer registry that tracks cancer incidence data (abbr.)", answer: "NCR", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3460", clue: "Leading cancer type by incidence among SA men", answer: "PROSTATE", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3461", clue: "Leading cancer type by incidence among SA women", answer: "BREAST", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3462", clue: "SA province on the Western Cape with major academic oncology centres", answer: "WESTERN CAPE", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3463", clue: "SA national health insurance scheme aimed at improving healthcare access (abbr.)", answer: "NHI", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3464", clue: "Ratio of oncologists to population highlighting SA healthcare disparity", answer: "WORKFORCE", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3465", clue: "SA mining industry link to occupational lung disease and cancer risk", answer: "MINING", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3466", clue: "SA tobacco-related cancer prevention efforts targeting this organ", answer: "LUNG", category: "SA Medical Physics", difficulty: "easy" },
 ];
 
 /** Get all unique categories */

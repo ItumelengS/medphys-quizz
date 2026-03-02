@@ -79,9 +79,11 @@ export function calculateXp(
   let baseXp = 0;
   let bonusXp = 0;
   const dailyBonusXp = mode === "daily" ? dailyStreak * 5 : 0;
-  const perfectBonusXp = correct === total && total > 0 ? 50 : 0;
+  const perfectBonusXp = correct === total && total > 0 && mode !== "arena" ? 50 : 0;
 
-  if (mode === "review") {
+  if (mode === "arena") {
+    baseXp = Math.floor(points * 0.15);
+  } else if (mode === "review") {
     baseXp = correct * 5 + (total - correct) * 2;
   } else if (mode === "daily") {
     baseXp = Math.floor(points * 1.5);

@@ -242,5 +242,5 @@ export function getTournamentSlots(now = new Date()): TournamentSlot[] {
 
 /** Calculate points for a tournament round. */
 export function calculateTournamentRoundPoints(correct: number, timeBonus: number): number {
-  return correct * 100 + timeBonus;
+  return correct * 50 + timeBonus;
 }

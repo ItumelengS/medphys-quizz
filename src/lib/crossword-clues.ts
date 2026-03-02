@@ -2753,6 +2753,128 @@ export const crosswordClues: CrosswordClue[] = [
   { id: "cw-3494", clue: "SAHPRA unique device identification system for tracking medical devices (abbr.)", answer: "UDI", category: "SA Medical Physics", difficulty: "medium" },
   { id: "cw-3495", clue: "SAHPRA guidance document format providing regulatory advice to device manufacturers", answer: "GUIDELINE", category: "SA Medical Physics", difficulty: "easy" },
   { id: "cw-3496", clue: "SAHPRA penalty for operating unregistered radiation equipment in SA", answer: "SUSPENSION", category: "SA Medical Physics", difficulty: "medium" },
+
+  // === SAHPRA Deep Dive ===
+  // SAHPRA Governance & Structure
+  { id: "cw-3497", clue: "SAHPRA board appointed by this SA government minister", answer: "MINISTER OF HEALTH", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3498", clue: "Number of members on the SAHPRA board including the chairperson", answer: "FIFTEEN", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3499", clue: "SAHPRA CEO title reflecting the authority's regulatory mandate", answer: "REGISTRAR", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3500", clue: "SAHPRA division specifically handling medical device and IVD regulation", answer: "MEDICAL DEVICES", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3501", clue: "SAHPRA division managing radiation-emitting devices and radioactive sources", answer: "RADIATION CONTROL", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3502", clue: "SA Act number 101 of 1965 under which SAHPRA derives its authority for medicines", answer: "MEDICINES ACT", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3503", clue: "SA Hazardous Substances Act that governs SAHPRA radiation control functions", answer: "HSA", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3504", clue: "SAHPRA annual report submitted to Parliament detailing regulatory activities", answer: "ANNUAL REPORT", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3505", clue: "SAHPRA strategic plan period typically covering this many financial years", answer: "FIVE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3506", clue: "SAHPRA funding model combining government allocation and this revenue source", answer: "USER FEES", category: "SA Medical Physics", difficulty: "medium" },
+
+  // SAHPRA Medical Device Lifecycle
+  { id: "cw-3507", clue: "SAHPRA pre-submission meeting where manufacturers discuss device classification before formal application", answer: "PRESUBMISSION", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3508", clue: "SAHPRA conformity assessment body that audits manufacturer quality systems (abbr.)", answer: "CAB", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3509", clue: "SAHPRA essential principles checklist verifying device safety and performance", answer: "ESSENTIAL PRINCIPLES", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3510", clue: "SAHPRA technical documentation file submitted with Class C and D device applications", answer: "TECHNICAL FILE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3511", clue: "SAHPRA Class B device registration pathway requiring summary technical documentation", answer: "ABRIDGED", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3512", clue: "SAHPRA risk management standard referenced for all medical device submissions", answer: "ISO FOURTEEN NINE SEVEN ONE", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3513", clue: "SAHPRA declaration of conformity signed by the manufacturer affirming regulatory compliance", answer: "DECLARATION", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3514", clue: "SAHPRA authorized representative role for foreign manufacturers without SA presence", answer: "AUTHORISED REPRESENTATIVE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3515", clue: "SAHPRA establishment licence renewal period in years", answer: "THREE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3516", clue: "SAHPRA change notification required when modifying an already-registered device", answer: "VARIATION", category: "SA Medical Physics", difficulty: "medium" },
+
+  // SAHPRA Radiation Control Specifics
+  { id: "cw-3517", clue: "SAHPRA Group II hazardous substance category covering diagnostic X-ray equipment", answer: "GROUP TWO", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3518", clue: "SAHPRA Group III hazardous substance covering therapeutic radiation equipment", answer: "GROUP THREE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3519", clue: "SAHPRA Group IV hazardous substance category for radioactive materials", answer: "GROUP FOUR", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3520", clue: "SAHPRA licence to operate diagnostic X-ray equipment at a specific facility", answer: "LICENCE TO USE", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3521", clue: "SAHPRA requirement for a qualified person to supervise radiation equipment use", answer: "RESPONSIBLE PERSON", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3522", clue: "SAHPRA inspection frequency for high-risk radiation therapy installations", answer: "ANNUAL", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3523", clue: "SAHPRA radiation control certificate number format identifying the licensed facility", answer: "RCC NUMBER", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3524", clue: "SAHPRA requirement for radiation workers to undergo this type of health surveillance", answer: "MEDICAL SURVEILLANCE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3525", clue: "SAHPRA transport permit needed for moving radioactive sources between SA facilities", answer: "TRANSPORT PERMIT", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3526", clue: "SAHPRA decommissioning approval required before disposing of radiation equipment", answer: "DECOMMISSIONING", category: "SA Medical Physics", difficulty: "medium" },
+
+  // SAHPRA Compliance & Enforcement
+  { id: "cw-3527", clue: "SAHPRA compliance notice issued when a facility fails to meet regulatory conditions", answer: "COMPLIANCE NOTICE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3528", clue: "SAHPRA enforcement action that temporarily halts a facility's radiation operations", answer: "SUSPENSION", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3529", clue: "SAHPRA worst-case enforcement action permanently removing a facility's radiation licence", answer: "REVOCATION", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3530", clue: "SAHPRA administrative fine mechanism for minor regulatory non-compliance", answer: "PENALTY", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3531", clue: "SAHPRA corrective action plan required from facilities after inspection findings", answer: "CORRECTIVE ACTION", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3532", clue: "SAHPRA appeals process available to applicants who disagree with regulatory decisions", answer: "APPEAL", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3533", clue: "SAHPRA mandatory incident reporting timeframe for serious device-related adverse events in hours", answer: "FORTY EIGHT", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3534", clue: "SAHPRA field safety notice communicated to healthcare facilities about device hazards", answer: "FIELD SAFETY NOTICE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3535", clue: "SAHPRA condition of licence requiring facilities to maintain records for this many years", answer: "FIVE", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3536", clue: "SAHPRA whistleblower mechanism allowing anonymous reporting of regulatory violations", answer: "HOTLINE", category: "SA Medical Physics", difficulty: "easy" },
+
+  // SAHPRA International & Harmonisation
+  { id: "cw-3537", clue: "International forum for medical device regulation that SAHPRA participates in (abbr.)", answer: "IMDRF", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3538", clue: "African medicines regulatory harmonisation initiative SAHPRA leads (abbr.)", answer: "AMRH", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3539", clue: "WHO programme for prequalification of medical devices that SAHPRA aligns with", answer: "PREQUALIFICATION", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3540", clue: "Global harmonisation task force document series that SAHPRA device rules are based on (abbr.)", answer: "GHTF", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3541", clue: "SAHPRA mutual recognition agreement with other African regulatory authorities", answer: "MUTUAL RECOGNITION", category: "SA Medical Physics", difficulty: "hard" },
+  { id: "cw-3542", clue: "SAHPRA reliance pathway accepting device approvals from EU, US FDA, and this Australian body (abbr.)", answer: "TGA", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3543", clue: "European CE marking that SAHPRA previously accepted as evidence of device conformity", answer: "CE MARK", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3544", clue: "US regulatory body whose device approvals SAHPRA considers under reliance pathway (abbr.)", answer: "FDA", category: "SA Medical Physics", difficulty: "easy" },
+  { id: "cw-3545", clue: "SAHPRA transition period allowing devices registered under old MCC rules to remain on market", answer: "TRANSITIONAL", category: "SA Medical Physics", difficulty: "medium" },
+  { id: "cw-3546", clue: "African continental free trade area impacting SAHPRA device harmonisation (abbr.)", answer: "AFCFTA", category: "SA Medical Physics", difficulty: "hard" },
+
+  // === Radiation Protection Deep Dive ===
+  // Fundamental Principles & Quantities
+  { id: "cw-3547", clue: "Radiation protection principle requiring all exposures to be as low as reasonably achievable (abbr.)", answer: "ALARA", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3548", clue: "Radiation protection principle requiring net benefit to outweigh radiation detriment", answer: "JUSTIFICATION", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3549", clue: "Radiation protection principle setting upper bounds on individual doses", answer: "DOSE LIMITATION", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3550", clue: "Quantity measuring energy deposited per unit mass of tissue in grays", answer: "ABSORBED DOSE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3551", clue: "Radiation weighting factor used to convert absorbed dose to equivalent dose", answer: "WR", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3552", clue: "Tissue weighting factor reflecting relative radiosensitivity of different organs", answer: "WT", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3553", clue: "Effective dose unit that accounts for radiation type and tissue sensitivity", answer: "SIEVERT", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3554", clue: "Committed effective dose from internal contamination integrated over fifty years for adults", answer: "COMMITTED DOSE", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3555", clue: "Collective effective dose to a population expressed in person-sieverts", answer: "COLLECTIVE DOSE", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3556", clue: "Dose rate constant relating activity to dose rate at a reference distance", answer: "GAMMA CONSTANT", category: "Radiation Protection", difficulty: "medium" },
+
+  // Dose Limits & Regulatory Standards
+  { id: "cw-3557", clue: "ICRP-recommended annual effective dose limit for occupational exposure in mSv", answer: "TWENTY", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3558", clue: "ICRP annual effective dose limit for members of the public in mSv", answer: "ONE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3559", clue: "ICRP five-year averaging period for occupational dose with 100 mSv cumulative limit", answer: "FIVE YEAR", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3560", clue: "Annual equivalent dose limit to the lens of the eye for workers in mSv", answer: "TWENTY", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3561", clue: "Annual equivalent dose limit to extremities for occupational workers in mSv", answer: "FIVE HUNDRED", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3562", clue: "Dose constraint for pregnant worker's foetus over remainder of pregnancy in mSv", answer: "ONE", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3563", clue: "ICRP publication number establishing the current framework of radiological protection", answer: "ONE ZERO THREE", category: "Radiation Protection", difficulty: "hard" },
+  { id: "cw-3564", clue: "Radiation exposure category for patients where dose limits do not apply", answer: "MEDICAL EXPOSURE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3565", clue: "Diagnostic reference level concept used to optimise patient doses without hard limits (abbr.)", answer: "DRL", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3566", clue: "Investigation level triggering review when worker dose exceeds a preset threshold", answer: "INVESTIGATION LEVEL", category: "Radiation Protection", difficulty: "medium" },
+
+  // Shielding Design & Calculations
+  { id: "cw-3567", clue: "Material thickness reducing radiation intensity by half", answer: "HVL", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3568", clue: "Material thickness reducing radiation intensity by a factor of ten", answer: "TVL", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3569", clue: "Shielding design parameter representing fraction of beam time directed at a barrier", answer: "USE FACTOR", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3570", clue: "Shielding design parameter for fraction of time an area is occupied", answer: "OCCUPANCY FACTOR", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3571", clue: "Shielding design parameter representing workload in Gy per week at one metre", answer: "WORKLOAD", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3572", clue: "Primary barrier in radiotherapy shielding directly intercepting the useful beam", answer: "PRIMARY BARRIER", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3573", clue: "Secondary barrier protecting against leakage and scattered radiation only", answer: "SECONDARY BARRIER", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3574", clue: "Dense shielding material commonly used in radiotherapy bunker walls", answer: "CONCRETE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3575", clue: "High-Z shielding material used in diagnostic X-ray room walls and aprons", answer: "LEAD", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3576", clue: "Maze entrance design in radiotherapy bunkers that reduces door shielding requirements", answer: "MAZE", category: "Radiation Protection", difficulty: "easy" },
+
+  // Personnel Monitoring & Dosimetry
+  { id: "cw-3577", clue: "Passive personal dosimeter using thermoluminescent material to measure dose (abbr.)", answer: "TLD", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3578", clue: "Passive personal dosimeter using optically stimulated luminescence (abbr.)", answer: "OSL", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3579", clue: "Active personal dosimeter providing real-time dose readout with audible alarm (abbr.)", answer: "APD", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3580", clue: "Film badge dosimeter historically used for personal monitoring before TLDs", answer: "FILM BADGE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3581", clue: "Extremity dosimeter worn on the finger when handling radioactive sources", answer: "RING DOSIMETER", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3582", clue: "Dosimetry service providing regular dose reports and maintaining worker dose records", answer: "DOSIMETRY SERVICE", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3583", clue: "Dose record retention period required for occupational radiation workers in years", answer: "THIRTY", category: "Radiation Protection", difficulty: "hard" },
+  { id: "cw-3584", clue: "Two-badge method using dosimeters at collar and waist to estimate effective dose", answer: "TWO BADGE", category: "Radiation Protection", difficulty: "hard" },
+  { id: "cw-3585", clue: "Personal monitoring exchange period typically one or three of these time units", answer: "MONTHS", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3586", clue: "Whole-body counting technique detecting internal contamination from gamma emitters", answer: "WHOLE BODY COUNT", category: "Radiation Protection", difficulty: "hard" },
+
+  // Area Monitoring & Surveys
+  { id: "cw-3587", clue: "Portable radiation survey instrument measuring ambient dose equivalent rate", answer: "SURVEY METER", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3588", clue: "Geiger-Mueller detector tube used in contamination survey instruments (abbr.)", answer: "GM", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3589", clue: "Ion chamber survey meter calibrated for accurate dose rate measurement over wide energy range", answer: "ION CHAMBER", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3590", clue: "Neutron survey instrument using a moderating sphere around a thermal neutron detector", answer: "REM BALL", category: "Radiation Protection", difficulty: "hard" },
+  { id: "cw-3591", clue: "Wipe test technique assessing removable surface contamination on equipment", answer: "WIPE TEST", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3592", clue: "Controlled area designation requiring specific protection measures and access restriction", answer: "CONTROLLED AREA", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3593", clue: "Supervised area where conditions are kept under review but special procedures not normally needed", answer: "SUPERVISED AREA", category: "Radiation Protection", difficulty: "medium" },
+  { id: "cw-3594", clue: "Warning sign colour combination used internationally on radiation hazard signs", answer: "YELLOW AND BLACK", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3595", clue: "Radiation area monitoring badge placed at strategic locations to track ambient dose", answer: "AREA MONITOR", category: "Radiation Protection", difficulty: "easy" },
+  { id: "cw-3596", clue: "Interlocked door system preventing entry to irradiation rooms during beam-on", answer: "INTERLOCK", category: "Radiation Protection", difficulty: "easy" },
 ];
 
 /** Get all unique categories */

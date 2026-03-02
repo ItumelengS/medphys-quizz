@@ -3,8 +3,8 @@
     "version": "3.0",
     "lastUpdated": "2026-03-02",
     "author": "Phantom Labs",
-    "notes": "2597 questions across 17 sections.",
-    "totalQuestions": 2597
+    "notes": "2647 questions across 17 sections.",
+    "totalQuestions": 2647
   },
   "sections": [
     {
@@ -18396,6 +18396,656 @@
         ],
         "e": "After n half-lives, activity = A0 / 2^n = 300 / 2^3 = 300/8 = 37.5 TBq.",
         "d": 2
+      },
+      {
+        "id": "rp157",
+        "d": 2,
+        "q": "Under SAHPRA regulations, which Act governs the control of radiation-emitting devices as hazardous substances?",
+        "a": "Hazardous Substances Act (Act 15 of 1973)",
+        "c": [
+          "Medicines and Related Substances Act (Act 101 of 1965)",
+          "Hazardous Substances Act (Act 15 of 1973)",
+          "Nuclear Energy Act (Act 46 of 1999)",
+          "Occupational Health and Safety Act (Act 85 of 1993)"
+        ],
+        "e": "SAHPRA derives its radiation control mandate from the Hazardous Substances Act, which classifies radiation-emitting devices into Groups II, III, and IV."
+      },
+      {
+        "id": "rp158",
+        "d": 2,
+        "q": "SAHPRA classifies radiation-emitting devices into hazardous substance groups. Which group covers diagnostic X-ray equipment?",
+        "a": "Group II",
+        "c": [
+          "Group I",
+          "Group II",
+          "Group III",
+          "Group IV"
+        ],
+        "e": "Group II = electronic radiation sources (diagnostic X-ray), Group III = therapeutic radiation equipment, Group IV = radioactive materials."
+      },
+      {
+        "id": "rp159",
+        "d": 2,
+        "q": "Under SAHPRA, Group III hazardous substances specifically cover which type of radiation equipment?",
+        "a": "Therapeutic radiation equipment (linacs, Co-60 units)",
+        "c": [
+          "Diagnostic X-ray machines",
+          "Therapeutic radiation equipment (linacs, Co-60 units)",
+          "Radioactive sealed sources",
+          "Industrial radiography cameras"
+        ],
+        "e": "Group III covers equipment used for radiotherapy including linear accelerators and cobalt-60 teletherapy units."
+      },
+      {
+        "id": "rp160",
+        "d": 2,
+        "q": "What type of licence must a facility obtain from SAHPRA before operating any radiation-emitting device?",
+        "a": "Licence to Use",
+        "c": [
+          "Licence to Use",
+          "Manufacturing Licence",
+          "Import Permit",
+          "Research Authorization"
+        ],
+        "e": "A SAHPRA Licence to Use is required for each facility operating radiation equipment, specifying the equipment type and responsible person."
+      },
+      {
+        "id": "rp161",
+        "d": 3,
+        "q": "SAHPRA requires each licensed radiation facility to designate a person responsible for radiation safety. What is this role called?",
+        "a": "Responsible Person",
+        "c": [
+          "Radiation Safety Officer",
+          "Responsible Person",
+          "Medical Physics Expert",
+          "Radiation Protection Adviser"
+        ],
+        "e": "The Responsible Person is designated on the SAHPRA licence and bears legal accountability for radiation safety at the facility."
+      },
+      {
+        "id": "rp162",
+        "d": 2,
+        "q": "What document must be submitted to SAHPRA before constructing a new radiotherapy bunker?",
+        "a": "Shielding design report with calculations",
+        "c": [
+          "Equipment purchase order",
+          "Shielding design report with calculations",
+          "Staff training certificates",
+          "Patient consent forms"
+        ],
+        "e": "SAHPRA requires a shielding design report demonstrating that the proposed bunker meets dose limits at all boundaries."
+      },
+      {
+        "id": "rp163",
+        "d": 3,
+        "q": "How often must SAHPRA-licensed high-risk radiation therapy facilities undergo regulatory inspection?",
+        "a": "Annually",
+        "c": [
+          "Every 6 months",
+          "Annually",
+          "Every 2 years",
+          "Every 5 years"
+        ],
+        "e": "High-risk facilities including radiotherapy centres are subject to annual SAHPRA compliance inspections."
+      },
+      {
+        "id": "rp164",
+        "d": 2,
+        "q": "SAHPRA requires radiation workers to undergo which type of health programme?",
+        "a": "Medical surveillance programme",
+        "c": [
+          "Annual fitness test",
+          "Medical surveillance programme",
+          "Quarterly blood tests",
+          "Monthly vision screening"
+        ],
+        "e": "Medical surveillance includes baseline and periodic health assessments, with special attention to haematological parameters and lens of the eye."
+      },
+      {
+        "id": "rp165",
+        "d": 3,
+        "q": "What is the SAHPRA Radiation Control Certificate (RCC) number?",
+        "a": "A unique identifier assigned to each licensed radiation facility",
+        "c": [
+          "A unique identifier assigned to each licensed radiation facility",
+          "A serial number for radiation equipment",
+          "A personal dosimeter tracking code",
+          "A waste disposal reference number"
+        ],
+        "e": "The RCC number identifies the licensed facility and is referenced in all SAHPRA correspondence and inspection reports."
+      },
+      {
+        "id": "rp166",
+        "d": 3,
+        "q": "When a SAHPRA-licensed facility wishes to dispose of or transfer radiation equipment, what approval is required?",
+        "a": "Decommissioning approval from SAHPRA",
+        "c": [
+          "No approval needed",
+          "Decommissioning approval from SAHPRA",
+          "Only NNR approval",
+          "Municipal waste permit"
+        ],
+        "e": "SAHPRA must approve decommissioning to ensure proper disposal, source accountability, and updated licence records."
+      },
+      {
+        "id": "rp167",
+        "d": 2,
+        "q": "SAHPRA requires a transport permit for moving radioactive sources between facilities. Which international standards does SA transport regulation align with?",
+        "a": "IAEA Transport Regulations (SSR-6)",
+        "c": [
+          "ISO 9001 standards",
+          "IAEA Transport Regulations (SSR-6)",
+          "WHO guidelines on radiation",
+          "ICRU Report 91"
+        ],
+        "e": "SA transport regulations for radioactive materials follow IAEA Safety Standards Series SSR-6."
+      },
+      {
+        "id": "rp168",
+        "d": 3,
+        "q": "What enforcement action can SAHPRA take if a facility operates radiation equipment without a valid licence?",
+        "a": "Suspension of operations and potential criminal prosecution",
+        "c": [
+          "Written warning only",
+          "Suspension of operations and potential criminal prosecution",
+          "Reduced fine with no further action",
+          "Mandatory retraining of staff"
+        ],
+        "e": "Operating without a SAHPRA licence is a criminal offence under the Hazardous Substances Act, carrying penalties including suspension, fines, and prosecution."
+      },
+      {
+        "id": "rp169",
+        "d": 2,
+        "q": "What body preceded SAHPRA in regulating radiation-emitting devices in South Africa?",
+        "a": "Directorate of Radiation Control under the Department of Health",
+        "c": [
+          "NNR",
+          "Directorate of Radiation Control under the Department of Health",
+          "MCC",
+          "SABS"
+        ],
+        "e": "Before SAHPRA was established in 2018, radiation control of devices fell under the Directorate of Radiation Control within the DoH."
+      },
+      {
+        "id": "rp170",
+        "d": 3,
+        "q": "Under SAHPRA regulations, what is the maximum period of validity for a Licence to Use radiation equipment before renewal is required?",
+        "a": "3 years",
+        "c": [
+          "1 year",
+          "2 years",
+          "3 years",
+          "5 years"
+        ],
+        "e": "SAHPRA licences to use radiation equipment must be renewed every 3 years, requiring updated documentation and compliance verification."
+      },
+      {
+        "id": "rp171",
+        "d": 2,
+        "q": "SAHPRA requires adverse events involving radiation devices to be reported within what timeframe for serious incidents?",
+        "a": "48 hours",
+        "c": [
+          "24 hours",
+          "48 hours",
+          "7 days",
+          "30 days"
+        ],
+        "e": "Serious adverse events must be reported to SAHPRA within 48 hours; less serious events within 10 working days."
+      },
+      {
+        "id": "rp172",
+        "d": 2,
+        "q": "In South Africa, which TWO regulatory bodies share oversight of radiation safety — one for devices and one for nuclear materials?",
+        "a": "SAHPRA and NNR",
+        "c": [
+          "SAHPRA and NNR",
+          "HPCSA and DOH",
+          "SABS and NMISA",
+          "NECSA and CANSA"
+        ],
+        "e": "SAHPRA regulates radiation-emitting devices (under HSA), while NNR regulates nuclear installations and materials (under NNR Act)."
+      },
+      {
+        "id": "rp173",
+        "d": 1,
+        "q": "What is the annual effective dose limit for occupationally exposed workers according to ICRP 103?",
+        "a": "20 mSv averaged over 5 years, not exceeding 50 mSv in any single year",
+        "c": [
+          "50 mSv per year with no averaging",
+          "20 mSv averaged over 5 years, not exceeding 50 mSv in any single year",
+          "10 mSv per year strict limit",
+          "100 mSv per year for emergency workers only"
+        ],
+        "e": "ICRP 103 recommends 20 mSv/yr averaged over defined 5-year periods, with no single year exceeding 50 mSv."
+      },
+      {
+        "id": "rp174",
+        "d": 2,
+        "q": "Following ICRP Publication 118, the annual equivalent dose limit to the lens of the eye was reduced to:",
+        "a": "20 mSv/year averaged over 5 years",
+        "c": [
+          "150 mSv/year",
+          "20 mSv/year averaged over 5 years",
+          "50 mSv/year",
+          "500 mSv/year"
+        ],
+        "e": "ICRP 118 reduced the eye lens limit from 150 mSv/yr to 20 mSv/yr (averaged over 5 years, max 50 in any year) based on evidence of radiation-induced cataracts."
+      },
+      {
+        "id": "rp175",
+        "d": 2,
+        "q": "What is the ICRP-recommended annual equivalent dose limit for the skin (averaged over 1 cm²)?",
+        "a": "500 mSv",
+        "c": [
+          "150 mSv",
+          "250 mSv",
+          "500 mSv",
+          "1000 mSv"
+        ],
+        "e": "The skin and extremities limit is 500 mSv/year, reflecting the lower radiosensitivity of skin tissue."
+      },
+      {
+        "id": "rp176",
+        "d": 2,
+        "q": "What personal dose equivalent quantity is measured by a whole-body dosimeter worn on the trunk?",
+        "a": "Hp(10)",
+        "c": [
+          "Hp(0.07)",
+          "Hp(3)",
+          "Hp(10)",
+          "H*(10)"
+        ],
+        "e": "Hp(10) is the personal dose equivalent at 10 mm depth, used as an estimate of effective dose for whole-body monitoring."
+      },
+      {
+        "id": "rp177",
+        "d": 3,
+        "q": "The operational quantity Hp(0.07) is used to estimate dose to which tissue?",
+        "a": "Skin (shallow dose)",
+        "c": [
+          "Lens of the eye",
+          "Skin (shallow dose)",
+          "Deep organs",
+          "Bone marrow"
+        ],
+        "e": "Hp(0.07) at 0.07 mm depth estimates skin dose and is measured by extremity or skin dosimeters."
+      },
+      {
+        "id": "rp178",
+        "d": 3,
+        "q": "Hp(3) is the operational quantity introduced for monitoring dose to which organ?",
+        "a": "Lens of the eye",
+        "c": [
+          "Thyroid",
+          "Lens of the eye",
+          "Gonads",
+          "Red bone marrow"
+        ],
+        "e": "Hp(3) at 3 mm depth was introduced following ICRP 118's reduced eye lens dose limit."
+      },
+      {
+        "id": "rp179",
+        "d": 2,
+        "q": "What is the radiation weighting factor (wR) for photons and electrons?",
+        "a": "1",
+        "c": [
+          "1",
+          "5",
+          "10",
+          "20"
+        ],
+        "e": "Photons and electrons have wR = 1. Protons have wR = 2, alpha particles wR = 20, and neutrons vary with energy."
+      },
+      {
+        "id": "rp180",
+        "d": 2,
+        "q": "What is the radiation weighting factor (wR) for alpha particles?",
+        "a": "20",
+        "c": [
+          "1",
+          "5",
+          "10",
+          "20"
+        ],
+        "e": "Alpha particles have wR = 20 due to their high LET and dense ionisation track causing severe biological damage."
+      },
+      {
+        "id": "rp181",
+        "d": 3,
+        "q": "According to ICRP 103, which organ has the highest tissue weighting factor (wT)?",
+        "a": "Breast, bone marrow, colon, lung, and stomach (each wT = 0.12)",
+        "c": [
+          "Gonads (wT = 0.20)",
+          "Breast, bone marrow, colon, lung, and stomach (each wT = 0.12)",
+          "Thyroid (wT = 0.05)",
+          "Skin (wT = 0.01)"
+        ],
+        "e": "ICRP 103 assigns wT = 0.12 to breast, red bone marrow, colon, lung, and stomach. Gonads were reduced from 0.20 to 0.08."
+      },
+      {
+        "id": "rp182",
+        "d": 3,
+        "q": "In ICRP 103, the tissue weighting factor for gonads was changed from the ICRP 60 value. What was the change?",
+        "a": "Reduced from 0.20 to 0.08",
+        "c": [
+          "Increased from 0.20 to 0.25",
+          "Reduced from 0.20 to 0.08",
+          "Unchanged at 0.20",
+          "Reduced from 0.20 to 0.05"
+        ],
+        "e": "Based on updated epidemiological data showing lower heritable risk than previously estimated."
+      },
+      {
+        "id": "rp183",
+        "d": 2,
+        "q": "Internal contamination monitoring: what is the primary method for detecting gamma-emitting radionuclides deposited in the body?",
+        "a": "Whole-body counting (in vivo counting)",
+        "c": [
+          "Urine bioassay",
+          "Whole-body counting (in vivo counting)",
+          "Blood sampling",
+          "Chest X-ray"
+        ],
+        "e": "Whole-body counters use NaI or HPGe detectors in shielded rooms to directly measure gamma emissions from internal contamination."
+      },
+      {
+        "id": "rp184",
+        "d": 2,
+        "q": "Urine bioassay is the primary monitoring method for internal contamination with which type of radionuclide?",
+        "a": "Pure beta emitters (e.g., H-3, C-14)",
+        "c": [
+          "High-energy gamma emitters",
+          "Pure beta emitters (e.g., H-3, C-14)",
+          "Alpha emitters only",
+          "Neutron-activated materials"
+        ],
+        "e": "Pure beta emitters cannot be detected by external counting, so excretion analysis (urine/faeces) is required."
+      },
+      {
+        "id": "rp185",
+        "d": 2,
+        "q": "What is the committed effective dose (E50) concept in internal dosimetry?",
+        "a": "Total effective dose from an intake, integrated over 50 years for adults",
+        "c": [
+          "Maximum dose in the first year after intake",
+          "Total effective dose from an intake, integrated over 50 years for adults",
+          "Dose to the most irradiated organ only",
+          "External plus internal dose combined"
+        ],
+        "e": "E50 accounts for the total dose delivered as the radionuclide is metabolised and excreted over 50 years (70 years for children)."
+      },
+      {
+        "id": "rp186",
+        "d": 3,
+        "q": "What is the Annual Limit on Intake (ALI) for a radionuclide?",
+        "a": "The intake that would result in a committed effective dose of 20 mSv",
+        "c": [
+          "The maximum activity that can be stored in a lab",
+          "The intake that would result in a committed effective dose of 20 mSv",
+          "The activity causing acute radiation syndrome",
+          "The daily excretion limit for contaminated workers"
+        ],
+        "e": "ALI corresponds to the occupational dose limit, ensuring that any single radionuclide intake does not exceed 20 mSv committed effective dose."
+      },
+      {
+        "id": "rp187",
+        "d": 3,
+        "q": "What is the Derived Air Concentration (DAC) used for in radiation protection?",
+        "a": "Setting airborne contamination limits in workplaces — breathing DAC for 2000 hr/yr gives 20 mSv",
+        "c": [
+          "Measuring radon in homes",
+          "Setting airborne contamination limits in workplaces — breathing DAC for 2000 hr/yr gives 20 mSv",
+          "Calibrating air ionisation chambers",
+          "Determining ventilation rates in CT rooms"
+        ],
+        "e": "DAC = ALI / (breathing rate × 2000 hours). Working at DAC concentration for a full year delivers the occupational dose limit."
+      },
+      {
+        "id": "rp188",
+        "d": 2,
+        "q": "Potassium iodide (KI) tablets are distributed during nuclear emergencies to protect which organ?",
+        "a": "Thyroid gland",
+        "c": [
+          "Liver",
+          "Thyroid gland",
+          "Kidneys",
+          "Bone marrow"
+        ],
+        "e": "KI saturates the thyroid with stable iodine, blocking uptake of radioactive I-131 released during nuclear accidents."
+      },
+      {
+        "id": "rp189",
+        "d": 2,
+        "q": "In a radiation emergency, what is the recommended reference level for sheltering of the public?",
+        "a": "10 mSv projected dose in the first 2 days",
+        "c": [
+          "1 mSv per year",
+          "10 mSv projected dose in the first 2 days",
+          "100 mSv lifetime dose",
+          "50 mSv in the first hour"
+        ],
+        "e": "IAEA GSR Part 7 recommends sheltering when projected dose in 2 days may exceed 10 mSv, and evacuation above 50-100 mSv."
+      },
+      {
+        "id": "rp190",
+        "d": 3,
+        "q": "What is the emergency reference level for evacuation of the public in a nuclear or radiological emergency?",
+        "a": "50-100 mSv projected dose in 7 days",
+        "c": [
+          "10 mSv in 24 hours",
+          "20 mSv per year",
+          "50-100 mSv projected dose in 7 days",
+          "500 mSv immediate dose"
+        ],
+        "e": "Evacuation is considered when projected dose in the first 7 days may reach 50-100 mSv, balancing radiation risk against disruption."
+      },
+      {
+        "id": "rp191",
+        "d": 3,
+        "q": "For life-saving emergency actions, ICRP recommends that informed volunteers should not exceed what effective dose?",
+        "a": "No dose restriction, but efforts should keep below ~500 mSv (or ~1 Sv to prevent acute effects)",
+        "c": [
+          "20 mSv",
+          "100 mSv",
+          "No dose restriction, but efforts should keep below ~500 mSv (or ~1 Sv to prevent acute effects)",
+          "250 mSv"
+        ],
+        "e": "For life-saving, no formal limit applies, but ICRP suggests volunteers be informed and dose kept below levels causing deterministic effects."
+      },
+      {
+        "id": "rp192",
+        "d": 2,
+        "q": "What is the decontamination factor (DF) in radiation protection?",
+        "a": "Ratio of contamination before to after decontamination",
+        "c": [
+          "Ratio of contamination before to after decontamination",
+          "Percentage of radioactive decay per hour",
+          "Shielding transmission factor",
+          "Dose reduction from distance increase"
+        ],
+        "e": "DF = initial contamination / residual contamination. A DF of 10 means 90% of contamination was removed."
+      },
+      {
+        "id": "rp193",
+        "d": 2,
+        "q": "In nuclear medicine spill management, what is the correct order of actions?",
+        "a": "Contain, notify, decontaminate, survey",
+        "c": [
+          "Evacuate, call fire department, seal room",
+          "Contain, notify, decontaminate, survey",
+          "Decontaminate first, then notify",
+          "Ignore if activity is below 1 MBq"
+        ],
+        "e": "Contain the spill (absorbent pads), notify the RSO, decontaminate from outside inward, then survey to confirm clearance."
+      },
+      {
+        "id": "rp194",
+        "d": 2,
+        "q": "When performing a contamination wipe test, what is the standard area sampled per wipe?",
+        "a": "100 cm²",
+        "c": [
+          "10 cm²",
+          "100 cm²",
+          "1000 cm²",
+          "1 m²"
+        ],
+        "e": "Standard wipe tests sample a 100 cm² area to allow comparison against regulatory surface contamination limits."
+      },
+      {
+        "id": "rp195",
+        "d": 2,
+        "q": "What is the difference between removable (loose) and fixed contamination?",
+        "a": "Removable can be transferred by contact; fixed is bound to the surface",
+        "c": [
+          "There is no difference",
+          "Removable can be transferred by contact; fixed is bound to the surface",
+          "Fixed contamination is always more hazardous",
+          "Removable means airborne only"
+        ],
+        "e": "Wipe tests detect removable contamination. Fixed contamination contributes to external dose but cannot spread by contact."
+      },
+      {
+        "id": "rp196",
+        "d": 2,
+        "q": "What is the purpose of biokinetic models in internal dosimetry?",
+        "a": "To predict the distribution, retention, and excretion of radionuclides in the body over time",
+        "c": [
+          "To calculate external shielding requirements",
+          "To predict the distribution, retention, and excretion of radionuclides in the body over time",
+          "To determine the energy spectrum of X-ray tubes",
+          "To model patient positioning errors"
+        ],
+        "e": "Biokinetic models (e.g., ICRP Publication 130) describe how inhaled or ingested radionuclides move through body compartments."
+      },
+      {
+        "id": "rp197",
+        "d": 2,
+        "q": "What is the primary purpose of environmental radiation monitoring around a nuclear facility?",
+        "a": "To verify that public dose limits are not exceeded and detect abnormal releases",
+        "c": [
+          "To calibrate personal dosimeters",
+          "To verify that public dose limits are not exceeded and detect abnormal releases",
+          "To measure cosmic radiation levels",
+          "To test emergency sirens"
+        ],
+        "e": "Environmental monitoring includes air samplers, soil/water sampling, and TLD stations around the facility perimeter."
+      },
+      {
+        "id": "rp198",
+        "d": 2,
+        "q": "Radon-222 is the largest natural source of radiation exposure to the general public. Where does it primarily accumulate?",
+        "a": "Indoor air in poorly ventilated buildings, especially basements",
+        "c": [
+          "Outdoor air at high altitudes",
+          "Indoor air in poorly ventilated buildings, especially basements",
+          "Drinking water only",
+          "Food products"
+        ],
+        "e": "Radon seeps from soil into buildings. The WHO recommends action levels of 100-300 Bq/m³ for indoor radon."
+      },
+      {
+        "id": "rp199",
+        "d": 2,
+        "q": "What fraction of the average annual background radiation dose (~2.4 mSv) comes from medical exposures globally?",
+        "a": "Approximately 20% (0.6 mSv), but much higher in developed countries",
+        "c": [
+          "Less than 1%",
+          "Approximately 20% (0.6 mSv), but much higher in developed countries",
+          "Exactly 50%",
+          "Over 80%"
+        ],
+        "e": "Medical exposure averages ~0.6 mSv globally but exceeds 3 mSv/year in the US due to CT scanning prevalence."
+      },
+      {
+        "id": "rp200",
+        "d": 2,
+        "q": "The linear no-threshold (LNT) model in radiation protection assumes what relationship between dose and cancer risk?",
+        "a": "Cancer risk is directly proportional to dose with no safe threshold",
+        "c": [
+          "There is a safe threshold below which no cancer occurs",
+          "Cancer risk is directly proportional to dose with no safe threshold",
+          "Risk increases exponentially with dose",
+          "Risk is only significant above 100 mSv"
+        ],
+        "e": "LNT is the basis for ALARA and dose limits, though it remains debated at low doses. It provides a conservative framework for protection."
+      },
+      {
+        "id": "rp201",
+        "d": 3,
+        "q": "What is the nominal risk coefficient for fatal cancer from whole-body radiation exposure according to ICRP 103?",
+        "a": "Approximately 5% per Sv for the whole population",
+        "c": [
+          "0.5% per Sv",
+          "Approximately 5% per Sv for the whole population",
+          "10% per Sv",
+          "50% per Sv"
+        ],
+        "e": "ICRP 103 estimates 5.5% per Sv detriment-adjusted risk for the whole population, often rounded to 5% for fatal cancer risk."
+      },
+      {
+        "id": "rp202",
+        "d": 3,
+        "q": "In South Africa, the Vaalputs facility in the Northern Cape is used for what radiation protection purpose?",
+        "a": "Disposal of low and intermediate-level radioactive waste",
+        "c": [
+          "Storage of spent nuclear fuel",
+          "Disposal of low and intermediate-level radioactive waste",
+          "Calibration of survey instruments",
+          "Training of radiation workers"
+        ],
+        "e": "Vaalputs is SA's national radioactive waste disposal facility, operated by NECSA, accepting LILW from medical, industrial, and research sources."
+      },
+      {
+        "id": "rp203",
+        "d": 2,
+        "q": "What is the delay-and-decay method of radioactive waste management?",
+        "a": "Storing short-lived waste until activity decays to background, then disposing as normal waste",
+        "c": [
+          "Immediately burying all radioactive waste",
+          "Storing short-lived waste until activity decays to background, then disposing as normal waste",
+          "Diluting waste in large water volumes",
+          "Incinerating all contaminated materials"
+        ],
+        "e": "Used for short-lived isotopes (e.g., Tc-99m, F-18). Waste is stored for ~10 half-lives until activity is indistinguishable from background."
+      },
+      {
+        "id": "rp204",
+        "d": 2,
+        "q": "In radiation protection, what does the concept of 'dose constraint' mean?",
+        "a": "A prospective upper bound on individual dose from a planned source, set below the dose limit",
+        "c": [
+          "The same as the dose limit",
+          "A prospective upper bound on individual dose from a planned source, set below the dose limit",
+          "The minimum detectable dose",
+          "The dose causing deterministic effects"
+        ],
+        "e": "Dose constraints ensure that no single source uses up the full dose limit, leaving margin for other exposures. They are a tool for optimisation."
+      },
+      {
+        "id": "rp205",
+        "d": 2,
+        "q": "What is the purpose of a Radiation Protection Programme (RPP) at a licensed facility?",
+        "a": "A documented system describing how the facility ensures compliance with dose limits and ALARA",
+        "c": [
+          "A financial budget for purchasing shielding",
+          "A documented system describing how the facility ensures compliance with dose limits and ALARA",
+          "An emergency evacuation route map",
+          "A list of all patients treated"
+        ],
+        "e": "The RPP covers responsibilities, procedures, monitoring, training, emergency plans, and record-keeping for all radiation activities."
+      },
+      {
+        "id": "rp206",
+        "d": 2,
+        "q": "What training frequency does SAHPRA require for radiation workers at licensed facilities?",
+        "a": "Initial training before starting work, plus regular refresher training (typically annual)",
+        "c": [
+          "Training only at initial employment",
+          "Initial training before starting work, plus regular refresher training (typically annual)",
+          "Training every 5 years",
+          "No formal training requirement exists"
+        ],
+        "e": "SAHPRA licence conditions require documented initial and ongoing radiation safety training for all workers."
       }
     ],
     "regs": [

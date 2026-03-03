@@ -31,6 +31,13 @@ export async function GET() {
     );
   }
 
+  // Clean up renamed tournament types (millionaire → hot-seat)
+  await supabase
+    .from("tournaments")
+    .update({ status: "finished" })
+    .in("status", ["active", "upcoming"])
+    .like("type", "millionaire-%");
+
   // Transition active tournaments that have ended
   await supabase
     .from("tournaments")

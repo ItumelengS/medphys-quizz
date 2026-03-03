@@ -4,9 +4,9 @@ import { useEffect, useState, useCallback, useRef, use } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import {
-  MILLIONAIRE_PRIZE_LADDER,
-  MILLIONAIRE_SAFE_HAVENS,
-  calculateMillionaireScore,
+  HOT_SEAT_PRIZE_LADDER,
+  HOT_SEAT_SAFE_HAVENS,
+  calculateHotSeatScore,
 } from "@/lib/scoring";
 import type { DbQuestion, DbTournament } from "@/lib/types";
 import TimerRing from "@/components/TimerRing";
@@ -48,7 +48,7 @@ interface RoundResult {
   total: number;
 }
 
-export default function TournamentMillionairePage({
+export default function TournamentHotSeatPage({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -189,7 +189,7 @@ export default function TournamentMillionairePage({
     if (timerRef.current) clearInterval(timerRef.current);
     if (advanceRef.current) clearTimeout(advanceRef.current);
     setWrongAnswerIndex(questionIdx);
-    const prize = calculateMillionaireScore(questionIdx - 1, false, questionIdx);
+    const prize = calculateHotSeatScore(questionIdx - 1, false, questionIdx);
     setFinalPrize(prize);
     if (typeof navigator !== "undefined" && "vibrate" in navigator) {
       navigator.vibrate([50, 100, 50, 100, 50]);
@@ -221,7 +221,7 @@ export default function TournamentMillionairePage({
 
     // Check if won all 15
     if (currentIndex + 1 >= TOTAL_QUESTIONS) {
-      const prize = MILLIONAIRE_PRIZE_LADDER[14];
+      const prize = HOT_SEAT_PRIZE_LADDER[14];
       setFinalPrize(prize);
       setPhase("won");
       return;
@@ -246,7 +246,7 @@ export default function TournamentMillionairePage({
     if (phase !== "playing" || selectedAnswer !== null) return;
     if (timerRef.current) clearInterval(timerRef.current);
     setWalkedAway(true);
-    const prize = calculateMillionaireScore(currentIndex - 1, true, null);
+    const prize = calculateHotSeatScore(currentIndex - 1, true, null);
     setFinalPrize(prize);
     setAnswersLog((a) => [
       ...a,
@@ -321,7 +321,7 @@ export default function TournamentMillionairePage({
     if (submitting) return;
     setSubmitting(true);
 
-    const res = await fetch(`/api/tournaments/${id}/millionaire-round`, {
+    const res = await fetch(`/api/tournaments/${id}/hot-seat-round`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -360,7 +360,7 @@ export default function TournamentMillionairePage({
   // Results screen (lost / walked / won)
   if (phase === "lost" || phase === "walked" || phase === "won") {
     const icon = phase === "won" ? "👑" : phase === "walked" ? "🚶" : "💔";
-    const title = phase === "won" ? "MILLIONAIRE!" : phase === "walked" ? "WALKED AWAY" : "WRONG ANSWER";
+    const title = phase === "won" ? "CHAMPION!" : phase === "walked" ? "WALKED AWAY" : "WRONG ANSWER";
     const titleColor = phase === "won" ? "text-amber-400" : phase === "walked" ? "text-amber-600" : "text-red-500";
 
     return (
@@ -435,7 +435,7 @@ export default function TournamentMillionairePage({
         </button>
         <div className="flex-1 flex flex-col items-center justify-center text-center">
           <span className="text-7xl mb-6">💰</span>
-          <h1 className="text-4xl font-black text-amber-500 mb-2">MILLIONAIRE</h1>
+          <h1 className="text-4xl font-black text-amber-500 mb-2">HOT SEAT</h1>
           <div className="w-16 h-1 bg-amber-600 mx-auto mb-4" />
           <p className="text-text-secondary text-sm font-light mb-4 max-w-xs">
             Answer 15 escalating questions to win $1,000,000. Use lifelines wisely. Walk away to keep your prize.
@@ -476,7 +476,7 @@ export default function TournamentMillionairePage({
     return "disabled" as const;
   }
 
-  const currentPrize = currentIndex > 0 ? MILLIONAIRE_PRIZE_LADDER[currentIndex - 1] : 0;
+  const currentPrize = currentIndex > 0 ? HOT_SEAT_PRIZE_LADDER[currentIndex - 1] : 0;
 
   return (
     <main
@@ -488,7 +488,7 @@ export default function TournamentMillionairePage({
         <div className="flex items-center gap-2">
           <span className="text-lg">💰</span>
           <span className="text-sm font-bold text-amber-600 uppercase tracking-wider">
-            Millionaire
+            Hot Seat
           </span>
           {berserk && (
             <span className="text-xs font-bold text-amber-600 border border-amber-600 px-1.5 py-0.5 uppercase tracking-wider">
@@ -504,10 +504,10 @@ export default function TournamentMillionairePage({
       {/* Prize ladder (compact) */}
       <div className="mb-3 p-2 border border-surface-border bg-surface/50 rounded-none">
         <div className="flex flex-wrap gap-1 justify-center">
-          {MILLIONAIRE_PRIZE_LADDER.map((prize, i) => {
+          {HOT_SEAT_PRIZE_LADDER.map((prize, i) => {
             const isCurrent = i === currentIndex;
             const isPast = i < currentIndex;
-            const isSafeHaven = MILLIONAIRE_SAFE_HAVENS.includes(i);
+            const isSafeHaven = HOT_SEAT_SAFE_HAVENS.includes(i);
             return (
               <div
                 key={i}
@@ -611,7 +611,7 @@ export default function TournamentMillionairePage({
         <TimerRing timeRemaining={timeRemaining} totalTime={timerTotal} />
         <div className="text-right">
           <div className="font-mono text-2xl font-bold text-amber-500">
-            {formatPrize(MILLIONAIRE_PRIZE_LADDER[currentIndex])}
+            {formatPrize(HOT_SEAT_PRIZE_LADDER[currentIndex])}
           </div>
           <div className="text-text-dim text-xs font-mono">Q{currentIndex + 1} of {TOTAL_QUESTIONS}</div>
         </div>

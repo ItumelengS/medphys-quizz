@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
-import { calculateXp, calculateMillionaireScore } from "@/lib/scoring";
+import { calculateXp, calculateHotSeatScore } from "@/lib/scoring";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 
-interface MillionairePayload {
+interface HotSeatPayload {
   berserk: boolean;
   answers: {
     questionId: string;
@@ -26,12 +26,12 @@ export async function POST(
   }
 
   const userId = session.user.id;
-  const body = (await req.json()) as MillionairePayload;
+  const body = (await req.json()) as HotSeatPayload;
   const { berserk, answers, walkedAway, lifelinesUsed } = body;
 
   const supabase = createServiceClient();
 
-  // Verify tournament is active and is a millionaire type
+  // Verify tournament is active and is a hot-seat type
   const { data: tournament } = await supabase
     .from("tournaments")
     .select("id, type, status, ends_at")
@@ -46,8 +46,8 @@ export async function POST(
     return NextResponse.json({ error: "Tournament has ended" }, { status: 400 });
   }
 
-  if (!tournament.type.startsWith("millionaire-")) {
-    return NextResponse.json({ error: "Not a millionaire tournament" }, { status: 400 });
+  if (!tournament.type.startsWith("hot-seat-")) {
+    return NextResponse.json({ error: "Not a hot seat tournament" }, { status: 400 });
   }
 
   // Fetch correct answers from DB
@@ -63,7 +63,7 @@ export async function POST(
 
   const answerMap = new Map(dbQuestions.map((q) => [q.id, q]));
 
-  const maxTimer = berserk ? Math.ceil((tournament.type === "millionaire-blitz" ? 30 : 45) / 2) : (tournament.type === "millionaire-blitz" ? 30 : 45);
+  const maxTimer = berserk ? Math.ceil((tournament.type === "hot-seat-blitz" ? 30 : 45) / 2) : (tournament.type === "hot-seat-blitz" ? 30 : 45);
   const MIN_HUMAN_ANSWER_TIME = 1.5;
 
   // Validate each answer
@@ -105,7 +105,7 @@ export async function POST(
   }
 
   // Calculate prize points
-  const prizePoints = calculateMillionaireScore(lastCorrectIndex, walkedAway, wrongAnswerIndex);
+  const prizePoints = calculateHotSeatScore(lastCorrectIndex, walkedAway, wrongAnswerIndex);
 
   // Submit round via RPC
   // RPC formula: score*50 + time_bonus = total points

@@ -1,5 +1,5 @@
 export interface TournamentTypeConfig {
-  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "millionaire-blitz" | "millionaire-rapid";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "hot-seat-blitz" | "hot-seat-rapid";
   label: string;
   frequencyHours: number;
   durationMinutes: number;
@@ -21,8 +21,8 @@ export interface TournamentTypeConfig {
   isMatch?: boolean;
   /** Number of pairs for match tournaments */
   pairsCount?: number;
-  /** Whether this is a millionaire tournament type */
-  isMillionaire?: boolean;
+  /** Whether this is a hot-seat tournament type */
+  isHotSeat?: boolean;
   /** Offset in minutes from the base slot time (staggers starts like Lichess) */
   offsetMinutes?: number;
 }
@@ -174,28 +174,28 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     pairsCount: 12,
     offsetMinutes: 285,
   },
-  "millionaire-blitz": {
-    type: "millionaire-blitz",
-    label: "Millionaire Blitz",
+  "hot-seat-blitz": {
+    type: "hot-seat-blitz",
+    label: "Hot Seat Blitz",
     frequencyHours: 3,
     durationMinutes: 20,
     timerSeconds: 30,
     questionsPerRound: 15,
     color: "#d97706",
     icon: "💰",
-    isMillionaire: true,
+    isHotSeat: true,
     offsetMinutes: 100,
   },
-  "millionaire-rapid": {
-    type: "millionaire-rapid",
-    label: "Millionaire Rapid",
+  "hot-seat-rapid": {
+    type: "hot-seat-rapid",
+    label: "Hot Seat Rapid",
     frequencyHours: 6,
     durationMinutes: 40,
     timerSeconds: 45,
     questionsPerRound: 15,
     color: "#b45309",
     icon: "💰",
-    isMillionaire: true,
+    isHotSeat: true,
     offsetMinutes: 225,
   },
 };

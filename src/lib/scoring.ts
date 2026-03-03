@@ -95,7 +95,7 @@ export function calculateXp(
     baseXp = Math.floor(points * 1.8);
   } else if (mode === "match") {
     baseXp = Math.floor(points * 1.6);
-  } else if (mode === "millionaire") {
+  } else if (mode === "hot-seat") {
     baseXp = Math.floor(points * 2.5);
   } else {
     baseXp = points;
@@ -180,45 +180,45 @@ export function getCorrectConfirmedLevel(xp: number, currentConfirmedLevel: numb
   return Math.min(currentConfirmedLevel, xpLevel);
 }
 
-// ── Millionaire prize ladder & scoring ─────────────────────
+// ── Hot Seat prize ladder & scoring ────────────────────────
 
-export const MILLIONAIRE_PRIZE_LADDER = [
+export const HOT_SEAT_PRIZE_LADDER = [
   100, 200, 300, 500, 1000,
   2000, 4000, 8000, 16000, 32000,
   64000, 125000, 250000, 500000, 1000000,
 ];
 
 /** Safe haven indices: Q5 ($1,000) and Q10 ($32,000) */
-export const MILLIONAIRE_SAFE_HAVENS = [4, 9];
+export const HOT_SEAT_SAFE_HAVENS = [4, 9];
 
 /**
- * Calculate the prize for a millionaire round.
+ * Calculate the prize for a hot seat round.
  * - walkedAway: player took their current prize before answering
  * - wrongAnswerIndex: the 0-based index of the question they got wrong (or timed out on)
  * - If neither, they answered all 15 correctly → $1,000,000
  */
-export function calculateMillionaireScore(
+export function calculateHotSeatScore(
   lastCorrectIndex: number,
   walkedAway: boolean,
   wrongAnswerIndex: number | null
 ): number {
   // Walked away: prize is the value of the last question they correctly answered
   if (walkedAway) {
-    return lastCorrectIndex >= 0 ? MILLIONAIRE_PRIZE_LADDER[lastCorrectIndex] : 0;
+    return lastCorrectIndex >= 0 ? HOT_SEAT_PRIZE_LADDER[lastCorrectIndex] : 0;
   }
 
   // Wrong answer: drop to safe haven
   if (wrongAnswerIndex !== null) {
     if (wrongAnswerIndex <= 4) return 0; // Q1-Q5: no safe haven yet
-    if (wrongAnswerIndex <= 9) return MILLIONAIRE_PRIZE_LADDER[4]; // Q6-Q10: drop to $1,000
-    return MILLIONAIRE_PRIZE_LADDER[9]; // Q11-Q15: drop to $32,000
+    if (wrongAnswerIndex <= 9) return HOT_SEAT_PRIZE_LADDER[4]; // Q6-Q10: drop to $1,000
+    return HOT_SEAT_PRIZE_LADDER[9]; // Q11-Q15: drop to $32,000
   }
 
   // All correct
-  if (lastCorrectIndex >= 14) return MILLIONAIRE_PRIZE_LADDER[14];
+  if (lastCorrectIndex >= 14) return HOT_SEAT_PRIZE_LADDER[14];
 
   // Partial (shouldn't happen without walk-away or wrong answer, but handle gracefully)
-  return lastCorrectIndex >= 0 ? MILLIONAIRE_PRIZE_LADDER[lastCorrectIndex] : 0;
+  return lastCorrectIndex >= 0 ? HOT_SEAT_PRIZE_LADDER[lastCorrectIndex] : 0;
 }
 
 // ── Variant-specific point calculators ─────────────────────

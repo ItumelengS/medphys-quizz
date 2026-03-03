@@ -71,9 +71,9 @@ export const VARIANT_CONFIGS: Record<GameVariant, VariantConfig> = {
       "Time bonus for finishing quickly",
     ],
   },
-  millionaire: {
-    id: "millionaire",
-    name: "Millionaire",
+  "hot-seat": {
+    id: "hot-seat",
+    name: "Hot Seat",
     icon: "💰",
     description: "15 escalating questions, 3 lifelines, and the chance to walk away. How far can you go?",
     color: "#d97706",
@@ -96,7 +96,7 @@ export function getVariantDisplayName(mode: string): string {
     case "sprint": return "Sprint";
     case "crossword": return "Crossword";
     case "match": return "Match";
-    case "millionaire": return "Millionaire";
+    case "hot-seat": return "Hot Seat";
     case "speed": return "Speed Round";
     case "daily": return "Daily Challenge";
     case "review": return "Review";

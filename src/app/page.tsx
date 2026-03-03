@@ -39,7 +39,7 @@ export default function HomePage() {
       .then((r) => r.json())
       .then((data) => setDueCount(Array.isArray(data) ? data.length : 0));
 
-    fetch("/api/quiz/daily")
+    fetch("/api/quiz/daily", { cache: "no-store" })
       .then((r) => r.json())
       .then((data) => setDailyCompleted(!!data.locked));
 

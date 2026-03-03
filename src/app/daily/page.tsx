@@ -55,7 +55,7 @@ export default function DailyPage() {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    fetch("/api/quiz/daily")
+    fetch("/api/quiz/daily", { cache: "no-store" })
       .then((r) => r.json())
       .then((data) => {
         if (data.locked) {

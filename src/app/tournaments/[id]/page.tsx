@@ -106,6 +106,7 @@ export default function TournamentDetailPage({
   const isSuddenDeath = tournament.type.startsWith("sudden-death-");
   const isSprint = tournament.type.startsWith("sprint-");
   const isMatch = tournament.type.startsWith("match-");
+  const isMillionaire = tournament.type.startsWith("millionaire-");
 
   function getColorClass(type: string) {
     if (type === "blitz") return "text-bauhaus-red";
@@ -118,6 +119,7 @@ export default function TournamentDetailPage({
     if (type === "sprint-blitz") return "text-yellow-600";
     if (type === "sprint-rapid") return "text-yellow-700";
     if (type.startsWith("match-")) return "text-violet-500";
+    if (type.startsWith("millionaire-")) return "text-amber-600";
     return "text-bauhaus-yellow";
   }
 
@@ -130,6 +132,7 @@ export default function TournamentDetailPage({
     if (type === "sudden-death-blitz" || type === "sudden-death-rapid") return "border-red-900";
     if (type === "sprint-blitz" || type === "sprint-rapid") return "border-yellow-600";
     if (type.startsWith("match-")) return "border-violet-500";
+    if (type.startsWith("millionaire-")) return "border-amber-600";
     return "border-bauhaus-yellow";
   }
 
@@ -142,6 +145,7 @@ export default function TournamentDetailPage({
     if (type.startsWith("sudden-death-")) return { background: "rgba(127, 29, 29, 0.08)" };
     if (type.startsWith("sprint-")) return { background: "rgba(202, 138, 4, 0.08)" };
     if (type.startsWith("match-")) return { background: "rgba(139, 92, 246, 0.08)" };
+    if (type.startsWith("millionaire-")) return { background: "rgba(217, 119, 6, 0.08)" };
     return { background: "rgba(234, 179, 8, 0.08)" };
   }
 
@@ -154,6 +158,7 @@ export default function TournamentDetailPage({
     if (type.startsWith("sudden-death-")) return "bg-red-900";
     if (type.startsWith("sprint-")) return "bg-yellow-600";
     if (type.startsWith("match-")) return "bg-violet-500";
+    if (type.startsWith("millionaire-")) return "bg-amber-600";
     return "bg-bauhaus-yellow";
   }
 
@@ -179,7 +184,9 @@ export default function TournamentDetailPage({
                     ? `${config.timerSeconds}s clock · -3s penalty · ${config.durationMinutes}min`
                     : isMatch
                       ? `${config.pairsCount || 8} pairs · memory · ${config.durationMinutes}min`
-                      : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
+                      : isMillionaire
+                        ? `15 questions · lifelines · ${config.durationMinutes}min`
+                        : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
               }
             </div>
           </div>
@@ -354,13 +361,15 @@ export default function TournamentDetailPage({
                         ? `/tournaments/${id}/play-sprint?berserk=${berserk}`
                         : isMatch
                           ? `/tournaments/${id}/play-match?berserk=${berserk}`
-                          : `/tournaments/${id}/play?berserk=${berserk}`;
+                          : isMillionaire
+                            ? `/tournaments/${id}/play-millionaire?berserk=${berserk}`
+                            : `/tournaments/${id}/play?berserk=${berserk}`;
                   router.push(playPath);
                 }}
                 className={`flex-1 py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest transition-all ${getBorderColor(tournament.type)} hover:scale-[1.01]`}
                 style={getBgStyle(tournament.type)}
               >
-                {isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : isMatch ? "Play Match" : "Play Round"}
+                {isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : isMatch ? "Play Match" : isMillionaire ? "Play Millionaire" : "Play Round"}
               </button>
             </div>
           )}

@@ -71,6 +71,21 @@ export const VARIANT_CONFIGS: Record<GameVariant, VariantConfig> = {
       "Time bonus for finishing quickly",
     ],
   },
+  millionaire: {
+    id: "millionaire",
+    name: "Millionaire",
+    icon: "💰",
+    description: "15 escalating questions, 3 lifelines, and the chance to walk away. How far can you go?",
+    color: "#d97706",
+    xpMultiplier: 2.5,
+    rules: [
+      "15 questions with escalating prize values",
+      "3 lifelines: 50:50, Phone a Friend, Ask the Audience",
+      "Safe havens at Q5 ($1,000) and Q10 ($32,000)",
+      "Walk away any time to keep your current prize",
+      "2.5x XP multiplier",
+    ],
+  },
 };
 
 export const VARIANT_LIST = Object.values(VARIANT_CONFIGS);
@@ -81,6 +96,7 @@ export function getVariantDisplayName(mode: string): string {
     case "sprint": return "Sprint";
     case "crossword": return "Crossword";
     case "match": return "Match";
+    case "millionaire": return "Millionaire";
     case "speed": return "Speed Round";
     case "daily": return "Daily Challenge";
     case "review": return "Review";

@@ -24,6 +24,7 @@ export async function GET() {
           ...(config.isSuddenDeath ? { isSuddenDeath: true } : {}),
           ...(config.isSprint ? { isSprint: true } : {}),
           ...(config.isMatch ? { isMatch: true, pairsCount: config.pairsCount } : {}),
+          ...(config.isMillionaire ? { isMillionaire: true } : {}),
         },
       },
       { onConflict: "type,starts_at", ignoreDuplicates: true }

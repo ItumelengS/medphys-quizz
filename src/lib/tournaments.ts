@@ -1,5 +1,5 @@
 export interface TournamentTypeConfig {
-  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "millionaire-blitz" | "millionaire-rapid";
   label: string;
   frequencyHours: number;
   durationMinutes: number;
@@ -21,6 +21,10 @@ export interface TournamentTypeConfig {
   isMatch?: boolean;
   /** Number of pairs for match tournaments */
   pairsCount?: number;
+  /** Whether this is a millionaire tournament type */
+  isMillionaire?: boolean;
+  /** Offset in minutes from the base slot time (staggers starts like Lichess) */
+  offsetMinutes?: number;
 }
 
 export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
@@ -33,6 +37,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     questionsPerRound: 10,
     color: "var(--bauhaus-red)",
     icon: "⚡",
+    offsetMinutes: 0,
   },
   rapid: {
     type: "rapid",
@@ -43,6 +48,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     questionsPerRound: 10,
     color: "var(--bauhaus-blue)",
     icon: "🏎️",
+    offsetMinutes: 30,
   },
   marathon: {
     type: "marathon",
@@ -66,6 +72,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     icon: "🧩",
     isCrossword: true,
     wordsTarget: 20,
+    offsetMinutes: 15,
   },
   "crossword-rapid": {
     type: "crossword-rapid",
@@ -78,6 +85,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     icon: "🧩",
     isCrossword: true,
     wordsTarget: 20,
+    offsetMinutes: 45,
   },
   "crossword-marathon": {
     type: "crossword-marathon",
@@ -102,6 +110,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     color: "#991b1b",
     icon: "💀",
     isSuddenDeath: true,
+    offsetMinutes: 75,
   },
   "sudden-death-rapid": {
     type: "sudden-death-rapid",
@@ -113,6 +122,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     color: "#7f1d1d",
     icon: "💀",
     isSuddenDeath: true,
+    offsetMinutes: 165,
   },
   "sprint-blitz": {
     type: "sprint-blitz",
@@ -124,6 +134,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     color: "#ca8a04",
     icon: "🏃",
     isSprint: true,
+    offsetMinutes: 55,
   },
   "sprint-rapid": {
     type: "sprint-rapid",
@@ -135,6 +146,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     color: "#a16207",
     icon: "🏃",
     isSprint: true,
+    offsetMinutes: 150,
   },
   "match-blitz": {
     type: "match-blitz",
@@ -147,6 +159,7 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     icon: "🃏",
     isMatch: true,
     pairsCount: 8,
+    offsetMinutes: 135,
   },
   "match-rapid": {
     type: "match-rapid",
@@ -159,25 +172,61 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     icon: "🃏",
     isMatch: true,
     pairsCount: 12,
+    offsetMinutes: 285,
+  },
+  "millionaire-blitz": {
+    type: "millionaire-blitz",
+    label: "Millionaire Blitz",
+    frequencyHours: 3,
+    durationMinutes: 20,
+    timerSeconds: 30,
+    questionsPerRound: 15,
+    color: "#d97706",
+    icon: "💰",
+    isMillionaire: true,
+    offsetMinutes: 100,
+  },
+  "millionaire-rapid": {
+    type: "millionaire-rapid",
+    label: "Millionaire Rapid",
+    frequencyHours: 6,
+    durationMinutes: 40,
+    timerSeconds: 45,
+    questionsPerRound: 15,
+    color: "#b45309",
+    icon: "💰",
+    isMillionaire: true,
+    offsetMinutes: 225,
   },
 };
 
 /** Get the most recent start time at or before `now` for a repeating tournament type. */
 function getLastScheduledStart(config: TournamentTypeConfig, now: Date): Date {
-  const d = new Date(now);
   if (config.fixedHourUTC !== undefined) {
     // Marathon: daily at fixed hour
+    const d = new Date(now);
     d.setUTCMinutes(0, 0, 0);
     d.setUTCHours(config.fixedHourUTC);
     if (d > now) d.setUTCDate(d.getUTCDate() - 1);
     return d;
   }
-  // Repeating every N hours from midnight UTC
-  d.setUTCMinutes(0, 0, 0);
-  const hoursSinceMidnight = now.getUTCHours();
-  const slot = Math.floor(hoursSinceMidnight / config.frequencyHours) * config.frequencyHours;
-  d.setUTCHours(slot);
-  return d;
+  // Repeating every N hours from midnight UTC, staggered by offsetMinutes
+  const offsetMs = (config.offsetMinutes || 0) * 60 * 1000;
+  const frequencyMs = config.frequencyHours * 60 * 60 * 1000;
+
+  const midnight = new Date(now);
+  midnight.setUTCHours(0, 0, 0, 0);
+
+  const msSinceMidnight = now.getTime() - midnight.getTime();
+  const slotIndex = Math.floor((msSinceMidnight - offsetMs) / frequencyMs);
+  const slotStart = new Date(midnight.getTime() + offsetMs + slotIndex * frequencyMs);
+
+  // Edge case: if offset pushes first slot past current time, go back one more cycle
+  if (slotStart > now) {
+    return new Date(slotStart.getTime() - frequencyMs);
+  }
+
+  return slotStart;
 }
 
 /** Get the next scheduled start time after `now`. */

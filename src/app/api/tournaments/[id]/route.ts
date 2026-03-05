@@ -55,7 +55,7 @@ export async function GET(
   if (userRecordRes.data) {
     userRecord = userRecordRes.data;
     // Compute rank from leaderboard data instead of extra query
-    const above = (leaderboard || []).filter((p: any) => p.total_points > userRecord.total_points).length;
+    const above = (leaderboard || []).filter((p: { total_points: number }) => p.total_points > userRecord.total_points).length;
     userRank = above + 1;
   }
 

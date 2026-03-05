@@ -98,8 +98,8 @@ export async function GET() {
     .limit(5);
 
   const finishedIds = (finishedRaw || []).map((t) => t.id);
-  let finishedCounts: Record<string, number> = {};
-  let finishedWinners: Record<string, { display_name: string; total_points: number }> = {};
+  const finishedCounts: Record<string, number> = {};
+  const finishedWinners: Record<string, { display_name: string; total_points: number }> = {};
 
   if (finishedIds.length > 0) {
     // Batch: get all participants for finished tournaments in one query

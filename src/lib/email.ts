@@ -1,13 +1,15 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 export async function sendPasswordResetEmail(
   to: string,
   name: string,
   resetUrl: string
 ) {
-  await resend.emails.send({
+  await getResend().emails.send({
     from: "MedPhys Speed Quiz <onboarding@resend.dev>",
     to,
     subject: "Reset your password",

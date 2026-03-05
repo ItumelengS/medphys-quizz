@@ -52,12 +52,20 @@ export async function GET(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let userRecord: any = null;
   let userRank = null;
+  let tiebreakerEligible = false;
 
   if (userRecordRes.data) {
     userRecord = userRecordRes.data;
     // Compute rank from leaderboard data instead of extra query
     const above = (leaderboard || []).filter((p: { total_points: number }) => p.total_points > userRecord.total_points).length;
     userRank = above + 1;
+
+    // Check tiebreaker eligibility: player has 2 rounds and is tied for a podium spot
+    if (userRecord.rounds_played >= 2 && userRecord.rounds_played < 3) {
+      const distinctPoints = [...new Set((leaderboard || []).map((p: { total_points: number }) => p.total_points))].sort((a: number, b: number) => b - a);
+      const podiumCutoff = distinctPoints[Math.min(2, distinctPoints.length - 1)] ?? 0;
+      tiebreakerEligible = userRecord.total_points >= podiumCutoff;
+    }
   }
 
   return NextResponse.json({
@@ -66,6 +74,7 @@ export async function GET(
     participant_count: count || 0,
     userRecord,
     userRank,
+    tiebreakerEligible,
   });
   } catch (error) {
     console.error("GET /api/tournaments/[id] error:", error);

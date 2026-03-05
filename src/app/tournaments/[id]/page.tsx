@@ -13,6 +13,7 @@ interface TournamentDetail {
   participant_count: number;
   userRecord: DbTournamentParticipant | null;
   userRank: number | null;
+  tiebreakerEligible: boolean;
 }
 
 function Countdown({ target, onReached, expiredText = "Now!", prefix }: { target: string; onReached?: () => void; expiredText?: string; prefix?: string }) {
@@ -95,12 +96,15 @@ export default function TournamentDetailPage({
     );
   }
 
-  const { tournament, leaderboard, participant_count, userRecord, userRank } = detail;
+  const { tournament, leaderboard, participant_count, userRecord, userRank, tiebreakerEligible } = detail;
   const config = TOURNAMENT_TYPES[tournament.type] || TOURNAMENT_TYPES.blitz;
   const isActive = tournament.status === "active";
   const isUpcoming = tournament.status === "upcoming";
   const isFinished = tournament.status === "finished";
   const hasJoined = !!userRecord;
+  const roundsPlayed = userRecord?.rounds_played ?? 0;
+  const roundLimitReached = roundsPlayed >= 2 && !tiebreakerEligible;
+  const canPlay = isActive && hasJoined && (roundsPlayed < 2 || (tiebreakerEligible && roundsPlayed < 3));
 
   const isCrossword = tournament.type.startsWith("crossword-");
   const isSuddenDeath = tournament.type.startsWith("sudden-death-");
@@ -280,7 +284,7 @@ export default function TournamentDetailPage({
             <div className="font-mono font-bold text-bauhaus-blue">{userRecord.total_points} pts</div>
           </div>
           <div className="flex items-center justify-between text-xs text-text-dim mt-1">
-            <span>{userRecord.rounds_played} rounds · best round {userRecord.best_round_score}pts</span>
+            <span>{userRecord.rounds_played}/{tiebreakerEligible ? 3 : 2} rounds · best round {userRecord.best_round_score}pts</span>
             {userRecord.fire_streak > 0 && <span>🔥 {userRecord.fire_streak}</span>}
             {userRecord.berserk_rounds > 0 && <span>💀 {userRecord.berserk_rounds}</span>}
           </div>
@@ -339,7 +343,7 @@ export default function TournamentDetailPage({
       {/* Bottom action bar */}
       <div className="fixed bottom-0 left-0 right-0 border-t-2 border-surface-border bg-bg p-4">
         <div className="max-w-lg mx-auto">
-          {isActive && hasJoined && (
+          {isActive && hasJoined && canPlay && (
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setBerserk(!berserk)}
@@ -369,8 +373,20 @@ export default function TournamentDetailPage({
                 className={`flex-1 py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest transition-all ${getBorderColor(tournament.type)} hover:scale-[1.01]`}
                 style={getBgStyle(tournament.type)}
               >
-                {isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : isMatch ? "Play Match" : isHotSeat ? "Play Hot Seat" : "Play Round"}
+                {tiebreakerEligible && roundsPlayed === 2
+                  ? "Tiebreaker Round!"
+                  : isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : isMatch ? "Play Match" : isHotSeat ? "Play Hot Seat" : "Play Round"}
               </button>
+            </div>
+          )}
+          {isActive && hasJoined && !canPlay && (
+            <div className="text-center py-3">
+              <div className="text-text-dim text-sm uppercase tracking-wider font-bold">
+                {roundsPlayed}/{tiebreakerEligible ? 3 : 2} rounds played
+              </div>
+              {roundLimitReached && (
+                <div className="text-text-dim text-xs mt-1">Round limit reached</div>
+              )}
             </div>
           )}
           {isActive && !hasJoined && (

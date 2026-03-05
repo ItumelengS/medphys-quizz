@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 import { calculateXp } from "@/lib/scoring";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
+import { checkRoundLimit } from "@/lib/tournament-round-check";
 
 interface SprintPayload {
   berserk: boolean;
@@ -44,6 +45,12 @@ export async function POST(
 
   if (tournament.status === "finished" || new Date(tournament.ends_at) < new Date()) {
     return NextResponse.json({ error: "Tournament has ended" }, { status: 400 });
+  }
+
+  // Check round limit before expensive processing
+  const roundCheck = await checkRoundLimit(supabase, id, userId);
+  if (!roundCheck.allowed) {
+    return NextResponse.json({ error: roundCheck.error }, { status: 400 });
   }
 
   if (!tournament.type.startsWith("sprint-")) {
@@ -120,7 +127,8 @@ export async function POST(
   });
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const isRoundLimit = error.message?.includes("Round limit");
+    return NextResponse.json({ error: error.message }, { status: isRoundLimit ? 400 : 500 });
   }
 
   // Update question_history

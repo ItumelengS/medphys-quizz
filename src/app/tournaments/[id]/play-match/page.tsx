@@ -64,6 +64,7 @@ export default function PlayMatchPage({
   const [error, setError] = useState("");
   const [result, setResult] = useState<RoundResult | null>(null);
   const [questionIds, setQuestionIds] = useState<string[]>([]);
+  const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
@@ -78,6 +79,16 @@ export default function PlayMatchPage({
       .then((data) => {
         if (!data.tournament) {
           setError("Tournament not found");
+          return;
+        }
+
+        // Check round limit
+        if (data.userRecord && data.userRecord.rounds_played >= 2 && !data.tiebreakerEligible) {
+          setRoundLimitError("Round limit reached: you have played 2 rounds");
+          return;
+        }
+        if (data.userRecord && data.userRecord.rounds_played >= 3) {
+          setRoundLimitError("Round limit reached: maximum 3 rounds played");
           return;
         }
 
@@ -214,6 +225,9 @@ export default function PlayMatchPage({
       .then((r) => r.json())
       .then((data) => {
         if (data.error) {
+          if (data.error.includes("Round limit")) {
+            setRoundLimitError(data.error);
+          }
           setError(data.error);
           setPhase("playing");
           return;
@@ -233,7 +247,19 @@ export default function PlayMatchPage({
     return `${m}:${s.toString().padStart(2, "0")}`;
   }
 
-  function resetAndPlayAgain() {
+  async function resetAndPlayAgain() {
+    // Check round limit before loading new game
+    const detailRes = await fetch(`/api/tournaments/${id}`);
+    const detail = await detailRes.json();
+    if (detail.userRecord && detail.userRecord.rounds_played >= 2 && !detail.tiebreakerEligible) {
+      setRoundLimitError("Round limit reached: you have played 2 rounds");
+      return;
+    }
+    if (detail.userRecord && detail.userRecord.rounds_played >= 3) {
+      setRoundLimitError("Round limit reached: maximum 3 rounds played");
+      return;
+    }
+
     setPhase("loading");
     setCards([]);
     setFlippedIndices([]);
@@ -282,6 +308,20 @@ export default function PlayMatchPage({
   }
 
   if (!session) return null;
+
+  if (roundLimitError && phase === "loading") {
+    return (
+      <main className="min-h-dvh flex flex-col items-center justify-center px-4">
+        <div className="text-text-secondary text-sm mb-4">{roundLimitError}</div>
+        <Link
+          href={`/tournaments/${id}`}
+          className="text-text-dim text-xs uppercase tracking-widest hover:text-text-secondary"
+        >
+          Back to Tournament
+        </Link>
+      </main>
+    );
+  }
 
   // Error state
   if (error && phase === "loading") {
@@ -361,20 +401,23 @@ export default function PlayMatchPage({
         </div>
 
         <div className="flex gap-3">
-          <button
-            onClick={resetAndPlayAgain}
-            className="px-6 py-3 rounded-none font-bold text-white hover:opacity-90 active:scale-95 transition-all"
-            style={{ background: "#8b5cf6" }}
-          >
-            Play Another
-          </button>
+          {!roundLimitError && (
+            <button
+              onClick={resetAndPlayAgain}
+              className="px-6 py-3 rounded-none font-bold text-white hover:opacity-90 active:scale-95 transition-all"
+              style={{ background: "#8b5cf6" }}
+            >
+              Play Another
+            </button>
+          )}
           <button
             onClick={() => router.push(`/tournaments/${id}`)}
             className="px-6 py-3 rounded-none font-bold text-text-primary border-2 border-surface-border hover:bg-surface active:scale-95 transition-all"
           >
-            Leaderboard
+            {roundLimitError ? "Back to Tournament" : "Leaderboard"}
           </button>
         </div>
+        {roundLimitError && <div className="text-text-dim text-xs text-center mt-2">{roundLimitError}</div>}
       </main>
     );
   }

@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { calculateMatchScore, calculateXp } from "@/lib/scoring";
+import { checkRoundLimit } from "@/lib/tournament-round-check";
 
 interface MatchRoundPayload {
   berserk: boolean;
@@ -44,6 +45,12 @@ export async function POST(
     return NextResponse.json({ error: "Tournament has ended" }, { status: 400 });
   }
 
+  // Check round limit before expensive processing
+  const roundCheck = await checkRoundLimit(supabase, id, userId);
+  if (!roundCheck.allowed) {
+    return NextResponse.json({ error: roundCheck.error }, { status: 400 });
+  }
+
   const config = TOURNAMENT_TYPES[tournament.type];
   if (!config?.isMatch) {
     return NextResponse.json({ error: "Not a match tournament" }, { status: 400 });
@@ -79,7 +86,8 @@ export async function POST(
   });
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const isRoundLimit = error.message?.includes("Round limit");
+    return NextResponse.json({ error: error.message }, { status: isRoundLimit ? 400 : 500 });
   }
 
   // Award XP

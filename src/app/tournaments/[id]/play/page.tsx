@@ -66,6 +66,7 @@ export default function TournamentPlayPage({
   const [isFinished, setIsFinished] = useState(false);
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -76,21 +77,29 @@ export default function TournamentPlayPage({
       : config.timerSeconds
     : 15;
 
-  // Fetch tournament + questions
+  // Fetch tournament + questions (with round-limit pre-check)
   useEffect(() => {
     fetch(`/api/tournaments/${id}`)
       .then((r) => r.json())
       .then((data) => {
         if (data.tournament) setTournament(data.tournament);
-      });
-
-    fetch(`/api/tournaments/${id}/questions`)
-      .then((r) => r.json())
-      .then((qs) => {
-        if (Array.isArray(qs)) {
-          setQuestions(qs);
-          if (qs.length > 0) setShuffledChoices(shuffleArray(qs[0].choices));
+        // Check round limit before loading questions
+        if (data.userRecord && data.userRecord.rounds_played >= 2 && !data.tiebreakerEligible) {
+          setRoundLimitError("Round limit reached: you have played 2 rounds");
+          return;
         }
+        if (data.userRecord && data.userRecord.rounds_played >= 3) {
+          setRoundLimitError("Round limit reached: maximum 3 rounds played");
+          return;
+        }
+        return fetch(`/api/tournaments/${id}/questions`)
+          .then((r) => r.json())
+          .then((qs) => {
+            if (Array.isArray(qs)) {
+              setQuestions(qs);
+              if (qs.length > 0) setShuffledChoices(shuffleArray(qs[0].choices));
+            }
+          });
       });
   }, [id]);
 
@@ -189,11 +198,28 @@ export default function TournamentPlayPage({
     });
 
     const data = await res.json();
+    if (data.error) {
+      setRoundLimitError(data.error);
+      setSubmitting(false);
+      return;
+    }
     setRoundResult(data);
     setSubmitting(false);
   }
 
-  function resetForNewRound() {
+  async function resetForNewRound() {
+    // Check round limit before fetching new questions
+    const detailRes = await fetch(`/api/tournaments/${id}`);
+    const detail = await detailRes.json();
+    if (detail.userRecord && detail.userRecord.rounds_played >= 2 && !detail.tiebreakerEligible) {
+      setRoundLimitError("Round limit reached: you have played 2 rounds");
+      return;
+    }
+    if (detail.userRecord && detail.userRecord.rounds_played >= 3) {
+      setRoundLimitError("Round limit reached: maximum 3 rounds played");
+      return;
+    }
+
     setIsFinished(false);
     setCurrentIndex(0);
     setScore(0);
@@ -216,6 +242,20 @@ export default function TournamentPlayPage({
   }
 
   if (!session) return null;
+
+  if (roundLimitError) {
+    return (
+      <main className="min-h-dvh flex flex-col items-center justify-center px-4">
+        <div className="text-text-secondary text-sm mb-4">{roundLimitError}</div>
+        <button
+          onClick={() => router.push(`/tournaments/${id}`)}
+          className="text-text-dim text-xs uppercase tracking-widest hover:text-text-secondary"
+        >
+          Back to Tournament
+        </button>
+      </main>
+    );
+  }
 
   if (questions.length === 0) {
     return (
@@ -287,13 +327,18 @@ export default function TournamentPlayPage({
         </div>
 
         <div className="animate-fade-up stagger-2 space-y-3">
-          <button
-            onClick={resetForNewRound}
-            className="w-full py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest"
-            style={{ borderColor: typeColor, background: `${typeColor}14` }}
-          >
-            Play Another Round
-          </button>
+          {!roundLimitError && (
+            <button
+              onClick={resetForNewRound}
+              className="w-full py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest"
+              style={{ borderColor: typeColor, background: `${typeColor}14` }}
+            >
+              Play Another Round
+            </button>
+          )}
+          {roundLimitError && (
+            <div className="text-text-dim text-sm text-center py-2">{roundLimitError}</div>
+          )}
           <button
             onClick={() => router.push(`/tournaments/${id}`)}
             className="w-full py-3 rounded-none border-2 border-surface-border font-bold text-sm uppercase tracking-widest text-text-secondary"

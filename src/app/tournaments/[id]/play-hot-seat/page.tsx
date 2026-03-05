@@ -69,6 +69,7 @@ export default function TournamentHotSeatPage({
   const [shuffledChoices, setShuffledChoices] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
+  const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -89,12 +90,17 @@ export default function TournamentHotSeatPage({
   const baseTimer = configObj?.timerSeconds || 30;
   const timerTotal = berserk ? Math.ceil(baseTimer / 2) : baseTimer;
 
-  // Fetch tournament info
+  // Fetch tournament info + round-limit check
   useEffect(() => {
     fetch(`/api/tournaments/${id}`)
       .then((r) => r.json())
       .then((data) => {
         if (data.tournament) setTournament(data.tournament);
+        if (data.userRecord && data.userRecord.rounds_played >= 2 && !data.tiebreakerEligible) {
+          setRoundLimitError("Round limit reached: you have played 2 rounds");
+        } else if (data.userRecord && data.userRecord.rounds_played >= 3) {
+          setRoundLimitError("Round limit reached: maximum 3 rounds played");
+        }
       });
   }, [id]);
 
@@ -299,6 +305,18 @@ export default function TournamentHotSeatPage({
   }
 
   async function startGame() {
+    // Check round limit before starting
+    const detailRes = await fetch(`/api/tournaments/${id}`);
+    const detail = await detailRes.json();
+    if (detail.userRecord && detail.userRecord.rounds_played >= 2 && !detail.tiebreakerEligible) {
+      setRoundLimitError("Round limit reached: you have played 2 rounds");
+      return;
+    }
+    if (detail.userRecord && detail.userRecord.rounds_played >= 3) {
+      setRoundLimitError("Round limit reached: maximum 3 rounds played");
+      return;
+    }
+
     setCurrentIndex(0);
     setAnswersLog([]);
     setSelectedAnswer(null);
@@ -333,6 +351,11 @@ export default function TournamentHotSeatPage({
     });
 
     const data = await res.json();
+    if (data.error) {
+      setRoundLimitError(data.error);
+      setSubmitting(false);
+      return;
+    }
     setRoundResult(data);
     setSubmitting(false);
   }
@@ -346,6 +369,20 @@ export default function TournamentHotSeatPage({
   }, [phase]);
 
   if (!session) return null;
+
+  if (roundLimitError && phase !== "lost" && phase !== "walked" && phase !== "won") {
+    return (
+      <main className="min-h-dvh flex flex-col items-center justify-center px-4">
+        <div className="text-text-secondary text-sm mb-4">{roundLimitError}</div>
+        <button
+          onClick={() => router.push(`/tournaments/${id}`)}
+          className="text-text-dim text-xs uppercase tracking-widest hover:text-text-secondary"
+        >
+          Back to Tournament
+        </button>
+      </main>
+    );
+  }
 
   if (phase === "loading") {
     return (
@@ -409,19 +446,22 @@ export default function TournamentHotSeatPage({
         ) : null}
 
         <div className="flex gap-3">
-          <button
-            onClick={startGame}
-            className="px-6 py-3 rounded-none font-bold text-white bg-amber-600 hover:opacity-90 active:scale-95 transition-all"
-          >
-            Play Again
-          </button>
+          {!roundLimitError && (
+            <button
+              onClick={startGame}
+              className="px-6 py-3 rounded-none font-bold text-white bg-amber-600 hover:opacity-90 active:scale-95 transition-all"
+            >
+              Play Again
+            </button>
+          )}
           <button
             onClick={() => router.push(`/tournaments/${id}`)}
             className="px-6 py-3 rounded-none font-bold text-text-primary border-2 border-surface-border hover:bg-surface active:scale-95 transition-all"
           >
-            Leaderboard
+            {roundLimitError ? "Back to Tournament" : "Leaderboard"}
           </button>
         </div>
+        {roundLimitError && <div className="text-text-dim text-xs text-center mt-2">{roundLimitError}</div>}
       </main>
     );
   }

@@ -48,13 +48,28 @@ export default function PlayCrosswordPage({
   const [clueIds, setClueIds] = useState<string[]>([]);
   const [error, setError] = useState("");
   const [result, setResult] = useState<RoundResult | null>(null);
+  const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
 
-  // Fetch puzzle on mount
+  // Fetch puzzle on mount (with round-limit pre-check)
   useEffect(() => {
     if (!session?.user?.id) return;
+
+    // Check round limit first
+    fetch(`/api/tournaments/${id}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.userRecord && data.userRecord.rounds_played >= 2 && !data.tiebreakerEligible) {
+          setRoundLimitError("Round limit reached: you have played 2 rounds");
+          return;
+        }
+        if (data.userRecord && data.userRecord.rounds_played >= 3) {
+          setRoundLimitError("Round limit reached: maximum 3 rounds played");
+          return;
+        }
+      });
 
     fetch(`/api/tournaments/${id}/crossword-puzzle`)
       .then((r) => r.json())
@@ -131,6 +146,9 @@ export default function PlayCrosswordPage({
       .then((r) => r.json())
       .then((data) => {
         if (data.error) {
+          if (data.error.includes("Round limit")) {
+            setRoundLimitError(data.error);
+          }
           setError(data.error);
           setPhase("playing");
           return;
@@ -151,6 +169,20 @@ export default function PlayCrosswordPage({
   }
 
   if (!session) return null;
+
+  if (roundLimitError && phase === "loading") {
+    return (
+      <main className="min-h-dvh flex flex-col items-center justify-center px-4">
+        <div className="text-text-secondary text-sm mb-4">{roundLimitError}</div>
+        <Link
+          href={`/tournaments/${id}`}
+          className="text-text-dim text-xs uppercase tracking-widest hover:text-text-secondary"
+        >
+          Back to Tournament
+        </Link>
+      </main>
+    );
+  }
 
   // Error state
   if (error && phase === "loading") {
@@ -231,47 +263,62 @@ export default function PlayCrosswordPage({
         </div>
 
         <div className="flex gap-3">
-          <button
-            onClick={() => {
-              setPhase("loading");
-              setPuzzle(null);
-              setWordsCompleted(0);
-              setWordsRevealed(0);
-              setAllDone(false);
-              setError("");
-              setResult(null);
-              // Re-fetch a new puzzle
-              fetch(`/api/tournaments/${id}/crossword-puzzle`)
-                .then((r) => r.json())
-                .then((data) => {
-                  if (data.error) {
-                    setError(data.error);
-                    return;
-                  }
-                  const effectiveTimer = berserk
-                    ? Math.ceil(data.timerSeconds / 2)
-                    : data.timerSeconds;
-                  setPuzzle(data.puzzle);
-                  setTimerSeconds(effectiveTimer);
-                  setTimeRemaining(effectiveTimer);
-                  setTimeElapsed(0);
-                  setClueIds(data.puzzle.words.map((w: { questionId: string }) => w.questionId));
-                  startTimeRef.current = Date.now();
-                  setPhase("playing");
-                })
-                .catch(() => setError("Failed to load puzzle"));
-            }}
-            className="px-6 py-3 rounded-none font-bold text-white bg-indigo-500 hover:opacity-90 active:scale-95 transition-all"
-          >
-            Play Another
-          </button>
+          {!roundLimitError && (
+            <button
+              onClick={async () => {
+                // Check round limit before loading new puzzle
+                const detailRes = await fetch(`/api/tournaments/${id}`);
+                const detail = await detailRes.json();
+                if (detail.userRecord && detail.userRecord.rounds_played >= 2 && !detail.tiebreakerEligible) {
+                  setRoundLimitError("Round limit reached: you have played 2 rounds");
+                  return;
+                }
+                if (detail.userRecord && detail.userRecord.rounds_played >= 3) {
+                  setRoundLimitError("Round limit reached: maximum 3 rounds played");
+                  return;
+                }
+
+                setPhase("loading");
+                setPuzzle(null);
+                setWordsCompleted(0);
+                setWordsRevealed(0);
+                setAllDone(false);
+                setError("");
+                setResult(null);
+                // Re-fetch a new puzzle
+                fetch(`/api/tournaments/${id}/crossword-puzzle`)
+                  .then((r) => r.json())
+                  .then((data) => {
+                    if (data.error) {
+                      setError(data.error);
+                      return;
+                    }
+                    const effectiveTimer = berserk
+                      ? Math.ceil(data.timerSeconds / 2)
+                      : data.timerSeconds;
+                    setPuzzle(data.puzzle);
+                    setTimerSeconds(effectiveTimer);
+                    setTimeRemaining(effectiveTimer);
+                    setTimeElapsed(0);
+                    setClueIds(data.puzzle.words.map((w: { questionId: string }) => w.questionId));
+                    startTimeRef.current = Date.now();
+                    setPhase("playing");
+                  })
+                  .catch(() => setError("Failed to load puzzle"));
+              }}
+              className="px-6 py-3 rounded-none font-bold text-white bg-indigo-500 hover:opacity-90 active:scale-95 transition-all"
+            >
+              Play Another
+            </button>
+          )}
           <button
             onClick={() => router.push(`/tournaments/${id}`)}
             className="px-6 py-3 rounded-none font-bold text-text-primary border-2 border-surface-border hover:bg-surface active:scale-95 transition-all"
           >
-            Leaderboard
+            {roundLimitError ? "Back to Tournament" : "Leaderboard"}
           </button>
         </div>
+        {roundLimitError && <div className="text-text-dim text-xs text-center mt-2">{roundLimitError}</div>}
       </main>
     );
   }

@@ -4,6 +4,7 @@ import { createServiceClient } from "@/lib/supabase/server";
 import { calculateXp } from "@/lib/scoring";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
+import { checkRoundLimit } from "@/lib/tournament-round-check";
 
 interface RoundPayload {
   berserk: boolean;
@@ -44,6 +45,12 @@ export async function POST(
 
   if (tournament.status === "finished" || new Date(tournament.ends_at) < new Date()) {
     return NextResponse.json({ error: "Tournament has ended" }, { status: 400 });
+  }
+
+  // Check round limit before expensive question fetching
+  const roundCheck = await checkRoundLimit(supabase, id, userId);
+  if (!roundCheck.allowed) {
+    return NextResponse.json({ error: roundCheck.error }, { status: 400 });
   }
 
   // Fetch correct answers from DB to validate server-side
@@ -123,7 +130,8 @@ export async function POST(
   });
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const isRoundLimit = error.message?.includes("Round limit");
+    return NextResponse.json({ error: error.message }, { status: isRoundLimit ? 400 : 500 });
   }
 
   // Update question_history (spaced repetition)

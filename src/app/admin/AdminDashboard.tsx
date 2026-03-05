@@ -28,6 +28,7 @@ export default function AdminDashboard({ sections, initialQuestions }: Props) {
     choices: ["", "", "", ""],
     explanation: "",
     difficulty: 5,
+    disciplines: ["physicist"],
   };
 
   async function handleSave(q: DbQuestion) {

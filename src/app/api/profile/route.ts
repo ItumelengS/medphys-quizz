@@ -34,8 +34,12 @@ export async function PATCH(req: NextRequest) {
   const body = await req.json();
   const supabase = createServiceClient();
 
+  const VALID_DISCIPLINES = ["physicist", "therapist", "oncologist", "engineer"];
   const updates: Record<string, unknown> = {};
   if (body.displayName) updates.display_name = body.displayName;
+  if (body.discipline && VALID_DISCIPLINES.includes(body.discipline)) {
+    updates.discipline = body.discipline;
+  }
 
   const { data, error } = await supabase
     .from("profiles")

@@ -332,22 +332,13 @@ export default function TournamentSprintPage({
         ) : null}
 
         <div className="flex gap-3">
-          {!roundLimitError && (
-            <button
-              onClick={startGame}
-              className="px-6 py-3 rounded-none font-bold text-black bg-bauhaus-yellow hover:opacity-90 active:scale-95 transition-all"
-            >
-              Again
-            </button>
-          )}
           <button
             onClick={() => router.push(`/tournaments/${id}`)}
-            className="px-6 py-3 rounded-none font-bold text-text-primary border-2 border-surface-border hover:bg-surface active:scale-95 transition-all"
+            className="px-6 py-3 rounded-none font-bold text-black bg-bauhaus-yellow hover:opacity-90 active:scale-95 transition-all"
           >
-            {roundLimitError ? "Back to Tournament" : "Leaderboard"}
+            Back to Tournament
           </button>
         </div>
-        {roundLimitError && <div className="text-text-dim text-xs text-center mt-2">{roundLimitError}</div>}
       </main>
     );
   }

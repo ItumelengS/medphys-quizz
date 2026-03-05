@@ -30,6 +30,16 @@ export interface QuestionBank {
   questions: Record<string, Question[]>;
 }
 
+// ── Discipline ─────────────────────────────────────────────
+export type Discipline = "physicist" | "therapist" | "oncologist" | "engineer";
+
+export const DISCIPLINES: { value: Discipline; label: string }[] = [
+  { value: "physicist", label: "Medical Physicist" },
+  { value: "therapist", label: "Radiation Therapist" },
+  { value: "oncologist", label: "Radiation Oncologist" },
+  { value: "engineer", label: "Clinical Engineer" },
+];
+
 // ── DB-aligned types ───────────────────────────────────────
 export interface DbSection {
   id: string;
@@ -48,6 +58,7 @@ export interface DbQuestion {
   choices: string[];
   explanation: string;
   difficulty: number;
+  disciplines: string[];
 }
 
 export interface DbProfile {
@@ -55,6 +66,7 @@ export interface DbProfile {
   display_name: string;
   xp: number;
   role: "player" | "admin";
+  discipline: Discipline;
 }
 
 export interface DbUserStats {
@@ -108,6 +120,7 @@ export interface DbTournament {
   ends_at: string;
   status: "upcoming" | "active" | "finished";
   config: Record<string, unknown>;
+  discipline: string;
 }
 
 export interface FinishedTournamentWithWinner extends DbTournament {
@@ -148,6 +161,7 @@ export interface DbCrosswordClue {
   answer: string;
   category: string;
   difficulty: string;
+  disciplines: string[];
 }
 
 // ── Spaced repetition (client-side computation) ────────────
@@ -262,6 +276,7 @@ declare module "next-auth" {
       role: string;
       displayName: string;
       xp: number;
+      discipline: string;
     };
   }
 
@@ -269,6 +284,7 @@ declare module "next-auth" {
     role?: string;
     displayName?: string;
     xp?: number;
+    discipline?: string;
   }
 }
 

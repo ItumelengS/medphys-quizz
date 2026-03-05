@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
+import { applyDisciplineFilter } from "@/lib/discipline-filter";
 
 export async function GET(req: NextRequest) {
   try {
@@ -18,7 +19,8 @@ export async function GET(req: NextRequest) {
   const minDifficulty = searchParams.get("minDifficulty");
   const maxDifficulty = searchParams.get("maxDifficulty");
 
-  let query = supabase.from("questions").select("*");
+  const discipline = session.user.discipline || "physicist";
+  let query = applyDisciplineFilter(supabase.from("questions").select("*"), discipline);
 
   if (section && section !== "all") {
     query = query.eq("section_id", section);

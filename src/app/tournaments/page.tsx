@@ -126,8 +126,16 @@ export default function TournamentLobby() {
 
   if (!session) return null;
 
-  const active = tournaments.filter((t) => t.status === "active");
-  const upcoming = tournaments.filter((t) => t.status === "upcoming");
+  const userDiscipline = session?.user?.discipline || "physicist";
+
+  // Filter: show 'open' tournaments to everyone, discipline-specific only to matching users
+  function visibleForUser(t: TournamentWithCount) {
+    const d = (t as TournamentWithCount & { discipline?: string }).discipline || "open";
+    return d === "open" || d === userDiscipline;
+  }
+
+  const active = tournaments.filter((t) => t.status === "active" && visibleForUser(t));
+  const upcoming = tournaments.filter((t) => t.status === "upcoming" && visibleForUser(t));
 
   function getTypeConfig(type: string) {
     return TOURNAMENT_TYPES[type] || TOURNAMENT_TYPES.blitz;
@@ -170,6 +178,17 @@ export default function TournamentLobby() {
     if (type.startsWith("match-")) return "rgba(139, 92, 246, 0.06)";
     if (type.startsWith("hot-seat-")) return "rgba(217, 119, 6, 0.06)";
     return "rgba(234, 179, 8, 0.06)";
+  }
+
+  function getDisciplineBadge(t: TournamentWithCount) {
+    const d = (t as TournamentWithCount & { discipline?: string }).discipline || "open";
+    if (d === "open") return null;
+    const labels: Record<string, string> = { physicist: "Physicist", therapist: "Therapist", oncologist: "Oncologist", engineer: "Engineer" };
+    return (
+      <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 border border-surface-border text-text-dim font-bold">
+        {labels[d] || d}
+      </span>
+    );
   }
 
   function getDescription(type: string, config: ReturnType<typeof getTypeConfig>) {
@@ -261,6 +280,7 @@ export default function TournamentLobby() {
                       <span className={`font-black text-xs uppercase tracking-wider ${getTextColor(t.type)} truncate`}>
                         {config.label}
                       </span>
+                      {getDisciplineBadge(t)}
                     </div>
                     <TimeRemaining target={t.ends_at} />
                   </div>
@@ -296,6 +316,7 @@ export default function TournamentLobby() {
                       <span className={`font-bold text-xs uppercase tracking-wider ${getTextColor(t.type)} truncate`}>
                         {config.label}
                       </span>
+                      {getDisciplineBadge(t)}
                     </div>
                     <Countdown target={t.starts_at} onReached={fetchTournaments} />
                   </div>

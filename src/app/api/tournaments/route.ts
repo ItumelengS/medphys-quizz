@@ -16,6 +16,7 @@ export async function GET() {
       starts_at: slot.startsAt.toISOString(),
       ends_at: slot.endsAt.toISOString(),
       status: slot.status,
+      discipline: config.discipline || "open",
       config: {
         timerSeconds: config.timerSeconds,
         questionsPerRound: config.questionsPerRound,

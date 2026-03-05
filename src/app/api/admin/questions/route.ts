@@ -37,10 +37,10 @@ export async function POST(req: NextRequest) {
   if (!ctx) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
   const body = await req.json();
-  const { id, section_id, question, answer, choices, explanation, difficulty } = body;
+  const { id, section_id, question, answer, choices, explanation, difficulty, disciplines } = body;
 
   // Structural validation
-  const q: DbQuestion = { id, section_id, question, answer, choices, explanation, difficulty: difficulty ?? 5 };
+  const q: DbQuestion = { id, section_id, question, answer, choices, explanation, difficulty: difficulty ?? 5, disciplines: disciplines || ["physicist"] };
   const validation = validateStructural(q);
   if (!validation.valid) {
     return NextResponse.json(

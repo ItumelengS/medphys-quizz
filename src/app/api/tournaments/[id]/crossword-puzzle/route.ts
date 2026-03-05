@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { generateCrossword } from "@/lib/crossword-generator";
+import { applyDisciplineFilter } from "@/lib/discipline-filter";
 
 export async function GET(
   _req: NextRequest,
@@ -35,10 +36,12 @@ export async function GET(
     return NextResponse.json({ error: "Not a crossword tournament" }, { status: 400 });
   }
 
-  // Fetch clues from crossword_clues table
-  const { data: clues, error } = await supabase
-    .from("crossword_clues")
-    .select("*");
+  // Fetch clues from crossword_clues table, filtered by discipline
+  const discipline = session.user.discipline || "physicist";
+  const { data: clues, error } = await applyDisciplineFilter(
+    supabase.from("crossword_clues").select("*"),
+    discipline
+  );
 
   if (error || !clues) {
     return NextResponse.json({ error: "Failed to fetch clues" }, { status: 500 });

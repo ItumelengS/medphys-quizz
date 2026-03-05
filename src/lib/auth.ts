@@ -41,7 +41,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       const { data: profile } = await supabase
         .from("profiles")
-        .select("display_name, xp, role")
+        .select("display_name, xp, role, discipline")
         .eq("id", userId)
         .single();
 
@@ -60,10 +60,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         session.user.role = "player";
         session.user.displayName = displayName;
         session.user.xp = 0;
+        session.user.discipline = "physicist";
       } else {
         session.user.role = profile.role;
         session.user.displayName = profile.display_name;
         session.user.xp = profile.xp;
+        session.user.discipline = profile.discipline || "physicist";
       }
 
       session.user.id = userId;

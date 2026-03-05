@@ -17,7 +17,7 @@ export async function POST(
   // Verify tournament exists and isn't finished
   const { data: tournament } = await supabase
     .from("tournaments")
-    .select("id, status")
+    .select("id, status, discipline")
     .eq("id", id)
     .single();
 
@@ -29,12 +29,22 @@ export async function POST(
     return NextResponse.json({ error: "Tournament has ended" }, { status: 400 });
   }
 
-  // Get display name
+  // Get display name and discipline
   const { data: profile } = await supabase
     .from("profiles")
-    .select("display_name")
+    .select("display_name, discipline")
     .eq("id", session.user.id)
     .single();
+
+  // Gate discipline-specific tournaments
+  const tournamentDiscipline = tournament.discipline || "open";
+  const userDiscipline = profile?.discipline || "physicist";
+  if (tournamentDiscipline !== "open" && tournamentDiscipline !== userDiscipline) {
+    return NextResponse.json(
+      { error: `This tournament is for ${tournamentDiscipline}s only. Change your discipline in profile settings to join.` },
+      { status: 403 }
+    );
+  }
 
   const displayName = profile?.display_name || session.user.name || "Player";
 

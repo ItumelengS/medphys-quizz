@@ -71,6 +71,7 @@ function normalizeInput(raw: unknown): DbQuestion[] {
         choices: item.c,
         explanation: item.e,
         difficulty: item.d ?? 5,
+        disciplines: ["physicist"],
       }));
     }
     return raw as DbQuestion[];
@@ -90,6 +91,7 @@ function normalizeInput(raw: unknown): DbQuestion[] {
           choices: q.c,
           explanation: q.e,
           difficulty: q.d ?? 5,
+          disciplines: ["physicist"],
         });
       }
     }

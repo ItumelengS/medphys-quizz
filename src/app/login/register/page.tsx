@@ -11,6 +11,7 @@ export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [discipline, setDiscipline] = useState("physicist");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -33,7 +34,7 @@ export default function RegisterPage() {
     const res = await fetch("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password, displayName }),
+      body: JSON.stringify({ email, password, displayName, discipline }),
     });
 
     if (!res.ok) {
@@ -91,6 +92,22 @@ export default function RegisterPage() {
               className="w-full px-4 py-3 rounded-none bg-surface border-2 border-surface-border text-text-primary text-sm font-light focus:outline-none focus:border-bauhaus-blue"
               placeholder="Your name"
             />
+          </div>
+          <div>
+            <label htmlFor="discipline" className="block text-text-secondary text-xs mb-1 uppercase tracking-widest">
+              Discipline
+            </label>
+            <select
+              id="discipline"
+              value={discipline}
+              onChange={(e) => setDiscipline(e.target.value)}
+              className="w-full px-4 py-3 rounded-none bg-surface border-2 border-surface-border text-text-primary text-sm font-light focus:outline-none focus:border-bauhaus-blue"
+            >
+              <option value="physicist">Medical Physicist</option>
+              <option value="therapist">Radiation Therapist</option>
+              <option value="oncologist">Radiation Oncologist</option>
+              <option value="engineer">Clinical Engineer</option>
+            </select>
           </div>
           <div>
             <label htmlFor="email" className="block text-text-secondary text-xs mb-1 uppercase tracking-widest">

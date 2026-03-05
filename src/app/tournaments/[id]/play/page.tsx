@@ -327,23 +327,12 @@ export default function TournamentPlayPage({
         </div>
 
         <div className="animate-fade-up stagger-2 space-y-3">
-          {!roundLimitError && (
-            <button
-              onClick={resetForNewRound}
-              className="w-full py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest"
-              style={{ borderColor: typeColor, background: `${typeColor}14` }}
-            >
-              Play Another Round
-            </button>
-          )}
-          {roundLimitError && (
-            <div className="text-text-dim text-sm text-center py-2">{roundLimitError}</div>
-          )}
           <button
             onClick={() => router.push(`/tournaments/${id}`)}
-            className="w-full py-3 rounded-none border-2 border-surface-border font-bold text-sm uppercase tracking-widest text-text-secondary"
+            className="w-full py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest"
+            style={{ borderColor: typeColor, background: `${typeColor}14` }}
           >
-            Back to Leaderboard
+            Back to Tournament
           </button>
         </div>
       </main>

@@ -5,11 +5,14 @@ import { createServiceClient } from "@/lib/supabase/server";
 export async function POST(request: Request) {
   try {
   const body = await request.json();
-  const { email, password, displayName } = body as {
+  const { email, password, displayName, discipline: rawDiscipline } = body as {
     email?: string;
     password?: string;
     displayName?: string;
+    discipline?: string;
   };
+  const VALID_DISCIPLINES = ["physicist", "therapist", "oncologist", "engineer"];
+  const discipline = rawDiscipline && VALID_DISCIPLINES.includes(rawDiscipline) ? rawDiscipline : "physicist";
 
   if (!email || !password || !displayName) {
     return NextResponse.json(
@@ -52,6 +55,14 @@ export async function POST(request: Request) {
       { error: "Failed to create account. Please try again." },
       { status: 500 }
     );
+  }
+
+  // Set the discipline on the newly created profile
+  if (discipline !== "physicist") {
+    await supabase
+      .from("profiles")
+      .update({ discipline })
+      .eq("id", newId);
   }
 
   return NextResponse.json({ ok: true }, { status: 201 });

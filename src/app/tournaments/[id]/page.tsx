@@ -111,6 +111,9 @@ export default function TournamentDetailPage({
   const isSprint = tournament.type.startsWith("sprint-");
   const isMatch = tournament.type.startsWith("match-");
   const isHotSeat = tournament.type.startsWith("hot-seat-");
+  const tournamentDiscipline = (tournament as DbTournament & { discipline?: string }).discipline || "open";
+  const userDiscipline = session?.user?.discipline || "physicist";
+  const disciplineMismatch = tournamentDiscipline !== "open" && tournamentDiscipline !== userDiscipline;
 
   function getColorClass(type: string) {
     if (type === "blitz") return "text-bauhaus-red";
@@ -179,6 +182,11 @@ export default function TournamentDetailPage({
             <h1 className={`text-2xl font-black uppercase tracking-wider ${getColorClass(tournament.type)}`}>
               {config.label} Arena
             </h1>
+            {tournamentDiscipline !== "open" && (
+              <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 border border-surface-border text-text-dim font-bold inline-block mt-1">
+                {tournamentDiscipline} only
+              </span>
+            )}
             <div className="text-text-secondary text-xs font-mono">
               {isCrossword
                 ? `${Math.floor(config.timerSeconds / 60)}min · ${config.wordsTarget || 20} words · ${config.durationMinutes}min`
@@ -389,7 +397,7 @@ export default function TournamentDetailPage({
               )}
             </div>
           )}
-          {isActive && !hasJoined && (
+          {isActive && !hasJoined && !disciplineMismatch && (
             <button
               onClick={handleJoin}
               disabled={joining}
@@ -399,7 +407,7 @@ export default function TournamentDetailPage({
               {joining ? "Joining..." : "Join Tournament"}
             </button>
           )}
-          {isUpcoming && !hasJoined && (
+          {isUpcoming && !hasJoined && !disciplineMismatch && (
             <button
               onClick={handleJoin}
               disabled={joining}
@@ -407,6 +415,16 @@ export default function TournamentDetailPage({
             >
               {joining ? "Joining..." : "Join Early"}
             </button>
+          )}
+          {!hasJoined && disciplineMismatch && (isActive || isUpcoming) && (
+            <div className="text-center py-3">
+              <div className="text-text-dim text-sm">
+                This tournament is for <span className="font-bold">{tournamentDiscipline}s</span> only.
+              </div>
+              <Link href="/profile" className="text-bauhaus-blue text-xs hover:underline mt-1 inline-block">
+                Change your discipline in profile settings
+              </Link>
+            </div>
           )}
           {isUpcoming && hasJoined && (
             <div className="text-center text-text-dim text-sm uppercase tracking-wider">

@@ -25,6 +25,8 @@ export interface TournamentTypeConfig {
   isHotSeat?: boolean;
   /** Offset in minutes from the base slot time (staggers starts like Lichess) */
   offsetMinutes?: number;
+  /** Discipline restriction ('open' or a specific discipline) */
+  discipline?: string;
 }
 
 export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
@@ -256,6 +258,7 @@ export interface TournamentSlot {
   endsAt: Date;
   status: "active" | "upcoming";
   config: TournamentTypeConfig;
+  discipline: string;
 }
 
 /** Get all tournament slots that should exist now: active ones + next upcoming per type. */
@@ -265,6 +268,7 @@ export function getTournamentSlots(now = new Date()): TournamentSlot[] {
   for (const [key, config] of Object.entries(TOURNAMENT_TYPES)) {
     // Check for active
     const activeStart = getCurrentActiveStart(key, now);
+    const discipline = config.discipline || "open";
     if (activeStart) {
       slots.push({
         type: key,
@@ -272,6 +276,7 @@ export function getTournamentSlots(now = new Date()): TournamentSlot[] {
         endsAt: new Date(activeStart.getTime() + config.durationMinutes * 60 * 1000),
         status: "active",
         config,
+        discipline,
       });
     }
 
@@ -283,6 +288,7 @@ export function getTournamentSlots(now = new Date()): TournamentSlot[] {
       endsAt: new Date(nextStart.getTime() + config.durationMinutes * 60 * 1000),
       status: "upcoming",
       config,
+      discipline,
     });
   }
 

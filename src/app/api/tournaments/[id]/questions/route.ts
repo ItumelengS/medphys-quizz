@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
+import { applyDisciplineFilter } from "@/lib/discipline-filter";
 
 export async function GET(
   _req: NextRequest,
@@ -33,10 +34,13 @@ export async function GET(
   const limit = config?.questionsPerRound || 10;
 
   // Fetch a larger pool to randomize from — ensures different order every round
-  const { data: questions, error } = await supabase
-    .from("questions")
-    .select("id, section_id, question, answer, choices, explanation")
-    .limit(limit * 3);
+  const discipline = session.user.discipline || "physicist";
+  const { data: questions, error } = await applyDisciplineFilter(
+    supabase
+      .from("questions")
+      .select("id, section_id, question, answer, choices, explanation"),
+    discipline
+  ).limit(limit * 3);
 
   if (error || !questions) {
     return NextResponse.json({ error: "Failed to fetch questions" }, { status: 500 });

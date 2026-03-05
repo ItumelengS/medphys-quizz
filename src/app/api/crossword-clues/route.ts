@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
+import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 
 export async function GET(req: NextRequest) {
+  try {
+  const session = await auth();
+  if (!session?.user?.id) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const supabase = createServiceClient();
   const { searchParams } = new URL(req.url);
   const category = searchParams.get("category");
@@ -32,4 +39,8 @@ export async function GET(req: NextRequest) {
   clues = clues.slice(0, limit);
 
   return NextResponse.json(clues);
+  } catch (error) {
+    console.error("GET /api/crossword-clues error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

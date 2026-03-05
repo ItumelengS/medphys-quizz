@@ -6,6 +6,7 @@ import { applyXpChange } from "@/lib/apply-xp";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 
 export async function POST(req: NextRequest) {
+  try {
   const session = await auth();
   if (!session?.user?.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -107,4 +108,8 @@ export async function POST(req: NextRequest) {
     newConfirmedLevel,
     newTotalXp: newXp,
   });
+  } catch (error) {
+    console.error("POST /api/review/submit error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

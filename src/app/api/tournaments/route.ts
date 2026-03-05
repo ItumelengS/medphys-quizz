@@ -3,6 +3,7 @@ import { createServiceClient } from "@/lib/supabase/server";
 import { getTournamentSlots, TOURNAMENT_TYPES } from "@/lib/tournaments";
 
 export async function GET() {
+  try {
   const supabase = createServiceClient();
   const now = new Date();
   const slots = getTournamentSlots(now);
@@ -128,4 +129,8 @@ export async function GET() {
   });
 
   return NextResponse.json({ tournaments: result, finished });
+  } catch (error) {
+    console.error("GET /api/tournaments error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

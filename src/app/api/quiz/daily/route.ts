@@ -32,6 +32,7 @@ function seededShuffle<T>(array: T[], seed: number): T[] {
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+  try {
   const session = await auth();
   if (!session?.user?.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -71,10 +72,15 @@ export async function GET() {
     .in("id", selectedIds);
 
   return NextResponse.json({ locked: false, questions: selected || [] });
+  } catch (error) {
+    console.error("GET /api/quiz/daily error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function POST(_req: NextRequest) {
+  try {
   // Daily submit is handled by /api/quiz/submit with mode="daily"
   // This endpoint just checks status
   const session = await auth();
@@ -91,4 +97,8 @@ export async function POST(_req: NextRequest) {
     .single();
 
   return NextResponse.json({ completed: data?.last_completed_date === today });
+  } catch (error) {
+    console.error("POST /api/quiz/daily error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

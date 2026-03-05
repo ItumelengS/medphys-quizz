@@ -18,6 +18,7 @@ export async function POST(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  try {
   const { id } = await params;
   const session = await auth();
   if (!session?.user?.id) {
@@ -118,4 +119,8 @@ export async function POST(
     accuracy: Math.round(accuracy * 10) / 10,
     xp: xpResult,
   });
+  } catch (error) {
+    console.error("POST /api/tournaments/[id]/crossword-round error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

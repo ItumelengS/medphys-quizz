@@ -6,6 +6,7 @@ export async function GET(
   _req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  try {
   const { id } = await params;
   const session = await auth();
   const supabase = createServiceClient();
@@ -66,4 +67,8 @@ export async function GET(
     userRecord,
     userRank,
   });
+  } catch (error) {
+    console.error("GET /api/tournaments/[id] error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

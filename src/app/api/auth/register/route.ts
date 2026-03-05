@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import { createServiceClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
+  try {
   const body = await request.json();
   const { email, password, displayName } = body as {
     email?: string;
@@ -54,4 +55,8 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json({ ok: true }, { status: 201 });
+  } catch (error) {
+    console.error("POST /api/auth/register error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

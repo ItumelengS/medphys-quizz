@@ -4,6 +4,7 @@ import { sendPasswordResetEmail } from "@/lib/email";
 import { headers } from "next/headers";
 
 export async function POST(request: Request) {
+  try {
   const body = await request.json();
   const { email } = body as { email?: string };
 
@@ -36,4 +37,8 @@ export async function POST(request: Request) {
 
   // Always return success to avoid leaking whether the email exists
   return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error("POST /api/auth/forgot-password error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

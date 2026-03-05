@@ -14,45 +14,51 @@ export async function GET() {
   const userId = session.user.id;
   const now = new Date().toISOString();
 
-  // Get all questions
-  const { data: allQuestions } = await supabase
-    .from("questions")
-    .select("*")
-    .order("id");
+  // Get question IDs and user history in parallel (only fetch needed columns)
+  const [questionsRes, historyRes] = await Promise.all([
+    supabase.from("questions").select("id").order("id"),
+    supabase.from("question_history").select("question_id, next_due, streak, times_shown").eq("user_id", userId),
+  ]);
 
-  if (!allQuestions?.length) {
+  const allQuestionIds = questionsRes.data || [];
+  if (!allQuestionIds.length) {
     return NextResponse.json([]);
   }
 
-  // Get user's question history
-  const { data: history } = await supabase
-    .from("question_history")
-    .select("*")
-    .eq("user_id", userId);
-
   const historyMap = new Map(
-    (history || []).map((h) => [h.question_id, h])
+    (historyRes.data || []).map((h) => [h.question_id, h])
   );
 
-  // Determine due questions
-  const due: { question: typeof allQuestions[0]; priority: number; date: string }[] = [];
+  // Determine due question IDs with priority
+  const due: { questionId: string; priority: number; date: string }[] = [];
 
-  for (const q of allQuestions) {
+  for (const q of allQuestionIds) {
     const record = historyMap.get(q.id);
     if (!record) {
-      // Never seen — medium priority
-      due.push({ question: q, priority: 1, date: "1970-01-01" });
+      due.push({ questionId: q.id, priority: 1, date: "1970-01-01" });
     } else if (new Date(record.next_due) <= new Date(now)) {
-      // Wrong recently = highest priority
       const priority = record.streak === 0 && record.times_shown > 0 ? 0 : 2;
-      due.push({ question: q, priority, date: record.next_due });
+      due.push({ questionId: q.id, priority, date: record.next_due });
     }
   }
 
   const sorted = due
     .sort((a, b) => a.priority - b.priority || a.date.localeCompare(b.date))
-    .slice(0, MAX_REVIEW)
-    .map((d) => d.question);
+    .slice(0, MAX_REVIEW);
 
-  return NextResponse.json(sorted);
+  if (sorted.length === 0) {
+    return NextResponse.json([]);
+  }
+
+  // Only fetch full question data for the final selection
+  const { data: questions } = await supabase
+    .from("questions")
+    .select("*")
+    .in("id", sorted.map((d) => d.questionId));
+
+  // Restore sort order
+  const questionMap = new Map((questions || []).map((q) => [q.id, q]));
+  const result = sorted.map((d) => questionMap.get(d.questionId)).filter(Boolean);
+
+  return NextResponse.json(result);
 }

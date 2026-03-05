@@ -86,6 +86,21 @@ export const VARIANT_CONFIGS: Record<GameVariant, VariantConfig> = {
       "2.5x XP multiplier",
     ],
   },
+  blitz: {
+    id: "blitz",
+    name: "Blitz",
+    icon: "⚡",
+    description: "Rapid-fire true/false under a 3-second clock. Streak scoring rewards consistency.",
+    color: "#06b6d4",
+    xpMultiplier: 1.8,
+    rules: [
+      "30 true/false questions — is the claim correct?",
+      "3 seconds per question — timeout = wrong",
+      "Streak multipliers: 3→2x, 7→3x, 10→5x",
+      "No explanations during play",
+      "1.8x XP multiplier",
+    ],
+  },
 };
 
 export const VARIANT_LIST = Object.values(VARIANT_CONFIGS);
@@ -97,6 +112,7 @@ export function getVariantDisplayName(mode: string): string {
     case "crossword": return "Crossword";
     case "match": return "Match";
     case "hot-seat": return "Hot Seat";
+    case "blitz": return "Blitz";
     case "speed": return "Speed Round";
     case "daily": return "Daily Challenge";
     case "review": return "Review";

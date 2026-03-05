@@ -10,30 +10,13 @@ export async function GET(
   const session = await auth();
   const supabase = createServiceClient();
 
-  // Transition status if needed
+  // Transition status if needed (parallel)
   const now = new Date().toISOString();
-  await supabase
-    .from("tournaments")
-    .update({ status: "finished" })
-    .eq("id", id)
-    .eq("status", "active")
-    .lt("ends_at", now);
-
-  // Upcoming tournament whose window fully passed without going active
-  await supabase
-    .from("tournaments")
-    .update({ status: "finished" })
-    .eq("id", id)
-    .eq("status", "upcoming")
-    .lt("ends_at", now);
-
-  await supabase
-    .from("tournaments")
-    .update({ status: "active" })
-    .eq("id", id)
-    .eq("status", "upcoming")
-    .lte("starts_at", now)
-    .gt("ends_at", now);
+  await Promise.all([
+    supabase.from("tournaments").update({ status: "finished" }).eq("id", id).eq("status", "active").lt("ends_at", now),
+    supabase.from("tournaments").update({ status: "finished" }).eq("id", id).eq("status", "upcoming").lt("ends_at", now),
+    supabase.from("tournaments").update({ status: "active" }).eq("id", id).eq("status", "upcoming").lte("starts_at", now).gt("ends_at", now),
+  ]);
 
   const { data: tournament, error } = await supabase
     .from("tournaments")
@@ -45,7 +28,7 @@ export async function GET(
     return NextResponse.json({ error: "Tournament not found" }, { status: 404 });
   }
 
-  // Leaderboard — top 50 for active/upcoming, full for finished
+  // Fetch leaderboard, participant count, and user record in parallel
   const isFinished = tournament.status === "finished";
   let leaderboardQuery = supabase
     .from("tournament_participants")
@@ -57,37 +40,23 @@ export async function GET(
     leaderboardQuery = leaderboardQuery.limit(50);
   }
 
-  const { data: leaderboard } = await leaderboardQuery;
+  const [{ data: leaderboard }, { count }, userRecordRes] = await Promise.all([
+    leaderboardQuery,
+    supabase.from("tournament_participants").select("*", { count: "exact", head: true }).eq("tournament_id", id),
+    session?.user?.id
+      ? supabase.from("tournament_participants").select("*").eq("tournament_id", id).eq("user_id", session.user.id).single()
+      : Promise.resolve({ data: null }),
+  ]);
 
-  // Participant count
-  const { count } = await supabase
-    .from("tournament_participants")
-    .select("*", { count: "exact", head: true })
-    .eq("tournament_id", id);
-
-  // Current user's record & rank
-  let userRecord = null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let userRecord: any = null;
   let userRank = null;
 
-  if (session?.user?.id) {
-    const { data: record } = await supabase
-      .from("tournament_participants")
-      .select("*")
-      .eq("tournament_id", id)
-      .eq("user_id", session.user.id)
-      .single();
-
-    if (record) {
-      userRecord = record;
-      // Get rank
-      const { count: above } = await supabase
-        .from("tournament_participants")
-        .select("*", { count: "exact", head: true })
-        .eq("tournament_id", id)
-        .gt("total_points", record.total_points);
-
-      userRank = (above || 0) + 1;
-    }
+  if (userRecordRes.data) {
+    userRecord = userRecordRes.data;
+    // Compute rank from leaderboard data instead of extra query
+    const above = (leaderboard || []).filter((p: any) => p.total_points > userRecord.total_points).length;
+    userRank = above + 1;
   }
 
   return NextResponse.json({

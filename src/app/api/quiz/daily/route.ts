@@ -51,21 +51,26 @@ export async function GET() {
     return NextResponse.json({ locked: true, score: daily.last_score });
   }
 
-  // Get all questions and deterministically pick 10
-  const { data: allQuestions } = await supabase
+  // Get only question IDs for seeded shuffle, then fetch full data for selected 10
+  const { data: allIds } = await supabase
     .from("questions")
-    .select("*")
+    .select("id")
     .order("id");
 
-  if (!allQuestions?.length) {
+  if (!allIds?.length) {
     return NextResponse.json({ error: "No questions" }, { status: 500 });
   }
 
   const seed = dateToSeed(today);
-  const shuffled = seededShuffle(allQuestions, seed);
-  const selected = shuffled.slice(0, 10);
+  const shuffled = seededShuffle(allIds, seed);
+  const selectedIds = shuffled.slice(0, 10).map((q) => q.id);
 
-  return NextResponse.json({ locked: false, questions: selected });
+  const { data: selected } = await supabase
+    .from("questions")
+    .select("*")
+    .in("id", selectedIds);
+
+  return NextResponse.json({ locked: false, questions: selected || [] });
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

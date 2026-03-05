@@ -33,30 +33,33 @@ export async function GET() {
     return NextResponse.json([]);
   }
 
-  // For each tournament, get user's rank and total participant count
-  const results = await Promise.all(
-    tournaments.map(async (t) => {
-      const participation = participations.find((p) => p.tournament_id === t.id);
+  // Batch: get all participants for these tournaments in one query
+  const { data: allParticipants } = await supabase
+    .from("tournament_participants")
+    .select("tournament_id, total_points")
+    .in("tournament_id", tournamentIds);
 
-      const { count: totalParticipants } = await supabase
-        .from("tournament_participants")
-        .select("*", { count: "exact", head: true })
-        .eq("tournament_id", t.id);
+  // Build counts and rank data from the single query
+  const participantCounts: Record<string, number> = {};
+  const pointsList: Record<string, number[]> = {};
+  for (const p of allParticipants || []) {
+    participantCounts[p.tournament_id] = (participantCounts[p.tournament_id] || 0) + 1;
+    if (!pointsList[p.tournament_id]) pointsList[p.tournament_id] = [];
+    pointsList[p.tournament_id].push(p.total_points);
+  }
 
-      const { count: above } = await supabase
-        .from("tournament_participants")
-        .select("*", { count: "exact", head: true })
-        .eq("tournament_id", t.id)
-        .gt("total_points", participation?.total_points || 0);
+  const results = tournaments.map((t) => {
+    const participation = participations.find((p) => p.tournament_id === t.id);
+    const userPoints = participation?.total_points || 0;
+    const above = (pointsList[t.id] || []).filter((pts) => pts > userPoints).length;
 
-      return {
-        ...t,
-        ...participation,
-        rank: (above || 0) + 1,
-        total_participants: totalParticipants || 0,
-      };
-    })
-  );
+    return {
+      ...t,
+      ...participation,
+      rank: above + 1,
+      total_participants: participantCounts[t.id] || 0,
+    };
+  });
 
   // Compute career stats for arena titles
   const finishedResults = results.filter((r) => r.status === "finished");

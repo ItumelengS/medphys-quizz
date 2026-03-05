@@ -97,6 +97,8 @@ export function calculateXp(
     baseXp = Math.floor(points * 1.6);
   } else if (mode === "hot-seat") {
     baseXp = Math.floor(points * 2.5);
+  } else if (mode === "blitz") {
+    baseXp = Math.floor(points * 1.8);
   } else {
     baseXp = points;
   }
@@ -268,6 +270,14 @@ export function calculateMatchScore(
   const movePenalty = extraMoves * 3;
   const timeBonus = Math.max(0, 300 - timeSeconds);
   return Math.max(0, base - movePenalty + timeBonus);
+}
+
+export function calculateBlitzScore(
+  correct: number,
+  wrong: number,
+  bestStreak: number
+): number {
+  return correct * 15 + bestStreak * 5 - wrong * 3;
 }
 
 export function getGradeEmoji(accuracy: number): string {

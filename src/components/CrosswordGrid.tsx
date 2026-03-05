@@ -45,8 +45,11 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
   const [hintedWords, setHintedWords] = useState<Set<number>>(new Set());
   const [hintsUsed, setHintsUsed] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [clueTab, setClueTab] = useState<"across" | "down">("across");
   const inputRef = useRef<HTMLInputElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const acrossListRef = useRef<HTMLDivElement>(null);
+  const downListRef = useRef<HTMLDivElement>(null);
 
   const getActiveWord = useCallback((): CrosswordWord | null => {
     if (!selectedCell) return null;
@@ -78,18 +81,41 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
     return map;
   }, [words]);
 
-  // Responsive cell size
-  const [cellSize, setCellSize] = useState(32);
+  // Fixed minimum cell size of 32px; grid scrolls horizontally if needed
+  const CELL_SIZE = 32;
+  const [cellSize, setCellSize] = useState(CELL_SIZE);
   useEffect(() => {
     function calc() {
       const vw = window.innerWidth;
       const maxGrid = Math.min(vw - 32, 480);
-      setCellSize(Math.max(26, Math.min(40, Math.floor(maxGrid / width))));
+      const fitted = Math.floor(maxGrid / width);
+      // Use fitted size if it's >= 32, otherwise lock to 32 and let container scroll
+      setCellSize(Math.max(CELL_SIZE, Math.min(40, fitted)));
     }
     calc();
     window.addEventListener("resize", calc);
     return () => window.removeEventListener("resize", calc);
   }, [width]);
+
+  // Auto-switch clue tab and auto-scroll to active clue
+  const activeWordIndex = activeWord?.index ?? null;
+  const activeWordDirection = activeWord?.direction ?? null;
+  useEffect(() => {
+    if (activeWordIndex === null || activeWordDirection === null) return;
+    setClueTab(activeWordDirection);
+
+    const listRef = activeWordDirection === "across" ? acrossListRef : downListRef;
+    const container = listRef.current;
+    if (!container) return;
+
+    // Delay scroll slightly so DOM has updated data-active attributes
+    requestAnimationFrame(() => {
+      const activeEl = container.querySelector("[data-active='true']");
+      if (activeEl) {
+        activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      }
+    });
+  }, [activeWordIndex, activeWordDirection]);
 
   function handleCellClick(x: number, y: number) {
     if (!grid[y][x]) return;
@@ -284,36 +310,44 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
 
   const allSolved = correctWords.size === words.length;
 
+  function renderClueButton(w: CrosswordWord, dir: "across" | "down") {
+    const isActive = activeWord?.index === w.index && activeWord?.direction === dir;
+    const done = correctWords.has(w.index);
+    return (
+      <button
+        key={`${dir[0]}-${w.index}`}
+        data-active={isActive}
+        onClick={() => {
+          setSelectedCell({ x: w.startX, y: w.startY });
+          setDirection(dir);
+          inputRef.current?.focus();
+        }}
+        className={`w-full text-left px-3 py-2 text-[13px] leading-relaxed transition-colors flex items-start gap-2 ${
+          isActive
+            ? "bg-bauhaus-blue/10 text-text-primary"
+            : done
+              ? "text-text-dim/50"
+              : "text-text-secondary hover:bg-surface/50"
+        }`}
+        style={{
+          borderLeft: isActive ? "3px solid #3b82f6" : "3px solid transparent",
+        }}
+      >
+        <span className={`font-mono font-bold shrink-0 w-7 text-right tabular-nums ${isActive ? "text-bauhaus-blue" : done ? "text-text-dim/50" : "text-text-secondary"}`}>
+          {w.index}
+        </span>
+        <span className={done ? "line-through decoration-surface-border" : ""}>{w.clue}</span>
+      </button>
+    );
+  }
+
   return (
     <div className="select-none">
-      {/* Hidden input for mobile keyboard */}
-      <input
-        ref={inputRef}
-        className="opacity-0 absolute w-0 h-0"
-        autoCapitalize="characters"
-        autoComplete="off"
-        autoCorrect="off"
-        inputMode="text"
-        onInput={(e) => {
-          const val = (e.target as HTMLInputElement).value;
-          if (val) {
-            handleKeyInput(val.slice(-1));
-            (e.target as HTMLInputElement).value = "";
-          }
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Backspace") {
-            e.preventDefault();
-            handleKeyInput("Backspace");
-          }
-        }}
-      />
-
-      {/* Active clue banner */}
+      {/* Sticky active clue banner */}
       <div
-        className="mb-4 px-4 py-3 transition-all duration-200"
+        className="sticky top-0 z-10 mb-4 px-4 py-3 transition-all duration-200 backdrop-blur-sm"
         style={{
-          background: activeWord ? "rgba(37, 99, 235, 0.08)" : "transparent",
+          background: activeWord ? "rgba(37, 99, 235, 0.08)" : "rgba(0, 0, 0, 0.5)",
           borderLeft: activeWord ? "3px solid #3b82f6" : "3px solid transparent",
           minHeight: 56,
         }}
@@ -338,19 +372,50 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
         )}
       </div>
 
-      {/* Grid */}
-      <div className="flex justify-center mb-5">
+      {/* Grid — horizontally scrollable on small screens */}
+      <div className="mb-5 overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex sm:justify-center">
         <div
           ref={gridRef}
-          className="relative"
+          className="relative mx-auto sm:mx-0"
           style={{
             width: gridWidth + 2,
+            minWidth: gridWidth + 2,
             border: "2px solid #222",
             background: "#222",
             boxShadow: "0 2px 12px rgba(0,0,0,0.3)",
           }}
           onClick={() => inputRef.current?.focus()}
         >
+          {/* Hidden input positioned over selected cell so browser scrolls it into view above keyboard */}
+          <input
+            ref={inputRef}
+            className="absolute opacity-0 pointer-events-none"
+            style={{
+              width: cellSize,
+              height: cellSize,
+              left: selectedCell ? selectedCell.x * cellSize : 0,
+              top: selectedCell ? selectedCell.y * cellSize : 0,
+              zIndex: 1,
+              caretColor: "transparent",
+            }}
+            autoCapitalize="characters"
+            autoComplete="off"
+            autoCorrect="off"
+            inputMode="text"
+            onInput={(e) => {
+              const val = (e.target as HTMLInputElement).value;
+              if (val) {
+                handleKeyInput(val.slice(-1));
+                (e.target as HTMLInputElement).value = "";
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Backspace") {
+                e.preventDefault();
+                handleKeyInput("Backspace");
+              }
+            }}
+          />
           {Array.from({ length: height }).map((_, y) => (
             <div key={y} className="flex">
               {Array.from({ length: width }).map((_, x) => {
@@ -461,11 +526,11 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
         </div>
       </div>
 
-      {/* Toolbar */}
-      <div className="flex items-center justify-center gap-2 mb-6">
+      {/* Toolbar — stacked on mobile, row on desktop */}
+      <div className="grid grid-cols-2 sm:flex sm:items-center sm:justify-center gap-2 mb-6 px-4 sm:px-0">
         <button
           onClick={() => setPencilMode(!pencilMode)}
-          className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 transition-all active:scale-95 ${
+          className={`px-4 py-3 sm:py-2.5 text-xs font-bold uppercase tracking-wider border-2 transition-all active:scale-95 ${
             pencilMode
               ? "border-bauhaus-yellow text-bauhaus-yellow bg-bauhaus-yellow/10"
               : "border-surface-border text-text-secondary hover:bg-surface"
@@ -476,14 +541,14 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
         <button
           onClick={handleHint}
           disabled={!activeWord || correctWords.has(activeWord?.index ?? -1) || allSolved}
-          className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-surface-border text-text-secondary hover:bg-surface transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+          className="px-4 py-3 sm:py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-surface-border text-text-secondary hover:bg-surface transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
         >
           Hint (-5pts)
         </button>
         <button
           onClick={handleSubmitPuzzle}
           disabled={!allFilled || allSolved}
-          className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-bauhaus-blue text-bauhaus-blue hover:bg-bauhaus-blue/10 transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+          className="col-span-2 px-4 py-3 sm:py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-bauhaus-blue text-bauhaus-blue hover:bg-bauhaus-blue/10 transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
         >
           {allSolved ? "Solved!" : "Submit Puzzle"}
         </button>
@@ -496,81 +561,51 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
         </div>
       )}
 
-      {/* Clue lists */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {/* Across */}
-        <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-bauhaus-blue pb-2 mb-1 border-b-2 border-bauhaus-blue/20">
+      {/* Clue lists — tabbed on mobile, side-by-side on desktop */}
+      <div>
+        {/* Mobile tabs — hidden on sm+ */}
+        <div className="flex sm:hidden border-b-2 border-surface-border mb-2">
+          <button
+            onClick={() => setClueTab("across")}
+            className={`flex-1 py-2.5 text-xs font-bold uppercase tracking-[0.2em] transition-colors ${
+              clueTab === "across"
+                ? "text-bauhaus-blue border-b-2 border-bauhaus-blue -mb-[2px]"
+                : "text-text-dim hover:text-text-secondary"
+            }`}
+          >
             Across
-          </h3>
-          <div className="space-y-0">
-            {acrossClues.map((w) => {
-              const isActive = activeWord?.index === w.index && activeWord?.direction === "across";
-              const done = correctWords.has(w.index);
-              return (
-                <button
-                  key={`a-${w.index}`}
-                  onClick={() => {
-                    setSelectedCell({ x: w.startX, y: w.startY });
-                    setDirection("across");
-                    inputRef.current?.focus();
-                  }}
-                  className={`w-full text-left px-3 py-2 text-[13px] leading-relaxed transition-colors flex gap-2 ${
-                    isActive
-                      ? "bg-bauhaus-blue/10 text-text-primary"
-                      : done
-                        ? "text-text-dim line-through decoration-surface-border"
-                        : "text-text-secondary hover:bg-surface/50"
-                  }`}
-                  style={{
-                    borderLeft: isActive ? "3px solid #3b82f6" : "3px solid transparent",
-                  }}
-                >
-                  <span className={`font-mono font-bold shrink-0 w-6 text-right ${isActive ? "text-bauhaus-blue" : done ? "text-text-dim" : "text-text-secondary"}`}>
-                    {w.index}
-                  </span>
-                  <span>{w.clue}</span>
-                </button>
-              );
-            })}
-          </div>
+          </button>
+          <button
+            onClick={() => setClueTab("down")}
+            className={`flex-1 py-2.5 text-xs font-bold uppercase tracking-[0.2em] transition-colors ${
+              clueTab === "down"
+                ? "text-bauhaus-blue border-b-2 border-bauhaus-blue -mb-[2px]"
+                : "text-text-dim hover:text-text-secondary"
+            }`}
+          >
+            Down
+          </button>
         </div>
 
-        {/* Down */}
-        <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-bauhaus-blue pb-2 mb-1 border-b-2 border-bauhaus-blue/20">
-            Down
-          </h3>
-          <div className="space-y-0">
-            {downClues.map((w) => {
-              const isActive = activeWord?.index === w.index && activeWord?.direction === "down";
-              const done = correctWords.has(w.index);
-              return (
-                <button
-                  key={`d-${w.index}`}
-                  onClick={() => {
-                    setSelectedCell({ x: w.startX, y: w.startY });
-                    setDirection("down");
-                    inputRef.current?.focus();
-                  }}
-                  className={`w-full text-left px-3 py-2 text-[13px] leading-relaxed transition-colors flex gap-2 ${
-                    isActive
-                      ? "bg-bauhaus-blue/10 text-text-primary"
-                      : done
-                        ? "text-text-dim line-through decoration-surface-border"
-                        : "text-text-secondary hover:bg-surface/50"
-                  }`}
-                  style={{
-                    borderLeft: isActive ? "3px solid #3b82f6" : "3px solid transparent",
-                  }}
-                >
-                  <span className={`font-mono font-bold shrink-0 w-6 text-right ${isActive ? "text-bauhaus-blue" : done ? "text-text-dim" : "text-text-secondary"}`}>
-                    {w.index}
-                  </span>
-                  <span>{w.clue}</span>
-                </button>
-              );
-            })}
+        <div className="sm:grid sm:grid-cols-2 sm:gap-6">
+          {/* Across */}
+          <div className={clueTab !== "across" ? "hidden sm:block" : ""}>
+            <h3 className="hidden sm:block text-xs font-bold uppercase tracking-[0.2em] text-bauhaus-blue pb-2 mb-1 border-b-2 border-bauhaus-blue/20">
+              Across
+            </h3>
+            <div ref={acrossListRef} className="space-y-0 max-h-[50vh] sm:max-h-none overflow-y-auto">
+              {acrossClues.map((w) => renderClueButton(w, "across"))}
+            </div>
+          </div>
+
+          {/* Down */}
+          <div className={clueTab !== "down" ? "hidden sm:block" : ""}>
+            <h3 className="hidden sm:block text-xs font-bold uppercase tracking-[0.2em] text-bauhaus-blue pb-2 mb-1 border-b-2 border-bauhaus-blue/20">
+              Down
+            </h3>
+            <div ref={downListRef} className="space-y-0 max-h-[50vh] sm:max-h-none overflow-y-auto">
+              {downClues.map((w) => renderClueButton(w, "down"))}
+            </div>
           </div>
         </div>
       </div>

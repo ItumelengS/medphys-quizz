@@ -94,7 +94,13 @@ function LoginContent() {
           </button>
         </form>
 
-        <p className="text-text-secondary text-sm mt-6 font-light">
+        <p className="text-text-secondary text-xs mt-4 font-light">
+          <Link href="/login/forgot-password" className="text-bauhaus-blue hover:underline">
+            Forgot password?
+          </Link>
+        </p>
+
+        <p className="text-text-secondary text-sm mt-4 font-light">
           Don&apos;t have an account?{" "}
           <Link href="/login/register" className="text-bauhaus-blue hover:underline">
             Register

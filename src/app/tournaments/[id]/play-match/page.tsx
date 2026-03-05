@@ -380,7 +380,7 @@ export default function PlayMatchPage({
   }
 
   // Playing
-  const gridCols = totalPairs === 12 ? "grid-cols-4" : "grid-cols-4";
+  const gridCols = "grid-cols-3 sm:grid-cols-4";
 
   return (
     <main className="min-h-dvh px-4 pt-4 pb-8 max-w-lg mx-auto">
@@ -452,14 +452,14 @@ export default function PlayMatchPage({
             }}
           >
             {card.flipped || card.matched ? (
-              <div className="flex flex-col h-full">
+              <div className="flex flex-col h-full overflow-hidden">
                 <span
-                  className="text-[9px] font-bold uppercase tracking-wider mb-1"
+                  className="text-[9px] font-bold uppercase tracking-wider mb-1 shrink-0"
                   style={{ color: card.type === "question" ? "#8b5cf6" : "#7c3aed" }}
                 >
                   {card.type === "question" ? "Q" : "A"}
                 </span>
-                <span className="text-[10px] leading-tight text-text-primary line-clamp-5">
+                <span className="text-[11px] sm:text-[10px] leading-snug text-text-primary overflow-y-auto">
                   {card.text}
                 </span>
               </div>

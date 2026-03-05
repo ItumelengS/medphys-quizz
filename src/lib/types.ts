@@ -163,8 +163,8 @@ export interface QuestionRecord {
 }
 
 // ── Game variants ──────────────────────────────────────────
-export type GameVariant = "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat";
-export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "arena";
+export type GameVariant = "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "blitz";
+export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "arena" | "blitz";
 
 export interface CrosswordCell {
   letter: string;

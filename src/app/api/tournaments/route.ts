@@ -7,58 +7,56 @@ export async function GET() {
   const now = new Date();
   const slots = getTournamentSlots(now);
 
-  // Lazy-create tournaments that should exist
-  for (const slot of slots) {
+  // Lazy-create tournaments that should exist (single batch upsert)
+  const rows = slots.map((slot) => {
     const config = TOURNAMENT_TYPES[slot.type];
-    await supabase.from("tournaments").upsert(
-      {
-        type: slot.type,
-        starts_at: slot.startsAt.toISOString(),
-        ends_at: slot.endsAt.toISOString(),
-        status: slot.status,
-        config: {
-          timerSeconds: config.timerSeconds,
-          questionsPerRound: config.questionsPerRound,
-          durationMinutes: config.durationMinutes,
-          ...(config.isCrossword ? { isCrossword: true, wordsTarget: config.wordsTarget } : {}),
-          ...(config.isSuddenDeath ? { isSuddenDeath: true } : {}),
-          ...(config.isSprint ? { isSprint: true } : {}),
-          ...(config.isMatch ? { isMatch: true, pairsCount: config.pairsCount } : {}),
-          ...(config.isHotSeat ? { isHotSeat: true } : {}),
-        },
+    return {
+      type: slot.type,
+      starts_at: slot.startsAt.toISOString(),
+      ends_at: slot.endsAt.toISOString(),
+      status: slot.status,
+      config: {
+        timerSeconds: config.timerSeconds,
+        questionsPerRound: config.questionsPerRound,
+        durationMinutes: config.durationMinutes,
+        ...(config.isCrossword ? { isCrossword: true, wordsTarget: config.wordsTarget } : {}),
+        ...(config.isSuddenDeath ? { isSuddenDeath: true } : {}),
+        ...(config.isSprint ? { isSprint: true } : {}),
+        ...(config.isMatch ? { isMatch: true, pairsCount: config.pairsCount } : {}),
+        ...(config.isHotSeat ? { isHotSeat: true } : {}),
       },
-      { onConflict: "type,starts_at", ignoreDuplicates: true }
-    );
-  }
+    };
+  });
+  await supabase.from("tournaments").upsert(rows, { onConflict: "type,starts_at", ignoreDuplicates: true });
 
-  // Clean up renamed tournament types (millionaire → hot-seat)
-  await supabase
-    .from("tournaments")
-    .update({ status: "finished" })
-    .in("status", ["active", "upcoming"])
-    .like("type", "millionaire-%");
-
-  // Transition active tournaments that have ended
-  await supabase
-    .from("tournaments")
-    .update({ status: "finished" })
-    .eq("status", "active")
-    .lt("ends_at", now.toISOString());
-
-  // Transition upcoming tournaments whose window has fully passed (never went active)
-  await supabase
-    .from("tournaments")
-    .update({ status: "finished" })
-    .eq("status", "upcoming")
-    .lt("ends_at", now.toISOString());
-
-  // Transition upcoming tournaments that have started (and are still within their window)
-  await supabase
-    .from("tournaments")
-    .update({ status: "active" })
-    .eq("status", "upcoming")
-    .lte("starts_at", now.toISOString())
-    .gt("ends_at", now.toISOString());
+  // Run all status transitions in parallel
+  await Promise.all([
+    // Clean up renamed tournament types (millionaire → hot-seat)
+    supabase
+      .from("tournaments")
+      .update({ status: "finished" })
+      .in("status", ["active", "upcoming"])
+      .like("type", "millionaire-%"),
+    // Transition active tournaments that have ended
+    supabase
+      .from("tournaments")
+      .update({ status: "finished" })
+      .eq("status", "active")
+      .lt("ends_at", now.toISOString()),
+    // Transition upcoming tournaments whose window has fully passed
+    supabase
+      .from("tournaments")
+      .update({ status: "finished" })
+      .eq("status", "upcoming")
+      .lt("ends_at", now.toISOString()),
+    // Transition upcoming tournaments that have started
+    supabase
+      .from("tournaments")
+      .update({ status: "active" })
+      .eq("status", "upcoming")
+      .lte("starts_at", now.toISOString())
+      .gt("ends_at", now.toISOString()),
+  ]);
 
   // Fetch active + upcoming tournaments
   const { data: tournaments, error } = await supabase
@@ -99,32 +97,35 @@ export async function GET() {
     .order("ends_at", { ascending: false })
     .limit(5);
 
-  const finished = await Promise.all(
-    (finishedRaw || []).map(async (t) => {
-      // Get participant count
-      const { count } = await supabase
-        .from("tournament_participants")
-        .select("*", { count: "exact", head: true })
-        .eq("tournament_id", t.id);
+  const finishedIds = (finishedRaw || []).map((t) => t.id);
+  let finishedCounts: Record<string, number> = {};
+  let finishedWinners: Record<string, { display_name: string; total_points: number }> = {};
 
-      // Get top scorer
-      const { data: top } = await supabase
-        .from("tournament_participants")
-        .select("display_name, total_points")
-        .eq("tournament_id", t.id)
-        .order("total_points", { ascending: false })
-        .limit(1);
+  if (finishedIds.length > 0) {
+    // Batch: get all participants for finished tournaments in one query
+    const { data: fParticipants } = await supabase
+      .from("tournament_participants")
+      .select("tournament_id, display_name, total_points")
+      .in("tournament_id", finishedIds);
 
-      const winner = top && top.length > 0 ? top[0] : null;
+    for (const p of fParticipants || []) {
+      finishedCounts[p.tournament_id] = (finishedCounts[p.tournament_id] || 0) + 1;
+      const current = finishedWinners[p.tournament_id];
+      if (!current || p.total_points > current.total_points) {
+        finishedWinners[p.tournament_id] = { display_name: p.display_name, total_points: p.total_points };
+      }
+    }
+  }
 
-      return {
-        ...t,
-        participant_count: count || 0,
-        winner_name: winner?.display_name || null,
-        winner_points: winner?.total_points || null,
-      };
-    })
-  );
+  const finished = (finishedRaw || []).map((t) => {
+    const winner = finishedWinners[t.id] || null;
+    return {
+      ...t,
+      participant_count: finishedCounts[t.id] || 0,
+      winner_name: winner?.display_name || null,
+      winner_points: winner?.total_points || null,
+    };
+  });
 
   return NextResponse.json({ tournaments: result, finished });
 }

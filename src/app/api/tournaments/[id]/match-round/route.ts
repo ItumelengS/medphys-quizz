@@ -82,7 +82,7 @@ export async function POST(
   }
 
   // Award XP
-  const pointsEarned = result?.points_earned || 0;
+  const pointsEarned = result?.base_points || 0;
   const xpResult = calculateXp(pointsEarned, "arena", pairs, pairs, 0);
 
   await supabase.rpc("increment_xp", {

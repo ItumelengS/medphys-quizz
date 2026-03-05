@@ -22,24 +22,14 @@ export async function GET() {
   const history = historyRes.data || [];
   const sectionMastery: Record<string, { shown: number; correct: number; percent: number }> = {};
 
-  // Build a map of question_id -> section_id from the questions table
-  const questionIds = history.map((h) => h.question_id);
+  // Build a map of question_id -> section_id (fetch only id + section_id, no batching needed)
   const questionSectionMap: Record<string, string> = {};
+  const { data: allQSections } = await supabase
+    .from("questions")
+    .select("id, section_id");
 
-  if (questionIds.length > 0) {
-    // Fetch in batches to avoid query size limits
-    const batchSize = 500;
-    for (let i = 0; i < questionIds.length; i += batchSize) {
-      const batch = questionIds.slice(i, i + batchSize);
-      const { data: questions } = await supabase
-        .from("questions")
-        .select("id, section_id")
-        .in("id", batch);
-
-      for (const q of questions || []) {
-        questionSectionMap[q.id] = q.section_id;
-      }
-    }
+  for (const q of allQSections || []) {
+    questionSectionMap[q.id] = q.section_id;
   }
 
   for (const section of sectionsRes.data || []) {

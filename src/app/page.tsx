@@ -31,21 +31,17 @@ export default function HomePage() {
   useEffect(() => {
     if (!session) return;
 
-    fetch("/api/stats")
-      .then((r) => r.json())
-      .then((data) => setStatsData(data));
-
-    fetch("/api/review/due")
-      .then((r) => r.json())
-      .then((data) => setDueCount(Array.isArray(data) ? data.length : 0));
-
-    fetch("/api/quiz/daily", { cache: "no-store" })
-      .then((r) => r.json())
-      .then((data) => setDailyCompleted(!!data.locked));
-
-    fetch("/api/questions")
-      .then((r) => r.json())
-      .then((data) => setTotalQuestions(Array.isArray(data) ? data.length : 0));
+    Promise.all([
+      fetch("/api/stats").then((r) => r.json()),
+      fetch("/api/review/due").then((r) => r.json()),
+      fetch("/api/quiz/daily", { cache: "no-store" }).then((r) => r.json()),
+      fetch("/api/questions/count").then((r) => r.json()),
+    ]).then(([stats, due, daily, countData]) => {
+      setStatsData(stats);
+      setDueCount(Array.isArray(due) ? due.length : 0);
+      setDailyCompleted(!!daily.locked);
+      setTotalQuestions(countData.count || 0);
+    });
 
     setCountdown(formatCountdown(getNextDailyReset()));
     const timer = setInterval(() => {

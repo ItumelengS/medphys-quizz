@@ -293,6 +293,10 @@ export default function HomePage() {
             <span className="text-lg">📊</span>
             <span className="text-xs uppercase tracking-wider">Stats</span>
           </Link>
+          <Link href="/profile" className="flex flex-col items-center gap-1 text-text-secondary hover:text-text-primary transition-colors">
+            <span className="text-lg">👤</span>
+            <span className="text-xs uppercase tracking-wider">Profile</span>
+          </Link>
         </div>
       </div>
     </main>

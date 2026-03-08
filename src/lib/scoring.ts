@@ -79,28 +79,30 @@ export function calculateXp(
   let baseXp = 0;
   let bonusXp = 0;
   const dailyBonusXp = mode === "daily" ? dailyStreak * 5 : 0;
-  const perfectBonusXp = correct === total && total > 0 && mode !== "arena" ? 50 : 0;
+  const perfectBonusXp = correct === total && total > 0 && mode !== "arena" ? 15 : 0;
 
   if (mode === "arena") {
     baseXp = Math.floor(points * 0.15);
   } else if (mode === "review") {
-    baseXp = correct * 5 + (total - correct) * 2;
+    baseXp = correct * 3 + (total - correct);
   } else if (mode === "daily") {
-    baseXp = Math.floor(points * 1.5);
+    baseXp = Math.floor(points * 0.15);
   } else if (mode === "sudden-death") {
-    baseXp = Math.floor(points * 2.0);
+    baseXp = Math.floor(points * 0.12);
   } else if (mode === "sprint") {
-    baseXp = Math.floor(points * 1.5);
+    baseXp = Math.floor(points * 0.10);
   } else if (mode === "crossword") {
-    baseXp = Math.floor(points * 1.8);
+    baseXp = Math.floor(points * 0.10);
   } else if (mode === "match") {
-    baseXp = Math.floor(points * 1.6);
+    baseXp = Math.floor(points * 0.10);
   } else if (mode === "hot-seat") {
-    baseXp = Math.floor(points * 2.5);
+    // Hot-seat prizes are on a different scale (100 — 1,000,000)
+    baseXp = Math.floor(points * 0.002);
   } else if (mode === "blitz") {
-    baseXp = Math.floor(points * 1.8);
+    baseXp = Math.floor(points * 0.12);
   } else {
-    baseXp = points;
+    // speed / marathon
+    baseXp = Math.floor(points * 0.10);
   }
 
   bonusXp = perfectBonusXp + dailyBonusXp;

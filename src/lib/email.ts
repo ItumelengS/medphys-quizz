@@ -10,7 +10,7 @@ export async function sendPasswordResetEmail(
   resetUrl: string
 ) {
   await getResend().emails.send({
-    from: "MedPhys Speed Quiz <onboarding@resend.dev>",
+    from: process.env.EMAIL_FROM || "MedPhys Speed Quiz <onboarding@resend.dev>",
     to,
     subject: "Reset your password",
     html: `

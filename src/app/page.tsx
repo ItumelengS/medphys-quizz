@@ -10,6 +10,7 @@ import ProgressBar from "@/components/ProgressBar";
 import SectionMasteryRing from "@/components/SectionMasteryRing";
 import DonationCard from "@/components/DonationCard";
 import LandingPage from "@/components/LandingPage";
+import { DAILY_TIMER_SECONDS, DAILY_QUESTION_COUNT } from "@/lib/daily-config";
 
 interface StatsData {
   profile: { xp: number; display_name: string; confirmed_level: number } | null;
@@ -148,7 +149,7 @@ export default function HomePage() {
                 <div className="text-text-secondary text-xs font-light">
                   {dailyCompleted
                     ? `Done! Next in ${countdown}`
-                    : "10 questions, 12s timer"}
+                    : `${DAILY_QUESTION_COUNT} questions, ${DAILY_TIMER_SECONDS}s timer`}
                 </div>
               </div>
             </div>

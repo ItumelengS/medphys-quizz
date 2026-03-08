@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import CrosswordGrid from "@/components/CrosswordGrid";
-import type { PuzzleSubmitResult } from "@/components/CrosswordGrid";
+import type { PuzzleSubmitResult, CrosswordGridHandle } from "@/components/CrosswordGrid";
 import type { CrosswordPuzzle } from "@/lib/types";
 
 type Phase = "loading" | "playing" | "submitting" | "results";
@@ -52,6 +52,7 @@ export default function PlayCrosswordPage({
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
+  const gridRef = useRef<CrosswordGridHandle>(null);
 
   // Fetch puzzle on mount (with round-limit pre-check)
   useEffect(() => {
@@ -102,6 +103,8 @@ export default function PlayCrosswordPage({
       setTimeRemaining(Math.max(0, remaining));
 
       if (remaining <= 0) {
+        // Force-submit to capture current progress before ending
+        gridRef.current?.forceSubmit();
         setPhase("submitting");
       }
     }, 1000);
@@ -112,9 +115,11 @@ export default function PlayCrosswordPage({
   }, [phase, timerSeconds]);
 
   const handlePuzzleSubmit = useCallback((result: PuzzleSubmitResult) => {
+    // Always capture current progress (critical for timer expiry)
+    setWordsCompleted(result.wordsCorrect);
+    setWordsRevealed(result.wordsWithHint);
+
     if (result.allCorrect) {
-      setWordsCompleted(result.wordsCorrect);
-      setWordsRevealed(result.wordsWithHint);
       setAllDone(true);
       if (timerRef.current) clearInterval(timerRef.current);
       setPhase("submitting");
@@ -321,6 +326,7 @@ export default function PlayCrosswordPage({
       )}
 
       <CrosswordGrid
+        ref={gridRef}
         puzzle={puzzle}
         onPuzzleSubmit={handlePuzzleSubmit}
       />

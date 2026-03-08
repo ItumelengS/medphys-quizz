@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
+import type { DbTournamentParticipant } from "@/lib/types";
 
 export async function GET(
   _req: NextRequest,
@@ -49,22 +50,22 @@ export async function GET(
       : Promise.resolve({ data: null }),
   ]);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let userRecord: any = null;
+  let userRecord: DbTournamentParticipant | null = null;
   let userRank = null;
   let tiebreakerEligible = false;
 
   if (userRecordRes.data) {
-    userRecord = userRecordRes.data;
+    userRecord = userRecordRes.data as DbTournamentParticipant;
+    const ur = userRecord;
     // Compute rank from leaderboard data instead of extra query
-    const above = (leaderboard || []).filter((p: { total_points: number }) => p.total_points > userRecord.total_points).length;
+    const above = (leaderboard || []).filter((p: { total_points: number }) => p.total_points > ur.total_points).length;
     userRank = above + 1;
 
     // Check tiebreaker eligibility: player has 2 rounds and is tied for a podium spot
-    if (userRecord.rounds_played >= 2 && userRecord.rounds_played < 3) {
+    if (ur.rounds_played >= 2 && ur.rounds_played < 3) {
       const distinctPoints = [...new Set((leaderboard || []).map((p: { total_points: number }) => p.total_points))].sort((a: number, b: number) => b - a);
       const podiumCutoff = distinctPoints[Math.min(2, distinctPoints.length - 1)] ?? 0;
-      tiebreakerEligible = userRecord.total_points >= podiumCutoff;
+      tiebreakerEligible = ur.total_points >= podiumCutoff;
     }
   }
 

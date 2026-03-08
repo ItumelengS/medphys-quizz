@@ -20,7 +20,9 @@ import ExplanationCard from "@/components/ExplanationCard";
 import StreakBadge from "@/components/StreakBadge";
 import ProgressBar from "@/components/ProgressBar";
 
-const TIMER_SECONDS = 12;
+import { DAILY_TIMER_SECONDS, DAILY_QUESTION_COUNT } from "@/lib/daily-config";
+
+const TIMER_SECONDS = DAILY_TIMER_SECONDS;
 const ADVANCE_DELAY = 800;
 const WRONG_DELAY = 2000;
 

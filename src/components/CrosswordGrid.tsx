@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef, useMemo } from "react";
+import { useState, useCallback, useEffect, useRef, useMemo, useImperativeHandle, forwardRef } from "react";
 import type { CrosswordPuzzle, CrosswordWord } from "@/lib/types";
 
 export interface PuzzleSubmitResult {
@@ -16,6 +16,10 @@ interface CrosswordGridProps {
   onPuzzleSubmit: (result: PuzzleSubmitResult) => void;
 }
 
+export interface CrosswordGridHandle {
+  forceSubmit: () => void;
+}
+
 interface CellState {
   value: string;
   pencil: boolean;
@@ -23,7 +27,7 @@ interface CellState {
   wrong: boolean;
 }
 
-export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridProps) {
+const CrosswordGrid = forwardRef<CrosswordGridHandle, CrosswordGridProps>(function CrosswordGrid({ puzzle, onPuzzleSubmit }, ref) {
   const { width, height, grid, words } = puzzle;
 
   const [cellStates, setCellStates] = useState<Record<string, CellState>>(() => {
@@ -81,16 +85,16 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
     return map;
   }, [words]);
 
-  // Fixed minimum cell size of 32px; grid scrolls horizontally if needed
-  const CELL_SIZE = 32;
-  const [cellSize, setCellSize] = useState(CELL_SIZE);
+  // Cell size: fit grid to viewport width, allow shrinking to 24px minimum
+  const MIN_CELL = 24;
+  const MAX_CELL = 40;
+  const [cellSize, setCellSize] = useState(32);
   useEffect(() => {
     function calc() {
       const vw = window.innerWidth;
       const maxGrid = Math.min(vw - 32, 480);
       const fitted = Math.floor(maxGrid / width);
-      // Use fitted size if it's >= 32, otherwise lock to 32 and let container scroll
-      setCellSize(Math.max(CELL_SIZE, Math.min(40, fitted)));
+      setCellSize(Math.max(MIN_CELL, Math.min(MAX_CELL, fitted)));
     }
     calc();
     window.addEventListener("resize", calc);
@@ -201,6 +205,30 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
     }
   }
 
+  function moveGrid(dx: number, dy: number) {
+    if (!selectedCell) return;
+    // If moving in the same axis as the current direction, advance along the word
+    if ((dx !== 0 && direction === "across") || (dy !== 0 && direction === "down")) {
+      moveCursor(dx !== 0 ? dx : dy);
+      return;
+    }
+    // Moving perpendicular — find nearest cell in that direction on the grid
+    let nx = selectedCell.x + dx;
+    let ny = selectedCell.y + dy;
+    // Walk in that direction until we find a cell or go out of bounds
+    while (nx >= 0 && nx < width && ny >= 0 && ny < height) {
+      const cell = grid[ny]?.[nx];
+      if (cell) {
+        setSelectedCell({ x: nx, y: ny });
+        // Switch direction to match the arrow key axis
+        setDirection(dx !== 0 ? "across" : "down");
+        return;
+      }
+      nx += dx;
+      ny += dy;
+    }
+  }
+
   function handleHint() {
     if (!activeWord || correctWords.has(activeWord.index)) return;
 
@@ -227,6 +255,10 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
     setHintsUsed((h) => h + 1);
     if (submitted) setSubmitted(false);
   }
+
+  useImperativeHandle(ref, () => ({
+    forceSubmit: () => handleSubmitPuzzle(),
+  }));
 
   function handleSubmitPuzzle() {
     setSubmitted(true);
@@ -278,10 +310,10 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
       const fromInput = e.target === inputRef.current;
       if (e.key === "Tab") { e.preventDefault(); handleKeyInput("Tab"); return; }
       if (e.key === "Backspace" && !fromInput) { e.preventDefault(); handleKeyInput("Backspace"); return; }
-      if (e.key === "ArrowRight") { e.preventDefault(); setDirection("across"); moveCursor(1); return; }
-      if (e.key === "ArrowLeft") { e.preventDefault(); setDirection("across"); moveCursor(-1); return; }
-      if (e.key === "ArrowDown") { e.preventDefault(); setDirection("down"); moveCursor(1); return; }
-      if (e.key === "ArrowUp") { e.preventDefault(); setDirection("down"); moveCursor(-1); return; }
+      if (e.key === "ArrowRight") { e.preventDefault(); moveGrid(1, 0); return; }
+      if (e.key === "ArrowLeft") { e.preventDefault(); moveGrid(-1, 0); return; }
+      if (e.key === "ArrowDown") { e.preventDefault(); moveGrid(0, 1); return; }
+      if (e.key === "ArrowUp") { e.preventDefault(); moveGrid(0, -1); return; }
       if (e.key.length === 1 && !fromInput) handleKeyInput(e.key);
     }
     window.addEventListener("keydown", handleKeyDown);
@@ -611,4 +643,6 @@ export default function CrosswordGrid({ puzzle, onPuzzleSubmit }: CrosswordGridP
       </div>
     </div>
   );
-}
+});
+
+export default CrosswordGrid;

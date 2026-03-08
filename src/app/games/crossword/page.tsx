@@ -8,7 +8,7 @@ import { generateCrossword } from "@/lib/crossword-generator";
 import { calculateCrosswordScore, calculateXp } from "@/lib/scoring";
 import type { CrosswordPuzzle, DbCrosswordClue } from "@/lib/types";
 import CrosswordGrid from "@/components/CrosswordGrid";
-import type { PuzzleSubmitResult } from "@/components/CrosswordGrid";
+import type { PuzzleSubmitResult, CrosswordGridHandle } from "@/components/CrosswordGrid";
 
 type Phase = "setup" | "playing" | "complete";
 type TimerOption = null | 300 | 600 | 900;
@@ -36,6 +36,7 @@ export default function CrosswordPage() {
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
+  const gridRef = useRef<CrosswordGridHandle>(null);
 
   // Fetch categories from DB
   useEffect(() => {
@@ -108,6 +109,8 @@ export default function CrosswordPage() {
         const remaining = timerOption - elapsed;
         setTimeRemaining(Math.max(0, remaining));
         if (remaining <= 0) {
+          // Force-submit to capture current progress before ending
+          gridRef.current?.forceSubmit();
           setPhase("complete");
         }
       }
@@ -126,6 +129,8 @@ export default function CrosswordPage() {
       if (timerRef.current) clearInterval(timerRef.current);
       setPhase("complete");
     }
+    // When not allCorrect, grid shows red feedback — user keeps trying
+    // (timer expiry also calls forceSubmit, so puzzleResult is always captured)
   }, []);
 
   async function submitAndNavigate() {
@@ -424,6 +429,7 @@ export default function CrosswordPage() {
       </div>
 
       <CrosswordGrid
+        ref={gridRef}
         puzzle={puzzle}
         onPuzzleSubmit={handlePuzzleSubmit}
       />

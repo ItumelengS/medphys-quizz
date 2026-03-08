@@ -64,7 +64,8 @@ export async function GET() {
 
   const seed = dateToSeed(today);
   const shuffled = seededShuffle(allIds, seed);
-  const selectedIds = shuffled.slice(0, 10).map((q) => q.id);
+  const { DAILY_QUESTION_COUNT } = await import("@/lib/daily-config");
+  const selectedIds = shuffled.slice(0, DAILY_QUESTION_COUNT).map((q) => q.id);
 
   const { data: selected } = await supabase
     .from("questions")

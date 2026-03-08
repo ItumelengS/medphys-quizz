@@ -86,9 +86,8 @@ export async function POST(
   // Time bonus: remaining seconds / 10 * 5
   const timeBonus = Math.floor(remainingSeconds / 10) * 5;
 
-  // For the RPC: score = wordsWithoutReveal (used for accuracy calc), total = totalWords
-  // The RPC uses accuracy = score/total * 100 for fire multiplier
-  const accuracy = totalWords > 0 ? (wordsWithoutReveal / totalWords) * 100 : 0;
+  // Accuracy = words completed / total words (revealed words still count as completed)
+  const accuracy = totalWords > 0 ? (wordsCompleted / totalWords) * 100 : 0;
 
   // Submit round via RPC — we pass baseScore as time_bonus and wordsWithoutReveal as score
   // so the RPC's (score * 100 + time_bonus) gives us the right base points

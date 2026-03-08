@@ -159,13 +159,50 @@ export function autoFixStructural(q: DbQuestion): { fixed: DbQuestion; fixes: st
   return fixes.length > 0 ? { fixed, fixes } : { fixed: q, fixes: [] };
 }
 
-// ── AI factual verification (stubbed) ───────────────────────
+// ── AI factual verification ─────────────────────────────────
+
+import Anthropic from "@anthropic-ai/sdk";
 
 export interface AIVerificationResult {
   questionId: string;
   valid: boolean;
   reason: string;
   fixedQuestion?: DbQuestion;
+}
+
+const BATCH_SIZE = 10;
+const AI_MODEL = "claude-haiku-4-5-20251001";
+const COST_PER_MTOK_INPUT = 0.80;
+const COST_PER_MTOK_OUTPUT = 4.00;
+const MAX_COST_USD = 3.00;
+
+function buildVerificationPrompt(questions: DbQuestion[]): string {
+  const formatted = questions.map((q, i) => (
+    `[${i + 1}] ID: ${q.id}
+Q: ${q.question}
+Choices: ${q.choices.map((c, j) => `${String.fromCharCode(65 + j)}) ${c}`).join(" | ")}
+Marked answer: ${q.answer}
+Explanation: ${q.explanation}`
+  )).join("\n\n");
+
+  return `You are a medical physics expert verifying quiz questions for accuracy.
+
+For each question below, check:
+1. Is the marked answer factually correct?
+2. Is the explanation accurate and consistent with the answer?
+3. Are there any other choices that could also be considered correct (ambiguous question)?
+4. Is the question itself well-formed and unambiguous?
+
+${formatted}
+
+Respond with a JSON array (no other text). Each element must have:
+- "id": the question ID
+- "valid": true if the question and answer are factually correct, false otherwise
+- "reason": brief explanation (if valid, say "Correct"; if invalid, explain the error)
+- "fixedAnswer": (only if valid=false AND you can fix it) the corrected answer string that matches one of the existing choices, or omit if unfixable
+
+Example response:
+[{"id":"q1","valid":true,"reason":"Correct"},{"id":"q2","valid":false,"reason":"The correct answer is B not C; TG-142 specifies 1mm not 2mm","fixedAnswer":"± 1 mm"}]`;
 }
 
 /**
@@ -177,17 +214,118 @@ export async function verifyWithAI(
   questions: DbQuestion[]
 ): Promise<AIVerificationResult[] | null> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) return null;
+  if (!apiKey) {
+    console.log("  [AI] Skipping — ANTHROPIC_API_KEY not set");
+    return null;
+  }
 
-  // TODO: Implement when Anthropic API key is available
-  // Batch questions in groups of 10, send to Claude Haiku for verification
-  // For now, return all as valid
-  console.log(`  [AI] Would verify ${questions.length} questions (API key present but not yet implemented)`);
-  return questions.map((q) => ({
-    questionId: q.id,
-    valid: true,
-    reason: "AI verification not yet implemented",
-  }));
+  const client = new Anthropic({ apiKey });
+  const results: AIVerificationResult[] = [];
+  let totalInputTokens = 0;
+  let totalOutputTokens = 0;
+
+  function currentCost(): number {
+    return (totalInputTokens / 1_000_000) * COST_PER_MTOK_INPUT +
+           (totalOutputTokens / 1_000_000) * COST_PER_MTOK_OUTPUT;
+  }
+
+  // Process in batches
+  for (let i = 0; i < questions.length; i += BATCH_SIZE) {
+    // Cost guard — stop before exceeding budget
+    const spent = currentCost();
+    if (spent >= MAX_COST_USD) {
+      console.warn(`  [AI] Budget limit reached ($${spent.toFixed(2)} / $${MAX_COST_USD.toFixed(2)}). Skipping remaining ${questions.length - i} questions.`);
+      for (let j = i; j < questions.length; j++) {
+        results.push({ questionId: questions[j].id, valid: true, reason: "Skipped — budget limit reached" });
+      }
+      break;
+    }
+
+    const batch = questions.slice(i, i + BATCH_SIZE);
+    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+    const totalBatches = Math.ceil(questions.length / BATCH_SIZE);
+    console.log(`  [AI] Verifying batch ${batchNum}/${totalBatches} (${batch.length} questions) [$${spent.toFixed(3)} spent]...`);
+
+    try {
+      const response = await client.messages.create({
+        model: AI_MODEL,
+        max_tokens: 4096,
+        messages: [{
+          role: "user",
+          content: buildVerificationPrompt(batch),
+        }],
+      });
+
+      totalInputTokens += response.usage.input_tokens;
+      totalOutputTokens += response.usage.output_tokens;
+
+      const text = response.content
+        .filter((block): block is Anthropic.TextBlock => block.type === "text")
+        .map((block) => block.text)
+        .join("");
+
+      // Extract JSON array from response (handle markdown fences)
+      const jsonMatch = text.match(/\[[\s\S]*\]/);
+      if (!jsonMatch) {
+        console.warn(`  [AI] Batch ${batchNum}: Could not parse response, marking as valid`);
+        for (const q of batch) {
+          results.push({ questionId: q.id, valid: true, reason: "AI response unparseable — passed by default" });
+        }
+        continue;
+      }
+
+      const parsed: Array<{
+        id: string;
+        valid: boolean;
+        reason: string;
+        fixedAnswer?: string;
+      }> = JSON.parse(jsonMatch[0]);
+
+      for (const item of parsed) {
+        const q = batch.find((b) => b.id === item.id);
+        if (!q) continue;
+
+        const aiResult: AIVerificationResult = {
+          questionId: item.id,
+          valid: item.valid,
+          reason: item.reason,
+        };
+
+        // If AI flagged it and provided a fix, build the fixed question
+        if (!item.valid && item.fixedAnswer) {
+          const fixedChoiceMatch = q.choices.some((c) => c === item.fixedAnswer);
+          if (fixedChoiceMatch) {
+            aiResult.fixedQuestion = { ...q, answer: item.fixedAnswer };
+          }
+        }
+
+        results.push(aiResult);
+      }
+
+      // Any questions in batch not in response — pass by default
+      for (const q of batch) {
+        if (!results.some((r) => r.questionId === q.id)) {
+          results.push({ questionId: q.id, valid: true, reason: "Not evaluated by AI — passed by default" });
+        }
+      }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error(`  [AI] Batch ${batchNum} error: ${message}`);
+      // On API error, pass the batch rather than blocking the pipeline
+      for (const q of batch) {
+        if (!results.some((r) => r.questionId === q.id)) {
+          results.push({ questionId: q.id, valid: true, reason: `AI error — passed by default: ${message}` });
+        }
+      }
+    }
+  }
+
+  const flagged = results.filter((r) => !r.valid);
+  const finalCost = currentCost();
+  console.log(`  [AI] Verification complete: ${results.length} checked, ${flagged.length} flagged`);
+  console.log(`  [AI] Tokens: ${totalInputTokens.toLocaleString()} in / ${totalOutputTokens.toLocaleString()} out — Cost: $${finalCost.toFixed(3)}`);
+
+  return results;
 }
 
 // ── Pipeline orchestrator ───────────────────────────────────

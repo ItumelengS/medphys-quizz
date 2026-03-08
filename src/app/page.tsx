@@ -9,6 +9,7 @@ import type { DbSection } from "@/lib/types";
 import ProgressBar from "@/components/ProgressBar";
 import SectionMasteryRing from "@/components/SectionMasteryRing";
 import DonationCard from "@/components/DonationCard";
+import LandingPage from "@/components/LandingPage";
 
 interface StatsData {
   profile: { xp: number; display_name: string; confirmed_level: number } | null;
@@ -21,7 +22,7 @@ interface StatsData {
 }
 
 export default function HomePage() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const [statsData, setStatsData] = useState<StatsData | null>(null);
   const [dueCount, setDueCount] = useState(0);
   const [dailyCompleted, setDailyCompleted] = useState(false);
@@ -50,7 +51,9 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, [session]);
 
-  if (!session || !statsData) return null;
+  if (status === "loading") return null;
+  if (!session) return <LandingPage />;
+  if (!statsData) return null;
 
   const xp = statsData.profile?.xp || 0;
   const confirmedLevel = statsData.profile?.confirmed_level || 1;

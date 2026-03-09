@@ -9,6 +9,7 @@ import {
   calculateHotSeatScore,
 } from "@/lib/scoring";
 import type { DbQuestion, DbTournament } from "@/lib/types";
+import { generateAudiencePoll, generatePhoneResult, type AudiencePoll } from "@/lib/hot-seat-lifelines";
 import TimerRing from "@/components/TimerRing";
 import ChoiceButton from "@/components/ChoiceButton";
 import QuestionCard from "@/components/QuestionCard";
@@ -34,9 +35,6 @@ function formatPrize(amount: number): string {
 type GamePhase = "loading" | "ready" | "playing" | "walked" | "lost" | "won";
 type Lifeline = "fifty-fifty" | "phone-a-friend" | "ask-the-audience";
 
-interface AudiencePoll {
-  [choice: string]: number;
-}
 
 interface RoundResult {
   points_earned: number;
@@ -274,33 +272,21 @@ export default function TournamentHotSeatPage({
   function usePhoneAFriend() {
     if (usedLifelines.has("phone-a-friend") || !currentQuestion || selectedAnswer !== null) return;
     setUsedLifelines((s) => new Set(s).add("phone-a-friend"));
-
-    setPhoneExplanation(currentQuestion.explanation || "I'm not sure about this one...");
+    const result = generatePhoneResult(
+      currentQuestion.answer,
+      currentQuestion.explanation || "",
+      shuffledChoices.filter((c) => !eliminatedChoices.has(c)),
+      currentIndex
+    );
+    setPhoneExplanation(result.text);
     setPhoneCountdown(10);
   }
 
   function useAskTheAudience() {
     if (usedLifelines.has("ask-the-audience") || !currentQuestion || selectedAnswer !== null) return;
     setUsedLifelines((s) => new Set(s).add("ask-the-audience"));
-
-    const correctPct = 50 + Math.floor(Math.random() * 31); // 50-80%
-    const remaining = 100 - correctPct;
-    const wrongChoices = shuffledChoices.filter((c) => c !== currentQuestion.answer && !eliminatedChoices.has(c));
-
-    const poll: AudiencePoll = {};
-    poll[currentQuestion.answer] = correctPct;
-
-    let leftover = remaining;
-    wrongChoices.forEach((c, i) => {
-      if (i === wrongChoices.length - 1) {
-        poll[c] = leftover;
-      } else {
-        const pct = Math.floor(Math.random() * (leftover + 1));
-        poll[c] = pct;
-        leftover -= pct;
-      }
-    });
-
+    const available = shuffledChoices.filter((c) => !eliminatedChoices.has(c));
+    const poll = generateAudiencePoll(currentQuestion.answer, available, currentIndex);
     setAudiencePoll(poll);
   }
 

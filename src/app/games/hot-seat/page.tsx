@@ -11,6 +11,7 @@ import {
   calculateXp,
 } from "@/lib/scoring";
 import type { DbQuestion, AnswerRecord } from "@/lib/types";
+import { generateAudiencePoll, generatePhoneResult, type AudiencePoll } from "@/lib/hot-seat-lifelines";
 import TimerRing from "@/components/TimerRing";
 import ChoiceButton from "@/components/ChoiceButton";
 import QuestionCard from "@/components/QuestionCard";
@@ -36,10 +37,6 @@ function formatPrize(amount: number): string {
 
 type GamePhase = "ready" | "playing" | "walked" | "lost" | "won";
 type Lifeline = "fifty-fifty" | "phone-a-friend" | "ask-the-audience";
-
-interface AudiencePoll {
-  [choice: string]: number;
-}
 
 export default function HotSeatPage() {
   const router = useRouter();
@@ -231,21 +228,21 @@ export default function HotSeatPage() {
   function usePhoneAFriend() {
     if (usedLifelines.has("phone-a-friend") || !currentQuestion || selectedAnswer !== null) return;
     setUsedLifelines((s) => new Set(s).add("phone-a-friend"));
-    setPhoneExplanation(currentQuestion.explanation || "I'm not sure about this one...");
+    const result = generatePhoneResult(
+      currentQuestion.answer,
+      currentQuestion.explanation || "",
+      shuffledChoices.filter((c) => !eliminatedChoices.has(c)),
+      currentIndex
+    );
+    setPhoneExplanation(result.text);
     setPhoneCountdown(10);
   }
 
   function useAskTheAudience() {
     if (usedLifelines.has("ask-the-audience") || !currentQuestion || selectedAnswer !== null) return;
     setUsedLifelines((s) => new Set(s).add("ask-the-audience"));
-    const correctPct = 50 + Math.floor(Math.random() * 31);
-    let remaining = 100 - correctPct;
-    const wrong = shuffledChoices.filter((c) => c !== currentQuestion.answer && !eliminatedChoices.has(c));
-    const poll: AudiencePoll = { [currentQuestion.answer]: correctPct };
-    wrong.forEach((c, i) => {
-      if (i === wrong.length - 1) { poll[c] = remaining; }
-      else { const pct = Math.floor(Math.random() * (remaining + 1)); poll[c] = pct; remaining -= pct; }
-    });
+    const available = shuffledChoices.filter((c) => !eliminatedChoices.has(c));
+    const poll = generateAudiencePoll(currentQuestion.answer, available, currentIndex);
     setAudiencePoll(poll);
   }
 
@@ -340,7 +337,7 @@ export default function HotSeatPage() {
             Answer 15 escalating questions to win $1,000,000. Use lifelines wisely. Walk away to keep your prize.
           </p>
           <div className="flex flex-col gap-2 text-xs text-text-dim mb-8">
-            <div>{BASE_TIMER}s per question · 3 lifelines · 2.5x XP</div>
+            <div>{BASE_TIMER}s per question · 3 lifelines</div>
             <div>Safe havens at Q5 ($1,000) & Q10 ($32,000)</div>
             <div className="text-amber-600/70 mt-1">
               50:50 · Phone a Friend · Ask the Audience

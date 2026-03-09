@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef, use } from "react";
+import { useState, useEffect, useCallback, useRef, use, Suspense } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -21,7 +21,19 @@ interface RoundResult {
   baseScore: number;
 }
 
-export default function TournamentCrypticPage({
+export default function TournamentCrypticPageWrapper({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  return (
+    <Suspense fallback={<div className="min-h-dvh flex items-center justify-center text-text-secondary">Loading...</div>}>
+      <TournamentCrypticPage params={params} />
+    </Suspense>
+  );
+}
+
+function TournamentCrypticPage({
   params,
 }: {
   params: Promise<{ id: string }>;

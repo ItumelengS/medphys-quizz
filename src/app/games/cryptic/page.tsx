@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, Suspense } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -12,7 +12,15 @@ type Phase = "setup" | "playing" | "complete";
 const CLUE_COUNT = 10;
 const TIME_PER_CLUE = 90; // seconds
 
-export default function CrypticPage() {
+export default function CrypticPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-dvh flex items-center justify-center text-text-secondary">Loading...</div>}>
+      <CrypticPage />
+    </Suspense>
+  );
+}
+
+function CrypticPage() {
   const router = useRouter();
   const { data: session } = useSession();
 
@@ -269,6 +277,9 @@ export default function CrypticPage() {
 
   // ── Playing ──
   const clue = clues[currentIndex];
+  if (!clue) {
+    return <main className="min-h-dvh flex items-center justify-center text-text-secondary">Loading clues...</main>;
+  }
   const progress = ((currentIndex) / clues.length) * 100;
   const timerPct = (timeLeft / TIME_PER_CLUE) * 100;
 

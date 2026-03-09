@@ -1,4 +1,5 @@
 import { SupabaseClient } from "@supabase/supabase-js";
+import { TOURNAMENT_TYPES } from "./tournaments";
 
 interface RoundCheckResult {
   allowed: boolean;
@@ -10,12 +11,19 @@ interface RoundCheckResult {
  * Pre-check whether a player can play another round.
  * Called early in API routes before expensive question fetching.
  * The RPC remains the authoritative enforcer.
+ *
+ * Respects per-type maxRounds config (default 2).
+ * Single-round modes (wordle, connections) have maxRounds=1 with no tiebreaker.
  */
 export async function checkRoundLimit(
   supabase: SupabaseClient,
   tournamentId: string,
-  userId: string
+  userId: string,
+  tournamentType?: string
 ): Promise<RoundCheckResult> {
+  const config = tournamentType ? TOURNAMENT_TYPES[tournamentType] : null;
+  const maxRounds = config?.maxRounds ?? 2;
+
   const { data: participant } = await supabase
     .from("tournament_participants")
     .select("rounds_played, total_points")
@@ -30,17 +38,22 @@ export async function checkRoundLimit(
 
   const { rounds_played, total_points } = participant;
 
-  // Hard cap
-  if (rounds_played >= 3) {
-    return { allowed: false, error: "Round limit reached: maximum 3 rounds played" };
+  // Hard cap (maxRounds + 1 for tiebreaker possibility)
+  if (rounds_played >= maxRounds + 1) {
+    return { allowed: false, error: `Round limit reached: maximum ${maxRounds} rounds played` };
   }
 
   // Under normal limit
-  if (rounds_played < 2) {
+  if (rounds_played < maxRounds) {
     return { allowed: true };
   }
 
-  // At 2 rounds — check tiebreaker eligibility (top 3 distinct point values)
+  // Single-round modes: no tiebreaker
+  if (maxRounds === 1) {
+    return { allowed: false, error: "This tournament allows only 1 round per player" };
+  }
+
+  // At maxRounds — check tiebreaker eligibility (top 3 distinct point values)
   const { data: participants } = await supabase
     .from("tournament_participants")
     .select("total_points")
@@ -48,7 +61,7 @@ export async function checkRoundLimit(
     .order("total_points", { ascending: false });
 
   if (!participants || participants.length === 0) {
-    return { allowed: false, error: "Round limit reached: you have played 2 rounds" };
+    return { allowed: false, error: `Round limit reached: you have played ${maxRounds} rounds` };
   }
 
   const distinctPoints = [...new Set(participants.map((p: { total_points: number }) => p.total_points))].sort((a, b) => b - a);
@@ -58,5 +71,5 @@ export async function checkRoundLimit(
     return { allowed: true, tiebreakerRound: true };
   }
 
-  return { allowed: false, error: "Round limit reached: you have played 2 rounds" };
+  return { allowed: false, error: `Round limit reached: you have played ${maxRounds} rounds` };
 }

@@ -103,14 +103,17 @@ export default function TournamentDetailPage({
   const isFinished = tournament.status === "finished";
   const hasJoined = !!userRecord;
   const roundsPlayed = userRecord?.rounds_played ?? 0;
-  const roundLimitReached = roundsPlayed >= 2 && !tiebreakerEligible;
-  const canPlay = isActive && hasJoined && (roundsPlayed < 2 || (tiebreakerEligible && roundsPlayed < 3));
+  const maxRounds = config.maxRounds ?? 2;
+  const roundLimitReached = roundsPlayed >= maxRounds && (maxRounds === 1 || !tiebreakerEligible);
+  const canPlay = isActive && hasJoined && (roundsPlayed < maxRounds || (maxRounds > 1 && tiebreakerEligible && roundsPlayed < maxRounds + 1));
 
   const isCrossword = tournament.type.startsWith("crossword-");
   const isSuddenDeath = tournament.type.startsWith("sudden-death-");
   const isSprint = tournament.type.startsWith("sprint-");
   const isMatch = tournament.type.startsWith("match-");
   const isHotSeat = tournament.type.startsWith("hot-seat-");
+  const isWordle = tournament.type.startsWith("wordle-");
+  const isConnections = tournament.type.startsWith("connections-");
   const tournamentDiscipline = (tournament as DbTournament & { discipline?: string }).discipline || "open";
   const userDiscipline = session?.user?.discipline || "physicist";
   const disciplineMismatch = tournamentDiscipline !== "open" && tournamentDiscipline !== userDiscipline;
@@ -127,6 +130,8 @@ export default function TournamentDetailPage({
     if (type === "sprint-rapid") return "text-yellow-700";
     if (type.startsWith("match-")) return "text-violet-500";
     if (type.startsWith("hot-seat-")) return "text-amber-600";
+    if (type.startsWith("wordle-")) return "text-green-600";
+    if (type.startsWith("connections-")) return "text-purple-500";
     return "text-bauhaus-yellow";
   }
 
@@ -140,6 +145,8 @@ export default function TournamentDetailPage({
     if (type === "sprint-blitz" || type === "sprint-rapid") return "border-yellow-600";
     if (type.startsWith("match-")) return "border-violet-500";
     if (type.startsWith("hot-seat-")) return "border-amber-600";
+    if (type.startsWith("wordle-")) return "border-green-600";
+    if (type.startsWith("connections-")) return "border-purple-500";
     return "border-bauhaus-yellow";
   }
 
@@ -153,6 +160,8 @@ export default function TournamentDetailPage({
     if (type.startsWith("sprint-")) return { background: "rgba(202, 138, 4, 0.08)" };
     if (type.startsWith("match-")) return { background: "rgba(139, 92, 246, 0.08)" };
     if (type.startsWith("hot-seat-")) return { background: "rgba(217, 119, 6, 0.08)" };
+    if (type.startsWith("wordle-")) return { background: "rgba(22, 163, 74, 0.08)" };
+    if (type.startsWith("connections-")) return { background: "rgba(168, 85, 247, 0.08)" };
     return { background: "rgba(234, 179, 8, 0.08)" };
   }
 
@@ -166,6 +175,8 @@ export default function TournamentDetailPage({
     if (type.startsWith("sprint-")) return "bg-yellow-600";
     if (type.startsWith("match-")) return "bg-violet-500";
     if (type.startsWith("hot-seat-")) return "bg-amber-600";
+    if (type.startsWith("wordle-")) return "bg-green-600";
+    if (type.startsWith("connections-")) return "bg-purple-500";
     return "bg-bauhaus-yellow";
   }
 
@@ -198,7 +209,11 @@ export default function TournamentDetailPage({
                       ? `${config.pairsCount || 8} pairs · memory · ${config.durationMinutes}min`
                       : isHotSeat
                         ? `15 questions · lifelines · ${config.durationMinutes}min`
-                        : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
+                        : isWordle
+                          ? `1 word · 6 guesses · ${config.durationMinutes}min`
+                          : isConnections
+                            ? `4 groups · 4 mistakes · ${config.durationMinutes}min`
+                            : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
               }
             </div>
           </div>
@@ -292,7 +307,7 @@ export default function TournamentDetailPage({
             <div className="font-mono font-bold text-bauhaus-blue">{userRecord.total_points} pts</div>
           </div>
           <div className="flex items-center justify-between text-xs text-text-dim mt-1">
-            <span>{userRecord.rounds_played}/{tiebreakerEligible ? 3 : 2} rounds · best round {userRecord.best_round_score}pts</span>
+            <span>{userRecord.rounds_played}/{maxRounds > 1 && tiebreakerEligible ? maxRounds + 1 : maxRounds} round{maxRounds > 1 ? "s" : ""} · best round {userRecord.best_round_score}pts</span>
             {userRecord.fire_streak > 0 && <span>🔥 {userRecord.fire_streak}</span>}
             {userRecord.berserk_rounds > 0 && <span>💀 {userRecord.berserk_rounds}</span>}
           </div>
@@ -375,22 +390,26 @@ export default function TournamentDetailPage({
                           ? `/tournaments/${id}/play-match?berserk=${berserk}`
                           : isHotSeat
                             ? `/tournaments/${id}/play-hot-seat?berserk=${berserk}`
-                            : `/tournaments/${id}/play?berserk=${berserk}`;
+                            : isWordle
+                              ? `/tournaments/${id}/play-wordle`
+                              : isConnections
+                                ? `/tournaments/${id}/play-connections`
+                                : `/tournaments/${id}/play?berserk=${berserk}`;
                   router.push(playPath);
                 }}
                 className={`flex-1 py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest transition-all ${getBorderColor(tournament.type)} hover:scale-[1.01]`}
                 style={getBgStyle(tournament.type)}
               >
-                {tiebreakerEligible && roundsPlayed === 2
+                {tiebreakerEligible && roundsPlayed === maxRounds
                   ? "Tiebreaker Round!"
-                  : isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : isMatch ? "Play Match" : isHotSeat ? "Play Hot Seat" : "Play Round"}
+                  : isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : isMatch ? "Play Match" : isHotSeat ? "Play Hot Seat" : isWordle ? "Play Wordle" : isConnections ? "Play Connections" : "Play Round"}
               </button>
             </div>
           )}
           {isActive && hasJoined && !canPlay && (
             <div className="text-center py-3">
               <div className="text-text-dim text-sm uppercase tracking-wider font-bold">
-                {roundsPlayed}/{tiebreakerEligible ? 3 : 2} rounds played
+                {roundsPlayed}/{maxRounds > 1 && tiebreakerEligible ? maxRounds + 1 : maxRounds} round{maxRounds > 1 ? "s" : ""} played
               </div>
               {roundLimitReached && (
                 <div className="text-text-dim text-xs mt-1">Round limit reached</div>

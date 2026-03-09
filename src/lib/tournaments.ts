@@ -1,5 +1,5 @@
 export interface TournamentTypeConfig {
-  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "hot-seat-blitz" | "hot-seat-rapid";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "hot-seat-blitz" | "hot-seat-rapid" | "wordle-blitz" | "wordle-rapid" | "connections-blitz" | "connections-rapid";
   label: string;
   frequencyHours: number;
   durationMinutes: number;
@@ -23,6 +23,12 @@ export interface TournamentTypeConfig {
   pairsCount?: number;
   /** Whether this is a hot-seat tournament type */
   isHotSeat?: boolean;
+  /** Whether this is a wordle tournament type */
+  isWordle?: boolean;
+  /** Whether this is a connections tournament type */
+  isConnections?: boolean;
+  /** Max rounds per player (default 2, tiebreaker may allow +1) */
+  maxRounds?: number;
   /** Offset in minutes from the base slot time (staggers starts like Lichess) */
   offsetMinutes?: number;
   /** Discipline restriction ('open' or a specific discipline) */
@@ -199,6 +205,58 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     icon: "💰",
     isHotSeat: true,
     offsetMinutes: 225,
+  },
+  "wordle-blitz": {
+    type: "wordle-blitz",
+    label: "Wordle Blitz",
+    frequencyHours: 2,
+    durationMinutes: 30,
+    timerSeconds: 0,
+    questionsPerRound: 1,
+    color: "#16a34a",
+    icon: "🔤",
+    isWordle: true,
+    maxRounds: 1,
+    offsetMinutes: 10,
+  },
+  "wordle-rapid": {
+    type: "wordle-rapid",
+    label: "Wordle Rapid",
+    frequencyHours: 4,
+    durationMinutes: 60,
+    timerSeconds: 0,
+    questionsPerRound: 1,
+    color: "#15803d",
+    icon: "🔤",
+    isWordle: true,
+    maxRounds: 1,
+    offsetMinutes: 120,
+  },
+  "connections-blitz": {
+    type: "connections-blitz",
+    label: "Connections Blitz",
+    frequencyHours: 3,
+    durationMinutes: 30,
+    timerSeconds: 0,
+    questionsPerRound: 1,
+    color: "#a855f7",
+    icon: "🔗",
+    isConnections: true,
+    maxRounds: 1,
+    offsetMinutes: 40,
+  },
+  "connections-rapid": {
+    type: "connections-rapid",
+    label: "Connections Rapid",
+    frequencyHours: 6,
+    durationMinutes: 60,
+    timerSeconds: 0,
+    questionsPerRound: 1,
+    color: "#9333ea",
+    icon: "🔗",
+    isConnections: true,
+    maxRounds: 1,
+    offsetMinutes: 200,
   },
 };
 

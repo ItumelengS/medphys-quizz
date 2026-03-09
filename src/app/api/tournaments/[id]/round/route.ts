@@ -48,7 +48,7 @@ export async function POST(
   }
 
   // Check round limit before expensive question fetching
-  const roundCheck = await checkRoundLimit(supabase, id, userId);
+  const roundCheck = await checkRoundLimit(supabase, id, userId, tournament.type);
   if (!roundCheck.allowed) {
     return NextResponse.json({ error: roundCheck.error }, { status: 400 });
   }

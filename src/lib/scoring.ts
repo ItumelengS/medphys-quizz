@@ -100,6 +100,10 @@ export function calculateXp(
     baseXp = Math.floor(points * 0.002);
   } else if (mode === "blitz") {
     baseXp = Math.floor(points * 0.12);
+  } else if (mode === "wordle") {
+    baseXp = Math.floor(points * 0.10);
+  } else if (mode === "connections") {
+    baseXp = Math.floor(points * 0.10);
   } else {
     // speed / marathon
     baseXp = Math.floor(points * 0.10);
@@ -272,6 +276,35 @@ export function calculateMatchScore(
   const movePenalty = extraMoves * 3;
   const timeBonus = Math.max(0, 300 - timeSeconds);
   return Math.max(0, base - movePenalty + timeBonus);
+}
+
+export function calculateConnectionsScore(
+  groupsFound: number,
+  mistakesLeft: number,
+  perfect: boolean
+): number {
+  // Base: 50 points per group found
+  let score = groupsFound * 50;
+  // Bonus for remaining mistakes (max 4)
+  score += mistakesLeft * 15;
+  // Perfect bonus (no mistakes)
+  if (perfect) score += 75;
+  return Math.max(0, score);
+}
+
+export function calculateWordleScore(
+  solved: boolean,
+  guessesUsed: number,
+  hintUsed: boolean,
+  wordLength: number
+): number {
+  if (!solved) return 0;
+  // Base: 100 points for solving
+  // Fewer guesses = more bonus (max 6 guesses)
+  const guessBonus = (7 - guessesUsed) * 20; // 20-120 bonus
+  const lengthBonus = (wordLength - 4) * 10; // longer words = more points
+  const hintPenalty = hintUsed ? 40 : 0;
+  return Math.max(0, 100 + guessBonus + lengthBonus - hintPenalty);
 }
 
 export function calculateBlitzScore(

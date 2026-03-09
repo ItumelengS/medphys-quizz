@@ -101,6 +101,36 @@ export const VARIANT_CONFIGS: Record<GameVariant, VariantConfig> = {
       "1.8x XP multiplier",
     ],
   },
+  connections: {
+    id: "connections",
+    name: "Connections",
+    icon: "🔗",
+    description: "Group 16 medical physics terms into 4 hidden categories. Fewer mistakes = more points.",
+    color: "#a855f7",
+    xpMultiplier: 1.6,
+    rules: [
+      "16 words — find 4 groups of 4",
+      "Select 4 words and submit a guess",
+      "Correct group revealed with color",
+      "4 mistakes allowed before game over",
+      "Difficulty: yellow → green → blue → purple",
+    ],
+  },
+  wordle: {
+    id: "wordle",
+    name: "Wordle",
+    icon: "🔤",
+    description: "Guess the medical physics term in 6 tries. Green, yellow, gray — you know the rules.",
+    color: "#16a34a",
+    xpMultiplier: 1.5,
+    rules: [
+      "6 attempts to guess the hidden term",
+      "Green = correct letter & position",
+      "Yellow = correct letter, wrong position",
+      "Gray = letter not in the word",
+      "Use a hint to reveal the clue (costs points)",
+    ],
+  },
 };
 
 export const VARIANT_LIST = Object.values(VARIANT_CONFIGS);
@@ -113,6 +143,8 @@ export function getVariantDisplayName(mode: string): string {
     case "match": return "Match";
     case "hot-seat": return "Hot Seat";
     case "blitz": return "Blitz";
+    case "wordle": return "Wordle";
+    case "connections": return "Connections";
     case "speed": return "Speed Round";
     case "daily": return "Daily Challenge";
     case "review": return "Review";

@@ -115,7 +115,7 @@ export interface DbDailyChallenge {
 // ── Tournament types ─────────────────────────────────────────
 export interface DbTournament {
   id: string;
-  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "wordle-blitz" | "wordle-rapid" | "connections-blitz" | "connections-rapid";
   starts_at: string;
   ends_at: string;
   status: "upcoming" | "active" | "finished";
@@ -177,8 +177,8 @@ export interface QuestionRecord {
 }
 
 // ── Game variants ──────────────────────────────────────────
-export type GameVariant = "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "blitz";
-export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "arena" | "blitz";
+export type GameVariant = "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "blitz" | "wordle" | "connections";
+export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "arena" | "blitz" | "wordle" | "connections";
 
 export interface CrosswordCell {
   letter: string;

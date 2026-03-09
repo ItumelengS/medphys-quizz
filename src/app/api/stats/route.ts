@@ -67,6 +67,30 @@ export async function GET() {
     }
   }
 
+  // Game results aggregates: time played, per-variant stats, win rate
+  const { data: gameAgg } = await supabase
+    .from("game_results")
+    .select("variant, score, total, duration_seconds, played_at")
+    .eq("user_id", userId)
+    .order("played_at", { ascending: false });
+
+  const games = gameAgg || [];
+  let totalTimePlayed = 0;
+  let totalWins = 0;
+  const variantStats: Record<string, { played: number; wins: number; totalTime: number }> = {};
+
+  for (const g of games) {
+    const dur = g.duration_seconds || 0;
+    totalTimePlayed += dur;
+    const won = g.score === g.total && g.total > 0;
+    if (won) totalWins++;
+
+    if (!variantStats[g.variant]) variantStats[g.variant] = { played: 0, wins: 0, totalTime: 0 };
+    variantStats[g.variant].played++;
+    variantStats[g.variant].totalTime += dur;
+    if (won) variantStats[g.variant].wins++;
+  }
+
   return NextResponse.json({
     profile: {
       ...profileRes.data,
@@ -78,6 +102,11 @@ export async function GET() {
     activityMap,
     variantRatings: ratingsRes.data || [],
     ratingHistory: ratingHistoryRes.data || [],
+    totalTimePlayed,
+    totalWins,
+    totalGames: games.length,
+    variantStats,
+    firstGame: games.length > 0 ? games[games.length - 1].played_at : null,
   });
   } catch (error) {
     console.error("GET /api/stats error:", error);

@@ -26,6 +26,9 @@ export async function GET() {
         ...(config.isSprint ? { isSprint: true } : {}),
         ...(config.isMatch ? { isMatch: true, pairsCount: config.pairsCount } : {}),
         ...(config.isHotSeat ? { isHotSeat: true } : {}),
+        ...(config.isWordle ? { isWordle: true } : {}),
+        ...(config.isConnections ? { isConnections: true } : {}),
+        ...(config.maxRounds ? { maxRounds: config.maxRounds } : {}),
       },
     };
   });

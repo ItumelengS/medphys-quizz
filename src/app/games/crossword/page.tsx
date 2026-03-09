@@ -432,6 +432,7 @@ export default function CrosswordPage() {
         ref={gridRef}
         puzzle={puzzle}
         onPuzzleSubmit={handlePuzzleSubmit}
+        easyMode={selectedDifficulty === "easy"}
       />
     </main>
   );

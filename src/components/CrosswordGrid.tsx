@@ -14,6 +14,7 @@ export interface PuzzleSubmitResult {
 interface CrosswordGridProps {
   puzzle: CrosswordPuzzle;
   onPuzzleSubmit: (result: PuzzleSubmitResult) => void;
+  easyMode?: boolean;
 }
 
 export interface CrosswordGridHandle {
@@ -27,7 +28,7 @@ interface CellState {
   wrong: boolean;
 }
 
-const CrosswordGrid = forwardRef<CrosswordGridHandle, CrosswordGridProps>(function CrosswordGrid({ puzzle, onPuzzleSubmit }, ref) {
+const CrosswordGrid = forwardRef<CrosswordGridHandle, CrosswordGridProps>(function CrosswordGrid({ puzzle, onPuzzleSubmit, easyMode = false }, ref) {
   const { width, height, grid, words } = puzzle;
 
   const [cellStates, setCellStates] = useState<Record<string, CellState>>(() => {
@@ -184,9 +185,18 @@ const CrosswordGrid = forwardRef<CrosswordGridHandle, CrosswordGridProps>(functi
       return;
     }
 
+    // In easy mode, check correctness immediately
+    const cellData = grid[selectedCell.y]?.[selectedCell.x];
+    const isCorrect = cellData ? letter === cellData.letter : false;
+
     setCellStates((prev) => ({
       ...prev,
-      [k]: { ...prev[k], value: letter, pencil: pencilMode, wrong: false },
+      [k]: {
+        ...prev[k],
+        value: letter,
+        pencil: pencilMode,
+        wrong: easyMode && !isCorrect,
+      },
     }));
 
     // Clear submitted state when user edits after a failed submit
@@ -466,6 +476,7 @@ const CrosswordGrid = forwardRef<CrosswordGridHandle, CrosswordGridProps>(functi
                 const isSelected = selectedCell?.x === x && selectedCell?.y === y;
                 const inWord = isInActiveWord(x, y);
                 const isCorrectWord = cell.wordIndices.some((wi) => correctWords.has(wi));
+                const easyCorrect = easyMode && state?.value && state.value === cell.letter && !state.wrong;
                 const clueNum = clueNumMap.get(k);
 
                 let bg: string;
@@ -475,6 +486,8 @@ const CrosswordGrid = forwardRef<CrosswordGridHandle, CrosswordGridProps>(functi
                   bg = "#fecaca"; // light red for wrong cells
                 } else if (isCorrectWord) {
                   bg = "#d1fae5"; // green for correct words
+                } else if (easyCorrect) {
+                  bg = "#dcfce7"; // subtle green for correct letter in easy mode
                 } else if (inWord) {
                   bg = "#dbeafe";
                 } else {
@@ -488,6 +501,8 @@ const CrosswordGrid = forwardRef<CrosswordGridHandle, CrosswordGridProps>(functi
                   textColor = "#dc2626";
                 } else if (isCorrectWord) {
                   textColor = "#16a34a";
+                } else if (easyCorrect) {
+                  textColor = "#22c55e";
                 } else if (state?.pencil) {
                   textColor = "#9ca3af";
                 } else {

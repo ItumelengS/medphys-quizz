@@ -270,8 +270,9 @@ export default function HotSeatPage() {
     const finalScore = correctCount;
     const xpResult = calculateXp(finalPrize, "hot-seat", finalScore, TOTAL_QUESTIONS, 0);
 
+    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
-      await fetch("/api/games/submit", {
+      const res = await fetch("/api/games/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -295,6 +296,7 @@ export default function HotSeatPage() {
           },
         }),
       });
+      try { responseData = await res.json(); } catch {}
     }
 
     const accuracy = TOTAL_QUESTIONS > 0 ? finalScore / TOTAL_QUESTIONS : 0;
@@ -317,6 +319,10 @@ export default function HotSeatPage() {
       perfectBonus: xpResult.perfectBonusXp.toString(),
       penalized: penalized ? "1" : "0",
     });
+    if (responseData?.ratingUpdate) {
+      resultParams.set("ratingNew", responseData.ratingUpdate.newRating.toString());
+      resultParams.set("ratingDelta", responseData.ratingUpdate.ratingDelta.toString());
+    }
     router.push(`/results?${resultParams.toString()}`);
   }
 

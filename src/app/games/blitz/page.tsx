@@ -217,8 +217,9 @@ export default function BlitzPage() {
     const finalPoints = Math.max(0, calculateBlitzScore(correct, wrong, bestStreak));
     const xpResult = calculateXp(finalPoints, "blitz", correct, correct + wrong, 0);
 
+    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
-      await fetch("/api/games/submit", {
+      const res = await fetch("/api/games/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -239,6 +240,7 @@ export default function BlitzPage() {
           metadata: { correct, wrong, bestStreak },
         }),
       });
+      try { responseData = await res.json(); } catch {}
     }
 
     const blitzTotal = correct + wrong;
@@ -262,6 +264,10 @@ export default function BlitzPage() {
       perfectBonus: xpResult.perfectBonusXp.toString(),
       penalized: blitzPenalized ? "1" : "0",
     });
+    if (responseData?.ratingUpdate) {
+      resultParams.set("ratingNew", responseData.ratingUpdate.newRating.toString());
+      resultParams.set("ratingDelta", responseData.ratingUpdate.ratingDelta.toString());
+    }
     router.push(`/results?${resultParams.toString()}`);
   }
 

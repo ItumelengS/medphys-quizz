@@ -4,6 +4,7 @@ import { createServiceClient } from "@/lib/supabase/server";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { calculateCrypticScore, calculateXp } from "@/lib/scoring";
 import { checkRoundLimit } from "@/lib/tournament-round-check";
+import { updateTournamentRating } from "@/lib/rating-update";
 
 interface CrypticRoundPayload {
   correct: number;
@@ -78,12 +79,21 @@ export async function POST(
       p_amount: xpResult.totalXp,
     });
 
+    // Update variant rating (Glicko-2)
+    let ratingUpdate = null;
+    try {
+      ratingUpdate = await updateTournamentRating(supabase, userId, tournament.type, id, correct, total, pointsEarned);
+    } catch (e) {
+      console.error("Rating update failed (non-fatal):", e);
+    }
+
     return NextResponse.json({
       ...result,
       correct,
       total,
       baseScore,
       xp: xpResult,
+      ratingUpdate,
     });
   } catch (error) {
     console.error("POST /api/tournaments/[id]/cryptic-round error:", error);

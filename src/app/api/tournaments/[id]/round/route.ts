@@ -5,6 +5,7 @@ import { calculateXp } from "@/lib/scoring";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 import { checkRoundLimit } from "@/lib/tournament-round-check";
+import { updateTournamentRating } from "@/lib/rating-update";
 
 interface RoundPayload {
   berserk: boolean;
@@ -180,6 +181,14 @@ export async function POST(
     p_amount: xpResult.totalXp,
   });
 
+  // Update variant rating (Glicko-2)
+  let ratingUpdate = null;
+  try {
+    ratingUpdate = await updateTournamentRating(supabase, userId, tournament.type, id, score, total, pointsEarned);
+  } catch (e) {
+    console.error("Rating update failed (non-fatal):", e);
+  }
+
   // Return result + explanations (safe now — round is over)
   const explanations: Record<string, { correct: boolean; answer: string; explanation: string }> = {};
   for (const ans of validatedAnswers) {
@@ -198,6 +207,7 @@ export async function POST(
     score,
     total,
     xp: xpResult,
+    ratingUpdate,
     explanations,
   });
   } catch (error) {

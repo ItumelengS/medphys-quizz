@@ -4,6 +4,7 @@ import { createServiceClient } from "@/lib/supabase/server";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { calculateCrosswordScore, calculateXp } from "@/lib/scoring";
 import { checkRoundLimit } from "@/lib/tournament-round-check";
+import { updateTournamentRating } from "@/lib/rating-update";
 
 interface CrosswordRoundPayload {
   berserk: boolean;
@@ -114,6 +115,14 @@ export async function POST(
     p_amount: xpResult.totalXp,
   });
 
+  // Update variant rating (Glicko-2)
+  let ratingUpdate = null;
+  try {
+    ratingUpdate = await updateTournamentRating(supabase, userId, tournament.type, id, wordsWithoutReveal, totalWords, pointsEarned);
+  } catch (e) {
+    console.error("Rating update failed (non-fatal):", e);
+  }
+
   return NextResponse.json({
     ...result,
     wordsCompleted,
@@ -125,6 +134,7 @@ export async function POST(
     remainingSeconds,
     accuracy: Math.round(accuracy * 10) / 10,
     xp: xpResult,
+    ratingUpdate,
   });
   } catch (error) {
     console.error("POST /api/tournaments/[id]/crossword-round error:", error);

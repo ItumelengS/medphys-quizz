@@ -4,6 +4,7 @@ import { createServiceClient } from "@/lib/supabase/server";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { calculateConnectionsScore, calculateXp } from "@/lib/scoring";
 import { checkRoundLimit } from "@/lib/tournament-round-check";
+import { updateTournamentRating } from "@/lib/rating-update";
 
 interface ConnectionsRoundPayload {
   groupsFound: number;
@@ -86,6 +87,14 @@ export async function POST(
       p_amount: xpResult.totalXp,
     });
 
+    // Update variant rating (Glicko-2)
+    let ratingUpdate = null;
+    try {
+      ratingUpdate = await updateTournamentRating(supabase, userId, tournament.type, id, score, 4, pointsEarned);
+    } catch (e) {
+      console.error("Rating update failed (non-fatal):", e);
+    }
+
     return NextResponse.json({
       ...result,
       groupsFound,
@@ -93,6 +102,7 @@ export async function POST(
       won,
       baseScore,
       xp: xpResult,
+      ratingUpdate,
     });
   } catch (error) {
     console.error("POST /api/tournaments/[id]/connections-round error:", error);

@@ -154,8 +154,9 @@ export default function ConnectionsPage() {
 
     const xpResult = calculateXp(points, "connections", won ? 4 : 0, 4, 0);
 
+    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
-      await fetch("/api/games/submit", {
+      const res = await fetch("/api/games/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -180,6 +181,7 @@ export default function ConnectionsPage() {
           },
         }),
       });
+      try { responseData = await res.json(); } catch {}
     }
 
     const resultParams = new URLSearchParams({
@@ -196,6 +198,10 @@ export default function ConnectionsPage() {
       perfectBonus: xpResult.perfectBonusXp.toString(),
       penalized: "0",
     });
+    if (responseData?.ratingUpdate) {
+      resultParams.set("ratingNew", responseData.ratingUpdate.newRating.toString());
+      resultParams.set("ratingDelta", responseData.ratingUpdate.ratingDelta.toString());
+    }
     router.push(`/results?${resultParams.toString()}`);
   }
 

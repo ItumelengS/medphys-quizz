@@ -146,8 +146,9 @@ export default function SprintPage() {
     const finalPoints = calculateSprintScore(correct, wrong, timeRef.current);
     const xpResult = calculateXp(Math.max(0, finalPoints), "sprint", correct, correct + wrong, 0);
 
+    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
-      await fetch("/api/games/submit", {
+      const res = await fetch("/api/games/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -172,6 +173,7 @@ export default function SprintPage() {
           },
         }),
       });
+      try { responseData = await res.json(); } catch {}
     }
 
     const sprintTotal = correct + wrong;
@@ -195,6 +197,10 @@ export default function SprintPage() {
       perfectBonus: xpResult.perfectBonusXp.toString(),
       penalized: sprintPenalized ? "1" : "0",
     });
+    if (responseData?.ratingUpdate) {
+      resultParams.set("ratingNew", responseData.ratingUpdate.newRating.toString());
+      resultParams.set("ratingDelta", responseData.ratingUpdate.ratingDelta.toString());
+    }
     router.push(`/results?${resultParams.toString()}`);
   }
 

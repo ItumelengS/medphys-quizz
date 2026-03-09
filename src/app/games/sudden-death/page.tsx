@@ -239,8 +239,9 @@ export default function SuddenDeathPage() {
 
     const xpResult = calculateXp(finalPoints, "sudden-death", finalScore, finalTotal, 0);
 
+    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
-      await fetch("/api/games/submit", {
+      const res = await fetch("/api/games/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -263,6 +264,7 @@ export default function SuddenDeathPage() {
           },
         }),
       });
+      try { responseData = await res.json(); } catch {}
     }
 
     const sdAccuracy = finalTotal > 0 ? finalScore / finalTotal : 0;
@@ -285,6 +287,10 @@ export default function SuddenDeathPage() {
       perfectBonus: xpResult.perfectBonusXp.toString(),
       penalized: sdPenalized ? "1" : "0",
     });
+    if (responseData?.ratingUpdate) {
+      resultParams.set("ratingNew", responseData.ratingUpdate.newRating.toString());
+      resultParams.set("ratingDelta", responseData.ratingUpdate.ratingDelta.toString());
+    }
     router.push(`/results?${resultParams.toString()}`);
   }
 

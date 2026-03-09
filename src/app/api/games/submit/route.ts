@@ -5,6 +5,7 @@ import { calculateXp, calculateXpWithPenalty } from "@/lib/scoring";
 import { applyXpChange } from "@/lib/apply-xp";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 import { parseInventory, awardPowerUp } from "@/lib/powerups";
+import { updateSoloRating } from "@/lib/rating-update";
 import type { GameVariant, GameMode } from "@/lib/types";
 
 interface AnswerPayload {
@@ -186,6 +187,14 @@ export async function POST(req: NextRequest) {
       .eq("id", userId);
   }
 
+  // 8. Update variant rating (Glicko-2)
+  let ratingUpdate = null;
+  try {
+    ratingUpdate = await updateSoloRating(supabase, userId, variant, score, total, points);
+  } catch (e) {
+    console.error("Rating update failed (non-fatal):", e);
+  }
+
   return NextResponse.json({
     xp: xpResult,
     xpChange,
@@ -194,6 +203,7 @@ export async function POST(req: NextRequest) {
     newConfirmedLevel,
     newTotalXp: newXp,
     awardedPowerUps,
+    ratingUpdate,
   });
   } catch (error) {
     console.error("POST /api/games/submit error:", error);

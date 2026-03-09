@@ -4,6 +4,7 @@ import { createServiceClient } from "@/lib/supabase/server";
 import { calculateXp, calculateHotSeatScore } from "@/lib/scoring";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 import { checkRoundLimit } from "@/lib/tournament-round-check";
+import { updateTournamentRating } from "@/lib/rating-update";
 
 interface HotSeatPayload {
   berserk: boolean;
@@ -190,6 +191,14 @@ export async function POST(
     p_amount: xpResult.totalXp,
   });
 
+  // Update variant rating (Glicko-2)
+  let ratingUpdate = null;
+  try {
+    ratingUpdate = await updateTournamentRating(supabase, userId, tournament.type, id, correctCount, 15, pointsEarned);
+  } catch (e) {
+    console.error("Rating update failed (non-fatal):", e);
+  }
+
   return NextResponse.json({
     ...result,
     score: correctCount,
@@ -198,6 +207,7 @@ export async function POST(
     walkedAway,
     lifelinesUsed,
     xp: xpResult,
+    ratingUpdate,
   });
   } catch (error) {
     console.error("POST /api/tournaments/[id]/hot-seat-round error:", error);

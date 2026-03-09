@@ -8,6 +8,27 @@ import type { DbSection } from "@/lib/types";
 import SectionMasteryRing from "@/components/SectionMasteryRing";
 import ProgressBar from "@/components/ProgressBar";
 
+const VARIANT_DISPLAY: Record<string, { label: string; icon: string; color: string }> = {
+  blitz:          { label: "Blitz",         icon: "⚡", color: "#ef4444" },
+  "sudden-death": { label: "Sudden Death",  icon: "💀", color: "#991b1b" },
+  sprint:         { label: "Sprint",        icon: "🏃", color: "#ca8a04" },
+  crossword:      { label: "Crossword",     icon: "🧩", color: "#6366f1" },
+  match:          { label: "Match",         icon: "🃏", color: "#8b5cf6" },
+  "hot-seat":     { label: "Hot Seat",      icon: "💰", color: "#d97706" },
+  wordle:         { label: "Wordle",        icon: "🔤", color: "#16a34a" },
+  connections:    { label: "Connections",    icon: "🔗", color: "#a855f7" },
+  cryptic:        { label: "Cryptic",       icon: "🔮", color: "#be185d" },
+};
+
+interface VariantRating {
+  variant: string;
+  rating: number;
+  rd: number;
+  peak_rating: number;
+  games_count: number;
+  last_played: string;
+}
+
 interface StatsData {
   profile: { xp: number; display_name: string } | null;
   stats: {
@@ -21,6 +42,7 @@ interface StatsData {
   sections: DbSection[];
   sectionMastery: Record<string, { shown: number; correct: number; percent: number }>;
   activityMap: Record<string, number>;
+  variantRatings: VariantRating[];
 }
 
 export default function StatsPage() {
@@ -52,6 +74,9 @@ export default function StatsPage() {
     last30Days.push({ date: dateStr, count: statsData.activityMap[dateStr] || 0 });
   }
   const maxActivity = Math.max(1, ...last30Days.map((d) => d.count));
+
+  // Sort variant ratings by rating descending
+  const variantRatings = (statsData.variantRatings || []).sort((a, b) => b.rating - a.rating);
 
   return (
     <main className="min-h-dvh px-4 pt-6 pb-8 max-w-lg mx-auto">
@@ -89,8 +114,59 @@ export default function StatsPage() {
         <StatCard label="Total XP" value={xp.toLocaleString()} />
       </div>
 
+      {/* Variant Ratings */}
+      {variantRatings.length > 0 && (
+        <div className="animate-fade-up stagger-2 mb-6">
+          <h2 className="text-lg font-black mb-3 uppercase tracking-wider">Ratings</h2>
+          <div className="grid grid-cols-2 gap-3">
+            {variantRatings.map((vr) => {
+              const display = VARIANT_DISPLAY[vr.variant] || {
+                label: vr.variant,
+                icon: "?",
+                color: "#666",
+              };
+              const provisional = vr.games_count < 10;
+              return (
+                <div
+                  key={vr.variant}
+                  className="rounded-none bg-surface border-2 border-surface-border p-3 relative overflow-hidden"
+                >
+                  <div
+                    className="absolute top-0 left-0 right-0 h-1"
+                    style={{ background: display.color }}
+                  />
+                  <div className="flex items-center gap-2 mb-2 mt-1">
+                    <span className="text-lg">{display.icon}</span>
+                    <span
+                      className="text-xs font-bold uppercase tracking-wider"
+                      style={{ color: display.color }}
+                    >
+                      {display.label}
+                    </span>
+                  </div>
+                  <div className="font-mono text-2xl font-bold text-text-primary">
+                    {Math.round(vr.rating)}
+                    {provisional && (
+                      <span className="text-text-dim text-sm ml-0.5">?</span>
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between mt-1">
+                    <span className="text-text-dim text-[10px] font-mono uppercase">
+                      Peak {Math.round(vr.peak_rating)}
+                    </span>
+                    <span className="text-text-dim text-[10px] font-mono">
+                      {vr.games_count} game{vr.games_count !== 1 ? "s" : ""}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* Section mastery */}
-      <div className="animate-fade-up stagger-2 mb-6">
+      <div className={`animate-fade-up ${variantRatings.length > 0 ? "stagger-3" : "stagger-2"} mb-6`}>
         <h2 className="text-lg font-black mb-3 uppercase tracking-wider">Section Mastery</h2>
         <div className="space-y-2">
           {(statsData.sections || []).map((section) => {
@@ -114,7 +190,7 @@ export default function StatsPage() {
       </div>
 
       {/* Activity calendar */}
-      <div className="animate-fade-up stagger-3">
+      <div className={`animate-fade-up ${variantRatings.length > 0 ? "stagger-4" : "stagger-3"}`}>
         <h2 className="text-lg font-black mb-3 uppercase tracking-wider">Activity (30 days)</h2>
         <div className="flex gap-1 flex-wrap">
           {last30Days.map((day) => {

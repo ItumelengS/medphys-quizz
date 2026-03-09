@@ -241,6 +241,10 @@ export default function MatchGamePage() {
         if (data.awardedPowerUps?.length > 0) {
           params.set("powerups", JSON.stringify(data.awardedPowerUps));
         }
+        if (data.ratingUpdate) {
+          params.set("ratingNew", data.ratingUpdate.newRating.toString());
+          params.set("ratingDelta", data.ratingUpdate.ratingDelta.toString());
+        }
         router.push(`/results?${params}`);
       })
       .catch(() => {

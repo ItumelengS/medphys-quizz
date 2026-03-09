@@ -12,11 +12,12 @@ export async function GET() {
   const supabase = createServiceClient();
   const userId = session.user.id;
 
-  const [profileRes, statsRes, historyRes, sectionsRes] = await Promise.all([
+  const [profileRes, statsRes, historyRes, sectionsRes, ratingsRes] = await Promise.all([
     supabase.from("profiles").select("*").eq("id", userId).single(),
     supabase.from("user_stats").select("*").eq("user_id", userId).single(),
     supabase.from("question_history").select("question_id, times_shown, times_correct, last_shown").eq("user_id", userId),
     supabase.from("sections").select("*").order("sort_order"),
+    supabase.from("variant_ratings").select("variant, rating, rd, peak_rating, games_count, last_played").eq("user_id", userId),
   ]);
 
   const history = historyRes.data || [];
@@ -74,6 +75,7 @@ export async function GET() {
     sections: sectionsRes.data,
     sectionMastery,
     activityMap,
+    variantRatings: ratingsRes.data || [],
   });
   } catch (error) {
     console.error("GET /api/stats error:", error);

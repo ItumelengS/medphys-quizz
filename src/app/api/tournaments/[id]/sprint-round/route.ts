@@ -4,6 +4,7 @@ import { createServiceClient } from "@/lib/supabase/server";
 import { calculateXp } from "@/lib/scoring";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 import { checkRoundLimit } from "@/lib/tournament-round-check";
+import { updateTournamentRating } from "@/lib/rating-update";
 
 interface SprintPayload {
   berserk: boolean;
@@ -190,12 +191,21 @@ export async function POST(
     }
   }
 
+  // Update variant rating (Glicko-2)
+  let ratingUpdate = null;
+  try {
+    ratingUpdate = await updateTournamentRating(supabase, userId, tournament.type, id, score, total, pointsEarned);
+  } catch (e) {
+    console.error("Rating update failed (non-fatal):", e);
+  }
+
   return NextResponse.json({
     ...result,
     score,
     total,
     accuracy: total > 0 ? Math.round((score / total) * 100) : 0,
     xp: xpResult,
+    ratingUpdate,
     explanations,
   });
   } catch (error) {

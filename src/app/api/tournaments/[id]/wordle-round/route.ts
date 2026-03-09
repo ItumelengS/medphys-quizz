@@ -4,6 +4,7 @@ import { createServiceClient } from "@/lib/supabase/server";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { calculateWordleScore, calculateXp } from "@/lib/scoring";
 import { checkRoundLimit } from "@/lib/tournament-round-check";
+import { updateTournamentRating } from "@/lib/rating-update";
 
 interface WordleRoundPayload {
   solved: boolean;
@@ -79,12 +80,21 @@ export async function POST(
       p_amount: xpResult.totalXp,
     });
 
+    // Update variant rating (Glicko-2)
+    let ratingUpdate = null;
+    try {
+      ratingUpdate = await updateTournamentRating(supabase, userId, tournament.type, id, score, 1, pointsEarned);
+    } catch (e) {
+      console.error("Rating update failed (non-fatal):", e);
+    }
+
     return NextResponse.json({
       ...result,
       solved,
       guessesUsed,
       baseScore,
       xp: xpResult,
+      ratingUpdate,
     });
   } catch (error) {
     console.error("POST /api/tournaments/[id]/wordle-round error:", error);

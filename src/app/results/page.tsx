@@ -22,6 +22,8 @@ function ResultsContent() {
   const bonusXp = parseInt(searchParams.get("bonusXp") || "0");
   const perfectBonus = parseInt(searchParams.get("perfectBonus") || "0");
   const penalized = searchParams.get("penalized") === "1";
+  const ratingNew = parseInt(searchParams.get("ratingNew") || "0");
+  const ratingDelta = parseInt(searchParams.get("ratingDelta") || "0");
 
   const accuracy = total > 0 ? Math.round((score / total) * 100) : 0;
   const grade = getGradeEmoji(accuracy);
@@ -139,6 +141,21 @@ function ResultsContent() {
           accent={!penalized}
         />
       </div>
+
+      {/* Rating change */}
+      {ratingNew > 0 && (
+        <div className="animate-fade-up stagger-1 mb-6 p-4 rounded-none bg-surface border-2 border-surface-border border-l-4 border-l-bauhaus-blue">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-bold text-text-primary uppercase tracking-wider">Rating</span>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-xl font-bold text-text-primary">{ratingNew}</span>
+              <span className={`font-mono text-sm font-bold ${ratingDelta >= 0 ? "text-success" : "text-bauhaus-red"}`}>
+                {ratingDelta >= 0 ? "+" : ""}{ratingDelta}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Penalty Warning */}
       {penalized && (

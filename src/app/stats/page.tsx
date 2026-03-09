@@ -29,6 +29,12 @@ interface VariantRating {
   last_played: string;
 }
 
+interface RatingHistoryPoint {
+  variant: string;
+  rating: number;
+  played_at: string;
+}
+
 interface StatsData {
   profile: { xp: number; display_name: string } | null;
   stats: {
@@ -43,6 +49,7 @@ interface StatsData {
   sectionMastery: Record<string, { shown: number; correct: number; percent: number }>;
   activityMap: Record<string, number>;
   variantRatings: VariantRating[];
+  ratingHistory: RatingHistoryPoint[];
 }
 
 export default function StatsPage() {
@@ -77,6 +84,13 @@ export default function StatsPage() {
 
   // Sort variant ratings by rating descending
   const variantRatings = (statsData.variantRatings || []).sort((a, b) => b.rating - a.rating);
+
+  // Group rating history by variant
+  const ratingHistoryByVariant: Record<string, number[]> = {};
+  for (const point of statsData.ratingHistory || []) {
+    if (!ratingHistoryByVariant[point.variant]) ratingHistoryByVariant[point.variant] = [];
+    ratingHistoryByVariant[point.variant].push(Math.round(point.rating));
+  }
 
   return (
     <main className="min-h-dvh px-4 pt-6 pb-8 max-w-lg mx-auto">
@@ -126,6 +140,7 @@ export default function StatsPage() {
                 color: "#666",
               };
               const provisional = vr.games_count < 10;
+              const history = ratingHistoryByVariant[vr.variant] || [];
               return (
                 <div
                   key={vr.variant}
@@ -135,7 +150,7 @@ export default function StatsPage() {
                     className="absolute top-0 left-0 right-0 h-1"
                     style={{ background: display.color }}
                   />
-                  <div className="flex items-center gap-2 mb-2 mt-1">
+                  <div className="flex items-center gap-2 mb-1 mt-1">
                     <span className="text-lg">{display.icon}</span>
                     <span
                       className="text-xs font-bold uppercase tracking-wider"
@@ -144,10 +159,15 @@ export default function StatsPage() {
                       {display.label}
                     </span>
                   </div>
-                  <div className="font-mono text-2xl font-bold text-text-primary">
-                    {Math.round(vr.rating)}
-                    {provisional && (
-                      <span className="text-text-dim text-sm ml-0.5">?</span>
+                  <div className="flex items-center justify-between">
+                    <div className="font-mono text-2xl font-bold text-text-primary">
+                      {Math.round(vr.rating)}
+                      {provisional && (
+                        <span className="text-text-dim text-sm ml-0.5">?</span>
+                      )}
+                    </div>
+                    {history.length >= 2 && (
+                      <Sparkline data={history} color={display.color} width={80} height={28} />
                     )}
                   </div>
                   <div className="flex items-center justify-between mt-1">
@@ -221,5 +241,61 @@ function StatCard({ label, value }: { label: string; value: string }) {
       <div className="font-mono text-lg font-bold text-text-primary">{value}</div>
       <div className="text-text-dim text-xs mt-1 uppercase tracking-wider">{label}</div>
     </div>
+  );
+}
+
+function Sparkline({
+  data,
+  color,
+  width = 80,
+  height = 28,
+}: {
+  data: number[];
+  color: string;
+  width?: number;
+  height?: number;
+}) {
+  if (data.length < 2) return null;
+
+  // Take last 20 points max
+  const points = data.slice(-20);
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const range = max - min || 1;
+
+  const padding = 2;
+  const w = width - padding * 2;
+  const h = height - padding * 2;
+
+  const pathPoints = points.map((val, i) => {
+    const x = padding + (i / (points.length - 1)) * w;
+    const y = padding + h - ((val - min) / range) * h;
+    return `${x},${y}`;
+  });
+
+  const d = `M ${pathPoints.join(" L ")}`;
+
+  // Determine if trending up or down
+  const trending = points[points.length - 1] >= points[0];
+
+  return (
+    <svg width={width} height={height} className="flex-shrink-0">
+      <path
+        d={d}
+        fill="none"
+        stroke={trending ? color : "#ef4444"}
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity={0.8}
+      />
+      {/* Current point dot */}
+      <circle
+        cx={padding + w}
+        cy={padding + h - ((points[points.length - 1] - min) / range) * h}
+        r={2}
+        fill={trending ? color : "#ef4444"}
+      />
+    </svg>
   );
 }

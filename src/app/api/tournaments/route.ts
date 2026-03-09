@@ -28,6 +28,7 @@ export async function GET() {
         ...(config.isHotSeat ? { isHotSeat: true } : {}),
         ...(config.isWordle ? { isWordle: true } : {}),
         ...(config.isConnections ? { isConnections: true } : {}),
+        ...(config.isCryptic ? { isCryptic: true } : {}),
         ...(config.maxRounds ? { maxRounds: config.maxRounds } : {}),
       },
     };

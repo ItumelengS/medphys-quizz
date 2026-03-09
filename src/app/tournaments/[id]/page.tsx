@@ -114,6 +114,7 @@ export default function TournamentDetailPage({
   const isHotSeat = tournament.type.startsWith("hot-seat-");
   const isWordle = tournament.type.startsWith("wordle-");
   const isConnections = tournament.type.startsWith("connections-");
+  const isCryptic = tournament.type.startsWith("cryptic-");
   const tournamentDiscipline = (tournament as DbTournament & { discipline?: string }).discipline || "open";
   const userDiscipline = session?.user?.discipline || "physicist";
   const disciplineMismatch = tournamentDiscipline !== "open" && tournamentDiscipline !== userDiscipline;
@@ -132,6 +133,7 @@ export default function TournamentDetailPage({
     if (type.startsWith("hot-seat-")) return "text-amber-600";
     if (type.startsWith("wordle-")) return "text-green-600";
     if (type.startsWith("connections-")) return "text-purple-500";
+    if (type.startsWith("cryptic-")) return "text-pink-700";
     return "text-bauhaus-yellow";
   }
 
@@ -147,6 +149,7 @@ export default function TournamentDetailPage({
     if (type.startsWith("hot-seat-")) return "border-amber-600";
     if (type.startsWith("wordle-")) return "border-green-600";
     if (type.startsWith("connections-")) return "border-purple-500";
+    if (type.startsWith("cryptic-")) return "border-pink-700";
     return "border-bauhaus-yellow";
   }
 
@@ -162,6 +165,7 @@ export default function TournamentDetailPage({
     if (type.startsWith("hot-seat-")) return { background: "rgba(217, 119, 6, 0.08)" };
     if (type.startsWith("wordle-")) return { background: "rgba(22, 163, 74, 0.08)" };
     if (type.startsWith("connections-")) return { background: "rgba(168, 85, 247, 0.08)" };
+    if (type.startsWith("cryptic-")) return { background: "rgba(190, 24, 93, 0.08)" };
     return { background: "rgba(234, 179, 8, 0.08)" };
   }
 
@@ -177,6 +181,7 @@ export default function TournamentDetailPage({
     if (type.startsWith("hot-seat-")) return "bg-amber-600";
     if (type.startsWith("wordle-")) return "bg-green-600";
     if (type.startsWith("connections-")) return "bg-purple-500";
+    if (type.startsWith("cryptic-")) return "bg-pink-700";
     return "bg-bauhaus-yellow";
   }
 
@@ -213,7 +218,9 @@ export default function TournamentDetailPage({
                           ? `1 word · 6 guesses · ${config.durationMinutes}min`
                           : isConnections
                             ? `4 groups · 4 mistakes · ${config.durationMinutes}min`
-                            : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
+                            : isCryptic
+                              ? `${config.questionsPerRound} clues · ${config.timerSeconds}s each · ${config.durationMinutes}min`
+                              : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
               }
             </div>
           </div>
@@ -394,7 +401,9 @@ export default function TournamentDetailPage({
                               ? `/tournaments/${id}/play-wordle`
                               : isConnections
                                 ? `/tournaments/${id}/play-connections`
-                                : `/tournaments/${id}/play?berserk=${berserk}`;
+                                : isCryptic
+                                  ? `/tournaments/${id}/play-cryptic?berserk=${berserk}`
+                                  : `/tournaments/${id}/play?berserk=${berserk}`;
                   router.push(playPath);
                 }}
                 className={`flex-1 py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest transition-all ${getBorderColor(tournament.type)} hover:scale-[1.01]`}

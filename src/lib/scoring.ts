@@ -104,6 +104,8 @@ export function calculateXp(
     baseXp = Math.floor(points * 0.10);
   } else if (mode === "connections") {
     baseXp = Math.floor(points * 0.10);
+  } else if (mode === "cryptic") {
+    baseXp = Math.floor(points * 0.12);
   } else {
     // speed / marathon
     baseXp = Math.floor(points * 0.10);
@@ -276,6 +278,21 @@ export function calculateMatchScore(
   const movePenalty = extraMoves * 3;
   const timeBonus = Math.max(0, 300 - timeSeconds);
   return Math.max(0, base - movePenalty + timeBonus);
+}
+
+export function calculateCrypticScore(
+  correct: number,
+  total: number,
+  avgTimePerClue: number
+): number {
+  // Base: 25 points per correct answer
+  let score = correct * 25;
+  // Speed bonus: faster average = more points (max 15 bonus per clue)
+  const speedBonus = Math.max(0, Math.floor((90 - avgTimePerClue) / 6));
+  score += correct * Math.min(15, speedBonus);
+  // Perfect bonus
+  if (correct === total && total > 0) score += 50;
+  return Math.max(0, score);
 }
 
 export function calculateConnectionsScore(

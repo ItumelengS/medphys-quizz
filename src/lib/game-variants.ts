@@ -116,6 +116,21 @@ export const VARIANT_CONFIGS: Record<GameVariant, VariantConfig> = {
       "Difficulty: yellow → green → blue → purple",
     ],
   },
+  cryptic: {
+    id: "cryptic",
+    name: "Cryptic",
+    icon: "🔮",
+    description: "Solve cryptic crossword-style clues for medical physics terms. Wordplay meets science.",
+    color: "#be185d",
+    xpMultiplier: 1.8,
+    rules: [
+      "Cryptic clues with hidden wordplay",
+      "Type the answer — spelling must be exact",
+      "90 seconds per clue, solve as many as you can",
+      "Skip costs no points, wrong answer costs time",
+      "Explanation revealed after each clue",
+    ],
+  },
   wordle: {
     id: "wordle",
     name: "Wordle",
@@ -143,6 +158,7 @@ export function getVariantDisplayName(mode: string): string {
     case "match": return "Match";
     case "hot-seat": return "Hot Seat";
     case "blitz": return "Blitz";
+    case "cryptic": return "Cryptic";
     case "wordle": return "Wordle";
     case "connections": return "Connections";
     case "speed": return "Speed Round";

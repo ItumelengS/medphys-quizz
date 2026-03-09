@@ -1,5 +1,5 @@
 export interface TournamentTypeConfig {
-  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "hot-seat-blitz" | "hot-seat-rapid" | "wordle-blitz" | "wordle-rapid" | "connections-blitz" | "connections-rapid";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "hot-seat-blitz" | "hot-seat-rapid" | "wordle-blitz" | "wordle-rapid" | "connections-blitz" | "connections-rapid" | "cryptic-blitz" | "cryptic-rapid";
   label: string;
   frequencyHours: number;
   durationMinutes: number;
@@ -27,6 +27,8 @@ export interface TournamentTypeConfig {
   isWordle?: boolean;
   /** Whether this is a connections tournament type */
   isConnections?: boolean;
+  /** Whether this is a cryptic tournament type */
+  isCryptic?: boolean;
   /** Max rounds per player (default 2, tiebreaker may allow +1) */
   maxRounds?: number;
   /** Offset in minutes from the base slot time (staggers starts like Lichess) */
@@ -257,6 +259,30 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     isConnections: true,
     maxRounds: 1,
     offsetMinutes: 200,
+  },
+  "cryptic-blitz": {
+    type: "cryptic-blitz",
+    label: "Cryptic Blitz",
+    frequencyHours: 3,
+    durationMinutes: 45,
+    timerSeconds: 90,
+    questionsPerRound: 10,
+    color: "#be185d",
+    icon: "🔮",
+    isCryptic: true,
+    offsetMinutes: 25,
+  },
+  "cryptic-rapid": {
+    type: "cryptic-rapid",
+    label: "Cryptic Rapid",
+    frequencyHours: 6,
+    durationMinutes: 90,
+    timerSeconds: 90,
+    questionsPerRound: 15,
+    color: "#9d174d",
+    icon: "🔮",
+    isCryptic: true,
+    offsetMinutes: 180,
   },
 };
 

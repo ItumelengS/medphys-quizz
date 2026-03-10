@@ -78,39 +78,39 @@ export function calculateXp(
 } {
   let baseXp = 0;
   let bonusXp = 0;
-  const dailyBonusXp = mode === "daily" ? dailyStreak * 5 : 0;
-  const perfectBonusXp = correct === total && total > 0 && mode !== "arena" ? 15 : 0;
+  const dailyBonusXp = mode === "daily" ? dailyStreak * 15 : 0;
+  const perfectBonusXp = correct === total && total > 0 && mode !== "arena" ? 50 : 0;
 
   if (mode === "arena") {
-    baseXp = Math.floor(points * 0.15);
+    baseXp = Math.floor(points * 0.40);
   } else if (mode === "review") {
-    baseXp = correct * 3 + (total - correct);
+    baseXp = correct * 8 + (total - correct) * 2;
   } else if (mode === "daily") {
-    baseXp = Math.floor(points * 0.15);
+    baseXp = Math.floor(points * 0.40);
   } else if (mode === "sudden-death") {
-    baseXp = Math.floor(points * 0.12);
+    baseXp = Math.floor(points * 0.30);
   } else if (mode === "sprint") {
-    baseXp = Math.floor(points * 0.10);
+    baseXp = Math.floor(points * 0.25);
   } else if (mode === "crossword") {
-    baseXp = Math.floor(points * 0.10);
+    baseXp = Math.floor(points * 0.25);
   } else if (mode === "match") {
-    baseXp = Math.floor(points * 0.10);
+    baseXp = Math.floor(points * 0.25);
   } else if (mode === "hot-seat") {
     // Hot-seat prizes are on a different scale (100 — 1,000,000)
-    baseXp = Math.floor(points * 0.002);
+    baseXp = Math.floor(points * 0.005);
   } else if (mode === "blitz") {
-    baseXp = Math.floor(points * 0.12);
+    baseXp = Math.floor(points * 0.30);
   } else if (mode === "wordle") {
-    baseXp = Math.floor(points * 0.10);
+    baseXp = Math.floor(points * 0.25);
   } else if (mode === "connections") {
-    baseXp = Math.floor(points * 0.10);
+    baseXp = Math.floor(points * 0.25);
   } else if (mode === "cryptic") {
-    baseXp = Math.floor(points * 0.12);
+    baseXp = Math.floor(points * 0.30);
   } else if (mode === "reaction-rounds") {
-    baseXp = Math.floor(points * 0.12);
+    baseXp = Math.floor(points * 0.30);
   } else {
     // speed / marathon
-    baseXp = Math.floor(points * 0.10);
+    baseXp = Math.floor(points * 0.25);
   }
 
   bonusXp = perfectBonusXp + dailyBonusXp;

@@ -6,6 +6,7 @@ import { applyXpChange } from "@/lib/apply-xp";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 import { parseInventory, awardPowerUp } from "@/lib/powerups";
 import { updateSoloRating } from "@/lib/rating-update";
+import { updateWeeklyChallengeProgress } from "@/lib/update-challenges";
 import type { GameVariant, GameMode } from "@/lib/types";
 
 interface AnswerPayload {
@@ -199,6 +200,21 @@ export async function POST(req: NextRequest) {
     console.error("Rating update failed (non-fatal):", e);
   }
 
+  // 9. Update weekly challenge progress
+  let challengeResult = { bonusXp: 0, completedChallengeIds: [] as string[] };
+  try {
+    challengeResult = await updateWeeklyChallengeProgress(supabase, userId, {
+      variant,
+      score,
+      total,
+      points,
+      bestStreak,
+      section,
+    });
+  } catch (e) {
+    console.error("Weekly challenge update failed (non-fatal):", e);
+  }
+
   return NextResponse.json({
     xp: xpResult,
     xpChange,
@@ -208,6 +224,8 @@ export async function POST(req: NextRequest) {
     newTotalXp: newXp,
     awardedPowerUps,
     ratingUpdate,
+    challengeBonusXp: challengeResult.bonusXp,
+    completedChallenges: challengeResult.completedChallengeIds,
   });
   } catch (error) {
     console.error("POST /api/games/submit error:", error);

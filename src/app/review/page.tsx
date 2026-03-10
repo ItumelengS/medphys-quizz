@@ -37,7 +37,7 @@ export default function ReviewPage() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [shuffledChoices, setShuffledChoices] = useState<string[]>([]);
   const [noQuestions, setNoQuestions] = useState(false);
-  const [reviewAnswers, setReviewAnswers] = useState<{ questionId: string; correct: boolean }[]>([]);
+  const [reviewAnswers, setReviewAnswers] = useState<{ questionId: string; correct: boolean; selectedAnswer: string | null }[]>([]);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function ReviewPage() {
     setSelectedAnswer(selected);
     if (correct) setScore((s) => s + 1);
 
-    setReviewAnswers((a) => [...a, { questionId: currentQuestion.id, correct }]);
+    setReviewAnswers((a) => [...a, { questionId: currentQuestion.id, correct, selectedAnswer: selected }]);
 
     setTimeout(() => advance(), ADVANCE_DELAY);
   }
@@ -127,6 +127,26 @@ export default function ReviewPage() {
 
     const newLevel = getCareerLevel(Math.max(0, prevXp + reviewXpChange));
     const leveledUp = !reviewPenalized && newLevel.level > prevLevel.level;
+
+    // Save wrong answers to sessionStorage for review
+    const wrongAnswers = reviewAnswers
+      .filter((a) => !a.correct)
+      .map((a) => {
+        const q = questions.find((q) => q.id === a.questionId);
+        return q
+          ? {
+              question: q.question,
+              answer: q.answer,
+              selectedAnswer: a.selectedAnswer || "(timed out)",
+              explanation: q.explanation,
+              choices: q.choices,
+            }
+          : null;
+      })
+      .filter(Boolean);
+    try {
+      sessionStorage.setItem("wrongAnswers", JSON.stringify(wrongAnswers));
+    } catch { /* ignore storage errors */ }
 
     const resultParams = new URLSearchParams({
       score: score.toString(),

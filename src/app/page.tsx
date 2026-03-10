@@ -9,6 +9,7 @@ import type { DbSection } from "@/lib/types";
 import ProgressBar from "@/components/ProgressBar";
 import SectionMasteryRing from "@/components/SectionMasteryRing";
 import DonationCard from "@/components/DonationCard";
+import WeeklyChallenges from "@/components/WeeklyChallenges";
 import LandingPage from "@/components/LandingPage";
 import { DAILY_TIMER_SECONDS, DAILY_QUESTION_COUNT } from "@/lib/daily-config";
 
@@ -29,6 +30,8 @@ export default function HomePage() {
   const [dailyCompleted, setDailyCompleted] = useState(false);
   const [countdown, setCountdown] = useState("");
   const [totalQuestions, setTotalQuestions] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [weeklyChallenges, setWeeklyChallenges] = useState<any[]>([]);
 
   useEffect(() => {
     if (!session) return;
@@ -38,11 +41,13 @@ export default function HomePage() {
       fetch("/api/review/due").then((r) => r.json()),
       fetch("/api/quiz/daily", { cache: "no-store" }).then((r) => r.json()),
       fetch("/api/questions/count").then((r) => r.json()),
-    ]).then(([stats, due, daily, countData]) => {
+      fetch("/api/challenges/weekly").then((r) => r.json()),
+    ]).then(([stats, due, daily, countData, challengeData]) => {
       setStatsData(stats);
       setDueCount(Array.isArray(due) ? due.length : 0);
       setDailyCompleted(!!daily.locked);
       setTotalQuestions(countData.count || 0);
+      setWeeklyChallenges(challengeData.challenges || []);
     });
 
     setCountdown(formatCountdown(getNextDailyReset()));
@@ -161,6 +166,11 @@ export default function HomePage() {
           </div>
         </div>
       </Link>
+
+      {/* Weekly Challenges */}
+      {weeklyChallenges.length > 0 && (
+        <WeeklyChallenges challenges={weeklyChallenges} />
+      )}
 
       {/* Arena Tournament */}
       <Link href="/tournaments" className="block animate-fade-up stagger-2 mb-4">

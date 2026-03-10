@@ -13,6 +13,7 @@ import TimerRing from "@/components/TimerRing";
 import ChoiceButton from "@/components/ChoiceButton";
 import QuestionCard from "@/components/QuestionCard";
 import StreakBadge from "@/components/StreakBadge";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 const BASE_TIMER = 8;
 const VICTORY_THRESHOLD = 25;
@@ -108,6 +109,7 @@ export default function TournamentSuddenDeathPage({
   const [submitting, setSubmitting] = useState(false);
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
   const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -161,9 +163,9 @@ export default function TournamentSuddenDeathPage({
     ? getAdaptiveTimer(timerBase, correctCount, false)
     : timerBase;
 
-  // Timer
+  // Timer (only starts after countdown confirmation)
   useEffect(() => {
-    if (phase !== "playing" || !currentQuestion || selectedAnswer !== null) return;
+    if (!readyToPlay || phase !== "playing" || !currentQuestion || selectedAnswer !== null) return;
 
     setTimeRemaining(currentTimerTotal);
     timerRef.current = setInterval(() => {
@@ -181,7 +183,7 @@ export default function TournamentSuddenDeathPage({
       if (timerRef.current) clearInterval(timerRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex, phase, currentQuestion, currentTimerTotal]);
+  }, [readyToPlay, currentIndex, phase, currentQuestion, currentTimerTotal]);
 
   const handleDeath = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -263,6 +265,7 @@ export default function TournamentSuddenDeathPage({
     setSelectedAnswer(null);
     setRoundResult(null);
     setSubmitting(false);
+    setReadyToPlay(true);
     const qs = await fetchQuestions();
     if (qs.length > 0) setShuffledChoices(shuffleArray(qs[0].choices));
     setPhase("playing");
@@ -325,6 +328,33 @@ export default function TournamentSuddenDeathPage({
   }
 
   const typeColor = "#991b1b";
+
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    await fetch(`/api/tournaments/${id}/sudden-death-round`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        berserk,
+        answers: [],
+      }),
+    });
+    router.push(`/tournaments/${id}`);
+  }
+
+  // Countdown phase — show before starting the round
+  if (phase === "ready" && !readyToPlay) {
+    return (
+      <ArenaCountdown
+        onReady={() => startGame()}
+        onAbandon={handleAbandon}
+        variantLabel="Sudden Death"
+        variantIcon="💀"
+        color={typeColor}
+        berserk={berserk}
+      />
+    );
+  }
 
   // Death screen
   if (phase === "dead") {

@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 type Phase = "loading" | "playing" | "submitting" | "results";
 
@@ -65,6 +66,7 @@ export default function PlayMatchPage({
   const [result, setResult] = useState<RoundResult | null>(null);
   const [questionIds, setQuestionIds] = useState<string[]>([]);
   const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
@@ -139,10 +141,11 @@ export default function PlayMatchPage({
       .catch(() => setError("Failed to load tournament"));
   }, [id, session?.user?.id]);
 
-  // Timer
+  // Timer (only starts after countdown confirmation)
   useEffect(() => {
-    if (phase !== "playing") return;
+    if (!readyToPlay || phase !== "playing") return;
 
+    startTimeRef.current = Date.now();
     timerRef.current = setInterval(() => {
       setTimeElapsed(Math.floor((Date.now() - startTimeRef.current) / 1000));
     }, 1000);
@@ -150,7 +153,7 @@ export default function PlayMatchPage({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [phase]);
+  }, [readyToPlay, phase]);
 
   const handleFlip = useCallback(
     (index: number) => {
@@ -261,6 +264,7 @@ export default function PlayMatchPage({
     }
 
     setPhase("loading");
+    setReadyToPlay(false);
     setCards([]);
     setFlippedIndices([]);
     setMoves(0);
@@ -338,12 +342,42 @@ export default function PlayMatchPage({
     );
   }
 
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    await fetch(`/api/tournaments/${id}/match-round`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        berserk,
+        pairs: 0,
+        moves: 0,
+        timeSeconds: 0,
+        questionIds: questionIds,
+      }),
+    });
+    router.push(`/tournaments/${id}`);
+  }
+
   // Loading
   if (phase === "loading") {
     return (
       <main className="min-h-dvh flex items-center justify-center text-text-secondary">
         Setting up cards...
       </main>
+    );
+  }
+
+  // Countdown phase — show before starting the round
+  if (!readyToPlay && phase === "playing") {
+    return (
+      <ArenaCountdown
+        onReady={() => setReadyToPlay(true)}
+        onAbandon={handleAbandon}
+        variantLabel="Match"
+        variantIcon="🃏"
+        color="#8b5cf6"
+        berserk={berserk}
+      />
     );
   }
 

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getRandomPuzzle, type ConnectionGroup, type ConnectionPuzzle } from "@/lib/connections-puzzles";
 import { calculateConnectionsScore } from "@/lib/scoring";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 type Phase = "playing" | "submitting" | "results";
 
@@ -58,6 +59,7 @@ export default function TournamentConnectionsPage({
   const [oneAway, setOneAway] = useState(false);
   const [error, setError] = useState("");
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
 
   function toggleWord(word: string) {
     if (phase !== "playing") return;
@@ -141,6 +143,37 @@ export default function TournamentConnectionsPage({
       }
     }
   }, [selected, phase, puzzle, solvedGroups, mistakes, submitRound]);
+
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    if (session?.user?.id) {
+      await fetch(`/api/tournaments/${id}/connections-round`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          groupsFound: 0,
+          mistakes: MAX_MISTAKES,
+          won: false,
+          puzzleId: puzzle.id,
+        }),
+      });
+    }
+    router.push(`/tournaments/${id}`);
+  }
+
+  // Countdown phase — show before starting the round
+  if (!readyToPlay && phase === "playing") {
+    return (
+      <ArenaCountdown
+        onReady={() => setReadyToPlay(true)}
+        onAbandon={handleAbandon}
+        variantLabel="Connections"
+        variantIcon="🔗"
+        color="#a855f7"
+        berserk={false}
+      />
+    );
+  }
 
   if (error) {
     return (

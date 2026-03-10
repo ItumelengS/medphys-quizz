@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import type { DbQuestion, DbTournament } from "@/lib/types";
 import ChoiceButton from "@/components/ChoiceButton";
 import QuestionCard from "@/components/QuestionCard";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 const BASE_TIME = 60;
 const WRONG_PENALTY = 3;
@@ -59,6 +60,7 @@ export default function TournamentSprintPage({
   const [submitting, setSubmitting] = useState(false);
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
   const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const timeRef = useRef(totalTime);
@@ -96,9 +98,9 @@ export default function TournamentSprintPage({
     setPhase("finished");
   }, []);
 
-  // Global timer
+  // Global timer (only starts after countdown confirmation)
   useEffect(() => {
-    if (phase !== "playing") return;
+    if (!readyToPlay || phase !== "playing") return;
 
     timerRef.current = setInterval(() => {
       timeRef.current -= 0.1;
@@ -114,7 +116,7 @@ export default function TournamentSprintPage({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [phase, endGame]);
+  }, [readyToPlay, phase, endGame]);
 
   function handleSelectAnswer(choice: string) {
     if (selectedAnswer !== null || !currentQuestion || phase !== "playing") return;
@@ -177,6 +179,7 @@ export default function TournamentSprintPage({
     setSelectedAnswer(null);
     setRoundResult(null);
     setSubmitting(false);
+    setReadyToPlay(true);
     timeRef.current = totalTime;
     setTimeRemaining(totalTime);
     if (questions.length > 0) setShuffledChoices(shuffleArray(questions[0].choices));
@@ -240,6 +243,34 @@ export default function TournamentSprintPage({
   }
 
   const typeColor = "#ca8a04";
+
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    await fetch(`/api/tournaments/${id}/sprint-round`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        berserk,
+        answers: [],
+        totalTimeUsed: totalTime,
+      }),
+    });
+    router.push(`/tournaments/${id}`);
+  }
+
+  // Countdown phase — show before starting the round
+  if (phase === "ready" && !readyToPlay) {
+    return (
+      <ArenaCountdown
+        onReady={() => startGame()}
+        onAbandon={handleAbandon}
+        variantLabel="Sprint"
+        variantIcon="🏃"
+        color={typeColor}
+        berserk={berserk}
+      />
+    );
+  }
 
   // Ready screen
   if (phase === "ready") {

@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { calculateWordleScore } from "@/lib/scoring";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 type Phase = "loading" | "playing" | "submitting" | "results";
 type LetterState = "correct" | "present" | "absent" | "empty";
@@ -62,6 +63,7 @@ export default function TournamentWordlePage({
   const [shake, setShake] = useState(false);
   const [keyStates, setKeyStates] = useState<Record<string, LetterState>>({});
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
 
   // Fetch word on mount
   useEffect(() => {
@@ -192,7 +194,7 @@ export default function TournamentWordlePage({
   );
 
   useEffect(() => {
-    if (phase !== "playing") return;
+    if (!readyToPlay || phase !== "playing") return;
     function onKeyDown(e: KeyboardEvent) {
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       const key = e.key.toUpperCase();
@@ -203,7 +205,7 @@ export default function TournamentWordlePage({
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [phase, handleKey]);
+  }, [readyToPlay, phase, handleKey]);
 
   if (error) {
     return (
@@ -214,8 +216,40 @@ export default function TournamentWordlePage({
     );
   }
 
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    if (wordData) {
+      await fetch(`/api/tournaments/${id}/wordle-round`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          solved: false,
+          guessesUsed: 0,
+          hintUsed: false,
+          wordLength: wordData.length,
+          wordId: wordData.id,
+        }),
+      });
+    }
+    router.push(`/tournaments/${id}`);
+  }
+
   if (phase === "loading") {
     return <main className="min-h-dvh flex items-center justify-center text-text-secondary">Loading word...</main>;
+  }
+
+  // Countdown phase — show before starting the round
+  if (!readyToPlay && phase === "playing") {
+    return (
+      <ArenaCountdown
+        onReady={() => setReadyToPlay(true)}
+        onAbandon={handleAbandon}
+        variantLabel="Wordle"
+        variantIcon="🔤"
+        color="#16a34a"
+        berserk={false}
+      />
+    );
   }
 
   // Results

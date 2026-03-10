@@ -13,6 +13,7 @@ import { generateAudiencePoll, generatePhoneResult, type AudiencePoll } from "@/
 import TimerRing from "@/components/TimerRing";
 import ChoiceButton from "@/components/ChoiceButton";
 import QuestionCard from "@/components/QuestionCard";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 const TOTAL_QUESTIONS = 15;
 const ADVANCE_DELAY = 800;
@@ -68,6 +69,7 @@ export default function TournamentHotSeatPage({
   const [submitting, setSubmitting] = useState(false);
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
   const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -151,9 +153,9 @@ export default function TournamentHotSeatPage({
     return q && a.selectedAnswer === q.answer;
   }).length;
 
-  // Timer
+  // Timer (only starts after countdown confirmation)
   useEffect(() => {
-    if (phase !== "playing" || !currentQuestion || selectedAnswer !== null) return;
+    if (!readyToPlay || phase !== "playing" || !currentQuestion || selectedAnswer !== null) return;
 
     setTimeRemaining(timerTotal);
     timerRef.current = setInterval(() => {
@@ -172,7 +174,7 @@ export default function TournamentHotSeatPage({
       if (timerRef.current) clearInterval(timerRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex, phase, currentQuestion, timerTotal]);
+  }, [readyToPlay, currentIndex, phase, currentQuestion, timerTotal]);
 
   // Phone-a-friend countdown
   useEffect(() => {
@@ -308,6 +310,7 @@ export default function TournamentHotSeatPage({
     setSelectedAnswer(null);
     setRoundResult(null);
     setSubmitting(false);
+    setReadyToPlay(true);
     setUsedLifelines(new Set());
     setEliminatedChoices(new Set());
     setPhoneExplanation(null);
@@ -379,6 +382,35 @@ export default function TournamentHotSeatPage({
   }
 
   const accentColor = "#d97706";
+
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    await fetch(`/api/tournaments/${id}/hot-seat-round`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        berserk,
+        answers: [],
+        walkedAway: false,
+        lifelinesUsed: [],
+      }),
+    });
+    router.push(`/tournaments/${id}`);
+  }
+
+  // Countdown phase — show before starting the round
+  if (phase === "ready" && !readyToPlay) {
+    return (
+      <ArenaCountdown
+        onReady={() => startGame()}
+        onAbandon={handleAbandon}
+        variantLabel="Hot Seat"
+        variantIcon="💰"
+        color={accentColor}
+        berserk={berserk}
+      />
+    );
+  }
 
   // Results screen (lost / walked / won)
   if (phase === "lost" || phase === "walked" || phase === "won") {

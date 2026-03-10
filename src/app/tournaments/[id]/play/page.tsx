@@ -11,6 +11,7 @@ import QuestionCard from "@/components/QuestionCard";
 import ExplanationCard from "@/components/ExplanationCard";
 import StreakBadge from "@/components/StreakBadge";
 import ProgressBar from "@/components/ProgressBar";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 const ADVANCE_DELAY = 800;
 const WRONG_DELAY = 2000;
@@ -67,6 +68,7 @@ export default function TournamentPlayPage({
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -105,9 +107,9 @@ export default function TournamentPlayPage({
 
   const currentQuestion = questions[currentIndex];
 
-  // Timer
+  // Timer (only starts after countdown confirmation)
   useEffect(() => {
-    if (!currentQuestion || selectedAnswer !== null || isFinished) return;
+    if (!readyToPlay || !currentQuestion || selectedAnswer !== null || isFinished) return;
 
     setTimeRemaining(timerSeconds);
     timerRef.current = setInterval(() => {
@@ -125,7 +127,7 @@ export default function TournamentPlayPage({
       if (timerRef.current) clearInterval(timerRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex, currentQuestion, isFinished, timerSeconds]);
+  }, [readyToPlay, currentIndex, currentQuestion, isFinished, timerSeconds]);
 
   const handleTimeout = useCallback(() => {
     if (!currentQuestion || selectedAnswer !== null) return;
@@ -221,6 +223,7 @@ export default function TournamentPlayPage({
     }
 
     setIsFinished(false);
+    setReadyToPlay(false);
     setCurrentIndex(0);
     setScore(0);
     setStreak(0);
@@ -257,12 +260,17 @@ export default function TournamentPlayPage({
     );
   }
 
-  if (questions.length === 0) {
-    return (
-      <div className="min-h-dvh flex items-center justify-center text-text-secondary">
-        Loading...
-      </div>
-    );
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    await fetch(`/api/tournaments/${id}/round`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        berserk,
+        answers: questions.map((q) => ({ questionId: q.id, selectedAnswer: null, timeRemaining: 0 })),
+      }),
+    });
+    router.push(`/tournaments/${id}`);
   }
 
   const typeColor = config
@@ -272,6 +280,28 @@ export default function TournamentPlayPage({
         ? "#2563eb"
         : "#eab308"
     : "#dc2626";
+
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-dvh flex items-center justify-center text-text-secondary">
+        Loading...
+      </div>
+    );
+  }
+
+  // Countdown phase — show before starting the round
+  if (!readyToPlay && !isFinished) {
+    return (
+      <ArenaCountdown
+        onReady={() => setReadyToPlay(true)}
+        onAbandon={handleAbandon}
+        variantLabel={config?.label || "Arena"}
+        variantIcon={config?.icon || "⚡"}
+        color={typeColor}
+        berserk={berserk}
+      />
+    );
+  }
 
   // Round finished — show server-validated summary
   if (isFinished) {

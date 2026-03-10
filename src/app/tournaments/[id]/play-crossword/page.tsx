@@ -7,6 +7,7 @@ import Link from "next/link";
 import CrosswordGrid from "@/components/CrosswordGrid";
 import type { PuzzleSubmitResult, CrosswordGridHandle } from "@/components/CrosswordGrid";
 import type { CrosswordPuzzle } from "@/lib/types";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 type Phase = "loading" | "playing" | "submitting" | "results";
 
@@ -49,6 +50,7 @@ export default function PlayCrosswordPage({
   const [error, setError] = useState("");
   const [result, setResult] = useState<RoundResult | null>(null);
   const [roundLimitError, setRoundLimitError] = useState<string | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
@@ -92,10 +94,12 @@ export default function PlayCrosswordPage({
       .catch(() => setError("Failed to load puzzle"));
   }, [id, session?.user?.id, berserk]);
 
-  // Countdown timer
+  // Countdown timer (only starts after countdown confirmation)
   useEffect(() => {
-    if (phase !== "playing") return;
+    if (!readyToPlay || phase !== "playing") return;
 
+    // Reset the start time when player confirms ready
+    startTimeRef.current = Date.now();
     timerRef.current = setInterval(() => {
       const elapsed = Math.floor((Date.now() - startTimeRef.current) / 1000);
       setTimeElapsed(elapsed);
@@ -112,7 +116,7 @@ export default function PlayCrosswordPage({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [phase, timerSeconds]);
+  }, [readyToPlay, phase, timerSeconds]);
 
   const handlePuzzleSubmit = useCallback((result: PuzzleSubmitResult) => {
     // Always capture current progress (critical for timer expiry)
@@ -204,12 +208,44 @@ export default function PlayCrosswordPage({
     );
   }
 
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    await fetch(`/api/tournaments/${id}/crossword-round`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        berserk,
+        wordsCompleted: 0,
+        wordsRevealed: 0,
+        totalWords: puzzle?.words.length || 0,
+        allComplete: false,
+        clueIds: clueIds,
+        durationSeconds: 0,
+      }),
+    });
+    router.push(`/tournaments/${id}`);
+  }
+
   // Loading state
   if (phase === "loading") {
     return (
       <main className="min-h-dvh flex items-center justify-center text-text-secondary">
         Generating puzzle...
       </main>
+    );
+  }
+
+  // Countdown phase — show before starting the round
+  if (!readyToPlay && phase === "playing") {
+    return (
+      <ArenaCountdown
+        onReady={() => setReadyToPlay(true)}
+        onAbandon={handleAbandon}
+        variantLabel="Crossword"
+        variantIcon="🧩"
+        color="#6366f1"
+        berserk={berserk}
+      />
     );
   }
 

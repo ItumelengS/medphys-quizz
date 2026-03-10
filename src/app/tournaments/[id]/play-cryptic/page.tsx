@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { getRandomClues, type CrypticClue } from "@/lib/cryptic-clues";
 import { calculateCrypticScore } from "@/lib/scoring";
+import ArenaCountdown from "@/components/ArenaCountdown";
 
 type Phase = "playing" | "submitting" | "results";
 
@@ -63,11 +64,12 @@ function TournamentCrypticPage({
   const [showHint, setShowHint] = useState(false);
   const [error, setError] = useState("");
   const [roundResult, setRoundResult] = useState<RoundResult | null>(null);
+  const [readyToPlay, setReadyToPlay] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Timer
+  // Timer (only starts after countdown confirmation)
   useEffect(() => {
-    if (phase !== "playing" || showAnswer) return;
+    if (!readyToPlay || phase !== "playing" || showAnswer) return;
     const interval = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
@@ -79,7 +81,7 @@ function TournamentCrypticPage({
       });
     }, 1000);
     return () => clearInterval(interval);
-  }, [phase, showAnswer, currentIndex]);
+  }, [readyToPlay, phase, showAnswer, currentIndex]);
 
   const submitRound = useCallback(
     async (finalResults: { correct: boolean; timeUsed: number }[]) => {
@@ -170,6 +172,35 @@ function TournamentCrypticPage({
       setShowHint(false);
       setTimeout(() => inputRef.current?.focus(), 100);
     }
+  }
+
+  async function handleAbandon() {
+    // Submit zero-score round as penalty
+    await fetch(`/api/tournaments/${id}/cryptic-round`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        correct: 0,
+        total: clues.length,
+        avgTimePerClue: TIME_PER_CLUE,
+        berserk,
+      }),
+    });
+    router.push(`/tournaments/${id}`);
+  }
+
+  // Countdown phase — show before starting the round
+  if (!readyToPlay && phase === "playing") {
+    return (
+      <ArenaCountdown
+        onReady={() => setReadyToPlay(true)}
+        onAbandon={handleAbandon}
+        variantLabel="Cryptic"
+        variantIcon="🔮"
+        color="#be185d"
+        berserk={berserk}
+      />
+    );
   }
 
   if (error) {

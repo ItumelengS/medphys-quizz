@@ -1,0 +1,2886 @@
+[
+  {
+    "id": "mammo1",
+    "section_id": "mammo",
+    "question": "What is the most common target material used in dedicated mammography x-ray tubes?",
+    "choices": [
+      "Tungsten",
+      "Molybdenum",
+      "Rhodium",
+      "Copper"
+    ],
+    "answer": "Molybdenum",
+    "explanation": "Molybdenum is the most common target material in mammography tubes because its characteristic x-rays (17.5 and 19.6 keV) are well-suited for imaging breast tissue with optimal contrast.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo2",
+    "section_id": "mammo",
+    "question": "The K-alpha characteristic x-ray energy of a molybdenum target is approximately:",
+    "choices": [
+      "15.0 keV",
+      "17.5 keV",
+      "20.2 keV",
+      "22.0 keV"
+    ],
+    "answer": "17.5 keV",
+    "explanation": "The Mo K-alpha characteristic x-ray has an energy of approximately 17.5 keV, which provides excellent contrast between glandular and adipose breast tissue.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo3",
+    "section_id": "mammo",
+    "question": "The K-beta characteristic x-ray energy of molybdenum is approximately:",
+    "choices": [
+      "17.5 keV",
+      "19.6 keV",
+      "20.2 keV",
+      "23.0 keV"
+    ],
+    "answer": "19.6 keV",
+    "explanation": "The Mo K-beta line is at approximately 19.6 keV. The K-beta transition involves an electron dropping from the M-shell to the K-shell, producing a higher energy photon than the K-alpha transition.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo4",
+    "section_id": "mammo",
+    "question": "A molybdenum filter paired with a molybdenum target is used in mammography primarily to:",
+    "choices": [
+      "Increase the total x-ray output",
+      "Preferentially transmit characteristic x-rays near 17.5 keV",
+      "Remove characteristic x-rays and transmit only bremsstrahlung",
+      "Harden the beam for thick breasts"
+    ],
+    "answer": "Preferentially transmit characteristic x-rays near 17.5 keV",
+    "explanation": "The Mo filter has a K-edge at 20 keV, which strongly absorbs photons above 20 keV while transmitting the Mo characteristic x-rays at 17.5 and 19.6 keV, producing a near-monoenergetic beam.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo5",
+    "section_id": "mammo",
+    "question": "The K-alpha characteristic x-ray energy of a rhodium target is approximately:",
+    "choices": [
+      "17.5 keV",
+      "19.6 keV",
+      "20.2 keV",
+      "25.3 keV"
+    ],
+    "answer": "20.2 keV",
+    "explanation": "Rhodium has a K-alpha characteristic energy of approximately 20.2 keV, which is higher than molybdenum and provides better penetration for thicker or denser breasts.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo7",
+    "section_id": "mammo",
+    "question": "The typical tube voltage range used in mammography is:",
+    "choices": [
+      "20-24 kVp",
+      "25-35 kVp",
+      "40-50 kVp",
+      "60-80 kVp"
+    ],
+    "answer": "25-35 kVp",
+    "explanation": "Mammography uses tube voltages in the range of 25-35 kVp to produce low-energy x-rays that maximize contrast between soft tissue types in the breast.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo8",
+    "section_id": "mammo",
+    "question": "The large focal spot size typically used for contact mammography is:",
+    "choices": [
+      "0.05 mm",
+      "0.1 mm",
+      "0.3 mm",
+      "1.0 mm"
+    ],
+    "answer": "0.3 mm",
+    "explanation": "The large focal spot in mammography is approximately 0.3 mm, used for standard contact imaging. The small focal spot (0.1 mm) is reserved for magnification views.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo9",
+    "section_id": "mammo",
+    "question": "The small focal spot used in magnification mammography is approximately:",
+    "choices": [
+      "0.05 mm",
+      "0.1 mm",
+      "0.3 mm",
+      "0.6 mm"
+    ],
+    "answer": "0.1 mm",
+    "explanation": "A 0.1 mm focal spot is used for magnification mammography to minimize geometric unsharpness, which becomes more significant at higher magnification factors.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo10",
+    "section_id": "mammo",
+    "question": "Which filter material has a K-edge at approximately 23.2 keV, making it suitable for use with a rhodium target?",
+    "choices": [
+      "Molybdenum",
+      "Aluminum",
+      "Rhodium",
+      "Silver"
+    ],
+    "answer": "Rhodium",
+    "explanation": "Rhodium has a K-edge at 23.2 keV, which effectively filters out higher-energy photons while transmitting the Rh characteristic x-rays at 20.2 keV, producing a quasi-monoenergetic beam.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo11",
+    "section_id": "mammo",
+    "question": "Silver (Ag) filters have been used in some mammography systems primarily because:",
+    "choices": [
+      "Silver has a lower K-edge than molybdenum",
+      "Silver's K-edge at 25.5 keV provides harder filtration for thick breasts",
+      "Silver is less expensive than other filter materials",
+      "Silver produces characteristic x-rays used for imaging"
+    ],
+    "answer": "Silver's K-edge at 25.5 keV provides harder filtration for thick breasts",
+    "explanation": "Silver has a K-edge at approximately 25.5 keV, providing a higher-energy beam that improves penetration for thick or dense breasts while maintaining spectral shaping.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo12",
+    "section_id": "mammo",
+    "question": "Tungsten target mammography tubes produce which type of useful x-ray spectrum?",
+    "choices": [
+      "Only W K-characteristic x-rays",
+      "Only bremsstrahlung radiation",
+      "Bremsstrahlung plus W L-characteristic x-rays near 8-12 keV",
+      "Bremsstrahlung shaped by filtration, with W L-lines largely filtered out"
+    ],
+    "answer": "Bremsstrahlung shaped by filtration, with W L-lines largely filtered out",
+    "explanation": "Tungsten L-characteristic x-rays (8-12 keV) are too low in energy for breast imaging and are removed by filtration. The useful spectrum is the bremsstrahlung continuum shaped by the chosen filter (Rh or Ag).",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo13",
+    "section_id": "mammo",
+    "question": "Compared to a Mo/Mo target-filter combination, what is the primary advantage of using a W/Rh combination?",
+    "choices": [
+      "Higher spatial resolution",
+      "Lower patient dose for thick dense breasts",
+      "Better contrast for thin fatty breasts",
+      "Smaller focal spot size"
+    ],
+    "answer": "Lower patient dose for thick dense breasts",
+    "explanation": "The W/Rh combination produces a higher mean beam energy that penetrates thick dense breasts more efficiently, achieving adequate image quality with lower mean glandular dose compared to Mo/Mo.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo14",
+    "section_id": "mammo",
+    "question": "In mammography, the x-ray tube anode is typically angled at approximately:",
+    "choices": [
+      "0-5 degrees from the cathode-anode axis",
+      "16-24 degrees",
+      "30-45 degrees",
+      "50-60 degrees"
+    ],
+    "answer": "16-24 degrees",
+    "explanation": "Mammography tubes use target angles typically between 16-24 degrees to provide adequate coverage of the breast while maintaining a small effective focal spot size.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo15",
+    "section_id": "mammo",
+    "question": "The heel effect in mammography is oriented so that the cathode side of the tube is positioned over the:",
+    "choices": [
+      "Nipple",
+      "Chest wall",
+      "Lateral aspect",
+      "Superior aspect"
+    ],
+    "answer": "Chest wall",
+    "explanation": "The cathode side (higher intensity) is placed over the chest wall where the breast is thickest, while the anode side (lower intensity due to heel effect) is over the thinner nipple region, providing more uniform exposure.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo16",
+    "section_id": "mammo",
+    "question": "The primary purpose of breast compression during mammography is to:",
+    "choices": [
+      "Reduce image noise only",
+      "Reduce scatter radiation, improve contrast, reduce dose, and reduce motion blur",
+      "Increase the magnification factor",
+      "Allow use of a larger focal spot"
+    ],
+    "answer": "Reduce scatter radiation, improve contrast, reduce dose, and reduce motion blur",
+    "explanation": "Compression provides multiple benefits: it reduces breast thickness (lowering dose), spreads tissues apart (improving contrast), reduces scatter radiation, and minimizes patient motion.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo17",
+    "section_id": "mammo",
+    "question": "The recommended compression force range for mammography is approximately:",
+    "choices": [
+      "10-20 lbs (44-89 N)",
+      "25-45 lbs (111-200 N)",
+      "50-70 lbs (222-311 N)",
+      "75-100 lbs (333-445 N)"
+    ],
+    "answer": "25-45 lbs (111-200 N)",
+    "explanation": "MQSA guidelines recommend compression force in the range of 25-45 lbs (111-200 N). This range provides adequate compression benefits without causing excessive patient discomfort.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo18",
+    "section_id": "mammo",
+    "question": "During the annual physics survey, the compression device must be capable of providing a minimum compression force of:",
+    "choices": [
+      "15 lbs (67 N)",
+      "25 lbs (111 N)",
+      "45 lbs (200 N)",
+      "60 lbs (267 N)"
+    ],
+    "answer": "25 lbs (111 N)",
+    "explanation": "MQSA requires that the compression device be capable of providing at least 25 lbs (111 N) of compression force in the power-driven mode to ensure adequate breast compression.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo19",
+    "section_id": "mammo",
+    "question": "Which of the following is NOT a benefit of breast compression?",
+    "choices": [
+      "Reduced scattered radiation",
+      "Improved spatial resolution due to smaller focal spot",
+      "More uniform breast thickness",
+      "Reduced radiation dose"
+    ],
+    "answer": "Improved spatial resolution due to smaller focal spot",
+    "explanation": "Compression does not change the focal spot size. Its benefits include reduced thickness (lower dose), less scatter, more uniform thickness, reduced motion, and improved contrast by spreading overlapping tissues.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo21",
+    "section_id": "mammo",
+    "question": "The optimal optical density range for screen-film mammography is approximately:",
+    "choices": [
+      "0.5-1.0",
+      "1.4-1.8",
+      "2.5-3.0",
+      "3.5-4.0"
+    ],
+    "answer": "1.4-1.8",
+    "explanation": "The optimal optical density for screen-film mammography is in the range of 1.4-1.8, corresponding to the steepest portion of the characteristic curve where contrast is maximized.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo22",
+    "section_id": "mammo",
+    "question": "In screen-film mammography, the base plus fog optical density should not exceed:",
+    "choices": [
+      "0.10",
+      "0.20",
+      "0.30",
+      "0.50"
+    ],
+    "answer": "0.30",
+    "explanation": "Base plus fog should not exceed 0.30 OD. Higher values indicate film degradation, improper storage, or chemical contamination that reduces image contrast.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo23",
+    "section_id": "mammo",
+    "question": "The AEC sensor in mammography is positioned:",
+    "choices": [
+      "Between the x-ray tube and the breast",
+      "Behind the image receptor",
+      "Under the compression paddle",
+      "Within the breast support platform beneath the breast"
+    ],
+    "answer": "Behind the image receptor",
+    "explanation": "The AEC sensor is positioned beneath the breast (behind the breast support or behind the detector) to measure radiation transmitted through the breast and terminate exposure when adequate signal is achieved.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo24",
+    "section_id": "mammo",
+    "question": "The AEC backup timer in mammography is required by MQSA to terminate the exposure if it exceeds:",
+    "choices": [
+      "2 seconds",
+      "4 seconds",
+      "600 mAs for any single exposure",
+      "Both a time limit and an mAs limit"
+    ],
+    "answer": "Both a time limit and an mAs limit",
+    "explanation": "MQSA requires the AEC system to have both a backup timer and an mAs limit to prevent excessive exposure in case of AEC malfunction, protecting the patient from an uncontrolled exposure.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo25",
+    "section_id": "mammo",
+    "question": "In digital mammography, what does the a-Se detector material do in a direct-conversion flat panel detector?",
+    "choices": [
+      "Converts x-rays to visible light which is then detected",
+      "Directly converts x-ray photons to electron-hole pairs",
+      "Stores the x-ray image on a phosphor plate for later readout",
+      "Amplifies the x-ray signal through an image intensifier"
+    ],
+    "answer": "Directly converts x-ray photons to electron-hole pairs",
+    "explanation": "Amorphous selenium (a-Se) is a photoconductor that directly converts absorbed x-ray photons into electron-hole pairs, which are collected by an electric field and read out by a TFT array.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo26",
+    "section_id": "mammo",
+    "question": "In an indirect-conversion digital mammography detector, CsI scintillator is coupled to:",
+    "choices": [
+      "A photostimulable phosphor plate",
+      "An amorphous silicon (a-Si) photodiode TFT array",
+      "An amorphous selenium photoconductor",
+      "A CCD sensor via fiber optic taper"
+    ],
+    "answer": "An amorphous silicon (a-Si) photodiode TFT array",
+    "explanation": "Indirect-conversion detectors use CsI(Tl) scintillator to convert x-rays to visible light, which is then detected by an a-Si photodiode/TFT array that converts the light signal to an electrical signal.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo28",
+    "section_id": "mammo",
+    "question": "The bit depth of a typical digital mammography detector is:",
+    "choices": [
+      "8 bits",
+      "10 bits",
+      "12-14 bits",
+      "16-20 bits"
+    ],
+    "answer": "12-14 bits",
+    "explanation": "Digital mammography detectors typically have 12-14 bit depth, providing 4,096-16,384 gray levels. This wide dynamic range allows visualization of tissues with widely varying x-ray attenuation.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo29",
+    "section_id": "mammo",
+    "question": "A major advantage of direct-conversion (a-Se) detectors over indirect-conversion (CsI/a-Si) detectors in mammography is:",
+    "choices": [
+      "Higher quantum detection efficiency",
+      "No lateral spread of signal, resulting in sharper images",
+      "Lower electronic noise",
+      "Lower cost of manufacturing"
+    ],
+    "answer": "No lateral spread of signal, resulting in sharper images",
+    "explanation": "In direct-conversion a-Se detectors, the electric field guides charge carriers vertically to collection electrodes with minimal lateral spread, preserving spatial resolution. Indirect detectors have some lateral light spread in the scintillator.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo30",
+    "section_id": "mammo",
+    "question": "Detective quantum efficiency (DQE) measures a detector's ability to:",
+    "choices": [
+      "Resolve fine spatial details",
+      "Transfer contrast from object to image",
+      "Efficiently convert input signal-to-noise ratio to output signal-to-noise ratio",
+      "Absorb all incident x-ray photons"
+    ],
+    "answer": "Efficiently convert input signal-to-noise ratio to output signal-to-noise ratio",
+    "explanation": "DQE is the ratio of output SNR-squared to input SNR-squared, measuring how efficiently a detector preserves the signal-to-noise ratio from the incident x-ray beam. A perfect detector would have DQE of 1.0.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo31",
+    "section_id": "mammo",
+    "question": "The modulation transfer function (MTF) of a digital mammography detector describes its ability to:",
+    "choices": [
+      "Convert x-rays to electrical signals",
+      "Faithfully reproduce spatial frequency information from the object",
+      "Reduce electronic noise",
+      "Maintain uniform response across the detector"
+    ],
+    "answer": "Faithfully reproduce spatial frequency information from the object",
+    "explanation": "MTF quantifies how well a detector transfers contrast at different spatial frequencies from the object to the image. It ranges from 1.0 (perfect transfer) at zero frequency to lower values at higher spatial frequencies.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo32",
+    "section_id": "mammo",
+    "question": "The noise power spectrum (NPS) of a digital detector characterizes:",
+    "choices": [
+      "The maximum signal the detector can record",
+      "The spatial frequency distribution of noise in the image",
+      "The efficiency of scatter rejection",
+      "The response uniformity across the detector surface"
+    ],
+    "answer": "The spatial frequency distribution of noise in the image",
+    "explanation": "NPS describes how noise power is distributed across spatial frequencies. It helps characterize the texture and magnitude of noise in the image, which is important for detectability of subtle lesions.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo33",
+    "section_id": "mammo",
+    "question": "The Nyquist frequency for a digital mammography detector with 70 μm pixel size is approximately:",
+    "choices": [
+      "3.6 lp/mm",
+      "7.1 lp/mm",
+      "10.0 lp/mm",
+      "14.3 lp/mm"
+    ],
+    "answer": "7.1 lp/mm",
+    "explanation": "The Nyquist frequency equals 1/(2 times pixel size). For 70 μm pixels: 1/(2 x 0.070 mm) = 7.14 lp/mm. This is the maximum spatial frequency that can be sampled without aliasing.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo34",
+    "section_id": "mammo",
+    "question": "In digital breast tomosynthesis (DBT), the x-ray tube moves through a sweep angle typically ranging from:",
+    "choices": [
+      "5-10 degrees",
+      "15-50 degrees",
+      "60-90 degrees",
+      "120-180 degrees"
+    ],
+    "answer": "15-50 degrees",
+    "explanation": "DBT systems use sweep angles typically between 15-50 degrees, depending on the manufacturer. The sweep angle affects depth resolution, with wider angles providing better depth separation.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo35",
+    "section_id": "mammo",
+    "question": "The primary advantage of digital breast tomosynthesis over conventional 2D mammography is:",
+    "choices": [
+      "Higher spatial resolution in the image plane",
+      "Reduced tissue overlap improving lesion detection",
+      "Lower radiation dose",
+      "Better visualization of calcifications"
+    ],
+    "answer": "Reduced tissue overlap improving lesion detection",
+    "explanation": "DBT acquires multiple projection images at different angles and reconstructs thin slices through the breast, reducing the obscuring effect of overlapping tissue that can hide lesions in conventional 2D mammography.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo36",
+    "section_id": "mammo",
+    "question": "In DBT, the number of projection images acquired during a single sweep typically ranges from:",
+    "choices": [
+      "1-5",
+      "9-25",
+      "50-100",
+      "200-500"
+    ],
+    "answer": "9-25",
+    "explanation": "DBT systems typically acquire 9-25 low-dose projection images during the tube sweep. The exact number varies by manufacturer and affects image quality, reconstruction, and dose.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo37",
+    "section_id": "mammo",
+    "question": "Synthetic 2D mammography images generated from DBT data are used to:",
+    "choices": [
+      "Replace the need for breast MRI",
+      "Eliminate the need for a separate 2D acquisition, reducing total dose",
+      "Improve spatial resolution beyond what 2D mammography provides",
+      "Serve as quality control images only"
+    ],
+    "answer": "Eliminate the need for a separate 2D acquisition, reducing total dose",
+    "explanation": "Synthetic 2D images are computationally generated from DBT projection data, providing a 2D-like image without requiring a separate full-dose 2D acquisition, reducing total dose when both 2D and 3D images are desired.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo38",
+    "section_id": "mammo",
+    "question": "In contrast-enhanced mammography (CEM), the imaging protocol involves acquiring:",
+    "choices": [
+      "A single high-energy exposure after contrast injection",
+      "Low-energy and high-energy image pairs with subsequent subtraction",
+      "Multiple time-point images without energy variation",
+      "Only pre-contrast images for comparison with prior studies"
+    ],
+    "answer": "Low-energy and high-energy image pairs with subsequent subtraction",
+    "explanation": "CEM uses dual-energy technique: a low-energy image (below iodine K-edge) and a high-energy image (above iodine K-edge) are acquired in rapid succession, then subtracted to reveal iodine uptake in enhancing lesions.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo39",
+    "section_id": "mammo",
+    "question": "The K-edge of iodine used in contrast-enhanced mammography is approximately:",
+    "choices": [
+      "20.0 keV",
+      "25.5 keV",
+      "33.2 keV",
+      "40.4 keV"
+    ],
+    "answer": "33.2 keV",
+    "explanation": "Iodine has a K-edge at 33.2 keV. In CEM, the high-energy image is acquired above this energy so iodine strongly absorbs, while the low-energy image is below, where iodine attenuation is minimal.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo40",
+    "section_id": "mammo",
+    "question": "In CEM, the low-energy image is acquired at approximately what kVp range?",
+    "choices": [
+      "20-24 kVp",
+      "26-30 kVp",
+      "38-42 kVp",
+      "45-49 kVp"
+    ],
+    "answer": "26-30 kVp",
+    "explanation": "The low-energy image in CEM is acquired at standard mammographic kVp settings (26-30 kVp), producing photons predominantly below the iodine K-edge. This image appears similar to a conventional mammogram.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo41",
+    "section_id": "mammo",
+    "question": "Mean glandular dose (MGD) is the standard dosimetric quantity for mammography because it:",
+    "choices": [
+      "Is the easiest dose quantity to measure directly",
+      "Represents the dose to the most radiosensitive tissue in the breast",
+      "Equals the entrance skin dose",
+      "Accounts for the dose to the pectoral muscle"
+    ],
+    "answer": "Represents the dose to the most radiosensitive tissue in the breast",
+    "explanation": "MGD represents the average dose to glandular tissue, which is the most radiosensitive and cancer-prone tissue in the breast. It is calculated rather than measured directly.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo42",
+    "section_id": "mammo",
+    "question": "To calculate mean glandular dose, which of the following measured parameters is required?",
+    "choices": [
+      "Focal spot size and magnification factor",
+      "Entrance skin exposure, HVL, tube voltage, and breast thickness",
+      "Detector pixel size and DQE",
+      "Compression force and compressed breast thickness only"
+    ],
+    "answer": "Entrance skin exposure, HVL, tube voltage, and breast thickness",
+    "explanation": "MGD is calculated using measured entrance skin exposure (or air kerma), beam HVL, tube voltage, and compressed breast thickness, along with conversion factors from published tables based on assumed glandularity.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo43",
+    "section_id": "mammo",
+    "question": "The MQSA dose limit for mean glandular dose per view for a standard breast (4.2 cm compressed, 50/50 glandular/adipose) is:",
+    "choices": [
+      "1.0 mGy",
+      "3.0 mGy",
+      "6.0 mGy",
+      "10.0 mGy"
+    ],
+    "answer": "3.0 mGy",
+    "explanation": "MQSA limits the mean glandular dose to no more than 3.0 mGy (300 mrad) per exposure for a standard 4.2 cm thick breast that is 50% glandular/50% adipose using the ACR phantom.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo44",
+    "section_id": "mammo",
+    "question": "As compressed breast thickness increases, the mean glandular dose typically:",
+    "choices": [
+      "Decreases proportionally",
+      "Remains constant due to AEC compensation",
+      "Increases because more mAs is needed to penetrate the breast",
+      "First increases then decreases"
+    ],
+    "answer": "Increases because more mAs is needed to penetrate the breast",
+    "explanation": "Thicker breasts require more mAs (and often higher kVp) to achieve adequate image quality, resulting in higher entrance exposure and higher mean glandular dose.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo45",
+    "section_id": "mammo",
+    "question": "The half-value layer (HVL) of a mammography beam is measured using which attenuator material?",
+    "choices": [
+      "Lead",
+      "Copper",
+      "Aluminum",
+      "Tin"
+    ],
+    "answer": "Aluminum",
+    "explanation": "Aluminum is used to measure HVL in mammography because its attenuation properties are well-suited for the low-energy mammographic beam (25-35 kVp range).",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo46",
+    "section_id": "mammo",
+    "question": "For a Mo/Mo mammography beam at 28 kVp, the typical HVL is approximately:",
+    "choices": [
+      "0.10-0.15 mm Al",
+      "0.30-0.36 mm Al",
+      "0.50-0.60 mm Al",
+      "0.80-1.00 mm Al"
+    ],
+    "answer": "0.30-0.36 mm Al",
+    "explanation": "A Mo/Mo beam at 28 kVp typically has an HVL of approximately 0.30-0.36 mm Al. MQSA requires the HVL to be at least kVp/100 mm Al (e.g., 0.28 mm Al at 28 kVp).",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo47",
+    "section_id": "mammo",
+    "question": "The ACR mammography accreditation phantom contains test objects representing:",
+    "choices": [
+      "Line pairs, contrast detail holes, and wire mesh",
+      "Fibers, speck groups, and masses",
+      "Bar patterns, step wedges, and pin holes",
+      "Calcifications, cysts, and lymph nodes"
+    ],
+    "answer": "Fibers, speck groups, and masses",
+    "explanation": "The ACR mammography accreditation phantom contains embedded fibers (simulating ducts), speck groups (simulating calcifications), and masses (simulating tumors) of decreasing sizes for image quality evaluation.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo48",
+    "section_id": "mammo",
+    "question": "The minimum passing criteria for the ACR mammography phantom image quality test requires visualization of at least:",
+    "choices": [
+      "3 fibers, 2 speck groups, 2 masses",
+      "4 fibers, 3 speck groups, 3 masses",
+      "5 fibers, 4 speck groups, 4 masses",
+      "6 fibers, 5 speck groups, 5 masses"
+    ],
+    "answer": "4 fibers, 3 speck groups, 3 masses",
+    "explanation": "MQSA and ACR require a minimum score of 4 fibers, 3 speck groups, and 3 masses to pass the phantom image quality evaluation for mammography accreditation.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo49",
+    "section_id": "mammo",
+    "question": "The ACR mammography phantom simulates a compressed breast of approximately what thickness and composition?",
+    "choices": [
+      "2.0 cm of 100% glandular tissue",
+      "4.2 cm of 50% glandular/50% adipose tissue",
+      "6.0 cm of 25% glandular/75% adipose tissue",
+      "8.0 cm of 100% adipose tissue"
+    ],
+    "answer": "4.2 cm of 50% glandular/50% adipose tissue",
+    "explanation": "The ACR mammography phantom is approximately 4.2 cm thick and represents a standard breast composed of 50% glandular and 50% adipose tissue, the reference standard for dose and image quality evaluation.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo50",
+    "section_id": "mammo",
+    "question": "According to MQSA, how often must a qualified medical physicist perform a mammography equipment evaluation?",
+    "choices": [
+      "Every 6 months",
+      "Annually",
+      "Every 2 years",
+      "Every 3 years"
+    ],
+    "answer": "Annually",
+    "explanation": "MQSA requires an annual physics survey (mammography equipment evaluation) by a qualified medical physicist to ensure the system meets performance standards.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo51",
+    "section_id": "mammo",
+    "question": "The mammography anti-scatter grid typically has a grid ratio of approximately:",
+    "choices": [
+      "2:1",
+      "5:1",
+      "10:1",
+      "16:1"
+    ],
+    "answer": "5:1",
+    "explanation": "Mammography grids typically have a ratio of approximately 4:1 to 5:1, which is lower than diagnostic radiology grids because the low-energy mammographic beam produces less scatter.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo52",
+    "section_id": "mammo",
+    "question": "In magnification mammography, the typical magnification factor used is:",
+    "choices": [
+      "1.0-1.2x",
+      "1.5-2.0x",
+      "3.0-4.0x",
+      "5.0-6.0x"
+    ],
+    "answer": "1.5-2.0x",
+    "explanation": "Magnification mammography typically uses 1.5-2.0x magnification. This provides improved visualization of microcalcifications and fine architectural details while maintaining acceptable geometric unsharpness with the 0.1 mm focal spot.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo53",
+    "section_id": "mammo",
+    "question": "During magnification mammography, the anti-scatter grid is typically:",
+    "choices": [
+      "Used with a higher grid ratio",
+      "Replaced with a thicker grid",
+      "Removed because the air gap provides scatter rejection",
+      "Used with a lower grid ratio"
+    ],
+    "answer": "Removed because the air gap provides scatter rejection",
+    "explanation": "In magnification mammography, the increased object-to-image distance creates an air gap that acts as a natural scatter rejection mechanism, eliminating the need for a grid and its associated dose penalty.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo54",
+    "section_id": "mammo",
+    "question": "The MQSA minimum HVL requirement for a mammography beam operating at 30 kVp is:",
+    "choices": [
+      "0.20 mm Al",
+      "0.30 mm Al",
+      "0.40 mm Al",
+      "0.50 mm Al"
+    ],
+    "answer": "0.30 mm Al",
+    "explanation": "MQSA requires the HVL to be at least kVp/100 in mm Al. At 30 kVp, the minimum HVL is 30/100 = 0.30 mm Al, ensuring adequate beam filtration to remove low-energy photons that contribute dose without image information.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo55",
+    "section_id": "mammo",
+    "question": "What is the purpose of the flat-field uniformity test in digital mammography QC?",
+    "choices": [
+      "To measure the focal spot size",
+      "To verify uniform detector response across the entire field",
+      "To calibrate the AEC system",
+      "To measure the spatial resolution"
+    ],
+    "answer": "To verify uniform detector response across the entire field",
+    "explanation": "The flat-field test exposes the detector uniformly to verify that the response is consistent across the entire detector area, identifying dead pixels, gain variations, or other artifacts.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo56",
+    "section_id": "mammo",
+    "question": "MQSA requires that the mammography system's kVp accuracy be within what percentage of the indicated value?",
+    "choices": [
+      "±2%",
+      "±5%",
+      "±10%",
+      "±15%"
+    ],
+    "answer": "±5%",
+    "explanation": "MQSA requires kVp accuracy to be within ±5% of the indicated value. Inaccurate kVp affects beam quality, contrast, and dose calculations.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo57",
+    "section_id": "mammo",
+    "question": "The artifact evaluation test in mammography QC is performed to identify:",
+    "choices": [
+      "Only grid-line artifacts",
+      "Any image artifacts that could mimic or obscure pathology",
+      "Only dead pixels in digital systems",
+      "Only film processing artifacts"
+    ],
+    "answer": "Any image artifacts that could mimic or obscure pathology",
+    "explanation": "Artifact evaluation identifies any artifacts (dust, scratches, dead pixels, grid lines, processing errors) that could potentially obscure lesions or be mistaken for pathology.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo58",
+    "section_id": "mammo",
+    "question": "In the context of DQE, what does a DQE value of 0.5 at zero spatial frequency indicate?",
+    "choices": [
+      "The detector absorbs 50% of incident photons",
+      "The detector preserves 50% of the input SNR-squared",
+      "The detector has 50% spatial resolution",
+      "The detector has 50% noise"
+    ],
+    "answer": "The detector preserves 50% of the input SNR-squared",
+    "explanation": "DQE(0) = 0.5 means the detector preserves 50% of the squared signal-to-noise ratio of the incoming x-ray beam, indicating some degradation in the signal detection process.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo59",
+    "section_id": "mammo",
+    "question": "In DBT reconstruction, the slice thickness of reconstructed images is typically:",
+    "choices": [
+      "0.1 mm",
+      "0.5-1.0 mm",
+      "5.0 mm",
+      "10.0 mm"
+    ],
+    "answer": "0.5-1.0 mm",
+    "explanation": "DBT reconstructed slices are typically 0.5-1.0 mm thick, providing thin-slice visualization through the breast volume to reduce tissue overlap effects.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo60",
+    "section_id": "mammo",
+    "question": "The radiation dose from a single DBT acquisition compared to a single 2D mammographic view is approximately:",
+    "choices": [
+      "Half the dose",
+      "About the same dose",
+      "Double the dose",
+      "Five times the dose"
+    ],
+    "answer": "About the same dose",
+    "explanation": "A single DBT acquisition delivers approximately the same mean glandular dose as a single 2D mammographic view. The total dose is distributed across all the low-dose projection images.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo61",
+    "section_id": "mammo",
+    "question": "The spatial resolution in the depth (z) direction in DBT is:",
+    "choices": [
+      "Equal to the in-plane resolution",
+      "Superior to the in-plane resolution",
+      "Significantly inferior to the in-plane resolution",
+      "Not applicable since DBT is a 2D technique"
+    ],
+    "answer": "Significantly inferior to the in-plane resolution",
+    "explanation": "Due to the limited angular range of DBT (15-50 degrees vs. 360 degrees in CT), the z-axis (depth) resolution is much poorer than the in-plane (x-y) resolution, a fundamental limitation of limited-angle tomography.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo62",
+    "section_id": "mammo",
+    "question": "Which reconstruction algorithm is most commonly used in commercial DBT systems?",
+    "choices": [
+      "Simple back-projection only",
+      "Filtered back-projection or iterative reconstruction",
+      "Fourier transform reconstruction",
+      "Maximum intensity projection"
+    ],
+    "answer": "Filtered back-projection or iterative reconstruction",
+    "explanation": "Commercial DBT systems typically use filtered back-projection or iterative reconstruction algorithms. Iterative methods can help reduce noise and artifacts from the limited-angle acquisition geometry.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo63",
+    "section_id": "mammo",
+    "question": "In CEM, the high-energy image is acquired at approximately what kVp range?",
+    "choices": [
+      "26-30 kVp",
+      "33-38 kVp",
+      "45-49 kVp",
+      "60-70 kVp"
+    ],
+    "answer": "45-49 kVp",
+    "explanation": "The high-energy image in CEM is acquired at 45-49 kVp with appropriate filtration to produce photons above the iodine K-edge at 33.2 keV, maximizing the differential attenuation of iodine-containing tissues.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo64",
+    "section_id": "mammo",
+    "question": "The primary contraindication for contrast-enhanced mammography is:",
+    "choices": [
+      "Dense breast tissue",
+      "Previous mammography within 6 months",
+      "Known severe allergy to iodinated contrast agents",
+      "Age over 70 years"
+    ],
+    "answer": "Known severe allergy to iodinated contrast agents",
+    "explanation": "Since CEM requires injection of iodinated contrast media, patients with known severe allergies to iodinated contrast agents should not undergo this procedure due to risk of anaphylaxis.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo65",
+    "section_id": "mammo",
+    "question": "The CEM recombined (subtracted) image primarily displays:",
+    "choices": [
+      "Normal breast anatomy with enhanced contrast",
+      "Only iodine-enhancing areas indicating neovascularity",
+      "Calcifications with improved visibility",
+      "Skin thickening and architectural distortion"
+    ],
+    "answer": "Only iodine-enhancing areas indicating neovascularity",
+    "explanation": "The subtracted/recombined image removes background breast tissue, leaving only areas of iodine uptake visible. This highlights regions of neovascularity associated with malignant or suspicious lesions.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo66",
+    "section_id": "mammo",
+    "question": "In breast MRI, the standard contrast agent used is:",
+    "choices": [
+      "Iodinated contrast (iohexol)",
+      "Gadolinium-based contrast agent",
+      "Barium sulfate suspension",
+      "Microbubble contrast agent"
+    ],
+    "answer": "Gadolinium-based contrast agent",
+    "explanation": "Breast MRI uses gadolinium-based contrast agents (GBCAs) that shorten T1 relaxation time, causing enhancing lesions to appear bright on T1-weighted post-contrast images.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo67",
+    "section_id": "mammo",
+    "question": "In dynamic contrast-enhanced breast MRI (DCE-MRI), a washout kinetic curve pattern is most suggestive of:",
+    "choices": [
+      "Benign pathology",
+      "Normal tissue enhancement",
+      "Malignancy",
+      "Fat necrosis"
+    ],
+    "answer": "Malignancy",
+    "explanation": "A washout curve (Type III) shows rapid initial enhancement followed by a decrease in signal intensity over time. This pattern is most suspicious for malignancy, as it reflects rapid contrast uptake and washout by tumor vasculature.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo69",
+    "section_id": "mammo",
+    "question": "A plateau kinetic curve (Type II) in breast MRI indicates:",
+    "choices": [
+      "Definitely benign",
+      "Definitely malignant",
+      "Indeterminate, requiring further evaluation",
+      "Normal breast tissue"
+    ],
+    "answer": "Indeterminate, requiring further evaluation",
+    "explanation": "A Type II (plateau) curve shows initial enhancement followed by a leveling off of signal. This pattern is indeterminate and can be seen in both benign and malignant lesions, requiring additional clinical correlation.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo70",
+    "section_id": "mammo",
+    "question": "The typical frequency range used in breast ultrasound is:",
+    "choices": [
+      "1-3 MHz",
+      "5-7 MHz",
+      "7-15 MHz",
+      "20-30 MHz"
+    ],
+    "answer": "7-15 MHz",
+    "explanation": "Breast ultrasound uses high-frequency transducers (7-15 MHz) to provide excellent near-field resolution for the relatively superficial breast tissue, at the cost of reduced penetration depth.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo71",
+    "section_id": "mammo",
+    "question": "Automated breast ultrasound (ABUS) differs from handheld breast ultrasound primarily in that ABUS:",
+    "choices": [
+      "Uses lower frequency transducers",
+      "Acquires standardized whole-breast volumetric data automatically",
+      "Provides higher spatial resolution than handheld",
+      "Can only image one breast per session"
+    ],
+    "answer": "Acquires standardized whole-breast volumetric data automatically",
+    "explanation": "ABUS uses a wide automated transducer to acquire standardized volumetric ultrasound data of the entire breast, reducing operator dependence and enabling reproducible whole-breast screening.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo72",
+    "section_id": "mammo",
+    "question": "Ultrasound elastography in breast imaging measures:",
+    "choices": [
+      "Blood flow velocity in breast lesions",
+      "Tissue stiffness or strain to differentiate benign from malignant lesions",
+      "The acoustic impedance mismatch between tissues",
+      "Ultrasound beam attenuation in breast tissue"
+    ],
+    "answer": "Tissue stiffness or strain to differentiate benign from malignant lesions",
+    "explanation": "Elastography measures tissue stiffness (shear wave elastography) or strain. Malignant lesions tend to be stiffer than benign lesions, providing additional diagnostic information.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo73",
+    "section_id": "mammo",
+    "question": "The ACR BI-RADS breast density classification category 'c' describes breasts that are:",
+    "choices": [
+      "Almost entirely fatty",
+      "Scattered areas of fibroglandular density",
+      "Heterogeneously dense",
+      "Extremely dense"
+    ],
+    "answer": "Heterogeneously dense",
+    "explanation": "BI-RADS density category 'c' indicates heterogeneously dense breasts, which may obscure small masses. Categories range from 'a' (almost entirely fatty) to 'd' (extremely dense).",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo74",
+    "section_id": "mammo",
+    "question": "A patient with BI-RADS breast density category 'd' has breasts described as:",
+    "choices": [
+      "Almost entirely fatty",
+      "Scattered areas of fibroglandular density",
+      "Heterogeneously dense",
+      "Extremely dense"
+    ],
+    "answer": "Extremely dense",
+    "explanation": "BI-RADS density 'd' indicates extremely dense breasts, which lowers the sensitivity of mammography and is associated with increased breast cancer risk.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo75",
+    "section_id": "mammo",
+    "question": "Increased breast density on mammography is clinically significant because it:",
+    "choices": [
+      "Indicates a current breast infection",
+      "Both masks lesions and independently increases cancer risk",
+      "Only affects image quality, not cancer risk",
+      "Requires immediate biopsy"
+    ],
+    "answer": "Both masks lesions and independently increases cancer risk",
+    "explanation": "Dense breast tissue reduces mammographic sensitivity by obscuring lesions (masking effect) and is also an independent risk factor for developing breast cancer.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo76",
+    "section_id": "mammo",
+    "question": "In stereotactic breast biopsy, the number of projection images used for lesion localization is typically:",
+    "choices": [
+      "One image at 0 degrees",
+      "Two images at ±15 degrees from vertical",
+      "Four images at 0, 90, 180, and 270 degrees",
+      "Twelve images at 30-degree intervals"
+    ],
+    "answer": "Two images at ±15 degrees from vertical",
+    "explanation": "Stereotactic biopsy uses two angled images (typically ±15 degrees) to calculate the 3D position of the target lesion by triangulation, enabling accurate needle placement.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo77",
+    "section_id": "mammo",
+    "question": "The targeting accuracy required for stereotactic breast biopsy systems is typically within:",
+    "choices": [
+      "±5 mm",
+      "±1 mm",
+      "±0.5 mm",
+      "±0.1 mm"
+    ],
+    "answer": "±1 mm",
+    "explanation": "Stereotactic biopsy systems must achieve targeting accuracy within approximately ±1 mm to ensure the biopsy needle reaches the intended lesion, particularly important for small calcification clusters.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo78",
+    "section_id": "mammo",
+    "question": "The reject/repeat rate in mammography should ideally be below:",
+    "choices": [
+      "1%",
+      "2-5%",
+      "10%",
+      "15%"
+    ],
+    "answer": "2-5%",
+    "explanation": "The reject/repeat rate should ideally be below 2-5%. Higher rates indicate potential problems with positioning, technique, equipment, or training that should be investigated.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo79",
+    "section_id": "mammo",
+    "question": "The most common cause of repeat mammograms is:",
+    "choices": [
+      "Equipment malfunction",
+      "Patient motion",
+      "Positioning errors",
+      "Incorrect exposure technique"
+    ],
+    "answer": "Positioning errors",
+    "explanation": "Positioning errors are the most common reason for repeat mammograms. Inadequate inclusion of breast tissue or poor positioning can result in missed pathology and require re-imaging.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo81",
+    "section_id": "mammo",
+    "question": "The linear attenuation coefficient difference between glandular and adipose breast tissue is greatest at which energy?",
+    "choices": [
+      "15-20 keV",
+      "30-40 keV",
+      "60-80 keV",
+      "100-120 keV"
+    ],
+    "answer": "15-20 keV",
+    "explanation": "At lower energies (15-20 keV), photoelectric absorption dominates and the difference in attenuation between glandular and adipose tissue is maximized, providing the best subject contrast in mammography.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo82",
+    "section_id": "mammo",
+    "question": "The source-to-image distance (SID) in mammography is typically:",
+    "choices": [
+      "40 cm",
+      "60-66 cm",
+      "100 cm",
+      "150 cm"
+    ],
+    "answer": "60-66 cm",
+    "explanation": "Mammography units typically use an SID of 60-66 cm, which provides a balance between adequate x-ray tube output, geometric magnification, and coverage of the breast.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo83",
+    "section_id": "mammo",
+    "question": "MQSA requires that the mammography system produce a minimum x-ray tube output of:",
+    "choices": [
+      "3.0 mGy/s at 28 kVp with Mo/Mo",
+      "7.0 mGy/s at 28 kVp with Mo/Mo",
+      "15.0 mGy/s at 28 kVp with Mo/Mo",
+      "30.0 mGy/s at 28 kVp with Mo/Mo"
+    ],
+    "answer": "7.0 mGy/s at 28 kVp with Mo/Mo",
+    "explanation": "MQSA requires a minimum output of 7.0 mGy/s (800 mR/s) at 28 kVp using Mo/Mo target-filter at the standard SID to ensure exposures are short enough to minimize motion blur.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo84",
+    "section_id": "mammo",
+    "question": "The mammography x-ray tube window is typically made of:",
+    "choices": [
+      "Glass",
+      "Beryllium",
+      "Aluminum",
+      "Lead glass"
+    ],
+    "answer": "Beryllium",
+    "explanation": "Mammography tubes use beryllium exit windows because beryllium has very low atomic number (Z=4) and minimal x-ray attenuation, allowing the low-energy characteristic x-rays to exit the tube with minimal filtration.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo85",
+    "section_id": "mammo",
+    "question": "Why is a rotating anode used in mammography x-ray tubes?",
+    "choices": [
+      "To reduce electrical noise",
+      "To spread the heat load over a larger area allowing higher tube loading",
+      "To improve beam collimation",
+      "To increase the effective focal spot size"
+    ],
+    "answer": "To spread the heat load over a larger area allowing higher tube loading",
+    "explanation": "A rotating anode spreads the electron beam heat over a larger area (the focal track), allowing higher tube currents and shorter exposure times compared to stationary anodes.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo87",
+    "section_id": "mammo",
+    "question": "When switching from a Mo/Mo to a Mo/Rh target-filter combination, the beam spectrum will:",
+    "choices": [
+      "Become softer with lower mean energy",
+      "Have a higher mean energy due to the higher Rh K-edge",
+      "Remain unchanged since only the target matters",
+      "Lose all characteristic radiation"
+    ],
+    "answer": "Have a higher mean energy due to the higher Rh K-edge",
+    "explanation": "The Rh filter K-edge at 23.2 keV transmits photons between 20 and 23 keV that the Mo filter would absorb, shifting the effective spectrum to a slightly higher mean energy for improved penetration.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo88",
+    "section_id": "mammo",
+    "question": "The phosphor material used in screen-film mammography intensifying screens is typically:",
+    "choices": [
+      "Calcium tungstate (CaWO4)",
+      "Gadolinium oxysulfide (Gd2O2S)",
+      "Cesium iodide (CsI)",
+      "Barium fluorobromide (BaFBr)"
+    ],
+    "answer": "Gadolinium oxysulfide (Gd2O2S)",
+    "explanation": "Modern mammography screens typically use gadolinium oxysulfide (Gd2O2S:Tb) or similar rare-earth phosphors, which provide higher absorption efficiency at mammographic energies than older calcium tungstate screens.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo89",
+    "section_id": "mammo",
+    "question": "The screen is placed on which side of the film in screen-film mammography?",
+    "choices": [
+      "On the tube side (front)",
+      "On the far side from the tube (back)",
+      "On both sides",
+      "There is no screen in mammography"
+    ],
+    "answer": "On the tube side (front)",
+    "explanation": "In screen-film mammography, the single intensifying screen is placed behind the film (back screen configuration). X-rays pass through the film first and expose the screen, minimizing the distance between light emission and the emulsion.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo90",
+    "section_id": "mammo",
+    "question": "The CsI scintillator in indirect digital mammography detectors has a columnar (needle-like) structure that serves to:",
+    "choices": [
+      "Increase x-ray absorption uniformity",
+      "Channel light toward the photodiode, reducing lateral spread",
+      "Improve the detector's spectral response",
+      "Make the detector thinner"
+    ],
+    "answer": "Channel light toward the photodiode, reducing lateral spread",
+    "explanation": "The columnar CsI structure acts like a fiber optic, channeling scintillation light toward the photodiode array with reduced lateral spreading, improving spatial resolution compared to granular phosphors.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo91",
+    "section_id": "mammo",
+    "question": "In digital mammography, the gain calibration (flat-field correction) compensates for:",
+    "choices": [
+      "Patient motion during exposure",
+      "Variations in pixel sensitivity across the detector",
+      "X-ray tube output fluctuations",
+      "Differences in breast composition"
+    ],
+    "answer": "Variations in pixel sensitivity across the detector",
+    "explanation": "Gain calibration corrects for pixel-to-pixel variations in sensitivity (gain) across the detector, ensuring uniform response when the detector is exposed to a uniform x-ray field.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo92",
+    "section_id": "mammo",
+    "question": "Dead pixel correction in digital mammography is performed by:",
+    "choices": [
+      "Ignoring the pixel in the displayed image",
+      "Interpolating values from surrounding functional pixels",
+      "Increasing the exposure to overcome the dead pixel",
+      "Replacing the entire detector panel"
+    ],
+    "answer": "Interpolating values from surrounding functional pixels",
+    "explanation": "Dead or defective pixels are corrected by interpolating their values from surrounding functional pixels. The number and distribution of dead pixels must be monitored as part of QC.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo93",
+    "section_id": "mammo",
+    "question": "The number of fibers in the ACR mammography phantom is:",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "answer": "6",
+    "explanation": "The ACR mammography phantom contains 6 fibers of decreasing size. The minimum passing score requires visualization of at least 4 of the 6 fibers.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo94",
+    "section_id": "mammo",
+    "question": "The number of speck groups in the ACR mammography phantom is:",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "explanation": "The ACR mammography phantom contains 5 speck groups of decreasing size, with each group containing 6 individual specks. The minimum passing score is 3 speck groups.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo95",
+    "section_id": "mammo",
+    "question": "The number of masses in the ACR mammography phantom is:",
+    "choices": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "explanation": "The ACR mammography phantom contains 5 masses of decreasing size. The minimum passing score requires visualization of at least 3 of the 5 masses.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo96",
+    "section_id": "mammo",
+    "question": "According to MQSA, which personnel are required to have documented qualifications to perform mammography?",
+    "choices": [
+      "Only the radiologist",
+      "Only the technologist",
+      "Only the medical physicist",
+      "Radiologist, technologist, and medical physicist"
+    ],
+    "answer": "Radiologist, technologist, and medical physicist",
+    "explanation": "MQSA requires documented qualifications for all three personnel: the interpreting physician (radiologist), the radiologic technologist, and the medical physicist, including initial qualifications and continuing education.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo97",
+    "section_id": "mammo",
+    "question": "MQSA requires that interpreting physicians read a minimum of how many mammographic examinations in a 24-month period?",
+    "choices": [
+      "100",
+      "240",
+      "480",
+      "960"
+    ],
+    "answer": "960",
+    "explanation": "MQSA requires interpreting physicians to read at least 960 mammographic examinations during a 24-month period (equivalent to 480 per year) to maintain competency.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo98",
+    "section_id": "mammo",
+    "question": "The mammography QC test for phantom image quality should be performed by the technologist at what frequency?",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "answer": "Weekly",
+    "explanation": "The ACR phantom image quality test is part of the weekly QC performed by the mammography technologist to verify consistent system performance.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo99",
+    "section_id": "mammo",
+    "question": "The visual checklist performed by the technologist in mammography QC is done at what frequency?",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Quarterly"
+    ],
+    "answer": "Daily",
+    "explanation": "The visual checklist, which includes checking indicator lights, mechanical locks, and overall system functionality, is performed daily by the mammography technologist.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo100",
+    "section_id": "mammo",
+    "question": "Which QC test evaluates the accuracy of the mammography system's exposure control for varying breast thicknesses?",
+    "choices": [
+      "Phantom image quality test",
+      "AEC performance evaluation",
+      "Flat-field uniformity test",
+      "Focal spot measurement"
+    ],
+    "answer": "AEC performance evaluation",
+    "explanation": "The AEC performance evaluation tests whether the automatic exposure control system can produce consistent image quality (signal level or optical density) across a range of breast thicknesses and compositions.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo101",
+    "section_id": "mammo",
+    "question": "The compression force QC test measures the maximum force the compression device can deliver in power-driven mode. The maximum force should not exceed:",
+    "choices": [
+      "25 lbs (111 N)",
+      "35 lbs (156 N)",
+      "45 lbs (200 N)",
+      "55 lbs (245 N)"
+    ],
+    "answer": "35 lbs (156 N)",
+    "explanation": "The maximum initial power-driven compression force should not exceed 45 lbs (200 N) to prevent excessive patient discomfort while still achieving adequate compression for image quality.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo102",
+    "section_id": "mammo",
+    "question": "For spatial resolution testing in mammography, a line pair phantom is imaged to measure the system's:",
+    "choices": [
+      "Contrast resolution",
+      "Limiting spatial resolution in line pairs per millimeter",
+      "Noise level",
+      "Dynamic range"
+    ],
+    "answer": "Limiting spatial resolution in line pairs per millimeter",
+    "explanation": "A line pair (bar pattern) phantom measures the limiting spatial resolution, defined as the smallest bar pattern group that can be visually resolved, expressed in line pairs per millimeter.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo103",
+    "section_id": "mammo",
+    "question": "The limiting spatial resolution for screen-film mammography systems is typically:",
+    "choices": [
+      "5-7 lp/mm",
+      "10-15 lp/mm",
+      "15-20 lp/mm",
+      "25-30 lp/mm"
+    ],
+    "answer": "5-7 lp/mm",
+    "explanation": "Screen-film mammography achieves limiting spatial resolution of approximately 15-20 lp/mm, which is higher than digital mammography systems due to the continuous nature of the film receptor.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo104",
+    "section_id": "mammo",
+    "question": "For a digital mammography detector with 100 μm pixel size, the limiting spatial resolution cannot exceed:",
+    "choices": [
+      "2.5 lp/mm",
+      "5.0 lp/mm",
+      "10.0 lp/mm",
+      "20.0 lp/mm"
+    ],
+    "answer": "5.0 lp/mm",
+    "explanation": "The Nyquist frequency for 100 μm pixels is 1/(2 x 0.1 mm) = 5.0 lp/mm. This is the theoretical maximum spatial frequency the detector can resolve without aliasing.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo106",
+    "section_id": "mammo",
+    "question": "The geometric unsharpness (penumbra) in magnification mammography depends on:",
+    "choices": [
+      "Pixel size only",
+      "Focal spot size and magnification factor",
+      "Detector DQE only",
+      "Compression force"
+    ],
+    "answer": "Focal spot size and magnification factor",
+    "explanation": "Geometric unsharpness = focal spot size x (M-1)/M, where M is the magnification factor. Using a smaller focal spot (0.1 mm) minimizes this effect at higher magnification.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo107",
+    "section_id": "mammo",
+    "question": "During magnification mammography at 2x magnification with a 0.1 mm focal spot, the geometric unsharpness is:",
+    "choices": [
+      "0.025 mm",
+      "0.05 mm",
+      "0.1 mm",
+      "0.2 mm"
+    ],
+    "answer": "0.05 mm",
+    "explanation": "Geometric unsharpness = f x (M-1)/M = 0.1 x (2-1)/2 = 0.1 x 0.5 = 0.05 mm. This small value demonstrates why the 0.1 mm focal spot is essential for magnification views.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo108",
+    "section_id": "mammo",
+    "question": "The standard mammographic views performed for screening mammography are:",
+    "choices": [
+      "CC and spot compression",
+      "CC and MLO",
+      "ML and LM",
+      "Magnification CC and MLO"
+    ],
+    "answer": "CC and MLO",
+    "explanation": "Standard screening mammography includes craniocaudal (CC) and mediolateral oblique (MLO) views of each breast. The MLO view images the most breast tissue including the axillary tail.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo109",
+    "section_id": "mammo",
+    "question": "The mediolateral oblique (MLO) view is angled at approximately what degree from horizontal?",
+    "choices": [
+      "0 degrees (horizontal)",
+      "30-45 degrees",
+      "45-60 degrees",
+      "90 degrees (vertical)"
+    ],
+    "answer": "45-60 degrees",
+    "explanation": "The MLO view is typically angled at 45-60 degrees from horizontal, following the orientation of the pectoralis major muscle to image the maximum amount of breast tissue including the axillary tail.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo110",
+    "section_id": "mammo",
+    "question": "What is the relationship between DQE, MTF, and NPS?",
+    "choices": [
+      "DQE = MTF x NPS",
+      "DQE is proportional to MTF-squared divided by NPS",
+      "DQE = NPS / MTF",
+      "DQE = MTF + NPS"
+    ],
+    "answer": "DQE is proportional to MTF-squared divided by NPS",
+    "explanation": "DQE(f) is proportional to MTF(f)-squared / NPS(f). A good detector has high MTF (good signal transfer) and low NPS (low noise), resulting in high DQE.",
+    "difficulty": 8
+  },
+  {
+    "id": "mammo112",
+    "section_id": "mammo",
+    "question": "In CEM, the time between contrast injection and first image acquisition is typically:",
+    "choices": [
+      "Immediately (less than 30 seconds)",
+      "2-3 minutes",
+      "10-15 minutes",
+      "30-60 minutes"
+    ],
+    "answer": "2-3 minutes",
+    "explanation": "CEM imaging typically begins 2-3 minutes after contrast injection to allow adequate distribution of iodinated contrast to enhancing lesions before imaging begins.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo114",
+    "section_id": "mammo",
+    "question": "The primary advantage of CEM over breast MRI is:",
+    "choices": [
+      "Higher spatial resolution",
+      "Faster examination time with lower cost and wider availability",
+      "Better kinetic curve analysis",
+      "No contrast agent required"
+    ],
+    "answer": "Faster examination time with lower cost and wider availability",
+    "explanation": "CEM provides contrast-enhanced breast imaging in minutes using existing mammography equipment, at lower cost and with greater availability than breast MRI, which requires dedicated MRI equipment and longer scan times.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo115",
+    "section_id": "mammo",
+    "question": "Breast MRI is most commonly indicated for:",
+    "choices": [
+      "Routine screening of all women",
+      "Screening high-risk women and evaluating extent of disease",
+      "Initial diagnosis of palpable masses",
+      "Evaluation of skin thickening only"
+    ],
+    "answer": "Screening high-risk women and evaluating extent of disease",
+    "explanation": "Breast MRI is recommended for screening women at high risk (>20% lifetime risk), evaluating extent of known cancer, monitoring neoadjuvant chemotherapy response, and evaluating breast implant integrity.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo116",
+    "section_id": "mammo",
+    "question": "The magnetic field strength most commonly used for clinical breast MRI is:",
+    "choices": [
+      "0.5 T",
+      "1.5 T",
+      "3.0 T",
+      "7.0 T"
+    ],
+    "answer": "1.5 T",
+    "explanation": "Clinical breast MRI is most commonly performed at 1.5 T, which provides adequate signal-to-noise ratio and spatial resolution. 3.0 T is also used and offers improved SNR but can have more artifacts.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo117",
+    "section_id": "mammo",
+    "question": "In breast MRI, the temporal resolution for DCE imaging should ideally be:",
+    "choices": [
+      "Less than 30 seconds per acquisition",
+      "60-120 seconds per acquisition",
+      "5-10 minutes per acquisition",
+      "20-30 minutes per acquisition"
+    ],
+    "answer": "60-120 seconds per acquisition",
+    "explanation": "DCE-MRI temporal resolution of 60-120 seconds per acquisition allows adequate assessment of contrast kinetics while maintaining sufficient spatial resolution to characterize lesion morphology.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo118",
+    "section_id": "mammo",
+    "question": "In breast ultrasound, a simple cyst appears as:",
+    "choices": [
+      "An echogenic solid mass",
+      "An anechoic structure with posterior acoustic enhancement",
+      "A hypoechoic mass with posterior shadowing",
+      "A complex mass with internal echoes"
+    ],
+    "answer": "An anechoic structure with posterior acoustic enhancement",
+    "explanation": "Simple cysts are fluid-filled and appear anechoic (black) with sharp posterior walls and posterior acoustic enhancement due to the lower attenuation of sound through fluid compared to surrounding tissue.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo119",
+    "section_id": "mammo",
+    "question": "Posterior acoustic shadowing on breast ultrasound is most commonly associated with:",
+    "choices": [
+      "Simple cysts",
+      "Solid malignant masses or dense fibrotic tissue",
+      "Fat necrosis",
+      "Lymph nodes"
+    ],
+    "answer": "Solid malignant masses or dense fibrotic tissue",
+    "explanation": "Posterior acoustic shadowing occurs when sound is strongly absorbed or reflected by dense tissue structures such as invasive carcinomas, scar tissue, or Cooper ligaments.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo120",
+    "section_id": "mammo",
+    "question": "The recommended screening mammography interval for average-risk women age 50-74, according to most major guidelines, is:",
+    "choices": [
+      "Every 6 months",
+      "Annually or biennially",
+      "Every 3 years",
+      "Every 5 years"
+    ],
+    "answer": "Annually or biennially",
+    "explanation": "Most major guidelines recommend screening mammography annually or biennially for average-risk women between ages 50-74, though specific recommendations vary among organizations.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo121",
+    "section_id": "mammo",
+    "question": "The estimated radiation risk from mammographic screening is considered justified because:",
+    "choices": [
+      "There is zero radiation risk from mammography",
+      "The mortality reduction from early cancer detection far outweighs the small radiation risk",
+      "Mammography dose is below the threshold for any biological effect",
+      "The risk only applies to women under 30"
+    ],
+    "answer": "The mortality reduction from early cancer detection far outweighs the small radiation risk",
+    "explanation": "The mortality reduction from early breast cancer detection through screening mammography significantly outweighs the very small theoretical cancer risk from the low radiation doses involved.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo122",
+    "section_id": "mammo",
+    "question": "The effective dose from a bilateral screening mammography (4 views) is approximately:",
+    "choices": [
+      "0.01 mSv",
+      "0.4-0.7 mSv",
+      "5.0 mSv",
+      "20 mSv"
+    ],
+    "answer": "0.4-0.7 mSv",
+    "explanation": "A bilateral screening mammogram (4 views) delivers an effective dose of approximately 0.4-0.7 mSv, which is roughly equivalent to 7 weeks of natural background radiation.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo123",
+    "section_id": "mammo",
+    "question": "In the MGD calculation, the glandular dose conversion factor (DgN) depends primarily on:",
+    "choices": [
+      "Patient age and weight",
+      "HVL, breast thickness, and breast glandularity",
+      "Focal spot size and SID",
+      "Detector type and pixel size"
+    ],
+    "answer": "HVL, breast thickness, and breast glandularity",
+    "explanation": "DgN conversion factors (from published tables such as those by Wu et al.) depend on beam HVL, compressed breast thickness, and the fraction of glandular tissue in the breast.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo125",
+    "section_id": "mammo",
+    "question": "The DMIST trial (Digital Mammographic Imaging Screening Trial) demonstrated that digital mammography was superior to screen-film mammography for which group?",
+    "choices": [
+      "All women regardless of age or breast density",
+      "Women with fatty breasts over age 65",
+      "Women with dense breasts, premenopausal women, and women under 50",
+      "Men with gynecomastia"
+    ],
+    "answer": "Women with dense breasts, premenopausal women, and women under 50",
+    "explanation": "The DMIST trial showed digital mammography had significantly higher diagnostic accuracy than film for women with dense breasts, premenopausal women, and women under 50, primarily due to the wider dynamic range of digital detectors.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo127",
+    "section_id": "mammo",
+    "question": "The DBT system that uses a step-and-shoot acquisition mode differs from continuous motion in that:",
+    "choices": [
+      "It requires fewer projections",
+      "The tube stops at each angular position before exposing",
+      "It produces higher patient dose",
+      "It has worse depth resolution"
+    ],
+    "answer": "The tube stops at each angular position before exposing",
+    "explanation": "In step-and-shoot mode, the tube moves to each angular position and stops before making the exposure, eliminating focal spot motion blur. This increases acquisition time but improves in-plane resolution.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo128",
+    "section_id": "mammo",
+    "question": "The contrast-to-noise ratio (CNR) in digital mammography is primarily determined by:",
+    "choices": [
+      "Display monitor brightness",
+      "Subject contrast and image noise (quantum, electronic, and structural)",
+      "Pixel bit depth alone",
+      "Compression paddle material"
+    ],
+    "answer": "Subject contrast and image noise (quantum, electronic, and structural)",
+    "explanation": "CNR depends on the subject contrast (attenuation differences between tissues) and the total image noise, which includes quantum noise, electronic noise, and structured noise from the detector.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo129",
+    "section_id": "mammo",
+    "question": "The dominant source of noise in a properly functioning digital mammography system at clinical dose levels is:",
+    "choices": [
+      "Electronic noise",
+      "Quantum noise (x-ray photon statistics)",
+      "Structured noise from the detector",
+      "Digitization noise"
+    ],
+    "answer": "Quantum noise (x-ray photon statistics)",
+    "explanation": "At clinical dose levels, quantum noise (arising from the statistical fluctuation in the number of detected x-ray photons) is the dominant noise source, indicating the system is quantum-noise limited.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo130",
+    "section_id": "mammo",
+    "question": "If the mAs is doubled in digital mammography while keeping all other parameters constant, the quantum noise will:",
+    "choices": [
+      "Be reduced by half",
+      "Be reduced by a factor of the square root of 2",
+      "Remain unchanged",
+      "Double"
+    ],
+    "answer": "Be reduced by a factor of the square root of 2",
+    "explanation": "Quantum noise is proportional to the square root of the number of photons. Doubling mAs doubles the photon count, so noise increases by sqrt(2), but the relative noise (noise/signal) decreases by sqrt(2).",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo131",
+    "section_id": "mammo",
+    "question": "The MQSA regulation requires mammography facilities to be accredited by:",
+    "choices": [
+      "The state health department only",
+      "The FDA directly",
+      "An FDA-approved accreditation body such as the ACR",
+      "The hospital's internal quality committee"
+    ],
+    "answer": "An FDA-approved accreditation body such as the ACR",
+    "explanation": "MQSA requires all mammography facilities to be accredited by an FDA-approved accreditation body, the most common being the American College of Radiology (ACR).",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo132",
+    "section_id": "mammo",
+    "question": "MQSA requires that mammography facilities retain mammography films and reports for a minimum of:",
+    "choices": [
+      "1 year",
+      "5 years",
+      "10 years or longer if no additional mammograms",
+      "Permanently"
+    ],
+    "answer": "5 years",
+    "explanation": "MQSA requires facilities to retain mammograms and reports for a minimum of 5-10 years, or longer if no additional mammograms have been performed. Original mammograms must be available for comparison.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo133",
+    "section_id": "mammo",
+    "question": "The chest wall edge of the mammographic image must include the chest wall edge of the compression paddle. This is verified by ensuring:",
+    "choices": [
+      "The pectoralis muscle is visible on the CC view",
+      "The image extends to the chest wall edge without cutoff",
+      "The nipple is in profile on all views",
+      "The axillary tail is visible on all views"
+    ],
+    "answer": "The image extends to the chest wall edge without cutoff",
+    "explanation": "The image receptor must be positioned so that the chest wall edge of the x-ray field coincides with the chest wall edge of the image, ensuring no breast tissue at the chest wall is excluded from the image.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo134",
+    "section_id": "mammo",
+    "question": "The x-ray field alignment in mammography must ensure that the x-ray field extends to the chest wall edge of the image receptor to within:",
+    "choices": [
+      "±1 mm",
+      "±2% of SID",
+      "±5 mm",
+      "±10 mm"
+    ],
+    "answer": "±2% of SID",
+    "explanation": "The x-ray field must extend to within ±2% of the SID from the chest wall edge of the image receptor. For a typical 65 cm SID, this is approximately ±13 mm.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo135",
+    "section_id": "mammo",
+    "question": "The exposure reproducibility test in mammography QC requires that the coefficient of variation of repeated exposures be less than:",
+    "choices": [
+      "0.02 (2%)",
+      "0.05 (5%)",
+      "0.10 (10%)",
+      "0.20 (20%)"
+    ],
+    "answer": "0.05 (5%)",
+    "explanation": "Exposure reproducibility requires a coefficient of variation (standard deviation / mean) of less than 0.05 (5%) for repeated exposures under identical conditions.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo136",
+    "section_id": "mammo",
+    "question": "The ghost image evaluation in digital mammography tests for:",
+    "choices": [
+      "Image lag or residual signal from a previous exposure appearing in subsequent images",
+      "Artifacts caused by grid lines",
+      "Dead pixel clusters on the detector",
+      "Electronic noise patterns"
+    ],
+    "answer": "Image lag or residual signal from a previous exposure appearing in subsequent images",
+    "explanation": "Ghost image evaluation measures the amount of residual signal (image lag) from a previous high-dose exposure that appears in a subsequent image, which could create artifacts or obscure pathology.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo138",
+    "section_id": "mammo",
+    "question": "In the MLO view, adequate imaging is confirmed by the presence of:",
+    "choices": [
+      "Both nipples in the same image",
+      "The pectoralis muscle extending to the posterior nipple line",
+      "The inframammary fold only",
+      "The axillary lymph nodes only"
+    ],
+    "answer": "The pectoralis muscle extending to the posterior nipple line",
+    "explanation": "In an adequate MLO view, the pectoralis muscle should extend to at least the level of the posterior nipple line (PNL), indicating sufficient posterior breast tissue is included in the image.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo139",
+    "section_id": "mammo",
+    "question": "The posterior nipple line (PNL) should differ between CC and MLO views by no more than:",
+    "choices": [
+      "0.5 cm",
+      "1.0 cm",
+      "2.0 cm",
+      "5.0 cm"
+    ],
+    "answer": "1.0 cm",
+    "explanation": "The PNL measured on the CC view should be within 1.0 cm of the PNL on the MLO view. A larger discrepancy suggests inadequate tissue inclusion on one of the views.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo140",
+    "section_id": "mammo",
+    "question": "Scatter radiation in mammography increases with:",
+    "choices": [
+      "Smaller field size",
+      "Thinner compressed breast",
+      "Larger field size and thicker breast",
+      "Higher spatial frequency content"
+    ],
+    "answer": "Larger field size and thicker breast",
+    "explanation": "Scatter radiation increases with larger x-ray field size (more irradiated volume) and thicker breast (more material for scatter interaction), reducing image contrast.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo141",
+    "section_id": "mammo",
+    "question": "The scatter-to-primary ratio (SPR) in mammography for an average breast is approximately:",
+    "choices": [
+      "0.1-0.2",
+      "0.4-0.8",
+      "1.5-2.0",
+      "3.0-5.0"
+    ],
+    "answer": "0.4-0.8",
+    "explanation": "The SPR in mammography is approximately 0.4-0.8 for an average 4-5 cm compressed breast, meaning scatter can constitute a significant fraction of the detected signal if not managed with a grid or air gap.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo142",
+    "section_id": "mammo",
+    "question": "Bucky factor in mammography refers to the factor by which exposure must be increased when using an anti-scatter grid. For mammography grids, this factor is approximately:",
+    "choices": [
+      "1.0 (no increase needed)",
+      "1.5-2.0",
+      "2.5-3.0",
+      "5.0-6.0"
+    ],
+    "answer": "2.5-3.0",
+    "explanation": "The Bucky factor for mammography grids is approximately 2.5-3.0, meaning the exposure must be increased by this factor to compensate for primary radiation absorbed by the grid.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo143",
+    "section_id": "mammo",
+    "question": "Moving (reciprocating) grids are used in mammography to:",
+    "choices": [
+      "Improve spatial resolution",
+      "Eliminate grid line artifacts from the image",
+      "Reduce patient dose",
+      "Increase scatter radiation absorption"
+    ],
+    "answer": "Eliminate grid line artifacts from the image",
+    "explanation": "The grid moves during exposure so that the grid lines are blurred out and not visible in the image. Some digital systems use stationary grids and remove grid lines computationally.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo144",
+    "section_id": "mammo",
+    "question": "In a digital mammography system, the look-up table (LUT) applied for display is used to:",
+    "choices": [
+      "Correct detector gain variations",
+      "Map the raw pixel values to display pixel values for optimal visualization",
+      "Remove dead pixels",
+      "Calculate the mean glandular dose"
+    ],
+    "answer": "Map the raw pixel values to display pixel values for optimal visualization",
+    "explanation": "The display LUT maps raw detector values to display grayscale values, optimizing the visualization of breast tissue by adjusting contrast and brightness for the clinical display.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo145",
+    "section_id": "mammo",
+    "question": "The DICOM standard for mammographic images specifies a presentation state that ensures images are displayed with:",
+    "choices": [
+      "Maximum brightness",
+      "Minimum contrast",
+      "Consistent grayscale across different display devices",
+      "Inverted contrast only"
+    ],
+    "answer": "Consistent grayscale across different display devices",
+    "explanation": "DICOM Grayscale Standard Display Function (GSDF) ensures that images are displayed with perceptually consistent grayscale across different monitors and viewing conditions.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo146",
+    "section_id": "mammo",
+    "question": "The minimum luminance ratio for a diagnostic mammography display monitor is:",
+    "choices": [
+      "100:1",
+      "250:1",
+      "350:1 or greater",
+      "1000:1"
+    ],
+    "answer": "350:1 or greater",
+    "explanation": "Diagnostic mammography display monitors should have a luminance ratio of at least 350:1 (maximum luminance to minimum luminance) to provide adequate contrast range for clinical interpretation.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo147",
+    "section_id": "mammo",
+    "question": "The minimum resolution for a diagnostic mammography display monitor is:",
+    "choices": [
+      "1 megapixel (MP)",
+      "3 MP",
+      "5 MP",
+      "10 MP"
+    ],
+    "answer": "3 MP",
+    "explanation": "Diagnostic mammography monitors require at least 5 megapixel resolution to adequately display the high-resolution mammographic images and detect subtle findings such as microcalcifications.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo148",
+    "section_id": "mammo",
+    "question": "In stereotactic breast biopsy, the depth (z-coordinate) of the lesion is calculated using:",
+    "choices": [
+      "The shift of the lesion between the two stereo images and the known tube angles",
+      "Ultrasound guidance simultaneously",
+      "The density of the lesion on the mammogram",
+      "The compression thickness only"
+    ],
+    "answer": "The shift of the lesion between the two stereo images and the known tube angles",
+    "explanation": "The z-depth is calculated from the parallax shift of the lesion between the two stereo images acquired at known angles (typically ±15 degrees), using trigonometric relationships.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo149",
+    "section_id": "mammo",
+    "question": "During stereotactic biopsy, the pre-fire and post-fire images are acquired to:",
+    "choices": [
+      "Calculate the breast density",
+      "Verify correct needle position before and after firing the biopsy device",
+      "Measure the radiation dose",
+      "Evaluate contrast enhancement"
+    ],
+    "answer": "Verify correct needle position before and after firing the biopsy device",
+    "explanation": "Pre-fire images confirm the needle tip is positioned correctly relative to the target. Post-fire images verify the needle has traversed the lesion and tissue has been sampled from the correct location.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo150",
+    "section_id": "mammo",
+    "question": "Vacuum-assisted biopsy devices used in stereotactic procedures differ from core needle biopsy in that they:",
+    "choices": [
+      "Use a smaller gauge needle",
+      "Can acquire multiple tissue samples with a single insertion through suction",
+      "Do not require imaging guidance",
+      "Cannot be used with stereotactic systems"
+    ],
+    "answer": "Can acquire multiple tissue samples with a single insertion through suction",
+    "explanation": "Vacuum-assisted biopsy devices use suction to pull tissue into a sampling chamber, allowing multiple contiguous tissue samples with a single needle insertion, improving sampling adequacy.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo151",
+    "section_id": "mammo",
+    "question": "The BI-RADS assessment category 0 indicates:",
+    "choices": [
+      "Negative examination",
+      "Benign finding",
+      "Incomplete assessment needing additional imaging",
+      "Highly suspicious for malignancy"
+    ],
+    "answer": "Incomplete assessment needing additional imaging",
+    "explanation": "BI-RADS 0 means the assessment is incomplete and additional imaging (spot compression, magnification, ultrasound, etc.) is needed before a final assessment can be made.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo152",
+    "section_id": "mammo",
+    "question": "A BI-RADS assessment of category 4 indicates:",
+    "choices": [
+      "Negative finding",
+      "Benign finding",
+      "Suspicious abnormality requiring biopsy",
+      "Known malignancy"
+    ],
+    "answer": "Suspicious abnormality requiring biopsy",
+    "explanation": "BI-RADS 4 indicates a suspicious finding with a probability of malignancy ranging from 2-95%, and tissue diagnosis (biopsy) is recommended.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo153",
+    "section_id": "mammo",
+    "question": "BI-RADS category 3 indicates that the finding is:",
+    "choices": [
+      "Definitely malignant",
+      "Probably benign with short-interval follow-up recommended",
+      "Suspicious requiring biopsy",
+      "A normal screening result"
+    ],
+    "answer": "Probably benign with short-interval follow-up recommended",
+    "explanation": "BI-RADS 3 indicates a probably benign finding with less than 2% probability of malignancy. Short-interval (6-month) follow-up imaging is recommended to confirm stability.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo154",
+    "section_id": "mammo",
+    "question": "The MQSA requires that mammographic images be interpreted by a physician who is:",
+    "choices": [
+      "Any licensed physician",
+      "A board-certified radiologist or physician meeting specific MQSA qualifications",
+      "Only a board-certified radiation oncologist",
+      "A physician assistant with mammography training"
+    ],
+    "answer": "A board-certified radiologist or physician meeting specific MQSA qualifications",
+    "explanation": "MQSA requires interpreting physicians to be licensed, certified by an appropriate board, and meet specific training and experience requirements including initial qualifications and continuing education.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo156",
+    "section_id": "mammo",
+    "question": "The average glandularity assumed for the standard reference breast in MGD calculations is:",
+    "choices": [
+      "25% glandular / 75% adipose",
+      "50% glandular / 50% adipose",
+      "75% glandular / 25% adipose",
+      "100% glandular"
+    ],
+    "answer": "50% glandular / 50% adipose",
+    "explanation": "The standard reference breast used in MGD calculations assumes 50% glandular and 50% adipose composition at 4.2 cm compressed thickness, matching the ACR phantom representation.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo157",
+    "section_id": "mammo",
+    "question": "The entrance skin exposure (ESE) for mammography is measured using:",
+    "choices": [
+      "A Geiger-Muller counter",
+      "An ionization chamber or solid-state detector placed at the breast surface position",
+      "A film badge on the patient's skin",
+      "A thermoluminescent dosimeter inside the breast phantom"
+    ],
+    "answer": "An ionization chamber or solid-state detector placed at the breast surface position",
+    "explanation": "ESE is measured using a calibrated ionization chamber or solid-state detector positioned at the top surface of the breast (or phantom), in the x-ray beam, at the clinical SID.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo158",
+    "section_id": "mammo",
+    "question": "The wire mesh test in mammography QC evaluates:",
+    "choices": [
+      "Spatial resolution",
+      "Screen-film contact in cassette-based systems",
+      "Detector uniformity",
+      "Compression force accuracy"
+    ],
+    "answer": "Screen-film contact in cassette-based systems",
+    "explanation": "The wire mesh (screen contact) test uses a copper mesh placed on the cassette to evaluate the uniformity of screen-film contact. Poor contact appears as areas of blurring in the mesh image.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo159",
+    "section_id": "mammo",
+    "question": "In digital mammography, the signal-to-noise ratio (SNR) is proportional to:",
+    "choices": [
+      "The pixel size",
+      "The square root of the number of detected photons",
+      "The inverse of the mAs",
+      "The kVp squared"
+    ],
+    "answer": "The square root of the number of detected photons",
+    "explanation": "For a quantum-noise-limited detector, SNR equals the square root of N (number of detected photons), following Poisson statistics. Doubling the dose increases SNR by a factor of sqrt(2).",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo160",
+    "section_id": "mammo",
+    "question": "The primary disadvantage of using a higher kVp in mammography is:",
+    "choices": [
+      "Increased patient dose",
+      "Decreased subject contrast between tissue types",
+      "Increased focal spot size",
+      "Longer exposure time"
+    ],
+    "answer": "Decreased subject contrast between tissue types",
+    "explanation": "Higher kVp reduces the proportion of photoelectric interactions relative to Compton, decreasing the contrast between glandular and adipose tissue. However, it improves penetration and can reduce dose for thick breasts.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo161",
+    "section_id": "mammo",
+    "question": "In breast tomosynthesis, the limited angle of acquisition results in which imaging characteristic?",
+    "choices": [
+      "Isotropic spatial resolution in all directions",
+      "Anisotropic resolution with poor depth resolution",
+      "Identical resolution to CT scanning",
+      "Resolution only in the craniocaudal direction"
+    ],
+    "answer": "Anisotropic resolution with poor depth resolution",
+    "explanation": "The limited angular range (15-50 degrees vs. 360 degrees for CT) in DBT results in anisotropic resolution: good in-plane (x-y) resolution but significantly worse depth (z) resolution.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo162",
+    "section_id": "mammo",
+    "question": "The filtered back-projection reconstruction in DBT can produce which type of artifact from high-contrast objects?",
+    "choices": [
+      "Ring artifacts",
+      "Ripple or streaking artifacts in the reconstruction plane",
+      "Beam hardening artifacts",
+      "Motion artifacts"
+    ],
+    "answer": "Ripple or streaking artifacts in the reconstruction plane",
+    "explanation": "Due to incomplete angular sampling in DBT, filtered back-projection can produce ripple or streak artifacts from high-contrast objects (such as calcifications) that spread into adjacent reconstruction planes.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo163",
+    "section_id": "mammo",
+    "question": "When the AEC sensor position is incorrectly placed under a very dense region of the breast, the resulting image will be:",
+    "choices": [
+      "Properly exposed for the entire breast",
+      "Overexposed in the less dense regions",
+      "Underexposed in the less dense regions",
+      "Unaffected since AEC is not position-dependent"
+    ],
+    "answer": "Overexposed in the less dense regions",
+    "explanation": "If the AEC sensor is under dense tissue, it will increase exposure to penetrate that dense area, causing less dense areas of the breast to be overexposed. Proper AEC sensor positioning is critical.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo164",
+    "section_id": "mammo",
+    "question": "The AEC density control settings (+1, +2, -1, -2) adjust the:",
+    "choices": [
+      "kVp by fixed increments",
+      "Target optical density or detector signal level by increasing or decreasing the mAs",
+      "Focal spot size",
+      "Compression force"
+    ],
+    "answer": "Target optical density or detector signal level by increasing or decreasing the mAs",
+    "explanation": "Density control settings adjust the target exposure level, modifying the mAs to achieve a lighter or darker image. Each step typically changes the exposure by approximately 10-15%.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo165",
+    "section_id": "mammo",
+    "question": "In the context of mammographic image processing, contrast-limited adaptive histogram equalization (CLAHE) is used to:",
+    "choices": [
+      "Remove detector artifacts",
+      "Enhance local contrast while limiting noise amplification",
+      "Compress the DICOM file size",
+      "Measure the MTF of the detector"
+    ],
+    "answer": "Enhance local contrast while limiting noise amplification",
+    "explanation": "CLAHE enhances contrast locally across the image while limiting the degree of enhancement to prevent excessive noise amplification, improving visibility of subtle features throughout the breast.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo166",
+    "section_id": "mammo",
+    "question": "The fill factor of a digital mammography detector pixel refers to:",
+    "choices": [
+      "The percentage of the detector used for imaging",
+      "The fraction of the pixel area that is sensitive to radiation",
+      "The number of photons each pixel can store",
+      "The percentage of dead pixels on the detector"
+    ],
+    "answer": "The fraction of the pixel area that is sensitive to radiation",
+    "explanation": "Fill factor is the ratio of the radiation-sensitive area to the total pixel area. Higher fill factors improve DQE because more of the incident radiation is detected rather than lost to insensitive regions between pixels.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo167",
+    "section_id": "mammo",
+    "question": "Photon-counting mammography detectors differ from conventional energy-integrating detectors in that they:",
+    "choices": [
+      "Use thicker scintillator layers",
+      "Count individual x-ray photons and can provide energy discrimination",
+      "Have larger pixel sizes for better SNR",
+      "Cannot be used for tomosynthesis"
+    ],
+    "answer": "Count individual x-ray photons and can provide energy discrimination",
+    "explanation": "Photon-counting detectors register each x-ray photon individually and can measure photon energy, enabling spectral imaging and potentially higher DQE by eliminating electronic noise and weighting photons optimally.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo168",
+    "section_id": "mammo",
+    "question": "The major advantage of photon-counting detectors for mammography over conventional flat-panel detectors is:",
+    "choices": [
+      "Lower cost",
+      "Elimination of electronic noise and improved contrast through energy weighting",
+      "Larger field of view",
+      "Faster image readout"
+    ],
+    "answer": "Elimination of electronic noise and improved contrast through energy weighting",
+    "explanation": "Photon-counting detectors eliminate electronic (dark) noise by using thresholds, and can weight or bin photons by energy to optimize contrast, potentially achieving higher DQE than energy-integrating detectors.",
+    "difficulty": 8
+  },
+  {
+    "id": "mammo169",
+    "section_id": "mammo",
+    "question": "In breast MRI, fat suppression techniques are used to:",
+    "choices": [
+      "Increase the SNR of fat tissue",
+      "Suppress the bright fat signal that can obscure enhancing lesions on post-contrast images",
+      "Improve spatial resolution",
+      "Reduce scan time"
+    ],
+    "answer": "Suppress the bright fat signal that can obscure enhancing lesions on post-contrast images",
+    "explanation": "Fat is bright on T1-weighted images, which can mask enhancing lesions. Fat suppression techniques (STIR, chemical shift selective, Dixon) suppress fat signal to improve detection of contrast-enhancing lesions.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo170",
+    "section_id": "mammo",
+    "question": "Diffusion-weighted imaging (DWI) in breast MRI exploits the fact that malignant lesions often show:",
+    "choices": [
+      "Increased water diffusion compared to benign tissue",
+      "Restricted water diffusion due to high cellularity",
+      "No difference in diffusion from normal tissue",
+      "Complete absence of diffusion signal"
+    ],
+    "answer": "Restricted water diffusion due to high cellularity",
+    "explanation": "Malignant lesions typically show restricted diffusion (low ADC values) on DWI due to high cellular density, which restricts the motion of water molecules. This can help differentiate malignant from benign lesions.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo171",
+    "section_id": "mammo",
+    "question": "In shear wave elastography of the breast, malignant masses typically demonstrate shear wave velocities that are:",
+    "choices": [
+      "Lower than surrounding tissue",
+      "Similar to surrounding tissue",
+      "Higher than surrounding tissue, indicating increased stiffness",
+      "Variable with no consistent pattern"
+    ],
+    "answer": "Higher than surrounding tissue, indicating increased stiffness",
+    "explanation": "Malignant breast lesions are typically stiffer than benign tissue, resulting in higher shear wave velocities. A shear wave velocity exceeding approximately 5 m/s is suspicious for malignancy.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo172",
+    "section_id": "mammo",
+    "question": "BI-RADS category 5 indicates:",
+    "choices": [
+      "Benign finding",
+      "Probably benign finding",
+      "Suspicious abnormality",
+      "Highly suggestive of malignancy"
+    ],
+    "answer": "Highly suggestive of malignancy",
+    "explanation": "BI-RADS 5 indicates a finding that is highly suggestive of malignancy with greater than 95% probability. Appropriate action (biopsy) should be taken.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo173",
+    "section_id": "mammo",
+    "question": "BI-RADS breast density category 'a' describes breasts that are:",
+    "choices": [
+      "Almost entirely fatty",
+      "Scattered areas of fibroglandular density",
+      "Heterogeneously dense",
+      "Extremely dense"
+    ],
+    "answer": "Almost entirely fatty",
+    "explanation": "BI-RADS density category 'a' indicates almost entirely fatty breasts, which have high mammographic sensitivity because lesions are easily seen against the radiolucent fat background.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo174",
+    "section_id": "mammo",
+    "question": "BI-RADS breast density category 'b' describes breasts with:",
+    "choices": [
+      "Almost entirely fatty composition",
+      "Scattered areas of fibroglandular density",
+      "Heterogeneously dense composition",
+      "Extremely dense composition"
+    ],
+    "answer": "Scattered areas of fibroglandular density",
+    "explanation": "BI-RADS density 'b' indicates scattered areas of fibroglandular density. Mammographic sensitivity is generally good but some lesions may be obscured by the scattered dense tissue.",
+    "difficulty": 2
+  },
+  {
+    "id": "mammo175",
+    "section_id": "mammo",
+    "question": "In the reject/repeat analysis program, the most important parameter to track is:",
+    "choices": [
+      "Total number of exposures per day",
+      "The overall reject rate and the reasons for rejected images",
+      "The kVp used for each exposure",
+      "The compression force applied"
+    ],
+    "answer": "The overall reject rate and the reasons for rejected images",
+    "explanation": "Tracking both the overall reject rate and the specific reasons for rejection (positioning, exposure, motion, artifacts) allows identification of systemic problems and targeted corrective actions.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo176",
+    "section_id": "mammo",
+    "question": "The relationship between increasing breast thickness and required mAs in mammography is approximately:",
+    "choices": [
+      "Linear (doubling thickness doubles mAs)",
+      "Exponential (mAs increases exponentially with thickness)",
+      "Inverse (thicker breasts need less mAs)",
+      "No relationship exists"
+    ],
+    "answer": "Linear (doubling thickness doubles mAs)",
+    "explanation": "Due to the exponential nature of x-ray attenuation, the mAs required increases approximately exponentially with breast thickness. Each additional cm of tissue can require roughly doubling the mAs.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo177",
+    "section_id": "mammo",
+    "question": "The typical exposure time for a standard contact mammographic exposure should be less than:",
+    "choices": [
+      "0.5 seconds",
+      "2 seconds",
+      "5 seconds",
+      "10 seconds"
+    ],
+    "answer": "2 seconds",
+    "explanation": "Exposure times should generally be kept under 2 seconds to minimize patient motion blur. Longer exposure times increase the risk of motion artifacts that can degrade image quality.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo178",
+    "section_id": "mammo",
+    "question": "In breast MRI, the minimum spatial resolution recommended for diagnostic imaging is approximately:",
+    "choices": [
+      "0.5 mm in-plane",
+      "1.0 mm in-plane or less",
+      "3.0 mm in-plane",
+      "5.0 mm in-plane"
+    ],
+    "answer": "1.0 mm in-plane or less",
+    "explanation": "Breast MRI should achieve in-plane spatial resolution of 1.0 mm or less (preferably sub-millimeter) to adequately characterize lesion morphology, which is critical for accurate diagnosis.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo179",
+    "section_id": "mammo",
+    "question": "Which of the following increases the contrast in a mammographic image?",
+    "choices": [
+      "Increasing the kVp",
+      "Decreasing the compression",
+      "Using a lower-energy x-ray spectrum (e.g., Mo/Mo at lower kVp)",
+      "Removing the anti-scatter grid"
+    ],
+    "answer": "Using a lower-energy x-ray spectrum (e.g., Mo/Mo at lower kVp)",
+    "explanation": "Lower-energy x-ray spectra increase the proportion of photoelectric interactions, which enhances the contrast between different soft tissue types. However, this comes at the cost of increased dose.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo180",
+    "section_id": "mammo",
+    "question": "The mammographic grid is typically a:",
+    "choices": [
+      "Focused grid with lines aligned toward the x-ray source",
+      "Crossed (two-dimensional) grid",
+      "Parallel unfocused grid",
+      "Hexagonal honeycomb grid"
+    ],
+    "answer": "Focused grid with lines aligned toward the x-ray source",
+    "explanation": "Mammography uses a linear focused grid with grid strips angled toward the x-ray focal spot to maximize primary radiation transmission while absorbing scattered radiation.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo181",
+    "section_id": "mammo",
+    "question": "In DBT, which factor primarily limits the depth resolution?",
+    "choices": [
+      "Detector pixel size",
+      "The limited angular range of tube motion",
+      "Patient motion",
+      "X-ray tube output"
+    ],
+    "answer": "The limited angular range of tube motion",
+    "explanation": "Depth resolution in DBT is fundamentally limited by the angular range of the tube sweep. Unlike CT which acquires 360 degrees of data, DBT's 15-50 degree range provides incomplete angular sampling, resulting in poor z-resolution.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo182",
+    "section_id": "mammo",
+    "question": "The contrast detail phantom test evaluates a mammography system's ability to:",
+    "choices": [
+      "Measure tube voltage accuracy",
+      "Detect objects of varying size and contrast simultaneously",
+      "Verify compression force calibration",
+      "Measure exposure reproducibility"
+    ],
+    "answer": "Detect objects of varying size and contrast simultaneously",
+    "explanation": "The contrast detail test evaluates the system's ability to detect objects of different sizes at varying contrast levels, reflecting the clinical task of detecting lesions of different sizes and conspicuities.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo183",
+    "section_id": "mammo",
+    "question": "In CEM, the temporal subtraction between the low-energy and high-energy acquisitions must be rapid (within seconds) to minimize:",
+    "choices": [
+      "Patient dose",
+      "Image noise",
+      "Misregistration artifacts due to patient motion between acquisitions",
+      "X-ray tube heating"
+    ],
+    "answer": "Misregistration artifacts due to patient motion between acquisitions",
+    "explanation": "The low-energy and high-energy exposures must be acquired in rapid succession (typically within seconds) to minimize patient motion between exposures, which would cause misregistration artifacts in the subtracted image.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo184",
+    "section_id": "mammo",
+    "question": "The American College of Radiology recommends that mammography technologists perform continuing education of at least how many hours of mammography-specific CE every 36 months?",
+    "choices": [
+      "6 hours",
+      "15 hours",
+      "24 hours",
+      "36 hours"
+    ],
+    "answer": "15 hours",
+    "explanation": "MQSA requires mammography technologists to complete at least 15 hours of mammography-specific continuing education units every 36 months to maintain their qualifications.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo185",
+    "section_id": "mammo",
+    "question": "In the Monte Carlo-based method for MGD calculation (Dance method), the normalized mean glandular dose factor 'g' represents the MGD per unit incident air kerma for a breast of:",
+    "choices": [
+      "100% adipose composition",
+      "100% glandular composition",
+      "50% glandularity at the specified thickness",
+      "Unknown composition"
+    ],
+    "answer": "50% glandularity at the specified thickness",
+    "explanation": "The Dance method g-factor gives MGD per unit incident air kerma for a 50% glandular breast of specified thickness. Additional correction factors (c, s) account for different glandularities and x-ray spectra.",
+    "difficulty": 9
+  },
+  {
+    "id": "mammo186",
+    "section_id": "mammo",
+    "question": "The heel effect in mammography is exploited by orienting the x-ray tube so that the cathode side faces:",
+    "choices": [
+      "The nipple (thinner part of the breast)",
+      "The chest wall (thicker part of the breast)",
+      "The lateral side of the breast",
+      "The compression paddle"
+    ],
+    "answer": "The chest wall (thicker part of the breast)",
+    "explanation": "In mammography, the tube is oriented with the cathode toward the chest wall. Due to the heel effect, x-ray intensity is higher on the cathode side, which compensates for the greater thickness of breast tissue near the chest wall. The anode side, with lower intensity, faces the thinner nipple region, producing a more uniform exposure across the image.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo187",
+    "section_id": "mammo",
+    "question": "What is the typical grid ratio used in mammography for scatter rejection?",
+    "choices": [
+      "16:1",
+      "5:1",
+      "10:1",
+      "3.5:1 to 5:1"
+    ],
+    "answer": "3.5:1 to 5:1",
+    "explanation": "Mammography uses relatively low grid ratios (typically 3.5:1 to 5:1) compared to general radiography. This is because the lower energy x-rays in mammography and the compressed breast thickness limit the amount of scatter produced. Higher grid ratios would require excessive dose increases that outweigh the benefit in scatter cleanup.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo188",
+    "section_id": "mammo",
+    "question": "The contrast-detail (CD) phantom used in mammography QC evaluates the system's ability to:",
+    "choices": [
+      "Measure the half-value layer of the beam",
+      "Detect objects of varying size and contrast, assessing low-contrast detectability",
+      "Determine the focal spot size",
+      "Calibrate the automatic exposure control"
+    ],
+    "answer": "Detect objects of varying size and contrast, assessing low-contrast detectability",
+    "explanation": "A contrast-detail phantom contains objects of systematically varying size and contrast (e.g., the CDMAM phantom). It evaluates the imaging chain's ability to detect low-contrast objects at various sizes, providing a comprehensive assessment of image quality that accounts for spatial resolution, noise, and contrast simultaneously.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo189",
+    "section_id": "mammo",
+    "question": "Signal difference to noise ratio (SDNR) in digital mammography is defined as:",
+    "choices": [
+      "The ratio of the maximum pixel value to the minimum pixel value",
+      "The difference in mean signal between a feature and background divided by the standard deviation of the background",
+      "The ratio of scatter radiation to primary radiation",
+      "The ratio of patient dose to image noise"
+    ],
+    "answer": "The difference in mean signal between a feature and background divided by the standard deviation of the background",
+    "explanation": "SDNR = (S_feature − S_background) / σ_background, where S represents mean pixel values and σ is the standard deviation of the background region. SDNR is a fundamental image quality metric in digital mammography that quantifies the detectability of a feature relative to the noise in the image.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo190",
+    "section_id": "mammo",
+    "question": "In a digital mammography detector, dead pixels are corrected by:",
+    "choices": [
+      "Physically replacing the detector element",
+      "Interpolation from neighboring pixel values during image processing",
+      "Increasing the tube current to compensate",
+      "Ignoring them since they have no clinical impact"
+    ],
+    "answer": "Interpolation from neighboring pixel values during image processing",
+    "explanation": "Dead (defective) pixels in digital mammography detectors are mapped during calibration and their values are replaced by interpolation from surrounding functional pixels during image processing. The number and clustering of dead pixels must be monitored; if they exceed manufacturer specifications or form clusters, the detector panel may need replacement.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo191",
+    "section_id": "mammo",
+    "question": "Flat-field correction in digital mammography compensates for:",
+    "choices": [
+      "Patient motion artifacts",
+      "Non-uniform detector response and variations in x-ray beam intensity across the field",
+      "Geometric magnification distortion",
+      "Quantum noise in low-dose images"
+    ],
+    "answer": "Non-uniform detector response and variations in x-ray beam intensity across the field",
+    "explanation": "Flat-field (gain) correction normalizes the image by dividing each pixel's raw signal by a gain map obtained from a uniform exposure. This corrects for pixel-to-pixel variations in detector sensitivity and spatial variations in x-ray tube output (including the heel effect), producing a uniform image from a uniform object.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo192",
+    "section_id": "mammo",
+    "question": "A ghost image artifact in digital mammography is caused by:",
+    "choices": [
+      "Patient motion during exposure",
+      "Incomplete readout of the previous exposure leaving residual signal (image lag) on the detector",
+      "Grid lines becoming visible in the image",
+      "Compression paddle misalignment"
+    ],
+    "answer": "Incomplete readout of the previous exposure leaving residual signal (image lag) on the detector",
+    "explanation": "Ghost images occur when residual charge from a previous exposure is not fully erased from the detector, appearing as a faint superimposition on the subsequent image. This is particularly relevant for amorphous selenium (a-Se) direct-conversion detectors. Proper detector erasure cycles between exposures and regular QC testing help minimize this artifact.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo193",
+    "section_id": "mammo",
+    "question": "In digital breast tomosynthesis (DBT), which reconstruction artifact is most commonly observed and results from incomplete angular sampling?",
+    "choices": [
+      "Ring artifacts",
+      "Out-of-plane blur artifacts appearing as ripple patterns above and below the focal plane",
+      "Metal streak artifacts",
+      "Moiré pattern artifacts"
+    ],
+    "answer": "Out-of-plane blur artifacts appearing as ripple patterns above and below the focal plane",
+    "explanation": "DBT acquires projections over a limited angular range (typically 15–50°), which provides incomplete angular sampling compared to full CT. This results in out-of-plane blur where structures outside the reconstruction plane appear as ripple or smearing artifacts. This is the fundamental limitation of limited-angle tomography.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo194",
+    "section_id": "mammo",
+    "question": "Under FDA regulations, mammography facilities must track and report which dose quantity to patients?",
+    "choices": [
+      "Entrance skin dose only",
+      "Mean glandular dose (MGD)",
+      "Effective dose",
+      "Absorbed dose to the chest wall"
+    ],
+    "answer": "Mean glandular dose (MGD)",
+    "explanation": "The FDA and ACR require that mammography facilities track and report mean glandular dose (MGD), which is the standard dose metric for mammography. MGD must not exceed 3.0 mGy per exposure for a standard breast (4.2 cm compressed thickness, 50% glandular/50% adipose). MGD is calculated from the entrance air kerma using conversion factors that account for breast composition and beam quality.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo195",
+    "section_id": "mammo",
+    "question": "In mammography, the entrance skin dose is typically how much larger than the mean glandular dose (MGD)?",
+    "choices": [
+      "Approximately equal to MGD",
+      "2 to 5 times larger than MGD",
+      "10 to 20 times larger than MGD",
+      "100 times larger than MGD"
+    ],
+    "answer": "2 to 5 times larger than MGD",
+    "explanation": "The entrance skin dose (ESD) in mammography is typically 2 to 5 times the mean glandular dose, depending on breast thickness and composition. MGD accounts for the attenuation through the breast and weights dose to the radiosensitive glandular tissue, making it a more relevant risk metric than the higher ESD value.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo196",
+    "section_id": "mammo",
+    "question": "The effective energy of a typical mammography x-ray beam operating at 28 kVp with a Mo/Mo target/filter combination is approximately:",
+    "choices": [
+      "28 keV",
+      "14 keV",
+      "17–20 keV",
+      "8 keV"
+    ],
+    "answer": "17–20 keV",
+    "explanation": "For a Mo/Mo target/filter combination at 28 kVp, the effective energy of the beam is approximately 17–20 keV. The Mo filter (0.03 mm) selectively attenuates photons above the Mo K-edge (20 keV) while transmitting the characteristic x-rays at 17.5 and 19.6 keV, producing a near-monoenergetic spectrum optimal for breast imaging.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo197",
+    "section_id": "mammo",
+    "question": "Under MQSA regulations, the annual mammography physics survey must include evaluation of all the following EXCEPT:",
+    "choices": [
+      "AEC performance and dose measurement",
+      "Image quality using an ACR-approved phantom",
+      "Individual radiologist diagnostic accuracy statistics",
+      "Artifact evaluation and collimation assessment"
+    ],
+    "answer": "Individual radiologist diagnostic accuracy statistics",
+    "explanation": "The MQSA annual physics survey evaluates equipment performance including AEC function, dose (MGD), image quality with the ACR phantom, artifact evaluation, collimation, kVp accuracy, and compression force. Individual radiologist performance metrics (sensitivity, specificity) are tracked separately through the MQSA medical audit requirement, not the annual equipment survey.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo198",
+    "section_id": "mammo",
+    "question": "Which of the following QC tests is the responsibility of the mammography technologist rather than the medical physicist?",
+    "choices": [
+      "Half-value layer measurement",
+      "Phantom image quality evaluation (weekly)",
+      "Focal spot size measurement",
+      "kVp accuracy assessment"
+    ],
+    "answer": "Phantom image quality evaluation (weekly)",
+    "explanation": "Under MQSA and ACR guidelines, the technologist is responsible for routine QC tests including weekly phantom image quality evaluation, daily visual checklist, and periodic tests like compression force and artifact evaluation. The medical physicist performs the annual survey, which includes HVL measurement, kVp accuracy, focal spot evaluation, and dose assessment.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo199",
+    "section_id": "mammo",
+    "question": "What does the abbreviation 'CC' stand for in standard mammographic positioning?",
+    "choices": [
+      "Cranio-cervical",
+      "Craniocaudal",
+      "Central-compression",
+      "Caudocranial"
+    ],
+    "answer": "Craniocaudal",
+    "explanation": "CC stands for craniocaudal, one of the two standard mammographic views. The x-ray beam enters from the superior (cranial) aspect and exits inferiorly (caudal), producing a top-to-bottom projection of the breast.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo200",
+    "section_id": "mammo",
+    "question": "What does 'MLO' stand for in mammographic imaging?",
+    "choices": [
+      "Medio-lateral oblique",
+      "Medial-longitudinal observation",
+      "Mid-lateral orientation",
+      "Modified lateral oblique"
+    ],
+    "answer": "Medio-lateral oblique",
+    "explanation": "MLO stands for medio-lateral oblique, the second standard mammographic view. The x-ray beam travels from the medial to lateral side at an angle (typically 45-60 degrees), allowing visualization of the maximum amount of breast tissue including the axillary tail.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo201",
+    "section_id": "mammo",
+    "question": "What is the primary purpose of breast compression during mammography?",
+    "choices": [
+      "To immobilize the breast and reduce motion blur",
+      "To reduce scattered radiation only",
+      "To reduce breast thickness, improving image quality and reducing dose",
+      "To increase the effective focal spot size"
+    ],
+    "answer": "To reduce breast thickness, improving image quality and reducing dose",
+    "explanation": "Compression reduces breast thickness, which improves image quality by decreasing scatter, reducing geometric unsharpness, improving contrast, creating more uniform tissue thickness, and lowering patient dose by requiring less radiation to penetrate the thinner tissue.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo202",
+    "section_id": "mammo",
+    "question": "What is the typical tube voltage (kVp) range used in mammography?",
+    "choices": [
+      "40-60 kVp",
+      "24-35 kVp",
+      "60-80 kVp",
+      "80-120 kVp"
+    ],
+    "answer": "24-35 kVp",
+    "explanation": "Mammography operates in the 24-35 kVp range, much lower than general radiography. This low kVp range maximizes the photoelectric effect in breast tissue, providing excellent soft-tissue contrast between glandular and adipose tissue.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo203",
+    "section_id": "mammo",
+    "question": "What does AGD stand for in mammographic dosimetry?",
+    "choices": [
+      "Absorbed glandular dose",
+      "Average glandular dose",
+      "Anterior gland distribution",
+      "Accumulated global dose"
+    ],
+    "answer": "Average glandular dose",
+    "explanation": "AGD stands for average glandular dose (also called mean glandular dose, MGD). It represents the average absorbed dose to the glandular tissue of the breast and is the standard dosimetric quantity for mammography because glandular tissue is the tissue at risk for radiation-induced breast cancer.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo204",
+    "section_id": "mammo",
+    "question": "What does ACR stand for in the context of mammography accreditation?",
+    "choices": [
+      "American College of Radiology",
+      "Accredited Center for Radiography",
+      "Association of Clinical Radiologists",
+      "Advanced Certification in Radiology"
+    ],
+    "answer": "American College of Radiology",
+    "explanation": "ACR stands for the American College of Radiology. The ACR Mammography Accreditation Program is an FDA-approved accreditation body under MQSA that evaluates mammography facilities for clinical image quality, phantom image quality, and dose.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo205",
+    "section_id": "mammo",
+    "question": "What does MQSA stand for?",
+    "choices": [
+      "Mammography Quality Standards Act",
+      "Medical Quality and Safety Accreditation",
+      "Mammography Quantitative Systems Assessment",
+      "Medical Quality Screening Act"
+    ],
+    "answer": "Mammography Quality Standards Act",
+    "explanation": "MQSA stands for the Mammography Quality Standards Act, a U.S. federal law enacted in 1992 that established quality standards for mammography equipment, personnel, and practices. It requires all mammography facilities to be FDA-certified.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo206",
+    "section_id": "mammo",
+    "question": "What type of detector is used in a computed radiography (CR) mammography system?",
+    "choices": [
+      "Amorphous selenium flat panel",
+      "Photostimulable phosphor (PSP) imaging plate",
+      "Cesium iodide scintillator with a-Si photodiode array",
+      "Charge-coupled device (CCD)"
+    ],
+    "answer": "Photostimulable phosphor (PSP) imaging plate",
+    "explanation": "CR mammography uses a photostimulable phosphor (PSP) imaging plate, typically barium fluorohalide doped with europium. The plate stores the x-ray image as a latent image in electron traps, which is then read out by scanning with a laser beam to release the stored energy as light.",
+    "difficulty": 1
+  },
+  {
+    "id": "mammo207",
+    "section_id": "mammo",
+    "question": "A mammography facility is evaluating heterogeneously dense breasts (BI-RADS density C). How does the interaction between AEC sensor position, target/filter selection, and kVp affect the trade-off among average glandular dose, contrast-to-noise ratio, and risk of detector saturation artifacts?",
+    "choices": [
+      "Moving the AEC sensor to a denser region increases kVp, which always improves CNR while reducing dose regardless of target/filter combination",
+      "For dense breasts, using a Rh/Rh combination at higher kVp reduces AGD but decreases CNR compared to Mo/Mo at lower kVp; AEC sensor placement under dense tissue prevents underexposure but increases saturation risk in fatty regions",
+      "AEC sensor position has no effect on image quality when automatic target/filter selection algorithms are used in modern systems",
+      "Switching to W/Rh always produces optimal results for dense breasts because tungsten characteristic x-rays match the K-edge of rhodium"
+    ],
+    "answer": "For dense breasts, using a Rh/Rh combination at higher kVp reduces AGD but decreases CNR compared to Mo/Mo at lower kVp; AEC sensor placement under dense tissue prevents underexposure but increases saturation risk in fatty regions",
+    "explanation": "In dense breasts, harder beam spectra (Rh/Rh or W/Rh at higher kVp) improve penetration and reduce AGD but sacrifice some subject contrast. AEC sensor placement is critical: positioning under dense tissue ensures adequate exposure to that region but may overexpose adjacent fatty areas, risking detector saturation. This represents the multi-factor trade-off between dose, contrast, and artifact management that requires integrated understanding of physics and clinical factors.",
+    "difficulty": 9
+  },
+  {
+    "id": "mammo208",
+    "section_id": "mammo",
+    "question": "When transitioning from screen-film to digital mammography, which combination of physics and clinical factors most accurately describes the impact on dose optimization for the average-density breast?",
+    "choices": [
+      "Digital systems always require higher AGD because the detective quantum efficiency (DQE) of digital detectors is lower than screen-film at mammographic energies",
+      "Digital detectors' wider dynamic range decouples exposure from image brightness, enabling dose reduction; however, the optimal beam quality shifts to higher energies (W/Rh or W/Ag), which reduces subject contrast but is compensated by post-processing, and clinical detection of microcalcifications may require maintaining spatial resolution above 7 lp/mm",
+      "The transition only affects dose through the elimination of chemical processing artifacts; the physics of image formation remain identical",
+      "Digital systems require lower kVp than screen-film to achieve equivalent contrast because digital detectors amplify the photoelectric effect"
+    ],
+    "answer": "Digital detectors' wider dynamic range decouples exposure from image brightness, enabling dose reduction; however, the optimal beam quality shifts to higher energies (W/Rh or W/Ag), which reduces subject contrast but is compensated by post-processing, and clinical detection of microcalcifications may require maintaining spatial resolution above 7 lp/mm",
+    "explanation": "Digital mammography fundamentally changes optimization because the wide dynamic range eliminates the narrow latitude constraint of film. This allows use of harder beam spectra (W/Rh, W/Ag) that reduce AGD by 30-50%. However, the reduced inherent subject contrast must be recovered through image processing. Clinically, the limiting spatial resolution of some digital systems (5-10 lp/mm) compared to screen-film (~15-20 lp/mm) requires careful attention to microcalcification detection, a critical clinical endpoint.",
+    "difficulty": 9
+  },
+  {
+    "id": "mammo209",
+    "section_id": "mammo",
+    "question": "In digital breast tomosynthesis (DBT), how do the reconstruction algorithm, angular range, and number of projections collectively affect dose, spatial resolution, and clinical conspicuity of masses in dense breast tissue?",
+    "choices": [
+      "Increasing the angular range always improves depth resolution and reduces dose by requiring fewer projections",
+      "Filtered back-projection always produces superior results to iterative reconstruction in DBT because it preserves spatial resolution",
+      "A narrow angular range (<20°) with many projections provides good in-plane resolution but limited depth resolution; iterative reconstruction can reduce noise at equivalent dose compared to FBP, and the combination affects mass conspicuity differently in fatty versus dense tissue due to differences in structural noise",
+      "The reconstruction algorithm choice has no clinical impact because all FDA-approved DBT systems produce equivalent image quality"
+    ],
+    "answer": "A narrow angular range (<20°) with many projections provides good in-plane resolution but limited depth resolution; iterative reconstruction can reduce noise at equivalent dose compared to FBP, and the combination affects mass conspicuity differently in fatty versus dense tissue due to differences in structural noise",
+    "explanation": "DBT acquisition geometry and reconstruction are interdependent. Narrow angular range (~15°) yields good in-plane resolution but limited z-resolution (~1 mm slice thickness with several mm depth blur). Iterative reconstruction methods can suppress noise more effectively than FBP, enabling dose reduction or improved image quality. The clinical benefit depends on tissue composition: in dense breasts, tissue overlap removal dominates conspicuity improvement, while in fatty breasts the benefit is less pronounced. This requires synthesizing physics (reconstruction, resolution) with clinical factors (tissue composition, lesion type).",
+    "difficulty": 9
+  },
+  {
+    "id": "mammo210",
+    "section_id": "mammo",
+    "question": "A physicist discovers that the measured half-value layer (HVL) of a mammography unit at 28 kVp with Mo/Mo is 0.33 mm Al, which is below the MQSA minimum. How does this finding simultaneously impact image quality metrics, patient dose, regulatory compliance, and the validity of the AGD calculation?",
+    "choices": [
+      "Low HVL means the beam is too hard; this increases dose and violates MQSA, and the AGD will be underestimated",
+      "Low HVL indicates insufficient beam filtration; image contrast may increase but AGD increases due to higher skin dose contribution, MQSA minimum HVL requirements are violated, and standard AGD conversion factors (which assume minimum filtration) may underestimate the true glandular dose for very soft beams",
+      "HVL below the minimum only affects regulatory compliance and has no impact on image quality or dose calculations",
+      "A low HVL improves image quality in all cases and the MQSA minimum should be reduced to reflect this benefit"
+    ],
+    "answer": "Low HVL indicates insufficient beam filtration; image contrast may increase but AGD increases due to higher skin dose contribution, MQSA minimum HVL requirements are violated, and standard AGD conversion factors (which assume minimum filtration) may underestimate the true glandular dose for very soft beams",
+    "explanation": "Below-minimum HVL indicates an unfiltered or under-filtered beam with excessive low-energy photons. While subject contrast may increase slightly, these soft photons are absorbed in superficial tissue, increasing skin dose and entrance dose without contributing useful image information. MQSA mandates minimum HVL (kVp/100 + 0.03 mm Al for Mo/Mo) to protect patients. Critically, standard AGD conversion factors (Dance/Wu methods) are tabulated for filtered spectra; applying them to unfiltered beams may yield inaccurate results, typically underestimating the actual dose.",
+    "difficulty": 9
+  },
+  {
+    "id": "mammo211",
+    "section_id": "mammo",
+    "question": "When evaluating a contrast-enhanced spectral mammography (CESM) system, how do the low-energy and high-energy acquisitions interact with iodine contrast pharmacokinetics, detector dynamic range requirements, and combined-dose constraints to affect lesion detection?",
+    "choices": [
+      "Both low and high energy images are acquired simultaneously, so timing relative to contrast injection is irrelevant",
+      "The low-energy image (comparable to standard mammography) provides morphologic information while the high-energy image (above the iodine K-edge at 33.2 keV) captures iodine uptake; the dual-acquisition requires careful timing post-injection, doubles detector dynamic range demands, and the combined AGD from both exposures must remain within clinical limits while achieving adequate iodine CNR",
+      "CESM uses only a single exposure with energy-resolving photon-counting detectors to separate iodine signal",
+      "The high-energy acquisition must be below the iodine K-edge to maximize photoelectric absorption in iodinated contrast"
+    ],
+    "answer": "The low-energy image (comparable to standard mammography) provides morphologic information while the high-energy image (above the iodine K-edge at 33.2 keV) captures iodine uptake; the dual-acquisition requires careful timing post-injection, doubles detector dynamic range demands, and the combined AGD from both exposures must remain within clinical limits while achieving adequate iodine CNR",
+    "explanation": "CESM requires a low-energy exposure (26-32 kVp, below iodine K-edge) for morphologic assessment and a high-energy exposure (45-49 kVp, above the 33.2 keV iodine K-edge) for contrast enhancement. Weighted logarithmic subtraction yields the recombined image showing iodine uptake. Timing is critical (typically 2-5 minutes post-injection for peak parenchymal enhancement). The detector must handle both exposures without saturation. Combined AGD is typically 1.2-1.8x standard mammography, requiring optimization of both exposures within dose constraints.",
+    "difficulty": 9
+  },
+  {
+    "id": "mammo212",
+    "section_id": "mammo",
+    "question": "A facility performs both 2D mammography and DBT on the same system. How should the physicist evaluate whether the combined imaging dose is justified when considering the complementary diagnostic information, different noise characteristics, and MQSA dose limits for combination-mode imaging?",
+    "choices": [
+      "Simply ensure the 2D dose alone meets MQSA limits; the DBT dose is not regulated",
+      "The combined AGD for 2D+DBT must meet the MQSA limit of 3.0 mGy per view for a 4.2 cm compressed breast; the physicist must verify that the synthesized 2D (s2D) image from DBT data provides equivalent diagnostic quality to the acquired 2D image, since eliminating the separate 2D acquisition halves the dose while potentially trading off in-plane resolution and the noise power spectrum characteristics differ between acquired and synthesized 2D images",
+      "DBT always reduces total dose compared to 2D-only imaging because fewer photons are needed per projection",
+      "Dose evaluation is unnecessary for combination-mode because FDA clearance guarantees dose optimization"
+    ],
+    "answer": "The combined AGD for 2D+DBT must meet the MQSA limit of 3.0 mGy per view for a 4.2 cm compressed breast; the physicist must verify that the synthesized 2D (s2D) image from DBT data provides equivalent diagnostic quality to the acquired 2D image, since eliminating the separate 2D acquisition halves the dose while potentially trading off in-plane resolution and the noise power spectrum characteristics differ between acquired and synthesized 2D images",
+    "explanation": "MQSA limits the combination-mode (2D+DBT) AGD to 3.0 mGy per view for a standard breast. Using synthesized 2D images (generated from DBT data) instead of a separate 2D acquisition eliminates approximately half the dose. However, the physicist must evaluate whether s2D images maintain diagnostic equivalence: s2D typically has different noise texture (NPS), may have lower in-plane resolution, and different artifact patterns compared to acquired 2D. This multi-factor evaluation integrates dose physics, image quality metrics, and clinical diagnostic requirements.",
+    "difficulty": 9
+  },
+  {
+    "id": "mammo213",
+    "section_id": "mammo",
+    "question": "During annual QC, a physicist finds that the system's AEC produces acceptable density for a 4.2 cm PMMA phantom but overexposes thin (2 cm) breasts and underexposes thick (8 cm) breasts. What combination of AEC compensation, beam quality, and clinical factors explains this behavior and its consequences?",
+    "choices": [
+      "The AEC tracking is perfect; apparent exposure differences are normal due to inverse square law effects with different breast thicknesses",
+      "The AEC thickness compensation curve is miscalibrated, producing a flat response instead of adjusting mAs and kVp with thickness; this results in excessive dose to thin breasts (where the photoelectric effect dominates and dose is already higher per unit tissue) and insufficient signal in thick breasts (where scatter fraction is higher and CNR is already degraded), compounding clinical image quality problems at both extremes",
+      "This behavior only affects phantom measurements and has no clinical significance because breast tissue attenuates differently than PMMA",
+      "The issue is solely caused by heel effect variations at different breast thicknesses"
+    ],
+    "answer": "The AEC thickness compensation curve is miscalibrated, producing a flat response instead of adjusting mAs and kVp with thickness; this results in excessive dose to thin breasts (where the photoelectric effect dominates and dose is already higher per unit tissue) and insufficient signal in thick breasts (where scatter fraction is higher and CNR is already degraded), compounding clinical image quality problems at both extremes",
+    "explanation": "Proper AEC tracking adjusts both mAs and kVp (and potentially target/filter) across breast thicknesses. Miscalibration that works at one thickness but fails at extremes indicates a faulty compensation curve. For thin breasts, overexposure wastes dose in tissue where AGD per unit entrance exposure is already high. For thick breasts, underexposure occurs where scatter fraction is already elevated (>50%) and CNR is inherently compromised. The physicist must evaluate AEC tracking across the clinical range and understand the compounding effect of exposure errors on both dose and diagnostic image quality.",
+    "difficulty": 9
+  },
+  {
+    "id": "mammo214",
+    "section_id": "mammo",
+    "question": "In the Dance method for mammographic dosimetry, the average glandular dose is calculated as AGD = K × g × c × s. What do the correction factors c and s account for, and what are their typical value ranges?",
+    "choices": [
+      "c corrects for breast composition different from 50% glandularity (range 0.885-1.306) and s corrects for x-ray spectrum/beam quality from different target/filter combinations (range 0.89-1.15)",
+      "c corrects for compressed breast thickness (range 0.5-2.0) and s corrects for breast shape (range 0.9-1.1)",
+      "c corrects for compression paddle attenuation (range 0.95-0.99) and s corrects for scatter fraction (range 1.0-1.5)",
+      "c corrects for patient age (range 0.7-1.3) and s corrects for skin dose contribution (range 0.8-1.2)"
+    ],
+    "answer": "c corrects for breast composition different from 50% glandularity (range 0.885-1.306) and s corrects for x-ray spectrum/beam quality from different target/filter combinations (range 0.89-1.15)",
+    "explanation": "In the Dance et al. method (published in Physics in Medicine and Biology), K is the incident air kerma, g is the conversion factor for a 50% glandular breast of a given thickness and HVL, c corrects for actual glandularity different from 50% (ranging from ~0.885 for 97% glandularity to ~1.306 for very fatty breasts in typical thickness ranges), and s corrects for spectral differences between target/filter combinations (Mo/Mo, Mo/Rh, W/Rh, etc.) with values typically ranging from 0.89 to 1.15. The g, c, and s factors were derived from Monte Carlo simulations of photon transport in breast models.",
+    "difficulty": 10
+  },
+  {
+    "id": "mammo215",
+    "section_id": "mammo",
+    "question": "When performing uncertainty analysis for AGD measurements in mammography, which source of uncertainty typically dominates the combined uncertainty budget?",
+    "choices": [
+      "The calibration uncertainty of the ionization chamber used for air kerma measurement (typically ±3-5%)",
+      "The uncertainty in breast glandularity estimation, which can contribute ±15-20% to the total AGD uncertainty because glandularity is estimated from compressed thickness and patient age rather than directly measured",
+      "The uncertainty in kVp measurement (typically ±1%), which propagates linearly to AGD",
+      "The statistical uncertainty from quantum noise (typically ±0.1%)"
+    ],
+    "answer": "The uncertainty in breast glandularity estimation, which can contribute ±15-20% to the total AGD uncertainty because glandularity is estimated from compressed thickness and patient age rather than directly measured",
+    "explanation": "The AGD uncertainty budget includes contributions from air kerma measurement (~3-5%), HVL measurement (~2-4%), compressed breast thickness (~5%), and glandularity estimation. Glandularity is typically the dominant source because it cannot be directly measured in vivo and is estimated from compressed thickness and patient age using population-based models. A ±10% uncertainty in glandularity propagates to ±15-20% in AGD through the c-factor. This makes the AGD fundamentally a population-average quantity rather than an individual patient dose.",
+    "difficulty": 10
+  },
+  {
+    "id": "mammo216",
+    "section_id": "mammo",
+    "question": "In the ACR mammography accreditation phantom (model 156), what are the minimum passing scores for fibers, speck groups, and masses that a facility must achieve?",
+    "choices": [
+      "4 fibers, 3 speck groups, 3 masses",
+      "5 fibers, 4 speck groups, 4 masses",
+      "6 fibers, 5 speck groups, 5 masses",
+      "4 fibers, 3 speck groups, 4 masses"
+    ],
+    "answer": "4 fibers, 3 speck groups, 3 masses",
+    "explanation": "The ACR mammography accreditation phantom contains 6 fibers (ranging from 1.56 to 0.40 mm diameter), 5 speck groups (ranging from 0.54 to 0.16 mm), and 5 masses (ranging from 2.00 to 0.25 mm). The minimum passing scores under MQSA/ACR requirements are 4 fibers, 3 speck groups, and 3 masses. These correspond to detection of fibers down to 0.75 mm, speck groups down to 0.32 mm, and masses down to 0.75 mm diameter.",
+    "difficulty": 10
+  },
+  {
+    "id": "mammo217",
+    "section_id": "mammo",
+    "question": "When conducting a failure mode and effects analysis (FMEA) for mammography quality control, which failure mode in stereotactic biopsy positioning would receive the highest risk priority number (RPN) and why?",
+    "choices": [
+      "Incorrect patient identification, because it is the most common error in mammography",
+      "Targeting error exceeding ±1 mm due to uncorrected shift in the x-ray geometry calibration, because it combines high severity (missed lesion or sampling error in small calcification clusters), moderate occurrence (calibration drift between QC intervals), and low detectability (sub-millimeter errors are not apparent during the procedure without verification exposures)",
+      "Compression failure, because it has the highest occurrence rate",
+      "Film processor malfunction, because it affects all downstream images"
+    ],
+    "answer": "Targeting error exceeding ±1 mm due to uncorrected shift in the x-ray geometry calibration, because it combines high severity (missed lesion or sampling error in small calcification clusters), moderate occurrence (calibration drift between QC intervals), and low detectability (sub-millimeter errors are not apparent during the procedure without verification exposures)",
+    "explanation": "In FMEA for stereotactic biopsy, the RPN = Severity × Occurrence × Detectability. A targeting error from geometry calibration drift scores high because: Severity is high (8-9/10) — missing a small lesion can lead to false-negative biopsy requiring repeat procedure; Occurrence is moderate (4-5/10) — mechanical drift and geometric calibration errors can develop between QC intervals; Detectability is poor (7-8/10) — sub-millimeter targeting errors are not visually apparent and require specific phantom verification. The combined RPN (~250-360) typically exceeds other failure modes.",
+    "difficulty": 10
+  },
+  {
+    "id": "mammo218",
+    "section_id": "mammo",
+    "question": "In Monte Carlo simulations for mammographic breast dosimetry, what are the key differences between the Dance (European) and Wu (North American) breast models that affect calculated dose conversion factors?",
+    "choices": [
+      "The models are identical; Dance and Wu produce the same conversion factors",
+      "Dance uses a semicircular cross-section breast model with a 5 mm adipose skin layer and reports g, c, s factors; Wu uses a D-shaped model with a 4 mm skin-equivalent subcutaneous layer and reports DgN (dose per unit entrance exposure) normalized per unit air kerma; differences in breast shape, skin thickness, and boundary composition lead to 5-15% variations in calculated glandular dose",
+      "Dance uses a cylindrical breast model and Wu uses a spherical model; both agree within 1%",
+      "The difference is only in the Monte Carlo transport code used (EGSnrc vs MCNP), not in the breast model itself"
+    ],
+    "answer": "Dance uses a semicircular cross-section breast model with a 5 mm adipose skin layer and reports g, c, s factors; Wu uses a D-shaped model with a 4 mm skin-equivalent subcutaneous layer and reports DgN (dose per unit entrance exposure) normalized per unit air kerma; differences in breast shape, skin thickness, and boundary composition lead to 5-15% variations in calculated glandular dose",
+    "explanation": "The Dance model (European protocol) uses a semicircular breast cross-section with a 5 mm outer adipose layer representing skin and subcutaneous fat, reporting factored conversion as g × c × s. The Wu model (used in ACR/AAPM protocols) uses a D-shaped cross-section with a 4 mm compressed skin-equivalent layer, reporting normalized glandular dose coefficients (DgN). These geometric and compositional differences, along with different assumptions about scatter conditions and spectral characterization, lead to systematic differences of 5-15% in calculated AGD for the same physical measurement, which is important when comparing dose values across protocols.",
+    "difficulty": 10
+  },
+  {
+    "id": "mammo219",
+    "section_id": "mammo",
+    "question": "Under current MQSA regulations, what specific requirements apply to the annual medical physicist survey regarding dose measurement, and what are the consequences of exceeding the dose limit?",
+    "choices": [
+      "There is no specific dose limit under MQSA; only the ACR recommends a voluntary dose limit of 5.0 mGy",
+      "MQSA requires the AGD for a standard breast (4.2 cm compressed PMMA, representing a 50% glandular breast) to not exceed 3.0 mGy per exposure; exceeding this limit is a Level 1 noncompliance finding requiring the facility to cease mammography and take corrective action before resuming clinical imaging, and the facility must recalculate dose for all target/filter combinations used clinically",
+      "The MQSA dose limit is 6.0 mGy per view and facilities exceeding this receive a warning letter",
+      "MQSA only regulates dose for screening mammography, not diagnostic mammography"
+    ],
+    "answer": "MQSA requires the AGD for a standard breast (4.2 cm compressed PMMA, representing a 50% glandular breast) to not exceed 3.0 mGy per exposure; exceeding this limit is a Level 1 noncompliance finding requiring the facility to cease mammography and take corrective action before resuming clinical imaging, and the facility must recalculate dose for all target/filter combinations used clinically",
+    "explanation": "Under MQSA (21 CFR 900.12(c)(1)), the AGD must not exceed 3.0 mGy (0.3 rad) per exposure for a standard breast. This applies to the clinically relevant target/filter combination producing the highest dose at the standard phantom thickness. A dose exceeding 3.0 mGy is classified as a Level 1 (most serious) noncompliance under the MQSA inspection program. The facility must immediately cease mammographic examinations and implement corrective action. The physicist must measure dose for all target/filter combinations used clinically, not just the default AEC selection.",
+    "difficulty": 10
+  }
+]

@@ -115,6 +115,7 @@ export default function TournamentDetailPage({
   const isWordle = tournament.type.startsWith("wordle-");
   const isConnections = tournament.type.startsWith("connections-");
   const isCryptic = tournament.type.startsWith("cryptic-");
+  const isReactionRounds = tournament.type.startsWith("reaction-rounds-");
   const tournamentDiscipline = (tournament as DbTournament & { discipline?: string }).discipline || "open";
   const userDiscipline = session?.user?.discipline || "physicist";
   const disciplineMismatch = tournamentDiscipline !== "open" && tournamentDiscipline !== userDiscipline;
@@ -220,7 +221,9 @@ export default function TournamentDetailPage({
                             ? `4 groups · 4 mistakes · ${config.durationMinutes}min`
                             : isCryptic
                               ? `${config.questionsPerRound} clues · ${config.timerSeconds}s each · ${config.durationMinutes}min`
-                              : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
+                              : isReactionRounds
+                                ? `survival · 5s→2s timer · ${config.durationMinutes}min`
+                                : `${config.timerSeconds}s · ${config.questionsPerRound}q · ${config.durationMinutes}min`
               }
             </div>
           </div>
@@ -403,7 +406,9 @@ export default function TournamentDetailPage({
                                 ? `/tournaments/${id}/play-connections`
                                 : isCryptic
                                   ? `/tournaments/${id}/play-cryptic?berserk=${berserk}`
-                                  : `/tournaments/${id}/play?berserk=${berserk}`;
+                                  : isReactionRounds
+                                    ? `/tournaments/${id}/play-reaction-rounds`
+                                    : `/tournaments/${id}/play?berserk=${berserk}`;
                   router.push(playPath);
                 }}
                 className={`flex-1 py-3 rounded-none border-2 font-black text-sm uppercase tracking-widest transition-all ${getBorderColor(tournament.type)} hover:scale-[1.01]`}
@@ -411,7 +416,7 @@ export default function TournamentDetailPage({
               >
                 {tiebreakerEligible && roundsPlayed === maxRounds
                   ? "Tiebreaker Round!"
-                  : isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : isMatch ? "Play Match" : isHotSeat ? "Play Hot Seat" : isWordle ? "Play Wordle" : isConnections ? "Play Connections" : "Play Round"}
+                  : isCrossword ? "Play Puzzle" : isSuddenDeath ? "Enter Arena" : isSprint ? "Start Sprint" : isMatch ? "Play Match" : isHotSeat ? "Play Hot Seat" : isWordle ? "Play Wordle" : isConnections ? "Play Connections" : isReactionRounds ? "React!" : "Play Round"}
               </button>
             </div>
           )}

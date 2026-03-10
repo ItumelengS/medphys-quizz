@@ -177,8 +177,8 @@ export interface QuestionRecord {
 }
 
 // ── Game variants ──────────────────────────────────────────
-export type GameVariant = "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "blitz" | "wordle" | "connections" | "cryptic";
-export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "arena" | "blitz" | "wordle" | "connections" | "cryptic";
+export type GameVariant = "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "blitz" | "wordle" | "connections" | "cryptic" | "reaction-rounds";
+export type GameMode = "speed" | "daily" | "review" | "sudden-death" | "sprint" | "crossword" | "match" | "hot-seat" | "arena" | "blitz" | "wordle" | "connections" | "cryptic" | "reaction-rounds";
 
 export interface CrosswordCell {
   letter: string;

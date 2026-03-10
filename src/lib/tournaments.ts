@@ -1,5 +1,5 @@
 export interface TournamentTypeConfig {
-  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "hot-seat-blitz" | "hot-seat-rapid" | "wordle-blitz" | "wordle-rapid" | "connections-blitz" | "connections-rapid" | "cryptic-blitz" | "cryptic-rapid";
+  type: "blitz" | "rapid" | "marathon" | "crossword-blitz" | "crossword-rapid" | "crossword-marathon" | "sudden-death-blitz" | "sudden-death-rapid" | "sprint-blitz" | "sprint-rapid" | "match-blitz" | "match-rapid" | "hot-seat-blitz" | "hot-seat-rapid" | "wordle-blitz" | "wordle-rapid" | "connections-blitz" | "connections-rapid" | "cryptic-blitz" | "cryptic-rapid" | "reaction-rounds-blitz" | "reaction-rounds-rapid";
   label: string;
   frequencyHours: number;
   durationMinutes: number;
@@ -29,6 +29,8 @@ export interface TournamentTypeConfig {
   isConnections?: boolean;
   /** Whether this is a cryptic tournament type */
   isCryptic?: boolean;
+  /** Whether this is a reaction-rounds tournament type */
+  isReactionRounds?: boolean;
   /** Max rounds per player (default 2, tiebreaker may allow +1) */
   maxRounds?: number;
   /** Offset in minutes from the base slot time (staggers starts like Lichess) */
@@ -283,6 +285,32 @@ export const TOURNAMENT_TYPES: Record<string, TournamentTypeConfig> = {
     icon: "🔮",
     isCryptic: true,
     offsetMinutes: 180,
+  },
+  "reaction-rounds-blitz": {
+    type: "reaction-rounds-blitz",
+    label: "Reaction Blitz",
+    frequencyHours: 3,
+    durationMinutes: 30,
+    timerSeconds: 0, // timer is dynamic per round
+    questionsPerRound: 1, // survival mode — no fixed count
+    color: "#f97316",
+    icon: "⚡",
+    isReactionRounds: true,
+    maxRounds: 2,
+    offsetMinutes: 50,
+  },
+  "reaction-rounds-rapid": {
+    type: "reaction-rounds-rapid",
+    label: "Reaction Rapid",
+    frequencyHours: 6,
+    durationMinutes: 60,
+    timerSeconds: 0,
+    questionsPerRound: 1,
+    color: "#ea580c",
+    icon: "⚡",
+    isReactionRounds: true,
+    maxRounds: 2,
+    offsetMinutes: 240,
   },
 };
 

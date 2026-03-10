@@ -1,0 +1,2900 @@
+[
+  {
+    "id": "pet2",
+    "section_id": "pet",
+    "question": "What is the approximate scintillation decay time of LSO crystals used in PET detectors?",
+    "choices": [
+      "300 ns",
+      "40 ns",
+      "230 ns",
+      "5 ns"
+    ],
+    "answer": "40 ns",
+    "explanation": "LSO has a fast scintillation decay time of approximately 40 ns, which is advantageous for time-of-flight PET. BGO, by contrast, has a much slower decay time of ~300 ns.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet3",
+    "section_id": "pet",
+    "question": "BGO (bismuth germanate) is preferred over LSO in some older PET scanners primarily because of its:",
+    "choices": [
+      "Faster decay time",
+      "Higher light yield",
+      "Higher effective atomic number and stopping power",
+      "Lower cost of silicon photomultipliers"
+    ],
+    "answer": "Higher effective atomic number and stopping power",
+    "explanation": "BGO has an effective atomic number of 74 and density of 7.13 g/cm³, giving it excellent stopping power for 511 keV photons. However, its slow decay time (300 ns) and low light yield limit its use in modern TOF-PET systems.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet4",
+    "section_id": "pet",
+    "question": "Silicon photomultipliers (SiPMs) have replaced traditional PMTs in modern PET detectors primarily because SiPMs:",
+    "choices": [
+      "Have lower dark count rates",
+      "Are insensitive to magnetic fields and have compact size",
+      "Require higher operating voltages",
+      "Have slower timing resolution"
+    ],
+    "answer": "Are insensitive to magnetic fields and have compact size",
+    "explanation": "SiPMs are solid-state devices that are compact and insensitive to magnetic fields, making them essential for PET/MR systems. They also offer excellent timing resolution for TOF-PET applications.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet5",
+    "section_id": "pet",
+    "question": "What is the typical energy resolution of an LSO-based PET detector at 511 keV?",
+    "choices": [
+      "1-2%",
+      "5-7%",
+      "10-15%",
+      "25-30%"
+    ],
+    "answer": "10-15%",
+    "explanation": "LSO-based PET detectors typically achieve energy resolution of 10-15% FWHM at 511 keV. This is sufficient to discriminate the 511 keV photopeak from scattered photons with lower energy.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet6",
+    "section_id": "pet",
+    "question": "In a block detector design, the typical number of PMTs used to read out a single crystal block is:",
+    "choices": [
+      "1",
+      "4",
+      "16",
+      "64"
+    ],
+    "answer": "4",
+    "explanation": "The classic block detector design by Casey and Nutt uses 4 PMTs coupled to a segmented scintillator block. Anger logic with the 4 PMT signals is used to determine which crystal element was hit.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet7",
+    "section_id": "pet",
+    "question": "GSO (gadolinium oxyorthosilicate) crystals in PET have a scintillation decay time of approximately:",
+    "choices": [
+      "40 ns",
+      "60 ns",
+      "300 ns",
+      "230 ns"
+    ],
+    "answer": "60 ns",
+    "explanation": "GSO has a decay time of approximately 56-60 ns, placing it between the fast LSO (~40 ns) and the slow BGO (~300 ns). GSO also has lower light yield than LSO.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet8",
+    "section_id": "pet",
+    "question": "The density of LSO scintillator crystals is approximately:",
+    "choices": [
+      "3.67 g/cm³",
+      "5.37 g/cm³",
+      "7.13 g/cm³",
+      "7.40 g/cm³"
+    ],
+    "answer": "7.40 g/cm³",
+    "explanation": "LSO has a density of approximately 7.40 g/cm³, which provides good stopping power for 511 keV photons. For comparison, BGO has a density of 7.13 g/cm³ and NaI(Tl) is only 3.67 g/cm³.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet9",
+    "section_id": "pet",
+    "question": "What is a major disadvantage of SiPMs compared to traditional PMTs in PET detectors?",
+    "choices": [
+      "They cannot detect visible light",
+      "They have high sensitivity to temperature changes",
+      "They are too large for compact detector designs",
+      "They cannot operate at room temperature"
+    ],
+    "answer": "They have high sensitivity to temperature changes",
+    "explanation": "SiPM gain and dark count rate are sensitive to temperature variations. A 1°C change can alter the gain by several percent, requiring temperature stabilization or correction in PET systems.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet10",
+    "section_id": "pet",
+    "question": "The intrinsic radioactivity of LSO and LYSO crystals is due to the naturally occurring isotope:",
+    "choices": [
+      "Bi-209",
+      "Ce-141",
+      "Lu-176",
+      "Si-28"
+    ],
+    "answer": "Lu-176",
+    "explanation": "Lu-176 is a naturally occurring radioactive isotope (2.6% abundance) in lutetium-based crystals (LSO, LYSO). It emits beta particles and gamma rays, contributing background counts that must be accounted for in low-count studies.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet11",
+    "section_id": "pet",
+    "question": "In a PET detector, the depth-of-interaction (DOI) effect causes:",
+    "choices": [
+      "Improved spatial resolution at the center of the FOV",
+      "Degraded spatial resolution at the periphery of the FOV",
+      "Increased sensitivity at all positions",
+      "Reduced scatter fraction"
+    ],
+    "answer": "Degraded spatial resolution at the periphery of the FOV",
+    "explanation": "The DOI effect (parallax error) occurs when photons enter crystals at oblique angles near the edge of the detector ring, causing mispositioning. This degrades spatial resolution at the periphery of the FOV.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet12",
+    "section_id": "pet",
+    "question": "What is the approximate attenuation length of BGO for 511 keV photons?",
+    "choices": [
+      "1.05 cm",
+      "2.24 cm",
+      "3.45 cm",
+      "5.10 cm"
+    ],
+    "answer": "1.05 cm",
+    "explanation": "BGO has an attenuation length of approximately 1.05 cm for 511 keV photons due to its high density (7.13 g/cm³) and high effective atomic number (74), making it an efficient gamma-ray absorber.",
+    "difficulty": 8
+  },
+  {
+    "id": "pet13",
+    "section_id": "pet",
+    "question": "A photomultiplier tube in a PET detector converts scintillation light into an electrical signal through:",
+    "choices": [
+      "Direct semiconductor excitation",
+      "The photoelectric effect at the photocathode followed by electron multiplication",
+      "Compton scattering within the dynode chain",
+      "Cherenkov radiation in the glass envelope"
+    ],
+    "answer": "The photoelectric effect at the photocathode followed by electron multiplication",
+    "explanation": "In a PMT, scintillation photons strike the photocathode, releasing electrons via the photoelectric effect. These electrons are then multiplied through a series of dynodes, producing a measurable electrical pulse.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet14",
+    "section_id": "pet",
+    "question": "The quantum efficiency of a typical bialkali PMT photocathode at the emission wavelength of LSO (~420 nm) is approximately:",
+    "choices": [
+      "5%",
+      "25%",
+      "60%",
+      "90%"
+    ],
+    "answer": "25%",
+    "explanation": "Typical bialkali photocathodes have a quantum efficiency of approximately 20-28% at wavelengths near 420 nm, which matches the emission spectrum of LSO/LYSO scintillators.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet15",
+    "section_id": "pet",
+    "question": "Which crystal property is most critical for enabling time-of-flight PET?",
+    "choices": [
+      "High effective atomic number",
+      "High density",
+      "Fast scintillation decay time and high light yield",
+      "Large crystal volume"
+    ],
+    "answer": "Fast scintillation decay time and high light yield",
+    "explanation": "TOF-PET requires precise timing of photon detection. Fast decay time and high light yield enable better timing resolution (shorter coincidence timing resolution), which is essential for TOF reconstruction.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet16",
+    "section_id": "pet",
+    "question": "A SiPM consists of an array of single-photon avalanche diodes (SPADs) operated in:",
+    "choices": [
+      "Linear mode below breakdown voltage",
+      "Geiger mode above breakdown voltage",
+      "Proportional counter mode",
+      "Ionization chamber mode"
+    ],
+    "answer": "Geiger mode above breakdown voltage",
+    "explanation": "Each microcell (SPAD) in a SiPM operates in Geiger mode, biased above the breakdown voltage. When a photon triggers an avalanche, the cell fires with a standardized output, and the SiPM output is the sum of all fired cells.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet17",
+    "section_id": "pet",
+    "question": "The peak emission wavelength of BGO scintillation light is approximately:",
+    "choices": [
+      "220 nm",
+      "350 nm",
+      "420 nm",
+      "480 nm"
+    ],
+    "answer": "480 nm",
+    "explanation": "BGO has a peak emission wavelength of approximately 480 nm (blue-green), which is different from LSO/LYSO at ~420 nm (violet-blue). This affects the choice of photodetector for optimal coupling.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet18",
+    "section_id": "pet",
+    "question": "In modern digital PET systems, 1:1 crystal-to-SiPM coupling means:",
+    "choices": [
+      "One crystal is read by one SiPM channel, eliminating the need for Anger logic",
+      "One PMT reads the entire detector ring",
+      "Multiple crystals share a single photodetector",
+      "The system uses analog signal processing"
+    ],
+    "answer": "One crystal is read by one SiPM channel, eliminating the need for Anger logic",
+    "explanation": "1:1 coupling assigns a dedicated SiPM channel to each crystal element, enabling direct identification of the interaction crystal without Anger logic positioning, improving count rate performance and spatial resolution.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet20",
+    "section_id": "pet",
+    "question": "What is the typical crystal thickness (length) used in clinical PET detectors?",
+    "choices": [
+      "5 mm",
+      "10 mm",
+      "20-25 mm",
+      "50 mm"
+    ],
+    "answer": "20-25 mm",
+    "explanation": "Clinical PET detectors typically use crystals 20-25 mm long to achieve adequate detection efficiency for 511 keV photons. Longer crystals increase sensitivity but worsen the depth-of-interaction parallax error.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet21",
+    "section_id": "pet",
+    "question": "The standard coincidence timing window in a non-TOF PET scanner is typically:",
+    "choices": [
+      "1-2 ns",
+      "4-12 ns",
+      "50-100 ns",
+      "500 ns"
+    ],
+    "answer": "4-12 ns",
+    "explanation": "Non-TOF PET scanners use coincidence timing windows of approximately 4-12 ns. This window must be wide enough to capture true coincidences but narrow enough to minimize random coincidences.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet22",
+    "section_id": "pet",
+    "question": "Random coincidence rate in PET is proportional to:",
+    "choices": [
+      "The square of the single-event rate multiplied by the timing window",
+      "The single-event rate divided by the timing window",
+      "The inverse square of the activity",
+      "The detector ring diameter only"
+    ],
+    "answer": "The square of the single-event rate multiplied by the timing window",
+    "explanation": "The randoms rate R = 2τ × S₁ × S₂, where τ is the coincidence timing window and S₁, S₂ are singles rates on opposite detectors. This quadratic relationship means randoms increase rapidly with activity.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet23",
+    "section_id": "pet",
+    "question": "A scattered coincidence in PET occurs when:",
+    "choices": [
+      "Both photons are absorbed before reaching detectors",
+      "One or both annihilation photons undergo Compton scattering but are still detected in coincidence",
+      "Two unrelated photons are detected within the timing window",
+      "The positron annihilates with a bound electron"
+    ],
+    "answer": "One or both annihilation photons undergo Compton scattering but are still detected in coincidence",
+    "explanation": "Scattered coincidences occur when one or both 511 keV photons Compton scatter in the patient, changing direction, but are still detected within the energy and timing windows. This assigns the event to an incorrect line of response.",
+    "difficulty": 2
+  },
+  {
+    "id": "pet24",
+    "section_id": "pet",
+    "question": "The delayed window method for estimating random coincidences works by:",
+    "choices": [
+      "Delaying the energy discrimination by 100 ns",
+      "Applying a time delay larger than the coincidence window to one detector's signal to sample uncorrelated events",
+      "Measuring coincidences with the source removed",
+      "Using only events outside the photopeak energy window"
+    ],
+    "answer": "Applying a time delay larger than the coincidence window to one detector's signal to sample uncorrelated events",
+    "explanation": "The delayed window technique offsets one detector's timing signal by an amount larger than the coincidence window (e.g., 50-100 ns). Events detected in this delayed window are purely random, providing an accurate estimate of the randoms rate.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet26",
+    "section_id": "pet",
+    "question": "Narrowing the coincidence timing window in PET will primarily:",
+    "choices": [
+      "Increase the true coincidence rate",
+      "Decrease the random coincidence rate",
+      "Improve the energy resolution",
+      "Increase the scatter fraction"
+    ],
+    "answer": "Decrease the random coincidence rate",
+    "explanation": "Random coincidence rate is directly proportional to the timing window (R = 2τS₁S₂). Narrowing the window reduces randoms while having minimal effect on true coincidence detection, improving image quality.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet27",
+    "section_id": "pet",
+    "question": "In time-of-flight PET, a coincidence timing resolution (CTR) of 200 ps corresponds to a spatial localization uncertainty of approximately:",
+    "choices": [
+      "1.5 cm",
+      "3.0 cm",
+      "6.0 cm",
+      "10 cm"
+    ],
+    "answer": "3.0 cm",
+    "explanation": "The spatial uncertainty Δx = c × Δt/2, where c is the speed of light. For CTR = 200 ps: Δx = (3×10¹⁰ cm/s)(200×10⁻¹² s)/2 = 3.0 cm. This constrains the annihilation location along the LOR.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet28",
+    "section_id": "pet",
+    "question": "A true coincidence event in PET is correctly identified when:",
+    "choices": [
+      "Two unrelated annihilation photons arrive within the timing window",
+      "Both 511 keV photons from the same annihilation event are detected without scattering",
+      "Only one photon from an annihilation is detected",
+      "A photon undergoes photoelectric absorption in two separate crystals"
+    ],
+    "answer": "Both 511 keV photons from the same annihilation event are detected without scattering",
+    "explanation": "A true coincidence occurs when both 511 keV photons from a single positron-electron annihilation are detected in opposing detectors within the coincidence timing and energy windows, without undergoing scatter.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet29",
+    "section_id": "pet",
+    "question": "At very high count rates in PET, the dominant source of image quality degradation is:",
+    "choices": [
+      "True coincidences",
+      "Scatter coincidences",
+      "Random coincidences",
+      "Photoelectric absorption"
+    ],
+    "answer": "Random coincidences",
+    "explanation": "Random coincidences increase proportionally to the square of the singles rate (R = 2τS₁S₂), while trues increase linearly. At high activities, randoms dominate and add noise, degrading image quality despite dead-time and pile-up effects.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet30",
+    "section_id": "pet",
+    "question": "The prompt coincidence rate in PET equals:",
+    "choices": [
+      "True rate minus scatter rate",
+      "True rate plus scatter rate plus random rate",
+      "Random rate minus true rate",
+      "Scatter rate divided by true rate"
+    ],
+    "answer": "True rate plus scatter rate plus random rate",
+    "explanation": "Prompt coincidences include all events detected within the coincidence timing window: true coincidences, scattered coincidences, and random coincidences. Data corrections must separate these components for accurate imaging.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet31",
+    "section_id": "pet",
+    "question": "Which coincidence type in PET results in a mispositioned line of response (LOR) that does not pass through the true annihilation site?",
+    "choices": [
+      "True coincidence only",
+      "Scattered and random coincidences",
+      "Only random coincidences",
+      "None — all LORs pass through the annihilation site"
+    ],
+    "answer": "Scattered and random coincidences",
+    "explanation": "Both scattered and random coincidences produce incorrect LORs. Scattered events assign LORs based on altered photon trajectories, while random events pair unrelated photons from different annihilation events.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet32",
+    "section_id": "pet",
+    "question": "The singles-based method for randoms correction estimates the random rate by:",
+    "choices": [
+      "Measuring the delayed coincidence window",
+      "Using the equation R = 2τS₁S₂ from measured singles rates on each detector",
+      "Subtracting the scatter estimate from prompts",
+      "Filtering out low-energy events"
+    ],
+    "answer": "Using the equation R = 2τS₁S₂ from measured singles rates on each detector",
+    "explanation": "The singles-based method calculates randoms for each LOR using R = 2τS₁S₂, where S₁ and S₂ are the singles rates on the two relevant detectors and τ is the coincidence window width. This provides a smooth, less noisy estimate than the delayed window method.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet33",
+    "section_id": "pet",
+    "question": "Increasing the lower energy threshold of the PET energy window from 350 keV to 450 keV will:",
+    "choices": [
+      "Increase the scatter fraction",
+      "Decrease the scatter fraction at the cost of some true counts",
+      "Have no effect on scatter",
+      "Only affect random coincidences"
+    ],
+    "answer": "Decrease the scatter fraction at the cost of some true counts",
+    "explanation": "A higher lower energy threshold rejects more Compton-scattered photons that have lost energy. However, it also rejects some true events where a 511 keV photon deposited only partial energy, reducing sensitivity.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet34",
+    "section_id": "pet",
+    "question": "For a PET scanner with a coincidence timing resolution of 500 ps, the TOF spatial kernel has a FWHM of approximately:",
+    "choices": [
+      "3.75 cm",
+      "7.5 cm",
+      "15 cm",
+      "30 cm"
+    ],
+    "answer": "7.5 cm",
+    "explanation": "TOF spatial kernel FWHM = c × CTR/2 = (3 × 10¹⁰ cm/s)(500 × 10⁻¹² s)/2 = 7.5 cm. This represents the uncertainty in localizing the annihilation point along the LOR.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet35",
+    "section_id": "pet",
+    "question": "The TOF gain factor in PET reconstruction is approximately proportional to:",
+    "choices": [
+      "D / Δx, where D is the patient diameter and Δx is the TOF localization uncertainty",
+      "Δx / D",
+      "D²",
+      "1/D"
+    ],
+    "answer": "D / Δx, where D is the patient diameter and Δx is the TOF localization uncertainty",
+    "explanation": "TOF gain is approximately D/Δx, meaning larger patients benefit more from TOF. For a 40 cm patient with 3 cm TOF resolution, the gain factor is ~13, significantly improving SNR in large patients.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet36",
+    "section_id": "pet",
+    "question": "The energy of each photon produced in positron-electron annihilation is:",
+    "choices": [
+      "1.022 MeV",
+      "511 keV",
+      "256 keV",
+      "170 keV"
+    ],
+    "answer": "511 keV",
+    "explanation": "When a positron annihilates with an electron, the combined rest mass energy (2 × 0.511 MeV = 1.022 MeV) is converted into two photons, each carrying 511 keV, emitted in approximately opposite directions.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet37",
+    "section_id": "pet",
+    "question": "The non-collinearity of annihilation photons introduces a spatial blurring with a FWHM of approximately:",
+    "choices": [
+      "0.1° (0.5 mm for 80 cm ring)",
+      "0.25° (1.0 mm for 80 cm ring)",
+      "0.5° (2.0 mm for 80 cm ring)",
+      "2.0° (8.0 mm for 80 cm ring)"
+    ],
+    "answer": "0.5° (2.0 mm for 80 cm ring)",
+    "explanation": "Non-collinearity arises because the positron-electron system has residual momentum at annihilation, causing a deviation of ~0.5° FWHM from exact 180°. For an 80 cm diameter ring, this contributes ~2.0 mm FWHM blurring.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet38",
+    "section_id": "pet",
+    "question": "The maximum positron energy of F-18 is 634 keV, corresponding to a mean positron range in water of approximately:",
+    "choices": [
+      "0.2 mm",
+      "0.6 mm",
+      "2.4 mm",
+      "5.0 mm"
+    ],
+    "answer": "0.6 mm",
+    "explanation": "F-18 positrons have a relatively low maximum energy (634 keV) and short mean range in water (~0.6 mm). This short range contributes to the high spatial resolution achievable with F-18-labeled tracers.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet39",
+    "section_id": "pet",
+    "question": "Which PET isotope has the longest positron range in tissue, limiting its spatial resolution?",
+    "choices": [
+      "F-18",
+      "C-11",
+      "Ga-68",
+      "Rb-82"
+    ],
+    "answer": "Rb-82",
+    "explanation": "Rb-82 has a high maximum positron energy of 3.35 MeV, resulting in a mean positron range of approximately 5.9 mm in water. This significantly limits spatial resolution compared to F-18 (0.6 mm range).",
+    "difficulty": 4
+  },
+  {
+    "id": "pet40",
+    "section_id": "pet",
+    "question": "Positron-electron annihilation at rest produces exactly two photons because:",
+    "choices": [
+      "Three-photon annihilation is forbidden by quantum mechanics",
+      "Conservation of both energy and momentum requires at least two photons",
+      "The electron binding energy only allows two photons",
+      "Detector geometry can only detect two photons"
+    ],
+    "answer": "Conservation of both energy and momentum requires at least two photons",
+    "explanation": "A single photon cannot simultaneously conserve both energy and momentum in annihilation. Two photons emitted in opposite directions satisfy both conservation laws. Three-photon annihilation is allowed but extremely rare.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet41",
+    "section_id": "pet",
+    "question": "The positron range contribution to spatial resolution is most significant for:",
+    "choices": [
+      "F-18 in clinical whole-body PET",
+      "Rb-82 in cardiac PET",
+      "C-11 in brain PET",
+      "Ga-68 in DOTATATE PET"
+    ],
+    "answer": "Rb-82 in cardiac PET",
+    "explanation": "Rb-82 has the highest positron energy (3.35 MeV max) among common PET isotopes, yielding the longest positron range (~5.9 mm mean in water). This significantly blurs spatial resolution in cardiac perfusion imaging.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet42",
+    "section_id": "pet",
+    "question": "In PET, non-collinearity blurring is proportional to:",
+    "choices": [
+      "The crystal thickness",
+      "The detector ring diameter",
+      "The patient body habitus",
+      "The coincidence timing window"
+    ],
+    "answer": "The detector ring diameter",
+    "explanation": "Non-collinearity blurring = 0.0022 × D, where D is the ring diameter. For an 80 cm ring: 0.0022 × 800 mm ≈ 1.8-2.0 mm FWHM. Smaller rings (e.g., brain-dedicated PET) have less non-collinearity blurring.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet43",
+    "section_id": "pet",
+    "question": "The spatial resolution of a PET scanner is fundamentally limited by contributions from:",
+    "choices": [
+      "Crystal size only",
+      "Crystal size, positron range, non-collinearity, and decoder errors",
+      "Non-collinearity and energy resolution only",
+      "Coincidence timing window and crystal density"
+    ],
+    "answer": "Crystal size, positron range, non-collinearity, and decoder errors",
+    "explanation": "PET spatial resolution is determined by the quadrature sum of crystal element size (dominant factor), positron range, photon non-collinearity (~0.5°), and block decoding errors. Each contributes independently to the total blurring.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet44",
+    "section_id": "pet",
+    "question": "The mean positron energy is approximately what fraction of the maximum positron energy?",
+    "choices": [
+      "One-tenth",
+      "One-third",
+      "One-half",
+      "Two-thirds"
+    ],
+    "answer": "One-third",
+    "explanation": "The positron energy spectrum is continuous, and the mean energy is approximately one-third of the maximum (endpoint) energy. For F-18 (max 634 keV), the mean positron energy is approximately 250 keV.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet45",
+    "section_id": "pet",
+    "question": "Three-photon positron annihilation (producing three 511 keV photons) occurs with a probability of approximately:",
+    "choices": [
+      "50%",
+      "10%",
+      "1%",
+      "Less than 0.5%"
+    ],
+    "answer": "Less than 0.5%",
+    "explanation": "Three-photon annihilation is a higher-order QED process that occurs with a probability of approximately 1/370 (~0.27%) relative to two-photon annihilation. It is negligible in clinical PET imaging.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet46",
+    "section_id": "pet",
+    "question": "The positron must thermalize (lose most of its kinetic energy) before annihilation because:",
+    "choices": [
+      "High-energy positrons cannot interact with electrons",
+      "The annihilation cross-section is highest at low positron energies",
+      "Detectors cannot measure high-energy annihilation photons",
+      "Non-collinearity is only defined for stationary positrons"
+    ],
+    "answer": "The annihilation cross-section is highest at low positron energies",
+    "explanation": "The positron-electron annihilation cross-section increases as the positron slows down, roughly following a 1/v dependence. Most annihilations occur after the positron has thermalized, near the end of its range.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet47",
+    "section_id": "pet",
+    "question": "If a PET scanner has a ring diameter of 60 cm instead of 80 cm, the non-collinearity blurring will:",
+    "choices": [
+      "Increase by 33%",
+      "Decrease by 25%",
+      "Remain unchanged",
+      "Double"
+    ],
+    "answer": "Decrease by 25%",
+    "explanation": "Non-collinearity blurring is proportional to ring diameter: blur ∝ D. Reducing D from 80 to 60 cm (25% reduction) proportionally reduces the blurring from ~2.0 mm to ~1.5 mm FWHM.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet48",
+    "section_id": "pet",
+    "question": "The maximum positron energy of Ga-68 is approximately:",
+    "choices": [
+      "634 keV",
+      "960 keV",
+      "1.90 MeV",
+      "3.35 MeV"
+    ],
+    "answer": "1.90 MeV",
+    "explanation": "Ga-68 has a maximum positron energy of approximately 1.90 MeV, resulting in a mean positron range of about 2.9 mm in water. This is larger than F-18 (634 keV) but much less than Rb-82 (3.35 MeV).",
+    "difficulty": 5
+  },
+  {
+    "id": "pet49",
+    "section_id": "pet",
+    "question": "The linear attenuation coefficient of 511 keV photons in soft tissue is approximately:",
+    "choices": [
+      "0.010 cm⁻¹",
+      "0.096 cm⁻¹",
+      "0.154 cm⁻¹",
+      "0.500 cm⁻¹"
+    ],
+    "answer": "0.096 cm⁻¹",
+    "explanation": "The linear attenuation coefficient of 511 keV photons in water/soft tissue is approximately 0.096 cm⁻¹, corresponding to a half-value layer of about 7.2 cm. This value is used in attenuation correction calculations.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet50",
+    "section_id": "pet",
+    "question": "For a 20 cm thick patient, the total attenuation factor for a coincidence pair of 511 keV photons traveling through the full thickness is approximately:",
+    "choices": [
+      "0.86",
+      "0.50",
+      "0.15",
+      "0.02"
+    ],
+    "answer": "0.15",
+    "explanation": "The combined attenuation for a coincidence pair through 20 cm of tissue: ACF = e^(-μL) = e^(-0.096 × 20) ≈ e^(-1.92) ≈ 0.15. This demonstrates why attenuation correction is critical in PET — 85% of coincidences are lost.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet51",
+    "section_id": "pet",
+    "question": "OSEM (Ordered Subset Expectation Maximization) is preferred over MLEM in clinical PET because:",
+    "choices": [
+      "It produces less noisy images",
+      "It converges faster by using subsets of projection data",
+      "It does not require an initial image estimate",
+      "It inherently corrects for attenuation"
+    ],
+    "answer": "It converges faster by using subsets of projection data",
+    "explanation": "OSEM divides projection data into ordered subsets and updates the image after each subset. With N subsets, OSEM converges approximately N times faster than MLEM, making it practical for clinical use.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet52",
+    "section_id": "pet",
+    "question": "In TOF-PET reconstruction, time-of-flight information is used to:",
+    "choices": [
+      "Eliminate the need for attenuation correction",
+      "Weight the back-projection along each LOR according to the most likely annihilation position",
+      "Determine the exact annihilation point with no uncertainty",
+      "Replace iterative reconstruction with analytic methods"
+    ],
+    "answer": "Weight the back-projection along each LOR according to the most likely annihilation position",
+    "explanation": "TOF information constrains the annihilation location along each LOR using a Gaussian kernel. This reduces noise propagation during reconstruction and improves SNR, though it does not pinpoint the exact location.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet53",
+    "section_id": "pet",
+    "question": "Filtered back-projection (FBP) in PET uses a ramp filter primarily to:",
+    "choices": [
+      "Smooth the image",
+      "Correct for 1/r blurring inherent in simple back-projection",
+      "Remove scatter artifacts",
+      "Compensate for attenuation"
+    ],
+    "answer": "Correct for 1/r blurring inherent in simple back-projection",
+    "explanation": "Simple back-projection produces a blurred image with 1/r point spread. The ramp filter (applied in frequency space) compensates for this blurring, but it also amplifies high-frequency noise, often requiring an additional apodizing window.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet54",
+    "section_id": "pet",
+    "question": "Point spread function (PSF) modeling in PET reconstruction accounts for:",
+    "choices": [
+      "Only detector crystal size",
+      "Spatially variant detector response including parallax and inter-crystal scatter",
+      "Patient motion during the scan",
+      "CT-based attenuation correction errors"
+    ],
+    "answer": "Spatially variant detector response including parallax and inter-crystal scatter",
+    "explanation": "PSF modeling incorporates the spatially variant system response, including crystal penetration (parallax), inter-crystal scatter, and detector geometry effects. This improves spatial resolution and contrast recovery, especially at the edge of the FOV.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet55",
+    "section_id": "pet",
+    "question": "The number of iterations and subsets in OSEM reconstruction affects image quality because:",
+    "choices": [
+      "More iterations always improve image quality",
+      "Too many iterations increase noise without significantly improving contrast",
+      "Fewer iterations increase spatial resolution",
+      "The number of subsets has no effect"
+    ],
+    "answer": "Too many iterations increase noise without significantly improving contrast",
+    "explanation": "OSEM does not converge to a stable solution — additional iterations continue to amplify noise after contrast recovery has plateaued. A balance between iterations/subsets and post-reconstruction smoothing is needed for optimal clinical images.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet56",
+    "section_id": "pet",
+    "question": "In PET reconstruction, the system matrix describes:",
+    "choices": [
+      "The CT attenuation map",
+      "The probability that an emission from a voxel is detected along a given LOR",
+      "The randoms correction factors",
+      "The decay correction scheme"
+    ],
+    "answer": "The probability that an emission from a voxel is detected along a given LOR",
+    "explanation": "The system matrix maps voxel positions to detector LORs, encoding the probability that a photon pair from each voxel is detected in each LOR. It accounts for geometric efficiency, attenuation, and detector response.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet57",
+    "section_id": "pet",
+    "question": "Regularized PET reconstruction (e.g., penalized likelihood or Bayesian methods) aims to:",
+    "choices": [
+      "Eliminate the need for scatter correction",
+      "Control noise amplification during iterative reconstruction",
+      "Replace the system matrix",
+      "Speed up reconstruction by reducing iterations"
+    ],
+    "answer": "Control noise amplification during iterative reconstruction",
+    "explanation": "Regularization adds a penalty term that discourages noisy solutions, allowing more iterations to improve contrast recovery while controlling noise. Examples include relative difference penalty and total variation regularization.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet58",
+    "section_id": "pet",
+    "question": "The Q.Clear algorithm (BSREM) used in GE PET scanners applies:",
+    "choices": [
+      "FBP with a Butterworth filter",
+      "A block sequential regularized expectation maximization with a relative difference penalty",
+      "OSEM with no post-filtering",
+      "Direct Fourier reconstruction"
+    ],
+    "answer": "A block sequential regularized expectation maximization with a relative difference penalty",
+    "explanation": "Q.Clear uses BSREM, which is an OSEM variant with a relative difference penalty (beta parameter). It converges to a stable solution while controlling noise, producing images with improved contrast-to-noise ratio.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet59",
+    "section_id": "pet",
+    "question": "In 3D PET acquisition (no septa), compared to 2D mode:",
+    "choices": [
+      "Sensitivity decreases significantly",
+      "Sensitivity increases by 4-8 times but scatter fraction also increases",
+      "Spatial resolution improves dramatically",
+      "Random coincidence rate decreases"
+    ],
+    "answer": "Sensitivity increases by 4-8 times but scatter fraction also increases",
+    "explanation": "Removing septa in 3D PET allows detection of oblique LORs, increasing sensitivity 4-8 fold. However, this also increases the scatter fraction from ~15% (2D) to ~35-40% (3D), requiring more sophisticated scatter correction.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet60",
+    "section_id": "pet",
+    "question": "Normalization correction in PET compensates for:",
+    "choices": [
+      "Radioactive decay during the scan",
+      "Variations in detector pair efficiencies across all LORs",
+      "Patient attenuation",
+      "Scatter"
+    ],
+    "answer": "Variations in detector pair efficiencies across all LORs",
+    "explanation": "Normalization corrects for variations in crystal detection efficiency, geometric response, and electronics gain across all detector pairs. Without normalization, ring artifacts and non-uniformities appear in reconstructed images.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet61",
+    "section_id": "pet",
+    "question": "In TOF-PET, improving the coincidence timing resolution from 500 ps to 250 ps would improve the SNR by approximately:",
+    "choices": [
+      "√2 ≈ 1.4 times",
+      "2 times",
+      "4 times",
+      "No improvement"
+    ],
+    "answer": "√2 ≈ 1.4 times",
+    "explanation": "TOF SNR gain is proportional to √(D/Δx), where Δx = c·CTR/2. Halving CTR halves Δx, so the gain improves by √2 ≈ 1.4 times. The benefit increases for larger patients.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet62",
+    "section_id": "pet",
+    "question": "Dead time in PET detectors at high count rates causes:",
+    "choices": [
+      "An increase in measured count rate above the true rate",
+      "Underestimation of the true count rate and quantitative errors",
+      "Improved spatial resolution",
+      "Decreased scatter fraction"
+    ],
+    "answer": "Underestimation of the true count rate and quantitative errors",
+    "explanation": "Dead time prevents detectors from processing new events while recovering from previous ones. This causes count loss at high rates, leading to underestimation of activity and SUV errors without proper dead-time correction.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet63",
+    "section_id": "pet",
+    "question": "The maximum ring difference (MRD) parameter in 3D PET reconstruction controls:",
+    "choices": [
+      "The energy window width",
+      "The maximum axial angle of accepted oblique LORs",
+      "The number of OSEM iterations",
+      "The bed overlap distance"
+    ],
+    "answer": "The maximum axial angle of accepted oblique LORs",
+    "explanation": "MRD defines the maximum ring index difference for accepted oblique sinograms. A larger MRD increases sensitivity by accepting more oblique LORs but also increases scatter and computational requirements.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet64",
+    "section_id": "pet",
+    "question": "In PET sinogram space, a point source maps to:",
+    "choices": [
+      "A point",
+      "A straight line",
+      "A sinusoidal curve",
+      "A circle"
+    ],
+    "answer": "A sinusoidal curve",
+    "explanation": "In sinogram space (angle vs. radial distance), a point source traces a sinusoidal curve as the projection angle varies. This is the origin of the term 'sinogram' — each point source produces a sine wave.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet65",
+    "section_id": "pet",
+    "question": "Post-reconstruction Gaussian smoothing in PET is applied to:",
+    "choices": [
+      "Improve spatial resolution",
+      "Reduce statistical noise at the expense of resolution",
+      "Correct for attenuation",
+      "Remove metal artifacts"
+    ],
+    "answer": "Reduce statistical noise at the expense of resolution",
+    "explanation": "Gaussian post-filtering suppresses high-frequency noise in reconstructed images, improving visual quality. However, it degrades spatial resolution and reduces quantitative accuracy of SUV measurements in small lesions.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet66",
+    "section_id": "pet",
+    "question": "The Fourier rebinning algorithm (FORE) in 3D PET is used to:",
+    "choices": [
+      "Convert 3D sinogram data into equivalent 2D sinograms for faster reconstruction",
+      "Perform scatter correction",
+      "Convert listmode data to sinograms",
+      "Apply the ramp filter"
+    ],
+    "answer": "Convert 3D sinogram data into equivalent 2D sinograms for faster reconstruction",
+    "explanation": "FORE approximately converts oblique 3D sinograms to a stack of 2D sinograms using frequency-space rebinning. This enables use of faster 2D reconstruction algorithms on 3D data with acceptable accuracy.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet67",
+    "section_id": "pet",
+    "question": "Listmode acquisition in PET stores data as:",
+    "choices": [
+      "Pre-sorted sinograms",
+      "Individual detected events with timing and detector coordinates",
+      "Reconstructed images directly",
+      "Only true coincidence events"
+    ],
+    "answer": "Individual detected events with timing and detector coordinates",
+    "explanation": "Listmode records each coincidence event with timestamps and detector element indices. This preserves all temporal information, enabling flexible retrospective rebinning, gating, and dynamic framing.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet68",
+    "section_id": "pet",
+    "question": "The Gibbs artifact (ringing artifact) in PET reconstructed with PSF modeling appears as:",
+    "choices": [
+      "Streaks radiating from hot spots",
+      "Edge overshoots and halos near high-contrast boundaries",
+      "Random salt-and-pepper noise",
+      "Ring artifacts centered on the scanner axis"
+    ],
+    "answer": "Edge overshoots and halos near high-contrast boundaries",
+    "explanation": "PSF modeling with many iterations can produce Gibbs-like ringing artifacts at sharp edges, appearing as bright rims around hot lesions. This is a consequence of resolution recovery amplifying edge information beyond physical levels.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet69",
+    "section_id": "pet",
+    "question": "The single-scatter simulation (SSS) method for PET scatter correction:",
+    "choices": [
+      "Uses empirical fitting of scatter tails",
+      "Analytically models single Compton scatter using the emission and attenuation maps",
+      "Requires a transmission scan with an external source",
+      "Only works for 2D PET acquisition"
+    ],
+    "answer": "Analytically models single Compton scatter using the emission and attenuation maps",
+    "explanation": "SSS uses the Klein-Nishina cross-section and the emission/attenuation images to calculate the expected single-scatter distribution. It is scaled to match the scatter tails in the measured data, accounting for multiple scatter.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet70",
+    "section_id": "pet",
+    "question": "In PET, the number of effective iterations is defined as:",
+    "choices": [
+      "Number of iterations only",
+      "Number of iterations multiplied by the number of subsets",
+      "Number of subsets divided by iterations",
+      "The square root of the number of iterations"
+    ],
+    "answer": "Number of iterations multiplied by the number of subsets",
+    "explanation": "Effective iterations = iterations × subsets. For example, 3 iterations with 21 subsets gives 63 effective iterations, approximately equivalent to 63 MLEM iterations in terms of convergence.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet71",
+    "section_id": "pet",
+    "question": "CT-based attenuation correction in PET/CT converts CT Hounsfield units to 511 keV attenuation values using:",
+    "choices": [
+      "A single linear scaling factor",
+      "A bilinear calibration curve with a breakpoint near the HU of water",
+      "Direct measurement with a Ge-68 source",
+      "A quadratic polynomial fit"
+    ],
+    "answer": "A bilinear calibration curve with a breakpoint near the HU of water",
+    "explanation": "The bilinear method uses two linear segments: one for soft tissue (below ~0 HU) and one for bone (above ~0 HU). This accounts for the different energy dependence of photon attenuation in soft tissue vs. bone from CT energies to 511 keV.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet72",
+    "section_id": "pet",
+    "question": "A common artifact in CT-based attenuation correction of PET occurs with high-density metallic implants because:",
+    "choices": [
+      "Metals are transparent to 511 keV photons",
+      "CT overestimates the attenuation at 511 keV, causing focal hot spots on PET",
+      "Metals cause MR-based AC errors",
+      "The bilinear model correctly handles all metals"
+    ],
+    "answer": "CT overestimates the attenuation at 511 keV, causing focal hot spots on PET",
+    "explanation": "Metallic implants have very high CT numbers that, when scaled to 511 keV, overestimate the true attenuation. This overcorrection creates artifactual hot spots on the attenuation-corrected PET images near the implants.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet73",
+    "section_id": "pet",
+    "question": "CT contrast agents (oral or IV) can cause artifacts in PET attenuation correction because:",
+    "choices": [
+      "They absorb 511 keV photons completely",
+      "Their high CT attenuation at diagnostic energies does not correspond to proportionally high attenuation at 511 keV",
+      "They cause patient motion",
+      "They interfere with the PET detector electronics"
+    ],
+    "answer": "Their high CT attenuation at diagnostic energies does not correspond to proportionally high attenuation at 511 keV",
+    "explanation": "Iodine and barium contrast agents strongly attenuate at CT energies (due to K-edge effects) but have minimal additional effect at 511 keV. The bilinear model misinterprets contrast as dense tissue, causing overcorrection artifacts.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet74",
+    "section_id": "pet",
+    "question": "Respiratory motion mismatch between CT and PET in the lung base/liver dome region can cause:",
+    "choices": [
+      "No visible artifact",
+      "A curvilinear cold artifact at the diaphragm on attenuation-corrected PET",
+      "Improved spatial resolution",
+      "A ring artifact"
+    ],
+    "answer": "A curvilinear cold artifact at the diaphragm on attenuation-corrected PET",
+    "explanation": "If CT is acquired during a different respiratory phase than PET, the diaphragm position differs. Lung attenuation (low) may be applied to liver tissue (high activity), creating a photopenic band artifact at the diaphragm.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet75",
+    "section_id": "pet",
+    "question": "Truncation artifacts in PET/CT occur when:",
+    "choices": [
+      "The PET scan is too short",
+      "The patient extends beyond the CT field of view, and the attenuation map is incomplete",
+      "The energy window is too narrow",
+      "The number of bed positions is insufficient"
+    ],
+    "answer": "The patient extends beyond the CT field of view, and the attenuation map is incomplete",
+    "explanation": "CT FOV (~50 cm) may not cover the full patient diameter, truncating the attenuation map. This leads to undercorrection of attenuation and streak artifacts at the edges of the PET image. Extended FOV algorithms can mitigate this.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet76",
+    "section_id": "pet",
+    "question": "In PET, attenuation correction for a coincidence pair depends on:",
+    "choices": [
+      "The attenuation along each photon path individually",
+      "The total attenuation along the entire LOR through the patient, regardless of source position",
+      "Only the attenuation near the source location",
+      "The crystal material used"
+    ],
+    "answer": "The total attenuation along the entire LOR through the patient, regardless of source position",
+    "explanation": "A unique property of PET is that the attenuation correction factor depends on the total path length through the patient along the LOR, not the source position. This simplifies attenuation correction compared to SPECT.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet77",
+    "section_id": "pet",
+    "question": "The attenuation correction factor (ACF) for a given LOR in PET is calculated as:",
+    "choices": [
+      "ACF = e^(-μL) where L is the total LOR path through tissue",
+      "ACF = 1/[e^(-μL)] = e^(+μL)",
+      "ACF = μL",
+      "ACF = 1 - e^(-μL)"
+    ],
+    "answer": "ACF = 1/[e^(-μL)] = e^(+μL)",
+    "explanation": "The ACF is the multiplicative inverse of the transmission factor. If the transmission factor is e^(-μL), then ACF = e^(+μL) to recover the pre-attenuation count rate. ACFs in the thorax/abdomen range from 5 to 50.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet78",
+    "section_id": "pet",
+    "question": "In PET/MR, the main challenge for attenuation correction is that MRI:",
+    "choices": [
+      "Cannot image bone",
+      "Does not directly measure photon attenuation properties of tissue",
+      "Has too low spatial resolution",
+      "Cannot distinguish air from tissue"
+    ],
+    "answer": "Does not directly measure photon attenuation properties of tissue",
+    "explanation": "Unlike CT (which measures X-ray attenuation), MRI measures proton density and relaxation properties. Bone (low proton density) and air (no signal) appear similar on standard MRI, making AC challenging.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet79",
+    "section_id": "pet",
+    "question": "The Dixon MR sequence used for PET/MR attenuation correction segments tissues into:",
+    "choices": [
+      "Two classes: tissue and air",
+      "Three classes: background, lung, soft tissue",
+      "Typically four classes: background/air, lung, fat, and soft tissue",
+      "Ten continuous tissue classes"
+    ],
+    "answer": "Typically four classes: background/air, lung, fat, and soft tissue",
+    "explanation": "Dixon-based AC uses in-phase and opposed-phase images to separate fat and water, segmenting into background, lung, fat, and soft tissue. A limitation is that it does not identify cortical bone, which can cause quantification errors.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet80",
+    "section_id": "pet",
+    "question": "Ultrashort echo time (UTE) MR sequences in PET/MR are used to:",
+    "choices": [
+      "Improve soft tissue contrast",
+      "Detect cortical bone signal for improved attenuation correction",
+      "Reduce patient scan time",
+      "Eliminate susceptibility artifacts"
+    ],
+    "answer": "Detect cortical bone signal for improved attenuation correction",
+    "explanation": "UTE sequences use very short TEs (< 0.1 ms) to capture signal from cortical bone, which has very short T2* and is invisible on conventional MRI. This improves AC in the head where bone attenuation is significant.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet81",
+    "section_id": "pet",
+    "question": "When using CT for attenuation correction, the CT scan should ideally be performed:",
+    "choices": [
+      "During maximum inspiration",
+      "During quiet breathing to match PET respiratory state",
+      "After a full expiration",
+      "Breath-hold does not matter"
+    ],
+    "answer": "During quiet breathing to match PET respiratory state",
+    "explanation": "PET images represent a time-averaged respiratory state (quiet breathing). A breath-hold CT (especially at full inspiration) causes spatial mismatch at the diaphragm, leading to attenuation correction artifacts. Quiet breathing CT reduces this mismatch.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet82",
+    "section_id": "pet",
+    "question": "Scatter correction in PET must be applied before or simultaneously with attenuation correction because:",
+    "choices": [
+      "Scatter has no effect on quantification",
+      "Scattered events have already been attenuated differently from trues, and applying AC to uncorrected scatter overestimates activity",
+      "Attenuation correction removes all scatter",
+      "Scatter correction requires the attenuation map"
+    ],
+    "answer": "Scattered events have already been attenuated differently from trues, and applying AC to uncorrected scatter overestimates activity",
+    "explanation": "Scattered photons follow different paths than their original LOR, experiencing different attenuation. If scatter is not subtracted before or during AC, the attenuation correction amplifies the scatter contamination, causing quantitative errors.",
+    "difficulty": 8
+  },
+  {
+    "id": "pet83",
+    "section_id": "pet",
+    "question": "Emission-based attenuation correction methods (like MLAA — Maximum Likelihood estimation of Activity and Attenuation) are useful in:",
+    "choices": [
+      "All PET/CT scanners",
+      "PET/MR and standalone PET where CT-based AC is unavailable",
+      "Only 2D PET scanners",
+      "Only brain PET"
+    ],
+    "answer": "PET/MR and standalone PET where CT-based AC is unavailable",
+    "explanation": "MLAA jointly estimates the activity distribution and attenuation map from TOF-PET emission data alone. This is valuable for PET/MR (where MR-based AC has limitations) and for cases where no CT is available.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet84",
+    "section_id": "pet",
+    "question": "The CT kilovoltage used for attenuation correction in PET/CT typically ranges from:",
+    "choices": [
+      "40-60 kVp",
+      "80-140 kVp",
+      "200-250 kVp",
+      "400-500 kVp"
+    ],
+    "answer": "80-140 kVp",
+    "explanation": "CT for AC typically uses 80-140 kVp. The effective photon energy (~70 keV) differs from 511 keV, necessitating the bilinear scaling. Low-dose CT protocols (10-40 mAs) are often used when CT is only for AC purposes.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet85",
+    "section_id": "pet",
+    "question": "In PET, the maximum attenuation correction factor (ACF) is typically largest for LORs through the:",
+    "choices": [
+      "Head",
+      "Chest at the level of the lungs",
+      "Abdomen/pelvis at the widest diameter",
+      "Extremities"
+    ],
+    "answer": "Abdomen/pelvis at the widest diameter",
+    "explanation": "ACF = e^(μL) increases exponentially with path length. The abdomen/pelvis has the largest transverse diameter and dense soft tissue, producing ACFs of 20-50+, compared to lower values through the air-filled lungs or smaller head.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet86",
+    "section_id": "pet",
+    "question": "SUVbw (standardized uptake value normalized by body weight) is calculated as:",
+    "choices": [
+      "Activity concentration (kBq/mL) × body weight (kg) / injected dose (kBq)",
+      "[Activity concentration (kBq/mL)] / [injected dose (kBq) / body weight (kg)]",
+      "Injected dose / (activity concentration × body weight)",
+      "Activity concentration / injected dose"
+    ],
+    "answer": "[Activity concentration (kBq/mL)] / [injected dose (kBq) / body weight (kg)]",
+    "explanation": "SUVbw = tissue activity concentration / (injected dose / body weight). A SUV of 1.0 means the tissue concentration equals the average whole-body concentration. Values above 1.0 indicate preferential uptake.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet87",
+    "section_id": "pet",
+    "question": "SUVmax is defined as the:",
+    "choices": [
+      "Mean SUV in a 1 cm³ spherical ROI",
+      "Highest SUV in a single voxel within the ROI",
+      "SUV at the geometric center of the tumor",
+      "Average of the top 10% of voxel SUVs"
+    ],
+    "answer": "Highest SUV in a single voxel within the ROI",
+    "explanation": "SUVmax is the maximum SUV value in any single voxel within the defined region of interest. It is widely used clinically because it is operator-independent (no threshold required) but is sensitive to image noise.",
+    "difficulty": 2
+  },
+  {
+    "id": "pet88",
+    "section_id": "pet",
+    "question": "SUVlbm (lean body mass) is preferred over SUVbw in obese patients because:",
+    "choices": [
+      "It is easier to calculate",
+      "FDG distributes primarily in lean tissue, so normalizing by total weight overestimates SUV in obese patients",
+      "It accounts for blood glucose levels",
+      "It corrects for partial volume effects"
+    ],
+    "answer": "FDG distributes primarily in lean tissue, so normalizing by total weight overestimates SUV in obese patients",
+    "explanation": "FDG uptake occurs primarily in metabolically active lean tissue, not adipose. Using total body weight artificially inflates SUV in obese patients. SUVlbm (using lean body mass) provides more accurate and reproducible values.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet89",
+    "section_id": "pet",
+    "question": "SUVpeak is typically measured in a:",
+    "choices": [
+      "Single hottest voxel",
+      "1 cm³ spherical VOI centered on the hottest part of the lesion",
+      "The entire tumor volume",
+      "A 50% threshold-defined volume"
+    ],
+    "answer": "1 cm³ spherical VOI centered on the hottest part of the lesion",
+    "explanation": "SUVpeak is the mean SUV within a 1 cm³ spherical volume of interest (approximately 1.2 cm diameter) centered on the region of highest uptake. It is more robust than SUVmax because averaging reduces noise sensitivity.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet90",
+    "section_id": "pet",
+    "question": "Partial volume effect causes SUV in small lesions (< 2-3 × spatial resolution) to be:",
+    "choices": [
+      "Overestimated",
+      "Underestimated",
+      "Unaffected",
+      "Oscillating between over and underestimation"
+    ],
+    "answer": "Underestimated",
+    "explanation": "When a lesion is smaller than approximately 2-3 times the spatial resolution, its activity is spread over a larger volume (spill-out effect), reducing the measured peak concentration and underestimating the true SUV.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet91",
+    "section_id": "pet",
+    "question": "The recovery coefficient in PET quantification is defined as the ratio of:",
+    "choices": [
+      "Measured activity to injected activity",
+      "Measured activity concentration to true activity concentration in a small object",
+      "Scatter to trues",
+      "Random to prompt coincidences"
+    ],
+    "answer": "Measured activity concentration to true activity concentration in a small object",
+    "explanation": "The recovery coefficient (RC) quantifies partial volume effect: RC = measured/true concentration. RC approaches 1.0 for objects much larger than the resolution and decreases for smaller objects (e.g., RC ≈ 0.5 for a 10 mm sphere with 5 mm resolution).",
+    "difficulty": 7
+  },
+  {
+    "id": "pet92",
+    "section_id": "pet",
+    "question": "Blood glucose level affects FDG SUV because:",
+    "choices": [
+      "Glucose competes with FDG for cellular uptake via GLUT transporters",
+      "Glucose changes the half-life of F-18",
+      "High glucose levels increase FDG production",
+      "Glucose alters detector response"
+    ],
+    "answer": "Glucose competes with FDG for cellular uptake via GLUT transporters",
+    "explanation": "FDG and glucose compete for the same GLUT transporters and hexokinase enzyme. Hyperglycemia reduces FDG uptake in tumors while increasing uptake in muscle, lowering tumor SUV and potentially causing false negatives.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet93",
+    "section_id": "pet",
+    "question": "The recommended fasting period before FDG PET scanning is:",
+    "choices": [
+      "1-2 hours",
+      "4-6 hours",
+      "12-18 hours",
+      "24 hours"
+    ],
+    "answer": "4-6 hours",
+    "explanation": "Patients should fast for at least 4-6 hours before FDG PET to ensure low blood glucose levels (< 150-200 mg/dL). This maximizes tumor FDG uptake and minimizes myocardial and muscular uptake.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet94",
+    "section_id": "pet",
+    "question": "SUV accuracy in PET can be affected by all of the following EXCEPT:",
+    "choices": [
+      "Residual activity in the injection syringe",
+      "Inaccurate patient weight entry",
+      "Clock synchronization between dose calibrator and scanner",
+      "The color scale used for image display"
+    ],
+    "answer": "The color scale used for image display",
+    "explanation": "SUV is a quantitative metric that depends on accurate injected dose, patient weight, scan timing, and calibration. Display color scale affects visual interpretation but does not change the actual calculated SUV values.",
+    "difficulty": 2
+  },
+  {
+    "id": "pet95",
+    "section_id": "pet",
+    "question": "Decay correction in SUV calculation compensates for:",
+    "choices": [
+      "Radioactive decay of the tracer between injection and scan time",
+      "Attenuation of photons in the patient",
+      "Partial volume effects",
+      "Detector dead time"
+    ],
+    "answer": "Radioactive decay of the tracer between injection and scan time",
+    "explanation": "The injected dose must be decay-corrected to the scan start time to account for F-18 decay (t½ = 110 min) between injection and imaging (typically 60 min uptake). Without this, SUV would be overestimated.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet96",
+    "section_id": "pet",
+    "question": "An SUV of 2.5 for a pulmonary nodule on FDG PET is commonly used as a threshold suggesting:",
+    "choices": [
+      "Definite benign disease",
+      "Likely malignancy warranting further workup",
+      "Normal physiological uptake",
+      "Inflammatory process only"
+    ],
+    "answer": "Likely malignancy warranting further workup",
+    "explanation": "An SUV threshold of 2.5 is traditionally used to suggest malignancy in pulmonary nodules, though this is not absolute. Inflammatory conditions (granulomas, infections) can exceed this threshold, and some malignancies may have lower SUVs.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet97",
+    "section_id": "pet",
+    "question": "Paravenous infiltration of FDG at the injection site will cause:",
+    "choices": [
+      "Increased SUV in the tumor only",
+      "Decreased SUV throughout the body due to reduced bioavailable dose",
+      "No effect on quantification",
+      "Improved image quality"
+    ],
+    "answer": "Decreased SUV throughout the body due to reduced bioavailable dose",
+    "explanation": "Extravasation means less FDG enters the bloodstream than recorded, so the denominator in SUV calculation (injected dose) is overestimated while actual tissue uptake is reduced. This systematically underestimates SUV everywhere.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet98",
+    "section_id": "pet",
+    "question": "The typical FDG uptake period from injection to PET scanning is:",
+    "choices": [
+      "5-10 minutes",
+      "30 minutes",
+      "60 minutes",
+      "180 minutes"
+    ],
+    "answer": "60 minutes",
+    "explanation": "The standard uptake period for FDG is 60 minutes post-injection. This allows sufficient time for FDG to accumulate in metabolically active tissues and for blood pool activity to decrease, optimizing tumor-to-background contrast.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet99",
+    "section_id": "pet",
+    "question": "Metabolic tumor volume (MTV) on FDG PET is typically defined by:",
+    "choices": [
+      "Manual tracing of the tumor margin on CT",
+      "The volume of voxels exceeding a fixed SUV threshold (e.g., SUV ≥ 2.5) or percentage of SUVmax",
+      "The total scanner field of view",
+      "A fixed spherical ROI of 3 cm diameter"
+    ],
+    "answer": "The volume of voxels exceeding a fixed SUV threshold (e.g., SUV ≥ 2.5) or percentage of SUVmax",
+    "explanation": "MTV segments the tumor using a threshold-based approach (e.g., SUV ≥ 2.5 or 40% of SUVmax) to define the metabolically active volume. Total lesion glycolysis (TLG) = MTV × SUVmean.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet100",
+    "section_id": "pet",
+    "question": "The cross-calibration between the PET scanner and the dose calibrator should be verified to be within:",
+    "choices": [
+      "±1%",
+      "±5%",
+      "±20%",
+      "±50%"
+    ],
+    "answer": "±5%",
+    "explanation": "ACR and EANM guidelines recommend that PET scanner and dose calibrator be cross-calibrated to within ±5% to ensure accurate SUV quantification. This is verified using a uniform cylinder phantom with a known activity concentration.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet102",
+    "section_id": "pet",
+    "question": "FDG (fluorodeoxyglucose) is trapped in cells because:",
+    "choices": [
+      "It is metabolized completely to CO₂ and water",
+      "It is phosphorylated by hexokinase to FDG-6-phosphate, which cannot undergo further glycolysis",
+      "It binds irreversibly to GLUT transporters",
+      "It undergoes radioactive decay inside the cell"
+    ],
+    "answer": "It is phosphorylated by hexokinase to FDG-6-phosphate, which cannot undergo further glycolysis",
+    "explanation": "FDG enters cells via GLUT transporters and is phosphorylated by hexokinase to FDG-6-phosphate. Unlike glucose-6-phosphate, FDG-6-phosphate cannot continue through glycolysis and is trapped, accumulating proportionally to glucose metabolism.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet103",
+    "section_id": "pet",
+    "question": "Ga-68 is obtained from:",
+    "choices": [
+      "A cyclotron via proton bombardment of Zn-68",
+      "A Ge-68/Ga-68 generator system",
+      "Nuclear reactor neutron irradiation",
+      "Natural radioactive decay of Fe-56"
+    ],
+    "answer": "A Ge-68/Ga-68 generator system",
+    "explanation": "Ga-68 (t½ = 68 min) is produced from a Ge-68/Ga-68 generator. Ge-68 (t½ = 271 days) decays to Ga-68, which is eluted with HCl. The long parent half-life provides a convenient source for up to ~1 year.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet104",
+    "section_id": "pet",
+    "question": "Rb-82 used in cardiac PET perfusion imaging has a half-life of:",
+    "choices": [
+      "110 minutes",
+      "68 minutes",
+      "76 seconds",
+      "20 minutes"
+    ],
+    "answer": "76 seconds",
+    "explanation": "Rb-82 has an ultrashort half-life of 76 seconds, requiring an on-site Sr-82/Rb-82 generator. Its short half-life enables rapid sequential rest/stress imaging with low patient radiation dose but limits imaging time.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet105",
+    "section_id": "pet",
+    "question": "C-11 labeled tracers are challenging for clinical use primarily because:",
+    "choices": [
+      "C-11 has too long a half-life",
+      "C-11's 20-minute half-life requires an on-site cyclotron and rapid radiochemistry",
+      "C-11 does not emit positrons",
+      "C-11 has excessive positron range"
+    ],
+    "answer": "C-11's 20-minute half-life requires an on-site cyclotron and rapid radiochemistry",
+    "explanation": "C-11 has a half-life of only 20.4 minutes, requiring an on-site cyclotron for production and rapid automated radiochemistry for labeling. It cannot be transported to distant sites like F-18 tracers.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet106",
+    "section_id": "pet",
+    "question": "F-18 NaF (sodium fluoride) is a PET bone imaging agent that localizes by:",
+    "choices": [
+      "Binding to osteoclasts",
+      "Exchanging with hydroxyl ions in hydroxyapatite crystal on bone surfaces",
+      "Accumulating in bone marrow",
+      "Binding to serum calcium"
+    ],
+    "answer": "Exchanging with hydroxyl ions in hydroxyapatite crystal on bone surfaces",
+    "explanation": "F-18 fluoride ions exchange with hydroxyl groups in hydroxyapatite at sites of active bone formation, forming fluoroapatite. Uptake reflects osteoblastic activity and blood flow, with higher sensitivity than Tc-99m MDP bone scans.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet107",
+    "section_id": "pet",
+    "question": "N-13 ammonia used for myocardial perfusion PET has a half-life of:",
+    "choices": [
+      "2 minutes",
+      "10 minutes",
+      "68 minutes",
+      "110 minutes"
+    ],
+    "answer": "10 minutes",
+    "explanation": "N-13 has a half-life of 9.97 minutes (~10 min). N-13 ammonia is extracted by the myocardium proportionally to blood flow and is trapped via conversion to glutamine by glutamine synthetase.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet108",
+    "section_id": "pet",
+    "question": "The positron branching ratio of F-18 (fraction of decays producing a positron) is approximately:",
+    "choices": [
+      "50%",
+      "75%",
+      "97%",
+      "100%"
+    ],
+    "answer": "97%",
+    "explanation": "F-18 decays by positron emission 96.7% of the time and by electron capture 3.3%. The high positron branching ratio makes F-18 an efficient PET isotope with high detection sensitivity per decay.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet109",
+    "section_id": "pet",
+    "question": "Ga-68 DOTATATE targets which receptor for neuroendocrine tumor imaging?",
+    "choices": [
+      "Epidermal growth factor receptor (EGFR)",
+      "Somatostatin receptor subtype 2 (SSTR2)",
+      "Prostate-specific membrane antigen (PSMA)",
+      "Folate receptor"
+    ],
+    "answer": "Somatostatin receptor subtype 2 (SSTR2)",
+    "explanation": "Ga-68 DOTATATE binds with high affinity to somatostatin receptor subtype 2 (SSTR2), which is overexpressed on neuroendocrine tumors. It has largely replaced In-111 OctreoScan for NET imaging due to superior sensitivity.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet110",
+    "section_id": "pet",
+    "question": "F-18 florbetapir (Amyvid) is used to image:",
+    "choices": [
+      "Dopamine transporters",
+      "Beta-amyloid plaques in the brain",
+      "Tau protein tangles",
+      "Myocardial perfusion"
+    ],
+    "answer": "Beta-amyloid plaques in the brain",
+    "explanation": "F-18 florbetapir binds to beta-amyloid neuritic plaques in the brain, aiding in the evaluation of patients with cognitive decline for Alzheimer's disease. A negative scan makes Alzheimer's unlikely.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet111",
+    "section_id": "pet",
+    "question": "The nuclear reaction used to produce F-18 in a cyclotron is:",
+    "choices": [
+      "O-16(p,n)F-18",
+      "O-18(p,n)F-18",
+      "Ne-20(d,α)F-18",
+      "N-14(p,α)C-11"
+    ],
+    "answer": "O-18(p,n)F-18",
+    "explanation": "F-18 is produced by bombarding O-18-enriched water with protons in a cyclotron via the ¹⁸O(p,n)¹⁸F reaction. The F-18 fluoride is then used for radiochemical synthesis of FDG and other tracers.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet112",
+    "section_id": "pet",
+    "question": "O-15 water PET is considered the gold standard for measuring:",
+    "choices": [
+      "Glucose metabolism",
+      "Cerebral blood flow (CBF)",
+      "Bone turnover",
+      "Amyloid deposition"
+    ],
+    "answer": "Cerebral blood flow (CBF)",
+    "explanation": "O-15 water (t½ = 2.04 min) is a freely diffusible tracer that distributes proportionally to blood flow. It is the reference standard for quantitative CBF measurement, though its ultra-short half-life limits clinical practicality.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet113",
+    "section_id": "pet",
+    "question": "The Sr-82/Rb-82 generator parent isotope Sr-82 has a half-life of approximately:",
+    "choices": [
+      "76 seconds",
+      "68 minutes",
+      "25 days",
+      "271 days"
+    ],
+    "answer": "25 days",
+    "explanation": "Sr-82 has a half-life of 25.4 days, allowing the Rb-82 generator to be used clinically for approximately 4-6 weeks. Daily QC must verify acceptable Sr-82 and Sr-85 breakthrough levels.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet114",
+    "section_id": "pet",
+    "question": "F-18 PSMA-1007 and Ga-68 PSMA-11 target which molecule for prostate cancer imaging?",
+    "choices": [
+      "Androgen receptor",
+      "Prostate-specific antigen (PSA)",
+      "Prostate-specific membrane antigen (PSMA)",
+      "Testosterone"
+    ],
+    "answer": "Prostate-specific membrane antigen (PSMA)",
+    "explanation": "PSMA-targeted tracers bind to prostate-specific membrane antigen, a transmembrane protein overexpressed on prostate cancer cells. PSMA PET has superior sensitivity for detecting recurrent and metastatic prostate cancer compared to conventional imaging.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet115",
+    "section_id": "pet",
+    "question": "The lumped constant (LC) in FDG PET quantification accounts for:",
+    "choices": [
+      "Radioactive decay of F-18",
+      "The difference in transport and phosphorylation rates between FDG and glucose",
+      "Partial volume effects",
+      "Attenuation of 511 keV photons"
+    ],
+    "answer": "The difference in transport and phosphorylation rates between FDG and glucose",
+    "explanation": "The lumped constant relates FDG uptake to true glucose metabolic rate, accounting for differences in affinity for GLUT transporters and hexokinase between FDG and native glucose. LC ≈ 0.52-0.89 depending on tissue type.",
+    "difficulty": 8
+  },
+  {
+    "id": "pet116",
+    "section_id": "pet",
+    "question": "Cu-64 is increasingly used in PET because of its:",
+    "choices": [
+      "5-minute half-life allowing rapid scanning",
+      "12.7-hour half-life suitable for imaging slow biological processes and theranostics",
+      "Monoenergetic gamma emission",
+      "Zero positron range"
+    ],
+    "answer": "12.7-hour half-life suitable for imaging slow biological processes and theranostics",
+    "explanation": "Cu-64 (t½ = 12.7 h) decays by both β+ (17.5%) and β- (38.5%) emission, making it suitable for both PET imaging and targeted radionuclide therapy (theranostics). Its longer half-life allows imaging of slow-kinetic tracers.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet117",
+    "section_id": "pet",
+    "question": "Ga-68 has a half-life of:",
+    "choices": [
+      "10 minutes",
+      "68 minutes",
+      "76 seconds",
+      "271 days"
+    ],
+    "answer": "68 minutes",
+    "explanation": "Ga-68 has a half-life of 67.7 minutes (~68 min). It is produced from a Ge-68/Ga-68 generator, making it accessible without an on-site cyclotron. It is widely used for labeling somatostatin analogs (DOTATATE) and PSMA ligands.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet118",
+    "section_id": "pet",
+    "question": "F-18 fluciclovine (Axumin) is an amino acid analog used primarily for:",
+    "choices": [
+      "Brain tumor imaging",
+      "Recurrent prostate cancer detection",
+      "Cardiac perfusion",
+      "Bone metastasis detection"
+    ],
+    "answer": "Recurrent prostate cancer detection",
+    "explanation": "F-18 fluciclovine is a synthetic amino acid analog that is transported into cells via amino acid transporters upregulated in prostate cancer. It was FDA-approved for suspected recurrent prostate cancer, though PSMA PET has now largely supplanted it.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet119",
+    "section_id": "pet",
+    "question": "The maximum positron energy of C-11 is approximately:",
+    "choices": [
+      "250 keV",
+      "634 keV",
+      "960 keV",
+      "1.90 MeV"
+    ],
+    "answer": "960 keV",
+    "explanation": "C-11 has a maximum positron energy of 960 keV, resulting in a mean positron range of approximately 1.1 mm in water. This is intermediate between F-18 (634 keV, 0.6 mm) and Ga-68 (1.90 MeV, 2.9 mm).",
+    "difficulty": 6
+  },
+  {
+    "id": "pet120",
+    "section_id": "pet",
+    "question": "Zr-89 is used for immuno-PET imaging because:",
+    "choices": [
+      "Its 5-minute half-life matches antibody kinetics",
+      "Its 78.4-hour half-life matches the slow pharmacokinetics of antibodies",
+      "It produces no positrons",
+      "It has zero attenuation in tissue"
+    ],
+    "answer": "Its 78.4-hour half-life matches the slow pharmacokinetics of antibodies",
+    "explanation": "Zr-89 (t½ = 78.4 h, ~3.3 days) has a half-life compatible with the slow blood clearance and tumor accumulation of intact monoclonal antibodies (days to weeks), enabling immuno-PET imaging of antibody biodistribution.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet121",
+    "section_id": "pet",
+    "question": "Medical cyclotrons for PET isotope production typically accelerate:",
+    "choices": [
+      "Electrons to 5-10 MeV",
+      "Protons (or H⁻ ions) to 10-18 MeV",
+      "Alpha particles to 50 MeV",
+      "Neutrons to 20 MeV"
+    ],
+    "answer": "Protons (or H⁻ ions) to 10-18 MeV",
+    "explanation": "Most medical cyclotrons accelerate H⁻ ions (negative hydrogen) to 10-18 MeV. At extraction, the H⁻ ions pass through a carbon stripping foil that removes both electrons, converting them to protons directed at the target.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet122",
+    "section_id": "pet",
+    "question": "In a cyclotron, particles spiral outward because:",
+    "choices": [
+      "The magnetic field increases with radius",
+      "Their speed increases with each acceleration, increasing the radius of curvature",
+      "The RF frequency increases during acceleration",
+      "Gravity pulls them outward"
+    ],
+    "answer": "Their speed increases with each acceleration, increasing the radius of curvature",
+    "explanation": "In a cyclotron, charged particles gain energy from the RF electric field in the dees. As their speed increases, the radius of their circular path (r = mv/qB) increases, causing them to spiral outward toward the extraction port.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet123",
+    "section_id": "pet",
+    "question": "The nuclear reaction for producing C-11 in a cyclotron is:",
+    "choices": [
+      "O-18(p,n)F-18",
+      "N-14(p,α)C-11",
+      "B-11(p,n)C-11",
+      "C-12(γ,n)C-11"
+    ],
+    "answer": "B-11(p,n)C-11",
+    "explanation": "C-11 is produced by bombarding nitrogen-14 gas with protons: ¹⁴N(p,α)¹¹C. The target contains nitrogen gas with a small amount of oxygen to produce C-11 as CO₂, which is then used for radiochemistry.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet124",
+    "section_id": "pet",
+    "question": "Self-shielded cyclotrons are advantageous for PET facilities because they:",
+    "choices": [
+      "Produce higher beam currents",
+      "Eliminate the need for a separate concrete-shielded vault",
+      "Use less electrical power",
+      "Can accelerate heavier ions"
+    ],
+    "answer": "Eliminate the need for a separate concrete-shielded vault",
+    "explanation": "Self-shielded cyclotrons incorporate thick steel and polyethylene shielding around the cyclotron itself, reducing room shielding requirements. This simplifies facility design, reduces construction costs, and enables installation in smaller spaces.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet125",
+    "section_id": "pet",
+    "question": "The Ge-68/Ga-68 generator is based on which decay mode of Ge-68?",
+    "choices": [
+      "Beta-minus decay",
+      "Alpha decay",
+      "Electron capture",
+      "Spontaneous fission"
+    ],
+    "answer": "Electron capture",
+    "explanation": "Ge-68 decays to Ga-68 exclusively by electron capture (100% EC, no gamma emission). Ga-68 then decays by positron emission (89%) and electron capture (11%) with a 68-minute half-life.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet126",
+    "section_id": "pet",
+    "question": "O-18-enriched water used as a cyclotron target for F-18 production typically has an enrichment level of:",
+    "choices": [
+      "20-30%",
+      "50-60%",
+      "95-98%",
+      "100%"
+    ],
+    "answer": "95-98%",
+    "explanation": "O-18 enriched water targets are typically 95-98% enriched to maximize F-18 production yield. The enriched water is expensive ($150-300/mL) and is often recovered and recycled after irradiation.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet127",
+    "section_id": "pet",
+    "question": "The beam current in a medical cyclotron for F-18 production is typically:",
+    "choices": [
+      "1-5 nA",
+      "40-100 μA",
+      "5-10 mA",
+      "100 A"
+    ],
+    "answer": "40-100 μA",
+    "explanation": "Medical cyclotrons operate at beam currents of approximately 40-100 μA for routine F-18 production. Higher currents produce more activity but generate more heat in the target, requiring efficient cooling systems.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet128",
+    "section_id": "pet",
+    "question": "In H⁻ cyclotrons, beam extraction uses a thin carbon stripping foil that:",
+    "choices": [
+      "Slows down the protons",
+      "Removes both electrons from H⁻, reversing the charge and causing the beam to curve outward",
+      "Converts protons to neutrons",
+      "Absorbs all gamma radiation"
+    ],
+    "answer": "Removes both electrons from H⁻, reversing the charge and causing the beam to curve outward",
+    "explanation": "The stripping foil removes both electrons from H⁻ ions, converting them to protons (H⁺). The positive charge reverses the direction of the magnetic force, bending the beam outward toward the target instead of continuing to spiral.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet129",
+    "section_id": "pet",
+    "question": "Quality control of the Ge-68/Ga-68 generator eluate includes testing for:",
+    "choices": [
+      "F-18 contamination",
+      "Ge-68 breakthrough, pH, radionuclidic purity, and chemical purity",
+      "Only sterility",
+      "Only volume"
+    ],
+    "answer": "Ge-68 breakthrough, pH, radionuclidic purity, and chemical purity",
+    "explanation": "Generator eluate QC verifies that Ge-68 breakthrough is below limits (< 0.001%), pH is acceptable, radiochemical purity is high, and metal ion contamination is minimal to ensure safe patient injection.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet130",
+    "section_id": "pet",
+    "question": "The typical F-18 FDG production yield from a single cyclotron run can be:",
+    "choices": [
+      "1-5 MBq",
+      "50-100 MBq",
+      "5-50 GBq",
+      "500 GBq"
+    ],
+    "answer": "5-50 GBq",
+    "explanation": "A typical cyclotron run produces 5-50 GBq (135-1350 mCi) of F-18 FDG end of synthesis, depending on beam current, irradiation time, and synthesis efficiency. This can supply multiple patient doses.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet131",
+    "section_id": "pet",
+    "question": "Daily PET QC typically includes:",
+    "choices": [
+      "Full NEMA performance testing",
+      "A blank or normalization scan to verify detector uniformity and calibration",
+      "Spatial resolution measurement with a line source",
+      "Dose calibrator linearity testing"
+    ],
+    "answer": "A blank or normalization scan to verify detector uniformity and calibration",
+    "explanation": "Daily PET QC involves a blank scan (no source) or normalization/calibration scan to verify detector uniformity, check for failed detector blocks, and confirm the scanner's quantitative accuracy.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet132",
+    "section_id": "pet",
+    "question": "The NEMA NU-2 standard measures PET scanner performance including:",
+    "choices": [
+      "CT dose index (CTDI) only",
+      "Spatial resolution, scatter fraction, sensitivity, count rate performance, and image quality",
+      "Only energy resolution",
+      "Cyclotron output"
+    ],
+    "answer": "Spatial resolution, scatter fraction, sensitivity, count rate performance, and image quality",
+    "explanation": "NEMA NU-2 is the standard for evaluating clinical PET scanner performance. It specifies standardized methods for measuring spatial resolution, sensitivity, scatter fraction, count rate performance (NECR), and image quality.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet133",
+    "section_id": "pet",
+    "question": "The NEMA image quality phantom contains spheres of various sizes to assess:",
+    "choices": [
+      "Spatial resolution only",
+      "Contrast recovery and background variability",
+      "Attenuation correction accuracy",
+      "CT number accuracy"
+    ],
+    "answer": "Contrast recovery and background variability",
+    "explanation": "The NEMA IQ phantom has hot and cold spheres (10-37 mm) in a warm background. It measures contrast recovery coefficients (how well the scanner recovers true sphere activity) and background variability (noise), which together characterize image quality.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet134",
+    "section_id": "pet",
+    "question": "PET scanner sensitivity as measured by NEMA NU-2 is defined as:",
+    "choices": [
+      "The ability to distinguish two closely spaced sources",
+      "The count rate per unit of activity (cps/kBq) for a standard line source",
+      "The minimum detectable activity",
+      "The maximum count rate before dead time losses"
+    ],
+    "answer": "The count rate per unit of activity (cps/kBq) for a standard line source",
+    "explanation": "NEMA sensitivity is measured using a 70-cm line source inside aluminum sleeves of increasing thickness. Extrapolation to zero attenuation gives the intrinsic sensitivity in counts per second per kilobecquerel (cps/kBq).",
+    "difficulty": 7
+  },
+  {
+    "id": "pet135",
+    "section_id": "pet",
+    "question": "The ACR phantom test for PET/CT includes filling the phantom with a known F-18 concentration and verifying:",
+    "choices": [
+      "Only image uniformity",
+      "SUV accuracy, image uniformity, and alignment between PET and CT",
+      "Only spatial resolution",
+      "Only the CT component"
+    ],
+    "answer": "SUV accuracy, image uniformity, and alignment between PET and CT",
+    "explanation": "ACR PET/CT accreditation phantom testing evaluates SUV accuracy (within ±10% of expected), image uniformity, contrast recovery, and correct PET/CT co-registration alignment.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet136",
+    "section_id": "pet",
+    "question": "A failed detector block in a PET ring appears on the sinogram as:",
+    "choices": [
+      "A ring artifact in the reconstructed image",
+      "A diagonal line or gap in the sinogram",
+      "A uniform increase in background",
+      "No visible effect"
+    ],
+    "answer": "A diagonal line or gap in the sinogram",
+    "explanation": "A dead detector block causes a line of missing data in the sinogram. In reconstructed images, this can appear as streak or ring artifacts. Daily QC sinogram review helps identify failed blocks before clinical scanning.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet137",
+    "section_id": "pet",
+    "question": "PET/CT alignment should be verified regularly because misregistration can cause:",
+    "choices": [
+      "Incorrect SUV quantification due to misapplied attenuation correction",
+      "Improved spatial resolution",
+      "Better scatter correction",
+      "No clinical impact"
+    ],
+    "answer": "Incorrect SUV quantification due to misapplied attenuation correction",
+    "explanation": "PET/CT misregistration applies attenuation values from incorrect anatomical locations, causing quantitative errors. This is especially problematic at tissue-air and tissue-bone boundaries where attenuation changes sharply.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet138",
+    "section_id": "pet",
+    "question": "The Jaszczak phantom is commonly used in nuclear medicine to evaluate:",
+    "choices": [
+      "CT dose performance",
+      "Spatial resolution (cold rod sections) and uniformity",
+      "PET sensitivity",
+      "Cyclotron beam quality"
+    ],
+    "answer": "Spatial resolution (cold rod sections) and uniformity",
+    "explanation": "The Jaszczak phantom contains cold rod inserts of various sizes and a uniform section. It evaluates spatial resolution (smallest resolvable rods), uniformity, and contrast, and is widely used for SPECT and PET QA.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet139",
+    "section_id": "pet",
+    "question": "Well counter cross-calibration with the PET scanner ensures:",
+    "choices": [
+      "The well counter can replace the PET scanner",
+      "Accurate absolute quantification by verifying consistent activity measurements between devices",
+      "The well counter has adequate energy resolution",
+      "The scanner has sufficient spatial resolution"
+    ],
+    "answer": "Accurate absolute quantification by verifying consistent activity measurements between devices",
+    "explanation": "Cross-calibration verifies that the PET scanner, dose calibrator, and well counter all measure the same activity concentration to within acceptable tolerances (typically ±5%). This ensures SUV accuracy.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet140",
+    "section_id": "pet",
+    "question": "The PET component of a PET/CT scanner should have its timing calibration verified:",
+    "choices": [
+      "Only at installation",
+      "At least quarterly or per manufacturer recommendations",
+      "Only when image quality visibly degrades",
+      "Every 5 years"
+    ],
+    "answer": "At least quarterly or per manufacturer recommendations",
+    "explanation": "Timing calibration ensures that coincidence timing windows and TOF timing offsets are correctly set. Drift in timing calibration degrades coincidence detection efficiency and TOF resolution. Frequency depends on manufacturer protocols.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet141",
+    "section_id": "pet",
+    "question": "In PET uniformity testing, a coefficient of variation (COV) across a uniform phantom should typically be less than:",
+    "choices": [
+      "1%",
+      "5-10%",
+      "25%",
+      "50%"
+    ],
+    "answer": "5-10%",
+    "explanation": "PET uniformity COV should typically be below 5-10% for a uniform phantom acquisition with adequate counts. Higher COV indicates detector non-uniformity, normalization errors, or insufficient counting statistics.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet142",
+    "section_id": "pet",
+    "question": "EARL (EANM Research Ltd) accreditation for PET/CT primarily ensures:",
+    "choices": [
+      "Maximum patient throughput",
+      "Standardized quantitative performance across sites for multicenter clinical trials",
+      "Lowest possible radiation dose",
+      "Fastest reconstruction times"
+    ],
+    "answer": "Standardized quantitative performance across sites for multicenter clinical trials",
+    "explanation": "EARL accreditation standardizes PET quantitative performance by requiring scanners to meet specified recovery coefficients and SUV accuracy criteria. This ensures comparable quantitative results across different sites and scanner models.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet143",
+    "section_id": "pet",
+    "question": "The Sr-82/Rb-82 generator requires daily QC testing for:",
+    "choices": [
+      "F-18 contamination",
+      "Sr-82 and Sr-85 breakthrough",
+      "Ga-68 breakthrough",
+      "CT alignment"
+    ],
+    "answer": "Sr-82 and Sr-85 breakthrough",
+    "explanation": "Daily QC of the Rb-82 generator measures Sr-82 breakthrough (limit: 0.02 μCi Sr-82 per mCi Rb-82) and Sr-85 breakthrough (limit: 0.2 μCi Sr-85 per mCi Rb-82) to ensure patient safety.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet145",
+    "section_id": "pet",
+    "question": "The typical spatial resolution of a modern clinical PET scanner (per NEMA) is approximately:",
+    "choices": [
+      "1 mm FWHM",
+      "4-5 mm FWHM",
+      "10-12 mm FWHM",
+      "20 mm FWHM"
+    ],
+    "answer": "4-5 mm FWHM",
+    "explanation": "Modern clinical PET scanners achieve approximately 4-5 mm FWHM spatial resolution at 1 cm from center, as measured by NEMA NU-2. This is limited by crystal size (3-4 mm), positron range, and non-collinearity.",
+    "difficulty": 2
+  },
+  {
+    "id": "pet146",
+    "section_id": "pet",
+    "question": "In simultaneous PET/MR systems, the PET detector ring is located:",
+    "choices": [
+      "In a separate room from the MR",
+      "Inside the MR bore, integrated between the gradient and body RF coils",
+      "Behind the MR scanner, with sequential imaging",
+      "In a rotating gantry around the MR"
+    ],
+    "answer": "Inside the MR bore, integrated between the gradient and body RF coils",
+    "explanation": "Simultaneous PET/MR integrates the PET detector ring inside the MR bore, typically between the gradient coils and the body RF coil. This requires MR-compatible SiPM-based detectors, as PMTs cannot function in magnetic fields.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet147",
+    "section_id": "pet",
+    "question": "A major limitation of Dixon-based MR attenuation correction in the head is:",
+    "choices": [
+      "It overestimates lung attenuation",
+      "It does not identify cortical bone, which significantly attenuates 511 keV photons in the skull",
+      "It is too slow for clinical use",
+      "It cannot distinguish air from soft tissue"
+    ],
+    "answer": "It does not identify cortical bone, which significantly attenuates 511 keV photons in the skull",
+    "explanation": "Dixon MR-AC segments tissue into air, lung, fat, and soft tissue but cannot detect cortical bone (no MR signal on standard sequences). In the brain, ignoring skull bone attenuation causes 10-20% SUV underestimation in cortical regions.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet148",
+    "section_id": "pet",
+    "question": "Sequential PET/MR systems differ from simultaneous systems in that:",
+    "choices": [
+      "PET and MR are acquired at the same time in both designs",
+      "The patient is shuttled between separate PET and MR gantries",
+      "Sequential systems provide better PET performance",
+      "Sequential systems require SiPM detectors"
+    ],
+    "answer": "The patient is shuttled between separate PET and MR gantries",
+    "explanation": "Sequential PET/MR (e.g., Philips Ingenuity TF) uses separate PET and MR gantries connected by a moving table. This avoids engineering challenges of integration but increases scan time and introduces potential misregistration.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet149",
+    "section_id": "pet",
+    "question": "MR-based attenuation correction using atlas-based methods works by:",
+    "choices": [
+      "Directly measuring 511 keV attenuation with MR",
+      "Registering a CT-derived atlas attenuation map to the patient's MR anatomy",
+      "Using the MR gradient coils to measure density",
+      "Performing a transmission scan with an MR-compatible source"
+    ],
+    "answer": "Registering a CT-derived atlas attenuation map to the patient's MR anatomy",
+    "explanation": "Atlas methods register a pre-computed CT-based attenuation template to the patient's MR images using deformable registration. This provides bone information missing from Dixon-based methods but may fail with atypical anatomy.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet150",
+    "section_id": "pet",
+    "question": "The main advantage of simultaneous PET/MR over PET/CT is:",
+    "choices": [
+      "Better PET spatial resolution",
+      "Superior soft tissue contrast from MR and reduced radiation dose (no CT)",
+      "Higher PET sensitivity",
+      "Faster scan times"
+    ],
+    "answer": "Superior soft tissue contrast from MR and reduced radiation dose (no CT)",
+    "explanation": "PET/MR provides excellent soft tissue contrast for brain, head/neck, liver, and pelvis imaging, while eliminating CT radiation dose. This is particularly beneficial for pediatric patients and those requiring serial imaging.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet151",
+    "section_id": "pet",
+    "question": "MR hardware (RF coils, patient table) in PET/MR requires attenuation correction because:",
+    "choices": [
+      "MR coils emit positrons",
+      "RF coils and the patient table attenuate 511 keV photons in the PET FOV",
+      "MR coils interfere with the PET electronics",
+      "They cause MR image artifacts"
+    ],
+    "answer": "RF coils and the patient table attenuate 511 keV photons in the PET FOV",
+    "explanation": "MR RF coils, the patient table, and other hardware in the PET FOV attenuate 511 keV photons. Pre-measured CT-based attenuation templates for these components must be included in the AC map for accurate PET quantification.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet152",
+    "section_id": "pet",
+    "question": "Zero-TE (ZTE) MR sequences in PET/MR attenuation correction are used similarly to UTE sequences to:",
+    "choices": [
+      "Increase MR scan speed",
+      "Capture cortical bone signal with near-zero echo time",
+      "Improve fat suppression",
+      "Reduce SAR"
+    ],
+    "answer": "Capture cortical bone signal with near-zero echo time",
+    "explanation": "ZTE sequences achieve near-zero echo times, capturing signal from tissues with very short T2* such as cortical bone. This improves bone identification in MR-AC maps, particularly important for brain PET/MR studies.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet153",
+    "section_id": "pet",
+    "question": "Metal implants pose a greater challenge for attenuation correction in PET/MR compared to PET/CT because:",
+    "choices": [
+      "Metals are invisible on both CT and MR",
+      "MR susceptibility artifacts cause signal voids that are misclassified as air in the AC map",
+      "CT cannot image near metal implants",
+      "PET/MR has lower spatial resolution"
+    ],
+    "answer": "MR susceptibility artifacts cause signal voids that are misclassified as air in the AC map",
+    "explanation": "Metal implants cause large susceptibility artifacts on MRI, creating signal voids. In MR-AC, these voids may be classified as air (μ = 0) instead of dense metal, severely underestimating local attenuation and biasing nearby SUV values.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet154",
+    "section_id": "pet",
+    "question": "Deep learning methods for MR-based attenuation correction in PET/MR aim to:",
+    "choices": [
+      "Replace PET detectors",
+      "Generate synthetic CT images from MR data to provide continuous attenuation maps",
+      "Improve MR image quality only",
+      "Reduce PET scan time"
+    ],
+    "answer": "Generate synthetic CT images from MR data to provide continuous attenuation maps",
+    "explanation": "Deep learning approaches train neural networks on paired MR and CT data to generate pseudo-CT maps from MRI. These synthetic CTs provide continuous attenuation values including bone, overcoming limitations of segmentation-based methods.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet155",
+    "section_id": "pet",
+    "question": "Truncation artifacts in PET/MR attenuation correction occur because:",
+    "choices": [
+      "PET has a larger transaxial FOV than MR, and patient arms may extend beyond the MR FOV",
+      "MR always has a larger FOV than PET",
+      "Truncation only affects PET/CT",
+      "Patient arms are never in the FOV"
+    ],
+    "answer": "PET has a larger transaxial FOV than MR, and patient arms may extend beyond the MR FOV",
+    "explanation": "The MR FOV (~50 cm) may be smaller than the PET FOV (~60 cm). Patient anatomy (especially arms) outside the MR FOV has no attenuation map data, causing quantitative errors. MLAA or contour-based extension methods help mitigate this.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet156",
+    "section_id": "pet",
+    "question": "Respiratory gating in PET/CT is used primarily to:",
+    "choices": [
+      "Reduce scan time",
+      "Reduce motion blurring and improve quantification of lesions near the diaphragm",
+      "Improve CT image quality",
+      "Reduce patient dose"
+    ],
+    "answer": "Reduce motion blurring and improve quantification of lesions near the diaphragm",
+    "explanation": "Respiratory gating bins PET data by respiratory phase, reducing motion-induced blurring of lung base and liver dome lesions. This improves spatial resolution and SUV accuracy but uses only a fraction of acquired data per gate, increasing noise.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet157",
+    "section_id": "pet",
+    "question": "The Patlak graphical analysis method in dynamic PET quantifies:",
+    "choices": [
+      "Blood flow only",
+      "The net irreversible uptake rate (Ki) of a tracer using a linear regression after equilibrium",
+      "Receptor density only",
+      "Attenuation coefficients"
+    ],
+    "answer": "The net irreversible uptake rate (Ki) of a tracer using a linear regression after equilibrium",
+    "explanation": "Patlak analysis plots the tissue-to-plasma ratio against the integral of plasma activity, yielding a linear relationship at late times. The slope gives Ki (net influx rate), used for quantifying FDG metabolic rate without full compartmental modeling.",
+    "difficulty": 8
+  },
+  {
+    "id": "pet158",
+    "section_id": "pet",
+    "question": "Partial volume correction (PVC) in PET can be performed using:",
+    "choices": [
+      "Only increasing the injected dose",
+      "Recovery coefficient methods, iterative deconvolution, or anatomy-based approaches using CT/MR",
+      "Only post-reconstruction smoothing",
+      "Only increasing scan duration"
+    ],
+    "answer": "Recovery coefficient methods, iterative deconvolution, or anatomy-based approaches using CT/MR",
+    "explanation": "PVC methods include applying recovery coefficients based on object size, iterative deconvolution (e.g., Van Cittert), and anatomy-based methods that use co-registered CT or MR to define tissue boundaries and correct for spill-in/spill-out.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet159",
+    "section_id": "pet",
+    "question": "In dynamic PET, the image-derived input function (IDIF) is obtained by:",
+    "choices": [
+      "Drawing blood samples from the patient",
+      "Placing an ROI over a large blood vessel (e.g., aorta) on the PET images",
+      "Using a population-averaged curve",
+      "Measuring the injected dose only"
+    ],
+    "answer": "Placing an ROI over a large blood vessel (e.g., aorta) on the PET images",
+    "explanation": "IDIF uses an ROI over a large artery (ascending aorta, carotid) on dynamic PET images to estimate the arterial input function non-invasively, avoiding arterial blood sampling. Partial volume effects in the vessel require correction.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet160",
+    "section_id": "pet",
+    "question": "Motion correction techniques in PET include all of the following EXCEPT:",
+    "choices": [
+      "Respiratory gating",
+      "Data-driven motion estimation from listmode data",
+      "Optical tracking of external markers",
+      "Increasing the coincidence timing window"
+    ],
+    "answer": "Increasing the coincidence timing window",
+    "explanation": "Motion correction uses gating, external tracking devices, or data-driven methods to detect and correct for patient/organ motion. The coincidence timing window is unrelated to motion correction — it affects randoms detection.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet161",
+    "section_id": "pet",
+    "question": "The coefficient of variation in a uniform region of a PET image is a measure of:",
+    "choices": [
+      "Spatial resolution",
+      "Image noise",
+      "Attenuation correction accuracy",
+      "Scatter fraction"
+    ],
+    "answer": "Image noise",
+    "explanation": "COV (standard deviation / mean × 100%) in a uniform region quantifies image noise. Lower COV indicates less noisy images. COV depends on count statistics, reconstruction parameters, and post-filtering.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet162",
+    "section_id": "pet",
+    "question": "Kinetic modeling in PET with a two-tissue compartment model for FDG estimates:",
+    "choices": [
+      "Only blood flow",
+      "Rate constants K1 (influx), k2 (efflux), k3 (phosphorylation), and k4 (dephosphorylation)",
+      "Only attenuation coefficients",
+      "Only the injected dose distribution"
+    ],
+    "answer": "Rate constants K1 (influx), k2 (efflux), k3 (phosphorylation), and k4 (dephosphorylation)",
+    "explanation": "The two-tissue compartment model for FDG describes transport from plasma to free FDG (K1, k2) and phosphorylation/dephosphorylation (k3, k4). The metabolic rate of glucose = (K1 × k3)/(k2 + k3) × plasma glucose/LC.",
+    "difficulty": 8
+  },
+  {
+    "id": "pet163",
+    "section_id": "pet",
+    "question": "Elastic motion correction (deformable registration) between respiratory gates in PET:",
+    "choices": [
+      "Discards most of the acquired data",
+      "Aligns all respiratory gates to a reference gate and combines them, preserving count statistics",
+      "Only works with CT data",
+      "Reduces spatial resolution"
+    ],
+    "answer": "Aligns all respiratory gates to a reference gate and combines them, preserving count statistics",
+    "explanation": "Deformable registration warps each respiratory gate to match a reference gate, then sums all gates. This preserves the full count statistics (unlike gating alone) while reducing motion blur, improving both resolution and SNR.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet164",
+    "section_id": "pet",
+    "question": "The spill-in effect in PET refers to:",
+    "choices": [
+      "Radioactive contamination of the scanner room",
+      "Activity from surrounding tissues being blurred into a cold or low-activity region",
+      "Overflow of radiotracer from the injection syringe",
+      "Detector count rate saturation"
+    ],
+    "answer": "Activity from surrounding tissues being blurred into a cold or low-activity region",
+    "explanation": "Spill-in occurs when limited spatial resolution causes activity from adjacent hot structures to be blurred into a colder region, artificially increasing its apparent uptake. This is the complement of spill-out (activity leaving a hot lesion).",
+    "difficulty": 5
+  },
+  {
+    "id": "pet165",
+    "section_id": "pet",
+    "question": "Total-body PET scanners (e.g., 194 cm axial FOV) improve quantitative PET by providing:",
+    "choices": [
+      "Only faster scan times",
+      "Up to 40× higher sensitivity enabling lower doses, faster scans, or improved image quality",
+      "Better CT attenuation correction",
+      "Higher magnetic field strength"
+    ],
+    "answer": "Up to 40× higher sensitivity enabling lower doses, faster scans, or improved image quality",
+    "explanation": "Total-body PET scanners with long axial FOV (e.g., uEXPLORER at 194 cm) capture nearly all emitted photons, achieving ~40× higher sensitivity than standard 25-cm axial FOV scanners. This enables ultra-low-dose, ultrafast, or delayed imaging.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet166",
+    "section_id": "pet",
+    "question": "The typical injected activity of F-18 FDG for an adult whole-body PET/CT scan is approximately:",
+    "choices": [
+      "37 MBq (1 mCi)",
+      "185-370 MBq (5-10 mCi)",
+      "370-740 MBq (10-20 mCi)",
+      "2000 MBq (54 mCi)"
+    ],
+    "answer": "370-740 MBq (10-20 mCi)",
+    "explanation": "Standard adult FDG dose is approximately 370-740 MBq (10-20 mCi), often weight-based (e.g., 5.2 MBq/kg). Modern TOF scanners may use lower doses due to improved sensitivity, while EANM guidelines suggest 3.5-5.2 MBq/kg.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet167",
+    "section_id": "pet",
+    "question": "In cardiac PET perfusion imaging with Rb-82, stress is typically induced using:",
+    "choices": [
+      "Treadmill exercise",
+      "Pharmacological vasodilators (adenosine, regadenoson, or dipyridamole)",
+      "Cold pressor test",
+      "Electrical stimulation"
+    ],
+    "answer": "Pharmacological vasodilators (adenosine, regadenoson, or dipyridamole)",
+    "explanation": "Rb-82 cardiac PET requires pharmacological stress because the ultrashort half-life (76 s) makes exercise stress impractical — the tracer would decay before peak exercise. Regadenoson is the most commonly used agent.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet169",
+    "section_id": "pet",
+    "question": "Normal physiological FDG uptake is commonly seen in all of the following EXCEPT:",
+    "choices": [
+      "Brain gray matter",
+      "Myocardium",
+      "Liver",
+      "Skeletal muscle at rest in a fasting patient"
+    ],
+    "answer": "Skeletal muscle at rest in a fasting patient",
+    "explanation": "Brain (high glucose metabolism), myocardium (variable, especially if not fasting), and liver (moderate uptake) normally show FDG uptake. Resting skeletal muscle in a properly fasted patient has minimal FDG uptake.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet170",
+    "section_id": "pet",
+    "question": "The typical PET acquisition time per bed position for a standard FDG whole-body scan is:",
+    "choices": [
+      "5-10 seconds",
+      "1-3 minutes",
+      "10-15 minutes",
+      "30 minutes"
+    ],
+    "answer": "1-3 minutes",
+    "explanation": "Standard FDG PET acquires 1-3 minutes per bed position, with 6-8 bed positions covering the body. Modern TOF scanners with higher sensitivity may use shorter times (1-2 min) while maintaining image quality.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet171",
+    "section_id": "pet",
+    "question": "In amyloid PET imaging, a positive scan is characterized by:",
+    "choices": [
+      "Intense focal uptake in a single brain region",
+      "Loss of gray-white matter contrast due to diffuse cortical amyloid binding",
+      "Uptake confined to the white matter only",
+      "No cortical uptake at all"
+    ],
+    "answer": "Loss of gray-white matter contrast due to diffuse cortical amyloid binding",
+    "explanation": "A positive amyloid PET shows loss of gray-white matter distinction with diffuse cortical binding, indicating significant amyloid plaque burden. A negative scan shows predominantly white matter uptake with preserved gray-white contrast.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet172",
+    "section_id": "pet",
+    "question": "Myocardial viability assessment with FDG PET in ischemic cardiomyopathy is based on:",
+    "choices": [
+      "High FDG uptake indicating scar tissue",
+      "A perfusion-metabolism mismatch: reduced perfusion with preserved FDG uptake indicating viable hibernating myocardium",
+      "Matched reduction in both perfusion and FDG uptake",
+      "Increased perfusion with decreased FDG uptake"
+    ],
+    "answer": "A perfusion-metabolism mismatch: reduced perfusion with preserved FDG uptake indicating viable hibernating myocardium",
+    "explanation": "Hibernating myocardium shows reduced blood flow (perfusion defect on Rb-82 or N-13) but maintained glucose metabolism (FDG uptake). This mismatch indicates viable tissue that may recover function after revascularization.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet173",
+    "section_id": "pet",
+    "question": "Diuretic administration before F-18 FDG PET/CT of the pelvis is sometimes used to:",
+    "choices": [
+      "Increase tumor FDG uptake",
+      "Reduce FDG activity in the ureters and bladder to improve visualization of pelvic lesions",
+      "Speed up the scan",
+      "Reduce radiation dose to the patient"
+    ],
+    "answer": "Reduce FDG activity in the ureters and bladder to improve visualization of pelvic lesions",
+    "explanation": "FDG is excreted renally, causing intense bladder and ureteral activity that can obscure pelvic pathology. Diuretics (e.g., furosemide) and hydration promote urinary excretion before scanning, reducing interfering activity.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet174",
+    "section_id": "pet",
+    "question": "The Deauville 5-point scale used in lymphoma FDG PET response assessment uses which reference structures?",
+    "choices": [
+      "Brain and lung",
+      "Mediastinal blood pool and liver",
+      "Spleen and kidney",
+      "Bone marrow and thymus"
+    ],
+    "answer": "Mediastinal blood pool and liver",
+    "explanation": "The Deauville scale compares residual lymphoma FDG uptake to mediastinal blood pool (scores 1-2) and liver (scores 3-4). Score 5 indicates uptake markedly above liver or new lesions. Scores 1-3 generally indicate complete metabolic response.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet175",
+    "section_id": "pet",
+    "question": "Brown fat activation on FDG PET typically appears as:",
+    "choices": [
+      "Focal intense uptake in a single lymph node",
+      "Bilateral symmetric uptake in the supraclavicular, cervical, and paravertebral regions",
+      "Diffuse hepatic uptake",
+      "Unilateral lung uptake"
+    ],
+    "answer": "Bilateral symmetric uptake in the supraclavicular, cervical, and paravertebral regions",
+    "explanation": "Activated brown adipose tissue shows bilateral, symmetric, intense FDG uptake in characteristic locations (supraclavicular, cervical, axillary, paravertebral). It is more common in cold weather, young patients, and low BMI, and can mimic pathology.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet177",
+    "section_id": "pet",
+    "question": "PET facility shielding design must account for 511 keV photons, which require:",
+    "choices": [
+      "Less lead shielding than Tc-99m (140 keV)",
+      "Significantly more lead or concrete shielding than for Tc-99m facilities",
+      "No shielding because F-18 has a short half-life",
+      "Only time and distance protection"
+    ],
+    "answer": "Significantly more lead or concrete shielding than for Tc-99m facilities",
+    "explanation": "At 511 keV, the HVL in lead is ~4 mm (vs ~0.3 mm for 140 keV). PET facilities require substantially thicker shielding. Typical PET hot lab walls use 5-8 cm of lead or equivalent concrete thickness.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet178",
+    "section_id": "pet",
+    "question": "The effective dose to a patient from a standard FDG PET/CT (diagnostic CT) is approximately:",
+    "choices": [
+      "0.5 mSv",
+      "5-7 mSv from PET plus 5-20 mSv from CT",
+      "100 mSv",
+      "0.01 mSv"
+    ],
+    "answer": "5-7 mSv from PET plus 5-20 mSv from CT",
+    "explanation": "The FDG PET component delivers approximately 5-7 mSv (at 370-555 MBq). The CT component adds 5-20 mSv depending on protocol (low-dose AC-only CT: ~2-3 mSv; full diagnostic CT: 10-20 mSv). Total: 7-27 mSv.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet179",
+    "section_id": "pet",
+    "question": "The critical organ (highest absorbed dose) for FDG is the:",
+    "choices": [
+      "Brain",
+      "Liver",
+      "Urinary bladder wall",
+      "Thyroid"
+    ],
+    "answer": "Urinary bladder wall",
+    "explanation": "The urinary bladder wall receives the highest absorbed dose from FDG (~0.16 mGy/MBq with 2-hour voiding interval) because FDG and its metabolites are excreted renally and accumulate in the bladder. Frequent voiding reduces bladder dose.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet180",
+    "section_id": "pet",
+    "question": "Staff exposure in PET is highest during:",
+    "choices": [
+      "Image reconstruction",
+      "Patient injection, positioning, and proximity during uptake phase",
+      "CT scan acquisition",
+      "Report generation"
+    ],
+    "answer": "Patient injection, positioning, and proximity during uptake phase",
+    "explanation": "PET technologists receive the highest exposure during injection (handling the syringe), positioning the patient, and any time spent near the patient during the 60-minute uptake period. Automated injection systems and shielded waiting rooms reduce exposure.",
+    "difficulty": 2
+  },
+  {
+    "id": "pet182",
+    "section_id": "pet",
+    "question": "Tungsten syringe shields used for F-18 FDG injection reduce hand dose by approximately:",
+    "choices": [
+      "10%",
+      "30-50%",
+      "70-90%",
+      "99%"
+    ],
+    "answer": "70-90%",
+    "explanation": "Tungsten syringe shields (typically 5-10 mm thick) attenuate 511 keV photons by approximately 70-90%, significantly reducing hand exposure during FDG preparation and injection. Lead syringe shields provide similar attenuation.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet183",
+    "section_id": "pet",
+    "question": "L-shaped lead glass barriers in PET hot labs are used to:",
+    "choices": [
+      "Improve PET image quality",
+      "Shield staff during radiopharmaceutical preparation from body and hand exposure",
+      "Block MR radiofrequency signals",
+      "Reduce CT scatter"
+    ],
+    "answer": "Shield staff during radiopharmaceutical preparation from body and hand exposure",
+    "explanation": "L-shaped lead glass barriers (with leaded glass windows for visibility) provide shielding during dose preparation and dispensing. They reduce whole-body and extremity exposure from 511 keV photons during radiopharmaceutical handling.",
+    "difficulty": 2
+  },
+  {
+    "id": "pet186",
+    "section_id": "pet",
+    "question": "What is the typical coincidence timing resolution of a modern time-of-flight (TOF) PET scanner using LYSO crystals and SiPMs?",
+    "choices": [
+      "5–10 ns",
+      "200–400 ps",
+      "50–100 ns",
+      "1–2 ns"
+    ],
+    "answer": "200–400 ps",
+    "explanation": "Modern TOF-PET scanners with LYSO crystals and silicon photomultipliers (SiPMs) achieve coincidence timing resolutions in the range of 200–400 picoseconds. This timing information localizes the annihilation event along the line of response, improving signal-to-noise ratio. Older BGO-based systems had timing resolutions of several nanoseconds and were not suitable for TOF imaging.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet187",
+    "section_id": "pet",
+    "question": "Which scatter correction method in PET uses an estimate of the scatter distribution based on a single-scatter simulation model combined with the attenuation map?",
+    "choices": [
+      "Convolution-subtraction method",
+      "Single-scatter simulation (SSS)",
+      "Dual-energy window method",
+      "Tail-fitting method"
+    ],
+    "answer": "Single-scatter simulation (SSS)",
+    "explanation": "The single-scatter simulation (SSS) algorithm, developed by Watson and Ollinger, models the physics of Compton scattering using the emission image estimate and the attenuation map to compute the expected scatter distribution. It is the most widely used scatter correction method in modern PET scanners due to its accuracy and computational efficiency.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet188",
+    "section_id": "pet",
+    "question": "In iterative image reconstruction for PET (e.g., OSEM), what is the primary consequence of running too many iterations without regularization?",
+    "choices": [
+      "The image becomes overly smoothed",
+      "Noise amplification and edge artifacts",
+      "Attenuation artifacts appear",
+      "Scatter fraction increases"
+    ],
+    "answer": "Noise amplification and edge artifacts",
+    "explanation": "Iterative reconstruction algorithms like OSEM converge toward the maximum-likelihood solution, but as iterations increase beyond the optimum, noise in the data is progressively amplified in the image. Without regularization or post-smoothing, excessive iterations produce images dominated by noise and edge artifacts, degrading diagnostic quality.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet189",
+    "section_id": "pet",
+    "question": "What is the approximate shelf life of a Ge-68/Ga-68 generator before its output becomes clinically insufficient?",
+    "choices": [
+      "1 week",
+      "6–12 months",
+      "5 years",
+      "24 hours"
+    ],
+    "answer": "6–12 months",
+    "explanation": "The Ge-68/Ga-68 generator has a practical shelf life of approximately 6 to 12 months. Ge-68 has a half-life of 270.8 days (~9 months), so after about one half-life, the eluted Ga-68 activity falls below clinically useful levels. Ga-68 itself has a half-life of only 68 minutes and is eluted as needed from the generator.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet190",
+    "section_id": "pet",
+    "question": "In the cyclotron production of F-18, the nuclear reaction O-18(p,n)F-18 uses which target material?",
+    "choices": [
+      "Oxygen-18 enriched carbon dioxide gas",
+      "Oxygen-18 enriched water",
+      "Nitrogen-15 gas",
+      "Neon-20 gas"
+    ],
+    "answer": "Oxygen-18 enriched water",
+    "explanation": "F-18 is produced by bombarding oxygen-18 enriched water ([O-18]H₂O) with protons in a cyclotron via the O-18(p,n)F-18 reaction. The proton beam energy is typically 11–18 MeV. The resulting F-18 fluoride ion is then used to synthesize FDG and other PET radiopharmaceuticals.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet191",
+    "section_id": "pet",
+    "question": "Which factor is the PRIMARY determinant of intrinsic spatial resolution in a PET detector?",
+    "choices": [
+      "Scintillation crystal cross-sectional size",
+      "Photomultiplier tube quantum efficiency",
+      "Scanner bore diameter",
+      "Coincidence timing window width"
+    ],
+    "answer": "Scintillation crystal cross-sectional size",
+    "explanation": "The intrinsic spatial resolution of a PET detector is primarily determined by the cross-sectional dimensions of the individual scintillation crystal elements. Smaller crystal elements provide finer sampling and better spatial resolution. Other factors such as positron range and photon non-collinearity also contribute to overall system resolution but are not properties of the detector itself.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet192",
+    "section_id": "pet",
+    "question": "Dead time in PET detectors is most commonly modeled using which mathematical framework for paralyzable (extending) systems?",
+    "choices": [
+      "R_true = R_obs × exp(R_obs × τ)",
+      "R_obs = R_true × exp(−R_true × τ)",
+      "R_obs = R_true / (1 − R_true × τ)",
+      "R_obs = R_true / (1 + R_true × τ)"
+    ],
+    "answer": "R_obs = R_true × exp(−R_true × τ)",
+    "explanation": "For a paralyzable (extending) dead time model, the observed count rate relates to the true count rate by R_obs = R_true × exp(−R_true × τ), where τ is the dead time. In this model, each event resets the dead time window, and at very high count rates the observed rate actually decreases. The non-paralyzable model uses R_obs = R_true / (1 + R_true × τ).",
+    "difficulty": 8
+  },
+  {
+    "id": "pet193",
+    "section_id": "pet",
+    "question": "What is the purpose of normalization correction in PET imaging?",
+    "choices": [
+      "To correct for patient motion during the scan",
+      "To compensate for variations in detector pair efficiencies across all lines of response",
+      "To subtract the CT-based attenuation correction",
+      "To remove random coincidences from the data"
+    ],
+    "answer": "To compensate for variations in detector pair efficiencies across all lines of response",
+    "explanation": "Normalization correction accounts for non-uniform detection sensitivities across all detector pairs (lines of response). These variations arise from differences in crystal efficiency, geometric effects, and electronics. Normalization coefficients are typically obtained from a uniform source scan or from component-based models, and they ensure quantitatively accurate images.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet194",
+    "section_id": "pet",
+    "question": "The delayed coincidence window technique for estimating random coincidences in PET works by:",
+    "choices": [
+      "Applying a time delay (~50–100 ns) to one detector channel so that only accidental coincidences are recorded",
+      "Doubling the coincidence timing window to capture all possible events",
+      "Subtracting the singles rate from the total prompt rate",
+      "Using Monte Carlo simulation to predict random event locations"
+    ],
+    "answer": "Applying a time delay (~50–100 ns) to one detector channel so that only accidental coincidences are recorded",
+    "explanation": "In the delayed window method, the signal from one detector is delayed by a fixed time (typically 50–100 ns) beyond the prompt coincidence window. Any coincidences detected in this delayed window are purely accidental (random) since the true coincidence timing relationship is destroyed. This provides a direct, real-time estimate of the randoms rate that can be subtracted from the prompt coincidences.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet195",
+    "section_id": "pet",
+    "question": "At what approximate activity level does a PET scanner reach its noise-equivalent count rate (NECR) peak, and what happens to image quality beyond this point?",
+    "choices": [
+      "Image quality continues to improve linearly with increasing activity",
+      "Image quality plateaus and then degrades due to increasing dead time and randoms fraction",
+      "Image quality degrades only due to scatter, with dead time remaining constant",
+      "The scanner automatically shuts down to prevent detector damage"
+    ],
+    "answer": "Image quality plateaus and then degrades due to increasing dead time and randoms fraction",
+    "explanation": "The noise-equivalent count rate (NECR) characterizes effective PET sensitivity accounting for trues, randoms, and scatter. Beyond the NECR peak, the increasing randoms rate (which grows as the square of the singles rate) and dead time losses cause the effective signal-to-noise to degrade despite higher activity. The NECR peak activity varies by scanner but is typically in the range of 20–40 kBq/mL for clinical systems.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet196",
+    "section_id": "pet",
+    "question": "What does PET stand for in medical imaging?",
+    "choices": [
+      "Proton Emission Tracking",
+      "Positron Emission Tomography",
+      "Photon Energy Transfer",
+      "Particle Emission Technology"
+    ],
+    "answer": "Positron Emission Tomography",
+    "explanation": "PET stands for Positron Emission Tomography. It is a nuclear medicine imaging technique that detects pairs of 511 keV annihilation photons emitted after a positron from a radiotracer interacts with an electron in the body.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet197",
+    "section_id": "pet",
+    "question": "What is the most commonly used radioisotope in clinical PET imaging?",
+    "choices": [
+      "Carbon-11",
+      "Nitrogen-13",
+      "Fluorine-18",
+      "Gallium-68"
+    ],
+    "answer": "Fluorine-18",
+    "explanation": "Fluorine-18 (F-18) is the most widely used PET radioisotope, primarily in the form of F-18 fluorodeoxyglucose (FDG). Its 109.77-minute half-life is long enough to allow synthesis, transport, and imaging, yet short enough to limit patient dose.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet198",
+    "section_id": "pet",
+    "question": "What is the half-life of Fluorine-18?",
+    "choices": [
+      "20 minutes",
+      "6 hours",
+      "Approximately 110 minutes",
+      "12 hours"
+    ],
+    "answer": "Approximately 110 minutes",
+    "explanation": "The physical half-life of F-18 is 109.77 minutes (approximately 110 minutes). This relatively short half-life means that the radioactivity in the patient decreases rapidly after the scan, reducing overall radiation dose.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet199",
+    "section_id": "pet",
+    "question": "When a positron annihilates with an electron, what is produced?",
+    "choices": [
+      "A single 1.022 MeV gamma ray",
+      "Two 511 keV gamma rays emitted approximately 180 degrees apart",
+      "Three gamma rays of varying energy",
+      "A burst of visible light photons"
+    ],
+    "answer": "Two 511 keV gamma rays emitted approximately 180 degrees apart",
+    "explanation": "Positron-electron annihilation converts the rest mass energy of both particles (2 x 0.511 MeV) into two 511 keV photons emitted in nearly opposite directions (approximately 180 degrees apart). This back-to-back emission is the basis of coincidence detection in PET.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet200",
+    "section_id": "pet",
+    "question": "What does SUV stand for in PET imaging?",
+    "choices": [
+      "Standard Uptake Value",
+      "Standardized Uptake Value",
+      "Systemic Uptake Variable",
+      "Signal Uniformity Value"
+    ],
+    "answer": "Standardized Uptake Value",
+    "explanation": "SUV stands for Standardized Uptake Value. It is a semi-quantitative metric calculated as the ratio of the tissue radioactivity concentration to the injected activity normalized by the patient's body weight (or lean body mass or body surface area). An SUV of 1.0 means uptake equals the average whole-body concentration.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet201",
+    "section_id": "pet",
+    "question": "What type of radioactive decay does Fluorine-18 undergo?",
+    "choices": [
+      "Alpha decay",
+      "Beta-minus decay",
+      "Beta-plus (positron) decay",
+      "Gamma decay"
+    ],
+    "answer": "Beta-plus (positron) decay",
+    "explanation": "Fluorine-18 undergoes beta-plus (positron) decay in approximately 97% of decays, converting a proton into a neutron and emitting a positron and a neutrino. The remaining ~3% decay by electron capture. The daughter nuclide is Oxygen-18, which is stable.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet202",
+    "section_id": "pet",
+    "question": "What stable nuclide does Fluorine-18 decay into?",
+    "choices": [
+      "Nitrogen-14",
+      "Oxygen-18",
+      "Neon-18",
+      "Carbon-12"
+    ],
+    "answer": "Oxygen-18",
+    "explanation": "Fluorine-18 decays to stable Oxygen-18 via positron emission (or electron capture). In positron emission, a proton in the F-18 nucleus converts to a neutron, changing the element from fluorine (Z=9) to oxygen (Z=8).",
+    "difficulty": 1
+  },
+  {
+    "id": "pet203",
+    "section_id": "pet",
+    "question": "What is coincidence detection in PET imaging?",
+    "choices": [
+      "Detecting a single photon and determining its direction with a collimator",
+      "Detecting two 511 keV photons arriving at opposing detectors within a narrow time window",
+      "Measuring the time a photon takes to travel from the patient to the detector",
+      "Counting the total number of photons striking all detectors per second"
+    ],
+    "answer": "Detecting two 511 keV photons arriving at opposing detectors within a narrow time window",
+    "explanation": "Coincidence detection (also called electronic collimation) is the fundamental principle of PET. When two 511 keV annihilation photons are detected by opposing detectors within a short time window (typically 4–6 ns), the event is recorded as a coincidence along the line of response connecting those detectors.",
+    "difficulty": 1
+  },
+  {
+    "id": "pet204",
+    "section_id": "pet",
+    "question": "A PET/CT center is designing a new TOF-PET system and must choose between LYSO and BGO scintillator crystals. Considering detector timing resolution, photon sensitivity, and cost-effectiveness for a high-volume oncology practice, which combination of factors most accurately reflects the design trade-offs?",
+    "choices": [
+      "LYSO provides ~200 ps TOF resolution and higher stopping power than BGO, making it superior in all respects",
+      "BGO has higher stopping power (density 7.13 g/cm³, Zeff=74) and lower cost per cm³ but cannot achieve clinically useful TOF resolution due to its ~300 ns scintillation decay and low light yield",
+      "BGO's higher light yield compared to LYSO compensates for its slower timing, enabling equivalent TOF performance at lower cost",
+      "Crystal choice is irrelevant because TOF gain depends only on the coincidence timing window, not the scintillation properties"
+    ],
+    "answer": "BGO has higher stopping power (density 7.13 g/cm³, Zeff=74) and lower cost per cm³ but cannot achieve clinically useful TOF resolution due to its ~300 ns scintillation decay and low light yield",
+    "explanation": "This is a multi-domain trade-off. BGO offers superior photon stopping power (Zeff=74, density 7.13 g/cm³ vs. LYSO Zeff~66, density 7.1 g/cm³) and is cheaper to produce. However, BGO's slow scintillation decay (~300 ns) and low light output (~9 photons/keV vs. ~30 for LYSO) make it unsuitable for TOF-PET, which requires timing resolution below ~500 ps. Recent Cherenkov-based approaches with BGO are experimental. For a clinical TOF system, LYSO is the standard choice despite higher cost, because the TOF SNR gain (proportional to √(D/Δx) where Δx = c·Δt/2) outweighs the modest sensitivity difference.",
+    "difficulty": 9
+  },
+  {
+    "id": "pet205",
+    "section_id": "pet",
+    "question": "A physicist must optimize the reconstruction protocol for a whole-body FDG-PET scan on a TOF-capable system with 210 ps timing resolution. The patient is obese (BMI 42). Considering the interplay between TOF kernel width, OSEM subset selection, and post-reconstruction filtering, which strategy best balances noise, resolution, and quantitative accuracy?",
+    "choices": [
+      "Use FBP reconstruction since iterative methods introduce bias in large patients, and apply a 6 mm Gaussian filter",
+      "Increase OSEM iterations to maximum to compensate for photon attenuation, with no post-filter to preserve resolution",
+      "Use TOF-OSEM with standard iterations/subsets (e.g., 3 iterations × 21 subsets), rely on the TOF kernel's inherent noise suppression benefit for large patients (SNR gain ~ √(D/Δx)), and apply a modest post-filter (3–4 mm FWHM)",
+      "Disable TOF information because scatter estimation errors in obese patients negate any TOF benefit"
+    ],
+    "answer": "Use TOF-OSEM with standard iterations/subsets (e.g., 3 iterations × 21 subsets), rely on the TOF kernel's inherent noise suppression benefit for large patients (SNR gain ~ √(D/Δx)), and apply a modest post-filter (3–4 mm FWHM)",
+    "explanation": "TOF-PET provides the greatest SNR benefit for large patients because the TOF gain factor is proportional to √(D/Δx), where D is the patient diameter and Δx = c·Δt/2 is the spatial localization from TOF. For a 42 cm torso with 210 ps resolution, Δx ≈ 3.15 cm, yielding an SNR gain of ~3.6×. Standard OSEM with moderate iterations (2–4 × 16–21 subsets) provides adequate convergence. A modest Gaussian post-filter (3–4 mm) controls high-frequency noise without substantially degrading lesion quantification. Excessive iterations amplify noise, while disabling TOF discards the greatest advantage available for obese patients.",
+    "difficulty": 9
+  },
+  {
+    "id": "pet206",
+    "section_id": "pet",
+    "question": "A PET/MR facility observes a 15% SUVmean bias in liver lesions compared to their PET/CT system. The MR-based attenuation correction (MRAC) uses a Dixon sequence for tissue segmentation. Considering the physics of MR-based attenuation mapping, PET quantification, and clinical interpretation, what is the most likely root cause and appropriate corrective action?",
+    "choices": [
+      "The bias is caused by MR B0 inhomogeneity distorting the PET sinogram data directly, requiring a new shimming protocol",
+      "Dixon-based MRAC misclassifies cortical bone as soft tissue because bone has no MR signal, leading to systematic underestimation of attenuation along photon paths traversing bone, which is corrected by incorporating ultra-short echo time (UTE) or zero echo time (ZTE) sequences for bone segmentation",
+      "The bias is due to PET detector temperature drift in the MR environment and requires recalibration of the SiPM gain",
+      "Truncation of the MR field of view causes the arms to be missing from the attenuation map; extending the FOV with MLAA or atlas-based methods corrects this"
+    ],
+    "answer": "Dixon-based MRAC misclassifies cortical bone as soft tissue because bone has no MR signal, leading to systematic underestimation of attenuation along photon paths traversing bone, which is corrected by incorporating ultra-short echo time (UTE) or zero echo time (ZTE) sequences for bone segmentation",
+    "explanation": "This question integrates MR physics, PET attenuation correction, and clinical quantification. Standard Dixon-based MRAC segments tissue into air, lung, fat, and soft tissue but cannot identify bone because cortical bone has very short T2* and produces no detectable MR signal. Bone (μ ≈ 0.151 cm⁻¹ at 511 keV) is assigned the lower soft-tissue attenuation coefficient (μ ≈ 0.096 cm⁻¹), causing systematic underestimation of activity in structures near bone. UTE or ZTE sequences can detect the short-T2* bone signal, enabling proper bone segmentation and substantially reducing SUV bias, particularly near the skull base and pelvis.",
+    "difficulty": 9
+  },
+  {
+    "id": "pet207",
+    "section_id": "pet",
+    "question": "A nuclear medicine physicist is commissioning a digital PET/CT and must verify scatter fraction and count rate performance. The NEMA NU 2-2018 scatter fraction test uses a 70 cm long polyethylene cylinder with a line source. During analysis, the physicist must determine the true, scatter, and random coincidence rates. Which combination of physics principles and measurement methodology is correct?",
+    "choices": [
+      "Scatter fraction is measured by acquiring data with and without the phantom and taking the ratio; randoms are estimated from the prompt rate alone",
+      "The line source is placed at the center of the phantom; scatter fraction is defined as scatter/(trues + scatter), where the scatter tail of each sinogram profile is estimated by fitting the region outside 2 cm from the line source position and interpolating under the peak",
+      "Scatter fraction is energy-window dependent and is measured by narrowing the energy window until the scatter fraction reaches zero, then extrapolating to the clinical window",
+      "The NEMA method uses a point source rather than a line source, and scatter fraction is calculated from the ratio of events inside versus outside a 350–650 keV energy window"
+    ],
+    "answer": "The line source is placed at the center of the phantom; scatter fraction is defined as scatter/(trues + scatter), where the scatter tail of each sinogram profile is estimated by fitting the region outside 2 cm from the line source position and interpolating under the peak",
+    "explanation": "Per NEMA NU 2-2018, the scatter fraction test uses a 70 cm polyethylene cylinder (20 cm diameter) with a F-18 line source inserted at a 4.5 cm radial offset. For scatter fraction alone (at low activity), the source is effectively localized. The sinogram profile for each slice is analyzed: counts beyond 2 cm from the peak are assumed to be scatter, and a linear interpolation under the peak estimates scatter within the peak region. Scatter fraction = scatter counts / (trues + scatter). This is distinct from the count rate test where the source decays from high activity and trues, randoms, and NECR are computed as a function of activity concentration.",
+    "difficulty": 9
+  },
+  {
+    "id": "pet208",
+    "section_id": "pet",
+    "question": "A therapy response monitoring protocol uses PERCIST criteria with SULpeak measurements on serial FDG-PET/CT scans. Between the baseline and follow-up scans, the dose calibrator was found to have a +8% bias. Considering the propagation of this error through the SUV calculation chain and its interaction with PERCIST response thresholds, what is the clinical impact?",
+    "choices": [
+      "The bias cancels out because SUV is a ratio and both numerator and denominator are affected equally",
+      "An 8% overestimation of injected activity causes an 8% underestimation of SUV on the follow-up scan; since PERCIST requires a ≥30% decline in SULpeak for partial metabolic response, this could falsely reclassify a true 34% decline as a 28% decline, changing the response category from partial response to stable disease",
+      "Dose calibrator bias only affects the decay correction, not the SUV, because the scanner independently measures the injected activity",
+      "The bias is clinically irrelevant because PERCIST uses qualitative visual assessment rather than quantitative SUV thresholds"
+    ],
+    "answer": "An 8% overestimation of injected activity causes an 8% underestimation of SUV on the follow-up scan; since PERCIST requires a ≥30% decline in SULpeak for partial metabolic response, this could falsely reclassify a true 34% decline as a 28% decline, changing the response category from partial response to stable disease",
+    "explanation": "SUV = (tissue activity concentration) / (injected activity / body weight). If the dose calibrator reads 8% high, the recorded injected activity is inflated, making the denominator 8% too large and the calculated SUV 8% too low. If this bias is present only on the follow-up (e.g., the calibrator drifted between scans), the follow-up SULpeak is underestimated by ~8%. A true 34% decline would be measured as ~(1 – (0.66 × 0.92)/1.0) ≈ 39% decline, which actually helps. Conversely, if the bias was present at baseline but corrected at follow-up, baseline SUV is 8% low, inflating the apparent decline. The key point is that dose calibrator accuracy directly and linearly propagates into SUV, and an uncorrected systematic error can shift patients across PERCIST response thresholds.",
+    "difficulty": 9
+  },
+  {
+    "id": "pet209",
+    "section_id": "pet",
+    "question": "When implementing point spread function (PSF) modeling in PET iterative reconstruction, the resolution model must account for detector-specific effects (crystal penetration, inter-crystal scatter, parallax) that vary with position in the FOV. If PSF modeling is applied with too many OSEM iterations, what artifact emerges, and how does it affect clinical quantification?",
+    "choices": [
+      "Images become uniformly blurred, reducing contrast for small lesions",
+      "Gibbs-like edge overshoot artifacts (edge ringing) appear at high-contrast boundaries, causing artificial SUV elevation at lesion edges and potential overestimation of metabolic tumor volume",
+      "Ring artifacts appear due to detector normalization errors amplified by PSF modeling",
+      "PSF modeling has no convergence-dependent artifacts because the resolution model constrains the solution space"
+    ],
+    "answer": "Gibbs-like edge overshoot artifacts (edge ringing) appear at high-contrast boundaries, causing artificial SUV elevation at lesion edges and potential overestimation of metabolic tumor volume",
+    "explanation": "PSF (or resolution recovery) modeling in iterative reconstruction improves spatial resolution but, when combined with excessive iterations, produces Gibbs-like edge artifacts (also called overshoot or ringing artifacts). These appear as artificially elevated activity at the boundaries of high-contrast structures (e.g., bladder wall, lesion margins). This can inflate SUVmax, bias metabolic tumor volume delineation, and affect therapy response assessment. The clinical solution involves limiting iterations (typically 2–3 with PSF) or applying a small post-reconstruction filter, balanced against the resolution recovery benefit.",
+    "difficulty": 9
+  },
+  {
+    "id": "pet210",
+    "section_id": "pet",
+    "question": "A PET physicist is asked to reconcile quantitative discrepancies between two scanners used in a multi-center oncology trial. Scanner A uses LYSO + SiPM with 3.2 mm crystals, and Scanner B uses BGO + PMT with 6.3 mm crystals. Both are cross-calibrated to NIST-traceable sources. Beyond cross-calibration, which combination of physics and methodology factors must be harmonized?",
+    "choices": [
+      "Only the injected activity and patient weight need to match since SUV normalizes for all scanner differences",
+      "Reconstruction algorithms, voxel sizes, post-reconstruction filters, and partial volume effects must be harmonized using EARL-compliant reconstruction settings that match standardized recovery coefficient ranges for specific sphere sizes",
+      "Using identical energy windows (e.g., 425–650 keV) on both systems is sufficient to ensure quantitative agreement",
+      "Scanner differences are irrelevant if both use CT-based attenuation correction with the same CT protocol"
+    ],
+    "answer": "Reconstruction algorithms, voxel sizes, post-reconstruction filters, and partial volume effects must be harmonized using EARL-compliant reconstruction settings that match standardized recovery coefficient ranges for specific sphere sizes",
+    "explanation": "Multi-center PET quantification requires harmonization beyond cross-calibration. The EANM Research Ltd (EARL) accreditation program defines recovery coefficient (RC) ranges for hot spheres (10–37 mm diameter) measured in a NEMA IEC body phantom. Each scanner must use reconstruction settings (algorithm, iterations, filter, voxel size) that produce RCs within these standardized bands. This accounts for differences in intrinsic resolution (3.2 mm vs 6.3 mm crystals), PSF modeling availability, TOF capability, and partial volume effects. Without harmonization, SUV differences of 20–40% between scanners are common, confounding longitudinal response assessment in clinical trials.",
+    "difficulty": 9
+  },
+  {
+    "id": "pet211",
+    "section_id": "pet",
+    "question": "A diagnostic medical physicist is investigating image artifacts on a Ga-68 DOTATATE PET scan. The patient has a metallic hip prosthesis. The CT-based attenuation correction map shows bright streaks near the prosthesis, and the PET images show focal uptake artifacts in the same region. Integrating knowledge of CT physics, PET attenuation correction, and clinical interpretation, what is the correct explanation and mitigation strategy?",
+    "choices": [
+      "The metal causes PET detector saturation from secondary radiation, requiring acquisition with a reduced coincidence window",
+      "CT beam hardening and photon starvation artifacts cause incorrect high-density values in the CT attenuation map, which are converted to erroneously high linear attenuation coefficients at 511 keV via bilinear scaling, producing focal overcorrection artifacts on PET; mitigation includes iterative metal artifact reduction (iMAR) on CT or substituting atlas-based attenuation values in the affected region",
+      "The metal directly attenuates the 511 keV photons more than soft tissue, but this is correctly handled by CT-AC and no artifact should be present",
+      "Ga-68's higher positron energy compared to F-18 causes increased scatter near metal, which is best corrected by narrowing the energy window to 480–540 keV"
+    ],
+    "answer": "CT beam hardening and photon starvation artifacts cause incorrect high-density values in the CT attenuation map, which are converted to erroneously high linear attenuation coefficients at 511 keV via bilinear scaling, producing focal overcorrection artifacts on PET; mitigation includes iterative metal artifact reduction (iMAR) on CT or substituting atlas-based attenuation values in the affected region",
+    "explanation": "This integrates CT physics (beam hardening, photon starvation), PET-CT attenuation correction methodology (bilinear scaling from CT HU to 511 keV μ values), and clinical artifact recognition. Metal in CT causes streaks of artificially high and low HU. The bilinear scaling algorithm converts these erroneous HU values to 511 keV attenuation coefficients, creating corresponding over- and under-correction artifacts on PET. The bright PET artifacts near the prosthesis represent overcorrection where CT HU was falsely elevated. Mitigation strategies include iterative metal artifact reduction (iMAR/SEMAR) algorithms on the CT data before attenuation map generation, manual replacement of affected voxels with soft-tissue attenuation values, or use of non-AC images for clinical interpretation in the affected region.",
+    "difficulty": 9
+  },
+  {
+    "id": "pet212",
+    "section_id": "pet",
+    "question": "In Monte Carlo simulation of PET imaging, the positron range of F-18 in lung tissue differs significantly from that in soft tissue. What is the approximate mean positron range of F-18 in soft tissue versus lung tissue (density ~0.3 g/cm³), and what is the primary physics mechanism governing this difference?",
+    "choices": [
+      "Mean range is ~0.6 mm in soft tissue and ~2 mm in lung; the range is governed by Coulomb scattering with atomic nuclei, which is proportional to tissue atomic number",
+      "Mean range is ~0.6 mm in soft tissue and ~2 mm in lung; the range is governed primarily by inelastic collisions (ionization and excitation) with atomic electrons, and the lower electron density in lung tissue reduces the linear stopping power, increasing the range",
+      "Mean range is ~5 mm in both tissues because positron range depends only on the endpoint energy (0.634 MeV for F-18), not on tissue composition",
+      "Mean range is ~0.1 mm in soft tissue and ~0.1 mm in lung because F-18 positrons are quickly thermalized regardless of tissue density"
+    ],
+    "answer": "Mean range is ~0.6 mm in soft tissue and ~2 mm in lung; the range is governed primarily by inelastic collisions (ionization and excitation) with atomic electrons, and the lower electron density in lung tissue reduces the linear stopping power, increasing the range",
+    "explanation": "Positron range is determined primarily by the continuous slowing down approximation (CSDA) through inelastic Coulomb interactions with atomic electrons (ionization and excitation), described by the Bethe-Bloch formula. The linear stopping power is proportional to the electron density of the medium. In lung tissue (~0.3 g/cm³), the electron density is roughly one-third that of soft tissue (~1.0 g/cm³), so the positron travels approximately three times farther before annihilation. For F-18 (Emax = 634 keV), the mean range in water is ~0.6 mm and the FWHM of the annihilation distribution is ~1.0 mm. In lung, the mean range extends to approximately 2 mm. Monte Carlo codes (GATE, GEANT4, EGSnrc) track individual positron histories including energy loss, multiple scattering, and annihilation to model this effect accurately.",
+    "difficulty": 10
+  },
+  {
+    "id": "pet213",
+    "section_id": "pet",
+    "question": "When performing NEMA NU 2-2018 scatter fraction measurement, the standard specifies analysis of sinogram profiles to separate true and scattered coincidences. A physicist obtains a scatter fraction of 38% on a new digital PET/CT with a 440–610 keV energy window. Which statement correctly describes the methodology, expected result, and its implications for clinical image quality?",
+    "choices": [
+      "38% scatter fraction is unusually high and indicates a malfunctioning detector block; typical values for modern PET systems are below 10%",
+      "The 38% scatter fraction is within the expected range for a clinical PET system with a wide energy window; it is measured at low activity to eliminate randoms, using sinogram profile tail-fitting to estimate scattered events under the photopeak, and it directly impacts the required accuracy of the model-based scatter correction (typically single-scatter simulation) used in clinical reconstruction",
+      "Scatter fraction is independent of energy window and depends only on phantom geometry; the 38% indicates the phantom was incorrectly positioned",
+      "The NEMA scatter fraction is measured with the scatter correction algorithm enabled, so the 38% represents residual scatter after correction"
+    ],
+    "answer": "The 38% scatter fraction is within the expected range for a clinical PET system with a wide energy window; it is measured at low activity to eliminate randoms, using sinogram profile tail-fitting to estimate scattered events under the photopeak, and it directly impacts the required accuracy of the model-based scatter correction (typically single-scatter simulation) used in clinical reconstruction",
+    "explanation": "NEMA NU 2-2018 scatter fraction for the 70 cm scatter phantom is typically 35–42% for modern PET systems with standard energy windows (~425–650 keV), depending on crystal material and energy resolution. The measurement is performed at low count rates (near the end of the count rate experiment) where randoms are negligible. For each sinogram slice, counts beyond a 2 cm band from the line source peak are assumed to be scatter; these tails are fit and interpolated under the peak to estimate the scattered component. The scatter fraction = S/(T+S). This raw scatter fraction sets the performance requirement for the scanner's scatter correction algorithm. Most clinical systems use the single-scatter simulation (SSS) technique of Watson (2000) or tail-fitting methods. A higher scatter fraction demands more accurate scatter modeling to maintain quantitative SUV accuracy, particularly for large patients.",
+    "difficulty": 10
+  },
+  {
+    "id": "pet214",
+    "section_id": "pet",
+    "question": "A physicist is developing an uncertainty budget for SUVmean quantification in a liver lesion for a multicenter clinical trial. The components include: dose calibrator accuracy (±3%), residual activity in syringe (±2%), clock synchronization for decay correction (±1%), scanner cross-calibration (±4%), CT-based attenuation correction (±3%), reconstruction-dependent bias (±5%), and ROI definition variability (±8%). Assuming these uncertainties are independent, what is the combined standard uncertainty and which component dominates?",
+    "choices": [
+      "Combined uncertainty is the arithmetic sum (±26%); dose calibrator accuracy dominates",
+      "Combined uncertainty is approximately ±11% by quadrature addition; ROI definition variability is the dominant contributor, followed by reconstruction-dependent bias",
+      "Combined uncertainty cannot be calculated because the components are correlated; a Monte Carlo uncertainty propagation is required",
+      "Combined uncertainty is approximately ±4% because systematic errors cancel in serial measurements on the same scanner"
+    ],
+    "answer": "Combined uncertainty is approximately ±11% by quadrature addition; ROI definition variability is the dominant contributor, followed by reconstruction-dependent bias",
+    "explanation": "For independent uncertainty sources, the combined standard uncertainty is calculated by quadrature (root sum of squares): √(3² + 2² + 1² + 4² + 3² + 5² + 8²) = √(9+4+1+16+9+25+64) = √128 ≈ 11.3%. The ROI definition variability (±8%) contributes 64/128 = 50% of the total variance, making it the dominant source, followed by reconstruction bias (±5%, contributing 25/128 ≈ 20%). This analysis, following GUM (Guide to the Expression of Uncertainty in Measurement) methodology, demonstrates why standardizing ROI methodology (e.g., using SULpeak with a 1.2 cm diameter spherical VOI as in PERCIST) and harmonizing reconstruction protocols (EARL) are the highest-priority interventions for reducing quantitative uncertainty in multicenter PET trials.",
+    "difficulty": 10
+  },
+  {
+    "id": "pet215",
+    "section_id": "pet",
+    "question": "In time-of-flight PET, the TOF kernel assigns a probability distribution along each line of response based on the measured time difference. For a system with 210 ps coincidence timing resolution (CTR), what is the FWHM of the TOF spatial kernel, and how does this kernel interact with the system matrix in list-mode TOF-OSEM reconstruction?",
+    "choices": [
+      "The TOF kernel FWHM is c × CTR = 6.3 cm, and it replaces the system matrix entirely so that geometric projection is unnecessary",
+      "The TOF kernel FWHM is c × CTR / 2 ≈ 3.15 cm; in list-mode TOF-OSEM, each event's contribution to the image is weighted by a Gaussian profile (FWHM ≈ 3.15 cm) centered at the TOF-localized position along the LOR, multiplied by the geometric and physics components of the system matrix including detector response and attenuation",
+      "The TOF kernel FWHM is c × CTR / 2 ≈ 3.15 cm but it is applied as a post-reconstruction filter rather than incorporated into the forward/back projection",
+      "The TOF kernel width equals the voxel size because the reconstruction discretizes the continuous TOF information onto the image grid"
+    ],
+    "answer": "The TOF kernel FWHM is c × CTR / 2 ≈ 3.15 cm; in list-mode TOF-OSEM, each event's contribution to the image is weighted by a Gaussian profile (FWHM ≈ 3.15 cm) centered at the TOF-localized position along the LOR, multiplied by the geometric and physics components of the system matrix including detector response and attenuation",
+    "explanation": "The spatial uncertainty from TOF measurement is Δx = c × Δt / 2, where Δt is the CTR (FWHM) and the factor of 2 accounts for the two-photon geometry. For 210 ps CTR: Δx = (3 × 10¹⁰ cm/s × 210 × 10⁻¹² s) / 2 ≈ 3.15 cm FWHM. In list-mode TOF-OSEM reconstruction, each detected coincidence event contributes to the image update via the system matrix, which now includes the TOF kernel as a multiplicative weighting along the LOR. The system matrix element aij for voxel j and event i becomes the product of geometric probability, detector response (PSF), attenuation factors, and the TOF Gaussian weight evaluated at voxel j's position along the LOR. This spatially constrains the backprojection, improving SNR by a factor of approximately √(D/Δx) where D is the object diameter.",
+    "difficulty": 10
+  },
+  {
+    "id": "pet216",
+    "section_id": "pet",
+    "question": "A physicist is conducting a failure mode and effects analysis (FMEA) for the dose calibrator constancy testing program in a PET radiopharmacy. One identified failure mode is 'undetected drift in dose calibrator response exceeding ±5% between annual calibrations.' Considering the FMEA risk priority framework and PET-specific consequences, which combination of severity, occurrence, and detectability ratings is most appropriate, and what is the recommended mitigation?",
+    "choices": [
+      "Low severity (S=2) because SUV errors are clinically insignificant; low occurrence (O=2) because modern calibrators are stable; RPN=8, no additional action needed beyond annual calibration",
+      "High severity (S=8) because a 5% calibrator drift propagates linearly into all SUV measurements affecting therapy response assessment and clinical trial data; moderate occurrence (O=4) based on published drift rates for ionization chamber calibrators; low detectability with current controls (D=7) if only annual NIST-traceable calibration is performed; RPN=224, mitigated by implementing daily constancy checks with a long-lived reference source (e.g., Cs-137 or Ge-68) with ±2% action limits and monthly linearity verification",
+      "Moderate severity (S=5) but the failure mode is not relevant to PET because PET dose calibrators only measure Tc-99m; RPN is not applicable",
+      "High severity (S=9) and high occurrence (O=8) making RPN>500, requiring immediate replacement of the dose calibrator with a new model"
+    ],
+    "answer": "High severity (S=8) because a 5% calibrator drift propagates linearly into all SUV measurements affecting therapy response assessment and clinical trial data; moderate occurrence (O=4) based on published drift rates for ionization chamber calibrators; low detectability with current controls (D=7) if only annual NIST-traceable calibration is performed; RPN=224, mitigated by implementing daily constancy checks with a long-lived reference source (e.g., Cs-137 or Ge-68) with ±2% action limits and monthly linearity verification",
+    "explanation": "FMEA for PET dose calibrator QA requires integrating knowledge of measurement physics, regulatory requirements, and clinical impact. Severity is high (S=8) because dose calibrator accuracy directly and linearly affects all SUV calculations (SUV ∝ 1/A_injected), impacting PERCIST therapy response classification (30% threshold) and clinical trial data integrity. Occurrence is moderate (O=4) because ionization chamber calibrators can drift 2–5% over months due to electrometer component aging, environmental changes, or contamination. Detectability is poor (D=7) if only annual calibration is performed, as a 5% drift developing over months would go undetected. The recommended mitigation (daily constancy with a Cs-137 or Ge-68 reference source, ±2% action limits) is consistent with AAPM TG-181 and NRC regulatory guidance, dramatically improving detectability (D=2) and reducing RPN to ~64.",
+    "difficulty": 10
+  },
+  {
+    "id": "pet217",
+    "section_id": "pet",
+    "question": "Partial volume effects (PVE) in PET cause systematic underestimation of activity concentration in structures smaller than ~2–3× the reconstructed spatial resolution. A physicist is implementing a region-based partial volume correction (PVC) method (geometric transfer matrix, GTM) for quantifying striatal binding ratios in dopamine transporter (DaT) PET imaging. What are the key assumptions, required inputs, and primary sources of uncertainty in the GTM approach?",
+    "choices": [
+      "GTM requires only the PET image and applies a deconvolution filter; it assumes uniform uptake across the entire brain and has no significant sources of uncertainty",
+      "GTM requires co-registered anatomical imaging (MR) to define VOIs, the scanner's point spread function (PSF), and assumes uniform activity within each defined region; it constructs a matrix of regional spill-over fractions from the PSF-convolved binary region masks and solves a linear system to recover true regional mean activities; primary uncertainties include MR-PET co-registration accuracy, PSF characterization (which is spatially variant), region segmentation accuracy, and the assumption of intra-regional uniformity",
+      "GTM is a sinogram-domain correction that requires raw list-mode data and cannot be applied to reconstructed images",
+      "GTM only corrects for spill-out (activity lost from a hot region) but not spill-in (activity contamination from adjacent regions), limiting its accuracy to isolated lesions"
+    ],
+    "answer": "GTM requires co-registered anatomical imaging (MR) to define VOIs, the scanner's point spread function (PSF), and assumes uniform activity within each defined region; it constructs a matrix of regional spill-over fractions from the PSF-convolved binary region masks and solves a linear system to recover true regional mean activities; primary uncertainties include MR-PET co-registration accuracy, PSF characterization (which is spatially variant), region segmentation accuracy, and the assumption of intra-regional uniformity",
+    "explanation": "The Geometric Transfer Matrix (GTM) method (Rousset et al., 1998) is a region-based PVC technique. It requires: (1) an anatomical image (typically MR) co-registered to the PET, (2) segmented VOIs from the anatomical image, and (3) the system PSF. For each pair of regions i,j, the GTM element ωij represents the fraction of total counts from region j that spill into region i, calculated by convolving the binary mask of region j with the PSF and computing the mean value within region i's mask. The true regional activities are recovered by solving: measured_vector = GTM × true_vector. Key uncertainty sources: (a) co-registration errors (~1–2 mm) propagate into incorrect spill-over fractions; (b) the PSF varies across the FOV and with reconstruction parameters; (c) MR segmentation errors directly affect region definitions; (d) the intra-regional uniformity assumption breaks down for heterogeneous uptake patterns. For striatal DaT imaging, where caudate and putamen are small (~1 cm) structures adjacent to low-uptake white matter, PVC can change binding ratios by 30–50%, making these uncertainties clinically significant.",
+    "difficulty": 10
+  }
+]

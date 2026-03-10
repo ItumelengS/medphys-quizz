@@ -1,0 +1,142 @@
+[
+  {
+    "id": "pet186",
+    "section_id": "pet",
+    "question": "What is the typical coincidence timing resolution of a modern time-of-flight (TOF) PET scanner using LYSO crystals and SiPMs?",
+    "choices": [
+      "5–10 ns",
+      "200–400 ps",
+      "50–100 ns",
+      "1–2 ns"
+    ],
+    "answer": "200–400 ps",
+    "explanation": "Modern TOF-PET scanners with LYSO crystals and silicon photomultipliers (SiPMs) achieve coincidence timing resolutions in the range of 200–400 picoseconds. This timing information localizes the annihilation event along the line of response, improving signal-to-noise ratio. Older BGO-based systems had timing resolutions of several nanoseconds and were not suitable for TOF imaging.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet187",
+    "section_id": "pet",
+    "question": "Which scatter correction method in PET uses an estimate of the scatter distribution based on a single-scatter simulation model combined with the attenuation map?",
+    "choices": [
+      "Convolution-subtraction method",
+      "Single-scatter simulation (SSS)",
+      "Dual-energy window method",
+      "Tail-fitting method"
+    ],
+    "answer": "Single-scatter simulation (SSS)",
+    "explanation": "The single-scatter simulation (SSS) algorithm, developed by Watson and Ollinger, models the physics of Compton scattering using the emission image estimate and the attenuation map to compute the expected scatter distribution. It is the most widely used scatter correction method in modern PET scanners due to its accuracy and computational efficiency.",
+    "difficulty": 7
+  },
+  {
+    "id": "pet188",
+    "section_id": "pet",
+    "question": "In iterative image reconstruction for PET (e.g., OSEM), what is the primary consequence of running too many iterations without regularization?",
+    "choices": [
+      "The image becomes overly smoothed",
+      "Noise amplification and edge artifacts",
+      "Attenuation artifacts appear",
+      "Scatter fraction increases"
+    ],
+    "answer": "Noise amplification and edge artifacts",
+    "explanation": "Iterative reconstruction algorithms like OSEM converge toward the maximum-likelihood solution, but as iterations increase beyond the optimum, noise in the data is progressively amplified in the image. Without regularization or post-smoothing, excessive iterations produce images dominated by noise and edge artifacts, degrading diagnostic quality.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet189",
+    "section_id": "pet",
+    "question": "What is the approximate shelf life of a Ge-68/Ga-68 generator before its output becomes clinically insufficient?",
+    "choices": [
+      "1 week",
+      "6–12 months",
+      "5 years",
+      "24 hours"
+    ],
+    "answer": "6–12 months",
+    "explanation": "The Ge-68/Ga-68 generator has a practical shelf life of approximately 6 to 12 months. Ge-68 has a half-life of 270.8 days (~9 months), so after about one half-life, the eluted Ga-68 activity falls below clinically useful levels. Ga-68 itself has a half-life of only 68 minutes and is eluted as needed from the generator.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet190",
+    "section_id": "pet",
+    "question": "In the cyclotron production of F-18, the nuclear reaction O-18(p,n)F-18 uses which target material?",
+    "choices": [
+      "Oxygen-18 enriched carbon dioxide gas",
+      "Oxygen-18 enriched water",
+      "Nitrogen-15 gas",
+      "Neon-20 gas"
+    ],
+    "answer": "Oxygen-18 enriched water",
+    "explanation": "F-18 is produced by bombarding oxygen-18 enriched water ([O-18]H₂O) with protons in a cyclotron via the O-18(p,n)F-18 reaction. The proton beam energy is typically 11–18 MeV. The resulting F-18 fluoride ion is then used to synthesize FDG and other PET radiopharmaceuticals.",
+    "difficulty": 3
+  },
+  {
+    "id": "pet191",
+    "section_id": "pet",
+    "question": "Which factor is the PRIMARY determinant of intrinsic spatial resolution in a PET detector?",
+    "choices": [
+      "Scintillation crystal cross-sectional size",
+      "Photomultiplier tube quantum efficiency",
+      "Scanner bore diameter",
+      "Coincidence timing window width"
+    ],
+    "answer": "Scintillation crystal cross-sectional size",
+    "explanation": "The intrinsic spatial resolution of a PET detector is primarily determined by the cross-sectional dimensions of the individual scintillation crystal elements. Smaller crystal elements provide finer sampling and better spatial resolution. Other factors such as positron range and photon non-collinearity also contribute to overall system resolution but are not properties of the detector itself.",
+    "difficulty": 4
+  },
+  {
+    "id": "pet192",
+    "section_id": "pet",
+    "question": "Dead time in PET detectors is most commonly modeled using which mathematical framework for paralyzable (extending) systems?",
+    "choices": [
+      "R_true = R_obs × exp(R_obs × τ)",
+      "R_obs = R_true × exp(−R_true × τ)",
+      "R_obs = R_true / (1 − R_true × τ)",
+      "R_obs = R_true / (1 + R_true × τ)"
+    ],
+    "answer": "R_obs = R_true × exp(−R_true × τ)",
+    "explanation": "For a paralyzable (extending) dead time model, the observed count rate relates to the true count rate by R_obs = R_true × exp(−R_true × τ), where τ is the dead time. In this model, each event resets the dead time window, and at very high count rates the observed rate actually decreases. The non-paralyzable model uses R_obs = R_true / (1 + R_true × τ).",
+    "difficulty": 8
+  },
+  {
+    "id": "pet193",
+    "section_id": "pet",
+    "question": "What is the purpose of normalization correction in PET imaging?",
+    "choices": [
+      "To correct for patient motion during the scan",
+      "To compensate for variations in detector pair efficiencies across all lines of response",
+      "To subtract the CT-based attenuation correction",
+      "To remove random coincidences from the data"
+    ],
+    "answer": "To compensate for variations in detector pair efficiencies across all lines of response",
+    "explanation": "Normalization correction accounts for non-uniform detection sensitivities across all detector pairs (lines of response). These variations arise from differences in crystal efficiency, geometric effects, and electronics. Normalization coefficients are typically obtained from a uniform source scan or from component-based models, and they ensure quantitatively accurate images.",
+    "difficulty": 5
+  },
+  {
+    "id": "pet194",
+    "section_id": "pet",
+    "question": "The delayed coincidence window technique for estimating random coincidences in PET works by:",
+    "choices": [
+      "Applying a time delay (~50–100 ns) to one detector channel so that only accidental coincidences are recorded",
+      "Doubling the coincidence timing window to capture all possible events",
+      "Subtracting the singles rate from the total prompt rate",
+      "Using Monte Carlo simulation to predict random event locations"
+    ],
+    "answer": "Applying a time delay (~50–100 ns) to one detector channel so that only accidental coincidences are recorded",
+    "explanation": "In the delayed window method, the signal from one detector is delayed by a fixed time (typically 50–100 ns) beyond the prompt coincidence window. Any coincidences detected in this delayed window are purely accidental (random) since the true coincidence timing relationship is destroyed. This provides a direct, real-time estimate of the randoms rate that can be subtracted from the prompt coincidences.",
+    "difficulty": 6
+  },
+  {
+    "id": "pet195",
+    "section_id": "pet",
+    "question": "At what approximate activity level does a PET scanner reach its noise-equivalent count rate (NECR) peak, and what happens to image quality beyond this point?",
+    "choices": [
+      "Image quality continues to improve linearly with increasing activity",
+      "Image quality plateaus and then degrades due to increasing dead time and randoms fraction",
+      "Image quality degrades only due to scatter, with dead time remaining constant",
+      "The scanner automatically shuts down to prevent detector damage"
+    ],
+    "answer": "Image quality plateaus and then degrades due to increasing dead time and randoms fraction",
+    "explanation": "The noise-equivalent count rate (NECR) characterizes effective PET sensitivity accounting for trues, randoms, and scatter. Beyond the NECR peak, the increasing randoms rate (which grows as the square of the singles rate) and dead time losses cause the effective signal-to-noise to degrade despite higher activity. The NECR peak activity varies by scanner but is typically in the range of 20–40 kBq/mL for clinical systems.",
+    "difficulty": 7
+  }
+]

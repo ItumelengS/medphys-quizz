@@ -261,6 +261,7 @@ export function tournamentTypeToVariant(type: string): string {
   if (type.startsWith("wordle-")) return "wordle";
   if (type.startsWith("connections-")) return "connections";
   if (type.startsWith("cryptic-")) return "cryptic";
+  if (type.startsWith("reaction-rounds-")) return "reaction-rounds";
   // blitz, rapid, marathon → all standard quiz
   return "blitz";
 }

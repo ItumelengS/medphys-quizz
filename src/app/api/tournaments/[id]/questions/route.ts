@@ -3,6 +3,8 @@ import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { applyDisciplineFilter } from "@/lib/discipline-filter";
+import { applyDifficultyFilter } from "@/lib/difficulty-filter";
+import { prioritizeFreshQuestions } from "@/lib/fresh-questions";
 
 export async function GET(
   _req: NextRequest,
@@ -33,28 +35,35 @@ export async function GET(
   const config = TOURNAMENT_TYPES[tournament.type];
   const limit = config?.questionsPerRound || 10;
 
-  // Fetch a larger pool to randomize from — ensures different order every round
-  const discipline = session.user.discipline || "physicist";
-  const { data: questions, error } = await applyDisciplineFilter(
+  // Get user profile for difficulty scaling
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("xp, discipline")
+    .eq("id", session.user.id)
+    .single();
+
+  const xp = profile?.xp ?? 0;
+  const discipline = profile?.discipline ?? "physicist";
+
+  // Fetch a larger pool filtered by discipline + difficulty, then randomize
+  let poolQuery = applyDisciplineFilter(
     supabase
       .from("questions")
       .select("id, section_id, question, answer, choices, explanation"),
     discipline
-  ).limit(limit * 3);
+  );
+  poolQuery = applyDifficultyFilter(poolQuery, xp);
+  const { data: questions, error } = await poolQuery.limit(limit * 3);
 
   if (error || !questions) {
     return NextResponse.json({ error: "Failed to fetch questions" }, { status: 500 });
   }
 
-  // Cryptographically-ish shuffle — never the same order twice
-  const shuffled = questions
-    .map((q) => ({ q, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ q }) => q)
-    .slice(0, limit);
+  // Prioritize unseen/stale questions, then pick the needed amount
+  const selected = await prioritizeFreshQuestions(supabase, session.user.id, questions, limit);
 
   // Shuffle each question's choices too
-  const result = shuffled.map((q) => ({
+  const result = selected.map((q) => ({
     ...q,
     choices: [...q.choices]
       .map((c) => ({ c, sort: Math.random() }))

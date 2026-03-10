@@ -1,0 +1,282 @@
+[
+  {
+    "id": "linac186",
+    "section_id": "linac",
+    "question": "In a standing-wave linear accelerator, RF power is coupled into the accelerating structure via:",
+    "choices": [
+      "A direct waveguide connection to the first cavity",
+      "A side-coupled cavity or coupling iris near the center of the structure",
+      "An antenna inserted into the electron gun assembly",
+      "A coaxial cable connected to each individual cavity"
+    ],
+    "answer": "A side-coupled cavity or coupling iris near the center of the structure",
+    "explanation": "Standing-wave linacs use side-coupled cavities or a coupling iris to introduce RF power into the accelerating structure. The coupling is typically near the center of the structure to establish the correct standing-wave field pattern. This design allows for a more compact structure compared to travelling-wave linacs.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac187",
+    "section_id": "linac",
+    "question": "Beam loading in a linear accelerator refers to:",
+    "choices": [
+      "The mechanical stress on the bending magnet",
+      "The reduction in accelerating field due to energy absorption by the electron beam",
+      "The heating of the target by the photon beam",
+      "The increase in dose rate at high gantry speeds"
+    ],
+    "answer": "The reduction in accelerating field due to energy absorption by the electron beam",
+    "explanation": "Beam loading occurs when the accelerated electron beam extracts energy from the RF field in the accelerating waveguide, reducing the amplitude of the electromagnetic field. This effect is proportional to the beam current and must be compensated by the automatic frequency control (AFC) system to maintain stable beam energy.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac188",
+    "section_id": "linac",
+    "question": "Dark current in a linear accelerator is caused by:",
+    "choices": [
+      "Thermionic emission from the target",
+      "Field emission of electrons from the accelerating waveguide walls due to high electric field gradients",
+      "Leakage current through the bending magnet coils",
+      "Photoelectric interactions in the flattening filter"
+    ],
+    "answer": "Field emission of electrons from the accelerating waveguide walls due to high electric field gradients",
+    "explanation": "Dark current arises from field emission of electrons from metallic surfaces within the accelerating waveguide when high electric field gradients are present, even when the electron gun is not firing. These unwanted electrons are accelerated and can contribute to undesired radiation, activation of accelerator components, and increased leakage dose.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac189",
+    "section_id": "linac",
+    "question": "Field flatness of a photon beam is defined as the maximum variation in dose across the central 80% of the field width at a specified depth, and must typically be within:",
+    "choices": [
+      "±1%",
+      "±3%",
+      "±10%",
+      "±0.5%"
+    ],
+    "answer": "±3%",
+    "explanation": "Field flatness is evaluated over the central 80% of the full width at half maximum (flattened region) at a depth of 10 cm. According to IEC standards, the flatness must be within ±3% of the central axis value. This is achieved by the design of the flattening filter and verified during commissioning and periodic QA.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac190",
+    "section_id": "linac",
+    "question": "The three components contributing to the beam penumbra of a photon beam are:",
+    "choices": [
+      "Geometric, transmission, and scatter penumbra",
+      "Primary, secondary, and tertiary penumbra",
+      "Entrance, buildup, and exit penumbra",
+      "Collimator, patient, and detector penumbra"
+    ],
+    "answer": "Geometric, transmission, and scatter penumbra",
+    "explanation": "Beam penumbra has three components: (1) geometric penumbra, determined by the finite source size and source-to-collimator/surface distances; (2) transmission penumbra, caused by partial attenuation through the rounded edges of the collimator jaws; and (3) scatter penumbra, arising from scattered radiation within the patient. Together they determine the sharpness of the beam edge.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac191",
+    "section_id": "linac",
+    "question": "During jaw calibration on a linear accelerator, the light field and radiation field must agree to within:",
+    "choices": [
+      "±5 mm",
+      "±2 mm",
+      "±0.5 mm",
+      "±10 mm"
+    ],
+    "answer": "±2 mm",
+    "explanation": "According to TG-142 and most regulatory standards, the light field and radiation field congruence must be within ±2 mm on each side. This ensures that the treatment field visualized by the light field accurately represents the actual radiation field delivered to the patient.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac192",
+    "section_id": "linac",
+    "question": "What is the typical tolerance for MLC leaf position accuracy as recommended by AAPM TG-142 for IMRT treatments?",
+    "choices": [
+      "±5 mm",
+      "±1 mm",
+      "±3 mm",
+      "±0.1 mm"
+    ],
+    "answer": "±1 mm",
+    "explanation": "AAPM TG-142 recommends that MLC leaf position accuracy be within ±1 mm for IMRT treatments. This tight tolerance is necessary because small leaf position errors can significantly affect the dose distribution in modulated fields, where dose gradients are steep and field segments may be small.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac193",
+    "section_id": "linac",
+    "question": "Portal dosimetry using the electronic portal imaging device (EPID) is primarily used for:",
+    "choices": [
+      "Measuring beam energy spectrum",
+      "Pre-treatment and in-vivo verification of IMRT/VMAT fluence delivery",
+      "Calibrating the ionization chamber in the beam",
+      "Measuring photoneutron contamination"
+    ],
+    "answer": "Pre-treatment and in-vivo verification of IMRT/VMAT fluence delivery",
+    "explanation": "Portal dosimetry uses the EPID as a 2D dosimeter to verify that the delivered fluence matches the planned fluence for IMRT and VMAT treatments. It can be performed pre-treatment (without patient) or as transit dosimetry during treatment. Gamma analysis is used to compare measured and predicted portal dose images.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac194",
+    "section_id": "linac",
+    "question": "When performing beam matching between two linear accelerators, which parameter is MOST critical to match for clinical interchangeability?",
+    "choices": [
+      "The manufacturer and model number of the MLC",
+      "Percentage depth dose curves, beam profiles, and output factors",
+      "The color of the light field",
+      "The serial number of the magnetron"
+    ],
+    "answer": "Percentage depth dose curves, beam profiles, and output factors",
+    "explanation": "Beam matching requires that the dosimetric characteristics — percentage depth dose (PDD) curves, cross-plane and in-plane beam profiles, and output factors for all field sizes — agree within tight tolerances (typically 1–2%) between the matched linacs. This allows patients to be treated interchangeably on either machine using the same treatment plan.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac195",
+    "section_id": "linac",
+    "question": "A virtual (enhanced dynamic) wedge produces a wedge-shaped dose distribution by:",
+    "choices": [
+      "Inserting a physical metal wedge filter into the beam",
+      "Moving one jaw across the field during irradiation while modulating dose rate",
+      "Tilting the flattening filter at an angle",
+      "Rotating the MLC leaves during delivery"
+    ],
+    "answer": "Moving one jaw across the field during irradiation while modulating dose rate",
+    "explanation": "A virtual or enhanced dynamic wedge creates a wedge-shaped dose profile by sweeping one collimator jaw across the field while the beam is on, combined with dose rate modulation via a segmented treatment table (STT). This eliminates the beam hardening, scatter, and weight limitations associated with physical wedge filters.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac196",
+    "section_id": "linac",
+    "question": "Compared to a physical wedge, a virtual wedge offers which advantage?",
+    "choices": [
+      "Better spatial resolution of the wedge profile",
+      "Reduced treatment time, elimination of beam hardening, and arbitrary wedge angles",
+      "Higher surface dose in the wedged direction",
+      "No need for monitor unit calculations"
+    ],
+    "answer": "Reduced treatment time, elimination of beam hardening, and arbitrary wedge angles",
+    "explanation": "Virtual wedges eliminate beam hardening and the associated change in beam quality caused by physical wedge filters. They allow arbitrary wedge angles (not limited to 15°, 30°, 45°, 60°), reduce treatment time since there is no wedge transmission factor penalty, and require no manual wedge insertion.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac197",
+    "section_id": "linac",
+    "question": "Electron applicators (cones) on a linear accelerator serve to:",
+    "choices": [
+      "Harden the electron beam by filtering low-energy electrons",
+      "Collimate the electron beam close to the patient surface and reduce penumbra",
+      "Convert the photon beam into an electron beam",
+      "Increase the beam energy by 2–3 MeV"
+    ],
+    "answer": "Collimate the electron beam close to the patient surface and reduce penumbra",
+    "explanation": "Electron applicators bring the collimation close to the patient surface (typically 5 cm or less SSD gap), which is necessary because electrons scatter significantly in air. Without applicators, the penumbra would be unacceptably wide. The applicator typically consists of multiple scraper levels that progressively define the field.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac198",
+    "section_id": "linac",
+    "question": "In electron beam therapy, bolus material is placed on the patient surface primarily to:",
+    "choices": [
+      "Increase the beam energy reaching the tumor",
+      "Shape the dose distribution by compensating for tissue irregularities or shifting the depth dose curve",
+      "Act as a radiation shield for underlying tissues",
+      "Replace the need for an electron applicator"
+    ],
+    "answer": "Shape the dose distribution by compensating for tissue irregularities or shifting the depth dose curve",
+    "explanation": "Bolus (typically tissue-equivalent material like SuperFlab or wax) is placed on the skin surface to fill air gaps, compensate for surface irregularities, or effectively reduce the depth of penetration. This shifts the percentage depth dose curve closer to the surface, allowing the therapeutic dose region to cover a shallower target volume.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac199",
+    "section_id": "linac",
+    "question": "For electron beams, the surface dose relative to dmax dose increases with:",
+    "choices": [
+      "Decreasing beam energy",
+      "Increasing beam energy",
+      "Increasing source-to-surface distance",
+      "Decreasing field size"
+    ],
+    "answer": "Increasing beam energy",
+    "explanation": "The surface dose for electron beams increases with increasing beam energy. At 6 MeV, surface dose is approximately 70–75% of dmax, while at 20 MeV it can exceed 95% of dmax. This is because higher-energy electrons are more forward-directed and less likely to scatter away from the surface region.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac200",
+    "section_id": "linac",
+    "question": "Gantry sag on a linear accelerator is measured to ensure that the radiation isocenter remains within specification. It is typically assessed using:",
+    "choices": [
+      "A spirit level on the gantry head",
+      "A digital inclinometer on the couch",
+      "A Winston-Lutz or spoke shot (star shot) test at multiple gantry angles",
+      "An ionization chamber at the couch surface"
+    ],
+    "answer": "A Winston-Lutz or spoke shot (star shot) test at multiple gantry angles",
+    "explanation": "Gantry sag causes the radiation beam central axis to shift as the gantry rotates, enlarging the effective isocenter sphere. It is assessed using a Winston-Lutz test (ball-bearing test) or spoke shot (star shot) at multiple gantry angles. TG-142 specifies that the radiation isocenter should be within a 2 mm diameter sphere (±1 mm radius) for conventional treatments.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac201",
+    "section_id": "linac",
+    "question": "Couch walkout refers to:",
+    "choices": [
+      "The lateral displacement of the couch top when translated longitudinally",
+      "The vertical sag of the couch under patient weight",
+      "The rotation of the gantry when the couch is rotated",
+      "The maximum travel distance of the couch"
+    ],
+    "answer": "The lateral displacement of the couch top when translated longitudinally",
+    "explanation": "Couch walkout describes the lateral (left-right) deviation of the couch position as it is driven longitudinally (in-out). This can cause the patient to shift laterally from the planned position during treatment. TG-142 recommends that couch walkout be within ±2 mm over the full range of longitudinal travel.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac202",
+    "section_id": "linac",
+    "question": "The Winston-Lutz test evaluates:",
+    "choices": [
+      "The coincidence of the radiation isocenter with the mechanical isocenter using a radiopaque ball bearing",
+      "The beam energy constancy using a tissue-equivalent phantom",
+      "The MLC transmission factor for IMRT planning",
+      "The output constancy of the monitor chamber"
+    ],
+    "answer": "The coincidence of the radiation isocenter with the mechanical isocenter using a radiopaque ball bearing",
+    "explanation": "The Winston-Lutz test uses a small radiopaque ball bearing (typically 5 mm tungsten) positioned at the mechanical isocenter. Images are acquired at multiple gantry, collimator, and couch angles. The displacement between the ball shadow and the radiation field center quantifies the isocenter accuracy. For SRS/SBRT, this must be within ±1 mm or less.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac203",
+    "section_id": "linac",
+    "question": "The on-board imager (OBI) on a Varian linac uses what type of imaging source for planar kV imaging?",
+    "choices": [
+      "A megavoltage bremsstrahlung source",
+      "A conventional kilovoltage x-ray tube mounted on a retractable arm",
+      "A radioactive Co-60 source",
+      "An ultrasonographic transducer"
+    ],
+    "answer": "A conventional kilovoltage x-ray tube mounted on a retractable arm",
+    "explanation": "The OBI system uses a kilovoltage x-ray tube (typically 40–150 kVp) mounted on a retractable arm orthogonal to the treatment beam, paired with an amorphous silicon flat-panel detector on the opposite arm. This provides high-contrast planar radiographs and CBCT capability for image-guided radiation therapy (IGRT).",
+    "difficulty": 2
+  },
+  {
+    "id": "linac204",
+    "section_id": "linac",
+    "question": "Which image quality parameter is MOST affected by scatter in cone-beam CT (CBCT) compared to conventional fan-beam CT?",
+    "choices": [
+      "Spatial resolution",
+      "HU accuracy and contrast-to-noise ratio",
+      "Slice thickness",
+      "Geometric accuracy"
+    ],
+    "answer": "HU accuracy and contrast-to-noise ratio",
+    "explanation": "CBCT uses a large cone-shaped beam that produces substantially more scatter than a fan-beam CT. This increased scatter degrades HU accuracy (causing cupping artifacts and incorrect CT numbers) and reduces contrast-to-noise ratio. This is the primary reason CBCT images cannot be directly used for dose calculation without correction.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac205",
+    "section_id": "linac",
+    "question": "A beam hold-off on a linear accelerator is triggered when:",
+    "choices": [
+      "The patient requests to stop treatment",
+      "An interlock condition is detected, such as dose rate deviation or gantry position error, pausing irradiation",
+      "The treatment plan has been fully delivered",
+      "The room lights are turned on"
+    ],
+    "answer": "An interlock condition is detected, such as dose rate deviation or gantry position error, pausing irradiation",
+    "explanation": "Beam hold-off is a safety mechanism that temporarily suspends irradiation when an interlock condition is detected — such as dose rate exceeding tolerance, gantry or MLC position error, or flatness/symmetry deviation. Unlike a beam-off, a hold-off allows treatment to resume once the condition is corrected, without restarting the fraction.",
+    "difficulty": 5
+  }
+]

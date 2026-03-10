@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
 import { applyDisciplineFilter } from "@/lib/discipline-filter";
+import { applyDifficultyFilter } from "@/lib/difficulty-filter";
+import { prioritizeFreshQuestions } from "@/lib/fresh-questions";
 
 export async function GET(req: NextRequest) {
   try {
@@ -28,13 +30,21 @@ export async function GET(req: NextRequest) {
 
   if (difficulty) {
     query = query.eq("difficulty", parseInt(difficulty));
-  } else {
+  } else if (minDifficulty || maxDifficulty) {
     if (minDifficulty) {
       query = query.gte("difficulty", parseInt(minDifficulty));
     }
     if (maxDifficulty) {
       query = query.lte("difficulty", parseInt(maxDifficulty));
     }
+  } else {
+    // No explicit difficulty params — apply user-level defaults
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("xp")
+      .eq("id", session.user.id)
+      .single();
+    query = applyDifficultyFilter(query, profile?.xp ?? 0);
   }
 
   const { data, error } = await query;
@@ -43,13 +53,10 @@ export async function GET(req: NextRequest) {
   let questions = data || [];
 
   if (shuffle) {
-    for (let i = questions.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [questions[i], questions[j]] = [questions[j], questions[i]];
-    }
-  }
-
-  if (limit) {
+    // Prioritize unseen/stale questions when shuffling
+    const effectiveLimit = limit || questions.length;
+    questions = await prioritizeFreshQuestions(supabase, session.user.id, questions, effectiveLimit);
+  } else if (limit) {
     questions = questions.slice(0, limit);
   }
 

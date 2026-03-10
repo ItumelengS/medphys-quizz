@@ -17,6 +17,7 @@ const VARIANT_DISPLAY: Record<string, { label: string; icon: string; color: stri
   wordle:         { label: "Wordle",        icon: "🔤", color: "#16a34a" },
   connections:    { label: "Connections",    icon: "🔗", color: "#a855f7" },
   cryptic:        { label: "Cryptic",       icon: "🔮", color: "#be185d" },
+  "reaction-rounds": { label: "Reaction Rounds", icon: "⚡", color: "#f97316" },
 };
 
 interface VariantRating {

@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import {
   calculateSuddenDeathPoints,
   getAdaptiveTimer,
+  getReadingTimeBonus,
   getStreakMultiplier,
 } from "@/lib/scoring";
 import type { DbQuestion, DbTournament } from "@/lib/types";
@@ -161,6 +162,7 @@ export default function TournamentSuddenDeathPage({
 
   const currentTimerTotal = currentQuestion
     ? getAdaptiveTimer(timerBase, correctCount, false)
+      + getReadingTimeBonus(currentQuestion.question, currentQuestion.choices)
     : timerBase;
 
   // Timer (only starts after countdown confirmation)

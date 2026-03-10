@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { getCareerLevel, getConfirmedCareerLevel, CAREER_LEVELS } from "@/lib/scoring";
+import { getCareerLevel, getConfirmedCareerLevel, getReadingTimeBonus, CAREER_LEVELS } from "@/lib/scoring";
 import { parseInventory } from "@/lib/powerups";
 import type { DbQuestion, PowerUpInventory, CareerLevel } from "@/lib/types";
 import { POWERUP_INFO } from "@/lib/types";
@@ -85,11 +85,16 @@ export default function LevelUpExamPage() {
 
   const currentQuestion = questions[currentIndex];
 
+  // Per-question timer: base time + reading bonus for longer questions
+  const examTimerTotal = currentQuestion
+    ? TIMER_SECONDS + getReadingTimeBonus(currentQuestion.question, currentQuestion.choices)
+    : TIMER_SECONDS;
+
   // Timer
   useEffect(() => {
     if (phase !== "quiz" || !currentQuestion || selectedAnswer !== null) return;
 
-    setTimeRemaining(TIMER_SECONDS);
+    setTimeRemaining(examTimerTotal);
     timerRef.current = setInterval(() => {
       setTimeRemaining((prev) => {
         if (prev <= 0.1) {
@@ -348,7 +353,7 @@ export default function LevelUpExamPage() {
         {/* Timer & Power-ups */}
         <div className="flex items-center justify-between mt-4 mb-4">
           <div className="relative">
-            <TimerRing timeRemaining={timeRemaining} totalTime={TIMER_SECONDS} />
+            <TimerRing timeRemaining={timeRemaining} totalTime={examTimerTotal} />
             {timeFrozen && (
               <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-mono text-bauhaus-blue uppercase tracking-wider animate-pulse">
                 frozen

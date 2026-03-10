@@ -146,6 +146,21 @@ export const VARIANT_CONFIGS: Record<GameVariant, VariantConfig> = {
       "Use a hint to reveal the clue (costs points)",
     ],
   },
+  "reaction-rounds": {
+    id: "reaction-rounds",
+    name: "Reaction Rounds",
+    icon: "⚡",
+    description: "Two values flash on screen. Tap the higher or lower one before time runs out. One wrong = game over.",
+    color: "#f97316",
+    xpMultiplier: 1.8,
+    rules: [
+      "Two values appear — tap the higher or lower one",
+      "Timer shrinks each round (5s → 2s)",
+      "One wrong tap or timeout = game over",
+      "Role selector biases categories to your discipline",
+      "Speed bonus: faster taps = more points",
+    ],
+  },
 };
 
 export const VARIANT_LIST = Object.values(VARIANT_CONFIGS);
@@ -161,6 +176,7 @@ export function getVariantDisplayName(mode: string): string {
     case "cryptic": return "Cryptic";
     case "wordle": return "Wordle";
     case "connections": return "Connections";
+    case "reaction-rounds": return "Reaction Rounds";
     case "speed": return "Speed Round";
     case "daily": return "Daily Challenge";
     case "review": return "Review";

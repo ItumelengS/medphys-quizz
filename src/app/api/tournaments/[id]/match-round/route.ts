@@ -5,6 +5,7 @@ import { TOURNAMENT_TYPES } from "@/lib/tournaments";
 import { calculateMatchScore, calculateXp } from "@/lib/scoring";
 import { checkRoundLimit } from "@/lib/tournament-round-check";
 import { updateTournamentRating } from "@/lib/rating-update";
+import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 
 interface MatchRoundPayload {
   berserk: boolean;
@@ -89,6 +90,43 @@ export async function POST(
   if (error) {
     const isRoundLimit = error.message?.includes("Round limit");
     return NextResponse.json({ error: error.message }, { status: isRoundLimit ? 400 : 500 });
+  }
+
+  // Update question_history (all matched pairs count as correct)
+  for (const qId of questionIds) {
+    const { data: existing } = await supabase
+      .from("question_history")
+      .select("*")
+      .eq("user_id", userId)
+      .eq("question_id", qId)
+      .single();
+
+    const record = existing
+      ? {
+          questionId: existing.question_id,
+          timesShown: existing.times_shown,
+          timesCorrect: existing.times_correct,
+          lastShown: existing.last_shown,
+          nextDue: existing.next_due,
+          easeFactor: existing.ease_factor,
+          interval: existing.interval,
+          streak: existing.streak,
+        }
+      : createQuestionRecord(qId);
+
+    const updated = updateQuestionRecord(record, true);
+
+    await supabase.from("question_history").upsert({
+      user_id: userId,
+      question_id: qId,
+      times_shown: updated.timesShown,
+      times_correct: updated.timesCorrect,
+      ease_factor: updated.easeFactor,
+      interval: updated.interval,
+      next_due: updated.nextDue,
+      streak: updated.streak,
+      last_shown: updated.lastShown,
+    });
   }
 
   // Award XP

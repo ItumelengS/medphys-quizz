@@ -1,0 +1,184 @@
+[
+  {
+    "id": "mammo186",
+    "section_id": "mammo",
+    "question": "The heel effect in mammography is exploited by orienting the x-ray tube so that the cathode side faces:",
+    "choices": [
+      "The nipple (thinner part of the breast)",
+      "The chest wall (thicker part of the breast)",
+      "The lateral side of the breast",
+      "The compression paddle"
+    ],
+    "answer": "The chest wall (thicker part of the breast)",
+    "explanation": "In mammography, the tube is oriented with the cathode toward the chest wall. Due to the heel effect, x-ray intensity is higher on the cathode side, which compensates for the greater thickness of breast tissue near the chest wall. The anode side, with lower intensity, faces the thinner nipple region, producing a more uniform exposure across the image.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo187",
+    "section_id": "mammo",
+    "question": "What is the typical grid ratio used in mammography for scatter rejection?",
+    "choices": [
+      "16:1",
+      "5:1",
+      "10:1",
+      "3.5:1 to 5:1"
+    ],
+    "answer": "3.5:1 to 5:1",
+    "explanation": "Mammography uses relatively low grid ratios (typically 3.5:1 to 5:1) compared to general radiography. This is because the lower energy x-rays in mammography and the compressed breast thickness limit the amount of scatter produced. Higher grid ratios would require excessive dose increases that outweigh the benefit in scatter cleanup.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo188",
+    "section_id": "mammo",
+    "question": "The contrast-detail (CD) phantom used in mammography QC evaluates the system's ability to:",
+    "choices": [
+      "Measure the half-value layer of the beam",
+      "Detect objects of varying size and contrast, assessing low-contrast detectability",
+      "Determine the focal spot size",
+      "Calibrate the automatic exposure control"
+    ],
+    "answer": "Detect objects of varying size and contrast, assessing low-contrast detectability",
+    "explanation": "A contrast-detail phantom contains objects of systematically varying size and contrast (e.g., the CDMAM phantom). It evaluates the imaging chain's ability to detect low-contrast objects at various sizes, providing a comprehensive assessment of image quality that accounts for spatial resolution, noise, and contrast simultaneously.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo189",
+    "section_id": "mammo",
+    "question": "Signal difference to noise ratio (SDNR) in digital mammography is defined as:",
+    "choices": [
+      "The ratio of the maximum pixel value to the minimum pixel value",
+      "The difference in mean signal between a feature and background divided by the standard deviation of the background",
+      "The ratio of scatter radiation to primary radiation",
+      "The ratio of patient dose to image noise"
+    ],
+    "answer": "The difference in mean signal between a feature and background divided by the standard deviation of the background",
+    "explanation": "SDNR = (S_feature − S_background) / σ_background, where S represents mean pixel values and σ is the standard deviation of the background region. SDNR is a fundamental image quality metric in digital mammography that quantifies the detectability of a feature relative to the noise in the image.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo190",
+    "section_id": "mammo",
+    "question": "In a digital mammography detector, dead pixels are corrected by:",
+    "choices": [
+      "Physically replacing the detector element",
+      "Interpolation from neighboring pixel values during image processing",
+      "Increasing the tube current to compensate",
+      "Ignoring them since they have no clinical impact"
+    ],
+    "answer": "Interpolation from neighboring pixel values during image processing",
+    "explanation": "Dead (defective) pixels in digital mammography detectors are mapped during calibration and their values are replaced by interpolation from surrounding functional pixels during image processing. The number and clustering of dead pixels must be monitored; if they exceed manufacturer specifications or form clusters, the detector panel may need replacement.",
+    "difficulty": 3
+  },
+  {
+    "id": "mammo191",
+    "section_id": "mammo",
+    "question": "Flat-field correction in digital mammography compensates for:",
+    "choices": [
+      "Patient motion artifacts",
+      "Non-uniform detector response and variations in x-ray beam intensity across the field",
+      "Geometric magnification distortion",
+      "Quantum noise in low-dose images"
+    ],
+    "answer": "Non-uniform detector response and variations in x-ray beam intensity across the field",
+    "explanation": "Flat-field (gain) correction normalizes the image by dividing each pixel's raw signal by a gain map obtained from a uniform exposure. This corrects for pixel-to-pixel variations in detector sensitivity and spatial variations in x-ray tube output (including the heel effect), producing a uniform image from a uniform object.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo192",
+    "section_id": "mammo",
+    "question": "A ghost image artifact in digital mammography is caused by:",
+    "choices": [
+      "Patient motion during exposure",
+      "Incomplete readout of the previous exposure leaving residual signal (image lag) on the detector",
+      "Grid lines becoming visible in the image",
+      "Compression paddle misalignment"
+    ],
+    "answer": "Incomplete readout of the previous exposure leaving residual signal (image lag) on the detector",
+    "explanation": "Ghost images occur when residual charge from a previous exposure is not fully erased from the detector, appearing as a faint superimposition on the subsequent image. This is particularly relevant for amorphous selenium (a-Se) direct-conversion detectors. Proper detector erasure cycles between exposures and regular QC testing help minimize this artifact.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo193",
+    "section_id": "mammo",
+    "question": "In digital breast tomosynthesis (DBT), which reconstruction artifact is most commonly observed and results from incomplete angular sampling?",
+    "choices": [
+      "Ring artifacts",
+      "Out-of-plane blur artifacts appearing as ripple patterns above and below the focal plane",
+      "Metal streak artifacts",
+      "Moiré pattern artifacts"
+    ],
+    "answer": "Out-of-plane blur artifacts appearing as ripple patterns above and below the focal plane",
+    "explanation": "DBT acquires projections over a limited angular range (typically 15–50°), which provides incomplete angular sampling compared to full CT. This results in out-of-plane blur where structures outside the reconstruction plane appear as ripple or smearing artifacts. This is the fundamental limitation of limited-angle tomography.",
+    "difficulty": 7
+  },
+  {
+    "id": "mammo194",
+    "section_id": "mammo",
+    "question": "Under FDA regulations, mammography facilities must track and report which dose quantity to patients?",
+    "choices": [
+      "Entrance skin dose only",
+      "Mean glandular dose (MGD)",
+      "Effective dose",
+      "Absorbed dose to the chest wall"
+    ],
+    "answer": "Mean glandular dose (MGD)",
+    "explanation": "The FDA and ACR require that mammography facilities track and report mean glandular dose (MGD), which is the standard dose metric for mammography. MGD must not exceed 3.0 mGy per exposure for a standard breast (4.2 cm compressed thickness, 50% glandular/50% adipose). MGD is calculated from the entrance air kerma using conversion factors that account for breast composition and beam quality.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo195",
+    "section_id": "mammo",
+    "question": "In mammography, the entrance skin dose is typically how much larger than the mean glandular dose (MGD)?",
+    "choices": [
+      "Approximately equal to MGD",
+      "2 to 5 times larger than MGD",
+      "10 to 20 times larger than MGD",
+      "100 times larger than MGD"
+    ],
+    "answer": "2 to 5 times larger than MGD",
+    "explanation": "The entrance skin dose (ESD) in mammography is typically 2 to 5 times the mean glandular dose, depending on breast thickness and composition. MGD accounts for the attenuation through the breast and weights dose to the radiosensitive glandular tissue, making it a more relevant risk metric than the higher ESD value.",
+    "difficulty": 5
+  },
+  {
+    "id": "mammo196",
+    "section_id": "mammo",
+    "question": "The effective energy of a typical mammography x-ray beam operating at 28 kVp with a Mo/Mo target/filter combination is approximately:",
+    "choices": [
+      "28 keV",
+      "14 keV",
+      "17–20 keV",
+      "8 keV"
+    ],
+    "answer": "17–20 keV",
+    "explanation": "For a Mo/Mo target/filter combination at 28 kVp, the effective energy of the beam is approximately 17–20 keV. The Mo filter (0.03 mm) selectively attenuates photons above the Mo K-edge (20 keV) while transmitting the characteristic x-rays at 17.5 and 19.6 keV, producing a near-monoenergetic spectrum optimal for breast imaging.",
+    "difficulty": 6
+  },
+  {
+    "id": "mammo197",
+    "section_id": "mammo",
+    "question": "Under MQSA regulations, the annual mammography physics survey must include evaluation of all the following EXCEPT:",
+    "choices": [
+      "AEC performance and dose measurement",
+      "Image quality using an ACR-approved phantom",
+      "Individual radiologist diagnostic accuracy statistics",
+      "Artifact evaluation and collimation assessment"
+    ],
+    "answer": "Individual radiologist diagnostic accuracy statistics",
+    "explanation": "The MQSA annual physics survey evaluates equipment performance including AEC function, dose (MGD), image quality with the ACR phantom, artifact evaluation, collimation, kVp accuracy, and compression force. Individual radiologist performance metrics (sensitivity, specificity) are tracked separately through the MQSA medical audit requirement, not the annual equipment survey.",
+    "difficulty": 4
+  },
+  {
+    "id": "mammo198",
+    "section_id": "mammo",
+    "question": "Which of the following QC tests is the responsibility of the mammography technologist rather than the medical physicist?",
+    "choices": [
+      "Half-value layer measurement",
+      "Phantom image quality evaluation (weekly)",
+      "Focal spot size measurement",
+      "kVp accuracy assessment"
+    ],
+    "answer": "Phantom image quality evaluation (weekly)",
+    "explanation": "Under MQSA and ACR guidelines, the technologist is responsible for routine QC tests including weekly phantom image quality evaluation, daily visual checklist, and periodic tests like compression force and artifact evaluation. The medical physicist performs the annual survey, which includes HVL measurement, kVp accuracy, focal spot evaluation, and dose assessment.",
+    "difficulty": 3
+  }
+]

@@ -39,14 +39,17 @@ export async function POST(req: NextRequest) {
   const body = (await req.json()) as GameSubmission;
   const { variant, answers, score, total, points, bestStreak, section, sectionName, durationSeconds, metadata } = body;
 
-  if (!["sudden-death", "sprint", "crossword", "match", "blitz", "wordle", "connections", "cryptic", "hot-seat"].includes(variant)) {
+  if (!["sudden-death", "sprint", "crossword", "match", "blitz", "wordle", "connections", "cryptic", "hot-seat", "reaction-rounds"].includes(variant)) {
     return NextResponse.json({ error: "Invalid variant" }, { status: 400 });
   }
 
   const supabase = createServiceClient();
   const mode: GameMode = variant;
 
-  // 1. Update question_history (spaced repetition)
+  // 1. Update question_history (spaced repetition) — skip for reaction-rounds (no DB questions)
+  if (variant === "reaction-rounds") {
+    // Reaction rounds uses client-side data, not DB question IDs
+  } else
   for (const ans of answers) {
     const { data: existing } = await supabase
       .from("question_history")

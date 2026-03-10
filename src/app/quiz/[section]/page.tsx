@@ -8,6 +8,7 @@ import {
   calculateXp,
   isCalculationQuestion,
   getAdaptiveTimer,
+  getReadingTimeBonus,
   TIMER_WRONG_RECOVERY,
 } from "@/lib/scoring";
 import type { DbQuestion, AnswerRecord } from "@/lib/types";
@@ -83,9 +84,10 @@ export default function QuizPage({
 
   const currentQuestion = questions[currentIndex];
 
-  // Compute adaptive timer for current question
+  // Compute adaptive timer for current question + reading time bonus
   const currentTimerTotal = currentQuestion
     ? getAdaptiveTimer(TIMER_SECONDS, correctCount, isCalculationQuestion(currentQuestion.question))
+      + getReadingTimeBonus(currentQuestion.question, currentQuestion.choices)
     : TIMER_SECONDS;
 
   // Timer

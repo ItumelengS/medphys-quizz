@@ -106,6 +106,8 @@ export function calculateXp(
     baseXp = Math.floor(points * 0.10);
   } else if (mode === "cryptic") {
     baseXp = Math.floor(points * 0.12);
+  } else if (mode === "reaction-rounds") {
+    baseXp = Math.floor(points * 0.12);
   } else {
     // speed / marathon
     baseXp = Math.floor(points * 0.10);
@@ -367,6 +369,37 @@ export function getAdaptiveTimer(
   return Math.max(TIMER_SHRINK_MIN, baseTime - correctCount * TIMER_SHRINK);
 }
 
+/**
+ * Calculate extra reading time for a question based on word count.
+ *
+ * Medical physics professionals read technical text at ~200 words per minute
+ * (3.33 words/second). Short questions (≤20 words) get no bonus. Longer
+ * scenario-based questions get extra time proportional to extra words.
+ * Choices are included since the user must read those too.
+ *
+ * The bonus is capped at 30s to prevent extremely long timers.
+ */
+const READING_WPM = 200;
+const READING_WPS = READING_WPM / 60; // ~3.33 words per second
+const SHORT_QUESTION_WORDS = 20; // baseline — no bonus below this
+const MAX_READING_BONUS = 30; // cap in seconds
+
+function countWords(text: string): number {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
+export function getReadingTimeBonus(questionText: string, choices?: string[]): number {
+  let totalWords = countWords(questionText);
+  if (choices) {
+    for (const c of choices) {
+      totalWords += countWords(c);
+    }
+  }
+  const extraWords = totalWords - SHORT_QUESTION_WORDS;
+  if (extraWords <= 0) return 0;
+  return Math.min(MAX_READING_BONUS, Math.round(extraWords / READING_WPS));
+}
+
 // Difficulty range for each level-up exam (confirmed_level → next level)
 export function getExamDifficultyRange(confirmedLevel: number): { min: number; max: number } {
   switch (confirmedLevel) {
@@ -387,6 +420,26 @@ export function isExamReady(xp: number, confirmedLevel: number): boolean {
 
 export function getConfirmedCareerLevel(confirmedLevel: number): CareerLevel {
   return CAREER_LEVELS.find((l) => l.level === confirmedLevel) || CAREER_LEVELS[0];
+}
+
+// ── Reaction Rounds ─────────────────────────────────────────
+export function getReactionRoundsTimer(round: number): number {
+  // 5s → shrinks to 2s floor
+  return Math.max(2, 5 - round * 0.15);
+}
+
+export function calculateReactionRoundsPoints(
+  round: number,
+  reactionTimeMs: number,
+  timerMs: number
+): number {
+  const base = 20;
+  // Speed bonus: up to 30 points for fast taps
+  const speedRatio = Math.max(0, (timerMs - reactionTimeMs) / timerMs);
+  const speedBonus = Math.floor(speedRatio * 30);
+  // Round bonus: later rounds worth more
+  const roundBonus = Math.floor(round / 5) * 5;
+  return base + speedBonus + roundBonus;
 }
 
 export function getSectionMasteryColor(percent: number): string {

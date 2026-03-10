@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "cw-new-1",
+    "clue": "Positron-emitting isotope used in oncology imaging (abbr.)",
+    "answer": "FDG",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-2",
+    "clue": "Standardized ___ value, a semi-quantitative PET metric",
+    "answer": "UPTAKE",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-3",
+    "clue": "Ring of detectors surrounding the patient in PET",
+    "answer": "GANTRY",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-4",
+    "clue": "511 keV photon pairs produced after positron-electron interaction",
+    "answer": "ANNIHILATION",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-5",
+    "clue": "Crystal material commonly used in PET detectors (abbr.)",
+    "answer": "LSO",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-6",
+    "clue": "Type of coincidence detection that is unwanted in PET",
+    "answer": "RANDOM",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-7",
+    "clue": "Mathematical method to reconstruct PET images from projection data",
+    "answer": "ITERATIVE",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-8",
+    "clue": "PET image artifact caused by patient movement between scans",
+    "answer": "MISREGISTRATION",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-9",
+    "clue": "Photon interaction that degrades PET image contrast",
+    "answer": "SCATTER",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-10",
+    "clue": "CT data used to correct PET for photon loss in tissue",
+    "answer": "ATTENUATION",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-11",
+    "clue": "Nanosecond-scale interval for accepting coincidence events in PET",
+    "answer": "WINDOW",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-12",
+    "clue": "Measure of PET scanner ability to distinguish two nearby sources",
+    "answer": "RESOLUTION",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-13",
+    "clue": "Ga-68 labeled peptide used in neuroendocrine PET imaging",
+    "answer": "DOTATATE",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-14",
+    "clue": "Ratio of true to total events measuring PET data quality",
+    "answer": "FRACTION",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-15",
+    "clue": "Test object used for PET/CT quality assurance scans",
+    "answer": "PHANTOM",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-16",
+    "clue": "Reduces image noise in PET by averaging adjacent pixel values",
+    "answer": "SMOOTHING",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-17",
+    "clue": "Correction for detector recovery period in PET: dead ___",
+    "answer": "TIME",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-18",
+    "clue": "Type of PET acquisition collecting data continuously over time",
+    "answer": "DYNAMIC",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-19",
+    "clue": "Fluorine-18 has a half-life of approximately 110 ___",
+    "answer": "MINUTES",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-20",
+    "clue": "Reconstruction algorithm: ordered subsets expectation ___",
+    "answer": "MAXIMIZATION",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-21",
+    "clue": "Silicon photomultiplier technology replacing traditional PMTs",
+    "answer": "DIGITAL",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-22",
+    "clue": "Cardiac PET perfusion agent: Rb-82 ___",
+    "answer": "CHLORIDE",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-23",
+    "clue": "PET metric: metabolic tumor ___",
+    "answer": "VOLUME",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-24",
+    "clue": "Noise equivalent count ___ measures PET scanner performance",
+    "answer": "RATE",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-25",
+    "clue": "Back-to-back 511 keV photons travel in ___ directions",
+    "answer": "OPPOSITE",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-26",
+    "clue": "C-11 labeled amino acid used for brain tumor PET imaging",
+    "answer": "METHIONINE",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-27",
+    "clue": "PET scan synchronized to respiratory or cardiac cycle",
+    "answer": "GATED",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-28",
+    "clue": "Line of ___ connects two detectors recording a coincidence",
+    "answer": "RESPONSE",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-29",
+    "clue": "PET/CT fusion requires accurate image ___",
+    "answer": "REGISTRATION",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-30",
+    "clue": "BGO crystal used in older PET systems: bismuth ___",
+    "answer": "GERMANATE",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-31",
+    "clue": "F-18 sodium ___ used for bone PET imaging",
+    "answer": "FLUORIDE",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-32",
+    "clue": "Effect causing activity underestimation in small lesions on PET",
+    "answer": "SPILLOVER",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-33",
+    "clue": "Number of PET detector rings determines axial field of ___",
+    "answer": "VIEW",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-34",
+    "clue": "Projection data representation used in PET reconstruction",
+    "answer": "SINOGRAM",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-35",
+    "clue": "Prostate-specific membrane antigen targeted by newer PET tracers",
+    "answer": "PSMA",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-36",
+    "clue": "Time-of-___ PET improves signal-to-noise ratio",
+    "answer": "FLIGHT",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-37",
+    "clue": "Patient fasting reduces unwanted muscle FDG accumulation",
+    "answer": "GLUCOSE",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-38",
+    "clue": "PET normalization corrects for detector ___ variations",
+    "answer": "EFFICIENCY",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-39",
+    "clue": "Positron travel distance before annihilation in tissue",
+    "answer": "RANGE",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-40",
+    "clue": "Iterative reconstruction method using subsets of projection data",
+    "answer": "OSEM",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-41",
+    "clue": "Axial ___ between bed positions ensures complete coverage",
+    "answer": "OVERLAP",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-42",
+    "clue": "Ge-68 parent isotope in a Ga-68 generator",
+    "answer": "GERMANIUM",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-43",
+    "clue": "Maximum intensity ___ is a common PET display method",
+    "answer": "PROJECTION",
+    "category": "PET/CT Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-44",
+    "clue": "Lutetium-based scintillator crystal in modern PET",
+    "answer": "LYSO",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-45",
+    "clue": "FDG is a labeled analog of this simple sugar",
+    "answer": "DEOXYGLUCOSE",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-46",
+    "clue": "PET scanner sensitivity increases with more detector ___",
+    "answer": "RINGS",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-47",
+    "clue": "SUV normalized to lean body ___",
+    "answer": "MASS",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-48",
+    "clue": "Whole-___ PET/CT scan covers skull base to mid-thigh",
+    "answer": "BODY",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-49",
+    "clue": "Prompt gamma photons from certain isotopes cause false coincidences",
+    "answer": "SPURIOUS",
+    "category": "PET/CT Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-50",
+    "clue": "PET radiotracer injected via ___ route",
+    "answer": "INTRAVENOUS",
+    "category": "PET/CT Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-51",
+    "clue": "Accelerating structure that boosts electrons to therapeutic energies",
+    "answer": "WAVEGUIDE",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-52",
+    "clue": "Microwave source in low-energy linacs",
+    "answer": "MAGNETRON",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-53",
+    "clue": "Microwave amplifier used in high-energy linacs",
+    "answer": "KLYSTRON",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-54",
+    "clue": "Device that injects electrons into the accelerating structure",
+    "answer": "GUN",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-55",
+    "clue": "High-Z material target that produces X-rays from electrons",
+    "answer": "TUNGSTEN",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-56",
+    "clue": "Conical component that produces a uniform photon beam profile",
+    "answer": "FLATTENING",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-57",
+    "clue": "Multi-leaf device that shapes the radiation field conformally",
+    "answer": "COLLIMATOR",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-58",
+    "clue": "Linac beam-defining jaws move in ___ pairs",
+    "answer": "INDEPENDENT",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-59",
+    "clue": "Sealed gas chamber monitoring beam output in real time",
+    "answer": "IONIZATION",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-60",
+    "clue": "Magnet that redirects the electron beam toward the patient",
+    "answer": "BENDING",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-61",
+    "clue": "Rotating structure allowing beam delivery from multiple angles",
+    "answer": "BOOM",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-62",
+    "clue": "Point where all beam central axes intersect in a linac",
+    "answer": "ISOCENTER",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-63",
+    "clue": "Radiation delivered per unit time from the linac",
+    "answer": "DOSERATE",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-64",
+    "clue": "Daily QA checks beam output ___ before patient treatment",
+    "answer": "CONSTANCY",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-65",
+    "clue": "Linac modality using scattered foils for superficial treatments",
+    "answer": "ELECTRON",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-66",
+    "clue": "FFF beams omit this component for higher dose rates",
+    "answer": "FILTER",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-67",
+    "clue": "Portal ___ device captures MV images for patient setup",
+    "answer": "IMAGING",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-68",
+    "clue": "Varian kV imaging system on a retractable linac arm (abbr.)",
+    "answer": "OBI",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-69",
+    "clue": "Cone-beam CT acquired on the linac for daily setup verification",
+    "answer": "CBCT",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-70",
+    "clue": "Star shot test verifies the accuracy of the linac's central point",
+    "answer": "ISOCENTRICITY",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-71",
+    "clue": "Radiation passing between adjacent MLC leaves",
+    "answer": "LEAKAGE",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-72",
+    "clue": "Rounded leaf ends reduce the ___ and groove effect in MLC",
+    "answer": "TONGUE",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-73",
+    "clue": "Backup ___ behind MLC provides additional field shaping",
+    "answer": "JAWS",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-74",
+    "clue": "PDD curve describes beam penetration characteristics",
+    "answer": "DEPTH",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-75",
+    "clue": "Tissue maximum ratio is independent of source-to-surface ___",
+    "answer": "DISTANCE",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-76",
+    "clue": "Rapid dose falloff region at the field edges",
+    "answer": "PENUMBRA",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-77",
+    "clue": "Winston-Lutz test evaluates radiation-to-mechanical alignment",
+    "answer": "COINCIDENCE",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-78",
+    "clue": "Elekta volumetric imaging system (abbr.)",
+    "answer": "XVI",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-79",
+    "clue": "Safety device that halts the beam if parameters are out of range",
+    "answer": "INTERLOCK",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-80",
+    "clue": "Pulsed beam structure defined by its ___ frequency",
+    "answer": "REPETITION",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-81",
+    "clue": "Accessory holder for custom-shaped field blocks on the linac head",
+    "answer": "TRAY",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-82",
+    "clue": "Cooling system removes thermal energy from linac components",
+    "answer": "HEAT",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-83",
+    "clue": "SF6 gas provides electrical ___ in the waveguide",
+    "answer": "INSULATION",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-84",
+    "clue": "Rotating assembly holding multiple scattering foils and applicators",
+    "answer": "CAROUSEL",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-85",
+    "clue": "Beam ___ test uses a scanning water tank for commissioning",
+    "answer": "PROFILE",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-86",
+    "clue": "Monitor ___ calibration links machine output to absorbed dose",
+    "answer": "UNIT",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-87",
+    "clue": "Linac vault walls made of thick ___",
+    "answer": "CONCRETE",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-88",
+    "clue": "CyberKnife uses a robotic ___ instead of a rotating gantry",
+    "answer": "MANIPULATOR",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-89",
+    "clue": "AFC system maintains resonant conditions in the waveguide",
+    "answer": "FREQUENCY",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-90",
+    "clue": "Beam steering coils correct electron trajectory ___",
+    "answer": "DEVIATION",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-91",
+    "clue": "SAD is typically 100 cm on modern linacs",
+    "answer": "AXIS",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-92",
+    "clue": "Varian Halcyon features a closed ring design with this enclosed tunnel",
+    "answer": "APERTURE",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-93",
+    "clue": "ExacTrac system provides real-time patient ___ monitoring",
+    "answer": "POSITION",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-94",
+    "clue": "Primary fixed aperture that blocks direct beam in unwanted directions",
+    "answer": "SHIELD",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-95",
+    "clue": "Standing wave versus traveling wave describes waveguide ___",
+    "answer": "TYPE",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-96",
+    "clue": "Annual calibration ensures linac output matches the ___",
+    "answer": "PROTOCOL",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-97",
+    "clue": "Dual-energy linac can switch between 6 and 18 MV beams",
+    "answer": "PHOTONS",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-98",
+    "clue": "Light field must match the radiation field in this daily QA test",
+    "answer": "ALIGNMENT",
+    "category": "Linear Accelerators",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-99",
+    "clue": "Picket fence test evaluates MLC leaf ___ accuracy",
+    "answer": "POSITIONING",
+    "category": "Linear Accelerators",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-100",
+    "clue": "MLC leaf width at the central point is typically 5 or 10 mm",
+    "answer": "MILLIMETERS",
+    "category": "Linear Accelerators",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-101",
+    "clue": "Breast imaging modality using low-energy X-rays for early detection",
+    "answer": "SCREENING",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-102",
+    "clue": "Breast compression reduces scatter and improves image ___",
+    "answer": "QUALITY",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-103",
+    "clue": "Anode target material optimized for breast imaging",
+    "answer": "MOLYBDENUM",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-104",
+    "clue": "Alternative anode material for thicker or denser breasts",
+    "answer": "RHODIUM",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-105",
+    "clue": "Anti-scatter ___ improves image contrast in breast imaging",
+    "answer": "GRID",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-106",
+    "clue": "Mean ___ dose is the key risk metric in breast imaging",
+    "answer": "GLANDULAR",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-107",
+    "clue": "Limited-angle 3D breast imaging technique",
+    "answer": "TOMOSYNTHESIS",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-108",
+    "clue": "Tissue classification: fatty, scattered, heterogeneously or extremely ___",
+    "answer": "DENSE",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-109",
+    "clue": "Tiny calcium deposits in breast tissue visible on imaging",
+    "answer": "CALCIFICATIONS",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-110",
+    "clue": "Standard mammographic view: cranio-___",
+    "answer": "CAUDAL",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-111",
+    "clue": "Mediolateral ___ view shows breast from side angle",
+    "answer": "OBLIQUE",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-112",
+    "clue": "Automatic exposure ___ optimizes technique for breast thickness",
+    "answer": "CONTROL",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-113",
+    "clue": "ACR ___ phantom tests breast imaging annually",
+    "answer": "ACCREDITATION",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-114",
+    "clue": "BI-RADS assessment ___ 0 means additional imaging is needed",
+    "answer": "CATEGORY",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-115",
+    "clue": "Amorphous ___ used in direct-conversion digital breast detectors",
+    "answer": "SELENIUM",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-116",
+    "clue": "CsI scintillator used in indirect-conversion mammography detectors",
+    "answer": "CESIUM",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-117",
+    "clue": "Needle procedure guided by imaging for tissue sampling",
+    "answer": "BIOPSY",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-118",
+    "clue": "Supplemental breast imaging modality using a strong magnetic field",
+    "answer": "MRI",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-119",
+    "clue": "Mammography tube voltage range is typically 25 to 35 ___",
+    "answer": "KILOVOLTS",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-120",
+    "clue": "Ability to resolve microcalcifications requires high spatial ___",
+    "answer": "ACUITY",
+    "category": "Mammography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-121",
+    "clue": "Paddle applies uniform pressure across the breast during imaging",
+    "answer": "COMPRESSION",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-122",
+    "clue": "Half-value ___ characterizes mammographic beam quality",
+    "answer": "LAYER",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-123",
+    "clue": "Focal ___ size affects mammographic spatial resolution",
+    "answer": "SPOT",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-124",
+    "clue": "CAD software highlights suspicious regions for radiologists",
+    "answer": "DETECTION",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-125",
+    "clue": "Magnification view uses small focal spot for detail of small ___",
+    "answer": "LESIONS",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-126",
+    "clue": "Contrast-enhanced ___ uses iodine-based agents for breast imaging",
+    "answer": "CESM",
+    "category": "Mammography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-127",
+    "clue": "Detector element size in digital breast imaging: approximately 70-100 ___",
+    "answer": "MICRONS",
+    "category": "Mammography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-128",
+    "clue": "Phantom scoring evaluates fibers, specks, and ___",
+    "answer": "MASSES",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-129",
+    "clue": "Skin line should be visible to the edge in proper breast placement",
+    "answer": "PECTORALIS",
+    "category": "Mammography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-130",
+    "clue": "Artifact from patient motion causes image ___",
+    "answer": "BLUR",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-131",
+    "clue": "Heel effect uses the anode side toward the chest wall",
+    "answer": "CATHODE",
+    "category": "Mammography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-132",
+    "clue": "Dense breast laws require informing patients about tissue type",
+    "answer": "NOTIFICATION",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-133",
+    "clue": "Annual physicist survey required by federal breast imaging law",
+    "answer": "MQSA",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-134",
+    "clue": "Flat-field test verifying consistent detector signal across the image",
+    "answer": "UNIFORMITY",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-135",
+    "clue": "Signal-to-___ ratio determines smallest detectable lesion",
+    "answer": "NOISE",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-136",
+    "clue": "Supplemental breast evaluation using real-time sound waves",
+    "answer": "SONOGRAPHY",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-137",
+    "clue": "Federal law governing breast imaging facility requirements (abbr.)",
+    "answer": "STANDARDS",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-138",
+    "clue": "Reconstructed 2D images generated from tomosynthesis dataset",
+    "answer": "SYNTHETIC",
+    "category": "Mammography",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-139",
+    "clue": "Silver halide-based recording medium replaced by digital detectors",
+    "answer": "SCREEN",
+    "category": "Mammography",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-140",
+    "clue": "Suspicious pattern of tissue deformation seen on breast images",
+    "answer": "DISTORTION",
+    "category": "Mammography",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-141",
+    "clue": "Electromagnetic wave packets emitted during radioactive decay",
+    "answer": "PHOTON",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-142",
+    "clue": "Ejection of an inner-shell electron by an incoming photon",
+    "answer": "PHOTOELECTRIC",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-143",
+    "clue": "Incoherent scattering interaction named after American physicist",
+    "answer": "COMPTON",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-144",
+    "clue": "Energy-mass equivalence relation: E equals mc ___",
+    "answer": "SQUARED",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-145",
+    "clue": "Particle with same mass as electron but positive charge",
+    "answer": "POSITRON",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-146",
+    "clue": "Nuclear decay emitting a helium-4 nucleus",
+    "answer": "ALPHA",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-147",
+    "clue": "Exponential transformation of unstable nuclei over time",
+    "answer": "DECAY",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-148",
+    "clue": "Characteristic X-ray produced when outer electron fills inner shell ___",
+    "answer": "VACANCY",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-149",
+    "clue": "Bremsstrahlung means ___ radiation in German",
+    "answer": "BRAKING",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-150",
+    "clue": "Linear energy ___ measures energy deposited per unit path length",
+    "answer": "TRANSFER",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-151",
+    "clue": "Inverse ___ law governs intensity decrease with distance",
+    "answer": "SQUARE",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-152",
+    "clue": "Beam quality descriptor: half-value ___",
+    "answer": "THICKNESS",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-153",
+    "clue": "Nuclear process where heavy atoms split into lighter fragments",
+    "answer": "FISSION",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-154",
+    "clue": "Coherent scattering with no energy transfer to the atom",
+    "answer": "RAYLEIGH",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-155",
+    "clue": "Pair ___ requires photon energy above 1.022 MeV",
+    "answer": "PRODUCTION",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-156",
+    "clue": "Number of protons defining an element's identity: ___ number",
+    "answer": "ATOMIC",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-157",
+    "clue": "Atoms of same element with different neutron numbers",
+    "answer": "ISOTOPES",
+    "category": "Radiation Physics",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-158",
+    "clue": "Low-energy particle emitted instead of characteristic X-ray: ___ electron",
+    "answer": "AUGER",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-159",
+    "clue": "Nuclear transformation by absorption of an orbital particle",
+    "answer": "CAPTURE",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-160",
+    "clue": "Mass ___ coefficient normalized to material density",
+    "answer": "ABSORPTION",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-161",
+    "clue": "Stopping ___ describes energy loss of charged particles in matter",
+    "answer": "POWER",
+    "category": "Radiation Physics",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-162",
+    "clue": "Blue glow produced when particles exceed the speed of light in a medium",
+    "answer": "CHERENKOV",
+    "category": "Radiation Physics",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-163",
+    "clue": "Sharp dose maximum for heavy charged particles at end of range",
+    "answer": "BRAGG",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-164",
+    "clue": "SI unit of radioactivity equal to one disintegration per second",
+    "answer": "BECQUEREL",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-165",
+    "clue": "Process of slowing neutrons using a moderator",
+    "answer": "THERMALIZATION",
+    "category": "Radiation Physics",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-166",
+    "clue": "Probability of X-ray emission versus Auger after inner shell vacancy",
+    "answer": "YIELD",
+    "category": "Radiation Physics",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-167",
+    "clue": "Klein-Nishina formula describes differential cross-section for incoherent scatter",
+    "answer": "ANGULAR",
+    "category": "Radiation Physics",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-168",
+    "clue": "Kinetic energy released per unit mass (acronym concept)",
+    "answer": "KERMA",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-169",
+    "clue": "Transition from excited metastable nuclear state to ground state",
+    "answer": "ISOMERIC",
+    "category": "Radiation Physics",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-170",
+    "clue": "One eV is the kinetic gain of a charged particle across one volt ___",
+    "answer": "POTENTIAL",
+    "category": "Radiation Physics",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-171",
+    "clue": "IMRT modulates beam ___ across the field",
+    "answer": "INTENSITY",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-172",
+    "clue": "VMAT delivers treatment during continuous gantry ___",
+    "answer": "ROTATION",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-173",
+    "clue": "High-dose single-fraction treatment of small tumors",
+    "answer": "RADIOSURGERY",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-174",
+    "clue": "Sealed radioactive source placed directly into tumor tissue",
+    "answer": "BRACHYTHERAPY",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-175",
+    "clue": "Each treatment appointment delivers one ___",
+    "answer": "SESSION",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-176",
+    "clue": "Immobilization device made from heated thermoplastic mesh",
+    "answer": "MASK",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-177",
+    "clue": "Tissue equivalent material placed on skin to build up surface dose",
+    "answer": "BOLUS",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-178",
+    "clue": "Charged particle beam therapy exploiting the Bragg peak",
+    "answer": "PROTON",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-179",
+    "clue": "GTV, CTV, and PTV define treatment target ___",
+    "answer": "VOLUMES",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-180",
+    "clue": "Organ at ___ is a normal tissue structure to protect",
+    "answer": "RISK",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-181",
+    "clue": "Total body exposure preceding bone marrow transplantation",
+    "answer": "IRRADIATION",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-182",
+    "clue": "Palliative treatment aims to relieve ___ from metastatic disease",
+    "answer": "SYMPTOMS",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-183",
+    "clue": "Device using multiple Co-60 sources for cranial treatment",
+    "answer": "GAMMAKNIFE",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-184",
+    "clue": "Surface ___ used to track respiratory motion during treatment",
+    "answer": "GUIDANCE",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-185",
+    "clue": "Concurrent ___ and radiation enhance tumor cell killing",
+    "answer": "CHEMOTHERAPY",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-186",
+    "clue": "HDR uses a single high-activity ___ source",
+    "answer": "IRIDIUM",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-187",
+    "clue": "IGRT uses daily imaging for patient setup verification",
+    "answer": "GUIDED",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-188",
+    "clue": "Physical or virtual filter tilting the isodose distribution",
+    "answer": "WEDGE",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-189",
+    "clue": "Hypofractionation delivers fewer but ___ dose fractions",
+    "answer": "LARGER",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-190",
+    "clue": "Erythema is a common acute skin reaction to external beam therapy",
+    "answer": "REDNESS",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-191",
+    "clue": "Modifying the plan during treatment based on anatomical changes",
+    "answer": "ADAPTIVE",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-192",
+    "clue": "Respiratory ___ reduces motion-related target uncertainty",
+    "answer": "GATING",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-193",
+    "clue": "Treatment system combining MRI with a linear accelerator",
+    "answer": "MRIDIAN",
+    "category": "Radiotherapy",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-194",
+    "clue": "Fiducial ___ implanted in tissue for image guidance",
+    "answer": "MARKERS",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-195",
+    "clue": "Radiation delivered during surgery in the operating room",
+    "answer": "INTRAOPERATIVE",
+    "category": "Radiotherapy",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-196",
+    "clue": "SBRT treats extracranial tumors with high doses in few fractions",
+    "answer": "STEREOTACTIC",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-197",
+    "clue": "Corrections accounting for non-uniform density within the patient",
+    "answer": "HETEROGENEITY",
+    "category": "Radiotherapy",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-198",
+    "clue": "Field-in-field technique reduces ___ spots within the target",
+    "answer": "HOT",
+    "category": "Radiotherapy",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-199",
+    "clue": "Treatment using unsealed radioactive sources for bone pain relief",
+    "answer": "SYSTEMIC",
+    "category": "Radiotherapy",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-200",
+    "clue": "Deep inspiration breath ___ spares the heart during left breast RT",
+    "answer": "HOLD",
+    "category": "Radiotherapy",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-201",
+    "clue": "Inverse ___ uses optimization algorithms to find beam parameters",
+    "answer": "PLANNING",
+    "category": "Treatment Planning",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-202",
+    "clue": "CT simulation acquires ___ data for treatment planning",
+    "answer": "ANATOMICAL",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-203",
+    "clue": "Dose-volume ___ displays dose distribution statistics for structures",
+    "answer": "HISTOGRAM",
+    "category": "Treatment Planning",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-204",
+    "clue": "CT numbers relate to electron density via a conversion ___",
+    "answer": "CURVE",
+    "category": "Treatment Planning",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-205",
+    "clue": "Monte ___ simulation tracks individual particle histories",
+    "answer": "CARLO",
+    "category": "Treatment Planning",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-206",
+    "clue": "Pencil beam ___ is a fast but approximate dose algorithm",
+    "answer": "CONVOLUTION",
+    "category": "Treatment Planning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-207",
+    "clue": "Collapsed cone algorithm handles lateral electron transport",
+    "answer": "SUPERPOSITION",
+    "category": "Treatment Planning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-208",
+    "clue": "Plan ___ compares rival treatment plans quantitatively",
+    "answer": "EVALUATION",
+    "category": "Treatment Planning",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-209",
+    "clue": "Objective function guides the ___ engine during IMRT planning",
+    "answer": "OPTIMIZATION",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-210",
+    "clue": "Index measuring how well the prescribed dose conforms to the target",
+    "answer": "CONFORMITY",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-211",
+    "clue": "Gradient index evaluates dose falloff beyond the ___",
+    "answer": "TARGET",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-212",
+    "clue": "___ constraints limit maximum dose to critical structures",
+    "answer": "TOLERANCE",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-213",
+    "clue": "Selecting ideal gantry entry directions for beam arrangement",
+    "answer": "ANGLES",
+    "category": "Treatment Planning",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-214",
+    "clue": "Virtual X-ray image digitally reconstructed from CT data (abbr.)",
+    "answer": "DRR",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-215",
+    "clue": "Drawing target and OAR boundaries on each CT slice",
+    "answer": "CONTOURING",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-216",
+    "clue": "Pareto-based method for interactive plan tradeoff exploration",
+    "answer": "NAVIGATION",
+    "category": "Treatment Planning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-217",
+    "clue": "Curves connecting points receiving equal absorbed dose",
+    "answer": "ISODOSE",
+    "category": "Treatment Planning",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-218",
+    "clue": "Calculation voxel dimension affects accuracy and computation speed",
+    "answer": "GRIDSIZE",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-219",
+    "clue": "Deformable image ___ maps anatomy between different scans",
+    "answer": "FUSION",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-220",
+    "clue": "Using historical plan data to predict achievable dose distributions",
+    "answer": "KNOWLEDGE",
+    "category": "Treatment Planning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-221",
+    "clue": "Robustness analysis evaluates plan sensitivity to setup ___",
+    "answer": "ERRORS",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-222",
+    "clue": "Standard enabling plan data transfer between systems (abbr.)",
+    "answer": "DICOM",
+    "category": "Treatment Planning",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-223",
+    "clue": "Compensator design accounts for irregular patient surface shape",
+    "answer": "IRREGULARITY",
+    "category": "Treatment Planning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-224",
+    "clue": "Auto-segmentation uses artificial ___ to delineate structures",
+    "answer": "INTELLIGENCE",
+    "category": "Treatment Planning",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-225",
+    "clue": "NTCP predicts the likelihood of side effects from treatment dose",
+    "answer": "PROBABILITY",
+    "category": "Treatment Planning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-226",
+    "clue": "CT imaging uses rotating X-ray tube and ___ array",
+    "answer": "DETECTOR",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-227",
+    "clue": "MRI uses strong ___ fields to align hydrogen protons",
+    "answer": "MAGNETIC",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-228",
+    "clue": "Real-time imaging modality using high-frequency acoustic waves",
+    "answer": "ULTRASOUND",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-229",
+    "clue": "CT number of water is defined as zero on this scale",
+    "answer": "HOUNSFIELD",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-230",
+    "clue": "Fluoroscopy provides live, real-time X-ray visualization",
+    "answer": "REALTIME",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-231",
+    "clue": "Image ___ in CT is reconstructed using filtered back-projection",
+    "answer": "SLICE",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-232",
+    "clue": "Dual-energy CT discriminates materials by their elemental composition",
+    "answer": "SPECTRAL",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-233",
+    "clue": "T1 and T2 are MRI ___ times of tissue",
+    "answer": "RELAXATION",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-234",
+    "clue": "Doppler imaging measures blood ___ velocity",
+    "answer": "FLOW",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-235",
+    "clue": "CTDI quantifies patient radiation exposure from CT scanning",
+    "answer": "INDEX",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-236",
+    "clue": "Windowing adjusts image ___ and brightness on display",
+    "answer": "CONTRAST",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-237",
+    "clue": "Helical CT acquires data as the table advances through the bore",
+    "answer": "SPIRAL",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-238",
+    "clue": "Paramagnetic agent used as MRI enhancement medium",
+    "answer": "GADOLINIUM",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-239",
+    "clue": "Wrap-around artifact in MRI from insufficient sampling",
+    "answer": "ALIASING",
+    "category": "Diagnostic Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-240",
+    "clue": "Number of pixels in each dimension of the image",
+    "answer": "MATRIX",
+    "category": "Diagnostic Imaging",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-241",
+    "clue": "Computed radiography uses photostimulable ___ plates",
+    "answer": "PHOSPHOR",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-242",
+    "clue": "CT artifact from preferential absorption of softer X-ray energies",
+    "answer": "HARDENING",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-243",
+    "clue": "MRI gradient coils encode spatial position through frequency variation",
+    "answer": "ENCODING",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-244",
+    "clue": "MTF measures an imaging system's ability to preserve spatial detail",
+    "answer": "MODULATION",
+    "category": "Diagnostic Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-245",
+    "clue": "Crystal that converts electrical signals to acoustic waves in US",
+    "answer": "PIEZOELECTRIC",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-246",
+    "clue": "Iodinated contrast enhances vascular structures in CT ___",
+    "answer": "ANGIOGRAPHY",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-247",
+    "clue": "MRI spin ___ sequence produces T2-weighted images",
+    "answer": "ECHO",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-248",
+    "clue": "Panel technology that replaced image intensifiers in modern fluoroscopy",
+    "answer": "FLATPANEL",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-249",
+    "clue": "Sampling theorem relating minimum rate to signal bandwidth",
+    "answer": "NYQUIST",
+    "category": "Diagnostic Imaging",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-250",
+    "clue": "DWI MRI detects restricted water movement in acute stroke",
+    "answer": "DIFFUSION",
+    "category": "Diagnostic Imaging",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-251",
+    "clue": "ALARA principle minimizes exposure as low as reasonably ___",
+    "answer": "ACHIEVABLE",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-252",
+    "clue": "Three protection principles: time, distance, and ___",
+    "answer": "SHIELDING",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-253",
+    "clue": "Personal monitoring device worn to track occupational exposure",
+    "answer": "DOSIMETER",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-254",
+    "clue": "Annual occupational whole-body limit for radiation workers: 50 ___",
+    "answer": "MILLISIEVERTS",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-255",
+    "clue": "Lead ___ worn during fluoroscopy to protect the torso",
+    "answer": "APRON",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-256",
+    "clue": "US federal body overseeing nuclear materials and safety (abbr.)",
+    "answer": "NRC",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-257",
+    "clue": "Effective quantity accounting for tissue radiosensitivity (unit: Sv)",
+    "answer": "SIEVERT",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-258",
+    "clue": "Material thickness reducing beam intensity to one-tenth",
+    "answer": "TVL",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-259",
+    "clue": "Three-bladed warning symbol on radiation signs",
+    "answer": "TREFOIL",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-260",
+    "clue": "Portable instrument for measuring ambient radiation levels",
+    "answer": "SURVEY",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-261",
+    "clue": "Controlled area where access is restricted due to radiation ___",
+    "answer": "HAZARD",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-262",
+    "clue": "Stochastic effects have no minimum dose for risk to begin",
+    "answer": "THRESHOLD",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-263",
+    "clue": "Tissue reactions appearing above a certain dose: ___ effects",
+    "answer": "DETERMINISTIC",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-264",
+    "clue": "Pregnant worker fetal dose limit is 5 mSv over the ___",
+    "answer": "GESTATION",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-265",
+    "clue": "RSO oversees institutional radiation protection program",
+    "answer": "OFFICER",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-266",
+    "clue": "Area monitor providing continuous readings at facility boundaries",
+    "answer": "EXPOSURE",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-267",
+    "clue": "Wipe test detects removable radioactive ___",
+    "answer": "CONTAMINATION",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-268",
+    "clue": "Wall protecting against scattered and leakage radiation",
+    "answer": "BARRIER",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-269",
+    "clue": "Workload, use factor, and ___ factor determine shielding needs",
+    "answer": "OCCUPANCY",
+    "category": "Radiation Protection",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-270",
+    "clue": "Finger monitor worn during radiopharmaceutical handling",
+    "answer": "BADGE",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-271",
+    "clue": "Tissue ___ coefficient reflects organ radiosensitivity",
+    "answer": "WEIGHTING",
+    "category": "Radiation Protection",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-272",
+    "clue": "Maze entrance design reduces exposure reaching the control area",
+    "answer": "LABYRINTH",
+    "category": "Radiation Protection",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-273",
+    "clue": "Thyroid ___ worn during fluoroscopy to protect the gland",
+    "answer": "COLLAR",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-274",
+    "clue": "Lithium fluoride crystal used in thermoluminescent dosimetry",
+    "answer": "TLD",
+    "category": "Radiation Protection",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-275",
+    "clue": "Report 147 from this US advisory body covers facility protection design",
+    "answer": "NCRP",
+    "category": "Radiation Protection",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-276",
+    "clue": "Farmer-type chamber is the gold standard for beam calibration",
+    "answer": "THIMBLE",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-277",
+    "clue": "AAPM protocol for clinical reference beam dosimetry procedure",
+    "answer": "CALIBRATION",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-278",
+    "clue": "SI unit of absorbed energy deposition in tissue",
+    "answer": "GRAY",
+    "category": "Dosimetry",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-279",
+    "clue": "Electrometer reads the ___ collected by the ion chamber",
+    "answer": "CHARGE",
+    "category": "Dosimetry",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-280",
+    "clue": "Radiographic ___ measures optical density changes from exposure",
+    "answer": "FILM",
+    "category": "Dosimetry",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-281",
+    "clue": "Self-developing film that changes hue proportional to absorbed dose",
+    "answer": "GAFCHROMIC",
+    "category": "Dosimetry",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-282",
+    "clue": "Semiconductor detector providing real-time point measurements",
+    "answer": "MOSFET",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-283",
+    "clue": "Carbon-based detector with near tissue-equivalent atomic number",
+    "answer": "DIAMOND",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-284",
+    "clue": "Silicon detector exhibiting directional ___ in measurements",
+    "answer": "DEPENDENCE",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-285",
+    "clue": "Reference medium for clinical dose measurement: liquid ___",
+    "answer": "WATER",
+    "category": "Dosimetry",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-286",
+    "clue": "Temperature and ___ correction applied to ion chamber readings",
+    "answer": "PRESSURE",
+    "category": "Dosimetry",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-287",
+    "clue": "Theory relating dose in a small air-filled space to dose in surrounding material",
+    "answer": "CAVITY",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-288",
+    "clue": "Bragg-Gray conditions require the cavity to be ___",
+    "answer": "SMALL",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-289",
+    "clue": "Ion ___ correction accounts for incomplete charge collection",
+    "answer": "RECOMBINATION",
+    "category": "Dosimetry",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-290",
+    "clue": "Charge collection asymmetry when reversing chamber voltage",
+    "answer": "POLARITY",
+    "category": "Dosimetry",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-291",
+    "clue": "Amino acid dosimeter read out using electron spin spectroscopy",
+    "answer": "ALANINE",
+    "category": "Dosimetry",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-292",
+    "clue": "Output ___ relates dose at a point to dose at reference depth",
+    "answer": "FACTOR",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-293",
+    "clue": "Scanning water tank profiles beam in three ___",
+    "answer": "DIMENSIONS",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-294",
+    "clue": "Polymer ___ provides true 3D dose distribution measurement",
+    "answer": "GEL",
+    "category": "Dosimetry",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-295",
+    "clue": "Calibration coefficient ND,w converts chamber reading to dose",
+    "answer": "ABSORBED",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-296",
+    "clue": "In-vivo measurement verifies dose delivered to the ___",
+    "answer": "PATIENT",
+    "category": "Dosimetry",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cw-new-297",
+    "clue": "OSL dosimeters use aluminum oxide crystals",
+    "answer": "LUMINESCENCE",
+    "category": "Dosimetry",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-298",
+    "clue": "Percentage depth dose increases with beam ___",
+    "answer": "ENERGY",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cw-new-299",
+    "clue": "Beam quality specifier for photon beams based on depth dose ratio",
+    "answer": "TPR",
+    "category": "Dosimetry",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cw-new-300",
+    "clue": "2D detector array used for patient-specific QA verification",
+    "answer": "MAPCHECK",
+    "category": "Dosimetry",
+    "difficulty": "medium"
+  }
+]

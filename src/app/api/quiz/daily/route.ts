@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
+import { applyDifficultyFilter } from "@/lib/difficulty-filter";
+import { applyDisciplineFilter } from "@/lib/discipline-filter";
 
 function dateToSeed(dateStr: string): number {
   let hash = 0;
@@ -52,11 +54,23 @@ export async function GET() {
     return NextResponse.json({ locked: true, score: daily.last_score });
   }
 
-  // Get only question IDs for seeded shuffle, then fetch full data for selected 10
-  const { data: allIds } = await supabase
-    .from("questions")
-    .select("id")
-    .order("id");
+  // Get user profile for difficulty + discipline filtering
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("xp, discipline")
+    .eq("id", session.user.id)
+    .single();
+
+  const xp = profile?.xp ?? 0;
+  const discipline = profile?.discipline ?? "physicist";
+
+  // Get question IDs filtered by user's difficulty range and discipline
+  let idsQuery = applyDisciplineFilter(
+    supabase.from("questions").select("id"),
+    discipline
+  );
+  idsQuery = applyDifficultyFilter(idsQuery, xp);
+  const { data: allIds } = await idsQuery.order("id");
 
   if (!allIds?.length) {
     return NextResponse.json({ error: "No questions" }, { status: 500 });

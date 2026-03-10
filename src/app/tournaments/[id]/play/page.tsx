@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef, use } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { TOURNAMENT_TYPES } from "@/lib/tournaments";
+import { getReadingTimeBonus } from "@/lib/scoring";
 import type { DbQuestion, DbTournament } from "@/lib/types";
 import TimerRing from "@/components/TimerRing";
 import ChoiceButton from "@/components/ChoiceButton";
@@ -73,7 +74,7 @@ export default function TournamentPlayPage({
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const config = tournament ? TOURNAMENT_TYPES[tournament.type] : null;
-  const timerSeconds = config
+  const baseTimerSeconds = config
     ? berserk
       ? Math.ceil(config.timerSeconds / 2)
       : config.timerSeconds
@@ -106,6 +107,11 @@ export default function TournamentPlayPage({
   }, [id]);
 
   const currentQuestion = questions[currentIndex];
+
+  // Per-question timer: base time + reading bonus for longer questions
+  const timerSeconds = currentQuestion
+    ? baseTimerSeconds + getReadingTimeBonus(currentQuestion.question, currentQuestion.choices)
+    : baseTimerSeconds;
 
   // Timer (only starts after countdown confirmation)
   useEffect(() => {

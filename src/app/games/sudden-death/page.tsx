@@ -8,6 +8,7 @@ import {
   calculateSuddenDeathPoints,
   calculateXp,
   getAdaptiveTimer,
+  getReadingTimeBonus,
   getStreakMultiplier,
 } from "@/lib/scoring";
 import type { DbQuestion, AnswerRecord } from "@/lib/types";
@@ -123,9 +124,10 @@ export default function SuddenDeathPage() {
   const currentQuestion = questions[currentIndex];
   const correctCount = answers.filter((a) => a.correct).length;
 
-  // 8s flat — no special treatment for calc questions. Read fast or die.
+  // 8s base — adaptive shrink + reading bonus for longer questions
   const currentTimerTotal = currentQuestion
     ? getAdaptiveTimer(BASE_TIMER, correctCount, false)
+      + getReadingTimeBonus(currentQuestion.question, currentQuestion.choices)
     : BASE_TIMER;
 
   // Timer

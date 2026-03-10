@@ -7,6 +7,7 @@ import {
   HOT_SEAT_PRIZE_LADDER,
   HOT_SEAT_SAFE_HAVENS,
   calculateHotSeatScore,
+  getReadingTimeBonus,
 } from "@/lib/scoring";
 import type { DbQuestion, DbTournament } from "@/lib/types";
 import { generateAudiencePoll, generatePhoneResult, type AudiencePoll } from "@/lib/hot-seat-lifelines";
@@ -88,7 +89,7 @@ export default function TournamentHotSeatPage({
   // Determine timer from tournament config
   const configObj = tournament?.config as Record<string, number> | null;
   const baseTimer = configObj?.timerSeconds || 30;
-  const timerTotal = berserk ? Math.ceil(baseTimer / 2) : baseTimer;
+  const baseTimerTotal = berserk ? Math.ceil(baseTimer / 2) : baseTimer;
 
   // Fetch tournament info + round-limit check
   useEffect(() => {
@@ -152,6 +153,11 @@ export default function TournamentHotSeatPage({
     const q = questions.find((qu) => qu.id === a.questionId);
     return q && a.selectedAnswer === q.answer;
   }).length;
+
+  // Per-question timer: base time + reading bonus for longer questions
+  const timerTotal = currentQuestion
+    ? baseTimerTotal + getReadingTimeBonus(currentQuestion.question, currentQuestion.choices)
+    : baseTimerTotal;
 
   // Timer (only starts after countdown confirmation)
   useEffect(() => {

@@ -9,6 +9,7 @@ import {
   HOT_SEAT_SAFE_HAVENS,
   calculateHotSeatScore,
   calculateXp,
+  getReadingTimeBonus,
 } from "@/lib/scoring";
 import type { DbQuestion, AnswerRecord } from "@/lib/types";
 import { generateAudiencePoll, generatePhoneResult, type AudiencePoll } from "@/lib/hot-seat-lifelines";
@@ -110,11 +111,16 @@ export default function HotSeatPage() {
   const currentQuestion = questions[currentIndex];
   const correctCount = answers.filter((a) => a.correct).length;
 
+  // Per-question timer: base time + reading bonus for longer questions
+  const currentTimerTotal = currentQuestion
+    ? BASE_TIMER + getReadingTimeBonus(currentQuestion.question, currentQuestion.choices)
+    : BASE_TIMER;
+
   // Timer
   useEffect(() => {
     if (phase !== "playing" || !currentQuestion || selectedAnswer !== null) return;
 
-    setTimeRemaining(BASE_TIMER);
+    setTimeRemaining(currentTimerTotal);
     timerRef.current = setInterval(() => {
       setTimeRemaining((prev) => {
         if (prev <= 0.1) {
@@ -529,7 +535,7 @@ export default function HotSeatPage() {
 
       {/* Timer & prize */}
       <div className="flex items-center justify-between mt-2 mb-4">
-        <TimerRing timeRemaining={timeRemaining} totalTime={BASE_TIMER} />
+        <TimerRing timeRemaining={timeRemaining} totalTime={currentTimerTotal} />
         <div className="text-right">
           <div className="font-mono text-2xl font-bold text-amber-500">
             {formatPrize(HOT_SEAT_PRIZE_LADDER[currentIndex])}

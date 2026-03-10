@@ -1,0 +1,2872 @@
+[
+  {
+    "id": "linac1",
+    "section_id": "linac",
+    "question": "In a medical linear accelerator, what is the primary mechanism by which electrons are released from the electron gun cathode?",
+    "choices": [
+      "Photoelectric emission",
+      "Thermionic emission",
+      "Field emission",
+      "Secondary emission"
+    ],
+    "answer": "Thermionic emission",
+    "explanation": "The electron gun uses a heated filament (cathode) to release electrons via thermionic emission. The cathode is heated to approximately 1000°C, providing sufficient thermal energy for electrons to overcome the work function of the metal.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac2",
+    "section_id": "linac",
+    "question": "What is the standard operating frequency for most medical linear accelerators used in North America?",
+    "choices": [
+      "9300 MHz (X-band)",
+      "2856 MHz (S-band)",
+      "1300 MHz (L-band)",
+      "5600 MHz (C-band)"
+    ],
+    "answer": "2856 MHz (S-band)",
+    "explanation": "Most medical linacs in North America operate at 2856 MHz in the S-band microwave frequency range. Some compact linacs (e.g., CyberKnife) use X-band (9300 MHz) to allow shorter accelerating structures.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac3",
+    "section_id": "linac",
+    "question": "A magnetron differs from a klystron in that a magnetron is a microwave:",
+    "choices": [
+      "Amplifier that requires an external RF signal input",
+      "Oscillator that generates its own microwave power",
+      "Device that only operates at X-band frequencies",
+      "Low-power device used exclusively for beam steering"
+    ],
+    "answer": "Oscillator that generates its own microwave power",
+    "explanation": "A magnetron is a self-excited microwave oscillator that generates its own RF power. A klystron is an amplifier that requires a low-power RF input signal, which it amplifies to high power levels.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac4",
+    "section_id": "linac",
+    "question": "Which component in a klystron-based linac provides the low-power RF signal that the klystron amplifies?",
+    "choices": [
+      "The modulator",
+      "The automatic frequency control (AFC) system",
+      "A solid-state RF driver oscillator",
+      "The pulse-forming network"
+    ],
+    "answer": "A solid-state RF driver oscillator",
+    "explanation": "A klystron requires a low-power RF input signal from a solid-state RF driver (oscillator), which it then amplifies by factors of up to 1000 or more. The AFC system tunes the frequency but does not generate the primary input signal.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac5",
+    "section_id": "linac",
+    "question": "In a traveling wave accelerating structure, what happens to the microwave power that reaches the end of the waveguide?",
+    "choices": [
+      "It is reflected back through the structure to re-accelerate electrons",
+      "It is absorbed by a resistive load to prevent reflections",
+      "It is redirected to the bending magnet system",
+      "It recirculates through a feedback waveguide to the input"
+    ],
+    "answer": "It is absorbed by a resistive load to prevent reflections",
+    "explanation": "In a traveling wave structure, unused microwave power at the distal end is fed back to the input end via a feedback waveguide, improving power efficiency. This distinguishes it from a terminated traveling wave guide.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac7",
+    "section_id": "linac",
+    "question": "In a standing wave linac, what is the purpose of the side-coupled cavities?",
+    "choices": [
+      "To steer the electron beam along the central axis",
+      "To filter out unwanted microwave harmonics",
+      "To couple energy between accelerating cavities while being off-axis so they don't interact with the beam",
+      "To monitor the microwave power level in real time"
+    ],
+    "answer": "To couple energy between accelerating cavities while being off-axis so they don't interact with the beam",
+    "explanation": "Side-coupled cavities transfer microwave energy between adjacent on-axis accelerating cavities. Being off-axis, they don't interfere with the electron beam, and they improve the stability of the standing wave mode.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac8",
+    "section_id": "linac",
+    "question": "Why is a 270° achromatic bending magnet system preferred over a simple 90° bending magnet in many linacs?",
+    "choices": [
+      "It uses less electrical power than a 90° magnet",
+      "It provides energy selection and produces a beam that is independent of small energy variations",
+      "It eliminates the need for steering coils entirely",
+      "It can handle higher beam currents without saturation"
+    ],
+    "answer": "It provides energy selection and produces a beam that is independent of small energy variations",
+    "explanation": "The 270° achromatic bending system deflects electrons through three sequential bending sections. This configuration produces achromatic transport: the output beam position and direction are independent of small energy variations, improving beam quality and stability.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac9",
+    "section_id": "linac",
+    "question": "What is the purpose of energy slits in the beam transport system of a linac?",
+    "choices": [
+      "To shape the photon beam profile at isocenter",
+      "To remove electrons with energies outside the desired range",
+      "To measure the beam current for dose monitoring",
+      "To create a uniform electron fluence across the field"
+    ],
+    "answer": "To remove electrons with energies outside the desired range",
+    "explanation": "Energy slits are placed at a point of maximum energy dispersion in the bending system. Electrons with incorrect energies follow different paths and are intercepted by the slits, narrowing the energy spectrum of the beam.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac10",
+    "section_id": "linac",
+    "question": "In photon mode, what material is most commonly used for the bremsstrahlung target in a medical linac?",
+    "choices": [
+      "Copper",
+      "Lead",
+      "Tungsten",
+      "Gold"
+    ],
+    "answer": "Tungsten",
+    "explanation": "Tungsten is the preferred target material due to its high atomic number (Z=74) for efficient bremsstrahlung production, high melting point (3422°C) to withstand the heat generated, and high density for a compact target.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac11",
+    "section_id": "linac",
+    "question": "What is the primary purpose of the flattening filter in a conventional medical linac?",
+    "choices": [
+      "To remove contamination electrons from the photon beam",
+      "To harden the beam by filtering out low-energy photons",
+      "To produce a uniform dose distribution across the treatment field",
+      "To reduce the dose rate to a clinically usable level"
+    ],
+    "answer": "To produce a uniform dose distribution across the treatment field",
+    "explanation": "The bremsstrahlung photon beam is forward-peaked. The flattening filter is thicker at the center and thinner at the periphery, preferentially attenuating the central portion to produce a flat dose profile across the field.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac13",
+    "section_id": "linac",
+    "question": "What is the typical duty cycle of a pulsed medical linear accelerator?",
+    "choices": [
+      "Less than 0.1%",
+      "Approximately 5%",
+      "Approximately 25%",
+      "Greater than 50%"
+    ],
+    "answer": "Less than 0.1%",
+    "explanation": "Medical linacs have very low duty cycles, typically around 0.05-0.1%. Pulses are typically a few microseconds long with repetition rates of a few hundred Hz, meaning the beam is on for a tiny fraction of the total time.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac14",
+    "section_id": "linac",
+    "question": "The primary collimator in a linac is made of which high-Z material and defines what beam characteristic?",
+    "choices": [
+      "Lead; it defines the maximum available field size",
+      "Tungsten; it defines the largest circular field size available from the target",
+      "Copper; it shapes the beam into a square field",
+      "Steel; it blocks leakage radiation from the target"
+    ],
+    "answer": "Tungsten; it defines the largest circular field size available from the target",
+    "explanation": "The primary collimator is a fixed tungsten conical aperture immediately below the target that defines the maximum circular radiation field. It limits the beam to the area that can be further shaped by jaws and MLCs.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac15",
+    "section_id": "linac",
+    "question": "In a dual-jaw collimation system, the upper (Y) jaws and lower (X) jaws can each be independently moved. What maximum field size do they typically define at isocenter?",
+    "choices": [
+      "20 × 20 cm²",
+      "30 × 30 cm²",
+      "40 × 40 cm²",
+      "50 × 50 cm²"
+    ],
+    "answer": "40 × 40 cm²",
+    "explanation": "Standard medical linacs have jaws that can open to produce a maximum field size of 40 × 40 cm² at the isocenter distance (typically 100 cm SAD). This is the standard maximum rectangular field size.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac16",
+    "section_id": "linac",
+    "question": "A standard Varian Millennium 120 MLC has how many leaf pairs, and what is the leaf width at isocenter for the central leaves?",
+    "choices": [
+      "60 pairs; 5 mm central leaf width",
+      "40 pairs; 10 mm uniform leaf width",
+      "80 pairs; 2.5 mm central leaf width",
+      "52 pairs; 5 mm central leaf width"
+    ],
+    "answer": "60 pairs; 5 mm central leaf width",
+    "explanation": "The Millennium 120 MLC has 60 leaf pairs: 40 inner pairs with 5 mm width at isocenter and 20 outer pairs with 10 mm width. This covers a 40 × 40 cm² field.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac17",
+    "section_id": "linac",
+    "question": "What is the purpose of the tongue-and-groove design on MLC leaves?",
+    "choices": [
+      "To increase leaf travel speed during dynamic treatments",
+      "To reduce interleaf radiation leakage",
+      "To improve the mechanical durability of the leaves",
+      "To allow the leaves to interdigitate fully"
+    ],
+    "answer": "To reduce interleaf radiation leakage",
+    "explanation": "The tongue-and-groove (stepped) leaf edge design reduces radiation leakage between adjacent leaves. Without it, the small gap between leaves would allow significant radiation transmission (interleaf leakage).",
+    "difficulty": 3
+  },
+  {
+    "id": "linac18",
+    "section_id": "linac",
+    "question": "MLC interdigitation refers to the ability of leaves to:",
+    "choices": [
+      "Move at different speeds during VMAT delivery",
+      "Extend past the midline of the opposing leaf bank",
+      "Overlap with adjacent leaves in the same bank",
+      "Create irregular field shapes at high gantry speeds"
+    ],
+    "answer": "Extend past the midline of the opposing leaf bank",
+    "explanation": "Interdigitation allows an MLC leaf to extend past the central axis beyond the position of its opposing leaf. This capability is important for creating complex field shapes, particularly in IMRT and VMAT.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac19",
+    "section_id": "linac",
+    "question": "The monitor ionization chamber in a medical linac is typically:",
+    "choices": [
+      "A single thimble chamber placed in the beam path",
+      "A sealed dual-channel parallel plate transmission chamber",
+      "An open-air cylindrical chamber at isocenter",
+      "A solid-state diode detector on the accessory tray"
+    ],
+    "answer": "A sealed dual-channel parallel plate transmission chamber",
+    "explanation": "The monitor chamber is a transmission-type parallel plate ionization chamber with two independent channels. It is sealed and pressurized with gas so that its response is independent of ambient temperature and pressure variations.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac20",
+    "section_id": "linac",
+    "question": "The two independent channels of the monitor chamber serve what purpose?",
+    "choices": [
+      "One measures dose and the other measures beam energy",
+      "Both measure dose; one terminates the beam at the set MU and the other serves as a backup",
+      "One measures photon fluence and the other measures electron contamination",
+      "One channel operates during photon mode and the other during electron mode"
+    ],
+    "answer": "Both measure dose; one terminates the beam at the set MU and the other serves as a backup",
+    "explanation": "The dual-channel design provides redundancy. The primary channel terminates the beam when the preset number of monitor units is reached. The secondary channel acts as an independent backup to ensure the beam is terminated if the primary fails.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac21",
+    "section_id": "linac",
+    "question": "The dose rate servo system in a linac adjusts beam output by controlling:",
+    "choices": [
+      "The position of the flattening filter",
+      "The electron gun current via the grid voltage",
+      "The speed of the gantry rotation",
+      "The jaw positions to change field size"
+    ],
+    "answer": "The electron gun current via the grid voltage",
+    "explanation": "The dose rate servo system uses a feedback loop from the monitor chambers. If the dose rate deviates from the desired value, it adjusts the grid voltage on the electron gun, which controls the number of electrons injected per pulse.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac22",
+    "section_id": "linac",
+    "question": "For a 6 MV photon beam, the depth of maximum dose (dmax) in water is approximately:",
+    "choices": [
+      "0.5 cm",
+      "1.5 cm",
+      "2.5 cm",
+      "3.5 cm"
+    ],
+    "answer": "1.5 cm",
+    "explanation": "For a 6 MV beam, dmax is approximately 1.5 cm in water. As photon beam energy increases, dmax shifts deeper due to the increased range of secondary electrons produced by higher-energy photon interactions.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac23",
+    "section_id": "linac",
+    "question": "The percentage depth dose (PDD) at 10 cm depth for a 10 × 10 cm² field at 100 cm SSD is approximately 67% for which nominal photon energy?",
+    "choices": [
+      "6 MV",
+      "10 MV",
+      "15 MV",
+      "18 MV"
+    ],
+    "answer": "6 MV",
+    "explanation": "A PDD of approximately 67% at 10 cm depth for a 10 × 10 cm² field at 100 cm SSD is characteristic of a 6 MV photon beam. Higher energies have higher PDD values at 10 cm (e.g., ~73% for 10 MV, ~77% for 15 MV).",
+    "difficulty": 3
+  },
+  {
+    "id": "linac24",
+    "section_id": "linac",
+    "question": "Beam flatness is defined as the maximum dose variation within the central 80% of the field width. According to IEC, what is the typical specification for flatness at commissioning?",
+    "choices": [
+      "±1%",
+      "±3%",
+      "±5%",
+      "±10%"
+    ],
+    "answer": "±3%",
+    "explanation": "At commissioning, beam flatness is typically specified to be within ±3% across the central 80% of the beam profile at the depth of maximum dose. TG-142 recommends a tolerance of ±3% for flatness constancy.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac25",
+    "section_id": "linac",
+    "question": "Beam symmetry is evaluated by comparing the areas under the beam profile on opposite sides of the central axis. The TG-142 monthly tolerance for symmetry is:",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "answer": "±3%",
+    "explanation": "TG-142 specifies a monthly tolerance of ±3% for beam symmetry. Symmetry is assessed by comparing dose values at points equidistant from the central axis on opposite sides of the profile.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac28",
+    "section_id": "linac",
+    "question": "The TG-51 calibration protocol determines absorbed dose to water using what type of reference ionization chamber?",
+    "choices": [
+      "A parallel plate chamber calibrated in a 60Co beam",
+      "A cylindrical chamber with a NIST-traceable ND,w calibration factor",
+      "A Farmer-type chamber with an Ngas cavity-gas calibration factor",
+      "A diamond detector with a dose-to-water conversion factor"
+    ],
+    "answer": "A cylindrical chamber with a NIST-traceable ND,w calibration factor",
+    "explanation": "TG-51 uses an ionization chamber with an absorbed-dose-to-water calibration factor (ND,w) traceable to a national standards laboratory. This replaces the older TG-21 protocol that used exposure-based or Ngas calibration factors.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac29",
+    "section_id": "linac",
+    "question": "During TG-51 photon beam calibration, measurements are made at a reference depth of:",
+    "choices": [
+      "Depth of maximum dose (dmax)",
+      "5 cm in water",
+      "10 cm in water",
+      "20 cm in water"
+    ],
+    "answer": "10 cm in water",
+    "explanation": "TG-51 specifies the reference depth for photon beams as 10 cm in water for a 10 × 10 cm² field at SSD = 100 cm. This depth is chosen because it is beyond dmax for all clinical energies and provides more stable and reproducible readings.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac30",
+    "section_id": "linac",
+    "question": "What is the purpose of the beam quality conversion factor kQ in TG-51?",
+    "choices": [
+      "To correct for the temperature and pressure of the air in the chamber",
+      "To convert the chamber calibration factor from 60Co quality to the user's beam quality",
+      "To account for the polarity effect of the ionization chamber",
+      "To correct for ion recombination losses at high dose rates"
+    ],
+    "answer": "To convert the chamber calibration factor from 60Co quality to the user's beam quality",
+    "explanation": "The kQ factor accounts for the difference in chamber response between the 60Co beam (where ND,w is typically determined) and the user's clinical beam quality. It depends on the beam quality specifier %dd(10)x for photons.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac31",
+    "section_id": "linac",
+    "question": "What beam quality specifier does TG-51 use for photon beams?",
+    "choices": [
+      "TPR20,10",
+      "%dd(10)x",
+      "D20/D10 ratio",
+      "Mean photon energy at dmax"
+    ],
+    "answer": "%dd(10)x",
+    "explanation": "TG-51 uses %dd(10)x — the photon component of the percentage depth dose at 10 cm depth for a 10 × 10 cm² field at SSD = 100 cm. This specifier avoids the influence of electron contamination that affects the raw %dd(10) value.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac32",
+    "section_id": "linac",
+    "question": "A linac is calibrated so that 1 MU delivers 1 cGy at dmax for a 10 × 10 cm² field at 100 cm SSD. If a treatment requires 200 cGy at dmax, how many MU should be set?",
+    "choices": [
+      "100 MU",
+      "150 MU",
+      "200 MU",
+      "250 MU"
+    ],
+    "answer": "200 MU",
+    "explanation": "With calibration of 1 cGy/MU at dmax for the reference conditions, delivering 200 cGy at dmax requires 200 MU. This is a direct application of the calibration condition without additional correction factors.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac33",
+    "section_id": "linac",
+    "question": "Which of the following interlocks would NOT typically terminate the beam on a medical linac?",
+    "choices": [
+      "Treatment room door opened during irradiation",
+      "Monitor chamber dose rate exceeds preset limit",
+      "Gantry angle differs from planned angle by 0.5°",
+      "MLC leaf position error exceeds tolerance"
+    ],
+    "answer": "Gantry angle differs from planned angle by 0.5°",
+    "explanation": "A 0.5° gantry angle deviation is within normal operating tolerance (typically ±1° for conventional treatments) and would not trigger a beam interlock. Door opening, dose rate exceedance, and MLC position errors beyond tolerance are all beam-terminating interlocks.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac34",
+    "section_id": "linac",
+    "question": "The emergency off (EMO) button on a linac differs from the beam-off button in that EMO:",
+    "choices": [
+      "Only stops the beam but keeps all systems powered",
+      "Cuts power to the entire linac including drive systems, requiring a full restart",
+      "Pauses the treatment and allows immediate resumption",
+      "Only activates when the door interlock is bypassed"
+    ],
+    "answer": "Cuts power to the entire linac including drive systems, requiring a full restart",
+    "explanation": "The emergency off (EMO) button removes all power from the linac, including gantry motors and all electronics, requiring a complete system restart. The beam-off button only stops radiation while keeping the system operational.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac36",
+    "section_id": "linac",
+    "question": "For beam profile scanning, the recommended detector orientation is:",
+    "choices": [
+      "Long axis parallel to the scan direction",
+      "Long axis perpendicular to the scan direction",
+      "Long axis parallel to the beam axis",
+      "Any orientation since volume averaging is negligible"
+    ],
+    "answer": "Long axis perpendicular to the scan direction",
+    "explanation": "For cross-beam profile scanning, the chamber should be oriented with its long axis perpendicular to the scan direction. This minimizes the volume-averaging effect across the steep dose gradient in the penumbra region.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac37",
+    "section_id": "linac",
+    "question": "In VMAT delivery, the beam is on while the gantry rotates and MLC leaves, dose rate, and gantry speed all vary simultaneously. VMAT is an evolution of which earlier technique?",
+    "choices": [
+      "3D conformal radiation therapy",
+      "Intensity-modulated arc therapy (IMAT)",
+      "Tomotherapy",
+      "Conventional electron arc therapy"
+    ],
+    "answer": "Intensity-modulated arc therapy (IMAT)",
+    "explanation": "VMAT evolved from IMAT, first proposed by Yu in 1995. VMAT extended IMAT by allowing simultaneous variation of gantry speed, dose rate, and MLC positions during arc delivery, improving efficiency over step-and-shoot IMRT.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac38",
+    "section_id": "linac",
+    "question": "What is the maximum leaf speed for Varian Millennium MLC leaves?",
+    "choices": [
+      "0.5 cm/s",
+      "1.5 cm/s",
+      "2.5 cm/s",
+      "5.0 cm/s"
+    ],
+    "answer": "2.5 cm/s",
+    "explanation": "Varian Millennium MLC leaves have a maximum speed of approximately 2.5 cm/s. This leaf speed is a limiting factor in dynamic IMRT delivery and must be accounted for in treatment planning optimization.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac39",
+    "section_id": "linac",
+    "question": "An electron cone (applicator) is used in electron beam therapy primarily to:",
+    "choices": [
+      "Increase the dose rate by focusing the electron beam",
+      "Define the treatment field and reduce penumbra by collimating close to the patient",
+      "Filter out photon contamination from the electron beam",
+      "Provide bolus effect to increase surface dose"
+    ],
+    "answer": "Define the treatment field and reduce penumbra by collimating close to the patient",
+    "explanation": "Electron beams scatter significantly in air, so the applicator (cone) collimates the beam close to the patient surface. This maintains a sharp field edge and minimizes the penumbra that would result from scatter over long air gaps.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac40",
+    "section_id": "linac",
+    "question": "A physical wedge filter produces a tilted isodose distribution. What is the typical wedge angle range available on most linacs?",
+    "choices": [
+      "5° to 30°",
+      "10° to 45°",
+      "15° to 60°",
+      "30° to 90°"
+    ],
+    "answer": "15° to 60°",
+    "explanation": "Physical wedges are typically available in standard angles of 15°, 30°, 45°, and 60°. The wedge angle is defined as the angle between the tilted isodose line and a line perpendicular to the beam axis at a reference depth.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac41",
+    "section_id": "linac",
+    "question": "An enhanced dynamic wedge (EDW) creates a wedge-shaped dose distribution by:",
+    "choices": [
+      "Inserting a physical wedge filter into the beam path",
+      "Moving one jaw across the field during irradiation while varying dose rate",
+      "Modulating the MLC leaf positions during delivery",
+      "Rotating the collimator to an oblique angle during treatment"
+    ],
+    "answer": "Moving one jaw across the field during irradiation while varying dose rate",
+    "explanation": "The enhanced dynamic wedge works by moving one of the collimator jaws across the field during irradiation. The combination of jaw motion and variable dose rate creates a wedge-shaped dose distribution without a physical filter.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac42",
+    "section_id": "linac",
+    "question": "Compared to a physical wedge, what is an advantage of an enhanced dynamic wedge?",
+    "choices": [
+      "Arbitrary wedge angles can be generated without hardware changes",
+      "It provides better beam hardening across the field",
+      "It produces sharper penumbra than physical wedges",
+      "It can be used with electron beams as well as photon beams"
+    ],
+    "answer": "Arbitrary wedge angles can be generated without hardware changes",
+    "explanation": "The EDW can produce any wedge angle between 10° and 60° (Varian) by adjusting the jaw motion profile, without needing to physically insert different wedge filters. This offers greater flexibility and reduces setup time.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac43",
+    "section_id": "linac",
+    "question": "The Varian TrueBeam linac features a unique design element where the monitor chamber and beam-shaping components are:",
+    "choices": [
+      "Mounted on a rotating drum to allow rapid energy switching",
+      "Identical to the Clinac platform but with added kV imaging",
+      "Replaced entirely by a real-time beam sensing array",
+      "Mounted externally on the gantry head for easy servicing"
+    ],
+    "answer": "Mounted on a rotating drum to allow rapid energy switching",
+    "explanation": "The TrueBeam uses a carousel (rotating drum) design that holds multiple beam-shaping assemblies (targets, flattening filters, and FFF components), enabling rapid switching between photon energies and FFF modes.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac44",
+    "section_id": "linac",
+    "question": "The Varian Halcyon linac is unique because it uses which MLC configuration in place of conventional jaws?",
+    "choices": [
+      "A single-layer MLC with 10 mm leaf width",
+      "A stacked dual-layer MLC system to replace jaws entirely",
+      "A standard jaw plus micro-MLC combination",
+      "A cylindrical collimator with rotating leaves"
+    ],
+    "answer": "A stacked dual-layer MLC system to replace jaws entirely",
+    "explanation": "The Halcyon uses a dual-layer (stacked) MLC design instead of conventional jaws. The two MLC layers are offset relative to each other to minimize interleaf leakage, providing collimation without the need for backup jaws.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac45",
+    "section_id": "linac",
+    "question": "What single photon energy does the Varian Halcyon linac offer?",
+    "choices": [
+      "4 MV FFF",
+      "6 MV FFF",
+      "10 MV FFF",
+      "6 MV flattened"
+    ],
+    "answer": "6 MV FFF",
+    "explanation": "The Halcyon is designed as a streamlined, single-energy machine offering only 6 MV FFF. This simplification reduces commissioning and QA complexity while providing adequate beam quality for most clinical treatments.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac46",
+    "section_id": "linac",
+    "question": "The Elekta Versa HD linac is distinguished by its ability to deliver:",
+    "choices": [
+      "Only FFF beams with no flattened option",
+      "High dose rate FFF beams up to 2400 MU/min for SRS/SBRT along with conventional beams",
+      "Proton therapy beams using a compact cyclotron",
+      "MR-guided treatments using an integrated 0.35 T magnet"
+    ],
+    "answer": "High dose rate FFF beams up to 2400 MU/min for SRS/SBRT along with conventional beams",
+    "explanation": "The Versa HD combines conventional flattened beams with high-dose-rate FFF capability, delivering up to 2400 MU/min. This makes it suitable for both conventional treatments and high-precision SRS/SBRT deliveries.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac47",
+    "section_id": "linac",
+    "question": "The Elekta Unity MR-Linac integrates a linear accelerator with what MRI field strength?",
+    "choices": [
+      "0.35 T",
+      "1.0 T",
+      "1.5 T",
+      "3.0 T"
+    ],
+    "answer": "1.5 T",
+    "explanation": "The Elekta Unity combines a 7 MV FFF linac with a 1.5 T MRI system, providing high-quality diagnostic MR imaging during treatment for real-time adaptive radiation therapy.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac48",
+    "section_id": "linac",
+    "question": "In an MR-Linac, the electron return effect (ERE) is caused by:",
+    "choices": [
+      "Electrons from the electron gun being deflected by the MR magnet",
+      "Secondary electrons in the patient curving back to the surface due to the magnetic field",
+      "RF interference between the linac and MRI gradient coils",
+      "Compton electrons being accelerated to higher energies by the B-field"
+    ],
+    "answer": "Secondary electrons in the patient curving back to the surface due to the magnetic field",
+    "explanation": "The electron return effect occurs when secondary electrons exiting the patient (at tissue-air interfaces) are curved back by the Lorentz force in the magnetic field, depositing additional dose at the exit surface.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac49",
+    "section_id": "linac",
+    "question": "In linac-based SRS, the Winston-Lutz test verifies:",
+    "choices": [
+      "The accuracy of the dosimetric output calibration",
+      "The coincidence of the radiation and mechanical isocenters",
+      "The MLC leaf position accuracy at all gantry angles",
+      "The accuracy of the kV imaging system relative to the MV beam"
+    ],
+    "answer": "The coincidence of the radiation and mechanical isocenters",
+    "explanation": "The Winston-Lutz test uses a small radiopaque ball placed at the mechanical isocenter. Images are acquired at multiple gantry, collimator, and couch angles to verify that the radiation field center coincides with the mechanical isocenter.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac50",
+    "section_id": "linac",
+    "question": "For linac-based SRS/SBRT, TG-142 recommends that the radiation-mechanical isocenter coincidence (Winston-Lutz) be within:",
+    "choices": [
+      "±2 mm",
+      "±1 mm",
+      "±0.5 mm",
+      "±0.25 mm"
+    ],
+    "answer": "±1 mm",
+    "explanation": "TG-142 recommends a tolerance of ±1 mm for the coincidence of the radiation and mechanical isocenters for SRS/SBRT. Some institutions target even tighter tolerances of ±0.5 mm for frame-based SRS.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac51",
+    "section_id": "linac",
+    "question": "Varian HyperArc is a non-coplanar SRS delivery technique that automates:",
+    "choices": [
+      "Couch rotation to multiple predetermined angles with collision avoidance",
+      "Real-time tumor tracking using the ExacTrac system",
+      "Cone-based SRS delivery with automated cone selection",
+      "Adaptive replanning during each treatment fraction"
+    ],
+    "answer": "Couch rotation to multiple predetermined angles with collision avoidance",
+    "explanation": "HyperArc automates non-coplanar VMAT delivery by using predefined couch positions with integrated collision avoidance. It simplifies the workflow for multi-target SRS and improves dose conformality through non-coplanar arcs.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac52",
+    "section_id": "linac",
+    "question": "In respiratory-gated radiation therapy, the beam is typically delivered during which phase of the breathing cycle?",
+    "choices": [
+      "Peak inhalation only",
+      "End-exhalation, the most reproducible phase",
+      "Random phases selected by the gating system",
+      "Continuously during all phases with dose modulation"
+    ],
+    "answer": "End-exhalation, the most reproducible phase",
+    "explanation": "End-exhalation is the most reproducible phase of the breathing cycle, with the least variability in tumor position. Gating at this phase reduces the internal target volume margin needed while ensuring consistent target positioning.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac53",
+    "section_id": "linac",
+    "question": "In a standing wave accelerating waveguide, what is the approximate phase relationship between the electric field in adjacent accelerating cavities?",
+    "choices": [
+      "In phase (0° shift)",
+      "90° phase shift",
+      "180° phase shift (π-mode)",
+      "270° phase shift"
+    ],
+    "answer": "180° phase shift (π-mode)",
+    "explanation": "In a standing wave structure operating in the π-mode, adjacent cavities have a 180° phase difference. Side-coupled cavities are used to achieve stable π/2-mode operation in the full structure while maintaining the π-mode relationship in the on-axis cavities.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac54",
+    "section_id": "linac",
+    "question": "The modulator (pulse forming network) in a linac provides simultaneous high-voltage pulses to which two systems?",
+    "choices": [
+      "The bending magnets and the MLC drive system",
+      "The electron gun and the microwave power source",
+      "The monitor chamber and the gantry rotation motor",
+      "The cooling system and the vacuum pumps"
+    ],
+    "answer": "The electron gun and the microwave power source",
+    "explanation": "The modulator delivers synchronized high-voltage pulses to both the electron gun (to inject electrons) and the microwave power source (magnetron or klystron) to generate the accelerating RF fields. Synchronization is essential for proper acceleration.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac55",
+    "section_id": "linac",
+    "question": "The purpose of the grid (or control electrode) in the electron gun is to:",
+    "choices": [
+      "Focus the electron beam into a narrow pencil beam",
+      "Control the number of electrons injected per pulse",
+      "Accelerate electrons to their final energy",
+      "Generate the magnetic field for beam bending"
+    ],
+    "answer": "Control the number of electrons injected per pulse",
+    "explanation": "The grid electrode controls electron injection by regulating how many electrons are released from the cathode per pulse. Varying the grid voltage allows control of the beam current and thus the dose rate.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac56",
+    "section_id": "linac",
+    "question": "Electrons are injected into the accelerating waveguide with an initial kinetic energy of approximately:",
+    "choices": [
+      "50 eV",
+      "500 eV",
+      "50 keV",
+      "500 keV"
+    ],
+    "answer": "50 keV",
+    "explanation": "The electron gun accelerates electrons through a DC potential of approximately 25-50 kV before injection into the waveguide. This initial energy is sufficient for the electrons to be captured and accelerated by the RF field in the waveguide.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac57",
+    "section_id": "linac",
+    "question": "In a low-energy linac (6 MV or lower), the electron beam typically strikes the target:",
+    "choices": [
+      "After being bent through 270°",
+      "Without any beam bending (straight-ahead configuration)",
+      "After being deflected by 90° through a single magnet",
+      "After passing through an energy slit system"
+    ],
+    "answer": "After being deflected by 90° through a single magnet",
+    "explanation": "Low-energy linacs (up to ~6 MV) typically use short accelerating structures that can be mounted vertically, allowing the beam to travel straight from the waveguide to the target without a bending magnet system.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac58",
+    "section_id": "linac",
+    "question": "What is the approximate efficiency of bremsstrahlung production for a 10 MeV electron beam striking a tungsten target?",
+    "choices": [
+      "Less than 5%",
+      "Approximately 15-20%",
+      "Approximately 30-40%",
+      "Greater than 50%"
+    ],
+    "answer": "Approximately 15-20%",
+    "explanation": "Bremsstrahlung production efficiency increases with electron energy and target atomic number. For 10 MeV electrons on tungsten, approximately 15-20% of the electron kinetic energy is converted to bremsstrahlung X-rays; the rest becomes heat.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac59",
+    "section_id": "linac",
+    "question": "The photon beam from a linac target has a forward-peaked angular distribution. This forward peaking becomes more pronounced with:",
+    "choices": [
+      "Decreasing electron beam energy",
+      "Increasing electron beam energy",
+      "Increasing target thickness",
+      "Decreasing target atomic number"
+    ],
+    "answer": "Increasing electron beam energy",
+    "explanation": "At higher electron energies, bremsstrahlung photons are emitted preferentially in the forward direction (along the electron beam axis). This is why higher-energy beams require thicker flattening filters centrally to achieve a flat profile.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac60",
+    "section_id": "linac",
+    "question": "When switching from photon to electron mode on a dual-mode linac, which of the following changes does NOT occur?",
+    "choices": [
+      "The target and flattening filter are retracted from the beam path",
+      "Scattering foils are inserted into the beam path",
+      "The accelerating waveguide is physically replaced",
+      "The electron applicator is attached to the treatment head"
+    ],
+    "answer": "The accelerating waveguide is physically replaced",
+    "explanation": "When switching to electron mode, the same accelerating waveguide is used. The target and flattening filter are retracted, scattering foils are inserted to spread the pencil beam, and an electron applicator is attached to define the field close to the patient.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac62",
+    "section_id": "linac",
+    "question": "A klystron can produce peak RF power levels of approximately:",
+    "choices": [
+      "500 W",
+      "50 kW",
+      "5 MW",
+      "500 MW"
+    ],
+    "answer": "5 MW",
+    "explanation": "Klystrons used in medical linacs produce peak RF power of approximately 5-7 MW. They are used in higher-energy linacs because they can generate more power than magnetrons, which typically produce 2-3 MW peak.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac63",
+    "section_id": "linac",
+    "question": "The automatic frequency control (AFC) system in a magnetron-based linac adjusts:",
+    "choices": [
+      "The electron gun filament temperature",
+      "The resonant frequency of the accelerating waveguide to match the magnetron output",
+      "The magnetron's magnetic field strength",
+      "The pulse repetition frequency of the modulator"
+    ],
+    "answer": "The resonant frequency of the accelerating waveguide to match the magnetron output",
+    "explanation": "Since a magnetron's output frequency can drift, the AFC system adjusts the resonant frequency of the accelerating waveguide (via a tuning plunger) to match the magnetron. In klystron systems, the AFC adjusts the klystron frequency instead.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac64",
+    "section_id": "linac",
+    "question": "What is the main disadvantage of a magnetron compared to a klystron?",
+    "choices": [
+      "Magnetrons are much larger and heavier",
+      "Magnetrons produce lower peak power and have frequency instability",
+      "Magnetrons require a separate RF driver",
+      "Magnetrons cannot operate in pulsed mode"
+    ],
+    "answer": "Magnetrons produce lower peak power and have frequency instability",
+    "explanation": "Magnetrons produce lower peak power (~2 MW) compared to klystrons (~5 MW) and suffer from frequency instability because they are oscillators. However, magnetrons are simpler, smaller, and less expensive.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac65",
+    "section_id": "linac",
+    "question": "In a traveling wave accelerating structure, the microwave field propagates:",
+    "choices": [
+      "In the same direction as the electron beam",
+      "In the opposite direction to the electron beam",
+      "In both directions simultaneously",
+      "Radially outward from the central axis"
+    ],
+    "answer": "In the same direction as the electron beam",
+    "explanation": "In a traveling wave structure, the electromagnetic wave travels in the same direction as the electrons. The phase velocity of the wave is matched to the electron velocity so that electrons continuously gain energy from the field.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac66",
+    "section_id": "linac",
+    "question": "The iris-loaded waveguide in a linac serves to:",
+    "choices": [
+      "Filter out unwanted microwave harmonics",
+      "Slow down the phase velocity of the electromagnetic wave to match the electron velocity",
+      "Increase the group velocity of the microwaves",
+      "Provide cooling channels for the accelerating structure"
+    ],
+    "answer": "Slow down the phase velocity of the electromagnetic wave to match the electron velocity",
+    "explanation": "The periodic copper discs (irises) in the waveguide slow the phase velocity of the microwave field from the speed of light to match the velocity of the accelerating electrons, enabling efficient energy transfer.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac67",
+    "section_id": "linac",
+    "question": "In a 270-degree achromatic bending magnet, the term 'achromatic' means:",
+    "choices": [
+      "The magnet produces no magnetic fringe fields",
+      "The output beam position is independent of small electron energy variations",
+      "The bending magnet requires no power supply regulation",
+      "The system can transport both photon and electron beams"
+    ],
+    "answer": "The output beam position is independent of small electron energy variations",
+    "explanation": "Achromatic transport means that the position and direction of the beam exiting the bending system are independent of small energy spread. This is achieved by the specific geometry of the three-sector 270-degree bend.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac68",
+    "section_id": "linac",
+    "question": "In a 90-degree bending magnet system, electrons with higher energy than the nominal value will be deflected:",
+    "choices": [
+      "Through a larger angle than 90 degrees",
+      "Through a smaller angle than 90 degrees (under-bent)",
+      "Exactly 90 degrees regardless of energy",
+      "In the opposite direction"
+    ],
+    "answer": "Through a smaller angle than 90 degrees (under-bent)",
+    "explanation": "Higher-energy electrons have greater momentum and thus a larger radius of curvature in the magnetic field, causing them to be deflected through a smaller angle (under-bent). This is why energy slits are used to filter off-energy electrons.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac69",
+    "section_id": "linac",
+    "question": "The bremsstrahlung X-ray spectrum from a linac target has a maximum photon energy equal to:",
+    "choices": [
+      "Half the kinetic energy of the incident electrons",
+      "The kinetic energy of the incident electrons",
+      "Twice the kinetic energy of the incident electrons",
+      "The rest mass energy of the electron (0.511 MeV)"
+    ],
+    "answer": "The kinetic energy of the incident electrons",
+    "explanation": "The maximum photon energy in the bremsstrahlung spectrum equals the kinetic energy of the incident electrons. This occurs in the rare event where an electron loses all its kinetic energy in a single interaction.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac70",
+    "section_id": "linac",
+    "question": "The target in a high-energy linac (>10 MV) is typically a thin layer of high-Z material backed by:",
+    "choices": [
+      "Aluminum for beam flattening",
+      "Copper for efficient heat conduction",
+      "Lead for additional X-ray production",
+      "Water for direct cooling"
+    ],
+    "answer": "Copper for efficient heat conduction",
+    "explanation": "The target consists of a thin tungsten layer (for bremsstrahlung production) brazed onto a copper backing. Copper provides excellent thermal conductivity to remove the substantial heat generated (~80% of beam power) from the target.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac71",
+    "section_id": "linac",
+    "question": "The flattening filter material is typically made of:",
+    "choices": [
+      "Lead with a uniform thickness",
+      "Tungsten in a conical shape with the thickest part at the center",
+      "Aluminum with a uniform thickness",
+      "Copper in a conical shape with the thinnest part at the center"
+    ],
+    "answer": "Tungsten in a conical shape with the thickest part at the center",
+    "explanation": "The flattening filter is a conical metal filter (typically tungsten, steel, or copper depending on energy) that is thickest at the center. It preferentially attenuates the forward-peaked central part of the beam to produce a flat profile.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac72",
+    "section_id": "linac",
+    "question": "For FFF beams, the dose profile shape at isocenter is best described as:",
+    "choices": [
+      "Flat across the entire field",
+      "Forward-peaked with highest intensity on the central axis",
+      "Concave with lowest intensity on the central axis",
+      "Uniform with sharp penumbra"
+    ],
+    "answer": "Forward-peaked with highest intensity on the central axis",
+    "explanation": "Without the flattening filter, the bremsstrahlung beam retains its naturally forward-peaked distribution, with the highest fluence on the central axis and decreasing intensity toward the field edges.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac75",
+    "section_id": "linac",
+    "question": "MLC leaves have rounded leaf ends rather than flat ends in order to:",
+    "choices": [
+      "Increase the maximum leaf travel distance",
+      "Provide a constant beam penumbra width independent of leaf position",
+      "Reduce the weight of each leaf",
+      "Allow faster leaf motion during VMAT"
+    ],
+    "answer": "Provide a constant beam penumbra width independent of leaf position",
+    "explanation": "Rounded leaf ends ensure that the radiation penumbra at the leaf edge remains approximately constant regardless of the leaf position relative to the central axis. Flat ends would cause the penumbra to vary with off-axis distance.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac76",
+    "section_id": "linac",
+    "question": "The tongue-and-groove effect in IMRT delivery can cause:",
+    "choices": [
+      "Increased dose at the field edges",
+      "Underdose in narrow strips between adjacent leaf pairs when fields are combined",
+      "Overdose at the central axis of each field",
+      "Increased MLC leaf speed during delivery"
+    ],
+    "answer": "Underdose in narrow strips between adjacent leaf pairs when fields are combined",
+    "explanation": "When adjacent leaves in the same bank expose different areas in different IMRT segments, the tongue-and-groove geometry can create narrow strips of underdosage where neither leaf fully exposes the region. This is called the tongue-and-groove effect.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac77",
+    "section_id": "linac",
+    "question": "The typical interleaf leakage for modern MLC systems is approximately:",
+    "choices": [
+      "0.1-0.5%",
+      "1-3%",
+      "5-8%",
+      "10-15%"
+    ],
+    "answer": "1-3%",
+    "explanation": "Modern MLC systems are designed to have interleaf leakage of approximately 1-3% of the open field dose. The tongue-and-groove design helps minimize this leakage between adjacent leaves.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac78",
+    "section_id": "linac",
+    "question": "For a vented (unsealed) monitor ionization chamber, the reading must be corrected for:",
+    "choices": [
+      "Beam energy and field size only",
+      "Temperature and pressure variations",
+      "MLC leaf position and gantry angle",
+      "Patient thickness and SSD"
+    ],
+    "answer": "Temperature and pressure variations",
+    "explanation": "A vented monitor chamber communicates with ambient air, so its response varies with temperature and pressure changes that affect air density. Sealed chambers are pressurized and do not require this correction.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac79",
+    "section_id": "linac",
+    "question": "The temperature-pressure correction factor PTP for an ionization chamber measurement is given by:",
+    "choices": [
+      "(273.15 + T) × 101.33 / (273.15 + 22) × P",
+      "((273.15 + T) / (273.15 + 22)) × (101.33 / P)",
+      "(22 / T) × (P / 101.33)",
+      "(T / 22) × (101.33 / P)"
+    ],
+    "answer": "((273.15 + T) / (273.15 + 22)) × (101.33 / P)",
+    "explanation": "The PTP factor corrects the chamber reading to standard conditions (22°C, 101.33 kPa). It accounts for the change in air density by using the ideal gas law relationship between temperature (in Kelvin) and pressure.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac80",
+    "section_id": "linac",
+    "question": "Monitor chamber linearity means that the relationship between the set MU and the delivered dose should be linear. TG-142 recommends this be checked:",
+    "choices": [
+      "Daily",
+      "Monthly",
+      "Annually",
+      "Only at commissioning"
+    ],
+    "answer": "Annually",
+    "explanation": "TG-142 recommends annual verification of monitor chamber linearity over the full clinical range of MU settings (typically 1 MU to the maximum). Monthly checks verify output constancy at a single MU setting.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac81",
+    "section_id": "linac",
+    "question": "In electron beam therapy, the dual scattering foil system consists of:",
+    "choices": [
+      "Two identical thin metal foils placed close together",
+      "A thin high-Z foil to spread the beam and a thicker shaped foil to flatten it",
+      "Two thick lead foils to filter out photon contamination",
+      "A metal foil followed by an air gap and ion chamber"
+    ],
+    "answer": "A thin high-Z foil to spread the beam and a thicker shaped foil to flatten it",
+    "explanation": "The first foil (thin, high-Z) scatters the pencil beam. The second foil is thicker at the center and thinner at the edges (like an inverted flattening filter) to produce a uniform electron fluence across the field.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac82",
+    "section_id": "linac",
+    "question": "The virtual source distance (VSD) for an electron beam is:",
+    "choices": [
+      "The same as the SAD of the linac (100 cm)",
+      "The point from which the electron beam appears to diverge, located upstream of the actual scattering foil",
+      "The distance from the patient surface to dmax",
+      "The distance from the final collimating edge of the cone to the patient surface"
+    ],
+    "answer": "The point from which the electron beam appears to diverge, located upstream of the actual scattering foil",
+    "explanation": "The virtual source is a geometric concept representing the effective point source from which the electron beam diverges. It is determined by back-projecting the beam edges and is used for inverse square law calculations.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac83",
+    "section_id": "linac",
+    "question": "Bremsstrahlung contamination in clinical electron beams contributes to dose primarily at:",
+    "choices": [
+      "The surface of the patient",
+      "The depth of maximum dose (dmax)",
+      "Depths beyond the practical range of the electrons",
+      "The buildup region only"
+    ],
+    "answer": "Depths beyond the practical range of the electrons",
+    "explanation": "Bremsstrahlung contamination produces a low-level photon dose tail that extends beyond the practical range of the electrons. This tail typically contributes 1-5% of the maximum dose depending on electron energy.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac84",
+    "section_id": "linac",
+    "question": "The practical range Rp of a clinical electron beam in water is approximately related to the beam energy E (in MeV) by:",
+    "choices": [
+      "Rp (cm) ≈ E/2",
+      "Rp (cm) ≈ E/3",
+      "Rp (cm) ≈ E/4",
+      "Rp (cm) ≈ E/5"
+    ],
+    "answer": "Rp (cm) ≈ E/2",
+    "explanation": "A useful rule of thumb is that the practical range in water (in cm) is approximately half the electron energy in MeV. For example, a 12 MeV electron beam has Rp ≈ 6 cm.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac85",
+    "section_id": "linac",
+    "question": "The therapeutic range R90 (depth of 90% dose) for electron beams is approximately:",
+    "choices": [
+      "Rp/4",
+      "Rp/3",
+      "Rp/2",
+      "3Rp/4"
+    ],
+    "answer": "Rp/3",
+    "explanation": "The therapeutic range R90 is approximately one-third of the practical range Rp. This means the clinically useful range (to the 90% isodose) is roughly E/6 in cm, where E is the beam energy in MeV.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac86",
+    "section_id": "linac",
+    "question": "Standard electron applicator (cone) sizes for clinical use typically include:",
+    "choices": [
+      "2×2, 4×4, 6×6, 8×8 cm²",
+      "6×6, 10×10, 15×15, 20×20, 25×25 cm²",
+      "5×5, 10×10, 30×30, 40×40 cm²",
+      "Only 10×10 cm²"
+    ],
+    "answer": "6×6, 10×10, 15×15, 20×20, 25×25 cm²",
+    "explanation": "Standard electron cones come in sizes from 6×6 to 25×25 cm². Custom field shaping within the cone is achieved using Cerrobend cutouts placed in the distal end of the applicator.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac87",
+    "section_id": "linac",
+    "question": "During beam commissioning with a water tank, which detector is preferred for measuring electron beam depth dose curves?",
+    "choices": [
+      "Farmer-type ionization chamber",
+      "Parallel plate (plane-parallel) ionization chamber",
+      "Silicon diode detector",
+      "Film dosimeter"
+    ],
+    "answer": "Parallel plate (plane-parallel) ionization chamber",
+    "explanation": "Parallel plate chambers are preferred for electron beam PDD measurements because they have a thin entrance window, small plate separation, and minimal perturbation of the electron fluence, especially in the buildup region and near dmax.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac88",
+    "section_id": "linac",
+    "question": "In TG-51 electron beam calibration, the beam quality specifier is:",
+    "choices": [
+      "%dd(10)x",
+      "R50 (depth of 50% dose in water)",
+      "The mean electron energy at the surface",
+      "The most probable energy at the surface"
+    ],
+    "answer": "R50 (depth of 50% dose in water)",
+    "explanation": "TG-51 uses R50 (the depth of 50% dose on the PDD curve) as the beam quality specifier for electron beams. R50 is determined from a measured ionization depth curve and converted using standard relationships.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac89",
+    "section_id": "linac",
+    "question": "During VMAT delivery, if the gantry speed must decrease due to MLC or dose rate limitations, the linac compensates by:",
+    "choices": [
+      "Increasing the field size to deliver more dose per degree",
+      "Reducing the dose rate proportionally to maintain the correct dose per degree of arc",
+      "Pausing the beam until the gantry catches up",
+      "Skipping control points that cannot be achieved"
+    ],
+    "answer": "Reducing the dose rate proportionally to maintain the correct dose per degree of arc",
+    "explanation": "VMAT delivery requires coordinated control of gantry speed, dose rate, and MLC positions. When gantry speed changes, the dose rate is modulated proportionally to ensure the planned dose is delivered per degree of arc rotation.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac90",
+    "section_id": "linac",
+    "question": "The maximum gantry rotation speed for VMAT delivery on most modern linacs is approximately:",
+    "choices": [
+      "1 RPM",
+      "3 RPM",
+      "6 RPM",
+      "10 RPM"
+    ],
+    "answer": "1 RPM",
+    "explanation": "Most modern linacs can rotate the gantry at a maximum speed of approximately 6 RPM (1 revolution per minute = 6 degrees/second) during VMAT delivery. The actual speed varies depending on treatment plan requirements.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac91",
+    "section_id": "linac",
+    "question": "FFF beams have a softer beam spectrum than flattened beams of the same nominal energy. This results in:",
+    "choices": [
+      "Greater penetration in tissue",
+      "A shallower depth of maximum dose",
+      "A steeper PDD curve beyond dmax",
+      "Higher mean photon energy"
+    ],
+    "answer": "A steeper PDD curve beyond dmax",
+    "explanation": "The softer (lower mean energy) spectrum of FFF beams results in less penetration and a steeper PDD fall-off beyond dmax. The lower mean energy is because the flattening filter preferentially removes low-energy photons.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac92",
+    "section_id": "linac",
+    "question": "A key advantage of FFF beams for SBRT treatments is:",
+    "choices": [
+      "Better beam flatness across the field",
+      "Reduced treatment time due to higher dose rates",
+      "Increased depth dose penetration",
+      "Elimination of the need for MLC collimation"
+    ],
+    "answer": "Reduced treatment time due to higher dose rates",
+    "explanation": "FFF beams deliver dose rates 2-4 times higher than flattened beams, significantly reducing treatment time. This is particularly beneficial for SBRT, where high doses per fraction are delivered and shorter treatments reduce intrafraction motion.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac93",
+    "section_id": "linac",
+    "question": "Compared to flattened beams, FFF beams have what characteristic regarding out-of-field dose?",
+    "choices": [
+      "Higher out-of-field dose",
+      "Similar out-of-field dose",
+      "Lower out-of-field dose",
+      "Out-of-field dose depends only on MLC leakage"
+    ],
+    "answer": "Lower out-of-field dose",
+    "explanation": "FFF beams produce less scatter from the treatment head because the flattening filter is a major source of head scatter. This results in lower out-of-field dose, which is advantageous for reducing dose to organs at risk.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac94",
+    "section_id": "linac",
+    "question": "Primary radiation barriers in a linac vault are designed to attenuate the:",
+    "choices": [
+      "Leakage radiation from the linac head only",
+      "Direct (useful) beam and any associated scatter",
+      "Neutron contamination exclusively",
+      "Scatter radiation from the patient only"
+    ],
+    "answer": "Direct (useful) beam and any associated scatter",
+    "explanation": "Primary barriers must attenuate the direct (useful) beam, which is the highest intensity radiation. They are located in walls, floor, and ceiling that can be struck by the primary beam during normal operation.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac95",
+    "section_id": "linac",
+    "question": "Secondary barriers in a linac vault must shield against:",
+    "choices": [
+      "Only the primary beam at oblique angles",
+      "Leakage radiation from the head and scatter from the patient and room surfaces",
+      "Direct beam only when the gantry is at 0 degrees",
+      "Radiation from the electron gun only"
+    ],
+    "answer": "Leakage radiation from the head and scatter from the patient and room surfaces",
+    "explanation": "Secondary barriers protect against leakage radiation from the linac head (limited to 0.1% of the useful beam) and patient/wall scatter. They are thinner than primary barriers since these radiation levels are much lower.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac96",
+    "section_id": "linac",
+    "question": "The door interlock on a linac treatment room ensures that:",
+    "choices": [
+      "The beam cannot be turned on unless the door is fully closed and secured",
+      "The door automatically locks when the beam turns on",
+      "Audio communication is established with the patient",
+      "The CCTV system activates when the door closes"
+    ],
+    "answer": "The beam cannot be turned on unless the door is fully closed and secured",
+    "explanation": "The door interlock is a safety system that prevents radiation beam activation unless the vault door is fully closed. If the door opens during treatment, the beam is immediately terminated.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac97",
+    "section_id": "linac",
+    "question": "The maximum permissible leakage radiation from a linac treatment head at 1 meter from the source is:",
+    "choices": [
+      "0.01% of the useful beam",
+      "0.1% of the useful beam",
+      "1% of the useful beam",
+      "5% of the useful beam"
+    ],
+    "answer": "0.1% of the useful beam",
+    "explanation": "Regulatory standards require that leakage radiation from the treatment head not exceed 0.1% (1/1000) of the useful beam rate at 1 meter from the source. This is achieved through tungsten and lead shielding in the head.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac99",
+    "section_id": "linac",
+    "question": "The Elekta Agility MLC has how many leaf pairs and what leaf width at isocenter?",
+    "choices": [
+      "40 leaf pairs, 10 mm width",
+      "60 leaf pairs, 5 mm width",
+      "80 leaf pairs, 5 mm width",
+      "120 leaf pairs, 2.5 mm width"
+    ],
+    "answer": "80 leaf pairs, 5 mm width",
+    "explanation": "The Elekta Agility MLC has 80 leaf pairs, each with a 5 mm projected width at isocenter, covering a maximum field size of 40 × 40 cm². The leaves can travel 15 cm over the midline, allowing extensive interdigitation.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac100",
+    "section_id": "linac",
+    "question": "For linac-based SRS using cones (circular collimators), the typical cone diameter range is:",
+    "choices": [
+      "1-5 mm",
+      "4-40 mm",
+      "50-100 mm",
+      "100-200 mm"
+    ],
+    "answer": "4-40 mm",
+    "explanation": "SRS cones typically range from 4 mm to 40 mm in diameter and are used for treating small, roughly spherical targets. They produce smaller penumbra than MLC-defined fields for very small target sizes.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac101",
+    "section_id": "linac",
+    "question": "A micro-MLC used for SRS has typical leaf widths at isocenter of:",
+    "choices": [
+      "0.5-1.0 mm",
+      "1.5-3.0 mm",
+      "5.0-10.0 mm",
+      "10.0-20.0 mm"
+    ],
+    "answer": "1.5-3.0 mm",
+    "explanation": "Micro-MLCs used as add-on devices for SRS typically have leaf widths of 1.5 to 3.0 mm at isocenter, providing higher spatial resolution than standard MLCs for conforming to small irregular targets.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac102",
+    "section_id": "linac",
+    "question": "Single-isocenter multi-target (SIMT) SRS treats multiple brain metastases using:",
+    "choices": [
+      "One isocenter per target with separate plans",
+      "A single isocenter for all targets with multiple non-coplanar arcs",
+      "Sequential cone-based treatments for each lesion",
+      "A single large field encompassing all targets"
+    ],
+    "answer": "A single isocenter for all targets with multiple non-coplanar arcs",
+    "explanation": "SIMT SRS places a single isocenter (typically at the geometric center of all targets) and uses VMAT arcs to treat all lesions simultaneously. This significantly reduces treatment time compared to multiple isocenters.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac103",
+    "section_id": "linac",
+    "question": "A concern with single-isocenter multi-target SRS is that off-isocenter targets may have:",
+    "choices": [
+      "Higher dose homogeneity",
+      "Increased sensitivity to rotational setup errors",
+      "Reduced MLC interleaf leakage",
+      "Better dose conformity than on-axis targets"
+    ],
+    "answer": "Increased sensitivity to rotational setup errors",
+    "explanation": "Targets far from the isocenter experience larger positional displacements from rotational setup errors. A 1-degree rotation creates larger translational errors at greater distances from the isocenter, potentially causing geographic miss.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac104",
+    "section_id": "linac",
+    "question": "The prebuncher section of a linac electron injection system serves to:",
+    "choices": [
+      "Accelerate electrons to their final clinical energy",
+      "Velocity-modulate the DC electron beam to form bunches before entering the main waveguide",
+      "Focus the electron beam to a small spot size",
+      "Remove off-energy electrons from the beam"
+    ],
+    "answer": "Velocity-modulate the DC electron beam to form bunches before entering the main waveguide",
+    "explanation": "The prebuncher applies a low-level RF field to velocity-modulate the continuous electron stream from the gun. Faster electrons catch up to slower ones, forming bunches that arrive at the main waveguide at the correct RF phase for efficient acceleration.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac105",
+    "section_id": "linac",
+    "question": "The buncher section of the accelerating waveguide is located:",
+    "choices": [
+      "After the main accelerating section",
+      "At the exit window of the waveguide",
+      "At the input end of the waveguide where electrons transition from non-relativistic to relativistic speeds",
+      "Inside the bending magnet system"
+    ],
+    "answer": "At the input end of the waveguide where electrons transition from non-relativistic to relativistic speeds",
+    "explanation": "The buncher section consists of the first few cavities of the accelerating waveguide. These cavities have increasing lengths to match the increasing electron velocity as electrons transition from non-relativistic to near-relativistic speeds.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac106",
+    "section_id": "linac",
+    "question": "Steering coils in a linac are electromagnetic coils used to:",
+    "choices": [
+      "Generate the main RF power for acceleration",
+      "Make small corrections to the electron beam direction within the waveguide and beam transport system",
+      "Provide the main bending force for the 270-degree magnet",
+      "Control the MLC leaf positions"
+    ],
+    "answer": "Make small corrections to the electron beam direction within the waveguide and beam transport system",
+    "explanation": "Steering coils produce small magnetic fields to correct the electron beam trajectory. They operate in both radial and transverse directions and are controlled by servo feedback systems monitoring beam position and symmetry.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac107",
+    "section_id": "linac",
+    "question": "The radial and transverse steering coils in a linac beam transport system affect beam symmetry in what way?",
+    "choices": [
+      "Radial steering affects gun-target symmetry; transverse steering affects left-right symmetry",
+      "Both affect only the beam energy",
+      "Radial steering controls dose rate; transverse steering controls beam energy",
+      "They only affect electron beam mode, not photon mode"
+    ],
+    "answer": "Radial steering affects gun-target symmetry; transverse steering affects left-right symmetry",
+    "explanation": "Radial (in-plane) steering corrects beam position in the gun-target direction, affecting symmetry in that plane. Transverse (cross-plane) steering corrects perpendicular to that, affecting left-right symmetry.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac108",
+    "section_id": "linac",
+    "question": "The beam symmetry servo system monitors beam profiles via signals from the monitor chamber and adjusts:",
+    "choices": [
+      "The flattening filter position",
+      "The jaw positions to compensate for asymmetry",
+      "The steering coil currents to center the beam",
+      "The waveguide temperature"
+    ],
+    "answer": "The steering coil currents to center the beam",
+    "explanation": "The symmetry servo uses segmented monitor chamber signals to detect beam asymmetry and feeds back corrections to the steering coils. This automatic system maintains beam symmetry during clinical operation.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac109",
+    "section_id": "linac",
+    "question": "According to TG-142, the daily QA tolerance for photon beam energy constancy (assessed by PDD or depth ionization ratio) is:",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "answer": "±2%",
+    "explanation": "TG-142 specifies a daily tolerance of ±2% for photon beam energy constancy. This is typically checked using a simple ratio of ionization readings at two depths or using a commercial daily QA device.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac110",
+    "section_id": "linac",
+    "question": "TG-142 recommends that the coincidence of the light field and radiation field be checked monthly with a tolerance of:",
+    "choices": [
+      "±1 mm or ±1% on each side",
+      "±2 mm or ±1% on each side",
+      "±5 mm or ±2% on each side",
+      "±10 mm or ±3% on each side"
+    ],
+    "answer": "±2 mm or ±1% on each side",
+    "explanation": "TG-142 specifies that the light field and radiation field should agree within ±2 mm or ±1% of the SSD on each of the four sides, checked on a monthly basis.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac111",
+    "section_id": "linac",
+    "question": "The TG-142 monthly tolerance for MLC leaf position accuracy is:",
+    "choices": [
+      "±0.5 mm",
+      "±1 mm",
+      "±2 mm",
+      "±5 mm"
+    ],
+    "answer": "±1 mm",
+    "explanation": "TG-142 recommends a monthly tolerance of ±1 mm for MLC leaf position accuracy. For SRS/SBRT, tighter tolerances may be applied, and picket fence tests are commonly used for this verification.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac112",
+    "section_id": "linac",
+    "question": "The daily QA check for laser alignment according to TG-142 has a tolerance of:",
+    "choices": [
+      "±0.5 mm",
+      "±1 mm",
+      "±2 mm",
+      "±3 mm"
+    ],
+    "answer": "±2 mm",
+    "explanation": "TG-142 specifies a daily tolerance of ±2 mm for laser alignment. For SRS/SBRT applications, a tighter tolerance of ±1 mm is recommended for lasers since they are used for initial patient setup.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac113",
+    "section_id": "linac",
+    "question": "The TG-142 annual tolerance for gantry angle accuracy (digital readout vs. actual) is:",
+    "choices": [
+      "±0.5°",
+      "±1.0°",
+      "±2.0°",
+      "±3.0°"
+    ],
+    "answer": "±1.0°",
+    "explanation": "TG-142 specifies an annual tolerance of ±1.0° for gantry angle accuracy. The gantry angle indicator must agree with the actual gantry angle within this tolerance at cardinal angles.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac115",
+    "section_id": "linac",
+    "question": "Water tank beam scanning for commissioning requires measurement of PDDs at minimum for which field sizes?",
+    "choices": [
+      "Only the reference 10×10 cm² field",
+      "3×3, 5×5, 10×10, 15×15, 20×20, 30×30, and 40×40 cm²",
+      "Only 5×5 and 10×10 cm²",
+      "10×10 and 40×40 cm² only"
+    ],
+    "answer": "3×3, 5×5, 10×10, 15×15, 20×20, 30×30, and 40×40 cm²",
+    "explanation": "Comprehensive beam commissioning requires PDD measurements at multiple field sizes spanning the clinical range. This data is needed for accurate treatment planning system configuration and output factor determination.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac116",
+    "section_id": "linac",
+    "question": "During commissioning, beam profiles should be measured at multiple depths. The minimum recommended depths include:",
+    "choices": [
+      "Only dmax",
+      "dmax, 5 cm, and 10 cm",
+      "dmax, 5 cm, 10 cm, 20 cm, and 30 cm",
+      "Only 10 cm"
+    ],
+    "answer": "dmax, 5 cm, 10 cm, 20 cm, and 30 cm",
+    "explanation": "Beam profiles should be measured at multiple depths including dmax, 5, 10, 20, and 30 cm to characterize how the profile shape, penumbra, and flatness change with depth for accurate TPS modeling.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac117",
+    "section_id": "linac",
+    "question": "The output factor (Sc,p) for a given field size is defined as the ratio of dose at dmax for that field size to dose at dmax for the:",
+    "choices": [
+      "Smallest available field size",
+      "Largest available field size (40×40 cm²)",
+      "Reference field size (10×10 cm²)",
+      "Field size of 20×20 cm²"
+    ],
+    "answer": "Reference field size (10×10 cm²)",
+    "explanation": "Output factors are normalized to the reference 10×10 cm² field. They account for changes in scatter (both head scatter Sc and phantom scatter Sp) as the field size varies from the reference.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac118",
+    "section_id": "linac",
+    "question": "The TrueBeam Developer Mode allows:",
+    "choices": [
+      "Patient treatments with custom beam configurations",
+      "Research use with XML-scripted machine parameter files for non-clinical deliveries",
+      "Remote servicing of the linac by the manufacturer",
+      "Automated daily QA without physicist oversight"
+    ],
+    "answer": "Research use with XML-scripted machine parameter files for non-clinical deliveries",
+    "explanation": "Developer Mode on TrueBeam allows researchers to create custom XML scripts controlling gantry, MLC, dose rate, and other parameters for research deliveries. It is not intended for clinical patient treatments.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac119",
+    "section_id": "linac",
+    "question": "The Halcyon linac's maximum gantry rotation speed is approximately:",
+    "choices": [
+      "1 RPM",
+      "2 RPM",
+      "4 RPM",
+      "8 RPM"
+    ],
+    "answer": "4 RPM",
+    "explanation": "The Halcyon's ring gantry can rotate at up to 4 RPM, which is faster than conventional C-arm linacs. This higher speed, combined with FFF beams, enables rapid VMAT treatment delivery.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac120",
+    "section_id": "linac",
+    "question": "In the Elekta Unity MR-Linac, the linac beam travels through the MRI cryostat via a:",
+    "choices": [
+      "Hole drilled through the superconducting magnet",
+      "Window in the split magnet design",
+      "Waveguide tunnel outside the magnet bore",
+      "Fiber optic beam transport system"
+    ],
+    "answer": "Window in the split magnet design",
+    "explanation": "The Unity uses a split superconducting magnet design with a 10 cm gap. The radiation beam passes through this gap (window) in the magnet to reach the patient, avoiding interference with the MRI's magnetic field homogeneity.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac121",
+    "section_id": "linac",
+    "question": "In the MR-Linac, the electron return effect is most pronounced at:",
+    "choices": [
+      "Homogeneous tissue regions",
+      "Tissue-air interfaces perpendicular to the magnetic field",
+      "Bone-tissue interfaces",
+      "Deep within the patient body"
+    ],
+    "answer": "Tissue-air interfaces perpendicular to the magnetic field",
+    "explanation": "At tissue-air interfaces, secondary electrons exiting tissue into air are bent back by the Lorentz force and re-deposit dose at the exit surface. This effect is most pronounced when the interface is perpendicular to the B-field.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac122",
+    "section_id": "linac",
+    "question": "The SF6 gas used in the pressurized waveguide system of some linacs serves to:",
+    "choices": [
+      "Cool the waveguide during operation",
+      "Prevent electrical breakdown (arcing) in the waveguide",
+      "Enhance the microwave power transfer efficiency",
+      "Provide radiation shielding for the waveguide"
+    ],
+    "answer": "Prevent electrical breakdown (arcing) in the waveguide",
+    "explanation": "SF6 (sulfur hexafluoride) is an excellent electrical insulator and is used at pressurized levels in waveguide transmission lines to prevent arcing from the high-power microwave pulses traveling from the RF source to the accelerating structure.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac123",
+    "section_id": "linac",
+    "question": "The vacuum level inside the accelerating waveguide must be maintained at approximately:",
+    "choices": [
+      "Standard atmospheric pressure",
+      "10⁻³ torr (low vacuum)",
+      "10⁻⁶ torr (high vacuum)",
+      "10⁻¹² torr (ultra-high vacuum)"
+    ],
+    "answer": "10⁻⁶ torr (high vacuum)",
+    "explanation": "The accelerating waveguide requires a high vacuum of approximately 10⁻⁶ torr to prevent electrical discharge and to allow electrons to travel without colliding with gas molecules. Ion pumps maintain this vacuum continuously.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac124",
+    "section_id": "linac",
+    "question": "The ion pump used to maintain vacuum in the accelerating waveguide works by:",
+    "choices": [
+      "Mechanically pumping gas out of the waveguide",
+      "Ionizing residual gas molecules and trapping them on titanium surfaces",
+      "Freezing gas molecules using liquid nitrogen",
+      "Chemically reacting with gas molecules to form solid compounds"
+    ],
+    "answer": "Ionizing residual gas molecules and trapping them on titanium surfaces",
+    "explanation": "Ion pumps use strong electric and magnetic fields to ionize residual gas molecules, which are then accelerated into titanium cathode surfaces where they are permanently trapped (gettered). They require no moving parts.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac126",
+    "section_id": "linac",
+    "question": "At photon energies above approximately 10 MV, the linac head produces significant amounts of:",
+    "choices": [
+      "Characteristic X-rays from the flattening filter",
+      "Neutron contamination from photonuclear reactions",
+      "Positron contamination from pair production",
+      "Cherenkov radiation in the treatment room"
+    ],
+    "answer": "Neutron contamination from photonuclear reactions",
+    "explanation": "Above ~8-10 MV, photons exceed the neutron binding energy of target and head materials (typically 8-10 MeV threshold). Photonuclear reactions (γ,n) produce neutrons that contribute unwanted dose and require additional shielding considerations.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac127",
+    "section_id": "linac",
+    "question": "Neutron contamination from high-energy linacs is primarily shielded by materials rich in:",
+    "choices": [
+      "Lead",
+      "Tungsten",
+      "Hydrogen (e.g., polyethylene, borated polyethylene)",
+      "Iron"
+    ],
+    "answer": "Hydrogen (e.g., polyethylene, borated polyethylene)",
+    "explanation": "Neutrons are most effectively moderated and shielded by hydrogen-rich materials. Polyethylene and borated polyethylene are commonly used; hydrogen slows neutrons efficiently, and boron-10 captures thermal neutrons.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac129",
+    "section_id": "linac",
+    "question": "The last-person-out button (search button) in a linac vault is a safety device that:",
+    "choices": [
+      "Automatically locks the door when pressed",
+      "Confirms the room has been searched and is clear of personnel before treatment can begin",
+      "Activates the radiation warning lights",
+      "Resets the linac after an interlock trip"
+    ],
+    "answer": "Confirms the room has been searched and is clear of personnel before treatment can begin",
+    "explanation": "The search procedure requires the therapist to walk through the room, visually confirm no one is inside, and press the search button. The beam cannot be initiated until this search procedure is completed.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac130",
+    "section_id": "linac",
+    "question": "The radiation warning indicator (beam-on light) outside a linac treatment room must be:",
+    "choices": [
+      "Green when the beam is on",
+      "Visible and illuminated whenever the beam is on",
+      "Activated only during high-dose-rate treatments",
+      "Turned off during electron beam treatments"
+    ],
+    "answer": "Visible and illuminated whenever the beam is on",
+    "explanation": "Regulatory requirements mandate that a clearly visible warning light (typically red or amber) be illuminated at all room entrances whenever the radiation beam is activated, alerting all personnel to the radiation hazard.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac131",
+    "section_id": "linac",
+    "question": "For a 6 MeV electron beam, the surface dose relative to dmax dose is approximately:",
+    "choices": [
+      "50-60%",
+      "70-80%",
+      "85-95%",
+      "100%"
+    ],
+    "answer": "70-80%",
+    "explanation": "For a 6 MeV electron beam, the surface dose is approximately 70-80% of the maximum dose. Surface dose increases with increasing electron energy, approaching nearly 100% for the highest clinical electron energies (>16 MeV).",
+    "difficulty": 5
+  },
+  {
+    "id": "linac132",
+    "section_id": "linac",
+    "question": "The penumbra for electron beams compared to photon beams is generally:",
+    "choices": [
+      "Sharper at all depths",
+      "Similar at all depths",
+      "Wider, and increases significantly with depth",
+      "Narrower at depth but wider at the surface"
+    ],
+    "answer": "Wider, and increases significantly with depth",
+    "explanation": "Electron beam penumbra widens significantly with depth due to multiple Coulomb scattering. Unlike photon beams where penumbra is relatively stable with depth, electron penumbra can become very broad near the end of range.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac133",
+    "section_id": "linac",
+    "question": "In electron beam therapy, the field size is defined by the electron applicator (cone) at what distance from the patient?",
+    "choices": [
+      "At the isocenter (100 cm from source)",
+      "At the surface of the patient (approximately 95-100 cm from source)",
+      "At 50 cm from the source",
+      "At the exit window of the waveguide"
+    ],
+    "answer": "At the surface of the patient (approximately 95-100 cm from source)",
+    "explanation": "The electron applicator collimates the beam close to the patient surface (typically 5 cm gap or less). The field size is defined at the patient surface because electron scatter in air would degrade the field edge over long distances.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac134",
+    "section_id": "linac",
+    "question": "A Cerrobend cutout for electron beam therapy is placed at the:",
+    "choices": [
+      "Exit of the accelerating waveguide",
+      "Position of the flattening filter",
+      "Distal end of the electron applicator, closest to the patient",
+      "Inside the monitor chamber housing"
+    ],
+    "answer": "Distal end of the electron applicator, closest to the patient",
+    "explanation": "Cerrobend cutouts are custom-shaped inserts placed at the distal end of the electron applicator to define irregular field shapes close to the patient. Placing them close minimizes penumbra from electron scatter.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac135",
+    "section_id": "linac",
+    "question": "For TG-51 calibration, the polarity correction factor Ppol accounts for:",
+    "choices": [
+      "The difference in chamber reading when the collecting voltage polarity is reversed",
+      "The orientation of the chamber relative to the beam",
+      "The effect of cable length on signal",
+      "The humidity in the treatment room"
+    ],
+    "answer": "The difference in chamber reading when the collecting voltage polarity is reversed",
+    "explanation": "Ppol corrects for the difference in ionization chamber reading when the applied voltage polarity is switched. It is calculated as the average of the absolute readings at positive and negative polarity divided by the reading at the polarity used for calibration.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac136",
+    "section_id": "linac",
+    "question": "The ion recombination correction factor Pion in TG-51 corrects for:",
+    "choices": [
+      "Ions that recombine before being collected by the chamber electrodes",
+      "Nuclear reactions in the chamber gas",
+      "Electron attachment to gas molecules",
+      "Saturation of the electrometer amplifier"
+    ],
+    "answer": "Ions that recombine before being collected by the chamber electrodes",
+    "explanation": "At high dose rates (pulsed linac beams), some ions recombine before reaching the collecting electrode. Pion is determined using the two-voltage technique by comparing readings at two different bias voltages.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac138",
+    "section_id": "linac",
+    "question": "During VMAT delivery, the typical number of control points per arc is approximately:",
+    "choices": [
+      "10-20",
+      "50-100",
+      "177-180 (approximately every 2 degrees)",
+      "360 (every 1 degree)"
+    ],
+    "answer": "177-180 (approximately every 2 degrees)",
+    "explanation": "VMAT plans typically use control points every 2 degrees of gantry rotation, resulting in approximately 177-180 control points for a full 360-degree arc. Between control points, MLC and dose rate are interpolated.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac141",
+    "section_id": "linac",
+    "question": "The pulse repetition frequency (PRF) of a typical medical linac is in the range of:",
+    "choices": [
+      "1-10 Hz",
+      "50-400 Hz",
+      "1-10 kHz",
+      "100 kHz - 1 MHz"
+    ],
+    "answer": "50-400 Hz",
+    "explanation": "Medical linacs typically operate with a PRF of 50-400 Hz (pulses per second). The PRF can be varied to change the dose rate, along with adjustments to the pulse current.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac142",
+    "section_id": "linac",
+    "question": "The pulse width (duration) of each radiation pulse from a medical linac is approximately:",
+    "choices": [
+      "1-10 nanoseconds",
+      "1-5 microseconds",
+      "1-5 milliseconds",
+      "0.1-1 seconds"
+    ],
+    "answer": "1-5 microseconds",
+    "explanation": "Each radiation pulse from a medical linac lasts approximately 1-5 microseconds. The modulator generates high-voltage pulses of this duration to simultaneously drive the electron gun and RF source.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac143",
+    "section_id": "linac",
+    "question": "The SAD (source-to-axis distance) of most modern isocentric linacs is:",
+    "choices": [
+      "80 cm",
+      "100 cm",
+      "120 cm",
+      "150 cm"
+    ],
+    "answer": "100 cm",
+    "explanation": "The standard SAD for modern isocentric linacs is 100 cm. The isocenter is the point in space about which the gantry, collimator, and couch rotate, and it is 100 cm from the radiation source.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac144",
+    "section_id": "linac",
+    "question": "Isocenter wobble (the variation in radiation isocenter position as the gantry rotates) for a well-maintained linac should be within:",
+    "choices": [
+      "±5 mm diameter sphere",
+      "±2 mm diameter sphere",
+      "±1 mm diameter sphere",
+      "±0.5 mm diameter sphere"
+    ],
+    "answer": "±1 mm diameter sphere",
+    "explanation": "For a well-maintained linac, the isocenter should stay within a sphere of ±1 mm diameter (or ±0.5 mm radius) as the gantry rotates through all angles. SRS applications require even tighter isocenter accuracy.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac145",
+    "section_id": "linac",
+    "question": "The optical distance indicator (ODI) on a linac shows the:",
+    "choices": [
+      "Beam energy in MV",
+      "Source-to-surface distance (SSD)",
+      "Field size at isocenter",
+      "Gantry angle"
+    ],
+    "answer": "Source-to-surface distance (SSD)",
+    "explanation": "The ODI projects a numerical scale onto the patient or phantom surface indicating the SSD. It works by projecting a graduated scale through the front pointer from the virtual source location.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac147",
+    "section_id": "linac",
+    "question": "In IMRT step-and-shoot delivery, the beam is:",
+    "choices": [
+      "On continuously while MLC leaves move to form different segments",
+      "Turned off while the MLC leaves move, and on only when leaves are stationary",
+      "Delivered in a continuous arc with varying gantry speed",
+      "Delivered using physical compensators instead of MLC"
+    ],
+    "answer": "Turned off while the MLC leaves move, and on only when leaves are stationary",
+    "explanation": "In step-and-shoot IMRT, the beam is off during MLC transitions between segments (steps) and on only when the leaves are stationary at their planned positions (shoots). This differs from dynamic MLC delivery where leaves move during irradiation.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac148",
+    "section_id": "linac",
+    "question": "In dynamic MLC (sliding window) IMRT delivery:",
+    "choices": [
+      "The beam is off while leaves move between segments",
+      "Each leaf pair moves continuously during irradiation to modulate the fluence",
+      "The gantry rotates during delivery",
+      "Fixed compensators are used instead of MLC"
+    ],
+    "answer": "Each leaf pair moves continuously during irradiation to modulate the fluence",
+    "explanation": "In sliding window delivery, opposing leaves in each pair move across the field at varying speeds during continuous irradiation. The gap width and speed between each leaf pair modulates the fluence to create the desired intensity pattern.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac149",
+    "section_id": "linac",
+    "question": "The backup jaw behind the MLC on Varian linacs serves primarily to:",
+    "choices": [
+      "Define the maximum field size",
+      "Reduce radiation leakage through closed MLC leaves",
+      "Support the MLC mechanically",
+      "Cool the MLC leaves during operation"
+    ],
+    "answer": "Reduce radiation leakage through closed MLC leaves",
+    "explanation": "The backup jaw (or backup diaphragm) tracks behind the most-retracted MLC leaf in each bank to provide additional shielding. This reduces the radiation transmitted through closed or retracted MLC leaves.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac150",
+    "section_id": "linac",
+    "question": "The maximum over-travel (distance past midline) for Varian Millennium 120 MLC leaves is approximately:",
+    "choices": [
+      "5 cm",
+      "10 cm",
+      "16 cm",
+      "20 cm"
+    ],
+    "answer": "16 cm",
+    "explanation": "Varian Millennium MLC leaves can travel approximately 16 cm past the midline (central axis). This over-travel capability is important for creating asymmetric fields and complex IMRT/VMAT apertures.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac151",
+    "section_id": "linac",
+    "question": "A picket fence test for MLC QA consists of:",
+    "choices": [
+      "A series of narrow strip fields formed by MLC leaves at known positions",
+      "A measurement of individual leaf transmission",
+      "A check of leaf driving motor currents",
+      "A test of interdigitation capability"
+    ],
+    "answer": "A series of narrow strip fields formed by MLC leaves at known positions",
+    "explanation": "The picket fence test delivers a series of equally-spaced narrow strip fields (pickets) at known positions. Analyzing the resulting image verifies leaf position accuracy and detects systematic or random leaf positioning errors.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac153",
+    "section_id": "linac",
+    "question": "For photon beam commissioning, the reference detector in a water tank is typically placed:",
+    "choices": [
+      "At the entrance surface of the water tank",
+      "In the beam at a fixed position to normalize for output variations",
+      "Behind the water tank to measure transmitted dose",
+      "At isocenter regardless of the scan being performed"
+    ],
+    "answer": "In the beam at a fixed position to normalize for output variations",
+    "explanation": "The reference detector remains at a fixed position in the beam (typically near the edge of the field at a reference depth) during scanning. It normalizes the field detector signal against pulse-to-pulse output variations.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac154",
+    "section_id": "linac",
+    "question": "The effective point of measurement for a cylindrical ionization chamber is shifted upstream from the chamber center by:",
+    "choices": [
+      "The full cavity radius r",
+      "0.6 times the cavity inner radius (0.6r)",
+      "Half the stem length",
+      "No shift is needed"
+    ],
+    "answer": "0.6 times the cavity inner radius (0.6r)",
+    "explanation": "For cylindrical chambers in a photon beam, the effective point of measurement is shifted 0.6r upstream (toward the source) from the chamber center. This accounts for the predominantly upstream origin of electrons contributing to ionization.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac155",
+    "section_id": "linac",
+    "question": "The TG-142 monthly tolerance for collimator rotation isocenter (walk-out) is:",
+    "choices": [
+      "±0.5 mm radius",
+      "±1 mm radius",
+      "±2 mm diameter",
+      "±3 mm diameter"
+    ],
+    "answer": "±2 mm diameter",
+    "explanation": "TG-142 specifies that the collimator rotation isocenter (radiation isocenter walk-out during collimator rotation) should be within a ±2 mm diameter circle. For SRS, a tighter ±1 mm diameter tolerance is recommended.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac156",
+    "section_id": "linac",
+    "question": "The couch isocentric rotation accuracy according to TG-142 should be within:",
+    "choices": [
+      "±1 mm",
+      "±2 mm diameter",
+      "±5 mm",
+      "±10 mm"
+    ],
+    "answer": "±2 mm diameter",
+    "explanation": "TG-142 specifies that the couch rotation isocenter should be within a ±2 mm diameter. This is verified by imaging a ball bearing at isocenter through various couch rotation angles.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac157",
+    "section_id": "linac",
+    "question": "For a 15 MV photon beam, the approximate dmax depth in water is:",
+    "choices": [
+      "1.5 cm",
+      "2.0 cm",
+      "3.0 cm",
+      "4.5 cm"
+    ],
+    "answer": "3.0 cm",
+    "explanation": "For a 15 MV photon beam, dmax occurs at approximately 2.5-3.0 cm depth in water. Higher-energy beams produce higher-energy secondary electrons with longer ranges, shifting the buildup region and dmax deeper.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac158",
+    "section_id": "linac",
+    "question": "The PDD at 10 cm depth for a 10×10 cm² 10 MV photon beam at 100 cm SSD is approximately:",
+    "choices": [
+      "58%",
+      "67%",
+      "73%",
+      "82%"
+    ],
+    "answer": "73%",
+    "explanation": "A 10 MV photon beam has a PDD of approximately 73% at 10 cm depth for a 10×10 cm² field at 100 cm SSD. This is higher than 6 MV (~67%) due to the greater penetrating power of the higher-energy beam.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac159",
+    "section_id": "linac",
+    "question": "The penumbra width (80%-20%) for a 6 MV photon beam defined by MLC at 10 cm depth is approximately:",
+    "choices": [
+      "2-3 mm",
+      "5-8 mm",
+      "15-20 mm",
+      "25-30 mm"
+    ],
+    "answer": "5-8 mm",
+    "explanation": "The typical penumbra width (distance between 80% and 20% dose levels) for an MLC-defined 6 MV photon field at 10 cm depth is approximately 5-8 mm. Penumbra width depends on source size, MLC design, and depth.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac160",
+    "section_id": "linac",
+    "question": "During electron beam delivery, the photon jaws are typically set to a field size that is:",
+    "choices": [
+      "Equal to the electron cone field size",
+      "Smaller than the cone size to reduce penumbra",
+      "Larger than the cone size (approximately 2-3 cm wider) to ensure uniform electron fluence at the cone",
+      "Closed completely since the cone defines the field"
+    ],
+    "answer": "Larger than the cone size (approximately 2-3 cm wider) to ensure uniform electron fluence at the cone",
+    "explanation": "The photon jaws are set slightly larger than the applicator opening to ensure the electron beam uniformly fills the cone aperture. If jaws were equal to or smaller than the cone, the beam profile within the cone would be non-uniform.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac161",
+    "section_id": "linac",
+    "question": "For electron beams, the output factor depends strongly on cone size because:",
+    "choices": [
+      "The monitor chamber is affected by the cone position",
+      "Lateral scatter equilibrium changes with field size, significantly affecting central axis dose",
+      "The scattering foils change with cone size",
+      "The bremsstrahlung target contributes differently for each cone"
+    ],
+    "answer": "Lateral scatter equilibrium changes with field size, significantly affecting central axis dose",
+    "explanation": "Electron beams exhibit significant lateral scatter. For small cone sizes, electrons scatter out of the central axis region without full replacement from surrounding areas, reducing the central axis dose relative to larger fields.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac162",
+    "section_id": "linac",
+    "question": "The mean energy of an electron beam at depth d in water can be estimated by the Harder equation:",
+    "choices": [
+      "E(d) = E₀(1 + d/Rp)",
+      "E(d) = E₀(1 - d/Rp)",
+      "E(d) = E₀ × d/Rp",
+      "E(d) = E₀/d"
+    ],
+    "answer": "E(d) = E₀(1 - d/Rp)",
+    "explanation": "The Harder equation approximates the mean electron energy at depth d as E(d) = E₀(1 - d/Rp), where E₀ is the mean energy at the surface and Rp is the practical range. Energy decreases linearly with depth.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac163",
+    "section_id": "linac",
+    "question": "The Halcyon linac does NOT have which of the following features?",
+    "choices": [
+      "kV cone-beam CT imaging",
+      "MV portal imaging",
+      "Electron beam capability",
+      "VMAT delivery capability"
+    ],
+    "answer": "Electron beam capability",
+    "explanation": "The Halcyon is designed as a simplified photon-only linac with a single 6 MV FFF energy. It does not offer electron beams, multiple photon energies, or physical wedges, trading versatility for workflow simplicity.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac164",
+    "section_id": "linac",
+    "question": "The Elekta Versa HD linac uses what type of MLC system?",
+    "choices": [
+      "Millennium 120 MLC",
+      "Agility 160 MLC with 5 mm leaves",
+      "HD120 MLC with 2.5 mm central leaves",
+      "Dual-layer stacked MLC"
+    ],
+    "answer": "Agility 160 MLC with 5 mm leaves",
+    "explanation": "The Versa HD uses the Elekta Agility MLC with 160 leaves (80 pairs) and 5 mm leaf width at isocenter. The Agility MLC features fast leaf speeds and can interdigitate up to 15 cm past the midline.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac165",
+    "section_id": "linac",
+    "question": "The Elekta Agility MLC has a maximum leaf speed of approximately:",
+    "choices": [
+      "1.5 cm/s",
+      "3.5 cm/s",
+      "6.5 cm/s",
+      "10 cm/s"
+    ],
+    "answer": "3.5 cm/s",
+    "explanation": "The Elekta Agility MLC can achieve leaf speeds up to approximately 3.5 cm/s, which is faster than the Varian Millennium MLC (2.5 cm/s). Higher leaf speed enables more efficient VMAT delivery.",
+    "difficulty": 8
+  },
+  {
+    "id": "linac166",
+    "section_id": "linac",
+    "question": "The TrueBeam linac's maximum dose rate for 10 MV FFF beams is approximately:",
+    "choices": [
+      "600 MU/min",
+      "1400 MU/min",
+      "2400 MU/min",
+      "4800 MU/min"
+    ],
+    "answer": "2400 MU/min",
+    "explanation": "The TrueBeam can deliver 10 MV FFF beams at up to 2400 MU/min. This extremely high dose rate enables very fast SBRT treatments and is one of the key advantages of FFF technology for stereotactic treatments.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac167",
+    "section_id": "linac",
+    "question": "In a magnetron, the magnetic field is oriented:",
+    "choices": [
+      "Parallel to the electric field between anode and cathode",
+      "Perpendicular to the DC electric field (axially along the cathode)",
+      "Radially from the cathode to the anode segments",
+      "Tangentially around the anode cavity openings"
+    ],
+    "answer": "Perpendicular to the DC electric field (axially along the cathode)",
+    "explanation": "In a magnetron, a strong axial magnetic field (parallel to the cathode) is perpendicular to the radial DC electric field. This causes electrons to spiral in curved paths, transferring energy to the RF cavities in the anode block.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac168",
+    "section_id": "linac",
+    "question": "A klystron amplifier works by modulating the velocity of an electron beam as it passes through:",
+    "choices": [
+      "A series of permanent magnets",
+      "Resonant cavities that convert kinetic energy to RF power",
+      "A pair of scattering foils",
+      "An accelerating waveguide identical to the linac structure"
+    ],
+    "answer": "Resonant cavities that convert kinetic energy to RF power",
+    "explanation": "In a klystron, an electron beam passes through a series of resonant cavities. The input cavity modulates electron velocities, forming bunches that give up energy to the output cavity as amplified RF power.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac169",
+    "section_id": "linac",
+    "question": "The typical lifetime of a magnetron in a medical linac is approximately:",
+    "choices": [
+      "100-500 hours",
+      "1,000-5,000 hours",
+      "10,000-20,000 hours",
+      "Greater than 50,000 hours"
+    ],
+    "answer": "1,000-5,000 hours",
+    "explanation": "Magnetrons in medical linacs typically last 1,000-5,000 hours of beam-on time. They are considered consumable components. Klystrons generally have longer lifetimes of 10,000-20,000+ hours but are more expensive to replace.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac170",
+    "section_id": "linac",
+    "question": "The waveguide pressurization system uses dry air or SF6 at a pressure above atmospheric to:",
+    "choices": [
+      "Increase microwave power transmission",
+      "Prevent moisture condensation and electrical arcing in the waveguide",
+      "Cool the waveguide between pulses",
+      "Reduce the waveguide's resonant frequency"
+    ],
+    "answer": "Prevent moisture condensation and electrical arcing in the waveguide",
+    "explanation": "Pressurization with dry air or SF6 prevents moisture from entering the waveguide (which could cause corrosion) and increases the dielectric strength to prevent electrical breakdown from the high-power microwave pulses.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac171",
+    "section_id": "linac",
+    "question": "Beam hardening by the flattening filter means that the filter:",
+    "choices": [
+      "Increases the maximum photon energy in the beam",
+      "Preferentially removes low-energy photons, increasing the mean beam energy",
+      "Adds high-energy photons through nuclear reactions",
+      "Increases the beam current"
+    ],
+    "answer": "Preferentially removes low-energy photons, increasing the mean beam energy",
+    "explanation": "The flattening filter acts as an absorber that preferentially attenuates lower-energy photons (which have higher attenuation coefficients). This raises the mean energy of the transmitted beam, a process called beam hardening.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac172",
+    "section_id": "linac",
+    "question": "The horn effect in FFF beam profiles refers to:",
+    "choices": [
+      "Increased noise in the beam signal at high dose rates",
+      "Off-axis softening producing horns in the profile at shallow depths",
+      "Elevated dose at the field edges due to electron contamination",
+      "Acoustic noise from the linac at high dose rates"
+    ],
+    "answer": "Elevated dose at the field edges due to electron contamination",
+    "explanation": "FFF beams can show a slight horn (elevated dose) at the field edges at shallow depths. This is due to off-axis softening where the lower-energy photons at the periphery have higher dose deposition at shallow depths relative to central axis.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac173",
+    "section_id": "linac",
+    "question": "For SRS treatments, the overall mechanical and radiation isocenter accuracy should ideally be within:",
+    "choices": [
+      "±2 mm",
+      "±1 mm",
+      "±0.5 mm",
+      "±0.25 mm"
+    ],
+    "answer": "±0.5 mm",
+    "explanation": "For SRS, sub-millimeter accuracy is critical due to the small target sizes and steep dose gradients. An overall isocenter accuracy of ±0.5 mm or better is the goal for modern linac-based SRS systems.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac174",
+    "section_id": "linac",
+    "question": "HyperArc SRS typically uses which couch angles for non-coplanar arc delivery?",
+    "choices": [
+      "Only 0° (coplanar arcs)",
+      "45° and 315° in addition to 0°",
+      "0°, 45°, 90°, 270°, and 315°",
+      "Every 10° from 0° to 350°"
+    ],
+    "answer": "0°, 45°, 90°, 270°, and 315°",
+    "explanation": "HyperArc typically uses five couch angles: 0°, 45°, 90°, 270°, and 315°. These non-coplanar angles provide optimal dose conformality for brain targets while maintaining safe clearance verified by the collision detection system.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac175",
+    "section_id": "linac",
+    "question": "The daily output constancy check on a linac is typically performed using:",
+    "choices": [
+      "A full TG-51 calibration in a water phantom",
+      "A commercial device such as a Daily QA3 or Sun Nuclear QA device with an ion chamber array",
+      "A film measurement at dmax in a solid water phantom",
+      "A visual inspection of the beam warning lights"
+    ],
+    "answer": "A commercial device such as a Daily QA3 or Sun Nuclear QA device with an ion chamber array",
+    "explanation": "Daily output checks use commercial QA devices that provide quick, reproducible measurements of output, flatness, symmetry, and energy. These devices significantly reduce the time needed compared to manual ion chamber measurements.",
+    "difficulty": 2
+  },
+  {
+    "id": "linac176",
+    "section_id": "linac",
+    "question": "The electron beam quality index R50 is related to the mean energy at the surface E₀ by:",
+    "choices": [
+      "E₀ = 0.656 + 2.059 × R50",
+      "E₀ = R50 / 2",
+      "E₀ = 2.33 × R50",
+      "E₀ = R50 × 0.4"
+    ],
+    "answer": "E₀ = 2.33 × R50",
+    "explanation": "The mean energy at the phantom surface E₀ (in MeV) is related to R50 (in cm) by E₀ = 2.33 × R50. This relationship is used in electron beam dosimetry and is one of the fundamental relationships in TG-51.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac180",
+    "section_id": "linac",
+    "question": "The use factor (U) in shielding calculations represents:",
+    "choices": [
+      "The fraction of time the beam is on during a treatment session",
+      "The fraction of operating time the primary beam is directed toward a particular barrier",
+      "The occupancy factor for areas adjacent to the vault",
+      "The ratio of leakage to primary beam intensity"
+    ],
+    "answer": "The fraction of operating time the primary beam is directed toward a particular barrier",
+    "explanation": "The use factor U represents the fraction of the workload for which the primary beam is directed at a particular barrier. For primary barriers at floor level, U is typically 0.25; secondary barriers have U = 1 by convention.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac181",
+    "section_id": "linac",
+    "question": "The occupancy factor (T) in shielding calculations accounts for:",
+    "choices": [
+      "The fraction of time the linac is operating",
+      "The fraction of time the adjacent area is expected to be occupied",
+      "The efficiency of the shielding material",
+      "The number of treatment beams per patient"
+    ],
+    "answer": "The fraction of time the adjacent area is expected to be occupied",
+    "explanation": "The occupancy factor T represents the fraction of beam-on time during which a person could be in the adjacent area. For controlled areas (offices), T may be 1; for uncontrolled areas (parking lots), T may be 1/40.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac182",
+    "section_id": "linac",
+    "question": "TG-142 recommends that the coincidence of opposed light fields (gantry 0° vs 180°) be verified monthly with a tolerance of:",
+    "choices": [
+      "±1 mm",
+      "±2 mm",
+      "±3 mm",
+      "±5 mm"
+    ],
+    "answer": "±2 mm",
+    "explanation": "The opposed light field test checks the consistency of the radiation isocenter by comparing the light fields at gantry 0° and 180°. TG-142 recommends this be within ±2 mm monthly.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac183",
+    "section_id": "linac",
+    "question": "For small field dosimetry in SRS (fields < 3 cm), the recommended detector types include:",
+    "choices": [
+      "Farmer-type ionization chambers",
+      "Micro-ionization chambers, diodes, or diamond detectors",
+      "Large-volume parallel plate chambers",
+      "Film dosimeters only"
+    ],
+    "answer": "Micro-ionization chambers, diodes, or diamond detectors",
+    "explanation": "Small field dosimetry requires detectors with small sensitive volumes to avoid volume-averaging effects. Micro-chambers (≤0.01 cc), stereotactic diodes, and synthetic diamond detectors are recommended per TRS-483 guidelines.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac184",
+    "section_id": "linac",
+    "question": "The Lorentz force on electrons traveling through the MR-Linac's magnetic field affects the dose distribution by:",
+    "choices": [
+      "Increasing the beam energy",
+      "Shifting the dose distribution laterally relative to the beam central axis",
+      "Making the beam perfectly symmetric",
+      "Eliminating electron contamination"
+    ],
+    "answer": "Shifting the dose distribution laterally relative to the beam central axis",
+    "explanation": "The Lorentz force deflects secondary electrons laterally in the magnetic field, causing an asymmetric shift in the dose distribution. Treatment planning systems for MR-Linacs must account for this magnetic field effect on dose deposition.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac185",
+    "section_id": "linac",
+    "question": "For the annual TG-142 check, the radiation-mechanical isocenter coincidence should be verified using the Winston-Lutz test with images at minimum how many gantry, collimator, and couch angle combinations?",
+    "choices": [
+      "4 images (cardinal gantry angles only)",
+      "8 images (4 gantry + 4 collimator angles)",
+      "Multiple gantry, collimator, and couch angles covering the full range of motion",
+      "2 images (gantry 0° and 90° only)"
+    ],
+    "answer": "Multiple gantry, collimator, and couch angles covering the full range of motion",
+    "explanation": "The annual Winston-Lutz test should include images at multiple gantry angles (e.g., every 30-45°), multiple collimator angles, and multiple couch angles to fully characterize the 3D isocenter sphere and identify angle-dependent deviations.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac186",
+    "section_id": "linac",
+    "question": "In a standing-wave linear accelerator, RF power is coupled into the accelerating structure via:",
+    "choices": [
+      "A direct waveguide connection to the first cavity",
+      "A side-coupled cavity or coupling iris near the center of the structure",
+      "An antenna inserted into the electron gun assembly",
+      "A coaxial cable connected to each individual cavity"
+    ],
+    "answer": "A side-coupled cavity or coupling iris near the center of the structure",
+    "explanation": "Standing-wave linacs use side-coupled cavities or a coupling iris to introduce RF power into the accelerating structure. The coupling is typically near the center of the structure to establish the correct standing-wave field pattern. This design allows for a more compact structure compared to travelling-wave linacs.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac187",
+    "section_id": "linac",
+    "question": "Beam loading in a linear accelerator refers to:",
+    "choices": [
+      "The mechanical stress on the bending magnet",
+      "The reduction in accelerating field due to energy absorption by the electron beam",
+      "The heating of the target by the photon beam",
+      "The increase in dose rate at high gantry speeds"
+    ],
+    "answer": "The reduction in accelerating field due to energy absorption by the electron beam",
+    "explanation": "Beam loading occurs when the accelerated electron beam extracts energy from the RF field in the accelerating waveguide, reducing the amplitude of the electromagnetic field. This effect is proportional to the beam current and must be compensated by the automatic frequency control (AFC) system to maintain stable beam energy.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac188",
+    "section_id": "linac",
+    "question": "Dark current in a linear accelerator is caused by:",
+    "choices": [
+      "Thermionic emission from the target",
+      "Field emission of electrons from the accelerating waveguide walls due to high electric field gradients",
+      "Leakage current through the bending magnet coils",
+      "Photoelectric interactions in the flattening filter"
+    ],
+    "answer": "Field emission of electrons from the accelerating waveguide walls due to high electric field gradients",
+    "explanation": "Dark current arises from field emission of electrons from metallic surfaces within the accelerating waveguide when high electric field gradients are present, even when the electron gun is not firing. These unwanted electrons are accelerated and can contribute to undesired radiation, activation of accelerator components, and increased leakage dose.",
+    "difficulty": 7
+  },
+  {
+    "id": "linac189",
+    "section_id": "linac",
+    "question": "Field flatness of a photon beam is defined as the maximum variation in dose across the central 80% of the field width at a specified depth, and must typically be within:",
+    "choices": [
+      "±1%",
+      "±3%",
+      "±10%",
+      "±0.5%"
+    ],
+    "answer": "±3%",
+    "explanation": "Field flatness is evaluated over the central 80% of the full width at half maximum (flattened region) at a depth of 10 cm. According to IEC standards, the flatness must be within ±3% of the central axis value. This is achieved by the design of the flattening filter and verified during commissioning and periodic QA.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac190",
+    "section_id": "linac",
+    "question": "The three components contributing to the beam penumbra of a photon beam are:",
+    "choices": [
+      "Geometric, transmission, and scatter penumbra",
+      "Primary, secondary, and tertiary penumbra",
+      "Entrance, buildup, and exit penumbra",
+      "Collimator, patient, and detector penumbra"
+    ],
+    "answer": "Geometric, transmission, and scatter penumbra",
+    "explanation": "Beam penumbra has three components: (1) geometric penumbra, determined by the finite source size and source-to-collimator/surface distances; (2) transmission penumbra, caused by partial attenuation through the rounded edges of the collimator jaws; and (3) scatter penumbra, arising from scattered radiation within the patient. Together they determine the sharpness of the beam edge.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac191",
+    "section_id": "linac",
+    "question": "During jaw calibration on a linear accelerator, the light field and radiation field must agree to within:",
+    "choices": [
+      "±5 mm",
+      "±2 mm",
+      "±0.5 mm",
+      "±10 mm"
+    ],
+    "answer": "±2 mm",
+    "explanation": "According to TG-142 and most regulatory standards, the light field and radiation field congruence must be within ±2 mm on each side. This ensures that the treatment field visualized by the light field accurately represents the actual radiation field delivered to the patient.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac192",
+    "section_id": "linac",
+    "question": "What is the typical tolerance for MLC leaf position accuracy as recommended by AAPM TG-142 for IMRT treatments?",
+    "choices": [
+      "±5 mm",
+      "±1 mm",
+      "±3 mm",
+      "±0.1 mm"
+    ],
+    "answer": "±1 mm",
+    "explanation": "AAPM TG-142 recommends that MLC leaf position accuracy be within ±1 mm for IMRT treatments. This tight tolerance is necessary because small leaf position errors can significantly affect the dose distribution in modulated fields, where dose gradients are steep and field segments may be small.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac193",
+    "section_id": "linac",
+    "question": "Portal dosimetry using the electronic portal imaging device (EPID) is primarily used for:",
+    "choices": [
+      "Measuring beam energy spectrum",
+      "Pre-treatment and in-vivo verification of IMRT/VMAT fluence delivery",
+      "Calibrating the ionization chamber in the beam",
+      "Measuring photoneutron contamination"
+    ],
+    "answer": "Pre-treatment and in-vivo verification of IMRT/VMAT fluence delivery",
+    "explanation": "Portal dosimetry uses the EPID as a 2D dosimeter to verify that the delivered fluence matches the planned fluence for IMRT and VMAT treatments. It can be performed pre-treatment (without patient) or as transit dosimetry during treatment. Gamma analysis is used to compare measured and predicted portal dose images.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac194",
+    "section_id": "linac",
+    "question": "When performing beam matching between two linear accelerators, which parameter is MOST critical to match for clinical interchangeability?",
+    "choices": [
+      "The manufacturer and model number of the MLC",
+      "Percentage depth dose curves, beam profiles, and output factors",
+      "The color of the light field",
+      "The serial number of the magnetron"
+    ],
+    "answer": "Percentage depth dose curves, beam profiles, and output factors",
+    "explanation": "Beam matching requires that the dosimetric characteristics — percentage depth dose (PDD) curves, cross-plane and in-plane beam profiles, and output factors for all field sizes — agree within tight tolerances (typically 1–2%) between the matched linacs. This allows patients to be treated interchangeably on either machine using the same treatment plan.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac195",
+    "section_id": "linac",
+    "question": "What is the primary advantage of a virtual (enhanced dynamic) wedge compared to a physical wedge?",
+    "choices": [
+      "Reduced scatter and improved skin sparing",
+      "Elimination of beam hardening effects",
+      "Ability to produce any wedge angle and reduced beam attenuation",
+      "Higher dose rate at the wedged field edge"
+    ],
+    "answer": "Ability to produce any wedge angle and reduced beam attenuation",
+    "explanation": "Virtual wedges use jaw motion with dose rate modulation to create wedge-shaped dose distributions. They eliminate beam hardening from physical wedge material and can produce arbitrary wedge angles, unlike physical wedges which come in fixed angles (15°, 30°, 45°, 60°).",
+    "difficulty": 4
+  },
+  {
+    "id": "linac196",
+    "section_id": "linac",
+    "question": "Compared to a physical wedge, a virtual wedge offers which advantage?",
+    "choices": [
+      "Better spatial resolution of the wedge profile",
+      "Reduced treatment time, elimination of beam hardening, and arbitrary wedge angles",
+      "Higher surface dose in the wedged direction",
+      "No need for monitor unit calculations"
+    ],
+    "answer": "Reduced treatment time, elimination of beam hardening, and arbitrary wedge angles",
+    "explanation": "Virtual wedges eliminate beam hardening and the associated change in beam quality caused by physical wedge filters. They allow arbitrary wedge angles (not limited to 15°, 30°, 45°, 60°), reduce treatment time since there is no wedge transmission factor penalty, and require no manual wedge insertion.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac197",
+    "section_id": "linac",
+    "question": "Electron applicators (cones) on a linear accelerator serve to:",
+    "choices": [
+      "Harden the electron beam by filtering low-energy electrons",
+      "Collimate the electron beam close to the patient surface and reduce penumbra",
+      "Convert the photon beam into an electron beam",
+      "Increase the beam energy by 2–3 MeV"
+    ],
+    "answer": "Collimate the electron beam close to the patient surface and reduce penumbra",
+    "explanation": "Electron applicators bring the collimation close to the patient surface (typically 5 cm or less SSD gap), which is necessary because electrons scatter significantly in air. Without applicators, the penumbra would be unacceptably wide. The applicator typically consists of multiple scraper levels that progressively define the field.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac198",
+    "section_id": "linac",
+    "question": "In electron beam therapy, bolus material is placed on the patient surface primarily to:",
+    "choices": [
+      "Increase the beam energy reaching the tumor",
+      "Shape the dose distribution by compensating for tissue irregularities or shifting the depth dose curve",
+      "Act as a radiation shield for underlying tissues",
+      "Replace the need for an electron applicator"
+    ],
+    "answer": "Shape the dose distribution by compensating for tissue irregularities or shifting the depth dose curve",
+    "explanation": "Bolus (typically tissue-equivalent material like SuperFlab or wax) is placed on the skin surface to fill air gaps, compensate for surface irregularities, or effectively reduce the depth of penetration. This shifts the percentage depth dose curve closer to the surface, allowing the therapeutic dose region to cover a shallower target volume.",
+    "difficulty": 3
+  },
+  {
+    "id": "linac199",
+    "section_id": "linac",
+    "question": "How does the electron beam surface dose (as a percentage of Dmax) change with increasing beam energy?",
+    "choices": [
+      "Surface dose decreases with increasing energy",
+      "Surface dose increases with increasing energy",
+      "Surface dose remains constant regardless of energy",
+      "Surface dose peaks at intermediate energies"
+    ],
+    "answer": "Surface dose increases with increasing energy",
+    "explanation": "For electron beams, surface dose as a percentage of Dmax increases with energy: from approximately 70-75% at 6 MeV to 90-95% at 20 MeV. Higher energy electrons are more forward-directed, leading to less lateral scatter and higher surface dose relative to Dmax.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac200",
+    "section_id": "linac",
+    "question": "Gantry sag on a linear accelerator is measured to ensure that the radiation isocenter remains within specification. It is typically assessed using:",
+    "choices": [
+      "A spirit level on the gantry head",
+      "A digital inclinometer on the couch",
+      "A Winston-Lutz or spoke shot (star shot) test at multiple gantry angles",
+      "An ionization chamber at the couch surface"
+    ],
+    "answer": "A Winston-Lutz or spoke shot (star shot) test at multiple gantry angles",
+    "explanation": "Gantry sag causes the radiation beam central axis to shift as the gantry rotates, enlarging the effective isocenter sphere. It is assessed using a Winston-Lutz test (ball-bearing test) or spoke shot (star shot) at multiple gantry angles. TG-142 specifies that the radiation isocenter should be within a 2 mm diameter sphere (±1 mm radius) for conventional treatments.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac201",
+    "section_id": "linac",
+    "question": "Couch walkout refers to:",
+    "choices": [
+      "The lateral displacement of the couch top when translated longitudinally",
+      "The vertical sag of the couch under patient weight",
+      "The rotation of the gantry when the couch is rotated",
+      "The maximum travel distance of the couch"
+    ],
+    "answer": "The lateral displacement of the couch top when translated longitudinally",
+    "explanation": "Couch walkout describes the lateral (left-right) deviation of the couch position as it is driven longitudinally (in-out). This can cause the patient to shift laterally from the planned position during treatment. TG-142 recommends that couch walkout be within ±2 mm over the full range of longitudinal travel.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac202",
+    "section_id": "linac",
+    "question": "The Winston-Lutz test evaluates:",
+    "choices": [
+      "The coincidence of the radiation isocenter with the mechanical isocenter using a radiopaque ball bearing",
+      "The beam energy constancy using a tissue-equivalent phantom",
+      "The MLC transmission factor for IMRT planning",
+      "The output constancy of the monitor chamber"
+    ],
+    "answer": "The coincidence of the radiation isocenter with the mechanical isocenter using a radiopaque ball bearing",
+    "explanation": "The Winston-Lutz test uses a small radiopaque ball bearing (typically 5 mm tungsten) positioned at the mechanical isocenter. Images are acquired at multiple gantry, collimator, and couch angles. The displacement between the ball shadow and the radiation field center quantifies the isocenter accuracy. For SRS/SBRT, this must be within ±1 mm or less.",
+    "difficulty": 4
+  },
+  {
+    "id": "linac203",
+    "section_id": "linac",
+    "question": "The on-board imager (OBI) on a Varian linac uses what type of imaging source for planar kV imaging?",
+    "choices": [
+      "A megavoltage bremsstrahlung source",
+      "A conventional kilovoltage x-ray tube mounted on a retractable arm",
+      "A radioactive Co-60 source",
+      "An ultrasonographic transducer"
+    ],
+    "answer": "A conventional kilovoltage x-ray tube mounted on a retractable arm",
+    "explanation": "The OBI system uses a kilovoltage x-ray tube (typically 40–150 kVp) mounted on a retractable arm orthogonal to the treatment beam, paired with an amorphous silicon flat-panel detector on the opposite arm. This provides high-contrast planar radiographs and CBCT capability for image-guided radiation therapy (IGRT).",
+    "difficulty": 2
+  },
+  {
+    "id": "linac204",
+    "section_id": "linac",
+    "question": "Which image quality parameter is MOST affected by scatter in cone-beam CT (CBCT) compared to conventional fan-beam CT?",
+    "choices": [
+      "Spatial resolution",
+      "HU accuracy and contrast-to-noise ratio",
+      "Slice thickness",
+      "Geometric accuracy"
+    ],
+    "answer": "HU accuracy and contrast-to-noise ratio",
+    "explanation": "CBCT uses a large cone-shaped beam that produces substantially more scatter than a fan-beam CT. This increased scatter degrades HU accuracy (causing cupping artifacts and incorrect CT numbers) and reduces contrast-to-noise ratio. This is the primary reason CBCT images cannot be directly used for dose calculation without correction.",
+    "difficulty": 6
+  },
+  {
+    "id": "linac205",
+    "section_id": "linac",
+    "question": "A beam hold-off on a linear accelerator is triggered when:",
+    "choices": [
+      "The patient requests to stop treatment",
+      "An interlock condition is detected, such as dose rate deviation or gantry position error, pausing irradiation",
+      "The treatment plan has been fully delivered",
+      "The room lights are turned on"
+    ],
+    "answer": "An interlock condition is detected, such as dose rate deviation or gantry position error, pausing irradiation",
+    "explanation": "Beam hold-off is a safety mechanism that temporarily suspends irradiation when an interlock condition is detected — such as dose rate exceeding tolerance, gantry or MLC position error, or flatness/symmetry deviation. Unlike a beam-off, a hold-off allows treatment to resume once the condition is corrected, without restarting the fraction.",
+    "difficulty": 5
+  },
+  {
+    "id": "linac206",
+    "section_id": "linac",
+    "question": "What does MLC stand for in radiation therapy?",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Modulated Linear Controller",
+      "Multi-Level Compensator",
+      "Magnetic Lens Calibrator"
+    ],
+    "answer": "Multi-Leaf Collimator",
+    "explanation": "MLC stands for Multi-Leaf Collimator. It consists of many individually motorized tungsten leaves that move in and out of the beam path to shape the radiation field to conform to the target volume.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac207",
+    "section_id": "linac",
+    "question": "What is the purpose of the flattening filter in a conventional linear accelerator?",
+    "choices": [
+      "To increase the energy of the photon beam",
+      "To produce a uniform dose distribution across the radiation field",
+      "To remove electron contamination from the beam",
+      "To collimate the beam into a rectangular shape"
+    ],
+    "answer": "To produce a uniform dose distribution across the radiation field",
+    "explanation": "The flattening filter is a conical metal filter (typically steel or tungsten alloy) placed in the photon beam path. It preferentially attenuates the central, higher-intensity portion of the forward-peaked bremsstrahlung beam to produce a more uniform (flat) dose profile across the treatment field.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac208",
+    "section_id": "linac",
+    "question": "What does the term 'beam energy' (e.g., 6 MV) refer to on a clinical linear accelerator?",
+    "choices": [
+      "The energy of the photons exiting the linac head",
+      "The peak kinetic energy of the electrons striking the target",
+      "The average energy deposited per fraction",
+      "The energy stored in the magnetron"
+    ],
+    "answer": "The peak kinetic energy of the electrons striking the target",
+    "explanation": "When a linac is described as producing a '6 MV' photon beam, the 6 MV refers to the peak kinetic energy (in MeV) of the accelerated electrons when they strike the bremsstrahlung target. The resulting photon beam is polyenergetic with a spectrum of energies up to that maximum, and an average energy roughly one-third of the peak.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac209",
+    "section_id": "linac",
+    "question": "Which component of a linear accelerator is responsible for bending the electron beam toward the target or patient?",
+    "choices": [
+      "The waveguide",
+      "The bending magnet",
+      "The flattening filter",
+      "The ion chamber"
+    ],
+    "answer": "The bending magnet",
+    "explanation": "The bending magnet uses a magnetic field to redirect the accelerated electron beam — typically through 90 or 270 degrees — so it travels downward toward the target (for photon mode) or scattering foil (for electron mode). The 270-degree achromatic bend also provides energy selection by focusing electrons of the correct energy.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac210",
+    "section_id": "linac",
+    "question": "What is the primary function of the monitor ionization chamber in a linac treatment head?",
+    "choices": [
+      "To generate the treatment beam",
+      "To measure the amount of radiation delivered in real time",
+      "To shape the radiation field",
+      "To filter low-energy photons from the beam"
+    ],
+    "answer": "To measure the amount of radiation delivered in real time",
+    "explanation": "The monitor ionization chamber is a transmission-type, sealed, dual-channel ion chamber located in the treatment head. It continuously measures the radiation output in real time and is calibrated in monitor units (MU). It terminates the beam when the prescribed number of MUs has been delivered.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac211",
+    "section_id": "linac",
+    "question": "What is the function of the primary collimator in a linear accelerator?",
+    "choices": [
+      "To shape the beam to match the tumor outline",
+      "To define the maximum circular field size emerging from the target",
+      "To remove electron contamination",
+      "To flatten the beam profile"
+    ],
+    "answer": "To define the maximum circular field size emerging from the target",
+    "explanation": "The primary collimator is a fixed tungsten block with a conical opening located close to the bremsstrahlung target. It defines the largest available circular beam and absorbs radiation emitted outside the useful treatment cone, serving as the first stage of beam collimation.",
+    "difficulty": 1
+  },
+  {
+    "id": "linac212",
+    "section_id": "linac",
+    "question": "A radiation oncology department is implementing sliding-window IMRT for head-and-neck treatments. During plan QA, they observe that decreasing the minimum MLC leaf gap from 2 mm to 0.5 mm improves dose conformity to the PTV but increases tongue-and-groove underdosage in overlap regions and extends beam-on time by 40%. Which combination of factors best explains this trade-off?",
+    "choices": [
+      "Smaller leaf gap increases leaf transmission and reduces scatter, improving conformity but causing cold spots at leaf sides",
+      "Smaller leaf gap allows finer fluence modulation and steeper dose gradients but increases interleaf leakage exposure time and delivery complexity",
+      "Smaller leaf gap reduces head scatter contribution and increases penumbra, causing underdosage at leaf junctions",
+      "Smaller leaf gap forces the optimizer to use fewer segments, reducing delivery time but degrading plan quality"
+    ],
+    "answer": "Smaller leaf gap allows finer fluence modulation and steeper dose gradients but increases interleaf leakage exposure time and delivery complexity",
+    "explanation": "Reducing the minimum leaf gap enables more modulated fluence maps with sharper gradients, improving target conformity. However, the tongue-and-groove effect — underdosage at the junction between adjacent leaf pairs — worsens because the total time leaves spend near-closed increases, amplifying the dosimetric impact of interleaf geometry. Longer delivery times also raise concerns for intrafraction motion and patient comfort.",
+    "difficulty": 9
+  },
+  {
+    "id": "linac213",
+    "section_id": "linac",
+    "question": "During VMAT delivery, the linac must simultaneously modulate gantry speed, dose rate, and MLC positions. If the dose rate servo cannot keep pace with the planned modulation at a particular control point, which cascading effect is most likely?",
+    "choices": [
+      "The gantry will reverse direction to compensate for the under-delivered MU",
+      "The gantry will slow or pause to allow the required MU to be delivered at that angular segment, potentially increasing treatment time and intrafraction motion risk",
+      "The MLC leaves will retract to a fully open position to increase fluence",
+      "The linac will automatically increase beam energy to compensate for the dose rate deficit"
+    ],
+    "answer": "The gantry will slow or pause to allow the required MU to be delivered at that angular segment, potentially increasing treatment time and intrafraction motion risk",
+    "explanation": "In VMAT, gantry speed, dose rate, and MLC positions are continuously optimized together. When the dose rate cannot reach the planned value (e.g., due to servo lag or beam loading limits), the control system reduces gantry speed so the correct MU is delivered per degree of arc. This preserves dosimetric accuracy but increases delivery time, which can degrade the geometric accuracy of treatment if the patient moves during the extended delivery.",
+    "difficulty": 9
+  },
+  {
+    "id": "linac214",
+    "section_id": "linac",
+    "question": "A physicist notices that a 6 MV FFF beam shows a significantly higher surface dose compared to the same energy flattened beam. When designing a whole-brain VMAT plan, which combination of beam physics and clinical considerations best explains why the FFF beam may be less suitable?",
+    "choices": [
+      "FFF beams have lower mean energy and higher electron contamination, leading to elevated skin dose that may exceed scalp tolerance, compounded by the large-field geometry of whole-brain treatments",
+      "FFF beams have higher mean energy and greater penetration, causing excessive dose to midline structures",
+      "FFF beams produce a narrower penumbra which makes field matching at the brain-spine junction more critical but has no effect on surface dose",
+      "FFF beams cannot be used with MLC-based collimation due to the non-uniform fluence profile"
+    ],
+    "answer": "FFF beams have lower mean energy and higher electron contamination, leading to elevated skin dose that may exceed scalp tolerance, compounded by the large-field geometry of whole-brain treatments",
+    "explanation": "Removing the flattening filter eliminates beam hardening in the central axis, resulting in a softer photon spectrum and more electron contamination reaching the patient surface. For whole-brain treatments requiring large fields, this increases skin dose substantially. The scalp has limited tolerance (~50 Gy conventional fractionation), and elevated surface dose from FFF beams can push doses above tolerance, causing alopecia or skin breakdown. Additionally, the peaked profile of FFF beams complicates field uniformity across the large PTV.",
+    "difficulty": 9
+  },
+  {
+    "id": "linac215",
+    "section_id": "linac",
+    "question": "A department is transitioning from 3D-CRT to IMRT for prostate treatments. The physicist must account for the fact that IMRT plans deliver more monitor units per fraction for the same prescribed dose. What is the most comprehensive clinical physics concern arising from this increase in MU?",
+    "choices": [
+      "Higher MU increases only the acoustic noise in the treatment room, reducing patient comfort",
+      "Higher MU increases whole-body leakage and scatter dose, raising the peripheral dose and associated secondary malignancy risk, which must be balanced against improved target conformity",
+      "Higher MU reduces the beam-on time because the dose rate is proportionally increased",
+      "Higher MU has no dosimetric consequence because the prescribed dose to the target remains the same"
+    ],
+    "answer": "Higher MU increases whole-body leakage and scatter dose, raising the peripheral dose and associated secondary malignancy risk, which must be balanced against improved target conformity",
+    "explanation": "IMRT achieves superior dose conformity through fluence modulation, but this typically requires 2-5 times more MU than 3D-CRT. The additional MU increases head leakage through the shielding and MLC, and increases patient scatter, both contributing to elevated peripheral dose. For prostate patients with long life expectancies, this elevated whole-body dose translates to a small but non-negligible increase in secondary cancer risk (estimated at 0.5-1% over a lifetime). This trade-off between conformity and peripheral dose must be considered, particularly for younger patients.",
+    "difficulty": 9
+  },
+  {
+    "id": "linac216",
+    "section_id": "linac",
+    "question": "When commissioning a new linac for stereotactic treatments, the physicist must characterize small-field output factors using specialized detectors. If a standard 0.125 cc Farmer chamber is used instead of a stereotactic diode for a 1 cm x 1 cm field, the measured output factor will be incorrect due to:",
+    "choices": [
+      "The Farmer chamber over-responds to low-energy scatter photons in small fields",
+      "Volume averaging across the non-uniform small-field profile and loss of lateral charged particle equilibrium cause the Farmer chamber to significantly underestimate the output factor",
+      "The Farmer chamber saturates at the high dose rates typical of small fields",
+      "The Farmer chamber overestimates the output factor because its long axis captures dose from adjacent fields"
+    ],
+    "answer": "Volume averaging across the non-uniform small-field profile and loss of lateral charged particle equilibrium cause the Farmer chamber to significantly underestimate the output factor",
+    "explanation": "In small fields (< 3 cm x 3 cm), two compounding effects degrade Farmer chamber measurements. First, the sensitive volume (6.7 mm long) averages over the rapidly varying dose profile, reducing the apparent central-axis dose. Second, in fields comparable to the lateral electron range, charged particle equilibrium is lost — the dose at the center is lower than in broad-beam conditions, and the large chamber volume samples regions of even lower dose. Together these effects cause substantial underestimation of the true output factor. IAEA TRS-483 recommends detector-specific correction factors and appropriate small detectors for these measurements.",
+    "difficulty": 9
+  },
+  {
+    "id": "linac217",
+    "section_id": "linac",
+    "question": "In a dual-energy linac capable of both 6 MV and 18 MV photon beams, switching from high to low energy involves changes in multiple interrelated subsystems. Which set of changes most completely describes the beam energy switching process?",
+    "choices": [
+      "Only the bending magnet current is adjusted; all other components remain identical",
+      "The RF power level, electron gun current, bending magnet current, and flattening filter carousel position are all adjusted to produce the appropriate electron energy and beam characteristics",
+      "Only the flattening filter is swapped; the electron energy remains the same for both beam qualities",
+      "The target is physically moved to a different position in the treatment head while beam parameters stay constant"
+    ],
+    "answer": "The RF power level, electron gun current, bending magnet current, and flattening filter carousel position are all adjusted to produce the appropriate electron energy and beam characteristics",
+    "explanation": "Energy switching on a dual-energy linac requires coordinated changes across multiple subsystems: the RF power and gun current are adjusted to change the electron beam energy, the bending magnet field strength is modified to correctly steer the new-energy electrons, and the flattening filter carousel rotates to place the energy-appropriate filter in the beam path. Each energy has a different forward-peaked bremsstrahlung distribution requiring a differently shaped filter. The beam steering and profile servos also adjust to maintain flatness and symmetry for the selected energy.",
+    "difficulty": 9
+  },
+  {
+    "id": "linac218",
+    "section_id": "linac",
+    "question": "A physicist is evaluating MLC performance using trajectory log files from a VMAT plan delivery. The logs reveal that the RMS positional error for leaf bank A is 0.4 mm and for leaf bank B is 0.3 mm, but several individual leaf pairs show maximum errors exceeding 2 mm during rapid transitions. How should this be interpreted in the context of both TG-142 tolerances and clinical dosimetric impact?",
+    "choices": [
+      "All values are within tolerance because TG-142 only specifies a 5 mm action limit for MLC leaves",
+      "The RMS errors meet the TG-142 IMRT tolerance of 1 mm, but the transient maximum errors may cause localized dose deviations in high-gradient regions; patient-specific QA should be reviewed",
+      "The maximum errors indicate the MLC controller is failing and the linac should be taken out of clinical service immediately",
+      "Trajectory log accuracy is insufficient for clinical decisions, so these data should be disregarded"
+    ],
+    "answer": "The RMS errors meet the TG-142 IMRT tolerance of 1 mm, but the transient maximum errors may cause localized dose deviations in high-gradient regions; patient-specific QA should be reviewed",
+    "explanation": "TG-142 recommends MLC leaf position accuracy of 1 mm for IMRT. The reported RMS values are well within tolerance. However, transient excursions >2 mm during rapid leaf transitions can cause localized dose errors, particularly in high-gradient regions where precise leaf positioning is critical. The clinical significance depends on where these errors occur relative to the target and OARs. Best practice is to correlate log file data with patient-specific QA measurements (e.g., gamma analysis) to determine if the delivery deviations produce clinically meaningful dose differences.",
+    "difficulty": 9
+  },
+  {
+    "id": "linac219",
+    "section_id": "linac",
+    "question": "A department wishes to commission SRS cone-based treatments on a new linac. During small-field output factor measurements, the physicist discovers that the ratio of stereotactic diode to microDiamond readings for the 5 mm cone differs by 8%. According to TRS-483 methodology, what is the correct approach to resolve this discrepancy?",
+    "choices": [
+      "Average the two detector readings and use the mean value without correction",
+      "Use only the Farmer chamber measurement as it is the gold standard for all field sizes",
+      "Apply detector-specific field output correction factors from TRS-483 to each detector's reading, then verify agreement; if discrepancies persist, add a third independent detector",
+      "Discard both readings and use the treatment planning system's calculated output factors instead"
+    ],
+    "answer": "Apply detector-specific field output correction factors from TRS-483 to each detector's reading, then verify agreement; if discrepancies persist, add a third independent detector",
+    "explanation": "TRS-483 (IAEA/AAPM code of practice for small-field dosimetry) provides field output correction factors that account for each detector's perturbation of the radiation field in small-field conditions. These corrections are applied as: OF = (M_det,small / M_det,ref) x k_fclin,fref. After applying the appropriate correction factors, the corrected output factors from different detectors should agree within ~2%. If they do not, the protocol recommends using a third independent detector to identify the outlier. Simply averaging uncorrected readings or using large-volume chambers would produce incorrect results.",
+    "difficulty": 9
+  },
+  {
+    "id": "linac220",
+    "section_id": "linac",
+    "question": "In a Monte Carlo simulation of a Varian TrueBeam treatment head, the physicist is modeling the 6 MV phase space. Which parameter has the largest impact on matching the simulated and measured percentage depth dose curves beyond d_max?",
+    "choices": [
+      "The spot size of the electron beam on the target",
+      "The mean energy and energy spread of the incident electron beam striking the target",
+      "The exact chemical composition of the ionization chamber used for measurement",
+      "The geometric tolerance of the primary collimator opening diameter"
+    ],
+    "answer": "The mean energy and energy spread of the incident electron beam striking the target",
+    "explanation": "In Monte Carlo treatment head simulations, the incident electron beam energy is the most sensitive parameter affecting the photon beam quality (and hence the PDD curve). A change of 0.1-0.2 MeV in mean electron energy produces measurable shifts in the PDD beyond d_max because it alters the bremsstrahlung spectrum — higher electron energy produces a harder photon spectrum with greater penetration. The energy spread affects the spectral width. The electron spot size primarily affects lateral profile characteristics (horns, penumbra) rather than depth-dose. Commissioning Monte Carlo models typically involves iterative tuning of incident electron energy to match measured PDD_10 or TPR_20/10.",
+    "difficulty": 10
+  },
+  {
+    "id": "linac221",
+    "section_id": "linac",
+    "question": "During an FMEA analysis of a linac interlock system, the team identifies a failure mode where the secondary dose monitoring channel (CH2) reads 3% lower than the primary channel (CH1) consistently. The RPN is scored as high. What is the most appropriate risk mitigation strategy?",
+    "choices": [
+      "Recalibrate CH2 to match CH1 and continue clinical use, since the primary channel is sufficient for safety",
+      "Investigate the root cause (potential chamber seal degradation, electrometer drift, or collection efficiency change), perform independent absolute calibration of both channels, and implement tighter daily constancy check tolerances until resolved",
+      "Disable CH2 and rely solely on CH1 since redundancy is not strictly required by regulations",
+      "Increase the CH2 calibration factor by 3% in software to eliminate the discrepancy"
+    ],
+    "answer": "Investigate the root cause (potential chamber seal degradation, electrometer drift, or collection efficiency change), perform independent absolute calibration of both channels, and implement tighter daily constancy check tolerances until resolved",
+    "explanation": "A consistent 3% discrepancy between monitor chambers signals a systematic issue requiring root cause analysis. Possible causes include seal degradation allowing humidity ingress (changing collection efficiency), electrometer gain drift, or radiation damage to the chamber. FMEA methodology requires addressing the root cause — not just masking the symptom with a calibration adjustment. Both channels must be independently verified against an absolute standard (calibrated ion chamber at reference conditions). Until the cause is identified and corrected, enhanced surveillance (tighter daily constancy checks) reduces the residual risk. Simply disabling CH2 eliminates the redundant safety system that protects against CH1 failures.",
+    "difficulty": 10
+  },
+  {
+    "id": "linac222",
+    "section_id": "linac",
+    "question": "According to TG-142, what is the recommended tolerance for coincidence of radiation and mechanical isocenter for machines used for stereotactic radiosurgery (SRS)?",
+    "choices": [
+      "2 mm diameter",
+      "1 mm diameter",
+      "0.75 mm diameter",
+      "0.5 mm diameter"
+    ],
+    "answer": "1 mm diameter",
+    "explanation": "TG-142 specifies that for SRS-capable linacs, the radiation isocenter must coincide with the mechanical isocenter within a sphere of 1 mm diameter. This is tighter than the 2 mm diameter tolerance for non-SRS machines. This tolerance encompasses all gantry, collimator, and couch rotation-induced isocenter walkout. The Winston-Lutz test is the standard method for verifying this parameter, typically performed monthly for SRS linacs. Some modern linacs achieve sub-0.5 mm coincidence through precision bearings and active feedback systems.",
+    "difficulty": 10
+  },
+  {
+    "id": "linac223",
+    "section_id": "linac",
+    "question": "When developing an uncertainty budget for linac photon beam commissioning following TG-106 recommendations, which component typically contributes the largest Type B (systematic) uncertainty to measured beam data?",
+    "choices": [
+      "Electrometer reading noise",
+      "Water phantom positional accuracy and detector alignment relative to the beam central axis",
+      "Room temperature fluctuation during scanning",
+      "Timer resolution of the linac control system"
+    ],
+    "answer": "Water phantom positional accuracy and detector alignment relative to the beam central axis",
+    "explanation": "TG-106 identifies detector positioning as typically the dominant Type B uncertainty in commissioning measurements. Water phantom positional accuracy (typically 0.5-1 mm) directly affects measured depth doses, profiles, and output factors — particularly in high-gradient regions like the penumbra and buildup zone where a 1 mm shift can cause >5% dose difference. Alignment of the detector to the beam central axis affects profile symmetry measurements. This geometric uncertainty exceeds the contribution from electrometer precision (~0.1%), temperature effects (correctable), and timer resolution (negligible for typical beam-on times). Rigorous commissioning protocols require careful mechanical alignment verification before data acquisition.",
+    "difficulty": 10
+  },
+  {
+    "id": "linac224",
+    "section_id": "linac",
+    "question": "In Monte Carlo modeling of photon transport through the linac treatment head, the variance reduction technique of directional bremsstrahlung splitting (DBS) is preferred over uniform bremsstrahlung splitting (UBS) because:",
+    "choices": [
+      "DBS produces fewer particles, reducing computation time without affecting accuracy",
+      "DBS selectively splits bremsstrahlung photons directed toward the field of interest, greatly improving statistical efficiency for clinically relevant fluence while avoiding particle weight imbalances at large splitting numbers",
+      "DBS eliminates the need to model the flattening filter entirely",
+      "DBS is required by TG-157 for all clinical Monte Carlo dose calculations"
+    ],
+    "answer": "DBS selectively splits bremsstrahlung photons directed toward the field of interest, greatly improving statistical efficiency for clinically relevant fluence while avoiding particle weight imbalances at large splitting numbers",
+    "explanation": "Directional bremsstrahlung splitting (DBS), implemented in BEAMnrc/EGSnrc, splits bremsstrahlung photons only when they are directed toward a user-defined field radius at a reference plane (typically the SSD plane). Photons directed outside this region are not split, saving computational resources. Compared to UBS, where all bremsstrahlung photons are split uniformly regardless of direction, DBS achieves equivalent statistical precision in the region of clinical interest with significantly fewer histories. DBS also avoids the fat-photon artifact and weight imbalance problems that arise with large UBS splitting numbers, providing more efficient and reliable phase-space generation for treatment head simulations.",
+    "difficulty": 10
+  },
+  {
+    "id": "linac225",
+    "section_id": "linac",
+    "question": "A physicist is performing annual TG-142 quality assurance on an SRS-capable linac. The picket fence test for MLC reveals that the average leaf position error is 0.3 mm, but one leaf pair consistently shows a 0.8 mm offset. According to TG-142 recommendations, what is the appropriate action?",
+    "choices": [
+      "No action needed since 0.8 mm is within the standard 1 mm tolerance for all clinical techniques",
+      "The individual leaf requires recalibration since it exceeds the IMRT/SRS action level of 0.5 mm even though the average is acceptable; SRS treatments using that leaf pair region should be held pending correction",
+      "Replace the entire MLC assembly because one leaf failure indicates systemic mechanical wear",
+      "Adjust the treatment planning system to account for the 0.8 mm offset instead of correcting the hardware"
+    ],
+    "answer": "The individual leaf requires recalibration since it exceeds the IMRT/SRS action level of 0.5 mm even though the average is acceptable; SRS treatments using that leaf pair region should be held pending correction",
+    "explanation": "TG-142 specifies an MLC leaf position accuracy tolerance of 1 mm for IMRT and tighter thresholds for SRS. While the overall average (0.3 mm) is excellent, individual leaf performance matters — particularly for SRS where small-field conformity depends on precise leaf positioning. A consistent 0.8 mm offset on one leaf pair exceeds the typical SRS action level of 0.5 mm and will degrade dose conformity for targets shaped by that leaf pair. The leaf requires mechanical or software recalibration. SRS plans utilizing that leaf pair region should be evaluated or held until correction is verified. Population statistics (averages) can mask individual leaf outliers that affect specific patients.",
+    "difficulty": 10
+  }
+]

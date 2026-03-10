@@ -218,7 +218,7 @@ export function getSoloOpponentRating(
 
   return {
     rating: Math.round(opponentRating),
-    rd: 250, // High uncertainty for synthetic opponents
+    rd: 150, // Moderate uncertainty — steadier rating progression
   };
 }
 

@@ -12,6 +12,15 @@ type Phase = "playing" | "submitting" | "results";
 const CLUE_COUNT = 10;
 const TIME_PER_CLUE = 90;
 
+/** Extract clue type + first letter as a safe hint (no answer revealed) */
+function getSafeHint(clue: CrypticClue): string {
+  const wp = clue.wordplay;
+  const colonIdx = wp.indexOf(":");
+  const clueType = colonIdx > 0 ? wp.slice(0, colonIdx).trim() : "Cryptic";
+  const firstLetter = clue.answer[0];
+  return `${clueType} — starts with "${firstLetter}"`;
+}
+
 interface RoundResult {
   points_earned: number;
   fire_multiplier: number;
@@ -330,7 +339,7 @@ function TournamentCrypticPage({
             showHint ? "text-[#be185d]" : "text-text-dim hover:text-text-secondary"
           }`}
         >
-          {showHint ? clue.wordplay : "Show hint"}
+          {showHint ? getSafeHint(clue) : "Show hint"}
         </button>
       )}
 

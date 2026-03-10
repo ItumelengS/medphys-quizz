@@ -150,10 +150,10 @@ export default function ReactionRoundsPage() {
       );
       setPoints((p) => p + earned);
 
-      // Quick flash then next round
+      // Brief reveal of values then next round
       setTimeout(() => {
         nextRound(round + 1);
-      }, 300);
+      }, 800);
     } else {
       // Death
       setTimeout(() => {
@@ -241,7 +241,7 @@ export default function ReactionRoundsPage() {
           <h1 className="text-4xl font-black text-[#f97316] mb-2">REACTION ROUNDS</h1>
           <div className="w-16 h-1 bg-[#f97316] mx-auto mb-4" />
           <p className="text-text-secondary text-sm font-light mb-6 max-w-xs">
-            Two values appear. Tap the higher or lower one before time runs out.
+            Two items appear — you must know which value is higher or lower from memory. One wrong = game over.
             One wrong answer = game over.
           </p>
 
@@ -416,11 +416,12 @@ export default function ReactionRoundsPage() {
               <div className="text-text-primary font-bold text-base text-center px-3 leading-tight">
                 {value.label}
               </div>
-              {/* Show the numeric value — this is a speed game, not recall */}
-              <div className="font-mono text-3xl font-black text-[#f97316] mt-3">
-                {value.value}
-              </div>
-              <div className="text-text-dim text-xs mt-1">{value.unit}</div>
+              {/* Only reveal the value after answering */}
+              {flashResult && selectedSide && (
+                <div className="font-mono text-2xl font-black text-[#f97316] mt-3 animate-fade-up">
+                  {value.value} {value.unit}
+                </div>
+              )}
             </button>
           );
         })}

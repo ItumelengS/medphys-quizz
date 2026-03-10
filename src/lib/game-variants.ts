@@ -150,15 +150,15 @@ export const VARIANT_CONFIGS: Record<GameVariant, VariantConfig> = {
     id: "reaction-rounds",
     name: "Reaction Rounds",
     icon: "⚡",
-    description: "Two values flash on screen. Tap the higher or lower one before time runs out. One wrong = game over.",
+    description: "Two items appear — recall which value is higher or lower. Numbers are hidden. One wrong = game over.",
     color: "#f97316",
     xpMultiplier: 1.8,
     rules: [
-      "Two values appear — tap the higher or lower one",
+      "Two items appear — you must know the values from memory",
       "Timer shrinks each round (5s → 2s)",
       "One wrong tap or timeout = game over",
+      "Values are revealed after each answer so you learn",
       "Role selector biases categories to your discipline",
-      "Speed bonus: faster taps = more points",
     ],
   },
 };

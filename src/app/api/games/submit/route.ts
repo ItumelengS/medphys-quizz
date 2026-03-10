@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
   const body = (await req.json()) as GameSubmission;
   const { variant, answers, score, total, points, bestStreak, section, sectionName, durationSeconds, metadata } = body;
 
-  if (!["sudden-death", "sprint", "crossword", "match", "blitz", "wordle", "connections", "cryptic"].includes(variant)) {
+  if (!["sudden-death", "sprint", "crossword", "match", "blitz", "wordle", "connections", "cryptic", "hot-seat"].includes(variant)) {
     return NextResponse.json({ error: "Invalid variant" }, { status: 400 });
   }
 
@@ -103,9 +103,10 @@ export async function POST(req: NextRequest) {
     wrongDifficulties = (wrongQs || []).map((q) => q.difficulty);
   }
 
-  const { xpChange, penalized } = calculateXpWithPenalty(
-    score, total, xpResult.totalXp, confirmedLevel, wrongDifficulties
-  );
+  // Hot-seat: skip penalty (prize ladder already reflects performance, total=15 is misleading)
+  const { xpChange, penalized } = variant === "hot-seat"
+    ? { xpChange: xpResult.totalXp, penalized: false }
+    : calculateXpWithPenalty(score, total, xpResult.totalXp, confirmedLevel, wrongDifficulties);
 
   // 3. Apply XP change (handles penalty + level demotion)
   const { newXp, demoted, newConfirmedLevel } = await applyXpChange(userId, xpChange);
@@ -147,7 +148,7 @@ export async function POST(req: NextRequest) {
     score,
     total,
     points,
-    xp_earned: xpResult.totalXp,
+    xp_earned: xpChange,
     best_streak: bestStreak,
     duration_seconds: durationSeconds || null,
     metadata: metadata || {},

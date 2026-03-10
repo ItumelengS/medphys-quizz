@@ -217,7 +217,7 @@ export default function BlitzPage() {
     const finalPoints = Math.max(0, calculateBlitzScore(correct, wrong, bestStreak));
     const xpResult = calculateXp(finalPoints, "blitz", correct, correct + wrong, 0);
 
-    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
+    let responseData: { xpChange?: number; penalized?: boolean; ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
       const res = await fetch("/api/games/submit", {
         method: "POST",
@@ -244,11 +244,9 @@ export default function BlitzPage() {
     }
 
     const blitzTotal = correct + wrong;
-    const blitzAccuracy = blitzTotal > 0 ? correct / blitzTotal : 0;
-    const blitzPenalized = blitzAccuracy < 0.7;
-    const blitzXpChange = blitzPenalized
-      ? -Math.ceil((0.7 - blitzAccuracy) * blitzTotal * 12)
-      : xpResult.totalXp;
+    // Use server response for accurate XP (includes ELO-weighted penalties)
+    const blitzXpChange = responseData?.xpChange ?? xpResult.totalXp;
+    const blitzPenalized = responseData?.penalized ?? false;
 
     const resultParams = new URLSearchParams({
       score: correct.toString(),

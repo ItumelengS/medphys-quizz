@@ -239,7 +239,7 @@ export default function SuddenDeathPage() {
 
     const xpResult = calculateXp(finalPoints, "sudden-death", finalScore, finalTotal, 0);
 
-    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
+    let responseData: { xpChange?: number; penalized?: boolean; ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
       const res = await fetch("/api/games/submit", {
         method: "POST",
@@ -267,11 +267,9 @@ export default function SuddenDeathPage() {
       try { responseData = await res.json(); } catch {}
     }
 
-    const sdAccuracy = finalTotal > 0 ? finalScore / finalTotal : 0;
-    const sdPenalized = sdAccuracy < 0.7;
-    const sdXpChange = sdPenalized
-      ? -Math.ceil((0.7 - sdAccuracy) * finalTotal * 12)
-      : xpResult.totalXp;
+    // Use server response for accurate XP (server skips penalty for sudden-death)
+    const sdXpChange = responseData?.xpChange ?? xpResult.totalXp;
+    const sdPenalized = responseData?.penalized ?? false;
 
     const resultParams = new URLSearchParams({
       score: finalScore.toString(),

@@ -106,13 +106,15 @@ export async function POST(
     return NextResponse.json({ error: error.message }, { status: isRoundLimit ? 400 : 500 });
   }
 
-  // Award XP
+  // Award XP (reduced to 1/10 if below 70% accuracy to discourage farming)
   const pointsEarned = result?.base_points || 0;
   const xpResult = calculateXp(pointsEarned, "arena", wordsCompleted, totalWords, 0);
+  const arenaAccuracy = totalWords > 0 ? wordsCompleted / totalWords : 0;
+  const arenaXp = arenaAccuracy < 0.7 ? Math.floor(xpResult.totalXp / 10) : xpResult.totalXp;
 
   await supabase.rpc("increment_xp", {
     p_user_id: userId,
-    p_amount: xpResult.totalXp,
+    p_amount: arenaXp,
   });
 
   // Update variant rating (Glicko-2)

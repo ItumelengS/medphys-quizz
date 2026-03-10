@@ -169,10 +169,12 @@ export async function POST(
   // Award XP
   const pointsEarned = result?.base_points || 0;
   const xpResult = calculateXp(pointsEarned, "arena", score, total, 0);
+  const arenaAccuracy = total > 0 ? score / total : 0;
+  const arenaXp = arenaAccuracy < 0.7 ? Math.floor(xpResult.totalXp / 10) : xpResult.totalXp;
 
   await supabase.rpc("increment_xp", {
     p_user_id: userId,
-    p_amount: xpResult.totalXp,
+    p_amount: arenaXp,
   });
 
   // Return result + explanations

@@ -97,7 +97,7 @@ export async function POST(
 
   await supabase.rpc("increment_xp", {
     p_user_id: userId,
-    p_amount: xpResult.totalXp,
+    p_amount: xpResult.totalXp,  // match always 100% accuracy (all pairs completed)
   });
 
   // Update variant rating (Glicko-2)

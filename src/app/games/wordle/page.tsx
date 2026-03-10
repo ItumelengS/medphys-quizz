@@ -203,7 +203,7 @@ export default function WordlePage() {
     const points = calculateWordleScore(solved, currentRow, hintUsed, wordData.length);
     const xpResult = calculateXp(points, "wordle", solved ? 1 : 0, 1, 0);
 
-    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
+    let responseData: { xpChange?: number; penalized?: boolean; ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
       const res = await fetch("/api/games/submit", {
         method: "POST",
@@ -244,11 +244,11 @@ export default function WordlePage() {
       section: wordData.category,
       sectionName: `Wordle — ${wordData.category}`,
       mode: "wordle",
-      xp: xpResult.totalXp.toString(),
+      xp: (responseData?.xpChange ?? xpResult.totalXp).toString(),
       baseXp: xpResult.baseXp.toString(),
       bonusXp: xpResult.bonusXp.toString(),
       perfectBonus: xpResult.perfectBonusXp.toString(),
-      penalized: "0",
+      penalized: responseData?.penalized ? "1" : "0",
     });
     if (responseData?.ratingUpdate) {
       resultParams.set("ratingNew", responseData.ratingUpdate.newRating.toString());

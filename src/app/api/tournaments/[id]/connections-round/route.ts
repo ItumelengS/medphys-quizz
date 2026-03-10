@@ -81,10 +81,12 @@ export async function POST(
 
     const pointsEarned = result?.base_points || 0;
     const xpResult = calculateXp(pointsEarned, "arena", score, 4, 0);
+    const arenaAccuracy = score / 4;
+    const arenaXp = arenaAccuracy < 0.7 ? Math.floor(xpResult.totalXp / 10) : xpResult.totalXp;
 
     await supabase.rpc("increment_xp", {
       p_user_id: userId,
-      p_amount: xpResult.totalXp,
+      p_amount: arenaXp,
     });
 
     // Update variant rating (Glicko-2)

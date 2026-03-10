@@ -182,13 +182,15 @@ export async function POST(
     });
   }
 
-  // Award XP
+  // Award XP — use hot-seat mode with prize points (not arena multiplier)
+  // Low prize = poor performance → reduced XP (below $1,000 safe haven)
   const pointsEarned = result?.base_points || 0;
-  const xpResult = calculateXp(pointsEarned, "arena", correctCount, 15, 0);
+  const xpResult = calculateXp(prizePoints, "hot-seat", correctCount, 15, 0);
+  const arenaXp = prizePoints < 1000 ? Math.floor(xpResult.totalXp / 10) : xpResult.totalXp;
 
   await supabase.rpc("increment_xp", {
     p_user_id: userId,
-    p_amount: xpResult.totalXp,
+    p_amount: arenaXp,
   });
 
   // Update variant rating (Glicko-2)

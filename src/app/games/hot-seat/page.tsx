@@ -270,7 +270,7 @@ export default function HotSeatPage() {
     const finalScore = correctCount;
     const xpResult = calculateXp(finalPrize, "hot-seat", finalScore, TOTAL_QUESTIONS, 0);
 
-    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
+    let responseData: { xpChange?: number; penalized?: boolean; ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
       const res = await fetch("/api/games/submit", {
         method: "POST",
@@ -299,11 +299,9 @@ export default function HotSeatPage() {
       try { responseData = await res.json(); } catch {}
     }
 
-    const accuracy = TOTAL_QUESTIONS > 0 ? finalScore / TOTAL_QUESTIONS : 0;
-    const penalized = accuracy < 0.7;
-    const xpChange = penalized
-      ? -Math.ceil((0.7 - accuracy) * TOTAL_QUESTIONS * 12)
-      : xpResult.totalXp;
+    // Use server response for accurate XP; hot-seat skips penalty
+    const xpChange = responseData?.xpChange ?? xpResult.totalXp;
+    const penalized = responseData?.penalized ?? false;
 
     const resultParams = new URLSearchParams({
       score: finalScore.toString(),

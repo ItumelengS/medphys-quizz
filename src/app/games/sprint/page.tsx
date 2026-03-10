@@ -146,7 +146,7 @@ export default function SprintPage() {
     const finalPoints = calculateSprintScore(correct, wrong, timeRef.current);
     const xpResult = calculateXp(Math.max(0, finalPoints), "sprint", correct, correct + wrong, 0);
 
-    let responseData: { ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
+    let responseData: { xpChange?: number; penalized?: boolean; ratingUpdate?: { newRating: number; ratingDelta: number } } | undefined;
     if (session?.user?.id) {
       const res = await fetch("/api/games/submit", {
         method: "POST",
@@ -177,11 +177,9 @@ export default function SprintPage() {
     }
 
     const sprintTotal = correct + wrong;
-    const sprintAccuracy = sprintTotal > 0 ? correct / sprintTotal : 0;
-    const sprintPenalized = sprintAccuracy < 0.7;
-    const sprintXpChange = sprintPenalized
-      ? -Math.ceil((0.7 - sprintAccuracy) * sprintTotal * 12)
-      : xpResult.totalXp;
+    // Use server response for accurate XP (includes ELO-weighted penalties)
+    const sprintXpChange = responseData?.xpChange ?? xpResult.totalXp;
+    const sprintPenalized = responseData?.penalized ?? false;
 
     const resultParams = new URLSearchParams({
       score: correct.toString(),

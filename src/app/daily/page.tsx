@@ -185,6 +185,27 @@ export default function DailyPage() {
       ? -Math.ceil((0.7 - dailyAccuracy) * questions.length * 12)
       : xpResult.totalXp;
 
+    // Save wrong answers to sessionStorage for review
+    const allAnswers = answers.concat([]);
+    const wrongAnswers = allAnswers
+      .filter((a) => !a.correct)
+      .map((a) => {
+        const q = questions.find((q) => q.id === a.questionId);
+        return q
+          ? {
+              question: q.question,
+              answer: q.answer,
+              selectedAnswer: a.selectedAnswer || "(timed out)",
+              explanation: q.explanation,
+              choices: q.choices,
+            }
+          : null;
+      })
+      .filter(Boolean);
+    try {
+      sessionStorage.setItem("wrongAnswers", JSON.stringify(wrongAnswers));
+    } catch { /* ignore storage errors */ }
+
     const resultParams = new URLSearchParams({
       score: score.toString(),
       total: questions.length.toString(),

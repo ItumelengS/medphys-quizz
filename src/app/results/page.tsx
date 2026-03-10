@@ -225,6 +225,14 @@ function ResultsContent() {
         >
           Play Again
         </Link>
+        {score < total && (
+          <Link
+            href="/results/review"
+            className="block w-full text-center py-3.5 rounded-none font-bold text-bauhaus-red border-2 border-bauhaus-red hover:bg-bauhaus-red/10 transition-all active:scale-95"
+          >
+            Review Wrong Answers
+          </Link>
+        )}
         <Link
           href="/"
           className="block w-full text-center py-3.5 rounded-none font-bold text-text-primary border-2 border-surface-border hover:bg-surface transition-all active:scale-95"

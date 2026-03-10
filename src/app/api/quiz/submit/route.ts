@@ -5,6 +5,7 @@ import { calculateXp, calculateXpWithPenalty } from "@/lib/scoring";
 import { applyXpChange } from "@/lib/apply-xp";
 import { updateQuestionRecord, createQuestionRecord } from "@/lib/spaced-repetition";
 import { parseInventory, awardPowerUp } from "@/lib/powerups";
+import { updateWeeklyChallengeProgress } from "@/lib/update-challenges";
 
 interface AnswerPayload {
   questionId: string;
@@ -210,6 +211,21 @@ export async function POST(req: NextRequest) {
       .eq("id", userId);
   }
 
+  // 8. Update weekly challenge progress
+  let challengeResult = { bonusXp: 0, completedChallengeIds: [] as string[] };
+  try {
+    challengeResult = await updateWeeklyChallengeProgress(supabase, userId, {
+      variant: mode,
+      score,
+      total,
+      points,
+      bestStreak,
+      section,
+    });
+  } catch (e) {
+    console.error("Weekly challenge update failed (non-fatal):", e);
+  }
+
   return NextResponse.json({
     xp: xpResult,
     xpChange,
@@ -219,6 +235,8 @@ export async function POST(req: NextRequest) {
     newTotalXp: newXp,
     dailyStreak,
     awardedPowerUps,
+    challengeBonusXp: challengeResult.bonusXp,
+    completedChallenges: challengeResult.completedChallengeIds,
   });
   } catch (error) {
     console.error("POST /api/quiz/submit error:", error);

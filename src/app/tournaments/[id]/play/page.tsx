@@ -195,6 +195,26 @@ export default function TournamentPlayPage({
     setIsFinished(true);
     setSubmitting(true);
 
+    // Save wrong answers to sessionStorage for review
+    const wrongAnswers = answersLog
+      .filter((a) => {
+        const q = questions.find((q) => q.id === a.questionId);
+        return q && a.selectedAnswer !== q.answer;
+      })
+      .map((a) => {
+        const q = questions.find((q) => q.id === a.questionId)!;
+        return {
+          question: q.question,
+          answer: q.answer,
+          selectedAnswer: a.selectedAnswer || "(timed out)",
+          explanation: q.explanation,
+          choices: q.choices,
+        };
+      });
+    try {
+      sessionStorage.setItem("wrongAnswers", JSON.stringify(wrongAnswers));
+    } catch { /* ignore storage errors */ }
+
     // Send selected answers — server re-validates correctness & caps time bonus
     const res = await fetch(`/api/tournaments/${id}/round`, {
       method: "POST",

@@ -3,14 +3,14 @@
     "id": "srt100",
     "section_id": "srt",
     "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
-    "answer": "To verify the coincidence of radiation and mechanical isocenters",
+    "answer": "To verify the mechanical isocenter alignment",
     "choices": [
-      "To verify the coincidence of radiation and mechanical isocenters",
-      "To measure small field output factors for beam commissioning",
-      "To calibrate the treatment planning system dose calculations",
-      "To assess multi-leaf collimator positional accuracy during treatment"
+      "To verify the mechanical isocenter alignment",
+      "To measure beam flatness and symmetry",
+      "To calibrate the treatment planning system",
+      "To validate the dose rate accuracy"
     ],
-    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter, which is critical for stereotactic accuracy. This is referenced in TG-142 and TG-135.",
+    "explanation": "The Winston-Lutz test uses a ball bearing to verify that the mechanical and radiation isocenters coincide, which is critical for stereotactic accuracy as described in TG-142.",
     "difficulty": 1,
     "disciplines": [
       "physicist"
@@ -19,15 +19,15 @@
   {
     "id": "srt101",
     "section_id": "srt",
-    "question": "Which TG report specifically addresses small field dosimetry protocols and recommendations?",
-    "answer": "TG-155",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
     "choices": [
-      "TG-101",
-      "TG-135",
-      "TG-142",
-      "TG-155"
+      "Stereotactic Radiosurgery",
+      "Surface Radiation Surgery",
+      "Selective Radiation System",
+      "Structural Radiation Shielding"
     ],
-    "explanation": "TG-155 provides comprehensive guidance on small field dosimetry, including detector selection, measurement protocols, and correction factors for fields smaller than 4 cm × 4 cm.",
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a high-precision technique that delivers a large dose in a single fraction to small, well-defined targets.",
     "difficulty": 1,
     "disciplines": [
       "physicist"
@@ -36,15 +36,15 @@
   {
     "id": "srt102",
     "section_id": "srt",
-    "question": "What does SBRT stand for in radiation therapy terminology?",
-    "answer": "Stereotactic Body Radiation Therapy",
+    "question": "Which detector type is specifically recommended by TG-155 for small field dosimetry?",
+    "answer": "Synthetic diamond detectors",
     "choices": [
-      "Stereotactic Body Radiation Therapy",
-      "Small Beam Radiation Treatment",
-      "Single Beam Radiosurgery Technique",
-      "Stereotactic Brain Radiation Therapy"
+      "Synthetic diamond detectors",
+      "Large volume ion chambers",
+      "Standard film dosimeters",
+      "Thermoluminescent dosimeters"
     ],
-    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which delivers high-dose radiation to extracranial targets using stereotactic techniques with precise positioning and immobilization.",
+    "explanation": "TG-155 specifically recommends synthetic diamond detectors for small field dosimetry due to their water-equivalent properties and minimal volume averaging effects.",
     "difficulty": 1,
     "disciplines": [
       "physicist"
@@ -53,15 +53,270 @@
   {
     "id": "srt103",
     "section_id": "srt",
-    "question": "What is the defining characteristic of the Gamma Knife radiosurgery system?",
-    "answer": "Uses multiple fixed cobalt-60 sources arranged in a helmet configuration",
+    "question": "What is the primary radiation source in a standard Leksell Gamma Knife unit?",
+    "answer": "Cobalt-60",
     "choices": [
-      "Uses multiple fixed cobalt-60 sources arranged in a helmet configuration",
-      "Employs a robotic arm to deliver beams from any angle",
-      "Utilizes micro-MLCs mounted on a standard linear accelerator gantry",
-      "Features interchangeable collimator cones for different field sizes"
+      "Cobalt-60",
+      "Cesium-137",
+      "Iridium-192",
+      "Technetium-99m"
     ],
-    "explanation": "The Gamma Knife system uses approximately 200 fixed cobalt-60 sources arranged in a hemispherical helmet configuration that focuses radiation to a precise target point.",
+    "explanation": "The Leksell Gamma Knife uses multiple Cobalt-60 sources arranged in a hemispherical array to focus gamma rays on the target volume with high precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 mm at isocenter",
+    "choices": [
+      "2.5 mm at isocenter",
+      "5.0 mm at isocenter",
+      "10.0 mm at isocenter",
+      "1.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5 mm projected at isocenter, providing improved conformality compared to standard 5-10 mm MLCs for small target volumes.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the minimum recommended frequency for Winston-Lutz testing?",
+    "answer": "Monthly for routine QA",
+    "choices": [
+      "Monthly for routine QA",
+      "Weekly for routine QA",
+      "Daily for routine QA",
+      "Annually for routine QA"
+    ],
+    "explanation": "TG-135 recommends monthly Winston-Lutz testing as part of routine QA programs for stereotactic systems to ensure continued mechanical accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by the CyberKnife system for real-time patient positioning?",
+    "answer": "Orthogonal kV imaging systems",
+    "choices": [
+      "Orthogonal kV imaging systems",
+      "Infrared surface monitoring",
+      "Electromagnetic transponders",
+      "Ultrasound guidance systems"
+    ],
+    "explanation": "The CyberKnife system uses two orthogonal kV imaging systems to track patient position in real-time by comparing live images to reference DRRs.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam with 1 cm × 1 cm field shows 15% dose reduction compared to reference conditions. The small field correction factor is 1.08 for the detector used. Considering lateral electronic equilibrium loss and detector response corrections, what is the primary cause of the remaining dose deficit?",
+    "answer": "Head scatter reduction due to limited source occlusion",
+    "choices": [
+      "Head scatter reduction due to limited source occlusion",
+      "Increased phantom scatter from small volume",
+      "Detector over-response in high gradient regions",
+      "Beam hardening effects in small fields"
+    ],
+    "explanation": "After correcting for detector response (1.08 factor), the remaining ~7% deficit is primarily due to reduced head scatter as the small field limits the portion of the treatment head 'seen' by the measurement point, as detailed in TG-155.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During VMAT-based SRS commissioning, leaf positional errors of 0.3 mm are detected using Winston-Lutz analysis. The treatment uses 5 mm margins around a 8 mm target. What is the most critical dosimetric impact requiring immediate intervention?",
+    "answer": "Systematic cold spots in target coverage",
+    "choices": [
+      "Systematic cold spots in target coverage",
+      "Increased integral dose to normal tissue",
+      "Enhanced penumbra width degrading conformity",
+      "Reduced treatment delivery efficiency"
+    ],
+    "explanation": "With 0.3 mm leaf errors and only 5 mm margins around an 8 mm target, systematic underdosage of target periphery becomes the primary concern, potentially compromising tumor control probability in stereotactic treatments where margins are minimal.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A cone-based SRS system shows 8% output variation between morning and afternoon measurements using identical 15 mm cones. Temperature logs show 2°C variation. Which system component requires immediate investigation based on TG-135 protocols?",
+    "answer": "Linear accelerator magnetron temperature stability",
+    "choices": [
+      "Linear accelerator magnetron temperature stability",
+      "Treatment couch mechanical positioning",
+      "Room air pressure compensation system",
+      "Dosimetry equipment temperature correction"
+    ],
+    "explanation": "An 8% output variation with only 2°C temperature change suggests magnetron instability, which can significantly affect dose rate and beam energy. TG-135 emphasizes investigating accelerator components first when large output variations occur with small environmental changes.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Multi-leaf collimator modeling for 3 mm leaf width shows systematic 12% dose overestimation in valleys between 1 cm separated targets during IMRT-based SRS. What is the most likely modeling deficiency requiring algorithm refinement?",
+    "answer": "Inadequate leaf transmission and penumbra modeling",
+    "choices": [
+      "Inadequate leaf transmission and penumbra modeling",
+      "Insufficient phantom scatter calculation methods",
+      "Incorrect tissue heterogeneity correction factors",
+      "Improper beam energy spectrum representation"
+    ],
+    "explanation": "Systematic overestimation in valleys between targets suggests the treatment planning system is not accurately modeling leaf transmission and penumbra, which becomes critical with narrow 3 mm leaves where leakage and penumbra effects are proportionally larger.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo commissioning of a 6 FFF beam for stereotactic applications requires modeling the flattening filter-free spectrum. Given a measured %dd(10)x of 67.2% and TPR20,10 of 0.688, what is the primary Monte Carlo parameter requiring iterative adjustment to match small field measurements?",
+    "answer": "Initial electron beam energy spectrum width",
+    "choices": [
+      "Initial electron beam energy spectrum width",
+      "Target material composition and density",
+      "Primary collimator aperture dimensions",
+      "Monitor chamber backscatter correction"
+    ],
+    "explanation": "For FFF beams, the initial electron energy spectrum width is critical for accurate Monte Carlo modeling, especially in small fields where beam hardening effects are more pronounced. The measured beam quality indices suggest fine-tuning of the energy spectrum is needed.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Uncertainty budget analysis for small field output factors shows Type A uncertainties of 1.2% and detector positioning contributes 0.8% Type B uncertainty. If the coverage factor is k=2 for 95% confidence, what is the combined standard uncertainty for clinical implementation?",
+    "answer": "1.44% combined standard uncertainty",
+    "choices": [
+      "1.44% combined standard uncertainty",
+      "2.88% expanded measurement uncertainty",
+      "2.00% total systematic uncertainty",
+      "0.96% statistical measurement precision"
+    ],
+    "explanation": "Combined standard uncertainty = √(1.2² + 0.8²) = √(1.44 + 0.64) = √2.08 = 1.44%. This represents the combined Type A and Type B uncertainties before applying the coverage factor for expanded uncertainty reporting.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "FMEA analysis for CyberKnife treatments identifies kV imaging system failure during treatment. The RPN score is calculated as Severity=8, Occurrence=3, Detection=4. What is the calculated Risk Priority Number requiring process improvement?",
+    "answer": "96 requiring immediate mitigation strategies",
+    "choices": [
+      "96 requiring immediate mitigation strategies",
+      "32 indicating acceptable risk levels",
+      "15 representing minimal safety concern",
+      "240 exceeding maximum allowable risk"
+    ],
+    "explanation": "RPN = Severity × Occurrence × Detection = 8 × 3 × 4 = 96. This moderate-to-high RPN indicates that imaging system failure during treatment requires immediate mitigation strategies such as backup imaging protocols or treatment interruption procedures.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Monte Carlo simulation of Gamma Knife dose distributions requires modeling 192 individual Co-60 sources. If each source contributes ~0.52% statistical uncertainty and sources are geometrically independent, what is the theoretical minimum statistical uncertainty achievable?",
+    "answer": "0.037% with perfect geometric independence",
+    "choices": [
+      "0.037% with perfect geometric independence",
+      "0.520% limited by individual source",
+      "99.84% cumulative source uncertainty",
+      "0.104% accounting for correlation effects"
+    ],
+    "explanation": "For independent sources, statistical uncertainties combine as σ_total = σ_individual/√N = 0.52%/√192 = 0.52%/13.86 ≈ 0.037%. This represents the theoretical minimum assuming perfect independence and adequate history sampling.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in the central 80% of the field for photon beams?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±4%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should be within ±3% in the central 80% of the field for photon beams during routine QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard for absorbed dose to water calibration protocols in external beam radiotherapy?",
+    "answer": "TG-51 protocol",
+    "choices": [
+      "TG-21 protocol",
+      "TG-51 protocol",
+      "TG-40 protocol",
+      "TG-65 protocol"
+    ],
+    "explanation": "TG-51 is the AAPM's primary protocol for clinical reference dosimetry of high-energy photon and electron beams, providing calibration procedures for absorbed dose to water.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "How frequently should output constancy checks be performed on linear accelerators according to TG-142 recommendations?",
+    "answer": "Daily",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Quarterly"
+    ],
+    "explanation": "TG-142 recommends that output constancy measurements be performed daily to ensure consistent beam output before patient treatments begin.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Machine Learning Control",
+      "Maximum Leaf Calibration",
+      "Modulated Light Chamber"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which is a beam-shaping device consisting of many individual leaves that can be positioned to create complex field shapes for conformal radiation therapy.",
     "difficulty": 1,
     "disciplines": [
       "physicist"

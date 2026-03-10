@@ -1,0 +1,83 @@
+name: Daily Question Generation
+
+on:
+  schedule:
+    # Run at 9pm SAST (7pm UTC) every day
+    - cron: '43 19 * * *'
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of questions to generate'
+        required: false
+        default: '20'
+      dry_run:
+        description: 'Dry run (generate but do not seed)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create generated directory
+        run: mkdir -p src/data/generated
+
+      - name: Generate daily questions
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          COUNT=${{ github.event.inputs.count || '20' }}
+          DRY_RUN=${{ github.event.inputs.dry_run || 'false' }}
+
+          ARGS="--count $COUNT"
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+
+          npx tsx scripts/generate-daily-questions.ts $ARGS
+
+      - name: Commit and push generated questions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Add any new generated question files
+          git add src/data/generated/
+
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No new questions generated today"
+            exit 0
+          fi
+
+          DATE=$(date +%Y-%m-%d)
+          QUESTION_COUNT=$(cat src/data/generated/daily-${DATE}.json 2>/dev/null | node -e "
+            let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
+              try { console.log(JSON.parse(d).length); } catch { console.log('0'); }
+            })
+          ")
+
+          git commit -m "chore: generate ${QUESTION_COUNT} daily questions (${DATE})"
+          git push

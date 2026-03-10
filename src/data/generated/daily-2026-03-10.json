@@ -1,0 +1,70 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation and mechanical isocenters",
+    "choices": [
+      "To verify the coincidence of radiation and mechanical isocenters",
+      "To measure small field output factors for beam commissioning",
+      "To calibrate the treatment planning system dose calculations",
+      "To assess multi-leaf collimator positional accuracy during treatment"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter, which is critical for stereotactic accuracy. This is referenced in TG-142 and TG-135.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "Which TG report specifically addresses small field dosimetry protocols and recommendations?",
+    "answer": "TG-155",
+    "choices": [
+      "TG-101",
+      "TG-135",
+      "TG-142",
+      "TG-155"
+    ],
+    "explanation": "TG-155 provides comprehensive guidance on small field dosimetry, including detector selection, measurement protocols, and correction factors for fields smaller than 4 cm × 4 cm.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What does SBRT stand for in radiation therapy terminology?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiation Treatment",
+      "Single Beam Radiosurgery Technique",
+      "Stereotactic Brain Radiation Therapy"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which delivers high-dose radiation to extracranial targets using stereotactic techniques with precise positioning and immobilization.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the defining characteristic of the Gamma Knife radiosurgery system?",
+    "answer": "Uses multiple fixed cobalt-60 sources arranged in a helmet configuration",
+    "choices": [
+      "Uses multiple fixed cobalt-60 sources arranged in a helmet configuration",
+      "Employs a robotic arm to deliver beams from any angle",
+      "Utilizes micro-MLCs mounted on a standard linear accelerator gantry",
+      "Features interchangeable collimator cones for different field sizes"
+    ],
+    "explanation": "The Gamma Knife system uses approximately 200 fixed cobalt-60 sources arranged in a hemispherical helmet configuration that focuses radiation to a precise target point.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

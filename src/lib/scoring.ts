@@ -2,12 +2,13 @@ import type { CareerLevel, GameMode } from "./types";
 
 export const CAREER_LEVELS: CareerLevel[] = [
   { level: 1, title: "Intern", xpRequired: 0, icon: "🔬" },
-  { level: 2, title: "Registrar", xpRequired: 1000, icon: "📖" },
-  { level: 3, title: "Medical Physicist", xpRequired: 4000, icon: "⚛️" },
-  { level: 4, title: "Senior Physicist", xpRequired: 10000, icon: "🎯" },
-  { level: 5, title: "Chief Physicist", xpRequired: 25000, icon: "👨‍🔬" },
-  { level: 6, title: "Consultant", xpRequired: 50000, icon: "🏅" },
-  { level: 7, title: "Professor", xpRequired: 100000, icon: "🎓" },
+  { level: 2, title: "Registrar", xpRequired: 500, icon: "📖" },
+  { level: 3, title: "Medical Physicist", xpRequired: 1500, icon: "⚛️" },
+  { level: 4, title: "Senior Physicist", xpRequired: 2500, icon: "🎯" },
+  { level: 5, title: "Chief Physicist", xpRequired: 3500, icon: "👨‍🔬" },
+  { level: 6, title: "Consultant", xpRequired: 5000, icon: "🏅" },
+  { level: 7, title: "Professor", xpRequired: 7500, icon: "🎓" },
+  { level: 8, title: "Distinguished Professor", xpRequired: 10000, icon: "🏆" },
 ];
 
 export function getCareerLevel(xp: number): CareerLevel {
@@ -409,6 +410,7 @@ export function getExamDifficultyRange(confirmedLevel: number): { min: number; m
     case 4: return { min: 5, max: 8 };   // Senior → Chief
     case 5: return { min: 7, max: 9 };   // Chief → Consultant
     case 6: return { min: 8, max: 10 };  // Consultant → Professor
+    case 7: return { min: 9, max: 10 };  // Professor → Distinguished Professor
     default: return { min: 1, max: 10 };
   }
 }

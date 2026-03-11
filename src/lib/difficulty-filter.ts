@@ -11,6 +11,7 @@ import { getCareerLevel } from "./scoring";
  * Chief Physicist (level 5):   5-9
  * Consultant (level 6):        6-10
  * Professor (level 7):         7-10
+ * Distinguished Prof (level 8): 7-10
  */
 export function getGameplayDifficultyRange(xp: number): { min: number; max: number } {
   const level = getCareerLevel(xp).level;

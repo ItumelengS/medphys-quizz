@@ -2,15 +2,15 @@
   {
     "id": "srt100",
     "section_id": "srt",
-    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
-    "answer": "To verify the coincidence of radiation and mechanical isocenters",
+    "question": "What is the definition of stereotactic radiosurgery (SRS)?",
+    "answer": "Single-fraction high-dose radiation delivered to small targets with steep dose gradients",
     "choices": [
-      "To verify the coincidence of radiation and mechanical isocenters",
-      "To measure small field output factors for beam commissioning",
-      "To calibrate the treatment planning system dose calculations",
-      "To assess multi-leaf collimator positional accuracy during treatment"
+      "Single-fraction high-dose radiation delivered to small targets with steep dose gradients",
+      "Multi-fraction radiation therapy using conventional fractionation for brain tumors",
+      "Image-guided radiation therapy with daily cone-beam CT verification protocols",
+      "Intensity-modulated radiation therapy with inverse planning optimization algorithms"
     ],
-    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter, which is critical for stereotactic accuracy. This is referenced in TG-142 and TG-135.",
+    "explanation": "SRS is defined as single-fraction, high-precision radiation therapy typically delivered to small intracranial targets with rapid dose fall-off outside the target volume.",
     "difficulty": 1,
     "disciplines": [
       "physicist"
@@ -19,15 +19,15 @@
   {
     "id": "srt101",
     "section_id": "srt",
-    "question": "Which TG report specifically addresses small field dosimetry protocols and recommendations?",
-    "answer": "TG-155",
+    "question": "What does the Winston-Lutz test primarily evaluate in stereotactic systems?",
+    "answer": "Mechanical isocenter coincidence with radiation isocenter accuracy",
     "choices": [
-      "TG-101",
-      "TG-135",
-      "TG-142",
-      "TG-155"
+      "Mechanical isocenter coincidence with radiation isocenter accuracy",
+      "Multi-leaf collimator positional accuracy and leaf transmission measurements",
+      "Patient positioning system reproducibility and couch rotation precision",
+      "Treatment planning system dose calculation accuracy for heterogeneous tissues"
     ],
-    "explanation": "TG-155 provides comprehensive guidance on small field dosimetry, including detector selection, measurement protocols, and correction factors for fields smaller than 4 cm × 4 cm.",
+    "explanation": "The Winston-Lutz test uses a small ball bearing to determine the coincidence between mechanical and radiation isocenters, fundamental for stereotactic accuracy.",
     "difficulty": 1,
     "disciplines": [
       "physicist"
@@ -36,15 +36,15 @@
   {
     "id": "srt102",
     "section_id": "srt",
-    "question": "What does SBRT stand for in radiation therapy terminology?",
-    "answer": "Stereotactic Body Radiation Therapy",
+    "question": "What is the primary characteristic of GammaKnife radiosurgery systems?",
+    "answer": "Multiple fixed cobalt-60 sources arranged in hemispherical geometry",
     "choices": [
-      "Stereotactic Body Radiation Therapy",
-      "Small Beam Radiation Treatment",
-      "Single Beam Radiosurgery Technique",
-      "Stereotactic Brain Radiation Therapy"
+      "Multiple fixed cobalt-60 sources arranged in hemispherical geometry",
+      "Linear accelerator with robotic arm for dynamic positioning",
+      "Rotating gantry system with micro-multileaf collimator technology",
+      "Fixed linear accelerator with cone-based collimation system"
     ],
-    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which delivers high-dose radiation to extracranial targets using stereotactic techniques with precise positioning and immobilization.",
+    "explanation": "GammaKnife systems use multiple (typically 192-201) fixed cobalt-60 sources arranged in a hemispherical pattern to focus radiation at the isocenter.",
     "difficulty": 1,
     "disciplines": [
       "physicist"
@@ -53,15 +53,219 @@
   {
     "id": "srt103",
     "section_id": "srt",
-    "question": "What is the defining characteristic of the Gamma Knife radiosurgery system?",
-    "answer": "Uses multiple fixed cobalt-60 sources arranged in a helmet configuration",
+    "question": "What defines a small radiation field according to current dosimetry standards?",
+    "answer": "Field where lateral charged particle equilibrium is absent",
     "choices": [
-      "Uses multiple fixed cobalt-60 sources arranged in a helmet configuration",
-      "Employs a robotic arm to deliver beams from any angle",
-      "Utilizes micro-MLCs mounted on a standard linear accelerator gantry",
-      "Features interchangeable collimator cones for different field sizes"
+      "Field where lateral charged particle equilibrium is absent",
+      "Any field smaller than 10 cm × 10 cm at isocenter",
+      "Field requiring special immobilization and verification procedures",
+      "Field treated with stereotactic techniques and high dose rates"
     ],
-    "explanation": "The Gamma Knife system uses approximately 200 fixed cobalt-60 sources arranged in a hemispherical helmet configuration that focuses radiation to a precise target point.",
+    "explanation": "Small fields are defined by the absence of lateral charged particle equilibrium, not by arbitrary size cutoffs, as stated in TG-155 and other reports.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter for enhanced conformity",
+    "choices": [
+      "2.5-5.0 mm at isocenter for enhanced conformity",
+      "10.0-12.5 mm at isocenter matching conventional systems",
+      "1.0-1.5 mm at isocenter for maximum precision",
+      "7.5-10.0 mm at isocenter with variable leaf widths"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing better conformity for small targets compared to standard 5-10 mm leaves.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What correction factor phenomenon is most significant in small field dosimetry?",
+    "answer": "Volume averaging effects and detector perturbation in small beams",
+    "choices": [
+      "Volume averaging effects and detector perturbation in small beams",
+      "Temperature and pressure corrections for ionization chamber measurements",
+      "Beam quality corrections for different photon energy spectra",
+      "Polarity and recombination corrections for high dose rate beams"
+    ],
+    "explanation": "Small field correction factors primarily address volume averaging and detector perturbation effects that become significant when detector size approaches field size.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam with 5×5 mm² field shows 15% lower dose than expected using a 0.125 cc ion chamber compared to Monte Carlo calculations. The same measurement with a diamond detector shows 3% difference. Considering TG-155 recommendations, what is the primary cause of this discrepancy and the optimal solution approach?",
+    "answer": "Ion chamber volume averaging requires Monte Carlo-calculated detector-specific correction factors with experimental validation",
+    "choices": [
+      "Ion chamber volume averaging requires Monte Carlo-calculated detector-specific correction factors with experimental validation",
+      "Diamond detector energy dependence necessitates beam quality correction factors derived from larger field measurements",
+      "Monte Carlo statistical uncertainty demands increased simulation histories with improved variance reduction techniques applied",
+      "Machine calibration drift requires recalibration using plastic scintillator detectors for improved temporal stability"
+    ],
+    "explanation": "Large ion chambers in small fields suffer from volume averaging effects. TG-155 recommends Monte Carlo-calculated correction factors specific to detector type and field size, validated experimentally.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During CyberKnife commissioning, the 6D skull tracking system shows systematic errors of 0.8 mm translation and 1.2° rotation during treatment delivery, while fiducial tracking maintains 0.3 mm accuracy. Patient motion monitoring indicates 2.1 mm maximum displacement during 45-minute treatments. What is the most critical factor limiting treatment accuracy and the recommended mitigation strategy?",
+    "answer": "Systematic skull tracking errors exceed tolerance requiring recalibration with enhanced imaging protocol optimization",
+    "choices": [
+      "Systematic skull tracking errors exceed tolerance requiring recalibration with enhanced imaging protocol optimization",
+      "Fiducial tracking precision insufficient demanding implantation of additional markers with improved geometrical distribution",
+      "Patient motion amplitude necessitates treatment time reduction with increased monitor unit rate delivery",
+      "Combined tracking uncertainties require margin expansion with robust optimization planning techniques implementation"
+    ],
+    "explanation": "Systematic errors in skull tracking (0.8 mm, 1.2°) exceed typical tolerances and are correctable through system recalibration, unlike random motion which requires different strategies.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "VMAT-SRS treatments using 2.5 mm micro-MLC leaves show systematic dose discrepancies in heterogeneous phantoms. Monte Carlo calculations agree within 2% in homogeneous conditions but show 6-8% differences near bone-tissue interfaces for targets <15 mm. Eclipse AAA algorithm shows similar patterns. What optimization strategy addresses this systematic limitation while maintaining clinical efficiency?",
+    "answer": "Implement hybrid Monte Carlo verification workflow with tissue-interface specific planning constraints and reduced prescription margins",
+    "choices": [
+      "Implement hybrid Monte Carlo verification workflow with tissue-interface specific planning constraints and reduced prescription margins",
+      "Increase micro-MLC leaf width to 5.0 mm with enhanced modulation complexity and improved dose calculation accuracy",
+      "Apply heterogeneity correction factors derived from patient-specific phantom measurements with CT calibration curve refinement",
+      "Modify beam arrangement geometry avoiding tangential angles with bone interfaces using sector-based arc optimization"
+    ],
+    "explanation": "Systematic dose calculation errors near heterogeneous interfaces require Monte Carlo verification for small targets, with planning constraint modifications to account for calculation limitations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Developing a Monte Carlo-based treatment planning system for cone-based SRS requires validation against measurements. Using DOSXYZnrc with 10⁸ histories, statistical uncertainties remain 3-5% for 5 mm diameter fields. Variance reduction techniques (interaction forcing, range rejection) reduce computation time by 60% but introduce systematic biases of 1-2%. What is the optimal computational strategy balancing accuracy, precision, and clinical feasibility?",
+    "answer": "Implement correlated sampling with 5×10⁸ histories and selective variance reduction excluding dose-critical regions with systematic bias correction",
+    "choices": [
+      "Implement correlated sampling with 5×10⁸ histories and selective variance reduction excluding dose-critical regions with systematic bias correction",
+      "Utilize parallel computing architecture with 2×10⁹ histories distributed processing and standard transport parameters throughout",
+      "Apply machine learning acceleration with neural network surrogate models trained on Monte Carlo datasets with uncertainty propagation",
+      "Employ hybrid deterministic-stochastic methods using Boltzmann transport solvers with Monte Carlo boundary condition refinement"
+    ],
+    "explanation": "Correlated sampling reduces statistical uncertainty efficiently, while selective variance reduction (avoiding critical regions) and bias correction maintain accuracy for clinical implementation.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Small field output factor measurements using multiple detectors show systematic variations: PTW 60019 microDiamond (0.995±0.008), PTW 31014 PinPoint (1.023±0.012), EBT3 film (0.987±0.015), and W1 plastic scintillator (0.991±0.006) for 1×1 cm² 6 MV field. Monte Carlo simulations predict 0.989±0.003. Considering Type A and Type B uncertainties per GUM guidelines, what is the most robust approach for establishing reference output factors with full uncertainty budget?",
+    "answer": "Weight detector results by inverse uncertainty squares with Monte Carlo validation and comprehensive Type B uncertainty analysis",
+    "choices": [
+      "Weight detector results by inverse uncertainty squares with Monte Carlo validation and comprehensive Type B uncertainty analysis",
+      "Select plastic scintillator as reference detector based on lowest measurement uncertainty with correction factor validation",
+      "Apply Bayesian hierarchical modeling incorporating detector-specific systematic biases with prior distribution constraints",
+      "Utilize Monte Carlo result as primary reference with experimental validation through weighted average detector comparison"
+    ],
+    "explanation": "Robust reference values require weighted averaging by measurement uncertainties, Monte Carlo validation, and complete Type A/B uncertainty analysis per GUM methodology for metrological traceability.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "A research protocol investigates single-isocenter multiple-target SRS treatments with targets separated by 8-12 cm. Geometric uncertainties from couch rotation (0.5°), imaging registration (0.8 mm), and inter-fractional motion (1.2 mm) compound differently for each target. Using Monte Carlo dose calculation with 2×10⁸ histories per target and considering correlation matrices between geometric uncertainties, what methodology provides the most accurate dosimetric uncertainty quantification for regulatory submission?",
+    "answer": "Implement Latin hypercube sampling with correlated uncertainty parameters and dose-volume histogram confidence interval estimation",
+    "choices": [
+      "Implement Latin hypercube sampling with correlated uncertainty parameters and dose-volume histogram confidence interval estimation",
+      "Apply first-order Taylor series expansion with partial derivatives calculated using finite difference methods",
+      "Utilize bootstrap resampling of measurement data with Monte Carlo propagation through treatment planning system calculations",
+      "Employ polynomial chaos expansion with Sobol indices for global sensitivity analysis and variance decomposition"
+    ],
+    "explanation": "Latin hypercube sampling efficiently samples correlated uncertainty space, providing robust DVH confidence intervals essential for regulatory submissions of multi-target SRS protocols.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements on a linear accelerator?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±2% from baseline",
+      "±3% from baseline",
+      "±5% from baseline",
+      "±1% from baseline"
+    ],
+    "explanation": "TG-142 specifies that daily output constancy should be within ±3% of the established baseline value to ensure consistent beam delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of beam flatness measurement in linear accelerator QA?",
+    "answer": "To verify dose uniformity across the radiation field",
+    "choices": [
+      "To verify dose uniformity across the radiation field",
+      "To measure the beam energy spectrum accuracy",
+      "To check the gantry mechanical alignment",
+      "To calibrate the dose monitoring system"
+    ],
+    "explanation": "Beam flatness ensures that the radiation dose is uniformly distributed across the treatment field, which is critical for accurate dose delivery to the target volume.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "In TG-51 dosimetry protocol, what is the standard reference condition for beam quality specification in photon beams?",
+    "answer": "10 cm × 10 cm field at 100 cm SSD",
+    "choices": [
+      "10 cm × 10 cm field at 100 cm SSD",
+      "5 cm × 5 cm field at 100 cm SSD",
+      "15 cm × 15 cm field at 100 cm SSD",
+      "20 cm × 20 cm field at 100 cm SSD"
+    ],
+    "explanation": "TG-51 protocol specifies a 10 cm × 10 cm field size at 100 cm source-to-surface distance as the standard reference condition for photon beam calibration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Machine Learning Control",
+      "Maximum Leaf Configuration",
+      "Monitor Level Calibration"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which consists of multiple independently moving leaves used to shape the radiation beam for conformal treatment delivery.",
     "difficulty": 1,
     "disciplines": [
       "physicist"

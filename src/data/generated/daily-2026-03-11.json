@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What does the acronym SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Brain Radiation Therapy",
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiation Treatment",
+      "Single Beam Radiation Therapy"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which is the technique for delivering high-precision, high-dose radiation to extracranial targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test?",
+    "answer": "Verify mechanical isocenter alignment accuracy",
+    "choices": [
+      "Measure beam output consistency",
+      "Verify mechanical isocenter alignment accuracy",
+      "Check collimator transmission factors",
+      "Calibrate dose rate measurements"
+    ],
+    "explanation": "The Winston-Lutz test verifies that the mechanical isocenter (intersection of gantry, collimator, and couch axes) aligns properly, which is critical for stereotactic treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What defines a small radiation field according to current dosimetry standards?",
+    "answer": "Field where lateral charge particle equilibrium is lost",
+    "choices": [
+      "Field smaller than 4 cm × 4 cm",
+      "Field where lateral charge particle equilibrium is lost",
+      "Field with less than 200 monitor units",
+      "Field using micro-MLC leaf widths"
+    ],
+    "explanation": "Small fields are defined by the loss of lateral charged particle equilibrium rather than a specific size threshold, as described in TG-155.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "0.5-1.0 mm at isocenter",
+    "choices": [
+      "0.5-1.0 mm at isocenter",
+      "2.5-5.0 mm at isocenter",
+      "8.0-10.0 mm at isocenter",
+      "12.0-15.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing improved conformity for small target volumes compared to standard MLCs.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "What is the recommended frequency for Winston-Lutz testing according to TG-142?",
+    "answer": "Monthly for stereotactic systems",
+    "choices": [
+      "Weekly for all linear accelerators",
+      "Monthly for stereotactic systems",
+      "Quarterly for conventional treatments",
+      "Annual for dedicated SRS units"
+    ],
+    "explanation": "TG-142 recommends monthly Winston-Lutz testing for stereotactic-capable systems due to the high precision requirements for small field treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical tolerance for mechanical isocenter deviation in stereotactic radiosurgery?",
+    "answer": "≤ 1.0 mm radius",
+    "choices": [
+      "≤ 0.5 mm radius",
+      "≤ 1.0 mm radius",
+      "≤ 2.0 mm radius",
+      "≤ 3.0 mm radius"
+    ],
+    "explanation": "Most guidelines specify mechanical isocenter deviation should be ≤ 1.0 mm radius for stereotactic treatments to maintain the required precision.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "Which detector type is recommended by TG-155 for small field output factor measurements?",
+    "answer": "Silicon diode or diamond detector",
+    "choices": [
+      "Ion chamber with air cavity",
+      "Silicon diode or diamond detector",
+      "Film dosimetry with scanning",
+      "MOSFET detector arrays"
+    ],
+    "explanation": "TG-155 recommends silicon diode or diamond detectors for small field dosimetry due to their small sensitive volumes and tissue-equivalent response.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of the GammaKnife's cobalt-60 sources over linear accelerator-based SRS?",
+    "answer": "No mechanical isocenter uncertainty",
+    "choices": [
+      "Higher dose rate capability",
+      "No mechanical isocenter uncertainty",
+      "Better beam energy spectrum",
+      "Lower maintenance requirements"
+    ],
+    "explanation": "GammaKnife uses fixed cobalt-60 sources focused to a common point, eliminating mechanical isocenter uncertainty present in gantry-based linear accelerators.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A VMAT SRS plan shows 15% lower dose delivery than calculated at the isocenter of a 8mm target. The film dosimetry confirms accurate spatial dose distribution. Ion chamber measurements in large fields are within 2%. What is the most likely cause requiring investigation?",
+    "answer": "Small field correction factors not properly applied in TPS beam modeling",
+    "choices": [
+      "MLC calibration error causing systematic leaf positioning offset",
+      "Small field correction factors not properly applied in TPS beam modeling",
+      "Ion chamber volume averaging effect in the small target region",
+      "VMAT delivery timing synchronization error between MLC and dose rate"
+    ],
+    "explanation": "The combination of accurate large field dosimetry and correct spatial distribution but low absolute dose suggests inadequate small field correction factors in the treatment planning system beam model, as described in TG-155 protocols.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Winston-Lutz analysis reveals a 0.9mm periodic deviation pattern correlating with gantry angle. Mechanical inspection shows proper bearing alignment. What systematic evaluation should be performed?",
+    "answer": "Comprehensive gravitational flexure modeling of gantry structure with load analysis",
+    "choices": [
+      "Immediate replacement of gantry rotation encoder system for position feedback",
+      "Comprehensive gravitational flexure modeling of gantry structure with load analysis",
+      "Recalibration of radiation isocenter using multiple field size verification methods",
+      "Software compensation algorithm implementation for gantry angle-dependent corrections"
+    ],
+    "explanation": "Periodic gantry-angle dependent deviations with proper bearing alignment typically indicate gravitational flexure of the gantry structure, requiring detailed mechanical engineering analysis as described in TG-142 advanced troubleshooting protocols.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Develop a Monte Carlo uncertainty budget for 5mm field output factor determination. Primary photon fluence uncertainty is 0.8%, detector modeling contributes 1.2%, and geometric setup adds 0.6%. Calculate the combined standard uncertainty using proper statistical combination.",
+    "answer": "1.7% combined standard uncertainty",
+    "choices": [
+      "1.5% combined standard uncertainty",
+      "1.7% combined standard uncertainty",
+      "2.0% combined standard uncertainty",
+      "2.6% combined standard uncertainty"
+    ],
+    "explanation": "Combined standard uncertainty = √(0.8² + 1.2² + 0.6²) = √(0.64 + 1.44 + 0.36) = √2.44 = 1.56% ≈ 1.7%. This follows ISO GUM uncertainty propagation for independent uncertainty components.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Design an FMEA analysis for cone-based SRS delivery. The cone attachment failure mode has occurrence rating 3, severity rating 8, and current detection capability rating 4. What is the Risk Priority Number requiring process improvement?",
+    "answer": "RPN = 96 requiring immediate process improvement",
+    "choices": [
+      "RPN = 72 requiring routine monitoring protocols",
+      "RPN = 84 requiring enhanced detection systems",
+      "RPN = 96 requiring immediate process improvement",
+      "RPN = 108 requiring complete process redesign"
+    ],
+    "explanation": "Risk Priority Number = Occurrence × Severity × Detection = 3 × 8 × 4 = 96. RPN values above 80-100 typically require immediate corrective action in medical device FMEA protocols.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of a 6mm cone shows 2.3% statistical uncertainty at 10⁸ histories. Research protocols require <1% uncertainty. Calculate the minimum number of histories needed assuming statistical uncertainty scales with √N.",
+    "answer": "5.3 × 10⁸ histories minimum",
+    "choices": [
+      "4.6 × 10⁸ histories minimum",
+      "5.3 × 10⁸ histories minimum",
+      "6.1 × 10⁸ histories minimum",
+      "7.2 × 10⁸ histories minimum"
+    ],
+    "explanation": "Statistical uncertainty ∝ 1/√N. For 1% uncertainty: (2.3%/1%) = √(N₂/10⁸), so 2.3² = N₂/10⁸, giving N₂ = 5.29 × 10⁸ histories. This follows standard Monte Carlo statistical principles.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Advanced research comparing TG-101 and TG-135 small field protocols shows systematic 1.8% differences in output factors for 8mm fields. Monte Carlo validation indicates TG-135 methodology accuracy. What research-level investigation approach is required?",
+    "answer": "Systematic detector response characterization using primary standards laboratory traceable methods",
+    "choices": [
+      "Implementation of improved TPS beam modeling algorithms with enhanced accuracy",
+      "Systematic detector response characterization using primary standards laboratory traceable methods",
+      "Development of institution-specific correction factors for hybrid protocol implementation",
+      "Monte Carlo-based detector modeling refinement using experimental validation datasets"
+    ],
+    "explanation": "Systematic protocol differences require fundamental detector response characterization traceable to primary standards, as differences between TG-101 and TG-135 often stem from detector-specific response characteristics not fully captured in either protocol.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in the central 80% of the field for photon beams?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 specifies that beam flatness for photon beams should be within ±3% in the central 80% of the field for both daily and monthly QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary dosimetric standard protocol currently recommended by AAPM for absolute dose calibration of linear accelerators?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-40",
+      "TG-61"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For daily linear accelerator QA, what is the tolerance for beam output constancy according to TG-142?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a tolerance of ±3% for daily beam output constancy measurements to ensure consistent dose delivery between treatment fractions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Maximum Leaf Calibration",
+      "Machine Load Compensation",
+      "Multi-Level Control"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which is a beam-shaping device consisting of multiple moveable tungsten leaves used to conform radiation fields to target volumes.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

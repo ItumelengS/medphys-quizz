@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { createServiceClient } from "@/lib/supabase/server";
-import { getCareerLevel, CAREER_LEVELS, getExamDifficultyRange } from "@/lib/scoring";
+import { getCareerLevel, getCorrectConfirmedLevel, CAREER_LEVELS, getExamDifficultyRange } from "@/lib/scoring";
 import { parseInventory } from "@/lib/powerups";
 import type { PowerUpInventory } from "@/lib/types";
 
@@ -53,8 +53,11 @@ export async function POST(req: NextRequest) {
     const prevXp = CAREER_LEVELS.find((l) => l.level === confirmedLevel)?.xpRequired || 0;
 
     // Drop XP to 150 below the exam threshold so they have to earn their way back
-    const newXp = Math.max(prevXp, targetXp - 150);
+    // No floor clamp — XP can drop below current level, triggering demotion
+    const newXp = Math.max(0, targetXp - 150);
     const xpPenalty = currentXp - newXp;
+    const newConfirmedLevel = getCorrectConfirmedLevel(newXp, confirmedLevel);
+    const demoted = newConfirmedLevel < confirmedLevel;
 
     // Save last exam question IDs so they aren't repeated next attempt
     await supabase
@@ -62,13 +65,16 @@ export async function POST(req: NextRequest) {
       .update({
         powerups: newInventory,
         xp: newXp,
+        confirmed_level: newConfirmedLevel,
         last_exam_questions: questionIds || [],
       })
       .eq("id", userId);
     return NextResponse.json({
       success: false,
-      message: "Exam failed. Try again!",
+      message: demoted ? "Exam failed. You have been demoted." : "Exam failed. Try again!",
       xpPenalty,
+      demoted,
+      newConfirmedLevel,
     });
   }
 

@@ -114,6 +114,7 @@ export default function LevelUpExamPage() {
   }, [currentQuestion, selectedAnswer]);
 
   const [xpPenalty, setXpPenalty] = useState(0);
+  const [demoted, setDemoted] = useState(false);
 
   function failExam(selected: string | null) {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -130,6 +131,7 @@ export default function LevelUpExamPage() {
       .then((r) => r.json())
       .then((data) => {
         if (data.xpPenalty) setXpPenalty(data.xpPenalty);
+        if (data.demoted) setDemoted(true);
       });
     setTimeout(() => setPhase("fail"), 1500);
   }
@@ -434,7 +436,7 @@ export default function LevelUpExamPage() {
             <span className="text-4xl">💪</span>
           </div>
           <h1 className="text-2xl font-black text-bauhaus-red mb-2 uppercase tracking-widest">
-            Not Quite!
+            {demoted ? "Demoted!" : "Not Quite!"}
           </h1>
           <p className="text-text-secondary font-light">
             You got {score} out of {questions.length} before failing.
@@ -442,6 +444,11 @@ export default function LevelUpExamPage() {
           {xpPenalty > 0 && (
             <p className="text-bauhaus-red text-sm font-bold mt-2">
               −{xpPenalty} XP penalty
+            </p>
+          )}
+          {demoted && (
+            <p className="text-bauhaus-red text-sm font-bold mt-1">
+              You have been demoted to a lower level.
             </p>
           )}
           <p className="text-text-dim text-sm mt-1">Your XP has been dropped. Earn it back and try again!</p>

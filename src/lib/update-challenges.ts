@@ -5,6 +5,25 @@ import {
   evaluateChallengeProgress,
 } from "@/lib/challenges";
 import { applyXpChange } from "@/lib/apply-xp";
+import { CAREER_LEVELS } from "@/lib/scoring";
+
+/**
+ * Scale challenge bonus XP based on how close the player is to their next exam.
+ * Far from exam → full reward. Close to exam → reduced reward (min 25%).
+ */
+function scaleChallengeXp(baseXp: number, userXp: number, confirmedLevel: number): number {
+  const currentFloor = CAREER_LEVELS.find((l) => l.level === confirmedLevel)?.xpRequired || 0;
+  const nextLevel = CAREER_LEVELS.find((l) => l.level === confirmedLevel + 1);
+  if (!nextLevel) return baseXp; // max level, full reward
+
+  const levelGap = nextLevel.xpRequired - currentFloor;
+  if (levelGap <= 0) return baseXp;
+
+  const progress = (userXp - currentFloor) / levelGap; // 0.0 → 1.0
+  // Scale: 100% reward at 0% progress → 25% reward at 100% progress
+  const scale = Math.max(0.25, 1 - progress * 0.75);
+  return Math.max(1, Math.floor(baseXp * scale));
+}
 
 /**
  * After a game completes, check and update all weekly challenge progress.
@@ -25,6 +44,15 @@ export async function updateWeeklyChallengeProgress(
 ): Promise<{ bonusXp: number; completedChallengeIds: string[] }> {
   const weekStart = getWeekStart();
   const challenges = generateWeeklyChallenges(weekStart);
+
+  // Fetch user profile for XP scaling
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("xp, confirmed_level")
+    .eq("id", userId)
+    .single();
+  const userXp = profile?.xp || 0;
+  const confirmedLevel = profile?.confirmed_level || 1;
 
   let bonusXp = 0;
   const completedChallengeIds: string[] = [];
@@ -65,10 +93,11 @@ export async function updateWeeklyChallengeProgress(
       xp_awarded: nowCompleted ? true : alreadyAwarded,
     });
 
-    // Award bonus XP if newly completed
+    // Award bonus XP if newly completed (scaled by proximity to exam)
     if (nowCompleted && !alreadyCompleted) {
-      await applyXpChange(userId, challenge.bonus_xp);
-      bonusXp += challenge.bonus_xp;
+      const scaledXp = scaleChallengeXp(challenge.bonus_xp, userXp, confirmedLevel);
+      await applyXpChange(userId, scaledXp);
+      bonusXp += scaledXp;
       completedChallengeIds.push(challenge.id);
     }
   }

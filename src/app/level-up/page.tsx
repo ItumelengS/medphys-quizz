@@ -61,11 +61,6 @@ export default function LevelUpExamPage() {
           setQuestions(data.questions);
           setInventory(parseInventory(data.powerups));
           setUserXp(data.xp || 0);
-          const confirmed = session.user?.xp !== undefined
-            ? getCareerLevel(data.xp)
-            : CAREER_LEVELS[0];
-          // Target is the next level after confirmed
-          // We need confirmed_level from the API — for now derive from the context
           setPhase("pre-exam");
         }
       });
@@ -449,7 +444,7 @@ export default function LevelUpExamPage() {
               −{xpPenalty} XP penalty
             </p>
           )}
-          <p className="text-text-dim text-sm mt-1">Keep practicing and try again!</p>
+          <p className="text-text-dim text-sm mt-1">Your XP has been dropped. Earn it back and try again!</p>
         </div>
 
         {/* Failed question details */}

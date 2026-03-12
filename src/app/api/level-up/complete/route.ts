@@ -51,15 +51,10 @@ export async function POST(req: NextRequest) {
     const targetLevel = CAREER_LEVELS.find((l) => l.level === confirmedLevel + 1);
     const targetXp = targetLevel?.xpRequired || 0;
     const prevXp = CAREER_LEVELS.find((l) => l.level === confirmedLevel)?.xpRequired || 0;
-    const levelGap = targetXp - prevXp;
 
-    // Penalty: drop below threshold + extra based on how early they failed
-    // Failing early (more remaining) = bigger penalty
-    const remaining = Math.max(0, questionsRemaining ?? 0);
-    const dropBelowAmount = Math.max(0, currentXp - targetXp) + 1; // always go below threshold
-    const extraPenalty = Math.floor(levelGap * 0.05 * (remaining / 10)); // up to 5% of level gap
-    const xpPenalty = dropBelowAmount + extraPenalty;
-    const newXp = Math.max(prevXp, currentXp - xpPenalty); // never drop below current level
+    // Drop XP to 150 below the exam threshold so they have to earn their way back
+    const newXp = Math.max(prevXp, targetXp - 150);
+    const xpPenalty = currentXp - newXp;
 
     // Save last exam question IDs so they aren't repeated next attempt
     await supabase

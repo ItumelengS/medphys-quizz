@@ -29,6 +29,7 @@ export async function GET() {
         ...(config.isWordle ? { isWordle: true } : {}),
         ...(config.isConnections ? { isConnections: true } : {}),
         ...(config.isCryptic ? { isCryptic: true } : {}),
+        ...(config.isReactionRounds ? { isReactionRounds: true } : {}),
         ...(config.maxRounds ? { maxRounds: config.maxRounds } : {}),
       },
     };

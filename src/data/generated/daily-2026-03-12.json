@@ -1,0 +1,240 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of stereotactic radiosurgery (SRS)?",
+    "answer": "Delivery of a high dose in a single fraction to small targets",
+    "choices": [
+      "Delivery of a high dose in a single fraction to small targets",
+      "Delivery of multiple fractions over several weeks to large targets",
+      "Delivery of low doses continuously over extended time periods",
+      "Delivery of uniform doses to entire anatomical regions"
+    ],
+    "explanation": "SRS is defined as the precise delivery of a high radiation dose in a single fraction to well-defined small targets, typically intracranial lesions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Mechanical isocenter accuracy of the treatment machine",
+    "choices": [
+      "Mechanical isocenter accuracy of the treatment machine",
+      "Radiation beam energy calibration and stability",
+      "Patient positioning system alignment verification",
+      "Treatment planning system dose calculation accuracy"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to assess the coincidence of the mechanical and radiation isocenters through multiple gantry and collimator angles.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is a micro-MLC in stereotactic radiotherapy?",
+    "answer": "Multi-leaf collimator with leaf widths typically 2.5-5mm",
+    "choices": [
+      "Multi-leaf collimator with leaf widths typically 2.5-5mm",
+      "Single-leaf collimator system for cone-based treatments",
+      "Variable aperture collimator with circular opening adjustments",
+      "Fixed-field collimator designed for large treatment areas"
+    ],
+    "explanation": "Micro-MLCs have narrower leaf widths compared to conventional MLCs (typically 10mm), allowing better conformity for small target volumes in SRS/SBRT.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What characterizes the Gamma Knife treatment system?",
+    "answer": "Fixed cobalt-60 sources arranged in hemispherical geometry",
+    "choices": [
+      "Fixed cobalt-60 sources arranged in hemispherical geometry",
+      "Linear accelerator mounted on robotic positioning system",
+      "Rotating gantry with variable cone collimation system",
+      "Proton beam delivery with magnetic steering controls"
+    ],
+    "explanation": "Gamma Knife uses approximately 200 fixed cobalt-60 sources arranged in a hemispherical pattern to deliver highly focused radiation to intracranial targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What detector is recommended by TG-155 for small field output factor measurements?",
+    "answer": "Silicon diode detectors with appropriate correction factors",
+    "choices": [
+      "Silicon diode detectors with appropriate correction factors",
+      "Ion chambers larger than the radiation field size",
+      "Thermoluminescent dosimeters without energy corrections",
+      "Diamond detectors without temperature compensation"
+    ],
+    "explanation": "TG-155 recommends silicon diode detectors for small field dosimetry due to their small volume and near tissue-equivalent response when properly corrected.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system for SRS, output factors measured with three different detectors show systematic discrepancies: ion chamber (0.85), diode (0.91), and diamond (0.89) for a 10mm×10mm field. The treatment planning system calculates 0.88. Considering volume averaging effects, spectral changes, and detector-specific corrections, what represents the most appropriate clinical implementation strategy?",
+    "answer": "Implement Monte Carlo-based corrections with cross-calibrated diode measurements",
+    "choices": [
+      "Implement Monte Carlo-based corrections with cross-calibrated diode measurements",
+      "Average all detector measurements and apply uniform scaling factors",
+      "Use ion chamber data exclusively with volume averaging corrections",
+      "Adopt diamond detector values with temperature stability monitoring"
+    ],
+    "explanation": "For small fields, Monte Carlo-based corrections combined with properly cross-calibrated diode detectors provide the most accurate approach, as recommended by TG-155. This accounts for spectral hardening and volume averaging effects that vary significantly between detectors in small fields.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-institutional SRS program reveals systematic dose delivery variations of ±4% between sites using identical equipment but different commissioning approaches. Site A uses synthetic diamond detectors, Site B uses stereotactic field ion chambers, and Site C uses film dosimetry. All sites report different small field correction factors. What systematic approach would most effectively harmonize dose delivery accuracy?",
+    "answer": "Implement cross-calibrated reference dosimetry with standardized correction protocols",
+    "choices": [
+      "Implement cross-calibrated reference dosimetry with standardized correction protocols",
+      "Mandate universal adoption of single detector type across all sites",
+      "Apply site-specific correction factors based on local measurements only",
+      "Use treatment planning system calculations as primary reference standard"
+    ],
+    "explanation": "Cross-calibrated reference dosimetry with standardized correction protocols addresses the fundamental issue of detector-dependent variations. This approach, consistent with TG-155 recommendations, ensures traceability while accounting for detector-specific characteristics in small field dosimetry.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A Monte Carlo study of small field dosimetry reveals that for field sizes <15mm equivalent square, the kQ,fclin,fref correction factors show beam quality dependencies that vary by ±8% across different linear accelerator models with identical nominal energies (6MV). The study uses EGSnrc with DOSXYZnrc, includes realistic MLC modeling, and validates against multiple detector types. What physical mechanism primarily accounts for the observed inter-machine variability?",
+    "answer": "Machine-specific spectral differences affecting secondary electron equilibrium conditions",
+    "choices": [
+      "Machine-specific spectral differences affecting secondary electron equilibrium conditions",
+      "Statistical uncertainties in Monte Carlo transport calculations",
+      "Variations in MLC transmission and leakage characteristics",
+      "Detector positioning uncertainties amplified in small field geometries"
+    ],
+    "explanation": "Machine-specific spectral differences in nominally identical beam energies significantly affect secondary electron equilibrium in small fields, where lateral electron transport is limited. This creates detector-specific response variations that manifest as kQ,fclin,fref dependencies, as detailed in TG-155 formalism.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "A research protocol compares Gamma Knife Icon with linear accelerator-based SRS for multiple brain metastases. Monte Carlo calculations reveal systematic differences in RBE-weighted dose distributions near tissue-air interfaces. For Co-60 (Gamma Knife) vs 6MV photons (LINAC), the tissue-maximum ratios differ by 3-7% in regions within 2mm of air cavities. Considering Compton scatter contributions, photoelectric absorption, and pair production cross-sections, what factor most significantly contributes to the observed dosimetric differences?",
+    "answer": "Lower mean photon energy of Co-60 increasing photoelectric interactions",
+    "choices": [
+      "Lower mean photon energy of Co-60 increasing photoelectric interactions",
+      "Higher Compton scatter probability for 6MV photons in tissue",
+      "Pair production threshold effects at tissue-air boundaries",
+      "Energy-dependent buildup region characteristics affecting interface dosimetry"
+    ],
+    "explanation": "Co-60 gamma rays (mean energy ~1.25 MeV) have higher photoelectric cross-sections compared to 6MV photons (mean ~2 MeV), particularly near high-Z interfaces. This creates different scattered radiation contributions and electron equilibrium conditions at tissue-air boundaries, as predicted by Klein-Nishina and photoelectric cross-section theory.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "A multi-institutional study of SBRT dose escalation protocols requires uncertainty quantification for TCP modeling. The analysis incorporates machine-specific small field correction factors (uncertainty ±3%), interfraction setup variations (σ=1.2mm), intrafraction motion (σ=0.8mm), delineation uncertainties (σ=1.5mm), and dose calculation accuracy (±2%). Using radiobiological parameters α/β=10Gy, α=0.3Gy⁻¹, the study requires propagation of uncertainties through the TCP model. What represents the dominant contribution to overall TCP uncertainty?",
+    "answer": "Target delineation uncertainty through steep dose gradient effects",
+    "choices": [
+      "Target delineation uncertainty through steep dose gradient effects",
+      "Dose calculation accuracy compounded by fractionation sensitivity",
+      "Interfraction setup variations affecting dose volume histogram",
+      "Small field correction factor uncertainties in absolute dose"
+    ],
+    "explanation": "In SBRT with steep dose gradients (often >10%/mm), geometric uncertainties in target delineation (1.5mm) translate to significant dose uncertainties that propagate exponentially through TCP calculations due to the α parameter sensitivity. This geometric-dosimetric coupling dominates over absolute dose uncertainties in high-gradient treatments.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in photon beams?",
+    "answer": "±2% for 6 MV and ±3% for >10 MV",
+    "choices": [
+      "±2% for 6 MV and ±3% for >10 MV",
+      "±1% for 6 MV and ±2% for >10 MV",
+      "±3% for 6 MV and ±4% for >10 MV",
+      "±1.5% for 6 MV and ±2.5% for >10 MV"
+    ],
+    "explanation": "TG-142 specifies beam flatness tolerances as ±2% for 6 MV photon beams and ±3% for photon beams greater than 10 MV.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Calibration of photon and electron beams",
+    "choices": [
+      "Calibration of photon and electron beams",
+      "Quality assurance of imaging systems",
+      "Commissioning of treatment planning systems",
+      "Acceptance testing of linear accelerators"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing the standard method for beam calibration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "In daily linear accelerator QA, what parameter is typically checked to ensure output constancy?",
+    "answer": "Dose rate consistency within ±3%",
+    "choices": [
+      "Dose rate consistency within ±3%",
+      "Energy stability within ±1%",
+      "Beam profile symmetry within ±2%",
+      "Gantry rotation accuracy within ±1°"
+    ],
+    "explanation": "Daily QA includes monitoring output constancy, with typical tolerance of ±3% from baseline to ensure consistent treatment delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator QA?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Maximum Leaf Configuration",
+      "Mechanical Leaf Control",
+      "Modulated Light Chamber"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which consists of multiple movable leaves used to shape radiation beams for conformal treatment delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

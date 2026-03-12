@@ -259,7 +259,7 @@ export default function ConnectionsPage() {
         </div>
 
         {perfect && (
-          <div className="text-[#a855f7] text-sm font-mono mb-4">+75 perfect bonus!</div>
+          <div className="text-[#a855f7] text-sm font-mono mb-4">+30 perfect bonus!</div>
         )}
 
         <div className="flex gap-3">

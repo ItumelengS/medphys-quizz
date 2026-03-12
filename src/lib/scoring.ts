@@ -181,6 +181,11 @@ export function calculateXpWithPenalty(
     penalty = deficit * total * basePenalty;
   }
 
+  // Minimum penalty floor for low-total modes (wordle=1, connections=4)
+  // so failing a puzzle always stings: 15 XP base + 5 per level
+  const minPenalty = 15 + confirmedLevel * 5;
+  penalty = Math.max(penalty, minPenalty);
+
   return { xpChange: -Math.ceil(penalty), penalized: true };
 }
 
@@ -303,12 +308,12 @@ export function calculateConnectionsScore(
   mistakesLeft: number,
   perfect: boolean
 ): number {
-  // Base: 50 points per group found
-  let score = groupsFound * 50;
+  // Base: 25 points per group found
+  let score = groupsFound * 25;
   // Bonus for remaining mistakes (max 4)
-  score += mistakesLeft * 15;
+  score += mistakesLeft * 10;
   // Perfect bonus (no mistakes)
-  if (perfect) score += 75;
+  if (perfect) score += 30;
   return Math.max(0, score);
 }
 

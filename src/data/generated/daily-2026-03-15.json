@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary characteristic that defines stereotactic radiosurgery (SRS)?",
+    "answer": "Single-fraction high-dose treatment with steep dose gradients",
+    "choices": [
+      "Single-fraction high-dose treatment with steep dose gradients",
+      "Multi-fraction treatment with conformal dose distributions",
+      "Large field irradiation with uniform dose distributions",
+      "Hypofractionated treatment with extended delivery times"
+    ],
+    "explanation": "SRS is defined as single-fraction high-dose radiation treatment delivered with high precision and steep dose gradients to minimize normal tissue exposure.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily assess in stereotactic systems?",
+    "answer": "Coincidence of radiation isocenter with imaging isocenter",
+    "choices": [
+      "Coincidence of radiation isocenter with imaging isocenter",
+      "Flatness and symmetry of small radiation fields",
+      "Output constancy of linear accelerator systems",
+      "Mechanical accuracy of multi-leaf collimator systems"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify the coincidence between radiation and imaging isocenters, critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary advantage of micro-MLCs over conventional collimators in SRS?",
+    "answer": "Enhanced conformality and reduced penumbra widths",
+    "choices": [
+      "Enhanced conformality and reduced penumbra widths",
+      "Increased maximum field size capabilities",
+      "Simplified quality assurance procedures",
+      "Reduced treatment planning complexity"
+    ],
+    "explanation": "Micro-MLCs have smaller leaf widths (typically 2.5-5mm) compared to conventional MLCs, enabling better conformality and sharper penumbras for small targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of radiation source does the Gamma Knife system use?",
+    "answer": "Cobalt-60 radioactive sources",
+    "choices": [
+      "Cobalt-60 radioactive sources",
+      "Linear accelerator x-rays",
+      "Cesium-137 radioactive sources",
+      "Iridium-192 radioactive sources"
+    ],
+    "explanation": "The Gamma Knife uses multiple Cobalt-60 sources (typically 192-201) arranged in a hemispherical configuration to deliver focused gamma radiation.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended minimum percentage depth dose for small field output factor measurements?",
+    "answer": "Greater than 80% of maximum depth dose",
+    "choices": [
+      "Greater than 80% of maximum depth dose",
+      "At the depth of maximum dose only",
+      "Greater than 70% of maximum depth dose",
+      "At 10 cm depth for all energies"
+    ],
+    "explanation": "TG-101 recommends measuring small field output factors at depths where the %DD is greater than 80% to minimize uncertainties from dose gradient effects.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 to 5.0 mm at isocenter",
+    "choices": [
+      "2.5 to 5.0 mm at isocenter",
+      "5.0 to 10.0 mm at isocenter",
+      "1.0 to 2.5 mm at isocenter",
+      "10.0 to 15.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0mm at isocenter, compared to 5-10mm for conventional MLCs, enabling better small field conformality.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "Which detector type does TG-155 recommend as most suitable for small field relative dosimetry?",
+    "answer": "Synthetic diamond detectors",
+    "choices": [
+      "Synthetic diamond detectors",
+      "Large volume ion chambers",
+      "Thermoluminescent dosimeters",
+      "Semiconductor diode detectors"
+    ],
+    "explanation": "TG-155 identifies synthetic diamond detectors as having excellent small field characteristics due to their small active volume and near tissue-equivalent response.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by the CyberKnife system for patient positioning?",
+    "answer": "Real-time imaging with fiducial tracking",
+    "choices": [
+      "Real-time imaging with fiducial tracking",
+      "Surface monitoring with infrared cameras",
+      "Respiratory gating with external markers",
+      "Stereotactic frame immobilization systems"
+    ],
+    "explanation": "CyberKnife uses real-time orthogonal imaging to track implanted fiducials or anatomical landmarks, enabling continuous patient position correction during treatment.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam shows a 15% output factor decrease when field size reduces from 10×10 cm² to 1×1 cm². The ion chamber used has a 0.6 cm³ active volume. Monte Carlo simulations show the true output factor should be 0.75. What is the primary cause of this discrepancy and the most appropriate correction strategy?",
+    "answer": "Volume averaging effects require Monte Carlo-derived correction factors and detector-specific field size corrections",
+    "choices": [
+      "Volume averaging effects require Monte Carlo-derived correction factors and detector-specific field size corrections",
+      "Energy dependence variations need spectral correction factors and cross-calibration with multiple detectors",
+      "Scatter contribution changes require phantom material corrections and improved collimation systems",
+      "Temperature pressure corrections need environmental monitoring and real-time density adjustments"
+    ],
+    "explanation": "Large volume detectors suffer from volume averaging in small fields where dose gradients are steep. TG-155 recommends Monte Carlo-derived correction factors specific to detector type and field size.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT lung treatment verification, the 4D-CT shows 15mm superior-inferior tumor motion, but real-time imaging reveals systematic 3mm setup errors and 2mm random positioning uncertainties. The PTV margin is 5mm. What is the optimal adaptive strategy considering interfraction and intrafraction uncertainties?",
+    "answer": "Implement real-time tracking with adaptive margin reduction and daily image guidance protocol modifications",
+    "choices": [
+      "Implement real-time tracking with adaptive margin reduction and daily image guidance protocol modifications",
+      "Increase PTV margins to 20mm and apply respiratory gating with standard imaging protocols",
+      "Use breath-hold techniques with 10mm margins and weekly setup verification procedures",
+      "Apply population-based margins with motion encompassing techniques and bi-weekly imaging reviews"
+    ],
+    "explanation": "The combination of large motion (15mm) with systematic setup errors requires real-time tracking and adaptive protocols. Standard 5mm margins are insufficient for the observed uncertainties.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "For a 0.5×0.5 cm² field, three detectors give output factors of 0.62 (ion chamber), 0.68 (diamond), and 0.71 (Monte Carlo). The ion chamber correction factor from TG-155 is 1.089. After applying corrections, systematic uncertainties remain at 3.5%. What additional factors must be considered in the uncertainty budget?",
+    "answer": "Detector positioning uncertainties, phantom composition variations, and beam quality dependencies in correction factor applications",
+    "choices": [
+      "Detector positioning uncertainties, phantom composition variations, and beam quality dependencies in correction factor applications",
+      "Temperature pressure corrections, humidity variations, and electrometer calibration uncertainties in measurement protocols",
+      "Patient setup reproducibility, imaging registration errors, and treatment delivery timing variations in clinical applications",
+      "Planning system algorithm limitations, tissue segmentation uncertainties, and dose calculation grid resolution effects"
+    ],
+    "explanation": "Even after applying TG-155 correction factors, remaining uncertainties stem from detector positioning in steep gradients, phantom material differences, and beam quality dependence of corrections.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A comprehensive FMEA analysis of a CyberKnife system reveals the highest RPN of 336 (Severity=8, Occurrence=6, Detectability=7) for fiducial tracking failure during treatment. Monte Carlo uncertainty analysis shows 2.3% type A and 4.1% type B uncertainties. Design a risk mitigation strategy that addresses both systematic and stochastic failure modes while maintaining treatment efficiency.",
+    "answer": "Implement redundant tracking systems with real-time Monte Carlo verification, statistical process control, and automated intervention thresholds",
+    "choices": [
+      "Implement redundant tracking systems with real-time Monte Carlo verification, statistical process control, and automated intervention thresholds",
+      "Develop backup manual tracking procedures with enhanced imaging protocols, extended treatment times, and operator training programs",
+      "Install additional quality assurance equipment with daily verification procedures, increased staffing levels, and comprehensive documentation systems",
+      "Create alternative treatment modality protocols with conventional fractionation schemes, larger margin approaches, and simplified delivery techniques"
+    ],
+    "explanation": "The high RPN requires systematic mitigation addressing detectability and occurrence. Redundant systems with real-time verification and statistical process control provide optimal risk reduction while maintaining efficiency.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of a 0.6×0.6 cm² field shows that detector-specific correction factors vary by 15% between different beam models (6MV, 6FFF, 10MV, 10FFF). The measurement uncertainty budget requires type A uncertainties <2% and combined uncertainties <4.5%. Design an optimization protocol for correction factor determination across multiple beam energies.",
+    "answer": "Develop energy-dependent correction matrices using EGSnrc simulations with experimental validation, statistical uncertainty propagation, and detector response characterization",
+    "choices": [
+      "Develop energy-dependent correction matrices using EGSnrc simulations with experimental validation, statistical uncertainty propagation, and detector response characterization",
+      "Create universal correction factors using MCNP calculations with simplified geometries, population-based uncertainties, and manufacturer specifications",
+      "Implement beam-specific protocols using Geant4 modeling with standard phantoms, literature-based corrections, and routine quality assurance procedures",
+      "Establish detector-independent methods using PENELOPE simulations with generic parameters, conservative uncertainty estimates, and simplified measurement protocols"
+    ],
+    "explanation": "The 15% variation across energies requires sophisticated Monte Carlo modeling with proper uncertainty analysis. EGSnrc with experimental validation provides the most accurate energy-dependent corrections.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Research-level investigation of micro-MLC leakage in fields <1 cm² shows Monte Carlo predictions of 0.8% transmission, but experimental measurements range from 1.2-2.1% across different leaf positions. The discrepancy affects dose calculation accuracy by up to 6% in high-gradient regions. What advanced modeling approach would resolve this discrepancy?",
+    "answer": "Phase-space analysis with detailed leaf geometry modeling, manufacturing tolerance simulations, and position-dependent leakage characterization",
+    "choices": [
+      "Phase-space analysis with detailed leaf geometry modeling, manufacturing tolerance simulations, and position-dependent leakage characterization",
+      "Standard commissioning procedures with manufacturer specifications, simplified geometry approximations, and population-based correction factors",
+      "Enhanced measurement protocols with multiple detector types, extended sampling procedures, and statistical averaging techniques",
+      "Alternative calculation algorithms with empirical correction factors, clinical tolerance approaches, and routine verification procedures"
+    ],
+    "explanation": "The systematic discrepancy between MC and measurements suggests manufacturing tolerances and leaf positioning effects require detailed geometric modeling with phase-space analysis for accurate predictions.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Advanced uncertainty analysis of a multi-institutional SRS program shows systematic dose delivery variations of 4.2% (k=2) between centers using identical equipment and protocols. Monte Carlo analysis indicates planning system differences contribute 2.1%, measurement methodology 1.8%, and beam modeling 3.1% to the combined uncertainty. Design a harmonization protocol that reduces intercenter variations to <2%.",
+    "answer": "Establish reference dosimetry protocols with MC-validated correction factors, standardized beam modeling, and centralized measurement traceability systems",
+    "choices": [
+      "Establish reference dosimetry protocols with MC-validated correction factors, standardized beam modeling, and centralized measurement traceability systems",
+      "Implement simplified measurement procedures with manufacturer-recommended protocols, routine quality assurance, and periodic intercenter comparisons",
+      "Develop institutional flexibility approaches with local optimization procedures, center-specific corrections, and individualized uncertainty budgets",
+      "Create regulatory compliance frameworks with minimum standard requirements, documentation protocols, and annual audit procedures"
+    ],
+    "explanation": "Multi-institutional harmonization requires standardized reference dosimetry with Monte Carlo validation, common beam modeling approaches, and traceable measurement standards to achieve <2% variation.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±2% from baseline",
+      "±3% from baseline",
+      "±5% from baseline",
+      "±1% from baseline"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy checks, which is a fundamental requirement for ensuring consistent beam delivery in radiation therapy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary dosimetry protocol recommended by AAPM TG-51 for calibrating photon beams in water?",
+    "answer": "Ion chamber calibration in terms of absorbed dose to water",
+    "choices": [
+      "Ion chamber calibration in terms of absorbed dose to water",
+      "Thermoluminescent dosimeter calibration in air kerma",
+      "Film dosimetry calibration in tissue equivalent material",
+      "Diode detector calibration in reference conditions"
+    ],
+    "explanation": "TG-51 establishes the protocol for absorbed dose to water calibration using ion chambers, replacing the older air kerma-based TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What does beam flatness specifically measure in linear accelerator QA?",
+    "answer": "Dose uniformity across the central 80% of the beam profile",
+    "choices": [
+      "Dose uniformity across the central 80% of the beam profile",
+      "Dose rate variation between opposite beam edges only",
+      "Energy spectrum consistency throughout the treatment field",
+      "Beam symmetry relative to the central axis position"
+    ],
+    "explanation": "Beam flatness quantifies dose uniformity across the central 80% of the beam profile and is typically expressed as a percentage variation from the average dose in this region.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

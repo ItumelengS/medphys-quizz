@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary defining characteristic of stereotactic radiosurgery (SRS)?",
+    "answer": "Single-fraction delivery with high precision targeting",
+    "choices": [
+      "Single-fraction delivery with high precision targeting",
+      "Multiple-fraction delivery with standard targeting accuracy",
+      "Hypofractionated delivery using conventional linacs only",
+      "Conformal delivery requiring surgical field exposure"
+    ],
+    "explanation": "SRS is defined as high-precision, single-fraction radiotherapy delivery, typically using doses of 12-24 Gy, as outlined in TG-101.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Mechanical isocenter accuracy and alignment",
+    "choices": [
+      "Mechanical isocenter accuracy and alignment",
+      "Output factor consistency across field sizes",
+      "Small field dosimetry correction factors",
+      "Multi-leaf collimator positioning precision"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to evaluate the coincidence of the mechanical and radiation isocenters, crucial for SRS accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the Gamma Knife's primary radiation source?",
+    "answer": "Multiple Cobalt-60 sources arranged spherically",
+    "choices": [
+      "Multiple Cobalt-60 sources arranged spherically",
+      "Single linear accelerator with micro-MLCs",
+      "Cesium-137 sources in helical configuration",
+      "Iridium-192 sources with robotic positioning"
+    ],
+    "explanation": "Gamma Knife uses approximately 192 Cobalt-60 sources arranged in a spherical helmet configuration to deliver convergent beams.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What defines a small field in radiation therapy dosimetry?",
+    "answer": "Field size approaching the lateral charged particle equilibrium range",
+    "choices": [
+      "Field size approaching the lateral charged particle equilibrium range",
+      "Any field smaller than 10 cm × 10 cm dimension",
+      "Fields requiring micro-MLC collimation systems exclusively",
+      "Treatment fields delivered with stereotactic frame immobilization"
+    ],
+    "explanation": "TG-155 defines small fields as those where the field size approaches the lateral range of charged particle equilibrium, typically <3 cm equivalent square.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "What is the typical mechanical isocenter accuracy requirement for SRS systems?",
+    "answer": "≤ 1 mm diameter sphere",
+    "choices": [
+      "≤ 1 mm diameter sphere",
+      "≤ 2 mm diameter sphere",
+      "≤ 0.5 mm diameter sphere",
+      "≤ 1.5 mm diameter sphere"
+    ],
+    "explanation": "TG-101 recommends mechanical isocenter accuracy within 1 mm diameter sphere for SRS systems to ensure precise dose delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the recommended detector for small field relative dosimetry measurements?",
+    "answer": "Unshielded silicon diode detectors",
+    "choices": [
+      "Unshielded silicon diode detectors",
+      "Standard cylindrical ionization chambers",
+      "Thermoluminescent dosimeter chips",
+      "Diamond detector with gold contacts"
+    ],
+    "explanation": "TG-155 recommends unshielded silicon diodes for small field relative dosimetry due to their small sensitive volume and near tissue-equivalent response.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in SRS?",
+    "answer": "2.5 mm at isocenter",
+    "choices": [
+      "2.5 mm at isocenter",
+      "5.0 mm at isocenter",
+      "1.0 mm at isocenter",
+      "7.5 mm at isocenter"
+    ],
+    "explanation": "Most commercial micro-MLCs have leaf widths of 2.5 mm projected to isocenter, providing improved conformity for small target volumes.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of CyberKnife's robotic delivery system?",
+    "answer": "Real-time tumor tracking with continuous beam repositioning",
+    "choices": [
+      "Real-time tumor tracking with continuous beam repositioning",
+      "Higher dose rate delivery compared to conventional linacs",
+      "Elimination of patient immobilization device requirements",
+      "Reduced treatment planning complexity for multiple targets"
+    ],
+    "explanation": "CyberKnife's 6-DOF robotic arm enables real-time tracking and continuous beam adjustment based on imaging feedback during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 5 mm × 5 mm field measured with a 0.6 cc ion chamber shows 15% lower output than expected from the treatment planning system. The same field measured with a 0.016 cc ion chamber shows 8% lower output, while an unshielded diode shows 2% difference. What is the most likely explanation for these measurement discrepancies?",
+    "answer": "Volume averaging effects decreasing with detector size, requiring Monte Carlo-calculated correction factors",
+    "choices": [
+      "Volume averaging effects decreasing with detector size, requiring Monte Carlo-calculated correction factors",
+      "Energy dependence variations between detectors necessitating cross-calibration against film dosimetry",
+      "Systematic setup errors increasing proportionally with detector sensitive volume dimensions",
+      "Temperature and pressure corrections becoming unreliable for small field geometries"
+    ],
+    "explanation": "The decreasing discrepancy with smaller detectors indicates volume averaging effects. TG-155 emphasizes that small field measurements require detector-specific correction factors, often determined via Monte Carlo simulation.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT commissioning, you observe that dose calculations systematically overestimate measured doses by 8-12% for targets smaller than 1.5 cm diameter, while agreement is within 3% for targets >3 cm. The beam model validates correctly for standard fields. What comprehensive solution addresses this discrepancy?",
+    "answer": "Implement small field correction factors with detector-specific Monte Carlo modeling and validate against gel dosimetry",
+    "choices": [
+      "Implement small field correction factors with detector-specific Monte Carlo modeling and validate against gel dosimetry",
+      "Recalibrate the treatment planning system using modified tissue-phantom ratios for small volumes only",
+      "Adjust the electron density assignments in the planning system to account for volume effects",
+      "Modify the beam modeling parameters to reduce penumbra width calculations in the algorithm"
+    ],
+    "explanation": "This systematic error indicates inadequate small field modeling. The solution requires implementing proper correction factors derived from Monte Carlo calculations, with independent validation using high-resolution dosimetry methods like gel dosimetry.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Your SRS program experiences a systematic 5° rotational offset discovered during patient-specific QA. The Winston-Lutz test passes with <0.5 mm deviation, and imaging systems align correctly. Mechanical checks show proper gantry angle readouts. What multi-system analysis would identify the root cause?",
+    "answer": "Cross-correlation analysis of treatment couch rotation encoders, imaging coordinate transformations, and DICOM coordinate system matrices",
+    "choices": [
+      "Cross-correlation analysis of treatment couch rotation encoders, imaging coordinate transformations, and DICOM coordinate system matrices",
+      "Comprehensive recalibration of the linear accelerator gantry angle sensors and mechanical alignment systems",
+      "Analysis of patient positioning device manufacturing tolerances and immobilization system mechanical accuracy",
+      "Investigation of treatment planning system coordinate system definitions and beam angle calculation algorithms"
+    ],
+    "explanation": "A systematic rotational offset with correct Winston-Lutz results suggests a coordinate system transformation error. This requires analyzing the complete chain from imaging through treatment delivery coordinate systems.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Design a Monte Carlo-based uncertainty budget for small field output factor measurements in SRS commissioning. The clinical tolerance is ±3%. Your uncertainty components include: detector positioning (±1.2%), detector calibration (±2.1%), Monte Carlo statistical uncertainty (±1.5%), beam stability (±0.8%), and temperature/pressure corrections (±0.5%). What is the combined Type A and Type B uncertainty, and does it meet clinical requirements?",
+    "answer": "Combined uncertainty: ±2.8% (k=1), which meets the ±3% clinical tolerance with adequate margin",
+    "choices": [
+      "Combined uncertainty: ±2.8% (k=1), which meets the ±3% clinical tolerance with adequate margin",
+      "Combined uncertainty: ±3.4% (k=1), which exceeds clinical tolerance requiring component reduction",
+      "Combined uncertainty: ±2.1% (k=1), dominated by detector calibration with sufficient clinical margin",
+      "Combined uncertainty: ±4.2% (k=2), requiring expansion factors but meeting clinical specifications"
+    ],
+    "explanation": "Using root-sum-squares for independent uncertainties: √(1.2² + 2.1² + 1.5² + 0.8² + 0.5²) = ±2.8% (k=1). This provides adequate margin within the ±3% clinical tolerance.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Your Monte Carlo model for micro-MLC small field calculations shows systematic 4% dose overestimation in the penumbra region for fields <2 cm. Increasing particle histories from 10⁸ to 10⁹ reduces statistical uncertainty from ±2% to ±0.6% but doesn't resolve the systematic error. What advanced modeling parameter requires optimization?",
+    "answer": "Microscopic leaf surface roughness and manufacturing tolerances in the multi-leaf collimator geometric model",
+    "choices": [
+      "Microscopic leaf surface roughness and manufacturing tolerances in the multi-leaf collimator geometric model",
+      "Secondary electron transport parameters and step-size algorithms in the penumbra calculation regions",
+      "Photon interaction cross-sections and Compton scattering angular distributions in small volume elements",
+      "Variance reduction techniques and particle splitting algorithms in the geometric penumbra regions"
+    ],
+    "explanation": "Systematic penumbra errors in micro-MLC modeling often result from oversimplified leaf edge geometry. Real MLCs have surface roughness and manufacturing tolerances that affect radiation leakage and penumbra characteristics.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements on linear accelerators?",
+    "answer": "±3% from baseline value",
+    "choices": [
+      "±2% from baseline value",
+      "±3% from baseline value",
+      "±5% from baseline value",
+      "±1% from baseline value"
+    ],
+    "explanation": "TG-142 specifies that daily output constancy should be within ±3% of the established baseline value to ensure consistent beam delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of photon beams",
+    "choices": [
+      "Absolute dose calibration of photon beams",
+      "Monthly QA testing of linear accelerators",
+      "MLC positioning accuracy verification procedures",
+      "EPID image quality assessment methods"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, establishing absolute dose calibration procedures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What parameter is used to quantify beam flatness in linear accelerator QA?",
+    "answer": "Ratio of maximum to minimum dose within the flat region",
+    "choices": [
+      "Ratio of maximum to minimum dose within the flat region",
+      "Percentage depth dose at 10 cm water depth",
+      "Standard deviation of all measured dose points",
+      "Average dose rate across the entire field"
+    ],
+    "explanation": "Beam flatness is defined as the ratio of maximum to minimum dose values within the flattened region of the beam profile, typically within 80% of the field size.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the standard reference depth in water for TG-51 calibration measurements?",
+    "answer": "10 cm depth in water phantom",
+    "choices": [
+      "5 cm depth in water phantom",
+      "10 cm depth in water phantom",
+      "15 cm depth in water phantom",
+      "20 cm depth in water phantom"
+    ],
+    "explanation": "TG-51 protocol specifies measurements at 10 cm depth in water for photon beam calibrations, which provides sufficient buildup and scatter conditions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

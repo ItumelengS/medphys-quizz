@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is stereotactic radiosurgery (SRS)?",
+    "answer": "A technique delivering high-dose radiation in a single fraction using stereotactic guidance",
+    "choices": [
+      "A technique delivering high-dose radiation in a single fraction using stereotactic guidance",
+      "A surgical procedure using stereotactic frames for tumor localization and removal",
+      "A fractionated radiation therapy technique using conventional field sizes and imaging",
+      "A diagnostic imaging technique using stereotactic coordinates for lesion identification"
+    ],
+    "explanation": "SRS is defined as the precise delivery of a high dose of radiation in a single fraction using stereotactic guidance systems. This distinguishes it from conventional fractionated radiotherapy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What is the primary characteristic of small radiation fields in dosimetry?",
+    "answer": "Lack of charged particle equilibrium and partial occlusion of the radiation source",
+    "choices": [
+      "Enhanced charged particle equilibrium and complete source visibility to all points",
+      "Lack of charged particle equilibrium and partial occlusion of the radiation source",
+      "Improved dose uniformity and reduced penumbra effects throughout the field",
+      "Increased secondary electron production and enhanced backscatter contribution to dose"
+    ],
+    "explanation": "Small fields are characterized by lack of charged particle equilibrium and partial occlusion of the radiation source, leading to unique dosimetric challenges as described in TG-155.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the Winston-Lutz test used to evaluate?",
+    "answer": "The mechanical and radiation isocenter coincidence in linear accelerators",
+    "choices": [
+      "The mechanical and radiation isocenter coincidence in linear accelerators",
+      "The output constancy and energy stability of photon beams",
+      "The multileaf collimator leaf position accuracy and speed",
+      "The patient positioning accuracy and immobilization system stability"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to evaluate the coincidence between mechanical rotation isocenter and radiation field center, critical for stereotactic treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the Gamma Knife system primarily designed for?",
+    "answer": "Intracranial stereotactic radiosurgery using multiple cobalt-60 sources",
+    "choices": [
+      "Intracranial stereotactic radiosurgery using multiple cobalt-60 sources",
+      "Extracranial stereotactic body radiotherapy using linear accelerator technology",
+      "Whole brain radiotherapy using rotating cobalt-60 units",
+      "Proton therapy treatments using cyclotron-generated particle beams"
+    ],
+    "explanation": "The Gamma Knife is a dedicated stereotactic radiosurgery system using multiple cobalt-60 sources arranged in a hemisphere to treat intracranial lesions with high precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter for improved conformity",
+    "choices": [
+      "2.5-5.0 mm at isocenter for improved conformity",
+      "8.0-10.0 mm at isocenter for standard treatments",
+      "1.0-1.5 mm at isocenter for maximum precision",
+      "6.0-8.0 mm at isocenter for optimal efficiency"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing better conformity than standard MLCs (10 mm) while maintaining practical treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What detector type does TG-155 recommend for small field output factor measurements?",
+    "answer": "Silicon diodes or diamond detectors for fields smaller than 2×2 cm²",
+    "choices": [
+      "Silicon diodes or diamond detectors for fields smaller than 2×2 cm²",
+      "Large volume ion chambers for all field sizes below 5×5 cm²",
+      "Thermoluminescent dosimeters exclusively for sub-centimeter field measurements",
+      "MOSFET detectors calibrated specifically for megavoltage photon beams"
+    ],
+    "explanation": "TG-155 recommends silicon diodes or diamond detectors for small field dosimetry due to their small sensitive volumes and reduced energy dependence compared to ion chambers.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of the CyberKnife system's tracking capability?",
+    "answer": "Real-time tumor tracking using orthogonal kV imaging and robotic delivery",
+    "choices": [
+      "Real-time tumor tracking using orthogonal kV imaging and robotic delivery",
+      "Respiratory-gated treatment delivery using external marker-based monitoring systems",
+      "Enhanced dose rate modulation using variable aperture collimation techniques",
+      "Improved patient comfort through reduced treatment time and positioning requirements"
+    ],
+    "explanation": "CyberKnife's unique feature is real-time tumor tracking using orthogonal kV imaging with robotic arm delivery, allowing for intrafraction motion compensation.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 1×1 cm² field shows an output factor of 0.85 with an ion chamber and 0.92 with a diode. The reference 10×10 cm² field reads 100 cGy/min with both detectors. Monte Carlo simulation predicts 0.89 for the small field. What is the most appropriate small field correction factor approach following TG-483 recommendations?",
+    "answer": "Apply detector-specific correction factors derived from Monte Carlo to achieve 0.89 output factor",
+    "choices": [
+      "Apply detector-specific correction factors derived from Monte Carlo to achieve 0.89 output factor",
+      "Use the average of ion chamber and diode measurements yielding 0.885 output factor",
+      "Select the diode measurement as most accurate due to smaller detector volume characteristics",
+      "Implement field-specific calibration using TLD measurements to verify the 0.85 ion chamber value"
+    ],
+    "explanation": "TG-483 recommends using detector-specific correction factors based on Monte Carlo calculations to account for detector response differences in small fields, making the MC-predicted value most reliable.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT plan optimization, the PTV coverage drops from 95% to 88% when implementing organ-at-risk constraints. The conformity index increases from 1.15 to 1.45, and the gradient index worsens from 4.2 to 5.8. What is the most clinically appropriate optimization strategy?",
+    "answer": "Negotiate moderate OAR constraint relaxation to achieve 92-95% PTV coverage with acceptable conformity",
+    "choices": [
+      "Accept 88% PTV coverage prioritizing critical organ sparing with current constraint levels",
+      "Negotiate moderate OAR constraint relaxation to achieve 92-95% PTV coverage with acceptable conformity",
+      "Recommend fractionated SBRT to 25 Gy in 5 fractions instead of single-fraction treatment",
+      "Implement adaptive planning with smaller PTV margins to improve the conformity and gradient indices"
+    ],
+    "explanation": "SBRT requires balancing PTV coverage with OAR sparing. Moderate constraint relaxation often allows clinically acceptable coverage while maintaining organ protection, following ICRU-91 guidance.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A Gamma Knife treatment plan shows 50% isodose conformity index of 1.8 and gradient index of 2.9. Prescription isodose is at 45%. What indicates the primary plan quality issue requiring optimization?",
+    "answer": "Poor conformity index indicates excessive normal tissue irradiation requiring shot pattern adjustment",
+    "choices": [
+      "Poor conformity index indicates excessive normal tissue irradiation requiring shot pattern adjustment",
+      "Suboptimal prescription isodose level requires adjustment to 50-55% for improved gradient steepness",
+      "Gradient index suggests inadequate dose fall-off necessitating smaller collimator helmet selection",
+      "Combined parameters indicate target volume too small for effective Gamma Knife treatment delivery"
+    ],
+    "explanation": "A conformity index of 1.8 significantly exceeds the ideal value of 1.0, indicating poor target conformity and excessive normal tissue exposure, which is the primary concern requiring shot pattern optimization.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "CyberKnife fiducial tracking shows systematic errors of 0.8mm in superior-inferior direction during respiratory motion. The correlation model R² is 0.92, and prediction errors average 1.2mm. What is the most appropriate clinical response?",
+    "answer": "Implement respiratory gating or coaching to reduce motion amplitude before treatment delivery",
+    "choices": [
+      "Proceed with treatment using current tracking parameters as errors are within tolerance",
+      "Increase PTV margins by 2mm in superior-inferior direction to account for tracking uncertainty",
+      "Implement respiratory gating or coaching to reduce motion amplitude before treatment delivery",
+      "Switch to spinal tracking method avoiding fiducial-based correlation model dependencies"
+    ],
+    "explanation": "Systematic tracking errors of 0.8mm with 1.2mm prediction errors exceed typical CyberKnife tolerances. Motion reduction through gating or coaching is preferred over margin expansion for stereotactic treatments.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulation of a 5mm circular cone shows 8% difference from measurement in output factor. Phase space analysis reveals 15% contamination electrons, 12% scattered photons, and 73% primary photons. What is the most likely cause of the MC-measurement discrepancy?",
+    "answer": "Insufficient modeling of electron contamination transport and detector response in the MC simulation",
+    "choices": [
+      "Inadequate statistical uncertainty requiring minimum 10⁸ histories for small field convergence",
+      "Incorrect photon beam spectral modeling leading to primary photon energy distribution errors",
+      "Insufficient modeling of electron contamination transport and detector response in the MC simulation",
+      "Systematic measurement error due to detector volume averaging effects in high-gradient regions"
+    ],
+    "explanation": "High electron contamination (15%) in small fields requires accurate modeling of electron transport and detector response. Most MC codes struggle with electron contamination effects in small field geometries, leading to significant discrepancies.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis of stereotactic treatments identifies mechanical isocenter uncertainty as RPN 168 (Severity 8, Occurrence 3, Detectability 7). Winston-Lutz analysis shows 0.4mm 95th percentile displacement. What is the most effective risk mitigation strategy?",
+    "answer": "Implement automated isocenter verification with treatment interlock at 0.3mm tolerance threshold",
+    "choices": [
+      "Increase QA frequency from monthly to weekly Winston-Lutz testing protocols",
+      "Implement automated isocenter verification with treatment interlock at 0.3mm tolerance threshold",
+      "Expand PTV margins by 1mm to account for isocenter uncertainty in treatment planning",
+      "Require dual-physicist verification for all stereotactic treatment setup and delivery procedures"
+    ],
+    "explanation": "High RPN indicates significant risk requiring active mitigation. Automated verification with interlocks reduces both occurrence and improves detectability, more effectively lowering RPN than passive measures like margin expansion.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Small field dosimetry uncertainty budget shows: detector positioning (2.1%), energy dependence (1.8%), field size dependence (3.2%), and statistical uncertainty (1.5%). Type B uncertainties include calibration (1.2%) and environmental corrections (0.8%). What is the combined standard uncertainty following GUM methodology?",
+    "answer": "4.7% combined standard uncertainty using root-sum-square of individual components",
+    "choices": [
+      "4.7% combined standard uncertainty using root-sum-square of individual components",
+      "5.2% expanded uncertainty using coverage factor k=2 for 95% confidence level",
+      "3.8% systematic uncertainty excluding statistical components from uncertainty budget",
+      "6.1% conservative uncertainty adding all components linearly for maximum safety margin"
+    ],
+    "explanation": "Following GUM methodology, combined standard uncertainty = √(2.1² + 1.8² + 3.2² + 1.5² + 1.2² + 0.8²) = √(22.13) = 4.7%. This represents the root-sum-square combination of all uncertainty components.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Monte Carlo dose calculation for VMAT-SRS shows 2% average difference from measurement but 8% maximum difference in high-gradient regions. Voxel resolution is 1mm³, and calculation uncertainty is 0.8%. What optimization will most effectively reduce the maximum difference?",
+    "answer": "Implement adaptive voxel refinement with 0.5mm resolution in high-gradient regions exceeding 5%/mm",
+    "choices": [
+      "Increase Monte Carlo histories to 10⁹ per beam to reduce statistical uncertainty below 0.5%",
+      "Implement adaptive voxel refinement with 0.5mm resolution in high-gradient regions exceeding 5%/mm",
+      "Apply Gaussian smoothing with 1mm FWHM to measured data for fair MC comparison",
+      "Recalibrate detector response using Monte Carlo-calculated correction factors for gradient regions"
+    ],
+    "explanation": "High-gradient regions require finer spatial resolution for accurate dose calculation. Adaptive voxel refinement addresses spatial discretization errors more effectively than reducing statistical uncertainty, which is already adequate at 0.8%.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±4%",
+      "±5%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements, which is a critical safety check to ensure consistent dose delivery. This tolerance balances clinical safety requirements with practical measurement uncertainties.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator quality assurance?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Intensity Detector",
+      "External Patient Imaging Display",
+      "Electronic Positron Identification Device"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric quality assurance measurements in modern linear accelerators.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "In TG-51 protocol, what is the standard temperature for water tank measurements during beam calibration?",
+    "answer": "20°C",
+    "choices": [
+      "20°C",
+      "22°C",
+      "25°C",
+      "18°C"
+    ],
+    "explanation": "TG-51 specifies 22°C as the reference temperature for water tank measurements during absolute dose calibration procedures. Temperature corrections must be applied if measurements are performed at different temperatures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in linear accelerator beam shaping systems?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Maximum Leaf Configuration",
+      "Modulated Light Chamber",
+      "Multiple Linear Collimation"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which consists of multiple independently movable tungsten leaves used to shape radiation beams for conformal and intensity-modulated radiation therapy treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

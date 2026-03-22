@@ -1,0 +1,257 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the definition of stereotactic radiosurgery (SRS)?",
+    "answer": "A technique delivering high-dose radiation in a single fraction to small, well-defined targets",
+    "choices": [
+      "A technique delivering high-dose radiation in a single fraction to small, well-defined targets",
+      "A technique delivering fractionated radiation over multiple sessions to large treatment volumes",
+      "A technique using only photon beams for conventional fractionation schedules and protocols",
+      "A technique employing particle therapy exclusively for deep-seated tumors and lesions"
+    ],
+    "explanation": "SRS is characterized by single-fraction, high-precision delivery to small targets with steep dose gradients. AAPM TG-101 provides comprehensive guidance on SRS techniques and protocols.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic systems?",
+    "answer": "To verify the coincidence of radiation isocenter with mechanical rotation axes",
+    "choices": [
+      "To verify the coincidence of radiation isocenter with mechanical rotation axes",
+      "To measure the penumbra width of small radiation fields accurately",
+      "To calibrate the output factors for various collimator sizes systematically",
+      "To assess the uniformity of dose distribution across treatment fields"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical rotation axes of the gantry, collimator, and couch.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is a micro-MLC in the context of stereotactic treatments?",
+    "answer": "A multi-leaf collimator with leaf widths typically 2.5-5mm for small field shaping",
+    "choices": [
+      "A multi-leaf collimator with leaf widths typically 2.5-5mm for small field shaping",
+      "A single-leaf collimator system used exclusively for circular field geometries",
+      "A backup collimation system that operates only during emergency shutdown procedures",
+      "A secondary collimator designed for large field treatments and IMRT delivery"
+    ],
+    "explanation": "Micro-MLCs have narrower leaf widths compared to standard MLCs, enabling better conformity for small stereotactic fields while maintaining precise field shaping capabilities.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the Gamma Knife radiosurgery system?",
+    "answer": "A dedicated SRS unit using multiple Co-60 sources focused to a common isocenter",
+    "choices": [
+      "A dedicated SRS unit using multiple Co-60 sources focused to a common isocenter",
+      "A linear accelerator modified with specialized collimation for small field treatments",
+      "A robotic arm system delivering beams from multiple non-coplanar angular positions",
+      "A proton therapy system designed specifically for intracranial stereotactic procedures"
+    ],
+    "explanation": "The Gamma Knife uses approximately 192-201 Co-60 sources arranged in a hemispherical array, all focused to create a high-dose region at the target location.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field dosimetry corrections become significant?",
+    "answer": "Equivalent square field size less than 4 cm × 4 cm",
+    "choices": [
+      "Equivalent square field size less than 4 cm × 4 cm",
+      "Equivalent square field size less than 10 cm × 10 cm",
+      "Equivalent square field size less than 2 cm × 2 cm",
+      "Equivalent square field size less than 6 cm × 6 cm"
+    ],
+    "explanation": "AAPM TG-155 defines small fields as those with equivalent square dimensions less than approximately 4 cm × 4 cm, where detector response corrections become significant.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the typical prescription isodose level for cone-based SRS treatments?",
+    "answer": "80-90% isodose line encompassing the target volume",
+    "choices": [
+      "80-90% isodose line encompassing the target volume",
+      "95-100% isodose line encompassing the target volume",
+      "70-75% isodose line encompassing the target volume",
+      "60-65% isodose line encompassing the target volume"
+    ],
+    "explanation": "Cone-based SRS typically prescribes to the 80-90% isodose line to achieve optimal target coverage while maintaining steep dose gradients to normal tissue.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT lung treatment planning, a 2.5 cm diameter target shows 15% dose variation between Monte Carlo and analytical algorithms. The analytical algorithm uses equivalent path length corrections and tissue heterogeneity corrections. Patient CT shows lung density of 0.25 g/cm³ surrounding the target. What is the most likely cause, and what validation approach should be implemented?",
+    "answer": "Lateral electron transport modeling inadequacy; validate with film dosimetry in heterogeneous phantom geometries",
+    "choices": [
+      "Lateral electron transport modeling inadequacy; validate with film dosimetry in heterogeneous phantom geometries",
+      "Beam hardening artifact in planning CT; repeat simulation with dual-energy CT protocols",
+      "Incomplete scatter modeling in analytical algorithm; increase calculation grid resolution to 1 mm",
+      "Patient motion during CT acquisition; implement 4DCT with respiratory gating protocols"
+    ],
+    "explanation": "In low-density lung tissue, lateral electron transport becomes significant for small fields. Monte Carlo accurately models this physics while analytical algorithms may show limitations despite corrections.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A CyberKnife system shows systematic 0.8 mm posterior shifts in spine tracking verification over multiple fractions. The kV imaging system calibration is verified accurate, fiducial markers show no migration on repeat CT, and robot positioning repeatability tests pass. Real-time respiratory correlation shows normal patterns. What is the most probable systematic error source requiring investigation?",
+    "answer": "Spine segmentation algorithm bias in regions of vertebral body density variation or artifact",
+    "choices": [
+      "Spine segmentation algorithm bias in regions of vertebral body density variation or artifact",
+      "Systematic calibration drift in the treatment room's magnetic field compensation algorithms",
+      "Patient setup reproducibility error due to immobilization device material compression over time",
+      "Beam delivery coordinate system transformation matrix error in the robot control software"
+    ],
+    "explanation": "Consistent directional tracking errors despite verified hardware often indicate systematic image analysis issues, particularly in spine segmentation algorithms dealing with varying bone density or imaging artifacts.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Multi-institutional SRS audit data shows 8% of treatments exceed dose tolerance limits despite individual institutional QA passing. Analysis reveals correlation with field sizes <15 mm diameter and specific linear accelerator models. All sites use TG-142 QA protocols. What systematic issue should be investigated across participating institutions?",
+    "answer": "Detector-specific correction factor implementation variations and small field dosimetry chain traceability protocols",
+    "choices": [
+      "Detector-specific correction factor implementation variations and small field dosimetry chain traceability protocols",
+      "Linear accelerator mechanical tolerance specifications and routine maintenance scheduling interval variations",
+      "Treatment planning system commissioning beam data consistency and modeling parameter standardization requirements",
+      "Patient immobilization technique differences and setup uncertainty quantification methodology implementations"
+    ],
+    "explanation": "Multi-institutional discrepancies in small field dosimetry often stem from inconsistent application of detector correction factors and variations in dosimetric traceability chains, as emphasized in TG-155.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A research protocol requires uncertainty budget analysis for single-fraction 24 Gy SRS treatments. Monte Carlo modeling shows 2.1% statistical uncertainty (k=1), detector calibration contributes 1.8% (k=1), positioning uncertainty is 0.3 mm (equivalent to 2.8% dose uncertainty), and treatment planning algorithm uncertainty is 1.5% (k=1). Calculate the combined standard uncertainty and determine if the protocol meets the 5% (k=2) tolerance requirement.",
+    "answer": "Combined uncertainty = 4.2% (k=1), expanded uncertainty = 8.4% (k=2), exceeds tolerance",
+    "choices": [
+      "Combined uncertainty = 4.2% (k=1), expanded uncertainty = 8.4% (k=2), exceeds tolerance",
+      "Combined uncertainty = 3.1% (k=1), expanded uncertainty = 6.2% (k=2), exceeds tolerance",
+      "Combined uncertainty = 2.8% (k=1), expanded uncertainty = 5.6% (k=2), exceeds tolerance",
+      "Combined uncertainty = 3.8% (k=1), expanded uncertainty = 7.6% (k=2), exceeds tolerance"
+    ],
+    "explanation": "Combined standard uncertainty = √(2.1² + 1.8² + 2.8² + 1.5²) = √(4.41 + 3.24 + 7.84 + 2.25) = √17.74 = 4.2%. Expanded uncertainty (k=2) = 8.4%, which exceeds the 5% requirement.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "FMEA analysis for a multi-target SRS treatment reveals that MLC positioning errors have RPN scores of 168 (occurrence=7, severity=8, detectability=3). A proposed mitigation involves real-time leaf position monitoring with 0.1 mm accuracy, reducing occurrence to 3 and improving detectability to 2. What is the revised RPN, and does this meet the institutional threshold of RPN<100 for high-risk processes?",
+    "answer": "Revised RPN = 48, meets institutional threshold requirements for high-risk SRS processes",
+    "choices": [
+      "Revised RPN = 48, meets institutional threshold requirements for high-risk SRS processes",
+      "Revised RPN = 72, does not meet institutional threshold requirements for high-risk SRS processes",
+      "Revised RPN = 56, meets institutional threshold requirements for high-risk SRS processes",
+      "Revised RPN = 84, does not meet institutional threshold requirements for high-risk SRS processes"
+    ],
+    "explanation": "Revised RPN = Occurrence (3) × Severity (8) × Detectability (2) = 48. This is below the institutional threshold of 100, indicating acceptable risk level after mitigation implementation.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam output constancy in daily QA measurements?",
+    "answer": "±3%",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies that daily beam output constancy should be within ±3% of the baseline value established during commissioning.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard protocol recommended by AAPM for absolute dose calibration of linear accelerators?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-40",
+      "TG-51",
+      "TG-65"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For beam flatness measurements, what is the standard definition of the flattened region used in calculations?",
+    "answer": "Central 80% of the field",
+    "choices": [
+      "Central 60% of the field",
+      "Central 70% of the field",
+      "Central 80% of the field",
+      "Central 90% of the field"
+    ],
+    "explanation": "Beam flatness is typically evaluated over the central 80% of the field width, excluding the penumbra regions where dose gradients are steep.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What type of detector is most commonly used in EPID (Electronic Portal Imaging Device) systems for dosimetric applications?",
+    "answer": "Amorphous silicon flat panel detector",
+    "choices": [
+      "Ion chamber array detector",
+      "Amorphous silicon flat panel detector",
+      "Scintillation crystal detector array",
+      "Diamond semiconductor detector array"
+    ],
+    "explanation": "Most modern EPID systems use amorphous silicon flat panel detectors with cesium iodide scintillator layers for both imaging and dosimetric verification.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

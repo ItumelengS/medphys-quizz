@@ -1,0 +1,274 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation isocenter with imaging isocenter",
+    "choices": [
+      "To verify the coincidence of radiation isocenter with imaging isocenter",
+      "To measure small field output factors for cone-based treatments",
+      "To calibrate the linear accelerator for high dose rate delivery",
+      "To validate the multi-leaf collimator positional accuracy limits"
+    ],
+    "explanation": "The Winston-Lutz test verifies that the radiation isocenter coincides with the imaging isocenter, which is critical for stereotactic accuracy. TG-142 recommends this test for SRS systems.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiosurgery Technique",
+      "Single Beam Rotational Therapy",
+      "Specialized Brachytherapy Treatment"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which delivers high-dose radiation in few fractions to extracranial targets with high precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "8.0-10.0 mm at isocenter",
+      "0.5-1.0 mm at isocenter",
+      "12.0-15.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing better conformity for small targets compared to standard 5-10 mm MLCs.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of detector system does the Leksell Gamma Knife primarily use?",
+    "answer": "Cobalt-60 sources with collimators",
+    "choices": [
+      "Cobalt-60 sources with collimators",
+      "Linear accelerator with cones",
+      "Robotic arm with megavoltage",
+      "Cesium-137 sources with shields"
+    ],
+    "explanation": "The Leksell Gamma Knife uses multiple Cobalt-60 sources (typically 192-201) arranged in a hemispheric configuration with individual collimators to focus beams on the target.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the recommended minimum detector size for small field dosimetry measurements?",
+    "answer": "Active volume smaller than 0.1 mm³",
+    "choices": [
+      "Active volume smaller than 1 mm³",
+      "Active volume smaller than 5 mm³",
+      "Active volume smaller than 0.1 mm³",
+      "Active volume smaller than 10 mm³"
+    ],
+    "explanation": "TG-135 recommends detectors with active volumes smaller than 1 mm³ for small field dosimetry to minimize volume averaging effects in fields smaller than 2×2 cm².",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical fractionation scheme for single-fraction SRS treatments?",
+    "answer": "15-24 Gy in 1 fraction",
+    "choices": [
+      "15-24 Gy in 1 fraction",
+      "45-60 Gy in 3 fractions",
+      "8-12 Gy in 1 fraction",
+      "30-35 Gy in 5 fractions"
+    ],
+    "explanation": "Single-fraction SRS typically delivers 15-24 Gy depending on target size and location, with smaller targets receiving higher doses as per RTOG protocols.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the maximum acceptable Winston-Lutz deviation for SRS according to TG-142?",
+    "answer": "1 mm diameter sphere",
+    "choices": [
+      "1 mm diameter sphere",
+      "2 mm diameter sphere",
+      "0.5 mm diameter sphere",
+      "3 mm diameter sphere"
+    ],
+    "explanation": "TG-142 specifies that for SRS systems, the Winston-Lutz test should demonstrate that all beam axes intersect within a 1 mm diameter sphere.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "Which tracking method does CyberKnife primarily use for respiratory motion management?",
+    "answer": "Fiducial-based real-time tracking",
+    "choices": [
+      "Fiducial-based real-time tracking",
+      "External surface monitoring only",
+      "Breath-hold gating techniques",
+      "4D-CT retrospective gating"
+    ],
+    "explanation": "CyberKnife uses implanted fiducials tracked by orthogonal kV imaging systems for real-time tumor position monitoring and beam adjustment during treatment.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A medical physicist is commissioning a new SRS system and finds that the 5mm cone output factor measured with a microDiamond detector is 0.825, while the same measurement with an unshielded diode gives 0.798. The Monte Carlo calculated value is 0.831. Given that the beam model validation requires agreement within 2% for fields >10mm and 3% for fields ≤10mm, what is the most appropriate action?",
+    "answer": "Accept microDiamond measurement and investigate diode energy dependence",
+    "choices": [
+      "Accept microDiamond measurement and investigate diode energy dependence",
+      "Average both detector measurements for final commissioning value",
+      "Reject both measurements and repeat with different detector combinations",
+      "Use Monte Carlo value and document detector measurement discrepancies"
+    ],
+    "explanation": "The microDiamond (0.825) agrees with Monte Carlo (0.831) within 0.7%, well within tolerance. The diode shows energy dependence typical for small fields. TG-135 recommends diamond detectors for small field measurements.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT lung treatment delivery, real-time monitoring shows the target has moved 8mm superior to planned position for 15 seconds during a 180-second beam-on time. The planning target volume margin was 5mm in all directions. Considering dose distribution conformity and normal tissue sparing, what is the most appropriate immediate action?",
+    "answer": "Immediately interrupt and reposition patient using imaging guidance",
+    "choices": [
+      "Complete fraction and assess cumulative dose impact before next fraction",
+      "Immediately interrupt and reposition patient using imaging guidance",
+      "Continue treatment as margins theoretically accommodate this motion",
+      "Terminate fraction and implement smaller margins with daily imaging"
+    ],
+    "explanation": "The 8mm motion exceeds the 5mm margin, potentially compromising target coverage and increasing normal tissue dose. Completing the fraction allows assessment of delivered dose distribution and informed replanning decisions.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "For a CyberKnife system treating spinal metastases, the correlation model between external markers and internal anatomy degrades during treatment. The system's prediction accuracy decreases from 1.2mm to 3.8mm RMS error. Given the 2mm clinical tolerance, what systematic approach should be implemented?",
+    "answer": "Suspend treatment and acquire new correlation dataset with imaging",
+    "choices": [
+      "Suspend treatment and acquire new correlation dataset with imaging",
+      "Increase tracking frequency and continue with real-time corrections",
+      "Implement larger planning margins for remaining treatment fractions",
+      "Switch to breath-hold technique abandoning real-time tracking"
+    ],
+    "explanation": "CyberKnife's effectiveness depends on accurate correlation between external and internal motion. When prediction accuracy exceeds clinical tolerance, reestablishing the correlation model through new imaging is essential for treatment accuracy.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis for SRS treatments identifies that incorrect isocenter shift entry has a severity score of 9, occurrence probability of 3, and detectability score of 4. If implementing automated verification reduces occurrence to 1 and detectability to 2, what is the risk priority number reduction achieved?",
+    "answer": "From 108 to 18 (reduction of 90)",
+    "choices": [
+      "From 108 to 18 (reduction of 90)",
+      "From 108 to 36 (reduction of 72)",
+      "From 216 to 18 (reduction of 198)",
+      "From 108 to 54 (reduction of 54)"
+    ],
+    "explanation": "Initial RPN = Severity × Occurrence × Detectability = 9 × 3 × 4 = 108. After mitigation: RPN = 9 × 1 × 2 = 18. Risk reduction = 108 - 18 = 90. FMEA methodology per TG-100.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in a linear accelerator?",
+    "answer": "±3% for photon beams",
+    "choices": [
+      "±2% for photon beams",
+      "±3% for photon beams",
+      "±5% for photon beams",
+      "±1% for photon beams"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should be within ±3% for photon beams as part of routine quality assurance measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What frequency is recommended for output constancy checks on linear accelerators according to TG-142?",
+    "answer": "Daily",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Quarterly"
+    ],
+    "explanation": "TG-142 recommends daily output constancy checks to ensure the linear accelerator delivers consistent dose output within acceptable tolerances.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "In TG-51 protocol, what is the primary standard used for absorbed dose calibration?",
+    "answer": "Ion chamber calibrated in terms of absorbed dose to water",
+    "choices": [
+      "Ion chamber calibrated in terms of absorbed dose to water",
+      "Ion chamber calibrated in terms of exposure in air",
+      "Thermoluminescent dosimeter calibrated in tissue",
+      "Film dosimeter calibrated in plastic phantom"
+    ],
+    "explanation": "TG-51 protocol uses an ion chamber with a calibration coefficient traceable to a primary standard laboratory, calibrated in terms of absorbed dose to water.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended tolerance for MLC leaf position accuracy during commissioning?",
+    "answer": "±1 mm from programmed position",
+    "choices": [
+      "±0.5 mm from programmed position",
+      "±1 mm from programmed position",
+      "±2 mm from programmed position",
+      "±3 mm from programmed position"
+    ],
+    "explanation": "Industry standards typically require MLC leaf positioning accuracy within ±1 mm of the programmed position to ensure accurate dose delivery in IMRT and VMAT treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the definition of stereotactic radiosurgery (SRS)?",
+    "answer": "High-dose radiation delivered in a single fraction with stereotactic precision",
+    "choices": [
+      "High-dose radiation delivered in a single fraction with stereotactic precision",
+      "Multiple small beams delivered over several treatment sessions with imaging",
+      "Intensity-modulated radiation therapy using dynamic multileaf collimators only",
+      "Arc-based treatment delivery with real-time tumor tracking capabilities"
+    ],
+    "explanation": "SRS is defined as the delivery of a high dose of radiation in a single fraction using stereotactic localization techniques for submillimeter accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Mechanical isocenter alignment accuracy for stereotactic treatments",
+    "choices": [
+      "Mechanical isocenter alignment accuracy for stereotactic treatments",
+      "Small field output factor measurements for commissioning purposes",
+      "Multi-leaf collimator positioning accuracy during dynamic delivery",
+      "Patient positioning reproducibility using cone-beam CT imaging"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence of the radiation isocenter with the mechanical rotation isocenter, critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary purpose of micro-MLCs in stereotactic treatments?",
+    "answer": "Provide improved beam conformality for small target volumes",
+    "choices": [
+      "Provide improved beam conformality for small target volumes",
+      "Increase treatment delivery speed for hypofractionated protocols",
+      "Reduce patient setup time through automated positioning systems",
+      "Enable real-time tumor tracking during respiratory motion"
+    ],
+    "explanation": "Micro-MLCs have smaller leaf widths (typically 2.5-5mm) compared to standard MLCs, allowing better conformality for small stereotactic targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of radiation source does the GammaKnife system use?",
+    "answer": "Multiple Cobalt-60 sources arranged in a hemispherical array",
+    "choices": [
+      "Multiple Cobalt-60 sources arranged in a hemispherical array",
+      "Single linear accelerator with robotic positioning capability",
+      "Cesium-137 sources mounted on a rotating gantry system",
+      "X-ray tubes with electronic beam steering technology"
+    ],
+    "explanation": "GammaKnife systems use 192 or 201 Cobalt-60 sources arranged in a hemispherical configuration to focus radiation at the stereotactic target.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What detector type does TG-155 recommend as the reference standard for small field dosimetry?",
+    "answer": "Synthetic diamond detector for field sizes below 2×2 cm²",
+    "choices": [
+      "Synthetic diamond detector for field sizes below 2×2 cm²",
+      "Silicon diode detector with energy compensation filtering",
+      "Air-filled ionization chamber with volume correction factors",
+      "Thermoluminescent dosimeter with spatial averaging correction"
+    ],
+    "explanation": "TG-155 recommends synthetic diamond detectors as reference detectors for small fields due to their near tissue-equivalence and small sensitive volume.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical geometric accuracy requirement for SRS according to international guidelines?",
+    "answer": "End-to-end system accuracy of ±1 mm for targets <2 cm",
+    "choices": [
+      "End-to-end system accuracy of ±1 mm for targets <2 cm",
+      "Isocenter accuracy within ±0.5 mm for all treatment modalities",
+      "Patient positioning tolerance of ±2 mm in all directions",
+      "Beam alignment precision better than ±3 mm at isocenter"
+    ],
+    "explanation": "International stereotactic guidelines specify ±1 mm end-to-end accuracy for small targets, reflecting the high precision required for SRS treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "Which cone size typically requires the largest correction factor in cone-based SRS systems?",
+    "answer": "5 mm diameter cone due to maximum lateral disequilibrium effects",
+    "choices": [
+      "5 mm diameter cone due to maximum lateral disequilibrium effects",
+      "15 mm diameter cone from partial volume averaging artifacts",
+      "25 mm diameter cone because of increased scatter contributions",
+      "35 mm diameter cone from enhanced photon spectrum hardening"
+    ],
+    "explanation": "Small cones (≤10 mm) require the largest correction factors due to loss of lateral charged particle equilibrium and detector volume averaging effects.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system for SRS, output factors measured with three different detectors show consistent 8% discrepancies for 6×6 mm² fields compared to Monte Carlo calculations. All detectors are properly positioned, and larger field measurements agree within 2%. The beam model accurately predicts dose distributions in anthropomorphic phantoms. What commissioning adjustment would most effectively resolve this discrepancy?",
+    "answer": "Implement detector-specific small field correction factors derived from Monte Carlo simulations in water",
+    "choices": [
+      "Implement detector-specific small field correction factors derived from Monte Carlo simulations in water",
+      "Recalibrate the treatment planning system's photon fluence modeling for narrow beam geometries",
+      "Adjust the linear accelerator's primary collimator alignment to optimize small field penumbra characteristics",
+      "Modify the micro-MLC leaf positioning algorithm to compensate for increased leakage radiation effects"
+    ],
+    "explanation": "Consistent detector discrepancies in small fields indicate the need for detector-specific correction factors, as outlined in TG-155 formalism for small field dosimetry.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-institutional SRS program reveals that 15% of treatments exceed the 1 mm geometric accuracy tolerance during monthly Winston-Lutz testing across different linear accelerators from the same manufacturer. All systems pass individual mechanical QA tests, and the phantoms are identical. Statistical analysis shows random rather than systematic patterns. What quality assurance strategy would most effectively address this multi-site consistency issue?",
+    "answer": "Standardize comprehensive multi-isocentric Winston-Lutz protocols with statistical process control trending across all sites",
+    "choices": [
+      "Standardize comprehensive multi-isocentric Winston-Lutz protocols with statistical process control trending across all sites",
+      "Implement manufacturer-specific recalibration procedures for gantry bearing mechanical tolerances at each facility",
+      "Establish centralized phantom cross-calibration with reference standard measurements at a primary standards laboratory",
+      "Deploy automated image analysis software with machine learning algorithms for consistent measurement interpretation"
+    ],
+    "explanation": "Multi-site geometric accuracy issues require standardized comprehensive protocols with statistical trending to identify systematic institutional variations, per TG-142 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "You are developing a Monte Carlo-based independent dose verification system for GammaKnife treatments. The system must account for individual source strength variations, collimator helmet exchange effects, and patient-specific tissue heterogeneities while maintaining calculation times under 10 minutes per case. Your preliminary GEANT4 simulations show 0.8% statistical uncertainties but require 45 minutes per calculation on a 64-core cluster. What computational optimization strategy would most effectively achieve the clinical workflow requirements while maintaining dosimetric accuracy?",
+    "answer": "Implement hybrid deterministic-stochastic transport with variance reduction techniques and pre-calculated phase space distributions",
+    "choices": [
+      "Implement hybrid deterministic-stochastic transport with variance reduction techniques and pre-calculated phase space distributions",
+      "Deploy machine learning surrogate models trained on full Monte Carlo datasets with uncertainty quantification algorithms",
+      "Utilize GPU-accelerated Monte Carlo with importance sampling biased toward the prescription isodose regions",
+      "Develop analytical dose calculation engine corrections based on Monte Carlo-derived scatter kernels and heterogeneity factors"
+    ],
+    "explanation": "Clinical Monte Carlo systems require hybrid transport methods with variance reduction and pre-calculated phase spaces to achieve both speed and accuracy requirements for routine use.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "A comprehensive uncertainty budget analysis for your institution's SRS program must include mechanical, dosimetric, and biological uncertainties propagated through the entire treatment chain. Your preliminary analysis identifies 23 individual uncertainty components with complex correlations. The combined standard uncertainty exceeds the 1 mm clinical tolerance when calculated using simple root-sum-of-squares methods. What advanced uncertainty analysis methodology would most appropriately handle the correlated multi-domain uncertainty propagation?",
+    "answer": "Monte Carlo uncertainty propagation with Sobol sensitivity analysis incorporating covariance matrices for correlated parameters",
+    "choices": [
+      "Monte Carlo uncertainty propagation with Sobol sensitivity analysis incorporating covariance matrices for correlated parameters",
+      "Bayesian inference network modeling with hierarchical uncertainty structures and evidence propagation algorithms",
+      "First-order Taylor series expansion with partial correlation coefficient adjustments for systematic uncertainty components",
+      "Bootstrap resampling methodology applied to historical treatment delivery data with confidence interval estimation"
+    ],
+    "explanation": "Complex correlated uncertainties in medical physics require Monte Carlo propagation with sensitivity analysis to properly handle parameter correlations and identify dominant uncertainty sources.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "You are commissioned to develop a comprehensive FMEA for a new robotic radiosurgery program integrating real-time tumor tracking, adaptive planning, and AI-assisted contouring. The system involves 15 interconnected subsystems with 847 identified failure modes. Initial risk priority numbers range from 8 to 486, with 23 failure modes exceeding your institutional RPN threshold of 200. What systematic risk mitigation strategy would most effectively address the high-complexity failure mode interdependencies?",
+    "answer": "Implement hierarchical FMEA with bow-tie analysis for critical failure paths and dynamic risk assessment updating",
+    "choices": [
+      "Implement hierarchical FMEA with bow-tie analysis for critical failure paths and dynamic risk assessment updating",
+      "Deploy fault tree analysis with Monte Carlo simulation for probabilistic risk assessment and sensitivity ranking",
+      "Establish Markov chain modeling for system state transitions with absorbing barriers representing catastrophic failures",
+      "Utilize network reliability theory with cut-set analysis for identifying minimal critical component combinations"
+    ],
+    "explanation": "Complex multi-subsystem FMEA requires hierarchical analysis with bow-tie methods to address failure mode interdependencies and dynamic risk updating as outlined in TG-100 advanced methodologies.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Your research involves developing next-generation small field correction factors using experimentally validated Monte Carlo models. The project requires simulating detector response in fields down to 2×2 mm² with six different detector types across four beam energies. Statistical uncertainties must be below 0.1% for clinical implementation, and systematic uncertainties from cross-section data, geometry modeling, and transport physics must be rigorously quantified. What comprehensive methodology would most appropriately address the multi-domain uncertainty quantification requirements?",
+    "answer": "Implement perturbation-based uncertainty quantification with correlated sampling across physics models and detector geometries",
+    "choices": [
+      "Implement perturbation-based uncertainty quantification with correlated sampling across physics models and detector geometries",
+      "Deploy ensemble Monte Carlo calculations with varied cross-section libraries and geometry perturbation matrices",
+      "Utilize polynomial chaos expansion with Gaussian process emulation for computational efficiency and uncertainty bounds",
+      "Execute sensitivity analysis using Morris screening methods followed by variance-based decomposition of uncertainty sources"
+    ],
+    "explanation": "Research-level Monte Carlo uncertainty quantification requires perturbation-based methods with correlated sampling to properly propagate systematic uncertainties from physics models through detector response calculations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended frequency for performing output constancy checks on a linear accelerator?",
+    "answer": "Daily",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Quarterly"
+    ],
+    "explanation": "TG-142 recommends daily output constancy checks to ensure beam output remains within acceptable limits for patient safety. This is typically performed using ion chambers or diode detectors.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the tolerance limit for beam flatness variation in a linear accelerator photon beam according to TG-142?",
+    "answer": "±3%",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should not vary by more than ±3% from the baseline value established during commissioning. This ensures uniform dose delivery across the treatment field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the primary standard dosimetry protocol recommended by AAPM for absolute dose calibration of linear accelerators?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-142",
+      "TG-100"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry, replacing the older TG-21 protocol. It uses ion chamber measurements in water for absolute dose calibration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Machine Learning Calibration",
+      "Maximum Leaf Coverage",
+      "Mechanical Limit Control"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which consists of multiple movable tungsten leaves used to shape radiation beams for conformal treatment delivery in modern linear accelerators.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

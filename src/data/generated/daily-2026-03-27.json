@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify alignment between radiation isocenter and mechanical isocenter",
+    "choices": [
+      "To verify alignment between radiation isocenter and mechanical isocenter",
+      "To measure small field output factors for beam commissioning",
+      "To calibrate the treatment planning system dose calculation algorithm",
+      "To validate patient positioning accuracy during treatment delivery"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify the coincidence of radiation and mechanical isocenters, which is critical for stereotactic accuracy. TG-142 recommends tolerances of ≤1mm for SRS systems.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What defines a small field according to TG-155 recommendations?",
+    "answer": "A field where lateral charged particle equilibrium is not established",
+    "choices": [
+      "A field where lateral charged particle equilibrium is not established",
+      "Any field smaller than 10 cm × 10 cm at isocenter",
+      "A field where the penumbra width exceeds 50% of field size",
+      "Any field used for stereotactic treatments regardless of size"
+    ],
+    "explanation": "TG-155 defines small fields based on physics principles rather than arbitrary size limits, specifically when lateral charged particle equilibrium cannot be established due to field size constraints.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the typical fractionation scheme for stereotactic radiosurgery (SRS)?",
+    "answer": "Single fraction delivery of high dose",
+    "choices": [
+      "Single fraction delivery of high dose",
+      "Five fractions over one week",
+      "Daily fractions over 6-8 weeks",
+      "Three fractions on alternate days"
+    ],
+    "explanation": "SRS is characterized by single-fraction, high-dose treatments with steep dose gradients, distinguishing it from SBRT which uses hypofractionated schemes (typically 1-8 fractions).",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by CyberKnife systems?",
+    "answer": "Real-time imaging with orthogonal kV X-ray systems",
+    "choices": [
+      "Real-time imaging with orthogonal kV X-ray systems",
+      "Infrared optical tracking of external markers only",
+      "Portal imaging with the treatment beam",
+      "Electromagnetic transponder implants in all cases"
+    ],
+    "explanation": "CyberKnife uses two orthogonal kV X-ray imagers for real-time tracking, correlating internal anatomy with external markers or directly tracking skeletal or implanted fiducials.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 mm leaf width at isocenter",
+    "choices": [
+      "2.5 mm leaf width at isocenter",
+      "5.0 mm leaf width at isocenter",
+      "1.0 mm leaf width at isocenter",
+      "10.0 mm leaf width at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have 2.5 mm leaf width at isocenter (compared to 5-10 mm for standard MLCs), providing enhanced conformality for small target volumes in stereotactic treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the source configuration in a standard Gamma Knife Perfexion unit?",
+    "answer": "192 Cobalt-60 sources arranged in hemispheric geometry",
+    "choices": [
+      "192 Cobalt-60 sources arranged in hemispheric geometry",
+      "201 Cobalt-60 sources in cylindrical configuration",
+      "144 Cesium-137 sources in spherical arrangement",
+      "256 Cobalt-60 sources in conical distribution"
+    ],
+    "explanation": "The Gamma Knife Perfexion contains 192 Co-60 sources arranged in a hemispheric pattern, replacing the earlier spherical geometry of 201 sources in the 4C model.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 1 cm × 1 cm field measured with a 0.016 cc ion chamber gives an output factor of 0.85, while a diode detector gives 0.82 for the same field. The planning system uses ion chamber data but diode measurements for QA. What is the most appropriate approach to resolve this discrepancy for clinical implementation?",
+    "answer": "Apply detector-specific correction factors based on Monte Carlo calculations per TG-155",
+    "choices": [
+      "Apply detector-specific correction factors based on Monte Carlo calculations per TG-155",
+      "Average the two measurements and use 0.835 as the clinical value",
+      "Always use the higher reading to ensure adequate dose delivery",
+      "Repeat measurements with a third detector and use majority consensus"
+    ],
+    "explanation": "TG-155 emphasizes that different detectors require specific correction factors for small fields due to varying energy dependence, volume averaging, and perturbation effects. Monte Carlo-derived corrections ensure accurate dosimetry across different measurement scenarios.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system, the measured beam profiles show 20% larger penumbra widths than expected from geometric calculations. The leaf transmission is within specifications at 1.5%. What is the most likely multi-factor cause and systematic solution approach?",
+    "answer": "Combined leaf-end design, scattered radiation, and detector response requiring comprehensive modeling",
+    "choices": [
+      "Combined leaf-end design, scattered radiation, and detector response requiring comprehensive modeling",
+      "Simple mechanical misalignment requiring physical adjustment of leaf positions only",
+      "Detector saturation effects requiring slower scan speeds and repeat measurements",
+      "Planning system algorithm error requiring vendor software patches immediately"
+    ],
+    "explanation": "Penumbra widening in micro-MLC systems results from complex interactions including leaf-end design (rounded vs. straight), inter-leaf leakage, scatter contributions, and detector response characteristics. Comprehensive Monte Carlo modeling and multi-detector validation are required per TG-106.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A GammaKnife treatment plan shows dose rate variations of ±8% across the target volume due to source decay and geometric factors. The prescription specifies 20 Gy to the 50% isodose line. How should this heterogeneity be addressed in the clinical workflow while maintaining treatment accuracy?",
+    "answer": "Implement decay-corrected dose rate maps with sector-specific timing optimization",
+    "choices": [
+      "Implement decay-corrected dose rate maps with sector-specific timing optimization",
+      "Increase overall treatment time by 15% to compensate for lowest dose regions",
+      "Reject the plan and require replanning with smaller collimator sizes",
+      "Apply uniform scaling factor based on average decay correction only"
+    ],
+    "explanation": "GammaKnife dose delivery requires sophisticated modeling of individual source decay, geometric efficiency variations, and sector-specific optimization. Modern systems use dynamic sector selection and timing to maintain dose homogeneity within acceptable clinical tolerances.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "CyberKnife tracking accuracy degrades to 2.1 mm RMS during respiratory motion management for a lung SBRT case. The original PTV margin was 3 mm. What integrated approach best addresses this systematic tracking degradation while maintaining treatment efficacy?",
+    "answer": "Implement real-time adaptive margin expansion with correlation model refinement",
+    "choices": [
+      "Implement real-time adaptive margin expansion with correlation model refinement",
+      "Simply increase PTV margins to 5 mm and proceed with standard delivery",
+      "Switch to breath-hold technique abandoning real-time tracking completely",
+      "Reduce prescription dose by 10% to account for increased uncertainty"
+    ],
+    "explanation": "CyberKnife tracking degradation requires sophisticated response including real-time correlation model updates, adaptive margin strategies, and potentially modified delivery approaches. Simple margin expansion alone doesn't address the root cause of tracking model breakdown during respiratory motion.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of a 5 mm × 5 mm cone shows 12% disagreement with measurements in the penumbra region. The variance reduction techniques include interaction forcing (factor 10), particle splitting (factor 4), and Russian roulette (threshold 0.1). Statistical uncertainties are <1%. What comprehensive optimization approach addresses this systematic modeling discrepancy?",
+    "answer": "Refine geometric modeling including detailed collimator design and phase-space validation",
+    "choices": [
+      "Refine geometric modeling including detailed collimator design and phase-space validation",
+      "Simply increase particle histories to 10^9 and reduce statistical uncertainty",
+      "Adjust interaction cross-sections by 12% to match experimental data",
+      "Implement different variance reduction with exponential transform techniques"
+    ],
+    "explanation": "Systematic disagreements in small field Monte Carlo modeling typically arise from inadequate geometric modeling, especially collimator details, source modeling, or phase-space approximations. Statistical improvements alone cannot resolve systematic modeling errors in the penumbra region.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis of small field dosimetry workflow identifies detector selection as RPN 168 (Severity 8, Occurrence 3, Detection 7). The current process relies on single physicist judgment. What systematic risk mitigation strategy most effectively reduces this high-risk failure mode?",
+    "answer": "Implement automated detector selection algorithms with multi-physicist verification protocols",
+    "choices": [
+      "Implement automated detector selection algorithms with multi-physicist verification protocols",
+      "Require department head approval for all small field measurements",
+      "Use only diode detectors for all small field measurements regardless",
+      "Increase measurement frequency from monthly to weekly intervals only"
+    ],
+    "explanation": "High RPN scores in FMEA require systematic interventions targeting multiple failure components. Automated decision support combined with structured verification protocols addresses both occurrence and detection factors while maintaining clinical efficiency.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Uncertainty budget analysis for 1 cm diameter cone output factors shows: ion chamber measurement (±2.1%), positioning (±1.8%), beam stability (±0.9%), temperature/pressure (±0.6%), and reference field uncertainty (±1.2%). What is the combined standard uncertainty and its dominant contributor requiring priority attention?",
+    "answer": "±3.0% combined uncertainty with detector response as dominant systematic component",
+    "choices": [
+      "±3.0% combined uncertainty with detector response as dominant systematic component",
+      "±6.6% combined uncertainty requiring immediate protocol revision for safety",
+      "±1.8% combined uncertainty with positioning as the only significant factor",
+      "±2.5% combined uncertainty with equal contribution from all components"
+    ],
+    "explanation": "Combined standard uncertainty = √(2.1² + 1.8² + 0.9² + 0.6² + 1.2²) = ±3.0%. The ion chamber response uncertainty (±2.1%) dominates, indicating need for improved detector characterization or alternative measurement approaches per TG-155 recommendations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Research-level validation of a new plastic scintillator detector for small fields requires Monte Carlo characterization. The detector shows 3% over-response in 5 mm fields compared to dose-to-water. What physics-based correction methodology provides the most accurate clinical implementation?",
+    "answer": "Energy spectrum deconvolution with scintillator light yield response modeling",
+    "choices": [
+      "Energy spectrum deconvolution with scintillator light yield response modeling",
+      "Simple multiplicative correction factor of 0.97 applied universally",
+      "Temperature-dependent calibration curves measured at multiple energies quarterly",
+      "Cross-calibration against ion chambers with linear interpolation methods"
+    ],
+    "explanation": "Scintillator over-response in small fields results from energy spectrum changes and non-linear light yield responses. Accurate correction requires detailed Monte Carlo modeling of energy deposition spectra and scintillator light yield characteristics, not simple empirical corrections.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for photon beam flatness constancy for daily QA?",
+    "answer": "±2% from baseline",
+    "choices": [
+      "±1% from baseline",
+      "±2% from baseline",
+      "±3% from baseline",
+      "±5% from baseline"
+    ],
+    "explanation": "TG-142 specifies that photon beam flatness constancy should be within ±1% of the baseline value for daily QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard for absorbed dose to water calibration in TG-51?",
+    "answer": "Ion chamber calibrated in Gy/C",
+    "choices": [
+      "Ion chamber calibrated in Gy/C",
+      "Calorimeter system at NIST facility",
+      "Farmer chamber with air kerma",
+      "TLD dosimetry system for water"
+    ],
+    "explanation": "TG-51 protocol uses ion chambers with calibration coefficients traceable to primary standards, providing absorbed dose to water directly in Gy per unit charge.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for MLC leaf positioning accuracy checks according to TG-142?",
+    "answer": "Monthly QA procedure",
+    "choices": [
+      "Daily QA procedure",
+      "Weekly QA procedure",
+      "Monthly QA procedure",
+      "Annual QA procedure"
+    ],
+    "explanation": "TG-142 recommends monthly checks for MLC leaf positioning accuracy to ensure proper mechanical alignment and treatment delivery precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What type of detector is typically used for output constancy measurements in daily linear accelerator QA?",
+    "answer": "Ion chamber in phantom",
+    "choices": [
+      "Ion chamber in phantom",
+      "Silicon diode in air",
+      "MOSFET detector array system",
+      "Thermoluminescent dosimeter badges"
+    ],
+    "explanation": "Ion chambers placed in appropriate phantoms provide stable and reproducible measurements for daily output constancy checks as recommended by TG-142.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary defining characteristic of stereotactic radiosurgery (SRS)?",
+    "answer": "Single-fraction delivery with steep dose gradients",
+    "choices": [
+      "Single-fraction delivery with steep dose gradients",
+      "Multiple-fraction delivery with uniform doses",
+      "Image-guided delivery with moderate gradients",
+      "Arc-based delivery with conformal planning"
+    ],
+    "explanation": "SRS is characterized by single high-dose fraction delivery with very steep dose gradients outside the target volume.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Mechanical isocenter alignment accuracy",
+    "choices": [
+      "Mechanical isocenter alignment accuracy",
+      "Dosimetric calibration verification methods",
+      "Small field output factor measurements",
+      "MLC leaf positioning accuracy"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence of the mechanical isocenter with the radiation field center using a ball bearing phantom.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What radiation source does the Leksell Gamma Knife use?",
+    "answer": "Cobalt-60 gamma rays",
+    "choices": [
+      "Cobalt-60 gamma rays",
+      "Linear accelerator x-rays",
+      "Cesium-137 gamma rays",
+      "Iridium-192 gamma rays"
+    ],
+    "explanation": "The Leksell Gamma Knife uses multiple Cobalt-60 sources arranged in a hemispherical configuration to deliver focused radiation.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended tolerance for Winston-Lutz isocenter deviation?",
+    "answer": "≤ 1.0 mm radius",
+    "choices": [
+      "≤ 1.0 mm radius",
+      "≤ 2.0 mm radius",
+      "≤ 0.5 mm radius",
+      "≤ 1.5 mm radius"
+    ],
+    "explanation": "TG-101 recommends that the Winston-Lutz test should demonstrate mechanical isocenter deviation within 1.0 mm radius for SRS systems.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical fractionation scheme for stereotactic body radiotherapy (SBRT)?",
+    "answer": "3-8 fractions over 1-2 weeks",
+    "choices": [
+      "3-8 fractions over 1-2 weeks",
+      "15-25 fractions over 3-5 weeks",
+      "1 fraction delivered immediately",
+      "30-35 fractions over 6-7 weeks"
+    ],
+    "explanation": "SBRT typically uses hypofractionated regimens of 3-8 fractions delivered over 1-2 weeks, as distinguished from single-fraction SRS.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "According to TG-135, what detector type is recommended for small field output factor measurements?",
+    "answer": "Silicon diode detectors",
+    "choices": [
+      "Silicon diode detectors",
+      "Air-filled ion chambers",
+      "Thermoluminescent dosimeters only",
+      "Film-based dosimetry systems"
+    ],
+    "explanation": "TG-135 recommends silicon diode detectors for small field output factor measurements due to their high spatial resolution and minimal volume averaging effects.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of cone-based SRS delivery systems?",
+    "answer": "Sharp penumbra with circular collimation",
+    "choices": [
+      "Sharp penumbra with circular collimation",
+      "Variable intensity modulation capabilities",
+      "Real-time adaptive planning options",
+      "Enhanced patient positioning flexibility"
+    ],
+    "explanation": "Cone-based systems provide very sharp penumbra characteristics with circular collimation, ideal for spherical targets in SRS treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam with a 1×1 cm² field shows an output factor of 0.85 relative to 10×10 cm² reference field when measured with a 0.6 cc ion chamber. The same field measured with a silicon diode detector gives an output factor of 0.78. What is the most likely explanation for this discrepancy, and what correction approach should be implemented?",
+    "answer": "Volume averaging effects require detector-specific correction factors per TG-135 protocols",
+    "choices": [
+      "Volume averaging effects require detector-specific correction factors per TG-135 protocols",
+      "Energy spectrum changes necessitate beam quality correction factor adjustments",
+      "Temperature-pressure variations demand environmental correction factor modifications",
+      "Lateral electronic equilibrium loss requires Monte Carlo-based correction algorithms"
+    ],
+    "explanation": "The ion chamber shows volume averaging effects in small fields, leading to higher readings. TG-135 recommends detector-specific correction factors to account for these systematic differences.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new SRS system, Winston-Lutz analysis reveals systematic offsets of 0.8 mm in X, 0.6 mm in Y, and 0.4 mm in Z directions, with random variations of ±0.3 mm. The couch rotational analysis shows 0.5° systematic error with ±0.2° random variation. What is the most appropriate corrective action strategy?",
+    "answer": "Apply systematic offset corrections and implement enhanced QA frequency protocols",
+    "choices": [
+      "Apply systematic offset corrections and implement enhanced QA frequency protocols",
+      "Accept current tolerances and proceed with standard clinical protocols",
+      "Recalibrate all imaging systems and repeat complete mechanical alignments",
+      "Implement patient-specific correction factors for each treatment fraction"
+    ],
+    "explanation": "Systematic offsets can be corrected through calibration adjustments, while the random variations are within acceptable limits requiring enhanced QA monitoring per TG-101.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A CyberKnife system demonstrates tracking accuracy degradation during respiratory motion management. Analysis reveals 2.1 mm RMS error for targets with >15 mm motion amplitude and 0.9 mm RMS error for <10 mm amplitude. Considering the clinical tolerance of 1.5 mm RMS, what comprehensive quality assurance strategy should be implemented?",
+    "answer": "Implement motion amplitude-dependent treatment protocols with enhanced imaging frequency",
+    "choices": [
+      "Implement motion amplitude-dependent treatment protocols with enhanced imaging frequency",
+      "Increase beam margins uniformly for all respiratory tracking cases",
+      "Disable respiratory tracking and use gating techniques exclusively",
+      "Apply post-treatment verification with adaptive replanning protocols"
+    ],
+    "explanation": "Motion amplitude-dependent protocols address the observed correlation between tracking accuracy and motion magnitude, requiring differentiated QA approaches as per manufacturer specifications.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Monte Carlo analysis of a 5 mm cone reveals that the traditional percentage depth dose normalization at dmax overestimates the actual dose by 3.2% at 10 cm depth due to spectral hardening and lateral electronic disequilibrium effects. Given this systematic error, what validation methodology should be employed for clinical implementation?",
+    "answer": "Develop depth-dependent correction matrices validated against film dosimetry measurements",
+    "choices": [
+      "Develop depth-dependent correction matrices validated against film dosimetry measurements",
+      "Apply uniform scaling factors across all treatment depths",
+      "Implement alternative normalization points at 5 cm depth",
+      "Utilize manufacturer-provided generic correction algorithms"
+    ],
+    "explanation": "Depth-dependent corrections address the complex interaction of spectral changes and lateral disequilibrium in small fields, requiring experimental validation through high-resolution dosimetry.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis of a multi-isocenter SRS treatment reveals the following risk priority numbers: imaging registration failure (RPN=144), MLC positioning error (RPN=108), dose calculation uncertainty (RPN=96), and patient motion during delivery (RPN=72). Given limited resources, what risk mitigation strategy should be prioritized based on failure mode criticality assessment?",
+    "answer": "Implement redundant imaging verification systems with automated registration validation protocols",
+    "choices": [
+      "Implement redundant imaging verification systems with automated registration validation protocols",
+      "Enhance MLC quality assurance with daily leaf positioning verification",
+      "Develop independent dose calculation verification using Monte Carlo methods",
+      "Install real-time patient motion monitoring with automated beam hold systems"
+    ],
+    "explanation": "Highest RPN (144) indicates imaging registration failure poses greatest risk. Redundant verification systems address both occurrence probability and detection capability as recommended in TG-100 FMEA methodology.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Monte Carlo simulation of a 4 mm diameter field with 6 MV FFF beam reveals significant discrepancies between calculated and TLD-measured doses beyond 5 cm depth. Variance reduction techniques show convergence issues with >15% statistical uncertainty despite 10⁹ histories. What advanced computational strategy should be implemented to achieve <2% statistical uncertainty?",
+    "answer": "Implement geometry splitting with Russian roulette and forced detection variance reduction",
+    "choices": [
+      "Implement geometry splitting with Russian roulette and forced detection variance reduction",
+      "Increase primary history count to 10¹² with standard analog simulation",
+      "Apply exponential path length stretching with interaction forcing techniques",
+      "Utilize correlated sampling with control variates for systematic error reduction"
+    ],
+    "explanation": "Geometry splitting with Russian roulette optimizes particle tracking efficiency in regions of interest, while forced detection ensures adequate scoring statistics in small volumes per advanced Monte Carlo techniques.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "End-to-end testing of a frameless SRS system using an anthropomorphic phantom reveals systematic dose discrepancies: +2.8% in bone-equivalent regions, -1.9% in lung-equivalent regions, and +0.7% in soft tissue regions. Given the 3%/2mm clinical tolerance, what comprehensive validation protocol should be established for tissue heterogeneity corrections?",
+    "answer": "Develop material-specific correction algorithms validated through multi-energy CT calibration curves",
+    "choices": [
+      "Develop material-specific correction algorithms validated through multi-energy CT calibration curves",
+      "Apply uniform density override corrections for all heterogeneous regions",
+      "Implement patient-specific Monte Carlo calculations for all treatments",
+      "Establish expanded tolerance criteria accounting for heterogeneity uncertainties"
+    ],
+    "explanation": "Material-specific corrections address the observed tissue-dependent systematic errors, requiring validated CT-to-density calibration curves and heterogeneity correction algorithms as per TG-65 recommendations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in photon beams?",
+    "answer": "±3% for flattened beams",
+    "choices": [
+      "±2% for flattened beams",
+      "±3% for flattened beams",
+      "±5% for flattened beams",
+      "±1% for flattened beams"
+    ],
+    "explanation": "TG-142 specifies a ±3% tolerance for beam flatness in flattened photon beams as part of routine QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard protocol recommended by AAPM for absolute dose calibration of linear accelerators?",
+    "answer": "TG-51 protocol",
+    "choices": [
+      "TG-51 protocol",
+      "TG-21 protocol",
+      "TG-40 protocol",
+      "TG-142 protocol"
+    ],
+    "explanation": "TG-51 is the AAPM's current reference standard for absolute dose calibration of external beam therapy machines using ion chamber dosimetry.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "How frequently should output constancy checks be performed on linear accelerators according to TG-142?",
+    "answer": "Daily before treatment",
+    "choices": [
+      "Daily before treatment",
+      "Weekly on Mondays",
+      "Monthly on first day",
+      "Annually in January"
+    ],
+    "explanation": "TG-142 recommends daily output constancy checks before patient treatments to ensure beam output remains within acceptable limits.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Machine Learning Control",
+      "Maximum Leaf Coverage",
+      "Modulated Light Chamber"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which is the beam-shaping device consisting of multiple tungsten leaves used to create conformal radiation fields.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

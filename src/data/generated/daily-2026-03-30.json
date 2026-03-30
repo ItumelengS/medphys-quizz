@@ -1,0 +1,240 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary difference between stereotactic radiosurgery (SRS) and stereotactic body radiotherapy (SBRT)?",
+    "answer": "SRS is delivered in single fraction, SBRT in few fractions",
+    "choices": [
+      "SRS is delivered in single fraction, SBRT in few fractions",
+      "SRS uses cones, SBRT uses micro-MLCs exclusively",
+      "SRS treats brain only, SBRT treats spine only",
+      "SRS requires frame fixation, SBRT uses masks only"
+    ],
+    "explanation": "SRS is traditionally defined as high-precision radiotherapy delivered in a single fraction, while SBRT (also called SABR) delivers ablative doses in typically 1-5 fractions to extracranial targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily assess in stereotactic radiotherapy systems?",
+    "answer": "Mechanical isocenter accuracy and coincidence",
+    "choices": [
+      "Mechanical isocenter accuracy and coincidence",
+      "Small field output factor measurements",
+      "Micro-MLC leaf positioning accuracy",
+      "Patient setup reproducibility assessment"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing and radiation field to assess the coincidence of the mechanical rotation isocenter with the radiation isocenter, critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary mechanism of the GammaKnife system for delivering stereotactic radiosurgery?",
+    "answer": "Multiple fixed Co-60 sources converging at isocenter",
+    "choices": [
+      "Multiple fixed Co-60 sources converging at isocenter",
+      "Single rotating linear accelerator with cones",
+      "Robotic arm-mounted linear accelerator system",
+      "Multiple micro-MLC equipped treatment heads"
+    ],
+    "explanation": "GammaKnife uses approximately 192-201 fixed Co-60 sources arranged in a hemisphere that converge at the treatment isocenter, providing highly conformal dose delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What defines a small field in radiotherapy dosimetry according to current guidelines?",
+    "answer": "Field where lateral charged particle equilibrium is lost",
+    "choices": [
+      "Field where lateral charged particle equilibrium is lost",
+      "Any field smaller than 4 cm × 4 cm",
+      "Field requiring micro-MLC collimation systems",
+      "Field used exclusively for stereotactic treatments"
+    ],
+    "explanation": "Small fields are defined by the loss of lateral charged particle equilibrium rather than absolute size, which affects dosimetry and requires special measurement techniques as outlined in TG-155.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What detector type does TG-155 recommend as the reference standard for small field output factor measurements?",
+    "answer": "Plastic scintillation detectors for fields <1×1 cm²",
+    "choices": [
+      "Plastic scintillation detectors for fields <1×1 cm²",
+      "Diamond detectors for all small field sizes",
+      "Ion chambers for fields >0.5×0.5 cm²",
+      "Diode detectors corrected for energy dependence"
+    ],
+    "explanation": "TG-155 identifies plastic scintillation detectors as having minimal energy and dose rate dependence, making them suitable reference detectors for very small fields where other detectors show significant perturbations.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical leaf width specification for micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 mm leaf width at isocenter projection",
+    "choices": [
+      "2.5 mm leaf width at isocenter projection",
+      "5.0 mm leaf width at isocenter projection",
+      "1.0 mm leaf width at isocenter projection",
+      "10.0 mm leaf width at isocenter projection"
+    ],
+    "explanation": "Most commercial micro-MLC systems feature 2.5 mm leaf width projected at isocenter, providing improved conformality compared to standard 5-10 mm MLCs while maintaining reasonable treatment delivery times.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the recommended frequency for Winston-Lutz testing in stereotactic systems?",
+    "answer": "Monthly for routine QA, after any major maintenance",
+    "choices": [
+      "Monthly for routine QA, after any major maintenance",
+      "Weekly for all stereotactic-capable linear accelerators",
+      "Daily before each stereotactic treatment session",
+      "Quarterly unless targeting accuracy issues arise"
+    ],
+    "explanation": "TG-135 recommends monthly Winston-Lutz testing for routine QA of stereotactic systems, with additional testing required after major maintenance or when targeting accuracy is questioned.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system, output factors measured with a diamond detector show 15% higher values than plastic scintillator measurements for 5×5 mm² fields. The treatment planning system uses the diamond detector data. What is the most critical dosimetric consequence and appropriate intervention?",
+    "answer": "Patient overdosage risk requiring TPS recalibration with scintillator-based reference data per TG-155",
+    "choices": [
+      "Patient overdosage risk requiring TPS recalibration with scintillator-based reference data per TG-155",
+      "Acceptable variation requiring energy-dependence correction factors for diamond detector calibration",
+      "Systematic underdosage requiring 15% prescription dose escalation for small field treatments",
+      "Detector positioning uncertainty requiring repeat measurements with improved setup reproducibility"
+    ],
+    "explanation": "Diamond detectors overestimate small field output factors due to energy dependence. Using these inflated values in TPS leads to calculated doses being higher than delivered doses, requiring recalibration with appropriate reference detector per TG-155.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "In a comprehensive FMEA analysis for stereotactic radiosurgery workflow, you identify that micro-MLC calibration drift has RPN=168 (Severity=8, Occurrence=3, Detectability=7). After implementing daily picket fence analysis with automated tolerance checking, the new Detectability score becomes 3. What is the revised RPN and risk category classification?",
+    "answer": "RPN=72, requiring continued monitoring with quarterly review of effectiveness measures",
+    "choices": [
+      "RPN=72, requiring continued monitoring with quarterly review of effectiveness measures",
+      "RPN=84, requiring immediate implementation of additional preventive maintenance protocols",
+      "RPN=56, allowing extension of QA intervals with statistical process control implementation",
+      "RPN=96, requiring backup MLC system procurement and parallel verification protocols"
+    ],
+    "explanation": "Revised RPN = 8 × 3 × 3 = 72. This represents significant risk reduction from high (>125) to moderate risk category, requiring continued monitoring but not immediate additional interventions per typical FMEA risk stratification protocols.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Using Monte Carlo simulation for CyberKnife treatment planning validation, you model a 5 mm collimator with primary photon fluence, scattered photon contributions, and electron contamination. The simulation shows 12% higher dose to a titanium implant interface compared to analytical calculation. What is the most likely physical mechanism causing this discrepancy?",
+    "answer": "Backscatter enhancement from high-Z material inadequately modeled in analytical algorithm",
+    "choices": [
+      "Backscatter enhancement from high-Z material inadequately modeled in analytical algorithm",
+      "Electron contamination underestimation in small field analytical dose calculation algorithms",
+      "Primary photon attenuation overestimation due to simplified beam hardening correction factors",
+      "Scattered photon fluence underestimation in heterogeneous density correction algorithms"
+    ],
+    "explanation": "Monte Carlo accurately models backscatter enhancement at high-Z interfaces, while analytical algorithms typically use simplified correction factors. The 12% increase is consistent with backscatter dose enhancement from titanium interfaces in small field geometries.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for photon beam flatness for daily QA checks?",
+    "answer": "±3%",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies that photon beam flatness should be within ±3% for daily QA measurements, ensuring consistent dose distribution across the treatment field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary dosimetry protocol recommended by TG-51 for calibrating photon beams in water?",
+    "answer": "Ion chamber calibration in terms of absorbed dose to water",
+    "choices": [
+      "Ion chamber calibration in terms of absorbed dose to water",
+      "Ion chamber calibration in terms of air kerma",
+      "Thermoluminescent dosimeter calibration in water",
+      "Film dosimetry calibration in tissue-equivalent material"
+    ],
+    "explanation": "TG-51 protocol establishes ion chamber calibration in terms of absorbed dose to water as the standard method for photon beam calibration, replacing the older TG-21 air kerma-based protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For multileaf collimator (MLC) QA according to TG-142, what is the tolerance for leaf position accuracy during monthly checks?",
+    "answer": "±2 mm from the intended position",
+    "choices": [
+      "±1 mm from the intended position",
+      "±2 mm from the intended position",
+      "±3 mm from the intended position",
+      "±5 mm from the intended position"
+    ],
+    "explanation": "TG-142 specifies that MLC leaf position accuracy should be within ±2 mm of the intended position during monthly QA checks to ensure proper field shaping and dose delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for performing output constancy checks on linear accelerators according to TG-142?",
+    "answer": "Daily before patient treatments",
+    "choices": [
+      "Daily before patient treatments",
+      "Weekly before the first treatment",
+      "Monthly during scheduled maintenance",
+      "Quarterly with full beam data collection"
+    ],
+    "explanation": "TG-142 recommends daily output constancy checks before patient treatments to ensure the radiation output remains stable and within acceptable limits for safe treatment delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

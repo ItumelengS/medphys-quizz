@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is stereotactic radiosurgery (SRS) primarily defined as?",
+    "answer": "Single-fraction delivery of high dose to small intracranial targets",
+    "choices": [
+      "Single-fraction delivery of high dose to small intracranial targets",
+      "Multi-fraction delivery of moderate dose to large targets",
+      "Conventional fractionation with stereotactic immobilization only",
+      "Image-guided radiation therapy using daily cone-beam CT"
+    ],
+    "explanation": "SRS is defined as the precise delivery of a single high dose of radiation to small, well-defined intracranial targets using stereotactic localization.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Coincidence of radiation isocenter and mechanical isocenter",
+    "choices": [
+      "Coincidence of radiation isocenter and mechanical isocenter",
+      "Small field output factors for various field sizes",
+      "Multi-leaf collimator leaf positioning accuracy only",
+      "Patient positioning accuracy during treatment delivery"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical rotation isocenter of the linear accelerator.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary advantage of micro-MLCs over conventional MLCs?",
+    "answer": "Smaller leaf width allowing better conformity to small targets",
+    "choices": [
+      "Smaller leaf width allowing better conformity to small targets",
+      "Higher maximum leaf speed for faster treatment delivery",
+      "Greater maximum field size for large target coverage",
+      "Lower leakage radiation between adjacent leaf pairs"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5mm compared to 5-10mm for conventional MLCs, providing superior conformity for small targets in SRS/SBRT.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the Gamma Knife primarily designed for?",
+    "answer": "Intracranial stereotactic radiosurgery using cobalt-60 sources",
+    "choices": [
+      "Intracranial stereotactic radiosurgery using cobalt-60 sources",
+      "Extracranial stereotactic body radiotherapy treatments",
+      "Conventional fractionated radiotherapy with IMRT capability",
+      "Brachytherapy treatments using high dose rate sources"
+    ],
+    "explanation": "The Gamma Knife is a dedicated SRS system using multiple cobalt-60 sources arranged in a hemisphere to deliver highly conformal doses to intracranial targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What detector type does TG-155 recommend as the gold standard for small field relative dosimetry?",
+    "answer": "Plastic scintillation detectors for fields <1cm equivalent square",
+    "choices": [
+      "Plastic scintillation detectors for fields <1cm equivalent square",
+      "Ion chambers with active volumes >0.1 cc",
+      "Silicon diode detectors with temperature correction",
+      "Film dosimetry with high spatial resolution analysis"
+    ],
+    "explanation": "TG-155 identifies plastic scintillation detectors as having minimal energy and dose rate dependence, making them ideal for small field measurements below 1cm equivalent square.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by CyberKnife for respiratory motion management?",
+    "answer": "Real-time imaging with implanted fiducial marker correlation",
+    "choices": [
+      "Real-time imaging with implanted fiducial marker correlation",
+      "External surface monitoring with infrared camera systems",
+      "Breath-hold techniques with audio-visual feedback",
+      "4DCT-based planning with ITV margin expansion"
+    ],
+    "explanation": "CyberKnife uses real-time kV imaging to track implanted fiducial markers and correlate their position with external LED markers for respiratory motion compensation.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6MV beam delivers 200cGy to a 0.5×0.5cm field. The measured dose with a 0.016cc ion chamber is 180cGy, while Monte Carlo predicts 195cGy. The TG-155 correction factor for this chamber/field combination is 1.08. What is the most likely explanation for the measurement discrepancy, and what additional corrections should be applied?",
+    "answer": "Volume averaging effect requires detector-specific correction; apply kQclin,Qmsr factor of 1.08 giving corrected dose of 194cGy",
+    "choices": [
+      "Volume averaging effect requires detector-specific correction; apply kQclin,Qmsr factor of 1.08 giving corrected dose of 194cGy",
+      "Temperature-pressure correction insufficient; recalibrate chamber at measurement conditions giving corrected dose of 195cGy",
+      "Electrometer drift during measurement; repeat with 30-second integration time giving corrected dose of 192cGy",
+      "Chamber energy response incorrect; apply beam quality correction factor of 1.05 giving corrected dose of 189cGy"
+    ],
+    "explanation": "Small field measurements require detector-specific correction factors (kQclin,Qmsr) to account for volume averaging and spectral changes. The corrected dose of 180×1.08=194cGy agrees well with Monte Carlo, confirming proper correction application per TG-155 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system, Winston-Lutz analysis shows systematic offsets: gantry rotation exhibits 0.8mm radius, collimator rotation shows 0.5mm radius, and couch rotation demonstrates 1.2mm radius. The imaging system has verified 0.1mm accuracy. What correction strategy should be implemented?",
+    "answer": "Apply systematic offset corrections: gantry isocenter shift, collimator bearing adjustment, and couch pivot recalibration to achieve <0.5mm",
+    "choices": [
+      "Apply systematic offset corrections: gantry isocenter shift, collimator bearing adjustment, and couch pivot recalibration to achieve <0.5mm",
+      "Increase PTV margins to 2.0mm and document mechanical tolerances without hardware corrections",
+      "Implement daily imaging verification with 1.5mm action levels for patient-specific corrections",
+      "Adjust beam model parameters and recalculate dose distributions with increased uncertainty margins"
+    ],
+    "explanation": "TG-142 requires Winston-Lutz tolerances ≤1mm for SRS, but best practice aims for <0.5mm. Systematic corrections should address each rotation axis independently before implementing expanded margins or daily checks.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A VMAT-based SRS plan shows dose calculation discrepancies >5% for fields <1.5cm when compared to film measurements. The TPS uses a collapsed cone algorithm with 1mm grid. Monte Carlo validation shows agreement within 2%. What optimization should be prioritized?",
+    "answer": "Implement Monte Carlo dose calculation with 0.5mm grid resolution and validate small field modeling parameters",
+    "choices": [
+      "Implement Monte Carlo dose calculation with 0.5mm grid resolution and validate small field modeling parameters",
+      "Increase measurement points using multiple detector types and adjust collapsed cone parameters accordingly",
+      "Reduce calculation grid to 0.5mm and recalibrate photon fluence model for small fields",
+      "Apply systematic correction factors based on field size and validate with independent dose verification"
+    ],
+    "explanation": "Monte Carlo algorithms provide superior accuracy for small field dosimetry compared to model-based algorithms. The good MC-measurement agreement indicates calculation algorithm limitations rather than measurement issues, supporting MC implementation per TG-105 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "For single-isocenter multiple brain metastases SRS, geometric analysis shows maximum inter-lesion distance of 12cm with individual lesion sizes 0.8-2.1cm diameter. What technical considerations are most critical for plan optimization given current evidence-based practice guidelines?",
+    "answer": "Prioritize rotational setup uncertainty analysis, implement 6DOF couch corrections, and validate dose gradient maintenance between targets",
+    "choices": [
+      "Prioritize rotational setup uncertainty analysis, implement 6DOF couch corrections, and validate dose gradient maintenance between targets",
+      "Focus on micro-MLC leaf sequencing optimization and minimize monitor units per control point",
+      "Emphasize homogeneity index optimization within each target while maintaining conformity indices below 1.5",
+      "Concentrate on normal tissue constraint satisfaction using QUANTEC guidelines for serial organ tolerance"
+    ],
+    "explanation": "Single-isocenter multi-target SRS requires careful attention to rotational uncertainties that disproportionately affect distant lesions. Recent studies emphasize 6DOF setup corrections and maintaining steep dose gradients between targets to minimize normal brain dose.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis of a Gamma Knife Perfexion system identifies helmet positioning as having RPN=168 (Severity=8, Occurrence=3, Detection=7). Current QA includes monthly Winston-Lutz equivalent testing. What risk mitigation strategy would most effectively reduce the RPN below acceptable threshold (<125)?",
+    "answer": "Implement automated helmet-to-coordinate frame verification with interlocks and daily phantom-based positional verification (target Detection=4)",
+    "choices": [
+      "Implement automated helmet-to-coordinate frame verification with interlocks and daily phantom-based positional verification (target Detection=4)",
+      "Reduce treatment planning margins from 0.5mm to 0.3mm and implement real-time monitoring systems (target Severity=5)",
+      "Increase physicist involvement in helmet positioning procedures and add redundant manual checks (target Occurrence=2)",
+      "Install backup positioning systems with independent verification and enhanced operator training protocols (target Occurrence=1)"
+    ],
+    "explanation": "FMEA risk reduction should target the highest impact parameter. Reducing Detection from 7 to 4 through automated verification systems yields RPN=8×3×4=96, meeting the <125 threshold more efficiently than targeting other parameters which may be technically challenging to achieve.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Uncertainty budget analysis for SRS delivery shows: setup uncertainty σ=0.4mm, inter-fraction motion σ=0.2mm, intra-fraction motion σ=0.3mm, dose calculation σ=2.5%, and delivery uncertainty σ=1.8%. Using contemporary risk-adapted margin recipes, what total uncertainty should be reported for regulatory compliance?",
+    "answer": "Geometric uncertainty: σtotal=0.58mm, dosimetric uncertainty: σtotal=3.1% (assuming independence and quadrature summation)",
+    "choices": [
+      "Geometric uncertainty: σtotal=0.58mm, dosimetric uncertainty: σtotal=3.1% (assuming independence and quadrature summation)",
+      "Combined systematic uncertainty: σtotal=0.9mm, random uncertainty: σtotal=4.3% (using van Herk margin recipe)",
+      "Total expanded uncertainty: U=1.16mm at k=2 confidence level with 4.6% dosimetric component",
+      "Geometric RSS: σ=0.54mm, dosimetric linear sum: 4.3% with 10% safety margin applied"
+    ],
+    "explanation": "Independent uncertainties combine in quadrature: geometric σ=√(0.4²+0.2²+0.3²)=0.58mm, dosimetric σ=√(2.5²+1.8²)=3.1%. This approach follows ICRU-24 uncertainty propagation principles for SRS applications where systematic and random components require separate analysis.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Research-level Monte Carlo validation of TG-155 correction factors shows systematic deviations >2% for plastic scintillation detectors in 0.5×0.5cm fields when phantom material changes from water to lung-equivalent material (ρ=0.3 g/cm³). What physical mechanism most likely explains this deviation?",
+    "answer": "Spectral hardening effects alter scintillator light output efficiency requiring material-specific energy response corrections",
+    "choices": [
+      "Spectral hardening effects alter scintillator light output efficiency requiring material-specific energy response corrections",
+      "Density scaling algorithms inadequately model electron transport path length variations in low-density media",
+      "Optical fiber stem effect contributions increase due to enhanced scatter photon production in heterogeneous geometries",
+      "Temperature-dependent quenching parameters vary with phantom material thermal conductivity affecting detector response"
+    ],
+    "explanation": "In low-density materials, beam spectrum shifts toward lower energies due to reduced beam hardening. Plastic scintillators exhibit energy-dependent light output that requires correction. TG-155 correction factors derived in water may not account for spectral changes in different media, necessitating material-specific calibration for research applications.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam output constancy in daily QA measurements?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements to ensure consistent beam delivery between treatment fractions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard protocol currently recommended by AAPM for absolute dose calibration of clinical photon and electron beams?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-25",
+      "TG-40"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry, replacing the older TG-21 protocol for photon and electron beam calibrations.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "In beam flatness analysis, flatness is typically defined as the ratio of what two measurements within the flattened portion of the beam profile?",
+    "answer": "Maximum dose to minimum dose",
+    "choices": [
+      "Central axis to field edge",
+      "Maximum dose to minimum dose",
+      "Left side to right side",
+      "Peak dose to valley dose"
+    ],
+    "explanation": "Beam flatness is conventionally defined as the ratio of maximum to minimum dose (or vice versa) measured within the central 80% of the flattened beam profile region.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator quality assurance?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Intensity Detector",
+      "External Patient Imaging Display",
+      "Electronic Positional Indicator Device"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric quality assurance measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

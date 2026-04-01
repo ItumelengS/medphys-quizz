@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation isocenter with mechanical isocenter",
+    "choices": [
+      "To verify the coincidence of radiation isocenter with mechanical isocenter",
+      "To measure the output factors for small radiation fields",
+      "To calibrate the micro-MLC leaf positions for treatment planning",
+      "To determine the beam penumbra characteristics for cones"
+    ],
+    "explanation": "The Winston-Lutz test uses a ball bearing phantom to verify that the radiation isocenter coincides with the mechanical rotation isocenter, which is critical for stereotactic accuracy. TG-142 recommends this test for quality assurance.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What defines a small field according to TG-155 recommendations?",
+    "answer": "A field where lateral charged particle equilibrium is not established",
+    "choices": [
+      "A field where lateral charged particle equilibrium is not established",
+      "A field with dimensions smaller than 4 cm × 4 cm",
+      "A field where the detector response varies by more than 5%",
+      "A field that requires stereotactic immobilization for treatment"
+    ],
+    "explanation": "TG-155 defines small fields based on physics principles rather than arbitrary size limits, specifically when lateral charged particle equilibrium cannot be established within the field boundaries.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of detector array does the Gamma Knife Perfexion system use?",
+    "answer": "Fixed cobalt-60 sources arranged in a hemispherical configuration",
+    "choices": [
+      "Fixed cobalt-60 sources arranged in a hemispherical configuration",
+      "Linear accelerator with micro-MLC beam shaping system",
+      "Rotating gantry with cone-based collimation system",
+      "Image-guided robotic arm with variable aperture collimators"
+    ],
+    "explanation": "The Gamma Knife uses 192 fixed cobalt-60 sources arranged in a hemispherical array, focusing beams to a common isocenter for stereotactic radiosurgery treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the recommended frequency for Winston-Lutz testing?",
+    "answer": "Monthly for routine QA and after any major maintenance",
+    "choices": [
+      "Monthly for routine QA and after any major maintenance",
+      "Weekly during active SRS treatments only",
+      "Quarterly unless mechanical problems are suspected",
+      "Daily before each stereotactic treatment session"
+    ],
+    "explanation": "TG-135 recommends monthly Winston-Lutz testing for routine QA, with additional testing after major maintenance or mechanical adjustments to ensure stereotactic accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 mm to 5 mm at isocenter",
+    "choices": [
+      "2.5 mm to 5 mm at isocenter",
+      "1 mm to 2 mm at isocenter",
+      "5 mm to 10 mm at isocenter",
+      "0.5 mm to 1 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5 mm at isocenter, providing improved conformality compared to standard 5-10 mm MLCs while maintaining reasonable treatment efficiency.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What correction factor accounts for detector volume averaging effects in small fields?",
+    "answer": "Volume averaging correction factor (kvol)",
+    "choices": [
+      "Volume averaging correction factor (kvol)",
+      "Energy response correction factor (kEn)",
+      "Perturbation correction factor (kpert)",
+      "Temperature-pressure correction factor (kTP)"
+    ],
+    "explanation": "The volume averaging correction factor (kvol) accounts for the finite size of the detector relative to the small field, which causes underestimation of the true dose due to volume averaging effects.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "Which imaging system does CyberKnife use for real-time tracking?",
+    "answer": "Orthogonal kV X-ray imaging with skeletal or fiducial tracking",
+    "choices": [
+      "Orthogonal kV X-ray imaging with skeletal or fiducial tracking",
+      "MV portal imaging with soft tissue contrast enhancement",
+      "Cone-beam CT with respiratory gating synchronization",
+      "Optical surface monitoring with infrared marker detection"
+    ],
+    "explanation": "CyberKnife uses two orthogonal kV X-ray imagers for real-time tracking, correlating with either skeletal anatomy or implanted fiducial markers to guide the robotic delivery system.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 1 cm × 1 cm field measured with a 0.6 cm³ ion chamber gives an output factor of 0.85, while a diamond detector gives 0.92 for the same field. The monte carlo calculated volume averaging correction for the ion chamber is 1.08. What is the most likely explanation for the remaining discrepancy after volume correction?",
+    "answer": "Perturbation effects from the ion chamber's metallic components in the small field",
+    "choices": [
+      "Perturbation effects from the ion chamber's metallic components in the small field",
+      "Energy spectrum differences requiring additional hardening corrections",
+      "Incomplete scatter conditions affecting both detectors equally",
+      "Temperature and pressure variations during the measurement session"
+    ],
+    "explanation": "After volume averaging correction (0.85 × 1.08 = 0.918), the remaining small discrepancy with the diamond detector (0.92) suggests perturbation effects from the ion chamber's electrode and wall materials, which become more significant in small fields where the perturbation volume represents a larger fraction of the sensitive volume.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a cone-based SRS system, the 1 cm diameter cone shows a 3% output variation when measured at different gantry angles, while larger cones show <1% variation. Which factor most likely explains this observation and requires investigation?",
+    "answer": "Mechanical sagging of the cone mounting system affecting beam alignment",
+    "choices": [
+      "Mechanical sagging of the cone mounting system affecting beam alignment",
+      "Energy spectrum variations due to target aging effects",
+      "Backscatter contributions varying with gantry orientation",
+      "Ion chamber stem effects changing with gravitational orientation"
+    ],
+    "explanation": "Small cones are most sensitive to mechanical alignment issues. A 3% variation with gantry angle suggests mechanical sagging or flex in the cone mounting system, causing the small beam to partially miss the detector. This requires investigation of the mechanical stability and potentially shimming or adjustment of the mounting system.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-target Gamma Knife plan shows dose discrepancies >5% in composite dose verification. Individual shot verifications are within 2%. The issue persists across different measurement systems. What systematic error should be prioritized in troubleshooting?",
+    "answer": "Patient positioning accuracy and coordinate system transformations between shots",
+    "choices": [
+      "Patient positioning accuracy and coordinate system transformations between shots",
+      "Time decay corrections for individual cobalt source activities",
+      "Detector response variations in mixed radiation fields",
+      "Treatment planning system interpolation algorithms in composite regions"
+    ],
+    "explanation": "When individual shots verify well but composite doses fail, the most likely systematic error is in patient positioning accuracy or coordinate system transformations. Small positioning errors compound in multi-target treatments, causing significant discrepancies in overlap regions while individual shots remain accurate.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "SBRT lung treatments show systematic setup errors of 2-3 mm despite CBCT guidance. Analysis reveals correlation with respiratory phase during imaging. Which advanced correction strategy addresses both imaging and delivery uncertainties while maintaining treatment efficiency?",
+    "answer": "4D-CBCT with respiratory-correlated planning and delivery gating",
+    "choices": [
+      "4D-CBCT with respiratory-correlated planning and delivery gating",
+      "Increased PTV margins with population-based setup uncertainties",
+      "Multiple CBCT acquisitions with averaged positioning coordinates",
+      "Real-time surface monitoring with predictive motion algorithms"
+    ],
+    "explanation": "Respiratory-correlated setup errors require 4D approaches that account for breathing motion in both imaging and delivery. 4D-CBCT allows verification at the treatment breathing phase, while gated delivery ensures consistency between planning, verification, and treatment delivery phases.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulations for micro-MLC commissioning show systematic 2-4% dose differences in penumbral regions compared to measurements across all field sizes. The linac model includes detailed MLC geometry and measured beam parameters. Which modeling refinement most likely resolves this systematic discrepancy?",
+    "answer": "Detailed modeling of rounded MLC leaf ends and interleaf transmission with measured leaf-specific parameters",
+    "choices": [
+      "Detailed modeling of rounded MLC leaf ends and interleaf transmission with measured leaf-specific parameters",
+      "Enhanced electron contamination modeling with energy-dependent cross-sections",
+      "Refined primary electron beam angular and energy distribution modeling",
+      "Improved photon interaction cross-sections for tungsten MLC materials"
+    ],
+    "explanation": "Penumbral dose discrepancies across all field sizes suggest systematic MLC modeling issues. Rounded leaf ends create complex scattered radiation patterns not captured by simplified rectangular leaf models. Individual leaf transmission variations and geometric details significantly affect penumbral dose distributions and require detailed modeling with measured parameters.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis for SRS treatments identifies patient positioning as the highest risk priority number (RPN = 240). Current verification includes CBCT with 1 mm/1° tolerance. Which risk mitigation strategy provides optimal RPN reduction while considering detection probability and severity?",
+    "answer": "Implement redundant orthogonal kV verification with automated tolerance checking and mandatory physicist review",
+    "choices": [
+      "Implement redundant orthogonal kV verification with automated tolerance checking and mandatory physicist review",
+      "Reduce CBCT tolerance to 0.5 mm/0.5° with enhanced image registration algorithms",
+      "Add surface monitoring system with continuous real-time positioning feedback",
+      "Require dual physicist verification of all patient setup procedures"
+    ],
+    "explanation": "RPN reduction requires decreasing occurrence probability and increasing detection probability while managing severity. Redundant orthogonal verification with automated checking increases detection probability significantly. Mandatory physicist review reduces occurrence through enhanced oversight. This approach optimizes RPN reduction more effectively than tighter tolerances alone or systems that don't address the fundamental positioning verification process.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Uncertainty budget analysis for small field dosimetry shows Type A uncertainties of 0.8% and Type B uncertainties totaling 1.4%. Additional systematic uncertainties from detector positioning (0.5%) and environmental conditions (0.3%) are identified. What is the expanded uncertainty (k=2) for clinical implementation?",
+    "answer": "3.4% expanded uncertainty with 95% confidence interval",
+    "choices": [
+      "3.4% expanded uncertainty with 95% confidence interval",
+      "2.9% expanded uncertainty with 95% confidence interval",
+      "4.1% expanded uncertainty with 95% confidence interval",
+      "2.2% expanded uncertainty with 68% confidence interval"
+    ],
+    "explanation": "Combined standard uncertainty = √[(0.8%)² + (1.4%)² + (0.5%)² + (0.3%)²] = √[0.64 + 1.96 + 0.25 + 0.09] = √2.94 = 1.71%. Expanded uncertainty (k=2) = 2 × 1.71% = 3.42% ≈ 3.4% at 95% confidence level, following ISO Guide to Expression of Uncertainty in Measurement (GUM) methodology.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of a novel stereotactic collimator system requires validation against measurements. Phase space scoring shows 10⁸ particles are needed for 1% statistical uncertainty in the central axis. For off-axis penumbral regions requiring 0.5% uncertainty, which variance reduction technique optimization provides maximum computational efficiency?",
+    "answer": "Geometry importance sampling with region-specific particle splitting ratios based on dose gradient analysis",
+    "choices": [
+      "Geometry importance sampling with region-specific particle splitting ratios based on dose gradient analysis",
+      "Uniform particle splitting with Russian roulette termination in low-importance regions",
+      "Energy-based importance sampling with preferential high-energy particle tracking",
+      "Angular biasing toward detector regions with weight correction algorithms"
+    ],
+    "explanation": "Penumbral regions require 4× more particles (4×10⁸) for 0.5% uncertainty. Geometry importance sampling with region-specific splitting optimizes efficiency by increasing particle density where needed (penumbra) while maintaining statistics elsewhere. This approach directly addresses the spatial variance requirements more efficiently than uniform or energy-based methods.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in photon beams?",
+    "answer": "±2%",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies a tolerance of ±2% for beam flatness in photon beams for both daily and monthly QA procedures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference dosimetry protocol recommended by AAPM for absolute dose calibration of external beam radiotherapy equipment?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-40",
+      "TG-61"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the earlier TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the recommended tolerance for beam symmetry in photon beams according to TG-142?",
+    "answer": "±2%",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±4%"
+    ],
+    "explanation": "TG-142 establishes a tolerance of ±2% for beam symmetry in photon beams, measured across the treatment field perpendicular to the central axis.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended tolerance for output constancy in daily linear accelerator QA according to TG-142?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±4%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies a tolerance of ±3% for daily output constancy measurements to ensure consistent dose delivery from the linear accelerator.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

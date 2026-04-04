@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary characteristic that defines stereotactic radiosurgery (SRS)?",
+    "answer": "High-precision delivery of ablative radiation doses in single or few fractions",
+    "choices": [
+      "High-precision delivery of ablative radiation doses in single or few fractions",
+      "Use of multiple isocentric beams converging at tumor location only",
+      "Treatment delivery exclusively with dedicated radiosurgery equipment systems",
+      "Fractionated treatment over 3-5 weeks with millimeter accuracy"
+    ],
+    "explanation": "SRS is characterized by high-precision delivery of ablative doses in single or few fractions, distinguishing it from conventional fractionated radiotherapy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What is the definition of a small field according to TG-155?",
+    "answer": "Field where lateral charged particle equilibrium is lost",
+    "choices": [
+      "Field where lateral charged particle equilibrium is lost",
+      "Field with dimensions smaller than 4 cm × 4 cm",
+      "Field where output factor is less than 0.995",
+      "Field requiring special dosimetry detector selection protocols"
+    ],
+    "explanation": "TG-155 defines small fields based on the loss of lateral charged particle equilibrium rather than arbitrary size criteria.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Coincidence of radiation and mechanical isocenter",
+    "choices": [
+      "Coincidence of radiation and mechanical isocenter",
+      "Small field dosimetric accuracy verification methods",
+      "Multi-leaf collimator positional accuracy measurements",
+      "Image guidance system geometric calibration procedures"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence between radiation and mechanical isocenter using a ball bearing target.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in SRS?",
+    "answer": "2.5-5 mm at isocenter",
+    "choices": [
+      "2.5-5 mm at isocenter",
+      "1-2 mm at isocenter",
+      "5-10 mm at isocenter",
+      "0.5-1 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5 mm at isocenter, providing improved conformality compared to standard MLCs.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "What is the recommended minimum detector size for small field dosimetry according to TG-155?",
+    "answer": "Detector dimension should be less than 1/3 of the field size",
+    "choices": [
+      "Detector dimension should be less than 1/3 of the field size",
+      "Detector active area must be smaller than 1 mm diameter",
+      "Detector volume should not exceed 0.1 cm³ for accuracy",
+      "Detector width must be less than 2 mm in all dimensions"
+    ],
+    "explanation": "TG-155 recommends that detector dimensions be less than 1/3 of the field size to minimize volume averaging effects.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended positioning accuracy for SRS treatments?",
+    "answer": "≤ 1 mm for single fraction treatments",
+    "choices": [
+      "≤ 1 mm for single fraction treatments",
+      "≤ 2 mm for single fraction treatments",
+      "≤ 0.5 mm for single fraction treatments",
+      "≤ 3 mm for single fraction treatments"
+    ],
+    "explanation": "TG-101 recommends positioning accuracy of ≤ 1 mm for SRS single fraction treatments due to the high dose gradients involved.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What tracking method does CyberKnife use for real-time tumor tracking?",
+    "answer": "Orthogonal kV imaging with fiducial marker correlation",
+    "choices": [
+      "Orthogonal kV imaging with fiducial marker correlation",
+      "Continuous MV portal imaging with soft tissue tracking",
+      "Infrared optical tracking with external marker correlation",
+      "Ultrasound guidance with real-time anatomical structure identification"
+    ],
+    "explanation": "CyberKnife uses orthogonal kV imaging to track fiducial markers and correlates with respiratory motion for real-time tracking.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A clinic implements SBRT lung treatments using 6 MV FFF beams with 1 cm × 1 cm fields. Monte Carlo calculations show 15% dose differences compared to AAA algorithm in heterogeneous regions, while measurements with various detectors show systematic variations. The clinic observes increased local failures in posterior tumors near vertebrae. What is the most likely primary cause requiring immediate investigation?",
+    "answer": "Inadequate dose calculation algorithm accuracy in heterogeneous tissue interfaces combined with inappropriate detector selection for commissioning measurements",
+    "choices": [
+      "Inadequate dose calculation algorithm accuracy in heterogeneous tissue interfaces combined with inappropriate detector selection for commissioning measurements",
+      "Systematic respiratory motion management failures leading to geographic miss of tumor targets during beam delivery",
+      "Insufficient beam modeling parameters in treatment planning system causing systematic small field output calculation errors",
+      "Inadequate image guidance frequency and accuracy verification resulting in systematic setup error accumulation"
+    ],
+    "explanation": "The combination of dose calculation algorithm limitations in heterogeneous regions, measurement uncertainties from detector selection, and anatomical location of failures suggests fundamental dosimetric accuracy issues per TG-101 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During GammaKnife commissioning, Winston-Lutz tests reveal 0.3 mm systematic offset, cone-based output measurements show 3% variation between different detectors, and treatment planning system calculations differ from measurements by 2% for 4 mm collimator. Patient-specific QA shows systematic dose differences in composite plans. What systematic investigation approach should be prioritized?",
+    "answer": "Comprehensive small field detector characterization with Monte Carlo validation, followed by systematic geometric accuracy verification and beam model optimization",
+    "choices": [
+      "Comprehensive small field detector characterization with Monte Carlo validation, followed by systematic geometric accuracy verification and beam model optimization",
+      "Immediate mechanical recalibration of treatment delivery system followed by complete patient treatment plan recalculation and verification",
+      "Statistical analysis of patient-specific QA results with implementation of action level thresholds and measurement uncertainty evaluation",
+      "Complete treatment planning system recommissioning with focus on dose calculation algorithm parameter optimization and validation"
+    ],
+    "explanation": "Multiple systematic errors suggest fundamental measurement and modeling issues requiring comprehensive detector characterization and geometric verification per TG-135 and TG-155 protocols.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-institutional SRS program shows varying clinical outcomes despite identical protocols. Site A uses micro-MLC LINAC with Monte Carlo planning, Site B uses cone-based LINAC with convolution algorithms, Site C uses GammaKnife. Dosimetric audits reveal systematic differences in small field measurements and planning calculations. What comprehensive quality assurance framework should address these variations?",
+    "answer": "Standardized end-to-end dosimetric testing with reference detector protocols, cross-institutional measurement comparisons, and Monte Carlo-based independent dose verification systems",
+    "choices": [
+      "Standardized end-to-end dosimetric testing with reference detector protocols, cross-institutional measurement comparisons, and Monte Carlo-based independent dose verification systems",
+      "Implementation of uniform treatment planning systems across institutions with standardized beam modeling parameters and calculation algorithm selections",
+      "Centralized patient treatment planning with distributed delivery verification using institution-specific measurement protocols and correction factors",
+      "Statistical analysis of clinical outcomes with retrospective dosimetric reconstruction and systematic uncertainty propagation through treatment planning"
+    ],
+    "explanation": "Multi-institutional variations require standardized measurement protocols and independent verification systems to ensure dosimetric consistency across different delivery platforms as recommended by TG-101.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "CyberKnife treatments show systematic delivery errors correlating with respiratory amplitude and tumor location. Analysis reveals tracking system latency issues, fiducial marker migration, and correlation model degradation during treatment. Patient-specific QA indicates dose delivery accuracy within tolerance, but clinical outcomes suggest systematic geographical miss patterns. What integrated solution addresses these multi-factorial uncertainties?",
+    "answer": "Implementation of real-time adaptive correlation model updating with predictive tracking algorithms, enhanced fiducial stability assessment, and probabilistic treatment planning incorporating systematic uncertainties",
+    "choices": [
+      "Implementation of real-time adaptive correlation model updating with predictive tracking algorithms, enhanced fiducial stability assessment, and probabilistic treatment planning incorporating systematic uncertainties",
+      "Increased imaging frequency during treatment delivery with real-time beam hold implementation and systematic correlation model recalibration protocols",
+      "Enhanced patient selection criteria with respiratory amplitude limits, improved fiducial placement techniques, and extended treatment delivery time allocation",
+      "Development of institution-specific tracking system calibration procedures with systematic latency compensation and geometric accuracy verification protocols"
+    ],
+    "explanation": "Multiple systematic uncertainties require integrated adaptive solutions incorporating real-time model updating and probabilistic planning approaches to maintain geometric accuracy per TG-135 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Design a comprehensive uncertainty budget for SRS dose delivery including geometric uncertainties (0.5 mm setup, 0.3 mm isocenter, 0.2 mm imaging), dosimetric uncertainties (2% calibration, 3% small field corrections, 2% planning algorithm), and systematic uncertainties (1 mm target delineation, 0.4 mm organ motion). Calculate the total combined uncertainty assuming independent error propagation and determine the impact on 95% isodose conformity index for a 1.2 cm spherical target with 2 mm PTV margin.",
+    "answer": "Combined uncertainty: 4.1% dose, 1.1 mm geometric; Conformity index degradation: ~15-20% due to geometric uncertainties dominating small target treatments",
+    "choices": [
+      "Combined uncertainty: 4.1% dose, 1.1 mm geometric; Conformity index degradation: ~15-20% due to geometric uncertainties dominating small target treatments",
+      "Combined uncertainty: 2.8% dose, 0.8 mm geometric; Conformity index degradation: ~8-12% with dosimetric uncertainties being primary contribution factor",
+      "Combined uncertainty: 5.2% dose, 1.5 mm geometric; Conformity index degradation: ~25-30% requiring systematic margin expansion for coverage",
+      "Combined uncertainty: 3.5% dose, 0.6 mm geometric; Conformity index degradation: ~5-10% with negligible impact on treatment plan quality"
+    ],
+    "explanation": "Uncertainty propagation: geometric = √(0.5² + 0.3² + 0.2² + 1² + 0.4²) = 1.1 mm; dose = √(2² + 3² + 2²) = 4.1%. Small targets are particularly sensitive to geometric uncertainties.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Develop Monte Carlo-based correction factors for small field dosimetry using a micro-diamond detector in 6 MV FFF beam. The detector has 2.2 mm × 2.2 mm active area, 1 μm thickness, with measured response variations of -8% for 0.5 cm × 0.5 cm fields and -3% for 1 cm × 1 cm fields compared to ion chamber measurements in reference conditions. Calculate the volume-averaged correction factors and associated uncertainties including detector positioning (±0.1 mm) and Monte Carlo statistical uncertainties (±1%).",
+    "answer": "k_fclin,fref correction factors: 1.087 (±0.025) for 0.5×0.5 cm, 1.032 (±0.018) for 1×1 cm fields with combined uncertainties including positioning and MC statistics",
+    "choices": [
+      "k_fclin,fref correction factors: 1.087 (±0.025) for 0.5×0.5 cm, 1.032 (±0.018) for 1×1 cm fields with combined uncertainties including positioning and MC statistics",
+      "k_fclin,fref correction factors: 1.045 (±0.015) for 0.5×0.5 cm, 1.018 (±0.012) for 1×1 cm fields assuming linear detector response characteristics",
+      "k_fclin,fref correction factors: 1.120 (±0.035) for 0.5×0.5 cm, 1.055 (±0.028) for 1×1 cm fields including systematic detector calibration uncertainties",
+      "k_fclin,fref correction factors: 1.025 (±0.010) for 0.5×0.5 cm, 1.012 (±0.008) for 1×1 cm fields with minimal volume averaging corrections required"
+    ],
+    "explanation": "TG-155 formalism requires correction factors accounting for detector volume averaging effects. Combined uncertainties include positioning (±0.1 mm), MC statistics (±1%), and field size dependencies.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Develop Monte Carlo-based beam model validation for GammaKnife Icon including source geometry modeling, collimator design, and patient-specific dose calculations. The model must account for Co-60 spectrum (average 1.25 MeV), 192 source positions, and sector-based beam blocking. Measured dose profiles show 2% differences at 50% isodose levels and 5% differences in penumbra regions. Calculate the required statistical precision and simulation parameters to achieve <1% Monte Carlo uncertainty in clinical dose calculations.",
+    "answer": "Required histories: >10^8 per beam for <1% statistical uncertainty; Voxel size: 0.5 mm in target region; Variance reduction techniques essential for computational efficiency within clinical timeframes",
+    "choices": [
+      "Required histories: >10^8 per beam for <1% statistical uncertainty; Voxel size: 0.5 mm in target region; Variance reduction techniques essential for computational efficiency within clinical timeframes",
+      "Required histories: >10^6 per beam for <2% statistical uncertainty; Voxel size: 1.0 mm in target region; Standard transport parameters sufficient for clinical accuracy requirements",
+      "Required histories: >10^9 per beam for <0.5% statistical uncertainty; Voxel size: 0.2 mm in target region; Research-level precision required for clinical implementation protocols",
+      "Required histories: >10^7 per beam for <1.5% statistical uncertainty; Voxel size: 2.0 mm in target region; Simplified geometry modeling adequate for routine clinical applications"
+    ],
+    "explanation": "Monte Carlo statistical uncertainty scales as 1/√N. For 1% precision with 192 beams and complex geometry, >10^8 histories per beam required with variance reduction for efficiency.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on a linear accelerator?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±1% from baseline",
+      "±2% from baseline",
+      "±3% from baseline",
+      "±5% from baseline"
+    ],
+    "explanation": "TG-142 specifies a ±3% tolerance for daily output constancy measurements, which is monitored using ion chambers or diode detectors in a phantom setup.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 calibration protocol in medical linear accelerators?",
+    "answer": "Absolute dose calibration in water",
+    "choices": [
+      "Absolute dose calibration in water",
+      "Relative dose distribution verification",
+      "Multi-leaf collimator positioning accuracy",
+      "Portal imaging system calibration"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing absolute dose calibration in water using ion chamber measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is beam flatness in the context of linear accelerator quality assurance?",
+    "answer": "Variation across the central 80% of beam profile",
+    "choices": [
+      "Variation across the central 80% of beam profile",
+      "Maximum dose rate at beam central axis",
+      "Penumbra width at field edge boundaries",
+      "Leakage radiation outside treatment field"
+    ],
+    "explanation": "Beam flatness is defined as the maximum variation in dose across the central 80% of the beam profile, typically expressed as a percentage and measured during commissioning and periodic QA.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator components?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Maximum Leaf Clearance",
+      "Mechanical Linac Controller",
+      "Modulated Light Calibration"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which consists of multiple tungsten leaves that can be independently positioned to shape radiation beams for conformal and intensity-modulated treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

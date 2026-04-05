@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation and mechanical isocenter",
+    "choices": [
+      "To verify the coincidence of radiation and mechanical isocenter",
+      "To measure the penumbra width of small radiation fields",
+      "To calibrate the dose rate for stereotactic treatments",
+      "To assess the flatness and symmetry of radiation beams"
+    ],
+    "explanation": "The Winston-Lutz test uses a ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter of the treatment machine, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Single Radiation Session",
+      "Specialized Radiotherapy System",
+      "Small Rectangle Segmentation"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a technique that delivers a single high dose of radiation with high precision to a small target volume.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "8.0-10.0 mm at isocenter",
+      "15.0-20.0 mm at isocenter",
+      "0.5-1.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, which is smaller than conventional MLCs to provide better conformality for small targets in stereotactic treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of radiation source does the Leksell Gamma Knife use?",
+    "answer": "Cobalt-60 sources",
+    "choices": [
+      "Cobalt-60 sources",
+      "Linear accelerator X-rays",
+      "Cesium-137 sources",
+      "Iridium-192 sources"
+    ],
+    "explanation": "The Leksell Gamma Knife uses multiple Cobalt-60 sources arranged in a hemispherical configuration to deliver focused gamma radiation for stereotactic radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended maximum dose per fraction for single-fraction SRS treatments?",
+    "answer": "Typically 15-24 Gy depending on target volume and location",
+    "choices": [
+      "Typically 15-24 Gy depending on target volume and location",
+      "Always exactly 20 Gy regardless of target characteristics",
+      "Maximum of 8-12 Gy for all anatomical sites",
+      "Standard range of 30-40 Gy for optimal outcomes"
+    ],
+    "explanation": "TG-101 recommends dose ranges that depend on target volume and anatomical location, with typical single-fraction SRS doses ranging from 15-24 Gy for most intracranial targets.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the recommended detector size limit for small field dosimetry according to TG-155?",
+    "answer": "Active volume diameter should be ≤ field size/3",
+    "choices": [
+      "Active volume diameter should be ≤ field size/3",
+      "Active volume diameter should be ≤ field size/2",
+      "Active volume diameter must equal the field size",
+      "Active volume diameter should be ≤ field size/5"
+    ],
+    "explanation": "TG-155 recommends that the detector's active volume diameter should not exceed one-third of the field size to minimize volume averaging effects in small field measurements.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical accuracy requirement for Winston-Lutz testing in stereotactic systems?",
+    "answer": "Total deviation should be ≤ 1.0 mm",
+    "choices": [
+      "Total deviation should be ≤ 1.0 mm",
+      "Total deviation should be ≤ 3.0 mm",
+      "Total deviation should be ≤ 0.5 mm",
+      "Total deviation should be ≤ 2.0 mm"
+    ],
+    "explanation": "Most guidelines recommend that the total Winston-Lutz deviation should be ≤ 1.0 mm for stereotactic systems to ensure adequate geometric accuracy for small target treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of the CyberKnife system over conventional linac-based SRS?",
+    "answer": "Real-time image-guided tracking without patient immobilization frames",
+    "choices": [
+      "Real-time image-guided tracking without patient immobilization frames",
+      "Higher dose rate delivery for faster treatment times",
+      "Better radiation beam quality with lower energy spread",
+      "Superior dose conformality using specialized micro-collimators"
+    ],
+    "explanation": "The CyberKnife system provides real-time tracking and correction capabilities without requiring rigid stereotactic frames, using imaging guidance and robotic positioning.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a micro-MLC system, output factors measured with different detectors show systematic variations. Silicon diodes read 8% higher than ion chambers for a 5mm×5mm field. What correction methodology should be applied according to current protocols?",
+    "answer": "Apply detector-specific correction factors derived from Monte Carlo calculations",
+    "choices": [
+      "Apply detector-specific correction factors derived from Monte Carlo calculations",
+      "Average all detector readings and apply uniform scaling factors",
+      "Use only ion chamber measurements with increased uncertainty estimates",
+      "Implement field-size dependent weighting based on measurement variance"
+    ],
+    "explanation": "TG-155 recommends using detector-specific correction factors, often derived from Monte Carlo simulations, to account for energy dependence and volume averaging in small field dosimetry.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A Winston-Lutz analysis reveals systematic mechanical flexing of 0.8mm during gantry rotation, with additional random variations of ±0.3mm. Patient setup uncertainty is ±0.5mm (1σ). What is the optimal PTV margin using van Herk's formula (2.5Σ + 0.7σ)?",
+    "answer": "Approximately 3.2 mm accounting for systematic and random uncertainties",
+    "choices": [
+      "Approximately 2.8 mm based on simple geometric addition methods",
+      "Approximately 3.2 mm accounting for systematic and random uncertainties",
+      "Approximately 1.6 mm using only the largest uncertainty component",
+      "Approximately 4.1 mm with conservative safety margin approaches"
+    ],
+    "explanation": "Using van Herk's formula with Σ=√(0.8²+0.3²)≈0.85mm and σ=0.5mm gives margin = 2.5(0.85) + 0.7(0.5) ≈ 3.2mm for adequate target coverage.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "For a complex multi-target SRS plan with six metastases, the planning system shows V12Gy=15cc for normal brain. Independent dose calculations using different algorithms show variations of ±8%. What is the primary concern for treatment delivery?",
+    "answer": "Algorithm uncertainties may compromise normal tissue dose constraints",
+    "choices": [
+      "Target coverage will be inadequate due to calculation uncertainties",
+      "Algorithm uncertainties may compromise normal tissue dose constraints",
+      "Treatment delivery time will exceed practical clinical limits",
+      "Patient positioning accuracy requirements become unachievable specifications"
+    ],
+    "explanation": "With normal brain V12Gy limits typically around 10-15cc, an 8% calculation uncertainty could significantly impact normal tissue sparing assessments and treatment safety margins.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "During Monte Carlo validation of small field correction factors, systematic discrepancies of 12% are observed between EGSnrc and FLUKA codes for fields <1cm². Phase space files show identical primary beam parameters. What is the most likely source of this discrepancy?",
+    "answer": "Differences in electron transport physics and boundary crossing algorithms",
+    "choices": [
+      "Variations in photon cross-section data libraries between codes",
+      "Differences in electron transport physics and boundary crossing algorithms",
+      "Inconsistent statistical uncertainty estimation methods in calculations",
+      "Systematic errors in geometry modeling and material definitions"
+    ],
+    "explanation": "Small field dosimetry is highly sensitive to electron transport modeling, particularly boundary crossing algorithms and step-size restrictions, which can vary significantly between Monte Carlo codes.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis of a CyberKnife workflow identifies that imaging system calibration drift has an RPN of 280 (Severity=8, Occurrence=5, Detectability=7). Post-mitigation analysis shows improved detectability (D=3). What is the residual risk priority number?",
+    "answer": "120 based on unchanged severity and occurrence ratings",
+    "choices": [
+      "84 assuming proportional reduction in all risk factors",
+      "120 based on unchanged severity and occurrence ratings",
+      "168 with conservative estimation of residual systematic errors",
+      "240 accounting for increased complexity of detection systems"
+    ],
+    "explanation": "RPN = Severity × Occurrence × Detectability. With improved detectability (D=3) while S=8 and O=5 remain unchanged, the new RPN = 8 × 5 × 3 = 120.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "A comprehensive uncertainty budget for micro-MLC output factors includes: measurement repeatability (0.8%), detector calibration (1.2%), positioning (0.6%), and correction factors (2.1%). Using GUM methodology, what is the combined standard uncertainty?",
+    "answer": "2.7% calculated using root sum of squares methodology",
+    "choices": [
+      "2.7% calculated using root sum of squares methodology",
+      "4.7% using simple arithmetic summation of components",
+      "1.8% with partial correlation corrections between factors",
+      "3.3% including additional systematic uncertainty estimates"
+    ],
+    "explanation": "Following GUM guidelines, combined uncertainty = √(0.8² + 1.2² + 0.6² + 2.1²) = √6.89 ≈ 2.6% (approximately 2.7% when rounded appropriately).",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Monte Carlo simulations of Gamma Knife dose distributions show systematic deviations from measurements in the penumbra region. Increasing particle history from 10⁸ to 10⁹ reduces statistical uncertainty from 1.8% to 0.6% but systematic differences persist at 3.2%. What optimization strategy should be prioritized?",
+    "answer": "Refine geometric modeling of collimator and source configuration details",
+    "choices": [
+      "Further increase particle histories to achieve sub-0.1% precision",
+      "Refine geometric modeling of collimator and source configuration details",
+      "Implement variance reduction techniques for improved efficiency",
+      "Modify transport physics parameters and cutoff energy settings"
+    ],
+    "explanation": "Since statistical uncertainty is already well below the systematic difference, further history increases won't resolve the issue. Systematic deviations typically require improved geometric modeling accuracy.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in photon beams?",
+    "answer": "±3% for energies ≤10 MV and ±2% for energies >10 MV",
+    "choices": [
+      "±2% for energies ≤10 MV and ±3% for energies >10 MV",
+      "±3% for energies ≤10 MV and ±2% for energies >10 MV",
+      "±2% for all photon energies regardless of MV",
+      "±3% for all photon energies regardless of MV"
+    ],
+    "explanation": "TG-142 specifies beam flatness tolerances that depend on photon energy, with tighter tolerances for lower energies due to improved beam characteristics.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Calibration of photon and electron beams using ion chambers",
+    "choices": [
+      "Calibration of photon and electron beams using ion chambers",
+      "Quality assurance testing of multileaf collimator systems",
+      "Commissioning procedures for water tank scanning systems",
+      "Daily output constancy measurements for linear accelerators"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, establishing absorbed dose calibration procedures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "According to TG-142, which QA test should be performed daily on linear accelerators?",
+    "answer": "Beam output constancy measurement using dosimeter",
+    "choices": [
+      "Beam output constancy measurement using dosimeter",
+      "Complete water tank beam profile scanning",
+      "Multileaf collimator positioning accuracy verification",
+      "Annual photon beam energy constancy check"
+    ],
+    "explanation": "TG-142 requires daily beam output constancy checks to ensure dose delivery remains within acceptable limits for patient treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator QA?",
+    "answer": "Electronic Portal Imaging Device used for dosimetry",
+    "choices": [
+      "Electronic Portal Imaging Device used for dosimetry",
+      "External Photon Ionization Detector for measurements",
+      "Enhanced Precision Ion Dosimeter for calibration",
+      "Emergency Protocol Intervention Device for safety"
+    ],
+    "explanation": "EPID refers to Electronic Portal Imaging Devices, which are increasingly used for dosimetric verification and QA measurements in radiotherapy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation isocenter with mechanical isocenter",
+    "choices": [
+      "To verify the coincidence of radiation isocenter with mechanical isocenter",
+      "To measure the output factor for small radiation fields",
+      "To calibrate the micro-MLC leaf positioning accuracy",
+      "To determine the penumbra width of stereotactic beams"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter of the treatment machine, which is critical for accurate stereotactic treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Single Radiation Session",
+      "Spatial Resolution System",
+      "Surface Registration Software"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, which is a technique that delivers a high dose of radiation to a small target in a single fraction or very few fractions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "Which detector type is NOT recommended by TG-155 for small field dosimetry?",
+    "answer": "Large volume ion chambers",
+    "choices": [
+      "Large volume ion chambers",
+      "Silicon diode detectors",
+      "Diamond detectors",
+      "Plastic scintillators"
+    ],
+    "explanation": "TG-155 specifically recommends against using large volume ion chambers for small field dosimetry due to volume averaging effects that compromise measurement accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical collimator size threshold below which small field dosimetry corrections are required?",
+    "answer": "3 cm × 3 cm equivalent square",
+    "choices": [
+      "3 cm × 3 cm equivalent square",
+      "5 cm × 5 cm equivalent square",
+      "2 cm × 2 cm equivalent square",
+      "4 cm × 4 cm equivalent square"
+    ],
+    "explanation": "Fields smaller than approximately 3 cm × 3 cm equivalent square require special dosimetry considerations due to loss of lateral charged particle equilibrium and detector response variations.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the maximum acceptable Winston-Lutz deviation for SRS treatments?",
+    "answer": "0.5 mm radius from isocenter",
+    "choices": [
+      "1.0 mm radius from isocenter",
+      "0.5 mm radius from isocenter",
+      "2.0 mm radius from isocenter",
+      "1.5 mm radius from isocenter"
+    ],
+    "explanation": "TG-101 recommends that Winston-Lutz test results should be within 1.0 mm radius of the mechanical isocenter for SRS treatments to ensure adequate targeting accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "1.0-2.0 mm at isocenter",
+      "5.0-10.0 mm at isocenter",
+      "0.5-1.5 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm projected to isocenter, providing improved conformality compared to standard MLCs while maintaining reasonable treatment delivery efficiency.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "How many cobalt-60 sources are used in the current Gamma Knife Perfexion model?",
+    "answer": "192 sources arranged in sectors",
+    "choices": [
+      "192 sources arranged in sectors",
+      "201 sources in fixed positions",
+      "256 sources with collimators",
+      "384 sources in multiple rings"
+    ],
+    "explanation": "The Gamma Knife Perfexion uses 192 cobalt-60 sources arranged in 8 sectors, with each sector containing 24 sources that can be individually collimated.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What tracking method does the CyberKnife system primarily use for real-time tumor localization?",
+    "answer": "Orthogonal kV imaging with fiducial markers",
+    "choices": [
+      "Orthogonal kV imaging with fiducial markers",
+      "Cone-beam CT with soft tissue matching",
+      "Infrared optical tracking of external markers",
+      "Electromagnetic transponder signal detection"
+    ],
+    "explanation": "CyberKnife primarily uses orthogonal kV imaging systems to track implanted fiducial markers in real-time, enabling continuous tumor localization during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam has an output factor of 0.85 for a 1×1 cm² field measured with a diode detector. The field-specific correction factor for this diode is 1.04. If the reference 10×10 cm² field output is 1.000 cGy/MU, what is the corrected small field output factor?",
+    "answer": "0.884",
+    "choices": [
+      "0.817",
+      "0.884",
+      "0.850",
+      "0.792"
+    ],
+    "explanation": "The corrected output factor = (measured output factor) / (field-specific correction factor) = 0.85 / 1.04 = 0.817. This accounts for the over-response of the diode detector in small fields.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a cone-based SRS system, you observe that 5mm cone measurements show 15% higher dose rates compared to Monte Carlo predictions, while 40mm cones agree within 2%. What is the most likely systematic issue?",
+    "answer": "Detector volume averaging is underestimating the true peak dose",
+    "choices": [
+      "Detector volume averaging is underestimating the true peak dose",
+      "Monte Carlo source modeling has insufficient statistical precision",
+      "Cone manufacturing tolerances are affecting small field geometry",
+      "Head scatter modeling in Monte Carlo requires fine-tuning"
+    ],
+    "explanation": "The field size dependence of the discrepancy strongly suggests detector volume averaging effects, where the finite detector volume fails to accurately sample the peak dose in very small fields, leading to underestimation of true dose rates.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-institutional SRS audit reveals systematic 8% dose overestimation in treatments using micro-MLC fields <2×2 cm². The participating centers use different TPS algorithms but similar measurement protocols. What is the most probable root cause requiring investigation?",
+    "answer": "Inadequate small field correction factors in beam modeling across TPS platforms",
+    "choices": [
+      "Inadequate small field correction factors in beam modeling across TPS platforms",
+      "Systematic calibration errors in reference dosimetry at all institutions",
+      "Common detector selection bias affecting output factor measurements",
+      "Insufficient Monte Carlo variance reduction in dose calculation algorithms"
+    ],
+    "explanation": "The systematic nature across multiple institutions with different TPS suggests inadequate implementation of small field physics in beam models, particularly the lack of proper detector-specific correction factors during commissioning measurements.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "In a VMAT-SRS treatment with 95% of 500 control points using field sizes <3×3 cm², you observe 12% dose discrepancy in ion chamber measurements. Your uncertainty analysis shows measurement uncertainty of ±3% (k=2). What action is most appropriate?",
+    "answer": "Repeat measurements with detector-specific small field correction methodology per TG-155",
+    "choices": [
+      "Repeat measurements with detector-specific small field correction methodology per TG-155",
+      "Accept the result as within expanded uncertainty limits for complex treatments",
+      "Perform additional measurements with increased statistical sampling",
+      "Adjust beam model parameters to match measured ion chamber response"
+    ],
+    "explanation": "A 12% discrepancy exceeds typical acceptance criteria even for complex treatments. TG-155 methodology with appropriate small field corrections should be implemented before considering beam model adjustments, as standard ion chamber measurements are inadequate for predominantly small field treatments.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Your Monte Carlo simulation of a 5mm stereotactic cone shows 4% dose uncertainty (1σ) after 10⁹ histories. To achieve 1% uncertainty for TG-186 compliance in small field dose calculations, approximately how many additional histories are required?",
+    "answer": "1.5 × 10¹⁰ histories",
+    "choices": [
+      "1.5 × 10¹⁰ histories",
+      "4.0 × 10⁹ histories",
+      "6.0 × 10⁹ histories",
+      "2.5 × 10¹⁰ histories"
+    ],
+    "explanation": "Statistical uncertainty scales as 1/√N. To reduce from 4% to 1% requires 16× more histories: (4/1)² = 16. Total needed: 16 × 10⁹, so additional: 15 × 10⁹ ≈ 1.5 × 10¹⁰ histories.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "In developing an uncertainty budget for small field dosimetry per TG-155 recommendations, you identify: positioning uncertainty (±2%), detector calibration (±1.5%), correction factor determination (±3%), and environmental corrections (±0.5%). What is the combined standard uncertainty (k=1)?",
+    "answer": "±3.9%",
+    "choices": [
+      "±3.9%",
+      "±7.0%",
+      "±4.2%",
+      "±3.5%"
+    ],
+    "explanation": "Combined standard uncertainty = √(2² + 1.5² + 3² + 0.5²) = √(4 + 2.25 + 9 + 0.25) = √15.5 = 3.94% ≈ ±3.9%. This represents quadrature combination of independent uncertainty components.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Your FMEA analysis for a CyberKnife system identifies fiducial tracking failure as having occurrence=3, severity=9, detectability=4. After implementing redundant tracking algorithms, detectability improves to 2. What is the new Risk Priority Number?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "108",
+      "27",
+      "72"
+    ],
+    "explanation": "RPN = Occurrence × Severity × Detectability. Initial RPN = 3 × 9 × 4 = 108. After improvement: New RPN = 3 × 9 × 2 = 54. The improved detectability reduces the overall risk priority.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in the central 80% of the field?",
+    "answer": "±3% for photon beams",
+    "choices": [
+      "±2% for photon beams",
+      "±3% for photon beams",
+      "±5% for photon beams",
+      "±1% for photon beams"
+    ],
+    "explanation": "TG-142 specifies a ±3% tolerance for beam flatness in the central 80% of the field for photon beams as part of routine QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of photon and electron beams",
+    "choices": [
+      "Absolute dose calibration of photon and electron beams",
+      "Quality assurance testing of linear accelerators",
+      "Commissioning of treatment planning systems",
+      "Verification of multileaf collimator positioning"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing methods for absolute dose calibration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "How frequently should output constancy checks be performed on a linear accelerator according to TG-142?",
+    "answer": "Daily before patient treatments",
+    "choices": [
+      "Daily before patient treatments",
+      "Weekly during regular operations",
+      "Monthly as part of routine QA",
+      "Annually with full commissioning"
+    ],
+    "explanation": "TG-142 recommends daily output constancy checks before patient treatments to ensure beam output remains within acceptable limits (typically ±3%).",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator QA?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Intensity Detector",
+      "External Patient Identification Display",
+      "Electronic Position Indicator Display"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric QA applications.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

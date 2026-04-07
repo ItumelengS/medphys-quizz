@@ -1,0 +1,257 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the definition of stereotactic radiosurgery (SRS)?",
+    "answer": "Single-fraction high-dose radiation delivery with stereotactic localization",
+    "choices": [
+      "Single-fraction high-dose radiation delivery with stereotactic localization",
+      "Multi-fraction treatment using conventional field sizes and setup",
+      "Low-dose rate brachytherapy with real-time imaging guidance",
+      "Proton therapy delivery using pencil beam scanning techniques"
+    ],
+    "explanation": "SRS is defined as the delivery of a single high dose of radiation to a precisely localized target using stereotactic guidance, as outlined in TG-101.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What is a Winston-Lutz test used for?",
+    "answer": "Verifying mechanical and radiation isocenter coincidence",
+    "choices": [
+      "Measuring small field output factors accurately",
+      "Calibrating micro-MLC leaf positioning systems",
+      "Verifying mechanical and radiation isocenter coincidence",
+      "Testing patient immobilization system rigidity"
+    ],
+    "explanation": "The Winston-Lutz test uses a ball bearing target to verify that the mechanical rotation isocenter coincides with the radiation field center.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the primary advantage of micro-MLCs?",
+    "answer": "Enhanced conformality for small target volumes",
+    "choices": [
+      "Reduced beam penetration through leaf materials",
+      "Enhanced conformality for small target volumes",
+      "Faster leaf positioning speeds during delivery",
+      "Lower leakage radiation between adjacent leaves"
+    ],
+    "explanation": "Micro-MLCs have smaller leaf widths (typically 2.5-5mm) compared to conventional MLCs, allowing better conformality for small stereotactic targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the recommended minimum detector size for small field measurements?",
+    "answer": "Active volume should be smaller than the beam cross-section",
+    "choices": [
+      "Active volume should be smaller than the beam cross-section",
+      "Detector diameter must be exactly 1mm for all measurements",
+      "Active area should match the geometric field size precisely",
+      "Volume should be between 0.5-2.0 cubic centimeters maximum"
+    ],
+    "explanation": "TG-135 recommends that detector active volume should be small relative to the beam to minimize volume averaging effects in small field dosimetry.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in SRS?",
+    "answer": "2.5-5.0 mm at isocenter projection",
+    "choices": [
+      "0.5-1.0 mm at isocenter projection",
+      "2.5-5.0 mm at isocenter projection",
+      "8.0-12.0 mm at isocenter projection",
+      "15.0-20.0 mm at isocenter projection"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm projected to isocenter, smaller than conventional MLCs (5-10 mm) to improve small field conformality.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the maximum acceptable tolerance for Winston-Lutz isocenter deviation in SRS?",
+    "answer": "≤1.0 mm radius from isocenter",
+    "choices": [
+      "≤0.5 mm radius from isocenter",
+      "≤1.0 mm radius from isocenter",
+      "≤2.0 mm radius from isocenter",
+      "≤3.0 mm radius from isocenter"
+    ],
+    "explanation": "Most guidelines recommend Winston-Lutz isocenter deviation should be ≤1.0 mm for SRS applications to ensure accurate stereotactic delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the source activity range typically found in modern GammaKnife units?",
+    "answer": "8,000-12,000 TBq of Cobalt-60 sources",
+    "choices": [
+      "2,000-4,000 TBq of Cobalt-60 sources",
+      "5,000-7,000 TBq of Cobalt-60 sources",
+      "8,000-12,000 TBq of Cobalt-60 sources",
+      "15,000-20,000 TBq of Cobalt-60 sources"
+    ],
+    "explanation": "Modern GammaKnife units typically contain 8,000-12,000 TBq total activity distributed across 192 or 201 Cobalt-60 sources depending on the model.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A CyberKnife system shows systematic tracking errors of 0.8mm during respiratory motion tracking, with random positioning uncertainties of ±0.3mm per fraction over 5 fractions. The planning target volume margin is 2mm. What is the most appropriate corrective action considering the tracking system's specification of ±0.5mm accuracy?",
+    "answer": "Recalibrate tracking cameras and verify fiducial localization algorithms before treating",
+    "choices": [
+      "Proceed with treatment as margins adequately compensate for observed errors",
+      "Increase PTV margins to 4mm and continue with current tracking parameters",
+      "Recalibrate tracking cameras and verify fiducial localization algorithms before treating",
+      "Switch to respiratory gating mode and abandon real-time tracking completely"
+    ],
+    "explanation": "The systematic 0.8mm error exceeds the system specification of ±0.5mm, requiring recalibration before treatment. TG-135 emphasizes addressing systematic errors in stereotactic delivery systems.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT lung commissioning, small field output factors measured with three detectors show: diode (0.847), diamond (0.823), ion chamber (0.798) for a 1×1cm field. The Monte Carlo calculation predicts 0.831. Considering detector response characteristics, what is the optimal approach for clinical implementation?",
+    "answer": "Use diamond detector result with Monte Carlo validation as reference standard",
+    "choices": [
+      "Average all detector measurements and use 0.823 as the clinical value",
+      "Use ion chamber result as gold standard per conventional dosimetry protocols",
+      "Use diamond detector result with Monte Carlo validation as reference standard",
+      "Implement diode measurement with energy response correction factors applied"
+    ],
+    "explanation": "TG-155 recommends diamond detectors for small field dosimetry due to minimal energy dependence and volume averaging, with Monte Carlo validation providing confidence in the measurement.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "GammaKnife Icon treatment delivery shows 1.2mm average deviation in skull tracking during a 45-minute treatment session, with maximum excursions of 2.1mm. The thermoplastic mask system shows 0.3mm setup reproducibility. What factor most likely contributes to the tracking deviation?",
+    "answer": "Patient comfort degradation causing progressive movement within immobilization system",
+    "choices": [
+      "Systematic calibration drift in optical tracking camera system during extended treatment",
+      "Patient comfort degradation causing progressive movement within immobilization system",
+      "Thermoplastic mask material creep under sustained mechanical loading conditions",
+      "Temperature variations affecting dimensional stability of stereotactic coordinate system"
+    ],
+    "explanation": "Progressive patient movement due to discomfort during lengthy treatments is common with frameless systems, requiring attention to patient comfort and potential treatment breaks for repositioning verification.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Uncertainty budget analysis for small field relative dosimetry shows: detector positioning (1.2%), energy dependence (0.8%), volume averaging (2.1%), and statistical uncertainty (0.3%). What is the combined standard uncertainty assuming independence?",
+    "answer": "2.5% combined standard uncertainty",
+    "choices": [
+      "2.1% combined standard uncertainty",
+      "2.5% combined standard uncertainty",
+      "3.2% combined standard uncertainty",
+      "4.4% combined standard uncertainty"
+    ],
+    "explanation": "Combined standard uncertainty = √(1.2² + 0.8² + 2.1² + 0.3²) = √(1.44 + 0.64 + 4.41 + 0.09) = √6.58 = 2.56% ≈ 2.5%, following GUM uncertainty propagation principles.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements on linear accelerators?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±2% from baseline",
+      "±3% from baseline",
+      "±5% from baseline",
+      "±1% from baseline"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements to ensure consistent beam delivery. This tolerance balances practical measurement uncertainties with clinical safety requirements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference dosimetry protocol recommended by AAPM for photon beam calibration in water?",
+    "answer": "TG-51 protocol",
+    "choices": [
+      "TG-21 protocol",
+      "TG-51 protocol",
+      "TG-40 protocol",
+      "TG-25 protocol"
+    ],
+    "explanation": "TG-51 is the current AAPM recommended protocol for reference dosimetry of external beam radiation therapy equipment, replacing the older TG-21 protocol. It uses absorbed dose to water standards.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For beam flatness measurements, what percentage of the beam profile is typically evaluated according to standard QA protocols?",
+    "answer": "Central 80% of field",
+    "choices": [
+      "Central 60% of field",
+      "Central 80% of field",
+      "Central 90% of field",
+      "Central 70% of field"
+    ],
+    "explanation": "Beam flatness is typically evaluated over the central 80% of the field width to exclude penumbra regions where dose gradients are steep. This standard is specified in TG-142 and IEC 60601-2-1.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What type of detector is most commonly used for EPID dosimetry applications in modern linear accelerators?",
+    "answer": "Amorphous silicon flat panel",
+    "choices": [
+      "Ion chamber array detector",
+      "Amorphous silicon flat panel",
+      "Photostimulable phosphor plate",
+      "Liquid-filled ion chamber"
+    ],
+    "explanation": "Amorphous silicon flat panel detectors are the most widely used technology for electronic portal imaging devices (EPIDs) due to their high spatial resolution and real-time imaging capabilities for dosimetry applications.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

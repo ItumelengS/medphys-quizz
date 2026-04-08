@@ -1,0 +1,274 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary characteristic that defines stereotactic radiosurgery (SRS)?",
+    "answer": "Single high-dose fraction with stereotactic localization",
+    "choices": [
+      "Single high-dose fraction with stereotactic localization",
+      "Multiple fractions delivered over several weeks",
+      "Use of conventional megavoltage linear accelerators only",
+      "Treatment planning based on 2D radiographic imaging"
+    ],
+    "explanation": "SRS is defined as single-fraction, high-dose radiation therapy delivered with stereotactic precision to small, well-defined targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Mechanical isocenter alignment accuracy",
+    "choices": [
+      "Mechanical isocenter alignment accuracy",
+      "Dose rate calibration stability",
+      "Multi-leaf collimator leaf positioning",
+      "Patient setup imaging quality"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence of the radiation isocenter with the mechanical rotation isocenter of the gantry, collimator, and couch.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary function of micro-MLCs in stereotactic treatments?",
+    "answer": "Provide improved conformality for small targets",
+    "choices": [
+      "Provide improved conformality for small targets",
+      "Increase maximum dose rate capabilities",
+      "Reduce treatment planning computation time",
+      "Enable larger field size treatments"
+    ],
+    "explanation": "Micro-MLCs have narrower leaf widths (typically 2.5-5mm) compared to standard MLCs, allowing better conformality for small stereotactic targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of radiation source does the Gamma Knife system use?",
+    "answer": "Cobalt-60 radioactive sources",
+    "choices": [
+      "Cobalt-60 radioactive sources",
+      "Linear accelerator X-rays",
+      "Cesium-137 radioactive sources",
+      "Orthovoltage X-ray tubes"
+    ],
+    "explanation": "Gamma Knife systems use multiple Cobalt-60 sources arranged in a hemispherical configuration to deliver focused radiation beams.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended maximum acceptable Winston-Lutz deviation for SRS treatments?",
+    "answer": "1 mm radius sphere",
+    "choices": [
+      "1 mm radius sphere",
+      "0.5 mm radius sphere",
+      "2 mm radius sphere",
+      "1.5 mm radius sphere"
+    ],
+    "explanation": "TG-101 recommends that all Winston-Lutz measurements should fall within a 1 mm radius sphere for SRS applications.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field correction factors become necessary?",
+    "answer": "3 cm × 3 cm equivalent square",
+    "choices": [
+      "3 cm × 3 cm equivalent square",
+      "5 cm × 5 cm equivalent square",
+      "2 cm × 2 cm equivalent square",
+      "4 cm × 4 cm equivalent square"
+    ],
+    "explanation": "Fields smaller than approximately 3×3 cm² require small field correction factors due to loss of lateral charged particle equilibrium and detector response issues.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "Which report specifically addresses small field dosimetry recommendations?",
+    "answer": "AAPM Task Group 155",
+    "choices": [
+      "AAPM Task Group 155",
+      "AAPM Task Group 142",
+      "AAPM Task Group 148",
+      "AAPM Task Group 135"
+    ],
+    "explanation": "TG-155 provides comprehensive recommendations for small field dosimetry, including detector selection and correction factors.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of the CyberKnife's robotic delivery system?",
+    "answer": "Real-time tracking and correction capabilities",
+    "choices": [
+      "Real-time tracking and correction capabilities",
+      "Higher maximum dose rate delivery",
+      "Larger treatment field capabilities",
+      "Reduced treatment planning complexity"
+    ],
+    "explanation": "The CyberKnife's robotic arm allows for real-time tumor tracking and automatic beam position correction during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Your institution's Gamma Knife Perfexion shows increasing dose delivery times with no apparent mechanical issues. Film dosimetry reveals subtle but systematic hot spots in the 50% isodose region. What investigation protocol should be prioritized?",
+    "answer": "Individual source strength measurement and decay assessment",
+    "choices": [
+      "Individual source strength measurement and decay assessment",
+      "Comprehensive geometric accuracy verification of the positioning system",
+      "Detailed analysis of the treatment planning algorithm parameters",
+      "Systematic evaluation of the patient immobilization system stability"
+    ],
+    "explanation": "Non-uniform source decay can create dose distribution distortions while maintaining overall output. Individual source assessment is critical for identifying sources requiring replacement.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "You are developing a comprehensive uncertainty budget for small field output factor measurements per TG-155 recommendations. The Type A uncertainty from repeated measurements is 0.8%, detector positioning uncertainty contributes 1.2%, and beam energy uncertainty adds 0.9%. If the target combined standard uncertainty must not exceed 2.0% for clinical implementation, what is the maximum allowable Type B uncertainty from all other sources?",
+    "answer": "1.4%",
+    "choices": [
+      "1.4%",
+      "1.8%",
+      "1.1%",
+      "2.3%"
+    ],
+    "explanation": "Combined standard uncertainty = √(0.8² + 1.2² + 0.9² + x²) ≤ 2.0%, solving for x gives maximum additional Type B uncertainty of 1.4%.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "A Monte Carlo study of your micro-MLC system reveals that statistical uncertainties must be reduced to 0.5% for adequate small field modeling. Current simulations use 10⁸ histories achieving 1.2% uncertainty. Assuming Poisson statistics, how many histories are required to achieve the target uncertainty?",
+    "answer": "5.76 × 10⁸ histories",
+    "choices": [
+      "5.76 × 10⁸ histories",
+      "4.17 × 10⁸ histories",
+      "2.88 × 10⁸ histories",
+      "8.33 × 10⁸ histories"
+    ],
+    "explanation": "For Poisson statistics, uncertainty scales as 1/√N. To reduce uncertainty from 1.2% to 0.5%, histories must increase by (1.2/0.5)² = 5.76 factor, requiring 5.76 × 10⁸ histories.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "During FMEA analysis of your SRS program, the risk priority number for 'incorrect small field output factor application' is calculated as 168 (Severity=8, Occurrence=3, Detectability=7). A new independent verification system reduces detectability to 2. What is the revised risk priority number?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "56",
+      "32",
+      "64"
+    ],
+    "explanation": "RPN = Severity × Occurrence × Detectability. With improved detectability (2), the new RPN = 8 × 3 × 2 = 48, representing a significant risk reduction.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements on linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy checks using ion chambers or diode detectors to ensure consistent dose delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary standard protocol recommended by AAPM for absolute dose calibration of photon beams in water?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-40",
+      "TG-61"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the tolerance limit for beam flatness measurements during monthly QA?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 specifies a ±3% tolerance for beam flatness during monthly QA checks to ensure uniform dose distribution across the treatment field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator QA?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Imaging Detector",
+      "External Patient Imaging Display",
+      "Electronic Positron Imaging Device"
+    ],
+    "explanation": "EPID (Electronic Portal Imaging Device) is used for portal imaging verification and can be utilized for dosimetric QA measurements including beam monitoring and patient dose verification.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify mechanical isocenter coincidence with radiation isocenter",
+    "choices": [
+      "To verify mechanical isocenter coincidence with radiation isocenter",
+      "To measure small field output factors for beam calibration",
+      "To determine the maximum dose rate for treatment delivery",
+      "To calibrate the multi-leaf collimator positioning accuracy"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the mechanical rotation isocenter coincides with the radiation beam isocenter, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Small Radiation Segmentation",
+      "Single Rotational Surgery",
+      "Selective Radiation Shaping"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, which delivers a high dose of radiation in a single fraction to a precisely defined target volume.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "Which imaging modality is primarily used by the CyberKnife system for real-time tracking?",
+    "answer": "Orthogonal kV X-ray imaging",
+    "choices": [
+      "Orthogonal kV X-ray imaging",
+      "Cone-beam computed tomography",
+      "Magnetic resonance imaging",
+      "Ultrasound imaging guidance"
+    ],
+    "explanation": "CyberKnife uses two orthogonal kV X-ray sources and detectors to provide real-time imaging for patient tracking and beam positioning correction.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the defining characteristic of small field dosimetry according to TG-155?",
+    "answer": "Loss of lateral charged particle equilibrium",
+    "choices": [
+      "Loss of lateral charged particle equilibrium",
+      "Use of micro-multileaf collimators only",
+      "Beam sizes smaller than 2 cm diameter",
+      "Treatment delivery in single fractions"
+    ],
+    "explanation": "TG-155 defines small fields based on the loss of lateral charged particle equilibrium, which affects dosimetry measurements and requires special correction factors.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A Winston-Lutz analysis reveals systematic shifts of 0.8 mm anterior, 0.6 mm superior, and 1.2 mm left across all gantry angles, with random variations of ±0.3 mm. The imaging system shows 0.4 mm superior and 0.8 mm left shifts. After correcting imaging offsets and applying a couch shift, residual errors remain at all cardinal angles. What is the most likely primary cause and appropriate next action?",
+    "answer": "Mechanical flex in gantry assembly requiring vendor service and hardware adjustment",
+    "choices": [
+      "Mechanical flex in gantry assembly requiring vendor service and hardware adjustment",
+      "Imaging system calibration error requiring complete kV panel realignment procedure",
+      "Treatment couch sag compensation requiring patient weight-specific positioning protocols",
+      "Radiation isocenter drift requiring beam steering magnet recalibration and verification"
+    ],
+    "explanation": "Systematic shifts persisting after imaging correction across all gantry angles indicate mechanical gantry issues requiring hardware intervention, as software corrections alone cannot address fundamental mechanical problems affecting treatment accuracy.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system for SRS, output factors measured with a plastic scintillator show 15% higher values than those obtained with a diamond detector for 1×1 cm fields. The treatment planning system calculations agree with diamond measurements. What is the most appropriate analysis and corrective approach?",
+    "answer": "Investigate scintillator light collection efficiency and stem effect corrections for energy spectrum changes",
+    "choices": [
+      "Investigate scintillator light collection efficiency and stem effect corrections for energy spectrum changes",
+      "Recalibrate diamond detector response using larger reference fields and standard protocols",
+      "Adjust treatment planning system beam model parameters to match scintillator measurements",
+      "Implement dual-detector verification protocol averaging both measurement sets for clinical use"
+    ],
+    "explanation": "The 15% discrepancy suggests detector-specific issues; plastic scintillators can exhibit light collection variations and stem effects in small fields, requiring careful investigation of these systematic errors rather than averaging or arbitrary TPS adjustments.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A CyberKnife system exhibits tracking errors >1.5 mm during lung SBRT treatments when respiratory rates exceed 18 breaths/minute. Analysis shows adequate fiducial contrast and proper segmentation. Real-time correlation modeling indicates prediction errors of 0.8-1.2 mm. What systematic approach should be implemented to optimize tracking performance?",
+    "answer": "Implement adaptive correlation model updating with respiratory phase-binned prediction algorithms",
+    "choices": [
+      "Implement adaptive correlation model updating with respiratory phase-binned prediction algorithms",
+      "Increase imaging frequency to maximum acquisition rate with enhanced fiducial detection",
+      "Apply patient-specific breathing coaching protocols to reduce respiratory rate variability",
+      "Modify treatment planning margins to accommodate observed tracking uncertainties"
+    ],
+    "explanation": "The systematic tracking degradation at higher respiratory rates requires adaptive modeling approaches that account for respiratory phase-dependent motion patterns, as simple margin expansion doesn't address the root cause of prediction model limitations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "End-to-end testing of a Gamma Knife system using an anthropomorphic phantom reveals dose differences of 8% between film measurements and treatment planning calculations in heterogeneous regions, while homogeneous regions show 2% agreement. What is the most likely systematic issue requiring investigation?",
+    "answer": "Tissue heterogeneity correction algorithm limitations in small field cobalt-60 beam modeling",
+    "choices": [
+      "Tissue heterogeneity correction algorithm limitations in small field cobalt-60 beam modeling",
+      "Film calibration curve non-linearity in high dose gradient regions of measurement",
+      "Phantom positioning accuracy errors affecting geometric dose distribution verification",
+      "Cobalt-60 source decay compensation algorithms producing systematic calculation errors"
+    ],
+    "explanation": "The selective discrepancy in heterogeneous regions suggests limitations in the dose calculation algorithm's handling of tissue interfaces and scatter conditions specific to the multiple small cobalt-60 beams, rather than general calibration issues.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of a 6 MV FFF beam for 5×5 mm field shows 12% higher dose calculation than measurements when using a detailed multileaf collimator geometry model. Phase space data validation shows agreement within 1% for larger fields. Which modeling parameter requires the most critical refinement in the MC transport algorithm?",
+    "answer": "Electron transport cutoff energies and step-size parameters affecting lateral scatter modeling",
+    "choices": [
+      "Electron transport cutoff energies and step-size parameters affecting lateral scatter modeling",
+      "Photon cross-section data accuracy for low-energy scattered radiation components",
+      "Variance reduction techniques biasing particle transport statistics in small volumes",
+      "Multileaf collimator material composition and density specification parameters"
+    ],
+    "explanation": "Small field MC discrepancies often arise from inadequate electron transport parameters that affect lateral charged particle equilibrium, requiring careful optimization of cutoff energies and transport steps rather than photon cross-sections or variance reduction issues.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis of a stereotactic radiosurgery program identifies MLC positioning errors as having a Risk Priority Number of 168 (Severity=7, Occurrence=4, Detection=6). Independent verification reduces Detection to 2 but increases Occurrence to 6 due to workflow complexity. What is the optimal risk mitigation strategy considering total program risk?",
+    "answer": "Implement automated pre-treatment verification reducing Occurrence to 2 with Detection maintained at 3",
+    "choices": [
+      "Implement automated pre-treatment verification reducing Occurrence to 2 with Detection maintained at 3",
+      "Accept current independent verification protocol maintaining RPN at 84 with enhanced documentation",
+      "Develop redundant MLC positioning systems reducing Severity to 4 with current workflow parameters",
+      "Establish statistical process control monitoring reducing Detection to 1 with workflow optimization"
+    ],
+    "explanation": "The new RPN would be 84 vs. the automated approach yielding RPN=42 (7×2×3). Automation addresses the root cause (occurrence) while maintaining reasonable detection capability, providing superior risk reduction compared to other strategies.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Statistical analysis of 500 SRS treatments shows positioning uncertainties following a non-normal distribution with median=0.4 mm, 95th percentile=1.8 mm, and maximum=3.2 mm. Van Herk margin formula assumptions are violated. What alternative margin calculation approach provides optimal target coverage while minimizing normal tissue irradiation?",
+    "answer": "Population-based margin using 95th percentile systematic error with robust optimization techniques",
+    "choices": [
+      "Population-based margin using 95th percentile systematic error with robust optimization techniques",
+      "Bootstrap resampling method generating margin confidence intervals from empirical distribution",
+      "Modified Van Herk formula applying logarithmic transformation to normalize error distribution",
+      "Percentile-based margin calculation using interquartile range with outlier rejection criteria"
+    ],
+    "explanation": "For non-normal distributions in SRS, population-based margins using high percentiles (95th) combined with robust optimization provide better target coverage assurance than parametric approaches that assume normal distributions, while controlling normal tissue exposure.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on a linear accelerator?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements to ensure beam stability between comprehensive calibrations.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference dosimetry protocol currently recommended by AAPM for photon beam calibration?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-61",
+      "TG-40"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For beam flatness measurements, what is the standard definition of flatness according to IEC 60601-2-1?",
+    "answer": "Maximum dose variation within 80% of field width",
+    "choices": [
+      "Average dose across entire field width",
+      "Maximum dose variation within 80% of field width",
+      "Ratio of central axis to field edge doses",
+      "Standard deviation of dose measurements"
+    ],
+    "explanation": "IEC 60601-2-1 defines flatness as the maximum variation in dose rate within the specified region, typically measured within 80% of the field width.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator quality assurance?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Intensity Detector",
+      "External Phantom Imaging Display",
+      "Electronic Positioning Instrument Device"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric quality assurance applications.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

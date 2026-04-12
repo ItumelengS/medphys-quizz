@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation and mechanical isocenters",
+    "choices": [
+      "To verify the coincidence of radiation and mechanical isocenters",
+      "To measure small field output factors",
+      "To calibrate micro-MLC leaf positions",
+      "To assess beam flatness and symmetry"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical rotation isocenter, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic radiosurgery",
+    "choices": [
+      "Stereotactic radiosurgery",
+      "Stereotactic radiation system",
+      "Single-fraction radiation surgery",
+      "Stereotactic radiotherapy system"
+    ],
+    "explanation": "SRS (Stereotactic Radiosurgery) is a precise form of radiation therapy that delivers a high dose of radiation to a small target in a single fraction.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical fractionation scheme for stereotactic radiosurgery (SRS)?",
+    "answer": "Single fraction delivery",
+    "choices": [
+      "Single fraction delivery",
+      "3-5 fraction delivery",
+      "10-15 fraction delivery",
+      "20-30 fraction delivery"
+    ],
+    "explanation": "SRS is defined as stereotactic irradiation delivered in a single fraction, distinguishing it from SBRT which uses multiple fractions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "5.0-10.0 mm at isocenter",
+      "10.0-15.0 mm at isocenter",
+      "15.0-20.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing better conformality for small targets compared to standard MLCs.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "Which AAPM Task Group report specifically addresses stereotactic radiosurgery dosimetry?",
+    "answer": "TG-101",
+    "choices": [
+      "TG-101",
+      "TG-135",
+      "TG-142",
+      "TG-155"
+    ],
+    "explanation": "TG-135 specifically addresses small field and non-standard beam dosimetry, including stereotactic radiosurgery applications.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of cone-based SRS systems over MLC-based systems?",
+    "answer": "Reduced leakage radiation and sharper penumbra",
+    "choices": [
+      "Reduced leakage radiation and sharper penumbra",
+      "Faster treatment delivery times",
+      "Lower equipment maintenance costs",
+      "Better patient positioning accuracy"
+    ],
+    "explanation": "Cone-based systems provide superior beam penumbra characteristics and minimal leakage compared to MLC-based systems, though they lack the flexibility of intensity modulation.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A CyberKnife system delivers 1800 cGy to a 2 cm diameter lung tumor using 150 beams with real-time tracking. The patient shows 8 mm respiratory motion. If the tracking system has a 2.5 mm RMS error and the beam delivery takes 45 minutes, what is the most critical factor affecting dose distribution accuracy?",
+    "answer": "Respiratory motion amplitude exceeding tracking precision margins",
+    "choices": [
+      "Respiratory motion amplitude exceeding tracking precision margins",
+      "Extended treatment time causing patient positioning drift",
+      "High number of beams creating excessive skin dose",
+      "Small tumor size relative to beam penumbra width"
+    ],
+    "explanation": "With 8 mm motion and 2.5 mm RMS tracking error, the geometric uncertainty approaches the PTV margin limits, making motion management the dominant source of dose delivery uncertainty.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC for SRS, you observe that 1×1 cm field output factors measured with different detectors show 15% variation. The TPS algorithm shows 8% discrepancy with measurements for highly modulated plans. What is the most appropriate next step?",
+    "answer": "Perform Monte Carlo validation of detector response corrections",
+    "choices": [
+      "Perform Monte Carlo validation of detector response corrections",
+      "Recalibrate all detectors using larger reference fields",
+      "Adjust TPS beam model parameters for small field corrections",
+      "Increase measurement statistical uncertainty tolerances accordingly"
+    ],
+    "explanation": "Large detector variations in small fields indicate inadequate correction factors. Monte Carlo validation provides the gold standard for determining true detector response corrections per TG-155 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A GammaKnife treatment plan shows 99.2% target coverage with 12 Gy prescription. Post-treatment analysis reveals 2.1 mm systematic positioning error. Given the dose gradient of 40%/mm at the 50% isodose line, what is the most critical dosimetric consequence?",
+    "answer": "Target underdosage of approximately 15-20% in peripheral regions",
+    "choices": [
+      "Target underdosage of approximately 15-20% in peripheral regions",
+      "Critical structure overdosage exceeding tolerance limits significantly",
+      "Overall plan conformity degradation requiring treatment replanning",
+      "Negligible dosimetric impact within acceptable uncertainty bounds"
+    ],
+    "explanation": "With a 40%/mm gradient and 2.1 mm error, peripheral target regions experience significant dose reduction (≈84% of prescription), while the steep dose falloff limits critical structure impact.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "You are developing a Monte Carlo-based commissioning protocol for a new SRS system with 0.5 mm leaf width MLCs. The clinical requirement is 2% dose accuracy for 5 mm diameter fields. Your preliminary MC simulations show 3.2% statistical uncertainty with 10^9 histories. What approach provides the most efficient path to clinical accuracy requirements?",
+    "answer": "Implement correlated sampling with experimental geometry matching",
+    "choices": [
+      "Implement correlated sampling with experimental geometry matching",
+      "Increase simulation histories to 10^11 for reduced statistical uncertainty",
+      "Apply Gaussian smoothing filters to reduce Monte Carlo noise",
+      "Use hybrid deterministic-stochastic calculation algorithms instead"
+    ],
+    "explanation": "Correlated sampling techniques can reduce statistical uncertainty by factors of 2-5 compared to standard MC methods, making it more efficient than simply increasing histories for achieving the required precision.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Your institution is implementing a comprehensive FMEA analysis for SRS treatments. The failure mode 'incorrect small field output factor' has a severity score of 8, occurrence probability of 3, and current detectability of 6 (RPN=144). Which intervention most effectively reduces the overall risk priority number?",
+    "answer": "Implement redundant measurement protocols with independent detector systems",
+    "choices": [
+      "Implement redundant measurement protocols with independent detector systems",
+      "Increase measurement frequency from monthly to weekly intervals",
+      "Provide additional training to reduce human error occurrence",
+      "Develop automated analysis software for faster detection"
+    ],
+    "explanation": "Redundant independent measurements primarily improve detectability (reducing from 6 to ~2), providing the largest RPN reduction. This addresses the fundamental challenge of small field dosimetry validation.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "You are validating a research protocol using Monte Carlo to determine correction factors for a new 0.3 mm³ micro-ionization chamber in 5 mm SRS fields. Your uncertainty budget allocates 0.8% for detector positioning, 1.2% for charge collection efficiency, and 0.6% for Monte Carlo statistics. What is the minimum required combined standard uncertainty for clinical implementation per TG-155 guidelines?",
+    "answer": "≤ 2.0% combined standard uncertainty following GUM methodology",
+    "choices": [
+      "≤ 1.5% expanded uncertainty at 95% confidence level",
+      "≤ 2.0% combined standard uncertainty following GUM methodology",
+      "≤ 2.5% expanded uncertainty including systematic components",
+      "≤ 3.0% total uncertainty budget for small field applications"
+    ],
+    "explanation": "TG-155 recommends following GUM (Guide to Uncertainty in Measurement) methodology with combined standard uncertainty ≤2% for small field correction factors, calculated as the quadrature sum of individual components.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "For a novel adaptive SRS protocol, you must establish uncertainty budgets for real-time plan modification. The system performs online re-optimization based on cone-beam CT with 0.5 mm spatial resolution. Given deformation vector field uncertainties of 1.2 mm (1σ) and dose calculation grid limitations, what represents the most scientifically rigorous approach to uncertainty quantification?",
+    "answer": "Monte Carlo propagation of geometric uncertainties through dose volume histograms",
+    "choices": [
+      "Monte Carlo propagation of geometric uncertainties through dose volume histograms",
+      "Linear superposition of individual uncertainty components using RSS methodology",
+      "Worst-case scenario analysis with maximum credible displacement vectors",
+      "Population-based statistical modeling from historical patient data sets"
+    ],
+    "explanation": "Monte Carlo uncertainty propagation properly handles the non-linear relationship between geometric uncertainties and dose-volume parameters in adaptive radiotherapy, providing the most rigorous scientific approach per current research standards.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness on linear accelerators?",
+    "answer": "±2% for photon beams",
+    "choices": [
+      "±1% for photon beams",
+      "±2% for photon beams",
+      "±3% for photon beams",
+      "±5% for photon beams"
+    ],
+    "explanation": "TG-142 recommends a tolerance of ±2% for beam flatness in photon beams during routine QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary dosimetry protocol recommended by AAPM for reference dosimetry calibration of clinical linear accelerators?",
+    "answer": "TG-51 protocol",
+    "choices": [
+      "TG-21 protocol",
+      "TG-51 protocol",
+      "TG-142 protocol",
+      "TG-180 protocol"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry using ion chambers in water for photon and electron beams.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "How frequently should output constancy checks be performed on clinical linear accelerators according to TG-142?",
+    "answer": "Daily before treatment",
+    "choices": [
+      "Daily before treatment",
+      "Weekly on Mondays",
+      "Monthly during maintenance",
+      "Quarterly with calibration"
+    ],
+    "explanation": "TG-142 requires daily output constancy checks to ensure beam output remains within acceptable limits before patient treatments begin.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multileaf Collimator",
+    "choices": [
+      "Multileaf Collimator",
+      "Machine Learning Control",
+      "Mechanical Leaf Controller",
+      "Monitor Level Calibration"
+    ],
+    "explanation": "MLC stands for Multileaf Collimator, which consists of individually controlled tungsten leaves used to shape radiation beams for conformal treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

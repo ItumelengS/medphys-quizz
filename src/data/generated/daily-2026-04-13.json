@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary definition of stereotactic radiosurgery (SRS)?",
+    "answer": "A technique delivering a single high dose of radiation to a precisely localized target",
+    "choices": [
+      "A technique delivering a single high dose of radiation to a precisely localized target",
+      "A technique using multiple fractions over several weeks to treat brain tumors",
+      "A technique requiring surgical implantation of radioactive sources into the target",
+      "A technique using only photon beams with energies greater than 15 MV"
+    ],
+    "explanation": "SRS is defined as the precise delivery of a single high radiation dose to a stereotactically localized intracranial target, as outlined in TG-101.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the acronym SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Single Beam Radiation Treatment",
+      "Sequential Brain Radiation Therapy",
+      "Small Beam Radiosurgery Technique"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which extends stereotactic techniques to extracranial targets using hypofractionated treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "10-15 mm at isocenter",
+      "0.5-1.0 mm at isocenter",
+      "15-20 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing enhanced conformality compared to standard MLCs for small field treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the Winston-Lutz test primarily used to assess?",
+    "answer": "Mechanical isocenter accuracy and coincidence with radiation isocenter",
+    "choices": [
+      "Mechanical isocenter accuracy and coincidence with radiation isocenter",
+      "Patient positioning accuracy during treatment delivery sessions",
+      "Dose rate constancy and output factor measurements",
+      "Multi-leaf collimator leaf positioning accuracy assessment"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence between mechanical and radiation isocenters, critical for stereotactic accuracy as specified in TG-142.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-135, what detector type is recommended for small field relative dosimetry?",
+    "answer": "Silicon diodes or diamond detectors",
+    "choices": [
+      "Silicon diodes or diamond detectors",
+      "Large volume ionization chambers only",
+      "Thermoluminescent dosimeters exclusively",
+      "Film dosimetry with enhanced processing"
+    ],
+    "explanation": "TG-135 recommends silicon diodes or diamond detectors for small field relative dosimetry due to their small sensitive volumes and minimal energy dependence.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical tolerance for Winston-Lutz test results in stereotactic systems?",
+    "answer": "≤ 1.0 mm radius from isocenter",
+    "choices": [
+      "≤ 1.0 mm radius from isocenter",
+      "≤ 3.0 mm radius from isocenter",
+      "≤ 0.1 mm radius from isocenter",
+      "≤ 5.0 mm radius from isocenter"
+    ],
+    "explanation": "TG-142 recommends Winston-Lutz test results should be ≤ 1.0 mm radius from isocenter for stereotactic systems to ensure geometric accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the recommended minimum dose rate for Gamma Knife treatments?",
+    "answer": "Approximately 3 Gy/min at 4 mm",
+    "choices": [
+      "Approximately 3 Gy/min at 4 mm",
+      "Approximately 10 Gy/min at 4 mm",
+      "Approximately 1 Gy/min at 4 mm",
+      "Approximately 6 Gy/min at 4 mm"
+    ],
+    "explanation": "Gamma Knife systems typically maintain dose rates of approximately 3 Gy/min at the 4 mm collimator as sources decay, requiring source replacement when rates become too low.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended frequency for end-to-end testing of SRS systems?",
+    "answer": "Monthly comprehensive testing with annual phantom studies",
+    "choices": [
+      "Monthly comprehensive testing with annual phantom studies",
+      "Weekly basic checks with quarterly comprehensive testing",
+      "Daily verification with monthly comprehensive testing",
+      "Annual comprehensive testing with quarterly basic checks"
+    ],
+    "explanation": "TG-101 recommends monthly comprehensive QA testing for SRS systems with annual end-to-end phantom studies to ensure system accuracy and safety.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A patient receives CyberKnife treatment with 150 beams delivering 0.4 Gy each to a 2 cm diameter target. The treatment uses real-time tracking with fiducials showing 0.8 mm standard deviation motion. Calculate the geometric uncertainty budget considering 0.5 mm setup uncertainty, 0.3 mm tracking accuracy, and 0.6 mm beam delivery uncertainty. What is the total systematic uncertainty using root sum of squares?",
+    "answer": "1.0 mm systematic uncertainty requiring margin expansion consideration",
+    "choices": [
+      "1.0 mm systematic uncertainty requiring margin expansion consideration",
+      "0.8 mm systematic uncertainty within acceptable tolerance limits",
+      "1.4 mm systematic uncertainty exceeding recommended treatment protocols",
+      "0.6 mm systematic uncertainty meeting optimal precision requirements"
+    ],
+    "explanation": "RSS calculation: √(0.5² + 0.3² + 0.6²) = √(0.25 + 0.09 + 0.36) = √0.70 = 1.0 mm, requiring careful margin consideration per TG-101 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system, small field output factors show unexpected variations. The 1x1 cm field shows OF = 0.742 with diode, 0.698 with diamond, and 0.785 with microchamber. Monte Carlo predicts 0.718. Considering detector perturbation effects and volume averaging, what is the most appropriate approach for clinical implementation?",
+    "answer": "Use Monte Carlo validated diamond detector results with beam model adjustment",
+    "choices": [
+      "Use Monte Carlo validated diamond detector results with beam model adjustment",
+      "Average all detector measurements and apply standard uncertainty factors",
+      "Use microchamber results with volume correction factors applied systematically",
+      "Use diode measurements with energy dependence corrections applied retrospectively"
+    ],
+    "explanation": "Diamond detectors have minimal perturbation effects and excellent spatial resolution. Monte Carlo validation provides confidence in results, following TG-135 recommendations for small field dosimetry.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A Gamma Knife Icon system shows systematic errors in dose verification. Phantom measurements reveal 3% dose discrepancies in composite plans with > 6 shots. Individual shot verification shows < 1% error. The TMR10 measurements are within 1% of expected values, but shot-to-shot positioning verification shows 0.3 mm average displacement. What is the most likely root cause requiring investigation?",
+    "answer": "Cumulative geometric uncertainties amplified by multi-shot positioning errors",
+    "choices": [
+      "Cumulative geometric uncertainties amplified by multi-shot positioning errors",
+      "Systematic dosimetric calibration errors affecting large composite plans",
+      "Treatment planning algorithm limitations in dose calculation accuracy",
+      "Detector response variations causing measurement uncertainty accumulation"
+    ],
+    "explanation": "Small positioning errors (0.3 mm) can compound in multi-shot treatments, causing dose distribution shifts that appear as dosimetric errors in composite verification, per TG-178 guidance.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "An SBRT lung treatment using 4D planning shows interplay effects between 6 MV FFF beam delivery (2400 MU/min) and respiratory motion (18 breaths/min, 15 mm amplitude). The patient breathing pattern shows 30% irregularity coefficient. Treatment uses 9 VMAT arcs (40° each) delivered over 8 minutes. What is the primary concern for plan robustness evaluation?",
+    "answer": "Breathing irregularity causing dose distribution perturbations exceeding planning margins",
+    "choices": [
+      "Breathing irregularity causing dose distribution perturbations exceeding planning margins",
+      "High dose rate delivery creating systematic dosimetric calculation errors",
+      "Multiple VMAT arcs causing geometric uncertainty accumulation throughout treatment",
+      "Extended treatment time allowing patient positioning drift beyond tolerance"
+    ],
+    "explanation": "The 30% breathing irregularity with 15 mm amplitude creates significant interplay effects that may not be adequately modeled by standard 4D planning approaches, requiring additional robustness analysis per TG-76.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Design a Monte Carlo validation protocol for small field output factors in the range 0.5×0.5 cm to 3×3 cm for 6 MV FFF beam. Your simulation must account for jaw transmission (2.1%), rounded leaf ends (2 mm radius), MLC leakage (0.15%), and detector perturbation effects. The clinical tolerance is ±2% for fields > 1×1 cm and ±3% for smaller fields. What is the critical simulation parameter requiring highest statistical precision?",
+    "answer": "Electron transport cutoff energies affecting lateral charge particle equilibrium",
+    "choices": [
+      "Electron transport cutoff energies affecting lateral charge particle equilibrium",
+      "Photon interaction cross-sections determining primary beam attenuation characteristics",
+      "Variance reduction techniques optimizing computational efficiency and statistical uncertainty",
+      "Geometric modeling precision for collimator components and detector positioning"
+    ],
+    "explanation": "In small fields, lateral charged particle equilibrium is lost, making electron transport cutoffs critical for accurate dose calculation. This parameter most significantly affects output factor accuracy per TG-105 recommendations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements on linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements to ensure consistent beam output between fractions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard protocol for absolute dose calibration of high-energy photon and electron beams?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-61",
+      "TG-25"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What does beam flatness measure in linear accelerator quality assurance?",
+    "answer": "Dose uniformity across the central 80% of the beam profile",
+    "choices": [
+      "Dose uniformity across the central 80% of the beam profile",
+      "Penumbra width at the 20% and 80% dose levels",
+      "Maximum dose variation between opposing beam edges",
+      "Central axis dose consistency over multiple measurements"
+    ],
+    "explanation": "Beam flatness quantifies dose uniformity across the central 80% of the beam profile, typically defined as the ratio of maximum to minimum dose in this region.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for MLC positional accuracy checks according to TG-142?",
+    "answer": "Monthly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "explanation": "TG-142 recommends monthly checks of MLC positional accuracy to ensure precise leaf positioning for treatment delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify coincidence of radiation isocenter with mechanical isocenter",
+    "choices": [
+      "To verify coincidence of radiation isocenter with mechanical isocenter",
+      "To measure the penumbra width of small radiation fields",
+      "To calibrate the dose rate for stereotactic treatments",
+      "To assess the uniformity of dose distribution patterns"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical rotation isocenter, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Single Radiation Session",
+      "Simplified Radiation Setup",
+      "Standard Reference Source"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a technique that delivers a high dose of radiation in a single fraction to a precisely defined target.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "Which detector type is specifically NOT recommended by TG-135 for small field dosimetry due to volume averaging effects?",
+    "answer": "Large volume ionization chambers",
+    "choices": [
+      "Large volume ionization chambers",
+      "Silicon semiconductor diodes",
+      "Diamond radiation detectors",
+      "Plastic scintillator detectors"
+    ],
+    "explanation": "TG-135 specifically advises against using large volume ionization chambers for small field dosimetry due to significant volume averaging effects that compromise measurement accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field dosimetry protocols must be applied?",
+    "answer": "3 cm × 3 cm equivalent square",
+    "choices": [
+      "3 cm × 3 cm equivalent square",
+      "5 cm × 5 cm equivalent square",
+      "2 cm × 2 cm equivalent square",
+      "4 cm × 4 cm equivalent square"
+    ],
+    "explanation": "Field sizes smaller than approximately 3 cm × 3 cm equivalent square require special small field dosimetry considerations due to loss of lateral charged particle equilibrium and detector-specific effects.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "5.0-10.0 mm at isocenter",
+      "1.0-2.5 mm at isocenter",
+      "10.0-15.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, which is smaller than conventional MLCs to provide better conformity for small stereotactic targets.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the standard prescription dose range for single-fraction brain SRS treatments?",
+    "answer": "12-24 Gy in single fraction",
+    "choices": [
+      "12-24 Gy in single fraction",
+      "30-60 Gy in single fraction",
+      "5-10 Gy in single fraction",
+      "25-35 Gy in single fraction"
+    ],
+    "explanation": "Brain SRS typically delivers 12-24 Gy in a single fraction, with the exact dose depending on target size, location, and proximity to critical structures.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "How many Cobalt-60 sources does the Leksell Gamma Knife Perfexion unit contain?",
+    "answer": "192 individual sources",
+    "choices": [
+      "192 individual sources",
+      "201 individual sources",
+      "180 individual sources",
+      "160 individual sources"
+    ],
+    "explanation": "The Leksell Gamma Knife Perfexion contains 192 individual Cobalt-60 sources arranged in a hemispherical configuration to deliver highly focused radiation beams.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A Gamma Knife treatment plan shows dose conformity index of 1.25, gradient index of 2.8, and Paddick conformity of 0.76 for a 2.3 cm acoustic neuroma adjacent to brainstem. The prescription isodose is 50% with maximum dose of 36 Gy. Considering RTOG dose constraints and normal tissue tolerance, what optimization strategy addresses the primary dosimetric concern?",
+    "answer": "Gradient index requires shot weighting optimization for brainstem sparing",
+    "choices": [
+      "Gradient index requires shot weighting optimization for brainstem sparing",
+      "Conformity index indicates excessive normal tissue irradiation requiring replanning",
+      "Paddick index shows acceptable target coverage within clinical standards",
+      "Maximum dose exceeds tolerance requiring prescription dose reduction"
+    ],
+    "explanation": "The gradient index of 2.8 suggests suboptimal dose fall-off near the brainstem. Optimizing shot weights and potentially using smaller collimators can improve the dose gradient while maintaining target coverage.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Following TG-135 methodology, a comprehensive small field dosimetry program reveals systematic discrepancies between treatment planning system calculations and measurements for fields <2×2 cm. EGSnrc Monte Carlo simulations validate measurement data within 2% uncertainty. The clinical impact assessment shows potential 8% dose differences for typical SRS cases. What systematic approach addresses this multifaceted dosimetric challenge?",
+    "answer": "Implement detector-specific correction factors with beam model refinement",
+    "choices": [
+      "Implement detector-specific correction factors with beam model refinement",
+      "Increase measurement uncertainty budgets to accommodate systematic variations",
+      "Replace existing detectors with Monte Carlo-based virtual dosimetry systems",
+      "Modify clinical protocols to avoid field sizes showing discrepancies"
+    ],
+    "explanation": "TG-135 emphasizes using appropriate detector correction factors while refining the treatment planning system beam model based on validated measurements to ensure clinical accuracy within acceptable limits.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis for CyberKnife SBRT identifies a failure mode where respiratory tracking model degradation occurs during treatment delivery. The risk priority number calculation shows: Severity = 8 (potential geographic miss), Occurrence = 3 (model degradation frequency), Detection = 6 (real-time monitoring capability). Given that the RPN threshold for immediate action is 100, and considering AAPM TG-100 methodology, what systematic risk mitigation strategy is most appropriate?",
+    "answer": "Implement real-time model validation with automated beam-hold triggers",
+    "choices": [
+      "Implement real-time model validation with automated beam-hold triggers",
+      "Accept current risk level based on RPN calculation below threshold",
+      "Increase detection capability through enhanced monitoring system upgrades",
+      "Reduce severity through larger PTV margins compensating for uncertainty"
+    ],
+    "explanation": "RPN = 8×3×6 = 144, exceeding the threshold. TG-100 methodology emphasizes that high severity failures require active mitigation. Real-time model validation with beam-hold capability directly addresses both occurrence and detection factors.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "A comprehensive uncertainty budget analysis for Gamma Knife dose delivery incorporates the following Type A uncertainties: source activity measurement (0.5%), dose rate calibration (0.8%), and timer accuracy (0.2%). Type B uncertainties include: source positioning (1.2%), collimator alignment (0.6%), and patient positioning (1.8%). Following ISO/IEC Guide 98-3 methodology with coverage factor k=2 for 95% confidence level, what is the expanded uncertainty for clinical dose delivery?",
+    "answer": "Expanded uncertainty equals 4.6% at 95% confidence level",
+    "choices": [
+      "Expanded uncertainty equals 4.6% at 95% confidence level",
+      "Expanded uncertainty equals 2.3% at 95% confidence level",
+      "Combined standard uncertainty equals 3.2% requiring reduction strategies",
+      "Type B uncertainties dominate requiring systematic measurement improvements"
+    ],
+    "explanation": "Combined standard uncertainty = √(0.5² + 0.8² + 0.2² + 1.2² + 0.6² + 1.8²) = 2.3%. With k=2, expanded uncertainty = 4.6%. This represents the 95% confidence interval for dose delivery uncertainty.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for photon beam flatness?",
+    "answer": "±3% for field sizes ≥10 cm × 10 cm",
+    "choices": [
+      "±3% for field sizes ≥10 cm × 10 cm",
+      "±2% for field sizes ≥15 cm × 15 cm",
+      "±5% for field sizes ≥8 cm × 8 cm",
+      "±4% for field sizes ≥12 cm × 12 cm"
+    ],
+    "explanation": "TG-142 specifies that photon beam flatness should be within ±3% for field sizes of 10 cm × 10 cm and larger. This tolerance ensures adequate dose uniformity across the treatment field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference protocol for absolute dose calibration of linear accelerators?",
+    "answer": "TG-51 protocol using ion chamber calibration",
+    "choices": [
+      "TG-51 protocol using ion chamber calibration",
+      "TG-21 protocol using Fricke dosimetry methods",
+      "TG-142 protocol using diode array systems",
+      "TG-40 protocol using thermoluminescent dosimeters"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "How frequently should output constancy checks be performed on linear accelerators according to TG-142?",
+    "answer": "Daily before the first patient treatment",
+    "choices": [
+      "Daily before the first patient treatment",
+      "Weekly on the same day each week",
+      "Monthly during routine QA procedures",
+      "Quarterly with comprehensive beam analysis"
+    ],
+    "explanation": "TG-142 requires daily output constancy checks to be performed before treating the first patient each day to ensure consistent beam delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the typical tolerance for multileaf collimator (MLC) leaf position accuracy?",
+    "answer": "±1 mm for individual leaf positions",
+    "choices": [
+      "±1 mm for individual leaf positions",
+      "±2 mm for leaf bank alignments",
+      "±0.5 mm for leaf speed variations",
+      "±3 mm for leaf transmission measurements"
+    ],
+    "explanation": "The standard tolerance for MLC leaf position accuracy is ±1 mm to ensure precise field shaping and dose delivery in IMRT and VMAT treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

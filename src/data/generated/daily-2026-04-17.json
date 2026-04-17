@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Single Radiation Segment",
+      "Spatial Resolution System",
+      "Standard Reference Source"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a high-precision radiation therapy technique that delivers a large dose of radiation to a small target volume in a single fraction.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "Verify coincidence of radiation and mechanical isocenter",
+    "choices": [
+      "Verify coincidence of radiation and mechanical isocenter",
+      "Measure small field output factors",
+      "Calibrate micro-MLC leaf positions",
+      "Determine treatment planning accuracy"
+    ],
+    "explanation": "The Winston-Lutz test verifies the coincidence of the radiation isocenter with the mechanical rotation isocenter, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "Which report provides recommendations for small field dosimetry in external beam radiotherapy?",
+    "answer": "TG-155 Report",
+    "choices": [
+      "TG-155 Report",
+      "TG-142 Report",
+      "TG-119 Report",
+      "TG-106 Report"
+    ],
+    "explanation": "TG-155 provides comprehensive recommendations for small field dosimetry, including detector selection, measurement techniques, and correction factors.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "What is the typical tolerance for Winston-Lutz test results in stereotactic systems?",
+    "answer": "≤ 1.0 mm radius",
+    "choices": [
+      "≤ 1.0 mm radius",
+      "≤ 2.0 mm radius",
+      "≤ 0.5 mm radius",
+      "≤ 1.5 mm radius"
+    ],
+    "explanation": "Most guidelines recommend a Winston-Lutz tolerance of ≤1.0 mm radius for stereotactic systems, though some institutions use tighter tolerances of 0.5 mm.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "In GammaKnife radiosurgery, what is the diameter of the smallest collimator?",
+    "answer": "4 mm",
+    "choices": [
+      "4 mm",
+      "2 mm",
+      "6 mm",
+      "3 mm"
+    ],
+    "explanation": "The GammaKnife system typically uses collimator sizes of 4, 8, and 16 mm, with 4 mm being the smallest standard collimator size.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended minimum number of fractions for SBRT lung treatments?",
+    "answer": "3 fractions",
+    "choices": [
+      "3 fractions",
+      "5 fractions",
+      "1 fraction",
+      "8 fractions"
+    ],
+    "explanation": "TG-101 recommends a minimum of 3 fractions for SBRT lung treatments to balance treatment efficacy with normal tissue sparing.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm",
+    "choices": [
+      "2.5-5.0 mm",
+      "5.0-10.0 mm",
+      "1.0-2.0 mm",
+      "10.0-15.0 mm"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths in the range of 2.5-5.0 mm at isocenter, providing improved conformality for small target volumes compared to standard MLCs.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new linear accelerator for SRS, small field output factors measured with three different detectors show: PTW microDiamond (0.892), Exradin W1 scintillator (0.856), and IBA CC01 ion chamber (0.798) for a 1×1 cm² field. Temperature was 22.1°C, pressure 1013.2 hPa, and all detectors were properly positioned. What is the most appropriate next step?",
+    "answer": "Apply detector-specific correction factors from TG-155 recommendations",
+    "choices": [
+      "Apply detector-specific correction factors from TG-155 recommendations",
+      "Repeat measurements using only the microDiamond detector",
+      "Perform Monte Carlo validation of measurement setup geometry",
+      "Increase field size to reduce detector response variations"
+    ],
+    "explanation": "The systematic differences between detectors are expected for small fields due to volume averaging and energy response effects, requiring application of appropriate small field correction factors as outlined in TG-155.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A GammaKnife Perfexion unit exhibits dose rate variations across multiple sources during monthly QA. Source activities range from 8.2 to 9.8 TBq with decay-corrected outputs showing ±3.2% variation from the mean. The treatment planning system uses a single effective source strength. What systematic dosimetric impact requires immediate clinical evaluation?",
+    "answer": "Heterogeneous source strength distribution creates dose calculation uncertainties",
+    "choices": [
+      "Heterogeneous source strength distribution creates dose calculation uncertainties",
+      "Source decay rate exceeds manufacturer specifications for replacement",
+      "Treatment planning system requires individual source modeling updates",
+      "Dose rate variation affects treatment time calculation accuracy"
+    ],
+    "explanation": "The ±3.2% variation in source strengths can lead to systematic dose distribution errors when the TPS assumes uniform source strength, particularly affecting steep dose gradients in stereotactic treatments.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "An SBRT spine treatment plan shows a 15% increase in spinal cord D₁cc when micro-MLC leaf positioning errors of 0.8 mm are introduced via systematic leaf calibration drift. The original plan had spinal cord D₁cc = 18.2 Gy with prescription dose 27 Gy in 3 fractions. What is the primary failure mode requiring process improvement?",
+    "answer": "Inadequate leaf position verification frequency allows systematic drift",
+    "choices": [
+      "Inadequate leaf position verification frequency allows systematic drift",
+      "Treatment planning optimization insufficient for steep dose gradients",
+      "Patient positioning uncertainty exceeds assumed setup margins",
+      "Dose calculation algorithm inaccuracy in heterogeneous media"
+    ],
+    "explanation": "Systematic leaf positioning errors leading to clinically significant dose changes indicate insufficient QA frequency for micro-MLC systems, where tight tolerances are critical for OAR sparing.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulation of a 5×5 mm² SRS field using DOSXYZnrc shows a 4.2% difference from TPS calculations in the penumbra region (80%-20% isodose). The simulation uses 2×10⁹ histories with statistical uncertainty <0.8%. Beam model parameters include: electron contamination (1.2%), focal spot size (1.1 mm FWHM), and measured jaw scatter factors. What is the most likely systematic error source?",
+    "answer": "Inadequate modeling of focal spot size distribution affects penumbra calculation",
+    "choices": [
+      "Inadequate modeling of focal spot size distribution affects penumbra calculation",
+      "Insufficient particle histories create statistical noise in penumbra region",
+      "Electron contamination parameters exceed small field modeling limits",
+      "Measured jaw scatter factors contain systematic detector response errors"
+    ],
+    "explanation": "Focal spot size modeling becomes critical in small fields where penumbra width is dominated by geometric factors, and 1.1 mm FWHM may not accurately represent the actual focal spot distribution for penumbra calculations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis of a cone-based SRS program identifies cone mounting as a high-risk failure mode with RPN=192 (Severity=8, Occurrence=6, Detection=4). Current detection methods include monthly mechanical checks and daily imaging verification. A proposed secondary independent verification system would reduce Detection score to 2. What is the revised RPN after implementing this mitigation strategy?",
+    "answer": "96",
+    "choices": [
+      "96",
+      "48",
+      "144",
+      "192"
+    ],
+    "explanation": "RPN = Severity × Occurrence × Detection. With Detection reduced from 4 to 2 while maintaining Severity=8 and Occurrence=6: RPN = 8 × 6 × 2 = 96.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "EGSnrc Monte Carlo validation of TG-155 small field correction factors shows systematic deviations for detector response in 6 MV FFF beams. The simulation includes full linac head modeling with phase space scoring at 30 cm from target. For a 1×1 cm² field, the calculated correction factor for a PTW 60019 microDiamond is 0.984 ± 0.008, while TG-155 tabulated values suggest 0.991 ± 0.015. What explains this systematic difference?",
+    "answer": "Machine-specific beam characteristics differ from TG-155 reference conditions",
+    "choices": [
+      "Machine-specific beam characteristics differ from TG-155 reference conditions",
+      "Statistical uncertainty in Monte Carlo simulation exceeds acceptable limits",
+      "Detector composition modeling contains systematic material density errors",
+      "Phase space scoring methodology introduces systematic calculation bias"
+    ],
+    "explanation": "TG-155 correction factors are based on reference beam models, and individual machine characteristics (energy spectrum, focal spot size, head scatter) can systematically affect small field detector response correction factors.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for photon beam flatness for daily QA?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±3% from baseline",
+      "±2% from baseline",
+      "±5% from baseline",
+      "±1% from baseline"
+    ],
+    "explanation": "TG-142 specifies a daily tolerance of ±3% from baseline for photon beam flatness measurements. This ensures consistent dose distribution across the treatment field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard protocol for absolute dose calibration of linear accelerators in water?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-51",
+      "TG-142",
+      "TG-119",
+      "TG-135"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, establishing the standard for absolute dose calibration in water phantoms.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for checking multileaf collimator (MLC) leaf position accuracy according to TG-142?",
+    "answer": "Monthly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "explanation": "TG-142 recommends monthly verification of MLC leaf position accuracy to ensure proper beam shaping and dose delivery. Daily checks focus on more basic operational parameters.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator QA?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Intensity Detector",
+      "External Phantom Irradiation Device",
+      "Electron Portal Integration Detector"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric measurements and QA procedures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

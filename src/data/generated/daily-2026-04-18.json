@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation isocenter with mechanical isocenter",
+    "choices": [
+      "To verify the coincidence of radiation isocenter with mechanical isocenter",
+      "To measure the output factor for small radiation fields",
+      "To calibrate the micro-MLC leaf position accuracy",
+      "To determine the beam penumbra width for cone collimators"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical rotation isocenter, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiosurgery Technique",
+      "Single Brain Radiation Treatment",
+      "Surgical Beam Radiotherapy"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which delivers high doses of radiation to extracranial targets using stereotactic techniques.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary imaging guidance method used by CyberKnife systems?",
+    "answer": "Real-time X-ray imaging with skeletal tracking",
+    "choices": [
+      "Real-time X-ray imaging with skeletal tracking",
+      "Cone-beam CT with soft tissue registration",
+      "MRI-guided real-time tumor tracking",
+      "Ultrasound-based respiratory gating system"
+    ],
+    "explanation": "CyberKnife uses real-time X-ray imaging to track skeletal anatomy and provide continuous patient positioning corrections during treatment delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical field size below which small field dosimetry effects become significant?",
+    "answer": "3 cm × 3 cm equivalent square",
+    "choices": [
+      "3 cm × 3 cm equivalent square",
+      "5 cm × 5 cm equivalent square",
+      "1 cm × 1 cm equivalent square",
+      "10 cm × 10 cm equivalent square"
+    ],
+    "explanation": "TG-155 defines small fields as those where lateral electronic equilibrium is not established, typically occurring below 3 cm × 3 cm equivalent square field sizes.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended maximum total uncertainty for stereotactic radiosurgery dose delivery?",
+    "answer": "5% (1 standard deviation)",
+    "choices": [
+      "5% (1 standard deviation)",
+      "3% (1 standard deviation)",
+      "7% (1 standard deviation)",
+      "10% (1 standard deviation)"
+    ],
+    "explanation": "TG-101 recommends a maximum total uncertainty of 5% (1σ) for SRS dose delivery, considering the high doses per fraction and critical target locations.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 mm at isocenter",
+    "choices": [
+      "2.5 mm at isocenter",
+      "5.0 mm at isocenter",
+      "1.0 mm at isocenter",
+      "10.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5 mm at isocenter, providing improved conformality for small target volumes compared to standard 5 mm or 10 mm MLC leaves.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the primary advantage of Gamma Knife Icon over previous Gamma Knife models?",
+    "answer": "Frameless treatment capability with real-time imaging",
+    "choices": [
+      "Frameless treatment capability with real-time imaging",
+      "Increased number of cobalt sources for higher dose rates",
+      "Variable collimator sizes for improved dose conformity",
+      "Enhanced treatment planning with Monte Carlo algorithms"
+    ],
+    "explanation": "Gamma Knife Icon introduced frameless treatment capability using cone-beam CT and infrared tracking, allowing for fractionated treatments and improved patient comfort.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "According to TG-135, which detector is recommended as the gold standard for small field output factor measurements?",
+    "answer": "Alanine dosimetry with multiple pellets",
+    "choices": [
+      "Alanine dosimetry with multiple pellets",
+      "Diamond detector with volume correction",
+      "Silicon diode with temperature compensation",
+      "Plastic scintillator with light guide correction"
+    ],
+    "explanation": "TG-135 recommends alanine dosimetry as the gold standard for small field output measurements due to its tissue equivalence and minimal volume averaging effects.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A medical physicist discovers systematic errors in Winston-Lutz results showing a 2mm offset pattern that varies sinusoidally with gantry angle, combined with micro-MLC positional errors exceeding tolerance during high-modulation VMAT delivery. The treatment planning system shows dose calculation discrepancies of 8% for 8mm targets compared to Monte Carlo verification. What is the most likely root cause requiring immediate investigation?",
+    "answer": "Mechanical flex in the linear accelerator causing isocenter instability under dynamic conditions",
+    "choices": [
+      "Mechanical flex in the linear accelerator causing isocenter instability under dynamic conditions",
+      "Systematic calibration errors in the treatment planning dose calculation algorithm",
+      "Electronic interference between the MLC control system and imaging components",
+      "Thermal drift in the radiation head affecting beam characteristics"
+    ],
+    "explanation": "The sinusoidal variation with gantry angle combined with dynamic MLC errors suggests mechanical flex causing isocenter drift, which would compound during complex treatments and affect small field dosimetry.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new stereotactic system, output factors measured with different detectors show systematic variations: diamond detector reads 15% higher than alanine for 5mm fields, while Monte Carlo predicts values between them. The beam model validates perfectly for fields >2cm. Which physical phenomenon requires the most sophisticated correction methodology?",
+    "answer": "Detector volume averaging effects combined with spectral hardening in small fields",
+    "choices": [
+      "Detector volume averaging effects combined with spectral hardening in small fields",
+      "Systematic calibration drift between measurement sessions and environmental conditions",
+      "Electronic equilibrium perturbations caused by detector material composition differences",
+      "Statistical uncertainties in Monte Carlo calculations requiring variance reduction techniques"
+    ],
+    "explanation": "Small field dosimetry requires sophisticated correction for detector volume averaging and spectral changes, as described in TG-155 and Alfonso-Andreo protocol for proper field output factor determination.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Following multiple micro-MLC leaf failures during high-complexity SRS treatments, failure mode analysis reveals correlation with specific leaf bank usage patterns and cumulative radiation exposure. Quality assurance protocols show intermittent positional accuracy degradation before complete failure. Which systematic reliability enhancement strategy addresses both immediate safety and long-term performance optimization?",
+    "answer": "Predictive maintenance protocols using statistical analysis of leaf performance degradation patterns",
+    "choices": [
+      "Predictive maintenance protocols using statistical analysis of leaf performance degradation patterns",
+      "Implementation of redundant leaf positioning verification systems with real-time feedback control",
+      "Enhanced materials engineering approaches for radiation-resistant leaf construction and design",
+      "Advanced treatment planning optimization algorithms to distribute leaf usage more uniformly"
+    ],
+    "explanation": "Predictive maintenance using statistical analysis allows for proactive replacement before failure while optimizing system reliability, as recommended in FMEA approaches for complex medical devices.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulations of small field dose distributions show systematic discrepancies with measurements when modeling a specific linac head design. Variance reduction techniques have been optimized, and the model accurately predicts large field dosimetry. Phase space analysis reveals spectral differences in the 1-3 MeV range for small fields. The electron contamination component shows field-size dependent variations exceeding measurement uncertainties. Which advanced modeling approach would most effectively resolve these discrepancies while maintaining computational efficiency?",
+    "answer": "Implementation of detailed geometric modeling with energy-dependent variance reduction optimized for low-energy electron transport",
+    "choices": [
+      "Implementation of detailed geometric modeling with energy-dependent variance reduction optimized for low-energy electron transport",
+      "Advanced photon splitting techniques combined with interaction forcing methods for improved statistical precision",
+      "Hybrid Monte Carlo-deterministic methods with adaptive mesh refinement in small field regions",
+      "Machine learning enhanced corrections applied to deterministic dose calculation algorithms"
+    ],
+    "explanation": "Small field discrepancies often arise from inadequate modeling of low-energy electron transport and contamination, requiring detailed geometry and optimized variance reduction for the specific energy range where discrepancies occur.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "A comprehensive uncertainty analysis for stereotactic treatments reveals that mechanical uncertainties, dosimetric uncertainties, and biological uncertainties contribute 2.1%, 3.2%, and 2.8% respectively (1σ). However, correlation analysis shows systematic dependencies between mechanical precision and delivered dose distributions that cannot be treated as independent uncertainties. Which advanced statistical methodology should be employed to properly propagate the total uncertainty while accounting for these correlations?",
+    "answer": "Monte Carlo uncertainty propagation with covariance matrix analysis accounting for systematic correlations",
+    "choices": [
+      "Monte Carlo uncertainty propagation with covariance matrix analysis accounting for systematic correlations",
+      "Bayesian inference methods with prior probability distributions for each uncertainty component",
+      "Bootstrap resampling techniques applied to experimental measurement datasets with confidence intervals",
+      "Latin hypercube sampling combined with polynomial chaos expansion for sensitivity analysis"
+    ],
+    "explanation": "Correlated uncertainties require Monte Carlo propagation with proper covariance matrix treatment to avoid underestimating total uncertainty, as recommended in GUM uncertainty evaluation guidelines.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Advanced FMEA analysis of a multi-platform stereotactic program (linac-based SRS, GammaKnife, CyberKnife) reveals that cross-platform dosimetric consistency represents the highest-risk failure mode, with potential severity scores exceeding 8/10. Detailed analysis shows systematic differences in dose calculation algorithms, measurement protocols, and quality assurance procedures. Which comprehensive risk mitigation strategy would most effectively address these systematic inter-platform variations while maintaining individual platform optimization?",
+    "answer": "Development of unified dosimetric standards with platform-specific implementation guidelines and cross-validation protocols",
+    "choices": [
+      "Development of unified dosimetric standards with platform-specific implementation guidelines and cross-validation protocols",
+      "Implementation of real-time dosimetric monitoring systems with automated cross-platform comparison algorithms",
+      "Establishment of rotating physicist assignments across platforms with standardized competency requirements",
+      "Advanced statistical process control methods applied to dosimetric parameters with platform-specific control limits"
+    ],
+    "explanation": "Multi-platform consistency requires unified dosimetric standards while recognizing platform-specific technical requirements, with comprehensive cross-validation protocols to ensure systematic accuracy across all treatment modalities.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3% from baseline value",
+    "choices": [
+      "±2% from baseline value",
+      "±3% from baseline value",
+      "±5% from baseline value",
+      "±1% from baseline value"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy checks to ensure consistent beam delivery. This tolerance balances practical measurement uncertainty with clinical safety requirements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard protocol recommended by AAPM for absolute dose calibration of megavoltage photon beams?",
+    "answer": "TG-51 protocol using ion chambers",
+    "choices": [
+      "TG-21 protocol using ion chambers",
+      "TG-51 protocol using ion chambers",
+      "TG-142 protocol using diode detectors",
+      "TG-40 protocol using film dosimetry"
+    ],
+    "explanation": "TG-51 is the current AAPM standard for absolute dose calibration of high-energy photon and electron beams, replacing the earlier TG-21 protocol. It provides improved accuracy through updated stopping power ratios and beam quality specifications.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For beam flatness measurements in linear accelerator QA, what field size is typically recommended for evaluation?",
+    "answer": "10 cm × 10 cm field",
+    "choices": [
+      "5 cm × 5 cm field",
+      "10 cm × 10 cm field",
+      "20 cm × 20 cm field",
+      "15 cm × 15 cm field"
+    ],
+    "explanation": "A 10 cm × 10 cm field size is the standard reference field for flatness and symmetry measurements as specified in TG-142 and other international protocols. This field size provides adequate measurement area while maintaining sufficient dose rate.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for comprehensive MLC positioning accuracy checks according to TG-142?",
+    "answer": "Monthly QA procedures",
+    "choices": [
+      "Daily QA procedures",
+      "Weekly QA procedures",
+      "Monthly QA procedures",
+      "Annual QA procedures"
+    ],
+    "explanation": "TG-142 recommends monthly checks for MLC positioning accuracy to ensure proper leaf positioning for IMRT and VMAT treatments. Daily checks focus on basic functionality while monthly checks provide comprehensive positioning verification.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

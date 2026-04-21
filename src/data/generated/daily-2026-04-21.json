@@ -1,0 +1,274 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the mechanical and radiation isocenter coincidence",
+    "choices": [
+      "To verify the mechanical and radiation isocenter coincidence",
+      "To measure the penumbra width of small fields",
+      "To calibrate the micro-MLC leaf positions accurately",
+      "To determine the output factors for cone collimators"
+    ],
+    "explanation": "The Winston-Lutz test uses a ball bearing target to assess the coincidence between mechanical and radiation isocenters, which is critical for SRS accuracy. TG-142 recommends tolerances ≤1mm for SRS systems.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What defines a 'small field' according to TG-155 recommendations?",
+    "answer": "A field where lateral charged particle equilibrium is absent",
+    "choices": [
+      "A field where lateral charged particle equilibrium is absent",
+      "A field with dimensions smaller than 4 cm × 4 cm",
+      "A field where the detector size exceeds field dimensions",
+      "A field requiring monte carlo dose calculation methods"
+    ],
+    "explanation": "TG-155 defines small fields based on physics principles rather than arbitrary size limits - specifically the loss of lateral charged particle equilibrium, which affects dosimetry.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the Gamma Knife's primary radiation source?",
+    "answer": "Multiple cobalt-60 sources arranged in a hemispheric array",
+    "choices": [
+      "Multiple cobalt-60 sources arranged in a hemispheric array",
+      "Single high-energy linear accelerator with cone collimators",
+      "Cesium-137 sources with variable collimation systems",
+      "Multiple yttrium-90 sources in cylindrical configuration"
+    ],
+    "explanation": "The Gamma Knife uses 192 cobalt-60 sources (in current models) arranged in a hemispheric configuration, each focused toward a common isocenter for stereotactic radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is SBRT an acronym for?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiosurgery Technique",
+      "Single Beam Rotational Treatment",
+      "Stereotactic Brain Radiosurgery Treatment"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which applies stereotactic techniques to extracranial targets, typically delivering hypofractionated doses with high precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended positioning accuracy tolerance for intracranial SRS treatments?",
+    "answer": "≤ 1.0 mm at isocenter",
+    "choices": [
+      "≤ 1.0 mm at isocenter",
+      "≤ 2.0 mm at isocenter",
+      "≤ 0.5 mm at isocenter",
+      "≤ 1.5 mm at isocenter"
+    ],
+    "explanation": "TG-101 recommends positioning accuracy of ≤1.0 mm for intracranial SRS to ensure the steep dose gradients are properly positioned relative to critical structures.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the primary limitation when using large-volume ion chambers for small field dosimetry?",
+    "answer": "Volume averaging effects that underestimate peak dose",
+    "choices": [
+      "Volume averaging effects that underestimate peak dose",
+      "Excessive energy dependence in high-energy photon beams",
+      "Temperature and pressure correction factor uncertainties",
+      "Insufficient signal-to-noise ratio for accurate measurements"
+    ],
+    "explanation": "TG-135 identifies volume averaging as the primary issue with large ion chambers in small fields, where the detector samples regions of varying dose, leading to underestimation of central axis dose.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What tracking method does the CyberKnife system primarily use for real-time tumor localization?",
+    "answer": "Orthogonal kV imaging with implanted fiducial markers",
+    "choices": [
+      "Orthogonal kV imaging with implanted fiducial markers",
+      "Continuous MV portal imaging during treatment delivery",
+      "Surface-guided radiation therapy with optical monitoring",
+      "Ultrasound-based real-time tumor tracking systems"
+    ],
+    "explanation": "CyberKnife uses orthogonal kV imaging systems to track implanted fiducial markers in real-time, enabling respiratory motion compensation during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam with 1 cm × 1 cm field shows 15% lower output compared to a 10 cm × 10 cm reference field when measured with a 0.6 cc ion chamber. The same measurement with a diode detector shows only 8% reduction. What is the most likely explanation for this discrepancy, and how should the small field correction factor be determined?",
+    "answer": "Volume averaging in the ion chamber; use Monte Carlo-calculated correction factors",
+    "choices": [
+      "Volume averaging in the ion chamber; use Monte Carlo-calculated correction factors",
+      "Energy dependence in the diode; apply spectral correction algorithms",
+      "Beam hardening effects; measure with multiple detector types simultaneously",
+      "Electronic disequilibrium; use plastic water equivalent phantoms instead"
+    ],
+    "explanation": "The ion chamber's large volume averages across the non-uniform dose distribution in the small field, while the diode's small active volume better represents the true dose. TG-155 recommends Monte Carlo-calculated detector-specific correction factors to account for these effects.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During VMAT-based SRS commissioning, the measured dose distribution shows systematic deviations of 3-5% in the penumbra region compared to TPS calculations. The central axis dose agrees within 1%. Micro-MLC positional accuracy is verified within 0.1 mm. What is the most likely cause and appropriate corrective action?",
+    "answer": "Inadequate beam model parameters; refine penumbra modeling in TPS",
+    "choices": [
+      "Inadequate beam model parameters; refine penumbra modeling in TPS",
+      "Mechanical flex during gantry rotation; implement angle-specific corrections",
+      "Detector positioning errors; recalibrate measurement setup geometry",
+      "Patient setup uncertainties; increase PTV margins accordingly"
+    ],
+    "explanation": "With verified mechanical accuracy, systematic penumbra deviations typically indicate insufficient beam model characterization. Small field penumbra modeling requires detailed commissioning measurements and potentially Monte Carlo-based beam modeling for accurate TPS calculations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulations of a 5 mm × 5 mm field show dose differences of 4-7% compared to measurements when using manufacturer-provided phase space files. Detailed linac head modeling reduces this to 1-2%. What specific component modeling refinement most likely accounts for this improvement, and what validation metric should be used?",
+    "answer": "Jaw and MLC leakage modeling; validate using lateral dose profiles",
+    "choices": [
+      "Jaw and MLC leakage modeling; validate using lateral dose profiles",
+      "Primary collimator scatter modeling; validate using depth dose measurements",
+      "Electron contamination modeling; validate using surface dose measurements",
+      "Flattening filter modeling; validate using off-axis ratio measurements"
+    ],
+    "explanation": "In small fields, jaw and MLC leakage radiation becomes proportionally more significant. Detailed modeling of these components is critical for accurate Monte Carlo dose calculations. Lateral dose profiles provide the most sensitive validation metric for leakage and scatter modeling accuracy.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Research-level uncertainty analysis of small field output factors reveals Type A uncertainties of 0.8% and Type B uncertainties of 1.2%. The measurement shows k_Q,Q0,f factors with 95% confidence intervals. What is the expanded uncertainty (k=2), and what additional uncertainty component should be considered for clinical implementation?",
+    "answer": "2.9% expanded uncertainty; add inter-detector variability component",
+    "choices": [
+      "2.9% expanded uncertainty; add inter-detector variability component",
+      "2.4% expanded uncertainty; add temperature coefficient variations",
+      "4.0% expanded uncertainty; add calibration traceability uncertainties",
+      "1.4% expanded uncertainty; add statistical measurement variations"
+    ],
+    "explanation": "Combined uncertainty = √(0.8² + 1.2²) = 1.44%. Expanded uncertainty (k=2) = 2.9%. For clinical implementation, inter-detector variability represents a significant additional Type B uncertainty component not captured in single-detector measurements, as highlighted in recent small field dosimetry research.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Advanced Monte Carlo analysis of Gamma Knife dose distributions reveals 2-3% systematic overestimation in peripheral dose regions compared to gel dosimetry measurements. Detailed modeling of cobalt source encapsulation and collimator materials shows agreement within 0.5%. What physics modeling refinement most likely explains this improvement?",
+    "answer": "Source capsule scatter and attenuation in tungsten collimators",
+    "choices": [
+      "Source capsule scatter and attenuation in tungsten collimators",
+      "Cobalt-60 decay spectrum energy distribution variations",
+      "Patient-specific tissue heterogeneity correction algorithms",
+      "Charge particle transport parameter optimization"
+    ],
+    "explanation": "Peripheral dose regions in Gamma Knife are significantly affected by scatter from source capsules and beam attenuation/scatter in the tungsten collimation system. Detailed modeling of these components with accurate material compositions is critical for accurate dose calculations in research-level Monte Carlo simulations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements on a linear accelerator?",
+    "answer": "±3%",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements to ensure consistent dose delivery while allowing for reasonable measurement uncertainty.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference dosimetry protocol currently recommended by AAPM for absolute dose calibration of linear accelerators?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-142",
+      "TG-100"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry, replacing the older TG-21 protocol for absolute dose calibration of external beam therapy machines.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the definition of beam flatness in radiation therapy dosimetry?",
+    "answer": "The ratio of maximum to minimum dose in the flat region",
+    "choices": [
+      "The ratio of maximum to minimum dose in the flat region",
+      "The percentage difference between central axis and field edge",
+      "The uniformity of dose across the entire beam profile",
+      "The ratio of penumbra width to field size"
+    ],
+    "explanation": "Beam flatness is defined as the ratio of maximum to minimum dose within the flattened region of the beam profile, typically measured within 80% of the field size.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What type of detector is most commonly used for water tank commissioning measurements during linear accelerator beam data acquisition?",
+    "answer": "Ion chamber",
+    "choices": [
+      "Ion chamber",
+      "Silicon diode",
+      "Diamond detector",
+      "MOSFET detector"
+    ],
+    "explanation": "Ion chambers are the gold standard for water tank commissioning due to their energy independence, stability, and minimal directional dependence for reference dosimetry measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What does SRS stand for in medical physics terminology?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Single-dose Radiotherapy System",
+      "Small-field Radiation Surgery",
+      "Segmented Radiation Stereotaxy"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a precise form of radiation therapy that delivers high doses in a single fraction to small targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "Which detector type is NOT recommended for small field dosimetry measurements according to TG-155?",
+    "answer": "Large air-filled ionization chambers",
+    "choices": [
+      "Silicon diode detectors",
+      "Diamond detectors",
+      "Small ionization chambers",
+      "Large air-filled ionization chambers"
+    ],
+    "explanation": "Large air-filled ionization chambers have volume averaging effects that make them unsuitable for small field measurements. TG-155 recommends detectors with small sensitive volumes.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test?",
+    "answer": "Verify mechanical isocenter alignment",
+    "choices": [
+      "Measure small field output factors",
+      "Calibrate micro-MLC leaf positions",
+      "Verify mechanical isocenter alignment",
+      "Determine dose rate linearity"
+    ],
+    "explanation": "The Winston-Lutz test verifies that the mechanical isocenter of the linear accelerator coincides with the radiation isocenter, critical for stereotactic treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What distinguishes micro-MLCs from standard MLCs?",
+    "answer": "Smaller leaf width dimensions",
+    "choices": [
+      "Higher maximum dose rates",
+      "Faster leaf travel speeds",
+      "Smaller leaf width dimensions",
+      "Greater leaf transmission values"
+    ],
+    "explanation": "Micro-MLCs have smaller leaf widths (typically 2.5-5mm) compared to standard MLCs (5-10mm), allowing for better conformity in small field treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the typical fractionation scheme for single-fraction SRS treatments?",
+    "answer": "12-24 Gy in 1 fraction",
+    "choices": [
+      "12-24 Gy in 1 fraction",
+      "30-50 Gy in 3-5 fractions",
+      "54-60 Gy in 27-30 fractions",
+      "6-10 Gy in 15-20 fractions"
+    ],
+    "explanation": "TG-101 defines single-fraction SRS as typically delivering 12-24 Gy in one treatment session, distinguished from fractionated stereotactic radiotherapy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical beam size threshold below which small field correction factors become necessary?",
+    "answer": "Fields smaller than 5×5 cm²",
+    "choices": [
+      "Fields smaller than 3×3 cm²",
+      "Fields smaller than 5×5 cm²",
+      "Fields smaller than 2×2 cm²",
+      "Fields smaller than 4×4 cm²"
+    ],
+    "explanation": "According to TG-155, small field correction factors typically become significant for fields smaller than 3×3 cm² due to loss of lateral electron equilibrium.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "Which imaging modality does CyberKnife primarily use for real-time tracking during treatment?",
+    "answer": "Orthogonal kV X-ray imaging",
+    "choices": [
+      "Cone-beam CT imaging",
+      "Orthogonal kV X-ray imaging",
+      "Infrared optical tracking",
+      "Ultrasound-based positioning"
+    ],
+    "explanation": "CyberKnife uses orthogonal kV X-ray imaging systems to track patient anatomy and fiducial markers in real-time during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the typical collimator size range available for cone-based SRS systems?",
+    "answer": "4 mm to 60 mm diameter",
+    "choices": [
+      "4 mm to 60 mm diameter",
+      "2 mm to 40 mm diameter",
+      "6 mm to 80 mm diameter",
+      "8 mm to 100 mm diameter"
+    ],
+    "explanation": "Cone-based SRS systems typically offer collimator sizes ranging from 4mm to 60mm in diameter, allowing treatment of various target sizes.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A patient receives SBRT lung treatment with 12 Gy×4 fractions. The PTV shows significant interfraction motion despite 4D-CT planning. Dose reconstruction shows V20Gy lung increased from 8% to 15%. Which factor most critically affects the validity of dose-volume constraints in this scenario?",
+    "answer": "Geometric uncertainty propagation through fractionated delivery schedule",
+    "choices": [
+      "Dosimetric leaf gap calibration affecting small field penumbra",
+      "Geometric uncertainty propagation through fractionated delivery schedule",
+      "Monte Carlo statistical uncertainty in heterogeneous lung tissue",
+      "Small field correction factor temperature dependence variations"
+    ],
+    "explanation": "Interfraction motion causing significant changes in dose-volume metrics indicates that geometric uncertainties are not adequately accounted for, making DVH constraints unreliable. TG-101 emphasizes robust planning for such scenarios.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A CyberKnife system shows systematic targeting errors correlating with respiratory phase during liver SBRT. Robot positioning accuracy is within specifications, and fiducial tracking appears normal. Which system interaction most likely explains this phenomenon?",
+    "answer": "Fiducial-to-target correlation model breakdown due to liver deformation patterns",
+    "choices": [
+      "X-ray imaging system geometric calibration drift affecting tracking accuracy",
+      "Fiducial-to-target correlation model breakdown due to liver deformation patterns",
+      "Linac beam deflection variations synchronized with respiratory motion artifacts",
+      "Monte Carlo dose calculation errors in tissue density mapping"
+    ],
+    "explanation": "CyberKnife tracking relies on correlation models between fiducial motion and target motion. Liver deformation during respiration can break these correlations, causing systematic targeting errors even when fiducial tracking appears accurate.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis of a Gamma Knife workflow identifies 'incorrect helmet selection' with RPN=180. Current controls include visual verification and electronic interlocks. Which risk mitigation strategy would most effectively reduce the severity component while maintaining workflow efficiency?",
+    "answer": "Implement redundant automated geometric verification using independent positioning sensors",
+    "choices": [
+      "Increase detection probability through mandatory two-person independent verification protocols",
+      "Implement redundant automated geometric verification using independent positioning sensors",
+      "Reduce occurrence frequency by standardizing helmet inventory to single-size protocols",
+      "Apply statistical process control methods with real-time workflow monitoring"
+    ],
+    "explanation": "Severity in this context relates to patient harm from geometric miss. Redundant automated verification systems can detect helmet mismatches before treatment, dramatically reducing potential dose delivery errors without significantly impacting workflow efficiency.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Uncertainty budget analysis for small field dosimetry shows combined standard uncertainty of 3.2% (k=1). Individual components: detector calibration (1.8%), positioning (1.5%), correction factors (2.1%), and environmental (0.8%). What is the expanded uncertainty (k=2) for clinical implementation?",
+    "answer": "6.4% expanded uncertainty with normal distribution assumption",
+    "choices": [
+      "6.4% expanded uncertainty with normal distribution assumption",
+      "5.8% expanded uncertainty using Student's t-distribution methodology",
+      "7.2% expanded uncertainty incorporating systematic error propagation",
+      "4.9% expanded uncertainty with rectangular distribution modeling"
+    ],
+    "explanation": "For expanded uncertainty with coverage factor k=2, the result is simply 2 × 3.2% = 6.4%, assuming normal distribution. This provides approximately 95% confidence interval for the measurement uncertainty.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Research-level investigation of detector volume averaging effects in 4mm diameter beams requires Monte Carlo modeling of detector response. The silicon diode active volume is 0.6mm diameter × 0.04mm thick. Which simulation approach most accurately represents the experimental measurement geometry?",
+    "answer": "Model detector as finite cylindrical volume with material-specific transport physics",
+    "choices": [
+      "Approximate detector as point source with energy-dependent correction algorithms",
+      "Model detector as finite cylindrical volume with material-specific transport physics",
+      "Use analytical convolution methods with Gaussian beam profile assumptions",
+      "Apply deconvolution techniques to measured data using kernel approximations"
+    ],
+    "explanation": "Accurate MC simulation requires explicit geometric modeling of the detector's finite volume and material properties. The silicon diode's physical dimensions and material response must be properly represented to investigate volume averaging effects accurately.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy checks to ensure consistent dose delivery. This tolerance balances practical measurement uncertainty with clinical safety requirements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference dosimetry protocol recommended by AAPM for linear accelerator beam calibration?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-40",
+      "TG-61"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For beam flatness evaluation, what is the standard definition used in linear accelerator QA?",
+    "answer": "Maximum dose within flattened region divided by minimum dose",
+    "choices": [
+      "Maximum dose within flattened region divided by minimum dose",
+      "Central axis dose divided by average peripheral dose",
+      "Difference between maximum and minimum doses expressed as percentage",
+      "Standard deviation of doses across the flattened region"
+    ],
+    "explanation": "Beam flatness is conventionally defined as the ratio of maximum to minimum dose within the flattened region, typically expressed as a percentage according to IEC standards.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What frequency does TG-142 recommend for MLC leaf position accuracy checks?",
+    "answer": "Monthly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annual"
+    ],
+    "explanation": "TG-142 recommends monthly checks for MLC leaf position accuracy with a tolerance of ±1mm to ensure precise field shaping for IMRT and VMAT treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

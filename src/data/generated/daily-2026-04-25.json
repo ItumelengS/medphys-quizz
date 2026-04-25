@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary characteristic that defines a small field in radiation therapy?",
+    "answer": "Loss of lateral charged particle equilibrium",
+    "choices": [
+      "Loss of lateral charged particle equilibrium",
+      "Field size smaller than 10 cm × 10 cm",
+      "Use of micro-MLC leaf widths only",
+      "Application in stereotactic procedures only"
+    ],
+    "explanation": "Small fields are fundamentally defined by the loss of lateral charged particle equilibrium, not by absolute size criteria. This occurs when the field dimension approaches the range of secondary electrons.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Mechanical isocenter alignment accuracy",
+    "choices": [
+      "Mechanical isocenter alignment accuracy",
+      "Small field output factor verification",
+      "MLC leaf position calibration only",
+      "Patient positioning system precision"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence of the mechanical isocenter with the radiation isocenter by analyzing ball bearing positions across multiple gantry and collimator angles.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic radiosurgery?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "10.0-15.0 mm at isocenter",
+      "0.5-1.0 mm at isocenter",
+      "7.5-10.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm projected to isocenter, providing improved conformity for small target volumes compared to standard 5-10 mm leaves.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the fundamental physics principle behind GammaKnife radiosurgery?",
+    "answer": "Convergent gamma ray beams from multiple sources",
+    "choices": [
+      "Convergent gamma ray beams from multiple sources",
+      "Robotic patient positioning with single beam",
+      "Intensity modulated photon beam delivery",
+      "Proton beam stereotactic focusing techniques"
+    ],
+    "explanation": "GammaKnife uses approximately 192 cobalt-60 sources arranged in a hemisphere, with all beams converging at the treatment isocenter to create a high dose gradient.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the primary recommendation of TG-135 regarding small field reference dosimetry?",
+    "answer": "Use plastic scintillator or diode detectors",
+    "choices": [
+      "Use plastic scintillator or diode detectors",
+      "Apply ion chamber corrections universally",
+      "Employ TLD dosimeters for all measurements",
+      "Utilize diamond detector systems exclusively"
+    ],
+    "explanation": "TG-135 recommends plastic scintillator detectors, diodes, or other small-volume detectors for small field dosimetry due to volume averaging effects with ion chambers.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical geometric accuracy requirement for SRS treatments as specified in TG-101?",
+    "answer": "≤1 mm total geometric uncertainty",
+    "choices": [
+      "≤1 mm total geometric uncertainty",
+      "≤3 mm total geometric uncertainty",
+      "≤0.5 mm total geometric uncertainty",
+      "≤2 mm total geometric uncertainty"
+    ],
+    "explanation": "TG-101 specifies that the total geometric uncertainty for SRS should be ≤1 mm, encompassing all sources of geometric error in the treatment chain.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "In CyberKnife systems, what is the typical number of non-coplanar beam directions available?",
+    "answer": "Approximately 1200 possible beam positions",
+    "choices": [
+      "Approximately 1200 possible beam positions",
+      "Exactly 360 discrete beam angles",
+      "Limited to 180 coplanar positions",
+      "Fixed at 100 predetermined locations"
+    ],
+    "explanation": "CyberKnife robotic systems provide approximately 1200 possible beam positions through the combination of robotic arm positioning and patient couch movements.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A physicist discovers that small field output factors measured with a 0.6 cc ion chamber are consistently 8% higher than those measured with a diode detector for 1×1 cm fields. The treatment planning system uses ion chamber-based commissioning data. Monte Carlo simulations confirm the diode measurements. What is the most appropriate immediate action to ensure treatment accuracy while maintaining clinical workflow?",
+    "answer": "Implement detector-specific correction factors pending full recommissioning",
+    "choices": [
+      "Implement detector-specific correction factors pending full recommissioning",
+      "Immediately halt all small field treatments until recommissioning",
+      "Continue treatments while scheduling detector recalibration next month",
+      "Switch to film dosimetry for all small field verifications"
+    ],
+    "explanation": "Implementing detector-specific correction factors provides immediate accuracy improvement while allowing time for proper recommissioning. The 8% discrepancy is clinically significant and requires immediate correction per TG-135 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT lung treatment delivery, real-time monitoring shows the target has moved 4 mm superior to the planned position, but remains within the ITV. The dose distribution shows the 95% isodose line now encompasses 15% more normal lung tissue than planned. Treatment delivery is 60% complete. What is the optimal clinical decision considering both target coverage and normal tissue sparing?",
+    "answer": "Continue treatment and evaluate cumulative dosimetric impact for adaptation",
+    "choices": [
+      "Continue treatment and evaluate cumulative dosimetric impact for adaptation",
+      "Immediately halt treatment and replan with larger margins",
+      "Complete treatment as planned since target remains in ITV",
+      "Stop treatment and reschedule with respiratory gating enabled"
+    ],
+    "explanation": "Since the target remains within the ITV, treatment can continue while documenting the dosimetric impact. The 15% increase in normal tissue exposure requires evaluation for potential adaptive planning in subsequent fractions.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A medical physicist analyzing Winston-Lutz data finds consistent 0.8 mm shifts in the same direction across all gantry angles, but perfect alignment when analyzed by collimator angle variations. The imaging system shows no systematic errors. What is the most likely cause requiring correction?",
+    "answer": "Radiation isocenter displacement relative to mechanical isocenter",
+    "choices": [
+      "Radiation isocenter displacement relative to mechanical isocenter",
+      "Patient couch systematic positioning error during measurement",
+      "Imaging system calibration drift affecting analysis software",
+      "Ball bearing manufacturing tolerance exceeding specifications"
+    ],
+    "explanation": "Consistent shifts across all gantry angles with perfect collimator alignment indicates radiation isocenter displacement. This requires beam steering correction or acceptance with appropriate geometric uncertainty budgets.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Monte Carlo simulations of small field dose distributions show 3% differences from measurement in the penumbra region for 5×5 mm fields. The physicist has verified detector positioning, phantom homogeneity, and beam modeling parameters. Electron transport settings use Class II condensed history with 0.01 MeV cutoff energies. What is the most likely solution to improve agreement?",
+    "answer": "Implement Class I transport with reduced step sizes",
+    "choices": [
+      "Implement Class I transport with reduced step sizes",
+      "Increase electron cutoff energies to 0.1 MeV",
+      "Apply measured correction factors to simulation results",
+      "Modify photon cross-section libraries in simulation"
+    ],
+    "explanation": "Small field penumbra accuracy requires Class I electron transport algorithms with reduced step sizes to properly model charged particle disequilibrium effects, as condensed history methods may introduce artifacts.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A research physicist developing a novel small field detector performs Monte Carlo optimization of detector design. The simulation includes 2×10^9 photon histories with Russian roulette variance reduction. Statistical uncertainties are 0.8% for dose calculation. For regulatory submission requiring 0.5% uncertainty, what is the minimum additional computational requirement assuming linear scaling?",
+    "answer": "Additional 3.1×10^9 histories needed for target uncertainty",
+    "choices": [
+      "Additional 3.1×10^9 histories needed for target uncertainty",
+      "Additional 1.8×10^9 histories needed for target uncertainty",
+      "Additional 4.5×10^9 histories needed for target uncertainty",
+      "Additional 2.2×10^9 histories needed for target uncertainty"
+    ],
+    "explanation": "Statistical uncertainty scales as 1/√N. To reduce from 0.8% to 0.5% requires factor of (0.8/0.5)² = 2.56 increase in histories. Total needed: 2.56×2×10^9 = 5.12×10^9, requiring additional 3.12×10^9 histories.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An uncertainty budget analysis for small field dosimetry shows: detector positioning (±0.3%), energy dependence (±0.8%), volume averaging (±1.2%), and calibration traceability (±0.6%). Using root-sum-of-squares combination with 95% confidence intervals (k=2), what is the expanded combined uncertainty for clinical small field measurements?",
+    "answer": "±3.4% expanded uncertainty at 95% confidence",
+    "choices": [
+      "±3.4% expanded uncertainty at 95% confidence",
+      "±2.9% expanded uncertainty at 95% confidence",
+      "±4.1% expanded uncertainty at 95% confidence",
+      "±5.8% expanded uncertainty at 95% confidence"
+    ],
+    "explanation": "Combined standard uncertainty = √(0.3² + 0.8² + 1.2² + 0.6²) = 1.7%. Expanded uncertainty = k × uc = 2 × 1.7% = 3.4% at 95% confidence level per GUM methodology.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "A failure mode and effects analysis (FMEA) for SRS treatments identifies MLC leaf positioning errors with occurrence rating 3, severity rating 9, and detectability rating 4. If implementing real-time monitoring reduces detectability to rating 2, what is the percentage reduction in risk priority number (RPN)?",
+    "answer": "50% reduction in risk priority number",
+    "choices": [
+      "50% reduction in risk priority number",
+      "33% reduction in risk priority number",
+      "67% reduction in risk priority number",
+      "25% reduction in risk priority number"
+    ],
+    "explanation": "Initial RPN = 3 × 9 × 4 = 108. Modified RPN = 3 × 9 × 2 = 54. Percentage reduction = (108-54)/108 × 100% = 50% reduction in risk priority number.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Monte Carlo simulation of detector response in small photon fields requires modeling detector composition, geometry, and radiation transport. For a silicon diode detector with 0.8 mm³ sensitive volume, energy deposition variance shows 15% coefficient of variation. What minimum number of photon interaction histories is required to reduce statistical uncertainty below 2% with 99% confidence?",
+    "answer": "Approximately 3.7×10^7 interaction histories required",
+    "choices": [
+      "Approximately 3.7×10^7 interaction histories required",
+      "Approximately 1.8×10^7 interaction histories required",
+      "Approximately 6.2×10^7 interaction histories required",
+      "Approximately 2.1×10^7 interaction histories required"
+    ],
+    "explanation": "For 2% uncertainty with 99% confidence (k=2.58), and 15% coefficient of variation: N = (k × CV/target)² = (2.58 × 15/2)² = (19.35)² ≈ 374, requiring ~3.7×10^7 histories for adequate statistics.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142 recommendations, what is the tolerance limit for daily output constancy measurements on linear accelerators?",
+    "answer": "±3% from baseline value",
+    "choices": [
+      "±2% from baseline value",
+      "±3% from baseline value",
+      "±5% from baseline value",
+      "±1% from baseline value"
+    ],
+    "explanation": "TG-142 specifies that daily output constancy should be within ±3% of the baseline established value. This tolerance ensures consistent beam output for patient treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard for absorbed dose to water calibration protocols in medical linear accelerators?",
+    "answer": "TG-51 protocol",
+    "choices": [
+      "TG-51 protocol",
+      "TG-142 protocol",
+      "TG-119 protocol",
+      "TG-100 protocol"
+    ],
+    "explanation": "TG-51 is the AAPM task group report that provides the standard protocol for clinical reference dosimetry of high-energy photon and electron beams.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What does beam flatness measure in linear accelerator quality assurance?",
+    "answer": "Dose uniformity across the central beam axis",
+    "choices": [
+      "Dose uniformity across the central beam axis",
+      "Beam energy stability over treatment time",
+      "Gantry rotation accuracy during delivery",
+      "Patient couch positioning precision limits"
+    ],
+    "explanation": "Beam flatness quantifies the dose uniformity across the central portion of the radiation beam profile, typically measured as the ratio of maximum to minimum dose in the flattened region.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for comprehensive annual QA testing of linear accelerators according to TG-142?",
+    "answer": "Every 12 months maximum interval",
+    "choices": [
+      "Every 6 months maximum interval",
+      "Every 12 months maximum interval",
+      "Every 18 months maximum interval",
+      "Every 24 months maximum interval"
+    ],
+    "explanation": "TG-142 recommends that comprehensive annual quality assurance procedures be performed at least once every 12 months to ensure optimal machine performance and safety.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

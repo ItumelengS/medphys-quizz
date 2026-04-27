@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary definition of stereotactic radiosurgery (SRS)?",
+    "answer": "Single high-dose fraction delivery to intracranial targets",
+    "choices": [
+      "Single high-dose fraction delivery to intracranial targets",
+      "Multiple fraction delivery using stereotactic guidance systems",
+      "High-precision delivery using conventional fractionation schemes",
+      "Gamma ray delivery using cobalt-60 sources exclusively"
+    ],
+    "explanation": "SRS is defined as the delivery of a single, high radiation dose to a precisely defined intracranial target using stereotactic localization. This distinguishes it from SBRT and conventional radiotherapy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily assess?",
+    "answer": "Mechanical isocenter accuracy of the linear accelerator",
+    "choices": [
+      "Mechanical isocenter accuracy of the linear accelerator",
+      "Beam flatness and symmetry for small fields",
+      "Output constancy for stereotactic cone delivery",
+      "Couch positioning accuracy during patient setup"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence between the mechanical isocenter and radiation isocenter by imaging a small ball bearing from multiple gantry angles.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary function of micro-MLCs in stereotactic treatments?",
+    "answer": "Enable precise beam shaping for small irregular targets",
+    "choices": [
+      "Enable precise beam shaping for small irregular targets",
+      "Reduce leakage radiation between conventional MLC leaves",
+      "Provide backup collimation when primary MLCs fail",
+      "Increase dose rate delivery for faster treatments"
+    ],
+    "explanation": "Micro-MLCs have smaller leaf widths (typically 2.5-5mm) compared to conventional MLCs, allowing for more precise conformity to small, irregularly shaped targets in stereotactic treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of radiation source does the Gamma Knife system use?",
+    "answer": "Multiple cobalt-60 sources arranged in hemispherical geometry",
+    "choices": [
+      "Multiple cobalt-60 sources arranged in hemispherical geometry",
+      "Single linear accelerator with rotating gantry system",
+      "Robotic arm-mounted linear accelerator with tracking",
+      "Multiple cesium-137 sources in cylindrical arrangement"
+    ],
+    "explanation": "The Gamma Knife uses approximately 192-201 cobalt-60 sources arranged in a hemispherical pattern to deliver highly focused gamma radiation to intracranial targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended maximum single fraction dose limit for spinal cord in spine SBRT?",
+    "answer": "14 Gy to 0.35 cc maximum point dose",
+    "choices": [
+      "14 Gy to 0.35 cc maximum point dose",
+      "12 Gy to 1.2 cc maximum point dose",
+      "10 Gy to 0.1 cc maximum point dose",
+      "18 Gy to 0.5 cc maximum point dose"
+    ],
+    "explanation": "TG-101 recommends 14 Gy to 0.35 cc as the maximum point dose constraint for spinal cord in single-fraction spine SBRT to minimize risk of myelopathy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical small field size threshold below which lateral charged particle equilibrium is lost?",
+    "answer": "Field sizes smaller than 3 cm × 3 cm",
+    "choices": [
+      "Field sizes smaller than 3 cm × 3 cm",
+      "Field sizes smaller than 5 cm × 5 cm",
+      "Field sizes smaller than 2 cm × 2 cm",
+      "Field sizes smaller than 1 cm × 1 cm"
+    ],
+    "explanation": "For 6 MV photon beams, lateral charged particle equilibrium begins to be lost for field sizes smaller than approximately 3 cm × 3 cm, where the field size approaches the lateral range of secondary electrons.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by the CyberKnife system for respiratory motion management?",
+    "answer": "Real-time X-ray imaging with implanted fiducial markers",
+    "choices": [
+      "Real-time X-ray imaging with implanted fiducial markers",
+      "External infrared marker tracking with respiratory gating",
+      "4D CT-based internal anatomy correlation models",
+      "Electromagnetic transponder beacon tracking systems"
+    ],
+    "explanation": "The CyberKnife Synchrony system uses real-time X-ray imaging to track implanted fiducial markers, correlating their position with external respiratory markers to enable continuous motion tracking.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "According to TG-135, what detector type is recommended for small field relative dosimetry measurements?",
+    "answer": "Silicon diode detectors with appropriate correction factors",
+    "choices": [
+      "Silicon diode detectors with appropriate correction factors",
+      "Ion chambers with volumes smaller than 0.1 cc",
+      "Thermoluminescent dosimeters in small capsules only",
+      "Diamond detectors without energy correction needed"
+    ],
+    "explanation": "TG-135 recommends silicon diode detectors for small field relative dosimetry due to their small sensitive volumes and near tissue-equivalent response, though field size correction factors must be applied.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "During VMAT-based SRS commissioning, you observe that measured dose profiles for a 1 cm × 1 cm field show 15% higher central axis dose than TPS calculations, while 3 cm × 3 cm fields agree within 2%. Your micro-ion chamber shows similar discrepancies, but film dosimetry agrees with calculations. What is the most likely cause and solution?",
+    "answer": "Detector volume averaging effects require implementation of field-size dependent correction factors in beam modeling",
+    "choices": [
+      "Detector volume averaging effects require implementation of field-size dependent correction factors in beam modeling",
+      "TPS source model parameters need adjustment for electron contamination at small field sizes",
+      "Machine calibration drift requires recalibration using reference field conditions per TG-51",
+      "Leaf transmission modeling in TPS needs refinement for micro-MLC leakage characteristics"
+    ],
+    "explanation": "The agreement with film (high spatial resolution) but disagreement with ion chamber measurements indicates detector volume averaging. Field-size dependent correction factors should be applied to small field measurements per TG-135 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "You're implementing a new small field dosimetry protocol following TG-155 recommendations. Your Monte Carlo calculated correction factors for a 0.5 cm × 0.5 cm field differ by 8% from published values for the same detector-beam combination. What validation approach should you prioritize?",
+    "answer": "Cross-validate MC results using multiple independent detector types and published benchmark data",
+    "choices": [
+      "Cross-validate MC results using multiple independent detector types and published benchmark data",
+      "Repeat MC calculations with increased particle histories and refined geometry modeling",
+      "Accept published values since institutional MC may have systematic uncertainties",
+      "Commission using institutional MC values after phantom measurement verification"
+    ],
+    "explanation": "TG-155 emphasizes that significant deviations from published correction factors should be investigated through cross-validation with multiple detector types and comparison to benchmark data before implementation.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "You're developing an uncertainty budget for CyberKnife lung SBRT treatments. The contributing factors include: setup uncertainty (1.2 mm), tracking accuracy (0.8 mm), fiducial localization (0.5 mm), beam delivery accuracy (0.7 mm), and respiratory correlation (1.0 mm). Using quadratic combination with 95% confidence, what total geometric uncertainty should be reported?",
+    "answer": "4.1 mm total geometric uncertainty at 95% confidence level",
+    "choices": [
+      "4.1 mm total geometric uncertainty at 95% confidence level",
+      "3.8 mm total geometric uncertainty at 95% confidence level",
+      "4.4 mm total geometric uncertainty at 95% confidence level",
+      "3.5 mm total geometric uncertainty at 95% confidence level"
+    ],
+    "explanation": "Using quadratic combination: √(1.2² + 0.8² + 0.5² + 0.7² + 1.0²) = 2.05 mm (1σ). For 95% confidence (k=2): 2 × 2.05 = 4.1 mm total geometric uncertainty.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "A Monte Carlo simulation of small field output factors for cone-based SRS shows systematic 3% underestimation compared to measurements for cones <15 mm diameter. Your phase space files are validated for conventional fields. What is the most likely source requiring investigation?",
+    "answer": "Inadequate modeling of electron backscatter from cone aperture materials in primary beam transport",
+    "choices": [
+      "Inadequate modeling of electron backscatter from cone aperture materials in primary beam transport",
+      "Insufficient particle histories leading to statistical uncertainty in small volume scoring",
+      "Incorrect tissue assignment in patient phantom causing systematic dose calculation errors",
+      "Phase space contamination from particles outside field edges affecting small field accuracy"
+    ],
+    "explanation": "Small cone apertures create significant electron backscatter that affects the photon fluence distribution. This effect becomes more pronounced for smaller apertures and requires detailed modeling of cone materials and geometry in Monte Carlo simulations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "During FMEA analysis of your SRS program, you identify that incorrect small field correction factor application has RPN=336 (Severity=8, Occurrence=6, Detection=7). What risk mitigation strategy would most effectively reduce this RPN score?",
+    "answer": "Implement automated correction factor application with independent verification systems to reduce occurrence",
+    "choices": [
+      "Implement automated correction factor application with independent verification systems to reduce occurrence",
+      "Increase measurement frequency and add redundant detector systems to improve detection capability",
+      "Establish backup dosimetry protocols using film dosimetry to reduce potential severity",
+      "Enhance staff training programs and certification requirements to reduce occurrence probability"
+    ],
+    "explanation": "Automated systems with independent verification would significantly reduce occurrence probability from 6 to potentially 2-3, providing the greatest RPN reduction. Detection improvements alone would have less impact on this high-occurrence failure mode.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness on a linear accelerator?",
+    "answer": "±3% for photon beams",
+    "choices": [
+      "±2% for photon beams",
+      "±3% for photon beams",
+      "±5% for photon beams",
+      "±1% for photon beams"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should be within ±3% for photon beams as measured across the central 80% of the field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of photon and electron beams",
+    "choices": [
+      "Absolute dose calibration of photon and electron beams",
+      "Quality assurance testing of linear accelerators",
+      "Patient-specific dose verification procedures",
+      "Radiation safety monitoring in treatment rooms"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing standardized methods for absolute dose calibration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "How frequently should output constancy checks be performed on a linear accelerator according to TG-142?",
+    "answer": "Daily before patient treatments",
+    "choices": [
+      "Daily before patient treatments",
+      "Weekly on the same day",
+      "Monthly with other QA tests",
+      "Only after major maintenance"
+    ],
+    "explanation": "TG-142 requires daily output constancy checks to ensure the linear accelerator delivers consistent dose output before treating patients each day.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator QA?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Imaging Detector",
+      "External Patient Information Display",
+      "Energy Profile Indication Dosimeter"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric QA applications.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

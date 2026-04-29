@@ -1,0 +1,274 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation and mechanical isocenters",
+    "choices": [
+      "To verify the coincidence of radiation and mechanical isocenters",
+      "To measure small field output factors for beam calibration",
+      "To validate the accuracy of micro-MLC leaf positioning",
+      "To assess the homogeneity of dose distribution patterns"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter of the treatment machine, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Small Radiation Sources",
+      "Stereoscopic Ray Scanning",
+      "Single Radial Stereotaxy"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a technique that delivers high doses of radiation in a single fraction to small, well-defined targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "Which detector type is NOT recommended by TG-155 for small field dosimetry?",
+    "answer": "Standard air-filled ionization chambers",
+    "choices": [
+      "Silicon diode detectors",
+      "Diamond detectors",
+      "Standard air-filled ionization chambers",
+      "Plastic scintillation detectors"
+    ],
+    "explanation": "Standard air-filled ionization chambers have too large a sensitive volume for accurate small field measurements due to volume averaging effects and lack of lateral charged particle equilibrium.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field dosimetry corrections become necessary?",
+    "answer": "3 cm × 3 cm",
+    "choices": [
+      "1 cm × 1 cm",
+      "2 cm × 2 cm",
+      "3 cm × 3 cm",
+      "4 cm × 4 cm"
+    ],
+    "explanation": "Fields smaller than approximately 3 cm × 3 cm require special dosimetric considerations due to loss of lateral charged particle equilibrium and source occlusion effects.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended positioning accuracy for intracranial SRS treatments?",
+    "answer": "≤ 1 mm",
+    "choices": [
+      "≤ 0.5 mm",
+      "≤ 1 mm",
+      "≤ 1.5 mm",
+      "≤ 2 mm"
+    ],
+    "explanation": "TG-101 recommends positioning accuracy of ≤1 mm for intracranial SRS to ensure adequate target coverage while minimizing dose to critical structures.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the primary advantage of micro-MLCs over standard MLCs in stereotactic treatments?",
+    "answer": "Reduced penumbra width for improved conformity",
+    "choices": [
+      "Increased maximum dose rate capabilities",
+      "Reduced penumbra width for improved conformity",
+      "Enhanced mechanical stability during treatment",
+      "Improved heat dissipation characteristics"
+    ],
+    "explanation": "Micro-MLCs have smaller leaf widths (typically 2.5-5 mm) compared to standard MLCs, resulting in sharper penumbra and better conformity for small target volumes.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "In GammaKnife radiosurgery, how many cobalt-60 sources are typically used in modern units?",
+    "answer": "192 sources",
+    "choices": [
+      "64 sources",
+      "128 sources",
+      "192 sources",
+      "256 sources"
+    ],
+    "explanation": "Modern GammaKnife units (Perfexion and ICON models) utilize 192 cobalt-60 sources arranged in a hemispherical configuration to create highly conformal dose distributions.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the key technological feature that enables CyberKnife to track moving targets?",
+    "answer": "Real-time X-ray imaging and robotic arm adjustment",
+    "choices": [
+      "Respiratory gating with external marker monitoring",
+      "Real-time X-ray imaging and robotic arm adjustment",
+      "Implanted fiducial markers with RF tracking",
+      "Multi-leaf collimator dynamic tracking capability"
+    ],
+    "explanation": "CyberKnife uses real-time X-ray imaging to track fiducial markers or anatomical landmarks and automatically adjusts the robotic arm position to compensate for target motion during treatment.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A medical physicist observes that small field output factors measured with different detectors show systematic differences of up to 15% for a 1 cm × 1 cm field. Monte Carlo calculations suggest the silicon diode reading is 8% higher than the true dose, while the microDiamond detector shows 3% lower readings. The treatment planning system shows dose differences of 12% between calculation algorithms for the same field. What is the most appropriate approach to resolve this dosimetric uncertainty?",
+    "answer": "Establish detector-specific correction factors using Monte Carlo validation and implement cross-calibration protocols",
+    "choices": [
+      "Use the average of all detector measurements as the reference value",
+      "Establish detector-specific correction factors using Monte Carlo validation and implement cross-calibration protocols",
+      "Rely solely on the microDiamond detector due to its tissue equivalence",
+      "Increase field size margins to reduce the impact of measurement uncertainties"
+    ],
+    "explanation": "This scenario requires a comprehensive approach using Monte Carlo-validated correction factors for each detector type, following TG-155 recommendations for small field dosimetry uncertainty management.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT lung treatment verification, systematic Winston-Lutz deviations of 0.8 mm are observed in the superior-inferior direction, while anterior-posterior and left-right deviations remain within 0.3 mm. Simultaneously, the radiation therapy technologists report intermittent gantry vibration during high-dose-rate delivery. What is the most likely root cause and appropriate corrective action?",
+    "answer": "Mechanical wear in gantry bearing assembly requiring immediate engineering assessment and repair",
+    "choices": [
+      "Patient setup error requiring enhanced immobilization protocols",
+      "Mechanical wear in gantry bearing assembly requiring immediate engineering assessment and repair",
+      "Thermal expansion effects requiring environmental control optimization",
+      "Electronic noise in imaging system requiring detector recalibration"
+    ],
+    "explanation": "The combination of systematic unidirectional Winston-Lutz deviations and gantry vibration during high-dose-rate delivery indicates mechanical bearing wear, which compromises stereotactic accuracy and requires immediate attention.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-institutional SRS program reports 5% variance in small field output factors between identical linear accelerators using the same measurement protocol. Analysis reveals that beam energy spectra differ by 2% between machines, and detector positioning uncertainty is ±0.5 mm. What is the primary contributor to the observed variance and the most effective mitigation strategy?",
+    "answer": "Detector positioning uncertainty amplified by steep dose gradients requiring sub-millimeter setup protocols",
+    "choices": [
+      "Beam energy spectral differences requiring individual machine-specific correction factors",
+      "Detector positioning uncertainty amplified by steep dose gradients requiring sub-millimeter setup protocols",
+      "Manufacturing tolerances in micro-MLC systems requiring leaf-specific calibration",
+      "Temperature-dependent detector response requiring environmental standardization"
+    ],
+    "explanation": "In small fields, dose gradients can exceed 10%/mm, making ±0.5 mm positioning uncertainty the dominant error source. Sub-millimeter setup protocols are essential for measurement reproducibility.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "A comprehensive uncertainty budget for small field dosimetry includes: measurement repeatability (0.8%), detector calibration (1.2%), positioning uncertainty (1.5%), beam quality correction (0.9%), and Monte Carlo validation (1.1%). Using the law of propagation of uncertainties, what is the combined standard uncertainty for the small field correction factor determination?",
+    "answer": "2.4% (k=1)",
+    "choices": [
+      "2.1% (k=1)",
+      "2.4% (k=1)",
+      "2.8% (k=1)",
+      "3.2% (k=1)"
+    ],
+    "explanation": "Combined uncertainty = √(0.8² + 1.2² + 1.5² + 0.9² + 1.1²) = √5.75 = 2.4% for k=1. This follows GUM methodology for independent uncertainty components.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in a linear accelerator?",
+    "answer": "±3% for photon beams",
+    "choices": [
+      "±3% for photon beams",
+      "±5% for photon beams",
+      "±2% for photon beams",
+      "±1% for photon beams"
+    ],
+    "explanation": "TG-142 specifies that beam flatness tolerance should be ±3% for photon beams as measured across the central 80% of the field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of photon beams",
+    "choices": [
+      "Absolute dose calibration of photon beams",
+      "Quality assurance of imaging systems",
+      "Measurement of beam profile symmetry",
+      "Calibration of treatment planning systems"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing the standard method for absolute dose calibration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "How frequently should output constancy checks be performed on a linear accelerator according to TG-142?",
+    "answer": "Daily before first patient treatment",
+    "choices": [
+      "Daily before first patient treatment",
+      "Weekly on the same day",
+      "Monthly during scheduled maintenance",
+      "Annually with full calibration"
+    ],
+    "explanation": "TG-142 recommends daily output constancy measurements to ensure beam output remains within ±3% of the baseline value before treating patients.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator QA?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Machine Learning Calibration",
+      "Maximum Leakage Coefficient",
+      "Minimum Lethal Concentration"
+    ],
+    "explanation": "MLC refers to Multi-Leaf Collimator, the device consisting of multiple tungsten leaves that shape the radiation beam for conformal treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

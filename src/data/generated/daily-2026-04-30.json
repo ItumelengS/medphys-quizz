@@ -1,0 +1,257 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the mechanical isocenter accuracy of the linear accelerator",
+    "choices": [
+      "To verify the mechanical isocenter accuracy of the linear accelerator",
+      "To calibrate the dose rate of small radiation fields",
+      "To measure the penumbra width of stereotactic cones",
+      "To validate the leaf positioning accuracy of micro-MLCs"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter, which is critical for stereotactic accuracy. This test is recommended in TG-142 for routine QA.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic radiosurgery",
+    "choices": [
+      "Stereotactic radiosurgery",
+      "Single-fraction radiotherapy",
+      "Small-field radiation source",
+      "Stereotactic radiation system"
+    ],
+    "explanation": "SRS stands for stereotactic radiosurgery, a technique that delivers a high dose of radiation in a single fraction to a small, well-defined target with sub-millimeter precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the GammaKnife primarily designed to treat?",
+    "answer": "Intracranial lesions and brain tumors",
+    "choices": [
+      "Intracranial lesions and brain tumors",
+      "Prostate and pelvic malignancies",
+      "Lung and thoracic cancers",
+      "Breast and chest wall tumors"
+    ],
+    "explanation": "The GammaKnife is a dedicated stereotactic radiosurgery system specifically designed for treating intracranial lesions using 192 or 201 cobalt-60 sources arranged in a hemispherical configuration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What does SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic body radiation therapy",
+    "choices": [
+      "Stereotactic body radiation therapy",
+      "Single-beam radiotherapy technique",
+      "Small-field brachytherapy radiation",
+      "Stereotactic boost radiation treatment"
+    ],
+    "explanation": "SBRT stands for stereotactic body radiation therapy, which extends stereotactic techniques to extracranial sites, typically delivering high doses in 1-5 fractions with high precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 mm at isocenter",
+    "choices": [
+      "2.5 mm at isocenter",
+      "5.0 mm at isocenter",
+      "1.0 mm at isocenter",
+      "3.5 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5 mm at isocenter, which is smaller than conventional MLC leaves (5-10 mm) to provide better conformality for small target volumes in stereotactic treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the typical accuracy requirement for Winston-Lutz test results in stereotactic systems?",
+    "answer": "Less than 1 mm deviation",
+    "choices": [
+      "Less than 1 mm deviation",
+      "Less than 3 mm deviation",
+      "Less than 2 mm deviation",
+      "Less than 5 mm deviation"
+    ],
+    "explanation": "For stereotactic systems, the Winston-Lutz test typically requires mechanical isocenter accuracy of less than 1 mm, with many institutions requiring ≤0.5 mm for high-precision treatments as per TG-142 recommendations.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During GammaKnife treatment planning, sector blocking reduces the dose rate from 3.2 Gy/min to 1.8 Gy/min, while the treatment time increases from 25 to 45 minutes. What is the primary trade-off being optimized?",
+    "answer": "Conformality index improvement versus increased treatment duration and patient comfort",
+    "choices": [
+      "Conformality index improvement versus increased treatment duration and patient comfort",
+      "Source decay compensation versus mechanical accuracy degradation over time",
+      "Dose gradient enhancement versus radiation protection exposure limits",
+      "Target coverage optimization versus normal tissue complication probability reduction"
+    ],
+    "explanation": "Sector blocking in GammaKnife reduces the number of active sources to improve dose conformality and reduce dose to organs at risk, but extends treatment time. This represents a classic trade-off between plan quality and patient tolerance, particularly important for awake procedures.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A micro-MLC LINAC-based SRS system demonstrates leaf positioning reproducibility of ±0.15 mm (1σ) and MLC transmission of 1.8%. For a 8 mm diameter spherical target, what is the dominant source of dosimetric uncertainty?",
+    "answer": "Leaf positioning uncertainty creating systematic hot and cold spots",
+    "choices": [
+      "Leaf positioning uncertainty creating systematic hot and cold spots",
+      "MLC transmission causing excessive dose to surrounding tissue",
+      "Patient setup error overwhelming mechanical precision advantages",
+      "Small field dosimetry measurement uncertainty in beam modeling"
+    ],
+    "explanation": "For an 8 mm target, ±0.15 mm leaf positioning uncertainty represents ~2% of the target radius, creating significant dose heterogeneity. The 1.8% transmission is acceptable, and the geometric uncertainty dominates over other factors for such small targets.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A Monte Carlo commissioning study for small field SRS shows that kQclin,Qmsr factors vary by 8% between 5 mm and 30 mm cone sizes when using a 0.125 cc ion chamber. The statistical uncertainty is 0.8% (1σ). What is the primary systematic effect being quantified?",
+    "answer": "Volume averaging effects and spectral changes modifying chamber response across field sizes",
+    "choices": [
+      "Volume averaging effects and spectral changes modifying chamber response across field sizes",
+      "Statistical fluctuation limitations requiring increased particle histories for convergence",
+      "Geometric modeling uncertainties in cone scatter contribution calculations",
+      "Energy spectrum hardening variations affecting chamber wall perturbation factors"
+    ],
+    "explanation": "The 8% variation in correction factors across cone sizes with 0.8% statistical uncertainty indicates systematic volume averaging and spectral response changes. For small fields, the chamber response varies due to volume averaging effects and spectral changes, as detailed in TG-155 Monte Carlo recommendations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An uncertainty budget analysis for CyberKnife SBRT reveals: imaging registration (0.4 mm), tracking model (0.6 mm), mechanical accuracy (0.3 mm), and dose calculation (2.1%). Using root-sum-square combination, what is the total geometric uncertainty?",
+    "answer": "0.77 mm combined geometric uncertainty from independent error sources",
+    "choices": [
+      "0.77 mm combined geometric uncertainty from independent error sources",
+      "1.30 mm linear addition representing worst-case scenario analysis",
+      "0.65 mm excluding mechanical component as systematic bias",
+      "0.85 mm including correlation factors between tracking and imaging"
+    ],
+    "explanation": "RSS combination: √(0.4² + 0.6² + 0.3²) = √(0.16 + 0.36 + 0.09) = √0.61 = 0.77 mm. The dose calculation uncertainty (2.1%) is dosimetric, not geometric. RSS is appropriate when errors are independent and normally distributed, as typically assumed in medical physics uncertainty analysis per GUM guidelines.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Monte Carlo simulations of a 5 mm cone show that ignoring electron transport cutoff optimization increases calculation time by 340% while improving dose accuracy by only 0.3%. What is the optimal efficiency strategy?",
+    "answer": "Implement adaptive cutoff energies balancing precision requirements with computational resources",
+    "choices": [
+      "Implement adaptive cutoff energies balancing precision requirements with computational resources",
+      "Accept longer calculation times to achieve maximum theoretical accuracy",
+      "Use standard cutoffs accepting minor accuracy reduction for efficiency",
+      "Employ variance reduction techniques maintaining both speed and precision"
+    ],
+    "explanation": "The 340% time increase for 0.3% accuracy improvement represents poor computational efficiency. Adaptive cutoff strategies can optimize the precision-efficiency trade-off by using higher cutoffs in critical regions and lower cutoffs elsewhere, as recommended in TG-105 Monte Carlo guidelines for clinical applications.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements for linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements to ensure consistent dose delivery. This tolerance allows for normal day-to-day variations while maintaining clinical safety.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of photon and electron beams",
+    "choices": [
+      "Absolute dose calibration of photon and electron beams",
+      "Quality assurance testing of treatment planning systems",
+      "Commissioning procedures for multi-leaf collimators",
+      "Patient-specific dosimetric verification protocols"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing standardized methods for absolute dose calibration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What does beam flatness quantify in linear accelerator QA?",
+    "answer": "Dose uniformity across the central 80% of the beam profile",
+    "choices": [
+      "Dose uniformity across the central 80% of the beam profile",
+      "Penumbra width at the 50% dose level boundary",
+      "Variation in dose rate over time during irradiation",
+      "Alignment accuracy of the radiation beam axis"
+    ],
+    "explanation": "Beam flatness measures dose uniformity across the central 80% of the field, typically defined as the ratio of maximum to minimum dose in this region, ensuring homogeneous dose distribution.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the main function of EPID dosimetry in modern radiotherapy?",
+    "answer": "Real-time verification of delivered dose distributions",
+    "choices": [
+      "Real-time verification of delivered dose distributions",
+      "Primary calibration of linear accelerator output chambers",
+      "Measurement of patient setup positioning errors only",
+      "Replacement of ion chamber dosimetry for commissioning"
+    ],
+    "explanation": "EPID (Electronic Portal Imaging Device) dosimetry enables real-time verification of delivered dose distributions during treatment, providing immediate feedback on dose delivery accuracy compared to planned distributions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

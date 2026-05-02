@@ -1,0 +1,342 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify coincidence of radiation isocenter with mechanical rotation axes",
+    "choices": [
+      "To verify coincidence of radiation isocenter with mechanical rotation axes",
+      "To measure small field output factors for cone-based treatments",
+      "To calibrate micro-MLC leaf positioning accuracy for modulated beams",
+      "To determine dose distribution homogeneity in stereotactic targets"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical rotation axes of the gantry and collimator, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What defines a 'small field' according to TG-155 recommendations?",
+    "answer": "A field where lateral charged particle equilibrium is lost",
+    "choices": [
+      "Any field smaller than 3 cm × 3 cm at isocenter",
+      "A field where lateral charged particle equilibrium is lost",
+      "Fields used exclusively for stereotactic radiosurgery treatments",
+      "Any field requiring micro-MLC or cone-based collimation systems"
+    ],
+    "explanation": "TG-155 defines small fields based on the loss of lateral charged particle equilibrium, which occurs when the field size approaches the range of secondary electrons.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the typical fractionation scheme for single-fraction stereotactic radiosurgery (SRS)?",
+    "answer": "Single fraction delivering 12-24 Gy to tumor margin",
+    "choices": [
+      "Single fraction delivering 12-24 Gy to tumor margin",
+      "Three fractions of 8-12 Gy delivered on alternate days",
+      "Five fractions of 6-10 Gy delivered over one week",
+      "Single fraction delivering 6-12 Gy to tumor center"
+    ],
+    "explanation": "Single-fraction SRS typically delivers 12-24 Gy to the tumor margin in one session, depending on target size and location, as distinct from fractionated SBRT approaches.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the primary advantage of using a micro-MLC system over cone-based collimation?",
+    "answer": "Ability to create conformal dose distributions with intensity modulation",
+    "choices": [
+      "Higher maximum dose rate delivery for shortened treatment times",
+      "Ability to create conformal dose distributions with intensity modulation",
+      "Better mechanical accuracy for sub-millimeter target positioning",
+      "Reduced out-of-field leakage radiation compared to cone systems"
+    ],
+    "explanation": "Micro-MLCs allow for intensity modulated and conformal dose distributions that can be shaped to complex target volumes, unlike fixed circular or shaped cones.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the recommended detector for small field relative dosimetry measurements?",
+    "answer": "Unshielded silicon diode with appropriate correction factors",
+    "choices": [
+      "Ion chamber with volume less than 0.01 cm³",
+      "Unshielded silicon diode with appropriate correction factors",
+      "Diamond detector with real-time readout capability",
+      "Film dosimetry with high spatial resolution analysis"
+    ],
+    "explanation": "TG-135 recommends unshielded silicon diodes for small field relative dosimetry due to their small sensitive volume and near tissue-equivalent response when proper correction factors are applied.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical accuracy requirement for Winston-Lutz test results in stereotactic systems?",
+    "answer": "Coincidence within 1.0 mm radius for all gantry and couch angles",
+    "choices": [
+      "Coincidence within 0.5 mm radius for cardinal angles only",
+      "Coincidence within 1.0 mm radius for all gantry and couch angles",
+      "Coincidence within 2.0 mm radius averaged over all positions",
+      "Coincidence within 1.5 mm radius for non-coplanar geometries"
+    ],
+    "explanation": "Most guidelines require Winston-Lutz test results to demonstrate coincidence within 1.0 mm radius for all tested gantry and couch angle combinations to ensure stereotactic accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "In GammaKnife radiosurgery, what is the diameter of the 4 mm collimator helmet opening?",
+    "answer": "4.0 mm at the focal point with 50% isodose line",
+    "choices": [
+      "4.0 mm at the focal point with 90% isodose line",
+      "4.0 mm at the focal point with 50% isodose line",
+      "4.0 mm at the helmet surface before beam convergence",
+      "4.0 mm at the patient skull surface entry point"
+    ],
+    "explanation": "GammaKnife collimator sizes (4mm, 8mm, 16mm) refer to the diameter at the focal point where the 50% isodose line is located, not at other dose levels or physical locations.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary motion tracking method used by the CyberKnife system?",
+    "answer": "Orthogonal kV imaging with fiducial marker or skeletal tracking",
+    "choices": [
+      "Surface optical tracking with infrared marker detection system",
+      "Orthogonal kV imaging with fiducial marker or skeletal tracking",
+      "Electromagnetic transponder tracking with implanted beacon devices",
+      "Cone-beam CT imaging with real-time soft tissue registration"
+    ],
+    "explanation": "CyberKnife uses orthogonal kV X-ray imaging to track either implanted fiducial markers or skeletal anatomy for real-time patient positioning correction during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam 1×1 cm² field measured with a 0.6 cm³ ion chamber shows 15% lower reading compared to a silicon diode. The Monte Carlo calculated correction factor for the ion chamber is 0.85 for this field size. What is the most likely explanation for the discrepancy between measurement methods?",
+    "answer": "Ion chamber volume averaging and spectrum perturbation require Monte Carlo correction",
+    "choices": [
+      "Silicon diode energy dependence causing over-response in small fields",
+      "Ion chamber volume averaging and spectrum perturbation require Monte Carlo correction",
+      "Mechanical setup error causing different effective field sizes between detectors",
+      "Temperature and pressure corrections applied incorrectly to ion chamber reading"
+    ],
+    "explanation": "Large ion chambers in small fields exhibit significant volume averaging and spectrum perturbation effects, requiring Monte Carlo-calculated correction factors as described in TG-155 protocols.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During GammaKnife quality assurance, the helmet factor measurement for the 4mm collimator shows 5% deviation from baseline after recent 60Co source exchange. Considering decay correction and measurement uncertainty, what is the most appropriate investigation sequence?",
+    "answer": "Verify source positioning geometry and perform independent measurement with different detector",
+    "choices": [
+      "Recalibrate dose rate measurement system and repeat monthly QA protocol",
+      "Verify source positioning geometry and perform independent measurement with different detector",
+      "Adjust treatment planning system beam model to match measured helmet factors",
+      "Document deviation as acceptable within measurement uncertainty for small fields"
+    ],
+    "explanation": "A 5% deviation in helmet factors after source exchange suggests potential mechanical alignment issues. Independent verification with different detectors helps distinguish between measurement artifacts and genuine system changes before adjusting clinical parameters.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "For a CyberKnife SBRT lung treatment, the tracking system shows 3mm residual error during respiratory motion despite fiducial tracking. The treatment plan assumes 2mm accuracy. What is the optimal clinical response considering dose escalation and normal tissue constraints?",
+    "answer": "Pause treatment and investigate tracking algorithm performance with imaging review",
+    "choices": [
+      "Continue treatment with real-time adaptive margin expansion for motion uncertainty",
+      "Pause treatment and investigate tracking algorithm performance with imaging review",
+      "Reduce prescription dose by 10% to account for geometric uncertainty",
+      "Switch to respiratory gating with reduced duty cycle for motion management"
+    ],
+    "explanation": "Exceeding planned tracking accuracy requires investigation before proceeding, as this may indicate fiducial migration, algorithm failure, or patient setup issues that could compromise treatment efficacy and safety.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "A micro-MLC based SRS plan shows 2mm displacement in the 50% isodose distribution during phantom verification compared to TPS calculation. The Winston-Lutz test passed within 0.8mm. What systematic error analysis should be prioritized?",
+    "answer": "MLC modeling accuracy and leaf positioning calibration in treatment planning system",
+    "choices": [
+      "Patient setup and immobilization system mechanical stability verification",
+      "MLC modeling accuracy and leaf positioning calibration in treatment planning system",
+      "Dose calculation algorithm commissioning for small field conditions",
+      "Image guidance system registration accuracy for stereotactic coordinates"
+    ],
+    "explanation": "With Winston-Lutz passing, mechanical isocenter accuracy is confirmed. A 2mm systematic displacement suggests MLC modeling errors in the TPS, particularly leaf positioning or penumbra modeling for small fields.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Developing a Monte Carlo-based small field correction factor protocol for a new detector requires validation against multiple field sizes from 0.5×0.5 cm² to 3×3 cm². What is the optimal uncertainty budget allocation for Type A and Type B components when targeting 2% combined uncertainty?",
+    "answer": "Type A: 1.2% (measurement repeatability), Type B: 1.6% (MC modeling parameters)",
+    "choices": [
+      "Type A: 1.0% (measurement repeatability), Type B: 1.7% (MC modeling parameters)",
+      "Type A: 1.2% (measurement repeatability), Type B: 1.6% (MC modeling parameters)",
+      "Type A: 1.5% (measurement repeatability), Type B: 1.3% (MC modeling parameters)",
+      "Type A: 1.8% (measurement repeatability), Type B: 1.0% (MC modeling parameters)"
+    ],
+    "explanation": "For 2% combined uncertainty (k=1), optimal allocation considers that MC modeling uncertainties (Type B) typically dominate in small fields due to geometry and material property uncertainties, while measurement repeatability (Type A) can be well-controlled.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "A research Monte Carlo study comparing EGSnrc and GEANT4 for 0.5×0.5 cm² field output factors shows 3% difference. Both codes use identical phase space sources and voxel geometries. What is the most likely source of the discrepancy requiring investigation?",
+    "answer": "Electron transport parameter differences in low-energy cutoff and step-size algorithms",
+    "choices": [
+      "Statistical uncertainty requiring increased particle histories for convergence",
+      "Electron transport parameter differences in low-energy cutoff and step-size algorithms",
+      "Photon cross-section library version differences between simulation packages",
+      "Variance reduction technique implementation affecting transport efficiency"
+    ],
+    "explanation": "With identical geometries and sources, 3% differences between Monte Carlo codes typically arise from different electron transport algorithms, particularly low-energy cutoffs and step-size selection which significantly affect small field dose distributions.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "An FMEA analysis for stereotactic radiosurgery identifies MLC leaf positioning error as high-risk (RPN=240). The current QA detects 1mm errors monthly. What failure mode mitigation reduces RPN most effectively while maintaining clinical efficiency?",
+    "answer": "Implement automated daily MLC positioning verification with integrated treatment system",
+    "choices": [
+      "Increase monthly QA frequency to weekly manual measurements with tighter tolerances",
+      "Implement automated daily MLC positioning verification with integrated treatment system",
+      "Add redundant measurement systems requiring dual verification for all treatments",
+      "Establish patient-specific QA requirements for all stereotactic fraction deliveries"
+    ],
+    "explanation": "Automated daily verification significantly reduces occurrence probability while maintaining efficiency, providing the largest RPN reduction compared to increased manual QA frequency or redundant measurements that may impact clinical workflow.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Research-level uncertainty analysis for GammaKnife dose rate determination requires combining multiple uncertainty sources. Given: source strength (1.2%), geometry (0.8%), detector calibration (1.5%), and measurement reproducibility (0.6%), what is the combined standard uncertainty using proper uncertainty propagation?",
+    "answer": "2.3% combined standard uncertainty using quadrature addition method",
+    "choices": [
+      "2.1% combined standard uncertainty using linear addition method",
+      "2.3% combined standard uncertainty using quadrature addition method",
+      "2.7% combined standard uncertainty including correlation coefficients",
+      "2.0% combined standard uncertainty using weighted averaging method"
+    ],
+    "explanation": "Combined standard uncertainty uses quadrature addition: √(1.2² + 0.8² + 1.5² + 0.6²) = 2.3%, assuming independent uncertainty components as typically valid for GammaKnife dosimetry measurements.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the tolerance for daily output constancy measurements for linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 specifies that daily output constancy should be within ±3% of the baseline value to ensure consistent beam delivery for patient treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary standard protocol recommended for absolute dose calibration of megavoltage photon beams in water?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-40",
+      "TG-25"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For beam flatness measurements, what parameter is typically evaluated across the flattened portion of the beam profile?",
+    "answer": "Maximum variation within the central 80% of the field",
+    "choices": [
+      "Average dose rate across the entire field",
+      "Maximum variation within the central 80% of the field",
+      "Peak dose difference between opposing quadrants",
+      "Standard deviation of the penumbra region"
+    ],
+    "explanation": "Beam flatness is defined as the maximum variation in dose within the central 80% of the field size, typically expressed as a percentage according to IEC standards.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What type of detector is commonly integrated into the treatment head for EPID dosimetry applications?",
+    "answer": "Amorphous silicon flat panel detector",
+    "choices": [
+      "Ionization chamber array",
+      "Amorphous silicon flat panel detector",
+      "Scintillation crystal matrix",
+      "Diamond semiconductor detector"
+    ],
+    "explanation": "Electronic Portal Imaging Devices (EPIDs) typically use amorphous silicon flat panel detectors that can provide both imaging and dosimetric information for patient verification.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

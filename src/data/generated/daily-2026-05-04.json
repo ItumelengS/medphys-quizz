@@ -1,0 +1,206 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence between radiation isocenter and mechanical isocenter",
+    "choices": [
+      "To verify the coincidence between radiation isocenter and mechanical isocenter",
+      "To measure the small field output factors for commissioning procedures",
+      "To calibrate the micro-MLC leaf position accuracy during treatment",
+      "To determine the patient setup uncertainty for IGRT protocols"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation and mechanical isocenters coincide, which is critical for stereotactic accuracy. This is referenced in TG-142 and TG-101.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic radiosurgery",
+    "choices": [
+      "Stereotactic radiosurgery",
+      "Surface-guided radiotherapy system",
+      "Single-room shielding",
+      "Systematic resolution spectroscopy"
+    ],
+    "explanation": "SRS is the standard abbreviation for stereotactic radiosurgery, a technique that delivers a single high-dose fraction to small, well-defined targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "Which detector is NOT recommended for small field dosimetry according to current guidelines?",
+    "answer": "Standard Farmer-type ionization chamber",
+    "choices": [
+      "Standard Farmer-type ionization chamber",
+      "Silicon diode detector",
+      "Diamond detector",
+      "Plastic scintillation detector"
+    ],
+    "explanation": "Standard Farmer chambers have volumes too large for small field measurements and suffer from significant volume averaging effects. TG-155 recommends detectors with smaller sensitive volumes.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "8.0-10.0 mm at isocenter",
+      "0.5-1.0 mm at isocenter",
+      "15.0-20.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, which is smaller than conventional MLCs to provide better conformality for small targets in SRS.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical fractionation scheme for SBRT lung treatments?",
+    "answer": "3-8 fractions over 1-2 weeks",
+    "choices": [
+      "3-8 fractions over 1-2 weeks",
+      "25-30 fractions over 5-6 weeks",
+      "Single fraction treatment only",
+      "15-20 fractions over 3-4 weeks"
+    ],
+    "explanation": "SBRT lung treatments typically use 3-8 fractions delivered over 1-2 weeks, providing a hypofractionated approach between single-fraction SRS and conventional fractionation.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "Which TG report specifically addresses small field dosimetry recommendations?",
+    "answer": "TG-155",
+    "choices": [
+      "TG-155",
+      "TG-101",
+      "TG-135",
+      "TG-142"
+    ],
+    "explanation": "TG-155 specifically addresses small field dosimetry, providing guidance on detector selection, measurement techniques, and correction factors for fields smaller than 4×4 cm².",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of the CyberKnife system over conventional linac-based SRS?",
+    "answer": "Real-time tumor tracking capabilities",
+    "choices": [
+      "Real-time tumor tracking capabilities",
+      "Higher maximum dose rate output",
+      "Better beam energy spectrum quality",
+      "Lower patient radiation exposure"
+    ],
+    "explanation": "The CyberKnife system's primary advantage is its real-time tumor tracking capability using orthogonal imaging and robotic beam delivery, allowing treatment of moving targets.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "A Monte Carlo commissioning study for small field SRS shows systematic discrepancies in the penumbra region for cone collimators. EGSnrc simulations with BEAM/DOSXYZnrc use 2×10⁹ histories, ECUT=0.7 MeV, PCUT=0.01 MeV. The 20%-80% penumbra width measured with EBT3 film shows 1.8 mm for the 12.5 mm cone, while MC predicts 2.3 mm. Electron contamination is modeled using 18 MeV electrons (0.02% contamination). Given the clinical requirement of <5% dose difference at 2 mm distance-to-agreement for gamma analysis, what is the most appropriate modification to improve MC accuracy?",
+    "answer": "Implement detailed geometric modeling of cone manufacturing tolerances and edge effects",
+    "choices": [
+      "Implement detailed geometric modeling of cone manufacturing tolerances and edge effects",
+      "Increase electron transport cutoff energy to ECUT=1.5 MeV for improved accuracy",
+      "Modify the primary electron contamination spectrum energy distribution to 15 MeV",
+      "Increase simulation statistics to 5×10⁹ histories with refined voxel resolution"
+    ],
+    "explanation": "The systematic penumbra discrepancy suggests geometric modeling issues rather than statistical or transport parameter problems. Cone manufacturing tolerances and edge rounding effects significantly impact penumbra in small field MC modeling, as documented in recent small field MC literature.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3% from baseline measurement",
+    "choices": [
+      "±3% from baseline measurement",
+      "±5% from baseline measurement",
+      "±2% from baseline measurement",
+      "±1% from baseline measurement"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements relative to the established baseline value. This ensures adequate monitoring of accelerator stability while accounting for normal day-to-day variations.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference protocol for absolute dose calibration of megavoltage photon beams in water?",
+    "answer": "AAPM TG-51 protocol",
+    "choices": [
+      "AAPM TG-51 protocol",
+      "IAEA TRS-398 protocol",
+      "AAPM TG-21 protocol",
+      "ICRU Report 90 protocol"
+    ],
+    "explanation": "TG-51 is the standard AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing the methodology for absolute dose calibration in water phantoms.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the definition of beam flatness for a linear accelerator photon beam?",
+    "answer": "The ratio of maximum to minimum dose in the central 80% of the beam profile",
+    "choices": [
+      "The ratio of maximum to minimum dose in the central 80% of the beam profile",
+      "The difference between maximum and minimum dose across the entire field",
+      "The standard deviation of dose measurements across the beam profile",
+      "The percentage variation from the central axis dose at field edges"
+    ],
+    "explanation": "Beam flatness is defined as the ratio of maximum to minimum dose within the central 80% of the beam profile, typically expressed as a percentage. This metric quantifies dose uniformity across the treatment field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "According to TG-142, how frequently should MLC positional accuracy be checked for linear accelerators?",
+    "answer": "Monthly quality assurance testing",
+    "choices": [
+      "Monthly quality assurance testing",
+      "Daily quality assurance testing",
+      "Weekly quality assurance testing",
+      "Annual quality assurance testing"
+    ],
+    "explanation": "TG-142 recommends monthly testing of MLC positional accuracy to ensure proper leaf positioning and field shaping capabilities. This frequency balances thorough monitoring with practical workflow considerations.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,274 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of the radiation isocenter with the imaging isocenter",
+    "choices": [
+      "To verify the coincidence of the radiation isocenter with the imaging isocenter",
+      "To measure the output factor for small radiation fields",
+      "To calibrate the micro-MLC leaf positioning accuracy",
+      "To determine the penumbra width of stereotactic cones"
+    ],
+    "explanation": "The Winston-Lutz test verifies that the radiation and imaging isocenters coincide, which is critical for accurate stereotactic treatments as per TG-142 recommendations.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Single Rotation Surgery",
+      "Spatial Resolution System",
+      "Surface Registration Setup"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a technique that delivers high doses of radiation in a single fraction to small, well-defined targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the defining characteristic of a small radiation field according to current dosimetry standards?",
+    "answer": "The detector size is comparable to the beam penumbra width",
+    "choices": [
+      "The detector size is comparable to the beam penumbra width",
+      "The field size is smaller than 10 cm × 10 cm",
+      "The dose rate exceeds 600 cGy per minute",
+      "The treatment uses non-coplanar beam arrangements"
+    ],
+    "explanation": "Small fields are characterized by loss of lateral charged particle equilibrium where the detector size becomes comparable to the beam penumbra width, as defined in TG-155.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the Gamma Knife primarily designed to treat?",
+    "answer": "Intracranial lesions using cobalt-60 sources",
+    "choices": [
+      "Intracranial lesions using cobalt-60 sources",
+      "Extracranial tumors using linear accelerators",
+      "Superficial skin lesions using electron beams",
+      "Prostate cancer using brachytherapy seeds"
+    ],
+    "explanation": "The Gamma Knife uses multiple cobalt-60 sources arranged in a hemispherical pattern specifically for treating intracranial lesions with high precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "8.0-10.0 mm at isocenter",
+      "0.5-1.0 mm at isocenter",
+      "15.0-20.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing improved conformality for small target volumes compared to standard MLCs.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "According to TG-135, what detector is recommended as the gold standard for small field output factor measurements?",
+    "answer": "Alanine pellets with EPR readout",
+    "choices": [
+      "Alanine pellets with EPR readout",
+      "Silicon diodes with temperature correction",
+      "Diamond detectors with voltage bias",
+      "Thermoluminescent dosimeters in powder form"
+    ],
+    "explanation": "TG-135 identifies alanine pellets read with electron paramagnetic resonance (EPR) as the closest to an ideal detector for small field dosimetry reference measurements.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by the CyberKnife system for patient positioning?",
+    "answer": "Orthogonal kV imaging with fiducial markers",
+    "choices": [
+      "Orthogonal kV imaging with fiducial markers",
+      "Optical surface monitoring with infrared cameras",
+      "Electromagnetic transponder beacon tracking",
+      "Ultrasound-based anatomical landmark detection"
+    ],
+    "explanation": "The CyberKnife primarily uses orthogonal kV X-ray imaging to track implanted fiducial markers for real-time patient positioning and motion correction.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A medical physicist observes systematic discrepancies in small field output factors when switching between different detector types during commissioning. The ion chamber reads 15% higher than the diamond detector for a 1×1 cm field, while both detectors agree within 1% for 10×10 cm fields. Monte Carlo simulations confirm the diamond detector results. What is the most likely explanation for this systematic error?",
+    "answer": "Volume averaging effects in the ion chamber due to insufficient spatial resolution for the small field penumbra",
+    "choices": [
+      "Volume averaging effects in the ion chamber due to insufficient spatial resolution for the small field penumbra",
+      "Temperature-dependent sensitivity variations between the two detector materials during measurement",
+      "Incorrect application of beam quality correction factors for the specific small field geometry",
+      "Systematic calibration errors in the diamond detector's charge collection efficiency"
+    ],
+    "explanation": "The ion chamber's larger sensitive volume causes volume averaging in small fields where the detector size approaches the penumbra width, leading to overestimation of output factors as described in TG-155.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT treatment planning for a lung lesion, the physicist notices that the 95% isodose line conformity index is acceptable (CI=1.15), but the gradient index is poor (GI=8.2). The plan uses 9 coplanar IMRT beams with micro-MLC shaping. What modification would most effectively improve the gradient index while maintaining target coverage?",
+    "answer": "Implement non-coplanar beam arrangements with volumetric arc therapy to improve dose fall-off",
+    "choices": [
+      "Implement non-coplanar beam arrangements with volumetric arc therapy to improve dose fall-off",
+      "Increase the number of coplanar beams from 9 to 15 while maintaining current MLC constraints",
+      "Reduce the planning target volume margin from 5mm to 3mm to allow tighter dose distributions",
+      "Switch from micro-MLC to cone-based delivery with multiple isocenters for better conformality"
+    ],
+    "explanation": "Non-coplanar beam arrangements provide better dose fall-off characteristics and improved gradient index by allowing optimal beam angles that avoid critical structures while maintaining target conformity.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Winston-Lutz analysis for a new linear accelerator shows consistent 0.8mm displacement at all gantry angles, with the displacement vector maintaining constant direction relative to the treatment couch. The imaging system geometry check passes all tolerances. What mechanical adjustment is most likely needed to correct this systematic error?",
+    "answer": "Adjustment of the radiation isocenter position relative to the gantry rotation axis",
+    "choices": [
+      "Adjustment of the radiation isocenter position relative to the gantry rotation axis",
+      "Recalibration of the electronic portal imaging device positioning accuracy",
+      "Realignment of the treatment couch vertical and longitudinal positioning systems",
+      "Correction of the collimator rotation axis alignment with respect to central beam axis"
+    ],
+    "explanation": "A constant displacement vector at all gantry angles indicates the radiation isocenter is offset from the gantry rotation axis, requiring mechanical adjustment of the beam steering system.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis for a multi-institutional SRS program identifies that incorrect small field output factor application has an RPN of 336 (Severity=8, Occurrence=6, Detection=7). A proposed mitigation involves implementing automated TPS cross-checks with an independent Monte Carlo system. If this reduces Detection to 3 while maintaining other factors, what is the revised risk priority number?",
+    "answer": "144, representing a 57% reduction in overall risk priority",
+    "choices": [
+      "144, representing a 57% reduction in overall risk priority",
+      "168, representing a 50% reduction in overall risk priority",
+      "96, representing a 71% reduction in overall risk priority",
+      "126, representing a 62% reduction in overall risk priority"
+    ],
+    "explanation": "RPN = Severity × Occurrence × Detection. New RPN = 8 × 6 × 3 = 144. Percentage reduction = (336-144)/336 × 100% = 57%.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "A research study investigating machine-specific small field correction factors uses EGSnrc Monte Carlo simulations with DOSXYZnrc scoring. The phase space files contain 2×10⁸ particles, and preliminary results show that detector volume averaging contributes 1.2% ± 0.3% systematic uncertainty to output factor measurements. What statistical approach should be used to determine the minimum number of detector positions required for robust uncertainty quantification?",
+    "answer": "Bootstrap resampling with confidence interval estimation and convergence testing of systematic components",
+    "choices": [
+      "Bootstrap resampling with confidence interval estimation and convergence testing of systematic components",
+      "Bayesian inference with prior distributions based on published TG-155 uncertainty budgets",
+      "Analysis of variance decomposition with nested sampling across geometric and material parameters",
+      "Maximum likelihood estimation using Gaussian error propagation through detector response matrices"
+    ],
+    "explanation": "Bootstrap resampling provides robust uncertainty quantification for Monte Carlo data by repeatedly sampling the dataset to estimate confidence intervals and assess convergence of both statistical and systematic components.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the tolerance for beam flatness constancy for photon beams?",
+    "answer": "±1%",
+    "choices": [
+      "±0.5%",
+      "±1%",
+      "±2%",
+      "±3%"
+    ],
+    "explanation": "TG-142 specifies a tolerance of ±1% for photon beam flatness constancy measurements during routine QA procedures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of photon and electron beams",
+    "choices": [
+      "Daily output constancy checks for linear accelerators",
+      "Absolute dose calibration of photon and electron beams",
+      "Monthly mechanical accuracy verification procedures",
+      "Annual safety interlock testing requirements"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing procedures for absolute dose calibration.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "Which QA test frequency does TG-142 recommend for linear accelerator output constancy checks?",
+    "answer": "Daily",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "explanation": "TG-142 recommends daily output constancy checks as part of the routine QA program to ensure beam output stability before patient treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator QA?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Maximum Leaf Compensation",
+      "Multi-Leaf Collimator",
+      "Machine Learning Calibration",
+      "Mechanical Limitation Check"
+    ],
+    "explanation": "MLC refers to Multi-Leaf Collimator, which consists of individually movable tungsten leaves used to shape radiation beams and requires specific QA procedures as outlined in TG-142.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

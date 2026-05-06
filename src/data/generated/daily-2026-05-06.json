@@ -1,0 +1,36 @@
+[
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary calibration protocol recommended by AAPM for absolute dose determination in external beam radiotherapy?",
+    "answer": "TG-51 protocol",
+    "choices": [
+      "TG-21 protocol",
+      "TG-40 protocol",
+      "TG-51 protocol",
+      "TG-142 protocol"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator quality assurance?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Imaging Detector",
+      "Electronic Position Indication Device",
+      "External Patient Imaging Display"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric quality assurance applications.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary characteristic that defines stereotactic radiosurgery (SRS)?",
+    "answer": "High-dose radiation delivered in a single fraction with millimeter accuracy",
+    "choices": [
+      "High-dose radiation delivered in a single fraction with millimeter accuracy",
+      "Low-dose radiation delivered over multiple fractions with centimeter accuracy",
+      "Medium-dose radiation delivered in two fractions with submillimeter accuracy",
+      "Variable-dose radiation delivered over five fractions with millimeter accuracy"
+    ],
+    "explanation": "SRS is defined by its ability to deliver ablative doses in a single session with exceptional spatial precision, typically ≤1mm accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate in stereotactic systems?",
+    "answer": "Coincidence between radiation isocenter and imaging isocenter",
+    "choices": [
+      "Coincidence between radiation isocenter and imaging isocenter",
+      "Accuracy of dose delivery to small treatment volumes",
+      "Uniformity of radiation beam intensity across the field",
+      "Stability of gantry rotation during treatment delivery"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation and imaging isocenters coincide within tolerance.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the fundamental principle of GammaKnife radiosurgery?",
+    "answer": "Multiple cobalt-60 sources converging at a common focal point",
+    "choices": [
+      "Multiple cobalt-60 sources converging at a common focal point",
+      "Single linear accelerator rotating around the patient continuously",
+      "Robotic arm positioning a linac for non-coplanar delivery",
+      "Intensity-modulated beams delivered through micro-collimators"
+    ],
+    "explanation": "GammaKnife uses 192 cobalt-60 sources arranged in a hemispherical array, all focused at a single isocenter for precise radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What defines a 'small field' according to current dosimetry standards?",
+    "answer": "Field where lateral charged particle equilibrium is not established",
+    "choices": [
+      "Field where lateral charged particle equilibrium is not established",
+      "Field with dimensions smaller than 10 cm × 10 cm",
+      "Field where output factor varies by more than 5%",
+      "Field requiring specialized collimation systems for beam shaping"
+    ],
+    "explanation": "Small fields are fundamentally defined by the loss of lateral charged particle equilibrium, not by absolute size criteria.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended tolerance for SRS isocenter accuracy?",
+    "answer": "≤1.0 mm radial displacement from true isocenter",
+    "choices": [
+      "≤1.0 mm radial displacement from true isocenter",
+      "≤2.0 mm radial displacement from true isocenter",
+      "≤0.5 mm radial displacement from true isocenter",
+      "≤1.5 mm radial displacement from true isocenter"
+    ],
+    "explanation": "TG-101 specifies that the total isocenter uncertainty should be ≤1.0 mm for single-fraction SRS treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the primary advantage of micro-MLCs over traditional circular collimators in SRS?",
+    "answer": "Improved conformity for irregularly shaped target volumes",
+    "choices": [
+      "Improved conformity for irregularly shaped target volumes",
+      "Reduced treatment delivery time for all target sizes",
+      "Enhanced dose rate capabilities during beam delivery",
+      "Superior penumbra characteristics for all field sizes"
+    ],
+    "explanation": "Micro-MLCs allow dynamic field shaping that conforms better to irregular target geometries compared to fixed circular collimators.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical fractionation scheme for SBRT lung treatments?",
+    "answer": "3-8 fractions delivering 45-60 Gy total dose",
+    "choices": [
+      "3-8 fractions delivering 45-60 Gy total dose",
+      "15-20 fractions delivering 30-40 Gy total dose",
+      "1-2 fractions delivering 20-25 Gy total dose",
+      "10-12 fractions delivering 50-70 Gy total dose"
+    ],
+    "explanation": "SBRT lung protocols typically use hypofractionated schemes with 3-8 fractions to deliver ablative doses while managing normal tissue toxicity.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "According to TG-135, what detector is recommended for small field output factor measurements?",
+    "answer": "Diamond detectors without any correction factors applied",
+    "choices": [
+      "Silicon diode detectors with appropriate correction factors",
+      "Standard cylindrical ionization chambers without corrections",
+      "Diamond detectors without any correction factors applied",
+      "Film dosimetry with densitometric analysis protocols"
+    ],
+    "explanation": "TG-135 recommends silicon diodes as reference detectors for small field dosimetry, with proper correction factors applied.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A CyberKnife system shows systematic targeting errors of 1.2 mm in the superior direction during end-to-end testing with a anthropomorphic phantom. The respiratory tracking shows 0.3 mm RMS error, while the spine tracking demonstrates 0.8 mm accuracy. Given that treatments require <1.5 mm total geometric uncertainty, what is the most appropriate corrective action sequence?",
+    "answer": "Recalibrate imaging-to-treatment coordinate transformation, verify robot positioning accuracy, then reassess tracking algorithms",
+    "choices": [
+      "Recalibrate imaging-to-treatment coordinate transformation, verify robot positioning accuracy, then reassess tracking algorithms",
+      "Adjust respiratory model parameters, increase PTV margins, then modify beam path optimization",
+      "Replace tracking cameras, recalibrate stereoscopic imaging, then update treatment planning algorithms",
+      "Modify patient positioning protocol, adjust table calibration, then validate with repeat phantom measurements"
+    ],
+    "explanation": "Systematic directional errors typically indicate coordinate transformation issues, requiring sequential verification of imaging registration, robot mechanics, and tracking systems per manufacturer protocols.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system for SRS, output factors measured with a PTW 60019 microDiamond detector show 15% higher values compared to EGS Monte Carlo calculations for 5×5 mm² fields. The beam model in the TPS matches larger field measurements perfectly. What is the most likely systematic issue requiring investigation?",
+    "answer": "Detector positioning uncertainty and volume averaging effects combined with inadequate small field correction factors",
+    "choices": [
+      "Detector positioning uncertainty and volume averaging effects combined with inadequate small field correction factors",
+      "Monte Carlo statistical uncertainty and inappropriate phase space representation in the simulation geometry",
+      "Beam modeling errors in the penumbra region affecting the treatment planning system calculations",
+      "MLC leakage contributions not properly accounted for in both measurement and calculation protocols"
+    ],
+    "explanation": "Large discrepancies between diamond detector measurements and MC calculations typically indicate detector positioning/averaging effects, requiring careful analysis of correction factors and setup geometry per TG-155 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A GammaKnife Perfexion unit demonstrates dose rate variations of ±8% across different sectors during routine QA. Source decay calculations predict ±3% variation. Considering the 192-source geometry and collimator system, what systematic investigation approach should be prioritized?",
+    "answer": "Individual source activity verification, collimator alignment assessment, and detector positioning reproducibility analysis",
+    "choices": [
+      "Individual source activity verification, collimator alignment assessment, and detector positioning reproducibility analysis",
+      "Helmet exchange mechanism calibration, patient positioning system validation, and imaging registration accuracy",
+      "Treatment planning algorithm updates, dose calculation grid refinement, and beam modeling parameter adjustment",
+      "Radiation shielding integrity assessment, room temperature stability monitoring, and electromagnetic interference evaluation"
+    ],
+    "explanation": "Dose rate variations exceeding decay predictions suggest individual source or mechanical alignment issues requiring systematic sector-by-sector analysis and collimator geometry verification.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "For SBRT spine treatments near the spinal cord, a multi-institutional study shows local control rates of 85% with current dose constraints. Analysis reveals that 0.1 cc spinal cord volumes receive doses varying from 18-23 Gy in 3 fractions across institutions. What integrated approach addresses both efficacy and safety optimization?",
+    "answer": "Implement risk-adapted planning with biological modeling, standardize contouring protocols, and establish outcome-based dose constraints",
+    "choices": [
+      "Implement risk-adapted planning with biological modeling, standardize contouring protocols, and establish outcome-based dose constraints",
+      "Increase treatment fractions universally, reduce target coverage requirements, and modify patient selection criteria",
+      "Mandate specific treatment planning systems, standardize beam arrangements, and implement uniform PTV margins",
+      "Establish centralized treatment planning, require specific immobilization systems, and mandate imaging protocols"
+    ],
+    "explanation": "Optimal SBRT spine outcomes require integration of biological modeling (TCP/NTCP), standardized anatomical definitions, and evidence-based constraints that balance local control with toxicity risks.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Design a Monte Carlo validation protocol for a new SRS treatment planning system that must demonstrate <2% dose accuracy in regions with dose gradients >5%/mm. Your EGSnrc-based reference calculations show systematic deviations in penumbra regions. What comprehensive validation approach addresses both statistical and systematic uncertainties?",
+    "answer": "Multi-code benchmarking (EGSnrc, GEANT4, MCNP) with experimental validation using multiple detector types and uncertainty propagation analysis",
+    "choices": [
+      "Multi-code benchmarking (EGSnrc, GEANT4, MCNP) with experimental validation using multiple detector types and uncertainty propagation analysis",
+      "Single-code validation with increased statistical precision and simplified experimental verification using ionization chambers",
+      "Analytical dose calculation comparison with Monte Carlo using standardized test cases and manufacturer-provided benchmarks",
+      "Clinical case retrospective analysis with outcome correlation and dosimetric parameter sensitivity studies"
+    ],
+    "explanation": "Robust TPS validation requires multi-code MC benchmarking to identify systematic errors, experimental validation with appropriate detectors for high-gradient regions, and comprehensive uncertainty analysis per AAPM TG-114.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Implement a comprehensive FMEA analysis for a multi-platform SRS program (LINAC-based, GammaKnife, CyberKnife) where a failure mode analysis reveals that patient setup errors have RPN values of 240 (LINAC), 120 (GammaKnife), and 180 (CyberKnife). Design an integrated risk mitigation strategy addressing technology-specific vulnerabilities.",
+    "answer": "Technology-specific protocols with redundant verification, cross-platform QA harmonization, and adaptive monitoring based on failure mode criticality",
+    "choices": [
+      "Technology-specific protocols with redundant verification, cross-platform QA harmonization, and adaptive monitoring based on failure mode criticality",
+      "Unified protocols across all platforms with standardized tolerance levels and identical QA procedures for consistency",
+      "Risk-based patient selection with platform assignment based solely on RPN scores and technical capabilities",
+      "Enhanced training programs with platform-specific competency requirements and separate quality management systems"
+    ],
+    "explanation": "Effective multi-platform FMEA implementation requires technology-specific risk mitigation while maintaining program coherence through harmonized QA standards and risk-stratified monitoring protocols.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Develop an advanced quality management framework for SRS/SBRT that integrates real-time monitoring, predictive analytics, and outcome correlation. Your institution treats 200 SRS cases annually with historical local control of 92%. Design a comprehensive system that addresses statistical process control, trend analysis, and continuous improvement.",
+    "answer": "Statistical process control with control charts, machine learning algorithms for predictive maintenance, and outcome-based feedback loops with correlation analysis",
+    "choices": [
+      "Statistical process control with control charts, machine learning algorithms for predictive maintenance, and outcome-based feedback loops with correlation analysis",
+      "Traditional QA protocols with monthly reviews, annual calibrations, and retrospective outcome analysis using standard statistical methods",
+      "Risk-based monitoring with threshold alerts, quarterly assessments, and manual correlation studies between technical and clinical parameters",
+      "Automated data collection systems with real-time alerts, standardized reporting, and annual comprehensive program reviews"
+    ],
+    "explanation": "Advanced QM frameworks require integration of SPC principles, predictive analytics for equipment optimization, and closed-loop outcome correlation to drive continuous improvement in SRS programs per modern quality paradigms.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam output constancy checks performed during daily QA?",
+    "answer": "±3%",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily beam output constancy checks using ion chambers or diode detectors.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference dosimetry protocol recommended by AAPM for absolute dose calibration of linear accelerators?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-142",
+      "TG-100"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the tolerance limit for beam flatness in the central 80% of the field for photon beams?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±4%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should be within ±3% in the central 80% of the field for photon beams during routine QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for performing comprehensive MLC QA checks according to TG-142 guidelines?",
+    "answer": "Monthly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Quarterly"
+    ],
+    "explanation": "TG-142 recommends monthly MLC QA checks including leaf position accuracy, leaf speed, and dosimetric leaf gap measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

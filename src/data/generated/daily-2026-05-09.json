@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is stereotactic radiosurgery (SRS)?",
+    "answer": "A technique delivering high dose radiation in a single fraction using precise stereotactic guidance",
+    "choices": [
+      "A technique delivering high dose radiation in a single fraction using precise stereotactic guidance",
+      "A surgical procedure using stereotactic frames for brain tumor removal with minimal invasiveness",
+      "A fractionated radiotherapy technique using multiple small beams over several treatment sessions",
+      "A diagnostic imaging technique combining stereotactic localization with real-time tumor tracking"
+    ],
+    "explanation": "SRS is defined as the precise delivery of a high radiation dose in a single fraction to a well-defined target using stereotactic guidance. This distinguishes it from conventional fractionated radiotherapy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily assess?",
+    "answer": "Mechanical isocenter accuracy and alignment of imaging and treatment systems",
+    "choices": [
+      "Small field output factor accuracy and dosimetric calibration for stereotactic treatments",
+      "Mechanical isocenter accuracy and alignment of imaging and treatment systems",
+      "Patient positioning reproducibility and stereotactic frame rigidity during treatment",
+      "Multi-leaf collimator leaf positioning accuracy and dynamic motion synchronization"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence of the mechanical isocenter with the radiation isocenter and imaging system alignment, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is a micro-MLC in stereotactic radiotherapy?",
+    "answer": "A multi-leaf collimator with leaf widths typically 2.5-5mm for precise small field shaping",
+    "choices": [
+      "A miniaturized treatment head designed specifically for pediatric stereotactic procedures",
+      "A multi-leaf collimator with leaf widths typically 2.5-5mm for precise small field shaping",
+      "A secondary collimation system using micro-adjustable tungsten blocks for field definition",
+      "A computer-controlled aperture system using variable-diameter circular collimators"
+    ],
+    "explanation": "Micro-MLCs feature narrower leaf widths (typically 2.5-5mm) compared to standard MLCs, allowing more precise field shaping for small stereotactic targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What characterizes the Gamma Knife radiosurgery system?",
+    "answer": "Multiple cobalt-60 sources arranged in a helmet configuration for convergent beam delivery",
+    "choices": [
+      "Multiple cobalt-60 sources arranged in a helmet configuration for convergent beam delivery",
+      "Linear accelerator mounted on robotic arm with real-time image guidance capabilities",
+      "Rotating gantry system with micro-MLC and cone-based collimation for precise targeting",
+      "Fixed beam geometry using specialized tungsten collimators with stereotactic frame immobilization"
+    ],
+    "explanation": "The Gamma Knife uses approximately 200 cobalt-60 sources arranged in a hemispherical configuration, focusing radiation beams to a precise isocenter for stereotactic radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended dose prescription method for single-fraction SRS?",
+    "answer": "Prescription to an isodose line that encompasses the target with adequate conformity",
+    "choices": [
+      "Prescription to an isodose line that encompasses the target with adequate conformity",
+      "Prescription to the maximum dose point within the target volume center",
+      "Prescription to the mean dose across the entire target volume",
+      "Prescription to the minimum dose covering 95% of the target volume"
+    ],
+    "explanation": "TG-101 recommends prescribing to an isodose line (typically 50-90%) that provides adequate target coverage and conformity, rather than to maximum or mean doses.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field dosimetry corrections are required?",
+    "answer": "Fields smaller than approximately 3×3 cm² or equivalent circular diameter",
+    "choices": [
+      "Fields smaller than approximately 3×3 cm² or equivalent circular diameter",
+      "Fields smaller than approximately 5×5 cm² or equivalent circular diameter",
+      "Fields smaller than approximately 2×2 cm² or equivalent circular diameter",
+      "Fields smaller than approximately 4×4 cm² or equivalent circular diameter"
+    ],
+    "explanation": "Small field effects become significant for fields smaller than approximately 3×3 cm², where lateral electronic disequilibrium and detector response issues require special consideration per TG-155.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What distinguishes SBRT from conventional radiotherapy in terms of fractionation?",
+    "answer": "SBRT uses 3-8 fractions with doses per fraction typically exceeding 5-7 Gy",
+    "choices": [
+      "SBRT uses 1-5 fractions with doses per fraction typically exceeding 6-8 Gy",
+      "SBRT uses 5-10 fractions with doses per fraction typically exceeding 4-6 Gy",
+      "SBRT uses 10-15 fractions with doses per fraction typically exceeding 3-4 Gy",
+      "SBRT uses 3-8 fractions with doses per fraction typically exceeding 5-7 Gy"
+    ],
+    "explanation": "SBRT (stereotactic body radiotherapy) is characterized by hypofractionation using 1-5 fractions with high doses per fraction, typically >6-8 Gy, as defined in TG-101.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "According to TG-135, which detector type is NOT recommended for small field relative dose measurements?",
+    "answer": "Large volume ionization chambers with volumes greater than 0.1 cm³",
+    "choices": [
+      "Large volume ionization chambers with volumes greater than 0.1 cm³",
+      "Small volume ionization chambers with volumes less than 0.1 cm³",
+      "Silicon diode detectors with appropriate energy response corrections",
+      "Diamond detectors with high spatial resolution characteristics"
+    ],
+    "explanation": "TG-135 recommends against large volume ionization chambers for small field dosimetry due to volume averaging effects that compromise spatial resolution and accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 4mm cone SRS treatment shows systematic underdosage when measured with multiple detectors. The treatment planning system uses a 1mm grid, beam modeling includes electron transport, and the Winston-Lutz test shows 0.3mm deviation. Small field output factors were measured with a 0.016 cm³ ionization chamber. What is the most likely cause of the dosimetric discrepancy?",
+    "answer": "Inappropriate detector choice for small field output factor measurement requiring detector-specific correction factors",
+    "choices": [
+      "Insufficient calculation grid resolution causing dose averaging artifacts in the high-gradient region",
+      "Inadequate electron transport modeling in the treatment planning system's dose calculation algorithm",
+      "Mechanical isocenter uncertainty exceeding tolerance limits affecting dose delivery accuracy",
+      "Inappropriate detector choice for small field output factor measurement requiring detector-specific correction factors"
+    ],
+    "explanation": "For 4mm cones, even small volume ionization chambers suffer from volume averaging and energy response issues. TG-155 recommends using detectors like diodes or diamonds with appropriate correction factors for such small fields.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During CyberKnife commissioning, measured dose distributions show systematic deviations from calculated doses in heterogeneous lung phantoms for SBRT treatments. The system passes all homogeneous phantom checks and tracking accuracy tests. Monte Carlo calculations agree with measurements. What should be investigated first?",
+    "answer": "Tissue heterogeneity correction algorithm implementation and commissioning beam data accuracy in heterogeneous media",
+    "choices": [
+      "Respiratory motion tracking system calibration and synchronization with beam delivery timing",
+      "Patient positioning system accuracy and stereotactic coordinate system transformation matrices",
+      "Tissue heterogeneity correction algorithm implementation and commissioning beam data accuracy in heterogeneous media",
+      "Multi-leaf collimator positioning accuracy and dynamic beam shaping during treatment delivery"
+    ],
+    "explanation": "The discrepancy in heterogeneous media while maintaining accuracy in homogeneous phantoms suggests issues with heterogeneity corrections in the treatment planning system, which Monte Carlo verification would help identify.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "An SRS program implements risk analysis showing the highest risk failure mode is incorrect small field output factors. The current QC includes monthly constancy checks with a single detector. What comprehensive risk mitigation strategy addresses this failure mode most effectively?",
+    "answer": "Multi-detector cross-validation system with independent measurement techniques and automated analysis comparing results to established baselines",
+    "choices": [
+      "Increased frequency of existing QC measurements with tighter tolerance specifications and immediate intervention protocols",
+      "Multi-detector cross-validation system with independent measurement techniques and automated analysis comparing results to established baselines",
+      "Enhanced documentation procedures with dual physicist verification and comprehensive measurement uncertainty analysis protocols",
+      "Implementation of real-time dosimetric verification during treatment with immediate feedback and automated safety interlocks"
+    ],
+    "explanation": "FMEA principles suggest redundant, independent verification methods provide the most robust risk mitigation. Multi-detector validation addresses detector-specific uncertainties and systematic errors that single-detector QC might miss.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A research study requires uncertainty budgets for small field dosimetry in SRS treatments. Monte Carlo simulations show detector perturbation effects of 3%, positioning uncertainty contributes 2%, and energy dependence adds 1.5%. Considering systematic and random components, what is the combined standard uncertainty using proper uncertainty propagation?",
+    "answer": "Combined uncertainty requires detailed analysis of correlation coefficients and systematic vs. random component separation per GUM methodology",
+    "choices": [
+      "Total uncertainty is 6.5% using simple arithmetic addition of all identified uncertainty components",
+      "Combined standard uncertainty is approximately 3.7% using root-sum-square combination of independent components",
+      "Combined uncertainty requires detailed analysis of correlation coefficients and systematic vs. random component separation per GUM methodology",
+      "Expanded uncertainty is 7.4% using coverage factor k=2 applied to the root-sum-square combination"
+    ],
+    "explanation": "Proper uncertainty analysis per GUM requires understanding correlations between components and separating systematic from random effects. Simply combining components without this analysis can lead to significant errors in small field dosimetry.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of a micro-MLC system for small field SRS shows discrepancies in penumbra width compared to measurements. The simulation includes detailed leaf geometry, material composition, and electron transport. Leaf positioning is verified accurate. What advanced modeling consideration is most critical to investigate?",
+    "answer": "Leaf edge geometry modeling including manufacturing tolerances, surface roughness, and rounded edge effects on particle transport",
+    "choices": [
+      "Enhanced electron transport cutoff parameters and increased statistical sampling for improved calculation precision",
+      "Leaf edge geometry modeling including manufacturing tolerances, surface roughness, and rounded edge effects on particle transport",
+      "Detailed source modeling including electron contamination and spectral variations across the treatment field",
+      "Patient scatter modeling and air gap corrections for small field geometric configurations"
+    ],
+    "explanation": "In small fields, micro-MLC leaf edge effects become critical. Manufacturing tolerances, rounded edges, and surface irregularities significantly impact penumbra and require detailed Monte Carlo modeling beyond simple geometric approximations.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Research into cone-based SRS dosimetry reveals systematic energy dependence in detector response that varies with cone size. Monte Carlo calculations show spectral hardening effects in small fields. What fundamental physics principle explains this phenomenon and requires correction?",
+    "answer": "Lateral electron disequilibrium in small fields causes spectral changes that affect detector energy response requiring field-size dependent corrections",
+    "choices": [
+      "Head scatter reduction in small fields decreases low-energy photon contamination requiring energy-specific response modeling",
+      "Lateral electron disequilibrium in small fields causes spectral changes that affect detector energy response requiring field-size dependent corrections",
+      "Beam divergence effects in small fields create angular dependence in detector response necessitating directional correction factors",
+      "Source occlusion by collimation systems introduces systematic errors in energy spectrum requiring geometric modeling corrections"
+    ],
+    "explanation": "Lateral electron disequilibrium in small fields alters the photon energy spectrum reaching the detector due to missing scattered photons, causing field-size dependent energy response that must be corrected per TG-155.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Advanced FMEA analysis of a stereotactic program identifies a complex failure mode: systematic positioning errors during multi-fraction SBRT treatments due to interfraction organ motion combined with small field dosimetric uncertainties. The risk priority number calculation requires quantitative analysis. What methodology provides the most comprehensive risk assessment?",
+    "answer": "Probabilistic risk assessment combining dosimetric uncertainty propagation with geometric error analysis using Monte Carlo dose accumulation modeling",
+    "choices": [
+      "Traditional FMEA scoring using expert opinion for occurrence, severity, and detectability ratings with standardized risk matrices",
+      "Quantitative analysis using measured positioning uncertainties combined with dose-volume histogram perturbation analysis",
+      "Probabilistic risk assessment combining dosimetric uncertainty propagation with geometric error analysis using Monte Carlo dose accumulation modeling",
+      "Statistical process control analysis of historical positioning data combined with dosimetric tolerance limit calculations"
+    ],
+    "explanation": "Complex failure modes involving multiple stochastic processes require probabilistic risk assessment that can properly account for the interaction between geometric uncertainties and dosimetric effects through Monte Carlo modeling.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 specifies that daily output constancy should be within ±3% of the baseline value to ensure consistent treatment delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary calibration protocol recommended by AAPM for absolute dose determination in external beam radiotherapy?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-40",
+      "TG-61"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For beam flatness measurements, what does the flatness parameter represent?",
+    "answer": "The ratio of maximum to minimum dose in the flattened region",
+    "choices": [
+      "The difference between central and peripheral doses",
+      "The ratio of maximum to minimum dose in the flattened region",
+      "The percentage variation from the mean dose value",
+      "The slope of the dose profile across the field"
+    ],
+    "explanation": "Beam flatness is defined as the ratio of the maximum dose to the minimum dose within the specified flattened region of the radiation field, typically within 80% of the field width.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for MLC positioning accuracy checks according to TG-142?",
+    "answer": "Weekly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "explanation": "TG-142 recommends monthly checks of MLC positioning accuracy to ensure proper leaf positioning and minimize dose delivery errors in IMRT and VMAT treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,274 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify coincidence of radiation isocenter with mechanical isocenter",
+    "choices": [
+      "To verify coincidence of radiation isocenter with mechanical isocenter",
+      "To measure dose rate accuracy for small treatment fields",
+      "To calibrate micro-MLC leaf positioning for treatment planning",
+      "To validate patient setup accuracy during treatment delivery"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical rotation isocenter, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What defines a small field according to TG-155 recommendations?",
+    "answer": "Field size where lateral electronic equilibrium is not established",
+    "choices": [
+      "Field size where lateral electronic equilibrium is not established",
+      "Any field with equivalent square diameter less than 5 cm",
+      "Field size requiring special detector calibration protocols only",
+      "Treatment field with dose rate exceeding 600 MU/min"
+    ],
+    "explanation": "TG-155 defines small fields based on physics principles rather than arbitrary size limits, specifically where lateral electronic equilibrium cannot be established.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary delivery mechanism for the GammaKnife system?",
+    "answer": "Multiple cobalt-60 sources focused to a single isocenter",
+    "choices": [
+      "Multiple cobalt-60 sources focused to a single isocenter",
+      "Single linear accelerator with robotic patient positioning",
+      "Rotating linear accelerator with dynamic micro-MLC shaping",
+      "Fixed linear accelerator with multiple treatment couches"
+    ],
+    "explanation": "GammaKnife systems use approximately 200 cobalt-60 sources arranged in a hemispherical array, all focused to a common isocenter for stereotactic radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What distinguishes CyberKnife from conventional linac-based SRS systems?",
+    "answer": "Real-time image guidance with robotic tracking capabilities",
+    "choices": [
+      "Real-time image guidance with robotic tracking capabilities",
+      "Higher dose rates exceeding 2400 MU per minute",
+      "Dedicated cobalt-60 source instead of linear accelerator",
+      "Fixed beam geometry with patient couch manipulation"
+    ],
+    "explanation": "CyberKnife combines a lightweight linac mounted on a robotic arm with real-time imaging for continuous tracking and correction during treatment delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended dose calculation grid size for SRS treatments?",
+    "answer": "1-2 mm maximum grid spacing",
+    "choices": [
+      "1-2 mm maximum grid spacing",
+      "2-3 mm standard clinical spacing",
+      "0.5 mm for all calculations",
+      "5 mm with dose interpolation"
+    ],
+    "explanation": "TG-101 recommends 1-2 mm dose calculation grid spacing for SRS to adequately sample steep dose gradients and ensure accurate dose calculations.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What detector type does TG-155 recommend as reference for small field dosimetry?",
+    "answer": "Micro-ionization chambers only",
+    "choices": [
+      "Plastic scintillation detectors",
+      "Micro-ionization chambers only",
+      "Silicon diode detectors",
+      "Diamond radiation detectors"
+    ],
+    "explanation": "TG-155 identifies plastic scintillation detectors as having minimal energy dependence and volume averaging effects, making them ideal references for small field measurements.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical leaf width for micro-MLCs used in SRS applications?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "10-15 mm at isocenter",
+      "1.0-1.5 mm at isocenter",
+      "5.0-10.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm projected to isocenter, providing improved conformality compared to standard 10 mm MLCs for small targets.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the recommended positioning accuracy tolerance for SRS treatments?",
+    "answer": "≤1 mm total geometric uncertainty",
+    "choices": [
+      "≤1 mm total geometric uncertainty",
+      "≤2 mm systematic setup error",
+      "≤3 mm random positioning error",
+      "≤0.5 mm daily setup variation"
+    ],
+    "explanation": "TG-135 recommends total geometric uncertainty should not exceed 1 mm for SRS treatments to maintain the high precision required for steep dose gradients.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a cone-based SRS system, the 12.5 mm cone shows a 15% dose discrepancy between measurement and Monte Carlo calculation at 1.5 cm depth. The same cone agrees within 2% at dmax. What is the most likely cause requiring investigation?",
+    "answer": "Incorrect modeling of electron contamination and buildup characteristics",
+    "choices": [
+      "Incorrect modeling of electron contamination and buildup characteristics",
+      "Systematic error in small field detector energy response correction",
+      "Inadequate statistical uncertainty in Monte Carlo particle transport",
+      "Mechanical misalignment between cone position and radiation field"
+    ],
+    "explanation": "The depth-dependent discrepancy suggests incorrect modeling of electron transport and buildup, which is critical for accurate dose calculations in small fields beyond dmax.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulation of a 5 mm cone shows 8% difference from measurement at off-axis distances >15 mm. The primary photon component matches well, but scattered radiation is underestimated. What simulation parameter requires optimization to improve accuracy?",
+    "answer": "Patient scatter kernel and lateral transport cutoff energy settings",
+    "choices": [
+      "Patient scatter kernel and lateral transport cutoff energy settings",
+      "Primary photon fluence map resolution and energy spectrum binning",
+      "Variance reduction techniques and statistical convergence criteria only",
+      "Geometric modeling precision for cone aperture edge definition"
+    ],
+    "explanation": "The off-axis discrepancy in scattered radiation suggests inadequate modeling of lateral photon transport and scatter kernels, which requires optimization of transport cutoff energies and scatter algorithms.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Research into detector perturbation effects shows a silicon diode over-responds by 12% in a 5x5 mm field compared to water-equivalent conditions. Monte Carlo analysis attributes 7% to energy dependence and 3% to density perturbation. What accounts for the remaining 2% discrepancy?",
+    "answer": "Non-water equivalent backscatter and lateral electron disequilibrium effects",
+    "choices": [
+      "Non-water equivalent backscatter and lateral electron disequilibrium effects",
+      "Temperature coefficient variations during extended measurement protocols",
+      "Statistical uncertainty limitations in Monte Carlo transport calculations",
+      "Systematic calibration errors in reference field normalization procedures"
+    ],
+    "explanation": "The remaining 2% likely represents combined effects of altered backscatter conditions and lateral electron disequilibrium specific to the detector's non-water equivalent composition in small fields.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Uncertainty budget analysis for a research SRS dosimetry protocol shows Type A uncertainties of 0.8% and Type B uncertainties of 1.2%. The coverage factor is k=2 for 95% confidence. What is the combined expanded uncertainty?",
+    "answer": "2.9%",
+    "choices": [
+      "2.9%",
+      "2.4%",
+      "3.2%",
+      "2.0%"
+    ],
+    "explanation": "Combined standard uncertainty = √(0.8² + 1.2²) = √(0.64 + 1.44) = 1.44%. Expanded uncertainty = k × 1.44% = 2 × 1.44% = 2.9% following ISO GUM methodology.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±3% from baseline",
+      "±2% from baseline",
+      "±5% from baseline",
+      "±1% from baseline"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements to ensure stable beam delivery. This tolerance balances clinical needs with practical measurement uncertainty.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of photon beams",
+    "choices": [
+      "Absolute dose calibration of photon beams",
+      "Monthly quality assurance procedures",
+      "Multileaf collimator positioning accuracy",
+      "Electronic portal imaging device testing"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing standardized procedures for absolute dose calibration using ion chambers.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What does beam flatness measure in linear accelerator quality assurance?",
+    "answer": "Dose uniformity across the central beam area",
+    "choices": [
+      "Dose uniformity across the central beam area",
+      "Beam energy stability over time",
+      "Radiation leakage outside treatment field",
+      "Gantry mechanical positioning accuracy"
+    ],
+    "explanation": "Beam flatness quantifies the dose uniformity across the central 80% of the beam profile, typically expressed as the ratio of maximum to minimum dose in the flattened region.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for comprehensive MLC positioning accuracy checks according to TG-142?",
+    "answer": "Monthly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "explanation": "TG-142 recommends monthly comprehensive MLC positioning accuracy checks to ensure proper leaf positioning and mechanical stability, with daily checks focusing on basic functionality.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

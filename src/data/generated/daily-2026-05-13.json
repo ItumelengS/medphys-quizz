@@ -1,0 +1,342 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation isocenter with imaging isocenter",
+    "choices": [
+      "To verify the coincidence of radiation isocenter with imaging isocenter",
+      "To measure the penumbra width of small radiation fields",
+      "To calibrate the dose rate for stereotactic treatments",
+      "To assess the uniformity of radiation field intensity"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the imaging isocenter, which is critical for accurate stereotactic treatments. This test is fundamental for SRS/SBRT quality assurance.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic radiosurgery",
+    "choices": [
+      "Stereotactic radiosurgery",
+      "Small radiation segments",
+      "Single-room radiotherapy",
+      "Selective radiation sequencing"
+    ],
+    "explanation": "SRS stands for stereotactic radiosurgery, a technique that delivers a high dose of radiation to a small, well-defined target in a single fraction using precise stereotactic localization.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the defining characteristic of a small radiation field in medical physics?",
+    "answer": "Field size smaller than the lateral charged particle equilibrium range",
+    "choices": [
+      "Field size smaller than the lateral charged particle equilibrium range",
+      "Field size less than 10 cm × 10 cm at isocenter",
+      "Field size requiring special dosimetry protocols only",
+      "Field size used exclusively for brain treatments"
+    ],
+    "explanation": "Small fields are defined as fields where the lateral dimensions are smaller than the lateral charged particle equilibrium range, typically less than 3-4 cm for megavoltage photon beams.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of radiation source does the Leksell Gamma Knife use?",
+    "answer": "Cobalt-60 sources",
+    "choices": [
+      "Cobalt-60 sources",
+      "Linear accelerator photons",
+      "Cesium-137 sources",
+      "Iridium-192 sources"
+    ],
+    "explanation": "The Leksell Gamma Knife uses multiple cobalt-60 sources (typically 192 sources in modern units) arranged in a hemispherical configuration to deliver focused radiation for stereotactic radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended tolerance for Winston-Lutz test results in stereotactic systems?",
+    "answer": "≤ 1.0 mm total displacement",
+    "choices": [
+      "≤ 1.0 mm total displacement",
+      "≤ 2.0 mm total displacement",
+      "≤ 0.5 mm total displacement",
+      "≤ 1.5 mm total displacement"
+    ],
+    "explanation": "TG-101 recommends that the total displacement measured in Winston-Lutz tests should be ≤ 1.0 mm for stereotactic systems to ensure adequate geometric accuracy for SRS treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "1.0-2.0 mm at isocenter",
+      "5.0-10.0 mm at isocenter",
+      "0.5-1.5 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, which is smaller than conventional MLCs (10 mm) to provide better conformality for small target volumes in stereotactic treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the primary dosimetric challenge addressed by TG-135 for small field dosimetry?",
+    "answer": "Lack of lateral charged particle equilibrium in detector volume",
+    "choices": [
+      "Lack of lateral charged particle equilibrium in detector volume",
+      "Increased photon scatter from collimator edges and surfaces",
+      "Enhanced beam hardening effects in small field geometries",
+      "Reduced source occlusion by collimating devices and structures"
+    ],
+    "explanation": "TG-135 addresses the fundamental challenge that small fields lack lateral charged particle equilibrium, requiring careful selection of detectors and correction factors for accurate dosimetry.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What tracking method does the CyberKnife system primarily use for patient positioning during treatment?",
+    "answer": "Real-time X-ray imaging with fiducial markers or skeletal anatomy",
+    "choices": [
+      "Real-time X-ray imaging with fiducial markers or skeletal anatomy",
+      "Infrared optical tracking of external markers on patient surface",
+      "Continuous MRI imaging for soft tissue target identification",
+      "Ultrasound-based tracking of internal organ motion patterns"
+    ],
+    "explanation": "The CyberKnife uses real-time X-ray imaging to track either implanted fiducial markers or skeletal anatomy, enabling continuous patient positioning correction during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A medical physicist is commissioning a new stereotactic system and finds that small field output factors measured with a 0.6 cc ion chamber are consistently 8-12% higher than Monte Carlo calculations for fields < 2×2 cm. The treatment planning system uses the Monte Carlo data. What is the most appropriate corrective action considering the volume averaging effect, detector response characteristics, and clinical dose accuracy requirements?",
+    "answer": "Replace measurements with a detector having volume < 0.1 cc and apply appropriate small field correction factors",
+    "choices": [
+      "Replace measurements with a detector having volume < 0.1 cc and apply appropriate small field correction factors",
+      "Apply a uniform 10% correction factor to all treatment planning system calculations for fields < 2×2 cm",
+      "Increase the chamber correction factor by 8-12% for small field measurements in the beam model",
+      "Use the ion chamber data directly since experimental measurements are more reliable than calculations"
+    ],
+    "explanation": "The large ion chamber volume causes significant averaging in small fields, leading to overestimation of output factors. TG-155 recommends detectors with volumes < 0.1 cc for small field dosimetry, along with appropriate correction factors.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT lung treatment delivery, respiratory motion monitoring shows baseline drift with the tumor moving 3 mm superior over 15 minutes, while the gating window was set to ±2 mm around the initial position. The treatment plan assumed no systematic positioning errors. What is the most appropriate immediate intervention considering dose distribution integrity, normal tissue sparing, and treatment completion requirements?",
+    "answer": "Pause treatment, reposition patient to restore original tumor location, and verify setup before continuing",
+    "choices": [
+      "Pause treatment, reposition patient to restore original tumor location, and verify setup before continuing",
+      "Continue treatment but expand the gating window to ±4 mm to accommodate the baseline drift",
+      "Adjust the couch position by 3 mm inferiorly to compensate for the systematic tumor displacement",
+      "Complete the remaining treatment fractions with a modified plan accounting for the observed drift pattern"
+    ],
+    "explanation": "Systematic baseline drift compromises the planned dose distribution and exceeds acceptable margins. Patient repositioning to restore the original anatomy is necessary to maintain treatment plan validity and dose accuracy.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A Gamma Knife center reports systematic dose delivery errors of +3% discovered during annual calibration. Previous monthly output checks showed no trends, and daily quality assurance passed. Considering the high-dose, single-fraction nature of treatments and the 6-month half-life of Co-60, what risk assessment and corrective action framework should be implemented?",
+    "answer": "Perform retrospective dosimetric analysis of all patients treated since last annual calibration with clinical outcome monitoring",
+    "choices": [
+      "Perform retrospective dosimetric analysis of all patients treated since last annual calibration with clinical outcome monitoring",
+      "Implement immediate patient recall for re-treatment of all cases from the past 6 months using corrected dosimetry",
+      "Apply statistical dose distribution analysis to determine if the 3% error falls within acceptable clinical tolerances",
+      "Increase monthly output check frequency to weekly intervals and continue normal treatment operations with adjustment"
+    ],
+    "explanation": "A 3% systematic error in single-fraction SRS requires comprehensive retrospective analysis to assess clinical impact. The error magnitude and treatment characteristics necessitate patient-specific dose recalculation and clinical follow-up evaluation.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Analysis of CyberKnife treatment logs shows consistent 0.8 mm tracking errors in the superior-inferior direction during liver SBRT treatments, while anterior-posterior and left-right tracking remain within 0.3 mm. The respiratory correlation model shows R² > 0.95 for all directions. What systematic factor most likely explains this directional tracking discrepancy?",
+    "answer": "Systematic calibration error in the superior-inferior axis of the robotic positioning system",
+    "choices": [
+      "Baseline drift in diaphragm position due to anesthesia-related changes in respiratory mechanics during treatment",
+      "Inadequate fiducial marker visibility in superior-inferior projection due to overlapping anatomical structures",
+      "Systematic calibration error in the superior-inferior axis of the robotic positioning system",
+      "Patient setup uncertainty amplified by respiratory motion correlation model prediction algorithms"
+    ],
+    "explanation": "Directional tracking errors specific to the superior-inferior axis during liver treatments often result from baseline respiratory drift, particularly diaphragm relaxation under anesthesia, which affects the respiratory correlation model's accuracy in that direction.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A Monte Carlo study of small field dosimetry shows that kQclin,Qmsr correction factors for a 0.016 cc diamond detector vary from 0.995 to 1.035 across field sizes from 0.5×0.5 cm to 3×3 cm for 6 MV photons. The statistical uncertainty is ±0.8% (k=1). What is the total expanded uncertainty budget (k=2) for clinical small field dose measurements when including detector positioning (±0.5 mm, contributing 1.2% dose uncertainty) and electrometer calibration (±0.7%)?",
+    "answer": "±4.1%",
+    "choices": [
+      "±3.4%",
+      "±2.8%",
+      "±4.1%",
+      "±2.2%"
+    ],
+    "explanation": "Total uncertainty combines Monte Carlo statistical uncertainty (1.6% at k=2), positioning uncertainty (1.2%), and electrometer uncertainty (0.7%): √(1.6² + 1.2² + 0.7²) = 2.2% at k=1, or 4.4% at k=2. However, systematic detector response uncertainties must be added, giving approximately 3.4% total expanded uncertainty.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis for frameless stereotactic treatments identifies 'incorrect image registration' as a high-risk failure mode with occurrence probability 3/10, detectability 2/10, and severity 9/10 (RPN=54). Current controls include automatic registration with manual verification. What risk mitigation strategy would most effectively reduce the RPN below 30 while maintaining clinical workflow efficiency?",
+    "answer": "Implement independent secondary image registration review by a second qualified staff member",
+    "choices": [
+      "Implement independent secondary image registration review by a second qualified staff member",
+      "Increase imaging frequency from weekly to daily cone-beam CT verification during multi-fraction treatments",
+      "Replace manual verification with fully automated registration algorithms with improved detection sensitivity",
+      "Add real-time surface monitoring with automated treatment interruption for patient position deviations > 1 mm"
+    ],
+    "explanation": "Independent secondary review primarily improves detectability (reducing from 2/10 to 1/10), which would lower RPN to 27 (3×1×9). This approach directly addresses the failure mode while maintaining practical workflow compared to other options.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of a micro-MLC system shows that calculated dose profiles have 1.2 mm wider penumbra than measured profiles for 1×1 cm fields. The simulation includes accurate leaf geometry, material composition, and uses 10⁷ particles. Variance reduction shows convergence. What modeling parameter most likely requires refinement to improve penumbra accuracy?",
+    "answer": "Leaf edge geometry modeling including manufacturing tolerances and rounded edges",
+    "choices": [
+      "Leaf edge geometry modeling including manufacturing tolerances and rounded edges",
+      "Electron transport cutoff energy settings for secondary particle interactions near field edges",
+      "Phase space particle sampling resolution and angular distribution reconstruction accuracy",
+      "Voxel grid resolution in the phantom geometry definition for dose calculation accuracy"
+    ],
+    "explanation": "Penumbra discrepancies in micro-MLC modeling are most commonly due to oversimplified leaf edge geometry. Real MLC leaves have rounded edges, manufacturing tolerances, and surface irregularities that significantly affect small field penumbra characteristics.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "A research study comparing Gamma Knife dose distributions using Monte Carlo versus the treatment planning system's analytical algorithm shows systematic differences of 2-5% in the 50% isodose volume for targets near air-tissue interfaces. The Monte Carlo model has been benchmarked against measurements in homogeneous phantoms with <1% agreement. What physics phenomenon most likely accounts for the observed discrepancies at tissue interfaces?",
+    "answer": "Inadequate modeling of electron transport and backscatter at density discontinuities in the analytical algorithm",
+    "choices": [
+      "Inadequate modeling of electron transport and backscatter at density discontinuities in the analytical algorithm",
+      "Statistical uncertainty propagation in Monte Carlo calculations leading to systematic bias in heterogeneous regions",
+      "Inaccurate tissue density assignment in CT-based phantom geometry reconstruction for interface regions",
+      "Source geometry modeling differences between analytical and Monte Carlo representation of Co-60 source distribution"
+    ],
+    "explanation": "Analytical dose calculation algorithms often use simplified electron transport models that inadequately account for backscatter and lateral disequilibrium at air-tissue interfaces, while Monte Carlo methods more accurately model these effects.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3% from baseline value",
+    "choices": [
+      "±2% from baseline value",
+      "±3% from baseline value",
+      "±5% from baseline value",
+      "±1% from baseline value"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy measurements to ensure consistent beam delivery. This tolerance balances practical measurement uncertainty with clinical safety requirements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference protocol recommended by AAPM for absolute dose calibration of photon beams?",
+    "answer": "TG-51 protocol using ion chambers",
+    "choices": [
+      "TG-51 protocol using ion chambers",
+      "TG-21 protocol using ion chambers",
+      "TG-142 protocol using diode detectors",
+      "TG-40 protocol using thermoluminescent dosimeters"
+    ],
+    "explanation": "TG-51 is the current AAPM standard for clinical reference dosimetry of external beam therapy photon beams, replacing the older TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For beam flatness measurements, what region of the beam profile is typically evaluated according to standard protocols?",
+    "answer": "Central 80% of the field width",
+    "choices": [
+      "Central 60% of the field width",
+      "Central 80% of the field width",
+      "Central 90% of the field width",
+      "Central 70% of the field width"
+    ],
+    "explanation": "Beam flatness is conventionally measured over the central 80% of the field width to exclude the penumbra regions where dose gradients are steep.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multi-Leaf Collimator system for beam shaping",
+    "choices": [
+      "Multi-Leaf Collimator system for beam shaping",
+      "Maximum Length Calibration for field sizing",
+      "Minimum Leakage Criterion for radiation safety",
+      "Multi-Level Control for dose rate adjustment"
+    ],
+    "explanation": "MLC refers to Multi-Leaf Collimator, a beam-shaping device consisting of multiple tungsten leaves that can move independently to conform radiation fields to target volumes.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

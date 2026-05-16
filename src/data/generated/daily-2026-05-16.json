@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the mechanical alignment between radiation and imaging isocenters",
+    "choices": [
+      "To verify the mechanical alignment between radiation and imaging isocenters",
+      "To measure the output factor for small radiation fields",
+      "To calibrate the dose rate for different collimator sizes",
+      "To determine the beam penumbra width for cone collimators"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the imaging isocenter, which is critical for stereotactic accuracy per AAPM TG-142.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Selective Beam Radiation Treatment",
+      "Single Beam Radiosurgical Technique",
+      "Small Beam Radiotherapy Technology"
+    ],
+    "explanation": "SBRT (Stereotactic Body Radiation Therapy) is a technique that delivers high doses of radiation to extracranial targets in few fractions with high precision.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What type of radiation source does the Leksell Gamma Knife use?",
+    "answer": "Cobalt-60 sources",
+    "choices": [
+      "Cobalt-60 sources",
+      "Linear accelerator x-rays",
+      "Cesium-137 sources",
+      "Iridium-192 sources"
+    ],
+    "explanation": "The Leksell Gamma Knife uses multiple Cobalt-60 sources arranged in a hemispherical configuration to deliver focused radiation for intracranial stereotactic radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the defining characteristic of a small radiation field in dosimetry?",
+    "answer": "Lack of lateral charged particle equilibrium",
+    "choices": [
+      "Lack of lateral charged particle equilibrium",
+      "Field size smaller than 10 cm × 10 cm",
+      "Dose rate greater than 600 cGy/min",
+      "Penumbra width exceeding 5 mm"
+    ],
+    "explanation": "Small fields are characterized by the absence of lateral charged particle equilibrium, which affects dosimetry measurements and requires specialized detectors and correction factors per IAEA TRS-483.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to AAPM TG-101, what is the recommended dose prescription method for stereotactic radiosurgery?",
+    "answer": "Prescription to a specific isodose line encompassing the target",
+    "choices": [
+      "Prescription to a specific isodose line encompassing the target",
+      "Prescription to the maximum dose within the target volume",
+      "Prescription to the mean dose across the planning target volume",
+      "Prescription to the dose at the geometric center point"
+    ],
+    "explanation": "TG-101 recommends prescribing to a specific isodose line (typically 50-90%) that encompasses the target, ensuring adequate coverage while maintaining steep dose gradients.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the primary advantage of CyberKnife's robotic delivery system over conventional gantry-based systems?",
+    "answer": "Non-isocentric delivery with unlimited beam angles",
+    "choices": [
+      "Non-isocentric delivery with unlimited beam angles",
+      "Higher dose rates up to 2400 cGy/min",
+      "Smaller penumbra widths for all field sizes",
+      "Real-time MLC leaf position verification"
+    ],
+    "explanation": "CyberKnife's robotic arm allows non-isocentric delivery with virtually unlimited beam angles, providing superior dose conformality and normal tissue sparing compared to fixed-gantry systems.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "According to AAPM TG-135, what is the recommended frequency for Winston-Lutz testing?",
+    "answer": "Monthly for routine QA",
+    "choices": [
+      "Monthly for routine QA",
+      "Weekly for routine QA",
+      "Quarterly for routine QA",
+      "Daily before treatments"
+    ],
+    "explanation": "TG-135 recommends monthly Winston-Lutz testing for routine QA to ensure continued mechanical accuracy of the stereotactic system, with additional testing after maintenance.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A medical physicist is commissioning a new stereotactic system and notices that small field output factors measured with different detectors show significant variations. The ion chamber gives OF=0.85, the diamond detector gives OF=0.78, and the diode gives OF=0.82 for a 1×1 cm field. Monte Carlo calculations predict OF=0.79. Considering detector-specific correction factors from TRS-483, which approach should be prioritized?",
+    "answer": "Apply TRS-483 correction factors to each detector and compare with Monte Carlo",
+    "choices": [
+      "Apply TRS-483 correction factors to each detector and compare with Monte Carlo",
+      "Average all three detector measurements for the final output factor",
+      "Use only the diamond detector result as it has tissue-equivalent properties",
+      "Reject all measurements and rely solely on Monte Carlo calculations"
+    ],
+    "explanation": "TRS-483 provides detector-specific correction factors for small field dosimetry. Each detector has different response characteristics, and proper correction factors must be applied before comparing with Monte Carlo validation.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During Gamma Knife commissioning, dose profiles measured at 4, 8, and 16 mm collimator settings show asymmetries of 3.2%, 1.8%, and 1.1% respectively. The beam penumbra measurements are within specifications, but source loading shows 15% variation among the 192 sources. What is the most likely cause and solution?",
+    "answer": "Individual source strength variations require sector-based dose corrections",
+    "choices": [
+      "Individual source strength variations require sector-based dose corrections",
+      "Collimator helmet misalignment necessitating mechanical adjustment procedures",
+      "Primary beam filtration degradation requiring complete source replacement",
+      "Patient positioning system drift requiring recalibration protocols"
+    ],
+    "explanation": "Source strength variations in Gamma Knife systems directly affect dose symmetry, with smaller collimators being more sensitive. Modern systems use sector-based corrections to compensate for individual source decay variations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A CyberKnife system shows increasing tracking errors during treatments, with fiducial-based tracking drifting from 0.3 mm to 1.2 mm over a 45-minute session. Skull tracking remains stable at 0.4 mm. The robot positioning accuracy is within 0.1 mm tolerance. What systematic issue should be investigated first?",
+    "answer": "Imaging system calibration drift affecting fiducial detection algorithms",
+    "choices": [
+      "Imaging system calibration drift affecting fiducial detection algorithms",
+      "Patient motion increasing due to treatment couch positioning errors",
+      "Fiducial migration within the patient anatomy during treatment",
+      "Robot arm mechanical wear causing cumulative positioning errors"
+    ],
+    "explanation": "Progressive tracking errors specific to fiducial-based tracking while skull tracking remains stable indicates imaging system calibration issues affecting the fiducial detection algorithms rather than mechanical or patient factors.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "A VMAT-based SBRT plan for a lung lesion shows dose calculation discrepancies between AAA and Monte Carlo algorithms. The PTV D95% differs by 8%, and the gradient index varies by 12%. Small field measurements validate Monte Carlo calculations within 2%. What clinical decision framework should guide algorithm selection?",
+    "answer": "Implement Monte Carlo with validation protocols per institutional risk assessment",
+    "choices": [
+      "Implement Monte Carlo with validation protocols per institutional risk assessment",
+      "Continue using AAA with increased safety margins for target coverage",
+      "Average both algorithms to compromise between calculation accuracy and efficiency",
+      "Reject VMAT approach and switch to cone-based delivery techniques"
+    ],
+    "explanation": "When significant algorithmic differences exist in small field dosimetry, the algorithm validated against measurements should be prioritized. Monte Carlo accuracy in small fields is well-established, requiring appropriate validation protocols.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulations for small field dosimetry show that the lateral dose profiles exhibit a 5% discrepancy from measurements in the penumbra region for fields smaller than 1.5×1.5 cm. The central axis depth doses match within 1.5%. Electron transport parameters are: electron step size 0.1 mm, ECUT=0.7 MeV, PCUT=0.01 MeV. What optimization strategy should be implemented?",
+    "answer": "Reduce electron step size and increase statistical precision in lateral regions",
+    "choices": [
+      "Reduce electron step size and increase statistical precision in lateral regions",
+      "Increase ECUT energy threshold and modify photon interaction cross-sections",
+      "Adjust PCUT parameters and implement variance reduction techniques globally",
+      "Modify beam modeling parameters and recalibrate primary photon spectrum"
+    ],
+    "explanation": "Lateral dose profile discrepancies in small fields typically result from inadequate electron transport resolution and insufficient statistical precision in low-dose regions. Reducing step size and increasing lateral scoring improves accuracy.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis for a stereotactic program identifies 'incorrect small field output factor' as having RPN=168 (Severity=8, Occurrence=3, Detection=7). Current QA includes monthly chamber measurements with 3% tolerance. What risk mitigation strategy would most effectively reduce the RPN score?",
+    "answer": "Implement redundant detector cross-calibration with automated flagging systems",
+    "choices": [
+      "Implement redundant detector cross-calibration with automated flagging systems",
+      "Increase measurement frequency to weekly while maintaining current tolerances",
+      "Reduce tolerance limits to 2% without changing detection methods",
+      "Add Monte Carlo verification but maintain current measurement protocols"
+    ],
+    "explanation": "The high RPN is driven by moderate detection capability (7/10). Redundant detector cross-calibration with automated flagging would significantly improve detection (reducing to ~3/10) while maintaining measurement accuracy.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Uncertainty budget analysis for small field reference dosimetry shows: beam quality correction (1.2%), detector positioning (0.8%), correction factor uncertainty (2.1%), and chamber calibration (0.6%). The combined uncertainty is 2.7% (k=1). For clinical confidence level of 95% (k=2), what expanded uncertainty applies?",
+    "answer": "5.4% expanded uncertainty at 95% confidence level",
+    "choices": [
+      "5.4% expanded uncertainty at 95% confidence level",
+      "2.7% expanded uncertainty remains valid for clinical applications",
+      "4.2% expanded uncertainty using root-sum-square combination",
+      "7.3% expanded uncertainty including systematic error components"
+    ],
+    "explanation": "Expanded uncertainty is calculated by multiplying the combined standard uncertainty (k=1) by the coverage factor k=2 for 95% confidence, yielding 2.7% × 2 = 5.4% per ISO/IEC Guide 98-3.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Research-level investigation of micro-MLC leaf transmission for 6 MV FFF beams reveals energy-dependent transmission coefficients: 1.8% for primary beam, 3.4% for head scatter component, and 5.7% for patient scatter component. Monte Carlo modeling requires separate modeling of each component. What implementation approach optimizes clinical accuracy?",
+    "answer": "Implement energy-weighted transmission model with component-specific coefficients",
+    "choices": [
+      "Implement energy-weighted transmission model with component-specific coefficients",
+      "Use averaged transmission coefficient of 3.6% for computational efficiency",
+      "Apply primary beam coefficient only as dominant transmission component",
+      "Develop empirical correction factors based on field size measurements"
+    ],
+    "explanation": "Energy-dependent transmission modeling with component-specific coefficients provides the highest accuracy for dose calculations involving micro-MLCs, as each scatter component has different spectral characteristics and transmission properties.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness constancy in daily QA?",
+    "answer": "±2%",
+    "choices": [
+      "±0.5%",
+      "±1%",
+      "±2%",
+      "±3%"
+    ],
+    "explanation": "TG-142 specifies a ±1% tolerance for beam flatness constancy in daily QA measurements to ensure consistent dose distribution across the treatment field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of clinical photon and electron beams",
+    "choices": [
+      "Absolute dose calibration of clinical photon and electron beams",
+      "Machine performance testing and safety interlocks verification",
+      "Patient-specific dosimetric verification and plan validation",
+      "Imaging quality assurance and geometric accuracy testing"
+    ],
+    "explanation": "TG-51 is the AAPM protocol specifically designed for clinical reference dosimetry, providing standardized methods for absolute dose calibration using ion chamber measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What frequency is recommended for MLC positional accuracy checks according to TG-142?",
+    "answer": "Weekly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "explanation": "TG-142 recommends monthly verification of MLC positional accuracy to ensure precise field shaping and dose delivery for IMRT and VMAT treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the standard depth for beam output measurements during water tank commissioning for 6 MV photon beams?",
+    "answer": "10 cm depth in water",
+    "choices": [
+      "5 cm depth in water",
+      "10 cm depth in water",
+      "15 cm depth in water",
+      "20 cm depth in water"
+    ],
+    "explanation": "For 6 MV photon beams, reference dosimetry measurements are performed at 10 cm depth in water, which provides adequate build-up and represents clinically relevant conditions per TG-51 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

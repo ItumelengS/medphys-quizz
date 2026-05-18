@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary definition of stereotactic radiosurgery (SRS)?",
+    "answer": "Single-fraction high-dose radiation delivered with stereotactic precision",
+    "choices": [
+      "Single-fraction high-dose radiation delivered with stereotactic precision",
+      "Multi-fraction radiation therapy using small field sizes",
+      "Hypofractionated treatment delivered over multiple sessions",
+      "Conventional fractionation with enhanced imaging guidance"
+    ],
+    "explanation": "SRS is defined as single-fraction, high-dose radiation therapy delivered with stereotactic precision to small, well-defined targets, typically intracranial lesions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily assess?",
+    "answer": "Mechanical isocenter alignment and accuracy",
+    "choices": [
+      "Mechanical isocenter alignment and accuracy",
+      "Small field output factor measurements",
+      "MLC leaf positioning accuracy only",
+      "Patient positioning verification systems"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the mechanical accuracy of the treatment machine's isocenter by measuring the coincidence of the radiation field center with the mechanical rotation center.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the main advantage of micro-MLCs in SRS treatments?",
+    "answer": "Improved conformity for small irregular targets",
+    "choices": [
+      "Improved conformity for small irregular targets",
+      "Faster treatment delivery compared to cones",
+      "Lower radiation leakage through leaf gaps",
+      "Enhanced patient comfort during positioning"
+    ],
+    "explanation": "Micro-MLCs have narrower leaf widths (typically 2.5-5mm) compared to standard MLCs, allowing better conformity to small, irregularly shaped targets in SRS.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "Which TG report specifically addresses small field dosimetry?",
+    "answer": "TG-155",
+    "choices": [
+      "TG-155",
+      "TG-101",
+      "TG-135",
+      "TG-142"
+    ],
+    "explanation": "AAPM TG-155 provides comprehensive guidance on small field dosimetry, addressing measurement techniques, detector selection, and correction factors for fields smaller than 4×4 cm².",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "What is the typical prescription isodose line used in cone-based SRS treatments?",
+    "answer": "80-90% isodose line",
+    "choices": [
+      "80-90% isodose line",
+      "95-98% isodose line",
+      "70-75% isodose line",
+      "60-65% isodose line"
+    ],
+    "explanation": "Cone-based SRS typically prescribes to the 80-90% isodose line to achieve steep dose gradients while maintaining adequate target coverage, as recommended in TG-101.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the maximum allowable Winston-Lutz deviation for SRS treatments according to TG-142?",
+    "answer": "1.0 mm radius",
+    "choices": [
+      "1.0 mm radius",
+      "0.5 mm radius",
+      "2.0 mm radius",
+      "1.5 mm radius"
+    ],
+    "explanation": "TG-142 recommends that Winston-Lutz deviations should be within 1.0 mm radius for SRS treatments to ensure adequate geometric accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "How many cobalt-60 sources are typically used in the Leksell Gamma Knife Perfexion unit?",
+    "answer": "192 sources",
+    "choices": [
+      "192 sources",
+      "201 sources",
+      "256 sources",
+      "180 sources"
+    ],
+    "explanation": "The Leksell Gamma Knife Perfexion uses 192 cobalt-60 sources arranged in a hemispherical configuration to deliver highly conformal dose distributions.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What imaging modality does CyberKnife primarily use for real-time tracking?",
+    "answer": "Orthogonal kV X-ray imaging",
+    "choices": [
+      "Orthogonal kV X-ray imaging",
+      "Cone-beam computed tomography",
+      "Megavoltage portal imaging",
+      "Optical surface monitoring systems"
+    ],
+    "explanation": "CyberKnife uses two orthogonal kV X-ray imagers for real-time patient tracking and automatic beam correction during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam with 1×1 cm² field shows 15% signal loss in a 0.6 cc ion chamber compared to a 10×10 cm² field. The silicon diode shows 8% signal loss for the same comparison. If the Monte Carlo calculated correction factor for the ion chamber is 1.18, what is the most likely explanation for the discrepancy between detectors?",
+    "answer": "Volume averaging effects in the ion chamber are more significant than energy dependence in the diode",
+    "choices": [
+      "Volume averaging effects in the ion chamber are more significant than energy dependence in the diode",
+      "The diode is experiencing severe radiation damage from repeated small field measurements",
+      "Temperature and pressure corrections are inadequate for the small field ion chamber measurements",
+      "The Monte Carlo calculation is underestimating the spectral changes in the small field"
+    ],
+    "explanation": "The larger signal loss in the ion chamber (15% vs 8%) combined with the Monte Carlo correction factor of 1.18 indicates that volume averaging is the dominant effect, while the diode's smaller active volume makes it less susceptible to this effect despite potential energy dependence issues.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "A CyberKnife facility experiences tracking failures during treatments with lung SBRT patients. Analysis shows 95% of failures occur when the target moves >8mm from baseline position. The imaging dose rate is 0.1 mGy/min. What systematic optimization should be prioritized to maintain tracking accuracy while minimizing imaging dose?",
+    "answer": "Implement adaptive imaging frequency algorithms based on real-time motion amplitude and predictability metrics",
+    "choices": [
+      "Implement adaptive imaging frequency algorithms based on real-time motion amplitude and predictability metrics",
+      "Increase the fiducial marker size and change to gold markers for enhanced contrast resolution",
+      "Modify the correlation model update frequency to better compensate for baseline drift patterns",
+      "Adjust the beam-hold thresholds to tighter tolerances and increase the prediction model sampling rate"
+    ],
+    "explanation": "Adaptive imaging frequency based on motion characteristics optimizes the trade-off between tracking accuracy and imaging dose by increasing acquisition rates only when motion becomes unpredictable or exceeds thresholds, addressing the specific failure pattern observed.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "In developing a Monte Carlo-based small field correction factor database, you observe that kQclin,Qmsrfclin,fmsr values for a 0.5×0.5 cm² field vary by ±12% between different MC codes (EGSnrc, MCNP6, GEANT4) despite identical geometry models. The experimental data using plastic scintillator shows intermediate values. What is the most critical physics parameter to investigate first?",
+    "answer": "Low-energy electron transport cutoff parameters and boundary crossing artifacts in voxelized geometry interfaces",
+    "choices": [
+      "Low-energy electron transport cutoff parameters and boundary crossing artifacts in voxelized geometry interfaces",
+      "Photon cross-section library differences and Compton scattering angular sampling algorithms between codes",
+      "Statistical uncertainty propagation in the detector response function convolution with the primary fluence spectrum",
+      "Variance reduction technique implementation affecting the photon weight distribution in small scoring volumes"
+    ],
+    "explanation": "The ±12% variation between MC codes for small fields is most likely due to differences in low-energy electron transport algorithms and how each code handles boundary crossings in voxelized geometries, which become critical in small field dosimetry where lateral electronic equilibrium is perturbed.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "You are developing an FMEA for a multi-platform SRS program (LINAC-based VMAT-SRS, Gamma Knife, CyberKnife). The preliminary analysis identifies 847 potential failure modes. Using IEC 60601-2-1 risk management principles, what should be the primary risk prioritization strategy for the top 10% of failure modes?",
+    "answer": "Implement a hybrid RPN approach weighted by detectability challenges and incorporating treatment-specific vulnerability matrices",
+    "choices": [
+      "Implement a hybrid RPN approach weighted by detectability challenges and incorporating treatment-specific vulnerability matrices",
+      "Apply a severity-dominant ranking system with occurrence probability modifiers based on historical incident databases",
+      "Utilize a detectability-focused priority matrix with independent verification requirements for high-risk scenarios",
+      "Establish a platform-agnostic severity classification with normalized occurrence rates across all three delivery systems"
+    ],
+    "explanation": "For multi-platform SRS FMEA, a hybrid RPN approach that emphasizes detectability (often the weakest link in SRS) while incorporating treatment-specific vulnerabilities provides the most comprehensive risk assessment, as recommended in TG-100 and IEC 60601-2-1 frameworks.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "In establishing uncertainty budgets for small field reference dosimetry per TG-155, your analysis shows: positioning uncertainty (±0.5mm, k=1), detector calibration uncertainty (±1.2%, k=2), correction factor uncertainty (±2.8%, k=1), and temporal stability (±0.8%, k=1). What is the expanded uncertainty (k=2) for the final dose rate determination?",
+    "answer": "±5.8% (k=2)",
+    "choices": [
+      "±6.4% (k=2)",
+      "±5.8% (k=2)",
+      "±7.1% (k=2)",
+      "±6.9% (k=2)"
+    ],
+    "explanation": "Using GUM methodology: converting all to k=1 (calibration: 1.2%/2 = 0.6%), then combining in quadrature: √(0.5² + 0.6² + 2.8² + 0.8²) = √8.69 = 2.95%, then expanding to k=2 gives ±5.9%, closest to 6.4% accounting for additional systematic components per TG-155.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "A research study comparing treatment delivery accuracy across SRS platforms shows systematic geometric deviations: LINAC-VMAT (0.62±0.31mm), Gamma Knife (0.41±0.18mm), CyberKnife (0.38±0.29mm). The facility's current Winston-Lutz acceptance criterion is 1.0mm radius. Based on this data and considering patient safety margins, what evidence-based tolerance refinement should be recommended?",
+    "answer": "Implement platform-specific tolerances: 0.8mm (LINAC), 0.6mm (GK), 0.7mm (CK) with statistical process control monitoring",
+    "choices": [
+      "Implement platform-specific tolerances: 0.8mm (LINAC), 0.6mm (GK), 0.7mm (CK) with statistical process control monitoring",
+      "Maintain unified 1.0mm tolerance but require enhanced QA frequency for LINAC-based treatments exceeding 0.8mm",
+      "Establish risk-stratified tolerances based on target volume with tighter limits for targets <1cc regardless of platform",
+      "Implement a 0.5mm universal tolerance with mandatory corrective action protocols for all platforms exceeding this limit"
+    ],
+    "explanation": "The data shows platform-specific performance characteristics with different uncertainty distributions. Platform-specific tolerances set at approximately 2σ above the systematic deviation (accounting for both systematic and random components) optimize safety while maintaining clinical feasibility, as supported by TG-142 risk-based QA principles.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements on linear accelerators?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±3% from baseline",
+      "±5% from baseline",
+      "±2% from baseline",
+      "±4% from baseline"
+    ],
+    "explanation": "TG-142 specifies that daily output constancy should be within ±3% of the established baseline value to ensure consistent beam delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference dosimetry protocol recommended by AAPM for absolute dose calibration of clinical photon and electron beams?",
+    "answer": "TG-51 protocol",
+    "choices": [
+      "TG-51 protocol",
+      "TG-21 protocol",
+      "TG-25 protocol",
+      "TG-40 protocol"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry, providing methods for absolute dose calibration using ion chambers in water.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What does beam flatness quantify in linear accelerator quality assurance measurements?",
+    "answer": "Dose uniformity across the beam profile",
+    "choices": [
+      "Dose uniformity across the beam profile",
+      "Beam energy stability over time",
+      "Gantry angle positioning accuracy",
+      "MLC leaf positioning precision"
+    ],
+    "explanation": "Beam flatness is a measure of dose uniformity across the central portion of the radiation beam profile, typically evaluated within the flat region of the beam.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the standard reference depth for photon beam calibration in water according to TG-51 protocol?",
+    "answer": "10 cm depth for all energies",
+    "choices": [
+      "10 cm depth for all energies",
+      "5 cm depth for all energies",
+      "Maximum dose depth for each energy",
+      "1.5 cm depth for all energies"
+    ],
+    "explanation": "TG-51 specifies a reference depth of 10 cm in water for all photon beam energies to standardize calibration procedures and ensure consistency.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

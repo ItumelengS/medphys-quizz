@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary characteristic that defines a small radiation field in medical physics?",
+    "answer": "Lateral charged particle equilibrium is not established",
+    "choices": [
+      "Lateral charged particle equilibrium is not established",
+      "Field size is smaller than 10 cm × 10 cm",
+      "Monitor unit calculations become simplified",
+      "Beam hardening effects are negligible"
+    ],
+    "explanation": "Small fields are defined by the lack of lateral charged particle equilibrium, not by an arbitrary size cutoff. This affects dosimetry and requires special measurement techniques as outlined in TG-155.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the acronym SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiation Treatment",
+      "Single Beam Radiosurgery Technique",
+      "Stereotactic Brain Radiation Therapy"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which delivers high-dose radiation to extracranial targets with high precision using stereotactic techniques.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the Winston-Lutz test primarily used to evaluate?",
+    "answer": "Mechanical alignment of radiation isocenter",
+    "choices": [
+      "Mechanical alignment of radiation isocenter",
+      "Small field output factor accuracy",
+      "Micro-MLC leaf positioning precision",
+      "Patient positioning setup accuracy"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the mechanical alignment between the radiation beam isocenter and the imaging system, crucial for stereotactic procedures requiring sub-millimeter accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the typical dose per fraction range for single-fraction SRS?",
+    "answer": "15-24 Gy in single fraction",
+    "choices": [
+      "15-24 Gy in single fraction",
+      "8-12 Gy in single fraction",
+      "25-35 Gy in single fraction",
+      "5-10 Gy in single fraction"
+    ],
+    "explanation": "TG-101 specifies that single-fraction SRS typically delivers 15-24 Gy, providing the high biological effective dose needed for radiosurgical ablation while maintaining acceptable toxicity profiles.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the recommended tolerance for Winston-Lutz test results in stereotactic systems?",
+    "answer": "≤ 1.0 mm radius from isocenter",
+    "choices": [
+      "≤ 1.0 mm radius from isocenter",
+      "≤ 2.0 mm radius from isocenter",
+      "≤ 0.5 mm radius from isocenter",
+      "≤ 1.5 mm radius from isocenter"
+    ],
+    "explanation": "Most guidelines recommend Winston-Lutz test results should be within 1.0 mm radius from isocenter for stereotactic systems to ensure adequate geometric accuracy for high-precision treatments.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "8-10 mm at isocenter",
+      "1.0-1.5 mm at isocenter",
+      "6-8 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing improved conformality for small targets while maintaining practical treatment delivery speeds compared to standard MLCs.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A CyberKnife system shows systematic tracking errors of 1.2 mm during respiratory motion management, with beam delivery interruptions occurring every 45 seconds. The patient's tumor motion amplitude is 8 mm superior-inferior. Given that the PTV margin was calculated assuming 0.5 mm tracking accuracy, what is the most comprehensive approach to resolve this multi-factorial problem?",
+    "answer": "Recalibrate respiratory correlation model, verify synchrony performance, and replan with increased PTV margins",
+    "choices": [
+      "Recalibrate respiratory correlation model, verify synchrony performance, and replan with increased PTV margins",
+      "Increase beam delivery time and accept current tracking performance with original margins",
+      "Switch to breath-hold technique and maintain existing treatment parameters without replanning",
+      "Apply retrospective dose reconstruction and proceed with original plan assuming adequate coverage"
+    ],
+    "explanation": "This multi-domain problem requires addressing the tracking model accuracy, beam delivery efficiency, and margin adequacy. The systematic error exceeds tolerance and compromises target coverage, necessitating comprehensive intervention including correlation model recalibration and margin reassessment.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During Gamma Knife commissioning, small field output factors show 3% discrepancy between TG-51 calibrated ion chamber measurements and manufacturer specifications for 4mm collimators. Monte Carlo calculations predict 2% difference from ion chamber results. Considering detector volume averaging, spectral changes, and calibration protocol limitations, what is the most appropriate resolution strategy?",
+    "answer": "Implement detector-specific correction factors based on Monte Carlo beam modeling and cross-validate with film dosimetry",
+    "choices": [
+      "Implement detector-specific correction factors based on Monte Carlo beam modeling and cross-validate with film dosimetry",
+      "Accept manufacturer specifications and document deviation as within commissioning tolerances for small fields",
+      "Repeat TG-51 calibration with smaller chamber and adjust all measurements to match manufacturer data",
+      "Average all three measurement methods and use mean values for clinical output factor implementation"
+    ],
+    "explanation": "Small field dosimetry requires detector-specific corrections due to volume averaging and energy response effects. Monte Carlo validation combined with independent film verification provides the most robust approach for resolving systematic discrepancies in small field measurements.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "An SBRT program experiences systematic dose delivery errors affecting lung treatments. Analysis reveals 2mm MLC positioning errors, 1.5mm couch positioning uncertainty, and 3% dose rate variation. Patient setup shows 1mm systematic shift. Given interplay effects and motion management protocols, what comprehensive quality assurance modification is most critical?",
+    "answer": "Implement integrated QA protocol addressing MLC calibration, mechanical alignment, and real-time motion monitoring",
+    "choices": [
+      "Implement integrated QA protocol addressing MLC calibration, mechanical alignment, and real-time motion monitoring",
+      "Increase PTV margins universally and continue existing QA protocols without mechanical improvements",
+      "Focus exclusively on patient positioning improvements while accepting current mechanical uncertainties",
+      "Modify treatment planning algorithms without addressing underlying mechanical and dosimetric systematic errors"
+    ],
+    "explanation": "Multiple systematic errors require comprehensive QA addressing mechanical, dosimetric, and motion management components simultaneously. The combined uncertainties exceed acceptable tolerances for SBRT, necessitating integrated solutions rather than isolated interventions.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "A stereotactic program implements new micro-MLC technology with 1.25mm leaf width. Commissioning reveals complex penumbra characteristics, leaf transmission variations of 0.8%, and small field output factor uncertainties of 2.5%. Considering TG-101 recommendations and clinical implementation challenges, what systematic approach ensures optimal clinical integration?",
+    "answer": "Develop comprehensive beam model validation using Monte Carlo methods with extensive small field measurement protocols",
+    "choices": [
+      "Develop comprehensive beam model validation using Monte Carlo methods with extensive small field measurement protocols",
+      "Apply standard commissioning protocols with minimal modifications for micro-MLC specific characteristics",
+      "Focus on leaf transmission corrections while using manufacturer beam model parameters for small fields",
+      "Implement clinical protocols immediately with post-implementation validation and iterative model refinements"
+    ],
+    "explanation": "Micro-MLC systems require extensive commissioning due to unique small field characteristics. Monte Carlo validation combined with comprehensive measurement protocols ensures accurate beam modeling essential for stereotactic dose calculations and delivery verification.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "A Monte Carlo study of CyberKnife small field dosimetry reveals systematic discrepancies between calculated and measured output factors. Statistical analysis shows 2.3% mean difference with 1.1% standard deviation across 50 field sizes. Considering Type A and Type B uncertainty components, detector response variations, and beam modeling limitations, what statistical approach provides the most robust uncertainty quantification?",
+    "answer": "Implement Bayesian analysis incorporating prior knowledge with maximum likelihood estimation for systematic corrections",
+    "choices": [
+      "Implement Bayesian analysis incorporating prior knowledge with maximum likelihood estimation for systematic corrections",
+      "Apply standard statistical analysis using simple mean differences without considering systematic error sources",
+      "Use Monte Carlo uncertainty propagation exclusively without incorporating experimental measurement uncertainties",
+      "Implement weighted least squares regression assuming uniform uncertainty distribution across all measurement points"
+    ],
+    "explanation": "Bayesian analysis with maximum likelihood estimation provides optimal statistical treatment for small field dosimetry uncertainties by incorporating prior knowledge from validated Monte Carlo models while accounting for systematic measurement biases and random uncertainties in detector response.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Design a comprehensive FMEA analysis for Gamma Knife treatment delivery focusing on small field dosimetry components. Given failure modes including: source decay miscalculation (RPN=240), collimator positioning error (RPN=180), patient positioning drift (RPN=210), and dose calculation algorithm failure (RPN=195), what risk prioritization methodology optimally addresses the highest-impact failure modes?",
+    "answer": "Implement risk-based prioritization using criticality analysis with enhanced monitoring for source decay and positioning systems",
+    "choices": [
+      "Implement risk-based prioritization using criticality analysis with enhanced monitoring for source decay and positioning systems",
+      "Address all failure modes equally without considering individual RPN values or clinical impact assessment",
+      "Focus exclusively on highest RPN value while deferring lower-scoring items to future FMEA cycles",
+      "Apply standard industrial FMEA without considering unique aspects of stereotactic radiosurgery delivery systems"
+    ],
+    "explanation": "Risk-based prioritization using criticality analysis ensures systematic attention to high-impact failure modes while considering the unique safety requirements of stereotactic treatments. Source decay and positioning systems represent the highest clinical risk requiring immediate enhanced monitoring and mitigation strategies.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "A research-level Monte Carlo investigation of micro-MLC leakage and transmission characteristics reveals energy-dependent variations in small field penumbra. Simulations using EGSnrc show 4% differences in 2mm field calculations compared to measurements. Considering transport parameter optimization, variance reduction techniques, and statistical convergence criteria, what computational approach ensures research-quality results?",
+    "answer": "Optimize transport parameters with correlated sampling and implement adaptive variance reduction with statistical convergence analysis",
+    "choices": [
+      "Optimize transport parameters with correlated sampling and implement adaptive variance reduction with statistical convergence analysis",
+      "Use default transport parameters with standard variance reduction and accept computational results at 2% statistical uncertainty",
+      "Focus on increasing particle histories without optimizing transport physics or implementing advanced variance reduction methods",
+      "Implement simplified geometry models to reduce computational time while maintaining adequate statistical precision for publication"
+    ],
+    "explanation": "Research-quality Monte Carlo simulations require optimized transport parameters specific to small field geometries, correlated sampling for systematic error reduction, and adaptive variance reduction techniques. Statistical convergence analysis ensures reliable results for publication in peer-reviewed medical physics journals.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±4%",
+      "±5%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy checks, which is measured using ion chambers or diode detectors in a reproducible geometry.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Absolute dose calibration of photon and electron beams",
+    "choices": [
+      "Absolute dose calibration of photon and electron beams",
+      "Quality assurance procedures for imaging systems",
+      "Patient-specific dose verification methods",
+      "Radiation protection guidelines for staff"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing methods for absolute dose calibration using ion chamber measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "Which parameter defines the uniformity of dose across the central 80% of a radiation beam profile?",
+    "answer": "Beam flatness",
+    "choices": [
+      "Beam flatness",
+      "Beam symmetry",
+      "Penumbra width",
+      "Field size accuracy"
+    ],
+    "explanation": "Beam flatness quantifies the dose uniformity across the central 80% of the beam profile, typically expressed as the ratio of maximum to minimum dose in this region.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multi-Leaf Collimator",
+    "choices": [
+      "Multi-Leaf Collimator",
+      "Maximum Leaf Configuration",
+      "Minimum Leakage Control",
+      "Machine Learning Calibration"
+    ],
+    "explanation": "MLC stands for Multi-Leaf Collimator, which consists of tungsten leaves that can move independently to shape radiation beam apertures for conformal treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

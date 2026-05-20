@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of stereotactic radiosurgery (SRS)?",
+    "answer": "To deliver high doses of radiation to small, well-defined targets in a single fraction",
+    "choices": [
+      "To deliver high doses of radiation to small, well-defined targets in a single fraction",
+      "To deliver moderate doses of radiation to large treatment volumes over multiple fractions",
+      "To deliver low doses of radiation to moving targets using real-time tracking systems",
+      "To deliver uniform doses of radiation to multiple metastatic lesions simultaneously"
+    ],
+    "explanation": "SRS is defined as the precise delivery of high radiation doses to small, well-defined intracranial targets in a single treatment session, typically using stereotactic localization.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Coincidence of radiation isocenter with mechanical isocenter",
+    "choices": [
+      "Coincidence of radiation isocenter with mechanical isocenter",
+      "Accuracy of multi-leaf collimator leaf positioning",
+      "Uniformity of radiation dose across treatment fields",
+      "Stability of linear accelerator energy output"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to evaluate the coincidence between the radiation isocenter and mechanical rotation isocenter of the treatment machine.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the Gamma Knife radiosurgery system?",
+    "answer": "A dedicated cobalt-60 based stereotactic radiosurgery unit",
+    "choices": [
+      "A dedicated cobalt-60 based stereotactic radiosurgery unit",
+      "A linear accelerator with specialized micro-MLC system",
+      "A robotic arm mounted linear accelerator system",
+      "A proton therapy system designed for cranial treatments"
+    ],
+    "explanation": "The Gamma Knife is a dedicated stereotactic radiosurgery system that uses multiple cobalt-60 sources arranged in a hemispherical configuration to deliver focused radiation.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What defines a small radiation field in medical physics?",
+    "answer": "A field where lateral charged particle equilibrium is not established",
+    "choices": [
+      "A field where lateral charged particle equilibrium is not established",
+      "A field with dimensions smaller than 10 cm × 10 cm",
+      "A field used exclusively for stereotactic treatments",
+      "A field that requires special immobilization devices"
+    ],
+    "explanation": "Small fields are defined by the loss of lateral charged particle equilibrium, which affects dosimetry and requires special consideration for measurement and calculation.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended tolerance for Winston-Lutz test results?",
+    "answer": "≤ 1 mm radius from isocenter",
+    "choices": [
+      "≤ 1 mm radius from isocenter",
+      "≤ 2 mm radius from isocenter",
+      "≤ 0.5 mm radius from isocenter",
+      "≤ 1.5 mm radius from isocenter"
+    ],
+    "explanation": "TG-101 recommends that Winston-Lutz test results should be within 1 mm radius from the isocenter for stereotactic treatments to ensure adequate geometric accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter",
+    "choices": [
+      "2.5-5.0 mm at isocenter",
+      "5.0-10.0 mm at isocenter",
+      "1.0-2.0 mm at isocenter",
+      "10.0-15.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm at isocenter, providing improved conformality for small target volumes compared to standard MLCs.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "Which detector is NOT recommended by TG-155 for small field relative dosimetry?",
+    "answer": "0.6 cm³ Farmer-type ionization chamber",
+    "choices": [
+      "0.6 cm³ Farmer-type ionization chamber",
+      "Stereotactic diode detector",
+      "Diamond detector",
+      "Micro-ionization chamber"
+    ],
+    "explanation": "TG-155 recommends against using large volume ionization chambers like the 0.6 cm³ Farmer chamber for small field dosimetry due to volume averaging effects.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by the CyberKnife system?",
+    "answer": "X-ray imaging with fiducial markers or skeletal anatomy",
+    "choices": [
+      "X-ray imaging with fiducial markers or skeletal anatomy",
+      "Surface imaging with infrared camera systems",
+      "Electromagnetic transponder tracking",
+      "Ultrasound-based real-time imaging"
+    ],
+    "explanation": "CyberKnife uses orthogonal X-ray imaging to track either implanted fiducial markers or skeletal anatomy for real-time patient positioning during treatment.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam small field correction factor for a 1×1 cm² field measured with a stereotactic diode shows an apparent dose rate 15% higher than expected from standard calibration. The detector has a known energy dependence correction of 0.98 and volume averaging correction of 1.03. What is the appropriate beam quality correction factor to apply?",
+    "answer": "The measurement requires Monte Carlo validation due to multiple competing effects",
+    "choices": [
+      "The measurement requires Monte Carlo validation due to multiple competing effects",
+      "Apply a simple multiplicative correction of 0.85 to account for overresponse",
+      "Use the standard TG-51 beam quality factors without modification",
+      "Interpolate correction factors from tabulated values in TG-155"
+    ],
+    "explanation": "Small field dosimetry involves complex interactions between detector response, beam perturbation, and field size effects that require sophisticated modeling approaches like Monte Carlo simulation for accurate correction factor determination, as outlined in TG-155.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system, output factors measured with three different detectors (diode, diamond, micro-IC) show systematic differences of up to 8% for field sizes below 2×2 cm². The treatment planning system calculations match the diode measurements but disagree with film dosimetry. What is the most appropriate next step?",
+    "answer": "Perform Monte Carlo simulations to determine true correction factors for each detector",
+    "choices": [
+      "Perform Monte Carlo simulations to determine true correction factors for each detector",
+      "Average the three detector measurements and use as the reference standard",
+      "Use only the diamond detector results as they are tissue-equivalent",
+      "Adjust the treatment planning system beam model to match film measurements"
+    ],
+    "explanation": "When multiple detectors show systematic disagreement in small fields, Monte Carlo simulation provides the gold standard for determining true dose distributions and appropriate correction factors for each detector type, as recommended by TG-155.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A patient receiving Gamma Knife treatment shows a 3 mm shift in target position between the planning MRI and treatment day imaging. The prescription isodose line is 50% and the target diameter is 8 mm. Considering dose gradient characteristics, what is the most critical factor in determining treatment modification?",
+    "answer": "The dose gradient near the target periphery and potential normal tissue involvement",
+    "choices": [
+      "The dose gradient near the target periphery and potential normal tissue involvement",
+      "The total treatment time and potential for patient movement during delivery",
+      "The individual shot weight distribution and collimator helmet selection",
+      "The coordinate system transformation accuracy and registration uncertainty"
+    ],
+    "explanation": "In stereotactic treatments with steep dose gradients, small geometric uncertainties can result in significant underdosing of target tissue and overdosing of normal structures, making dose gradient analysis the primary concern for treatment modification decisions.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "A multi-institutional clinical trial requires SBRT dose calculation accuracy within 3% (1σ). Your institution's small field dosimetry chain has the following uncertainty components: reference dosimetry (1.2%), detector correction factors (2.1%), beam modeling (1.8%), and treatment planning calculation (2.5%). What is the combined standard uncertainty?",
+    "answer": "3.8% - exceeds trial requirements and needs improvement",
+    "choices": [
+      "3.8% - exceeds trial requirements and needs improvement",
+      "2.5% - meets trial requirements with adequate margin",
+      "7.6% - significantly exceeds acceptable limits",
+      "1.9% - meets trial requirements with conservative estimate"
+    ],
+    "explanation": "Combined standard uncertainty = √(1.2² + 2.1² + 1.8² + 2.5²) = 3.8%. This exceeds the 3% requirement, necessitating improvements in measurement techniques, potentially through better detectors or Monte Carlo dose calculation algorithms.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis for cone-based SRS identifies 'incorrect cone size selection' as having severity=8, occurrence=3, and detectability=4. After implementing barcode verification, occurrence reduces to 1 and detectability to 2. What is the risk reduction achieved?",
+    "answer": "Risk Priority Number reduced from 96 to 16 (83% reduction)",
+    "choices": [
+      "Risk Priority Number reduced from 96 to 16 (83% reduction)",
+      "Risk Priority Number reduced from 96 to 32 (67% reduction)",
+      "Risk Priority Number reduced from 128 to 24 (81% reduction)",
+      "Risk Priority Number reduced from 84 to 12 (86% reduction)"
+    ],
+    "explanation": "RPN = Severity × Occurrence × Detectability. Initial RPN = 8×3×4 = 96. After improvement: RPN = 8×1×2 = 16. Reduction = (96-16)/96 = 83%. This demonstrates significant risk mitigation through technological controls.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "A research protocol compares dose calculation algorithms for SBRT lung treatments using Monte Carlo as reference. Algorithm A shows mean difference of +2.1% with standard deviation of 3.2%. With 45 patients, what is the 95% confidence interval for the true mean difference?",
+    "answer": "95% CI: [1.13%, 3.07%] indicating systematic overestimation",
+    "choices": [
+      "95% CI: [1.13%, 3.07%] indicating systematic overestimation",
+      "95% CI: [0.65%, 3.55%] indicating systematic overestimation",
+      "95% CI: [1.56%, 2.64%] indicating systematic overestimation",
+      "95% CI: [0.89%, 3.31%] indicating systematic overestimation"
+    ],
+    "explanation": "95% CI = mean ± t₀.₀₂₅,₄₄ × (SD/√n) = 2.1 ± 2.015 × (3.2/√45) = 2.1 ± 0.96 = [1.13%, 3.07%]. The interval excludes zero, confirming systematic overestimation by Algorithm A.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "TG-135 recommends specific QA frequencies for different SRS/SBRT procedures. What is the recommended frequency for machine-specific QA checks including Winston-Lutz testing?",
+    "answer": "Daily when treating SRS/SBRT patients",
+    "choices": [
+      "Daily when treating SRS/SBRT patients",
+      "Weekly regardless of treatment schedule",
+      "Before each patient treatment",
+      "Monthly with additional checks as needed"
+    ],
+    "explanation": "TG-135 recommends daily Winston-Lutz and other machine-specific checks on days when SRS/SBRT treatments are delivered to ensure geometric accuracy is maintained throughout the treatment session.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for photon beam flatness in routine quality assurance?",
+    "answer": "±3% for energies ≥10 MV, ±2% for energies <10 MV",
+    "choices": [
+      "±3% for energies ≥10 MV, ±2% for energies <10 MV",
+      "±2% for all photon energies regardless of beam energy",
+      "±4% for energies ≥15 MV, ±3% for energies <15 MV",
+      "±5% for energies ≥10 MV, ±3% for energies <10 MV"
+    ],
+    "explanation": "TG-142 specifies that photon beam flatness tolerances are ±3% for energies ≥10 MV and ±2% for energies <10 MV during routine QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference dosimetry protocol recommended by AAPM for absolute dose calibration of linear accelerators?",
+    "answer": "TG-51 addendum to the TG-21 protocol",
+    "choices": [
+      "TG-51 addendum to the TG-21 protocol",
+      "TG-142 quality assurance for medical accelerators",
+      "TG-100 application of risk analysis methods",
+      "TG-135 quality assurance for robotic radiosurgery"
+    ],
+    "explanation": "TG-51 is the AAPM's recommended protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the earlier TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "In TG-142 recommendations, how frequently should MLC positional accuracy be checked during routine quality assurance?",
+    "answer": "Monthly as part of routine mechanical checks",
+    "choices": [
+      "Monthly as part of routine mechanical checks",
+      "Daily before each treatment fraction delivery",
+      "Weekly during standard imaging verification",
+      "Annually during comprehensive system evaluation"
+    ],
+    "explanation": "TG-142 recommends that MLC positional accuracy be verified monthly as part of routine mechanical QA procedures to ensure proper leaf positioning.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended tolerance for photon output constancy in daily quality assurance according to TG-142?",
+    "answer": "±3% from established baseline reference value",
+    "choices": [
+      "±3% from established baseline reference value",
+      "±5% from manufacturer specified output rate",
+      "±2% from previous day measured output",
+      "±1% from annual calibration check measurement"
+    ],
+    "explanation": "TG-142 specifies that daily photon output constancy should be within ±3% of the established baseline value to ensure consistent dose delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

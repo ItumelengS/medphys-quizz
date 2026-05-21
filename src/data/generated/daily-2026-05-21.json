@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the geometric accuracy of the radiation isocenter",
+    "choices": [
+      "To verify the geometric accuracy of the radiation isocenter",
+      "To measure small field output factors",
+      "To calibrate micro-MLC leaf positions",
+      "To determine beam penumbra characteristics"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter aligns with the mechanical isocenter, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Small Radiation Source",
+      "Stereotaxic Reference System",
+      "Single Rotation Surgery"
+    ],
+    "explanation": "SRS is the standard abbreviation for Stereotactic Radiosurgery, a high-precision radiation therapy technique that delivers large doses in single or few fractions.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the defining characteristic of a small radiation field according to TG-155?",
+    "answer": "Fields where lateral charged particle equilibrium is absent",
+    "choices": [
+      "Fields smaller than 3 cm × 3 cm",
+      "Fields where lateral charged particle equilibrium is absent",
+      "Fields requiring micro-MLC collimation systems",
+      "Fields with dose rates exceeding 600 cGy/min"
+    ],
+    "explanation": "TG-155 defines small fields based on the physics principle of lateral charged particle equilibrium loss, not arbitrary size cutoffs.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "Which detector type is recommended by TG-155 for small field output factor measurements?",
+    "answer": "Synthetic diamond detectors",
+    "choices": [
+      "Standard ionization chambers",
+      "Synthetic diamond detectors",
+      "Thermoluminescent dosimeters only",
+      "Metal oxide semiconductor detectors"
+    ],
+    "explanation": "TG-155 recommends synthetic diamond detectors for small field dosimetry due to their small effective point of measurement and minimal energy dependence.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "What is the typical positioning accuracy requirement for SRS treatments?",
+    "answer": "Within 1 mm geometric uncertainty",
+    "choices": [
+      "Within 5 mm geometric uncertainty",
+      "Within 3 mm geometric uncertainty",
+      "Within 1 mm geometric uncertainty",
+      "Within 0.1 mm geometric uncertainty"
+    ],
+    "explanation": "SRS requires sub-millimeter to 1 mm positioning accuracy due to the steep dose gradients and high doses delivered to small targets.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the recommended small field detector for reference dosimetry according to TG-155?",
+    "answer": "Micro-ionization chambers with active volumes ≤0.016 cm³",
+    "choices": [
+      "Standard Farmer chambers",
+      "Micro-ionization chambers with active volumes ≤0.016 cm³",
+      "Silicon diode detectors exclusively",
+      "Film dosimeters with high resolution"
+    ],
+    "explanation": "TG-155 recommends micro-ionization chambers with small active volumes for reference dosimetry in small fields to minimize volume averaging effects.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the typical fraction size range for SBRT treatments?",
+    "answer": "5-20 Gy per fraction",
+    "choices": [
+      "1-3 Gy per fraction",
+      "5-20 Gy per fraction",
+      "25-50 Gy per fraction",
+      "2-4 Gy per fraction"
+    ],
+    "explanation": "SBRT typically delivers 5-20 Gy per fraction over 1-8 fractions, which is hypofractionated compared to conventional radiotherapy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of Gamma Knife's cobalt-60 source geometry?",
+    "answer": "Multiple converging beams create sharp dose falloff",
+    "choices": [
+      "Higher dose rate than linear accelerators",
+      "Multiple converging beams create sharp dose falloff",
+      "Lower radiation protection requirements",
+      "Simplified treatment planning algorithms"
+    ],
+    "explanation": "Gamma Knife uses multiple cobalt-60 sources arranged in a spherical geometry to create highly conformal dose distributions with rapid falloff outside the target.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A CyberKnife system shows systematic targeting errors of 0.8 mm during spine SBRT tracking verification. The treatment plan has a 2 mm PTV margin with 95% isodose prescription. Monte Carlo dose calculations show the CTV coverage drops to 89% with this error. What is the most appropriate corrective action considering TG-135 recommendations and clinical constraints?",
+    "answer": "Pause treatment, recalibrate tracking system, and verify correction with phantom measurements",
+    "choices": [
+      "Continue treatment as margin adequately compensates for error",
+      "Pause treatment, recalibrate tracking system, and verify correction with phantom measurements",
+      "Increase prescription isodose to 90% to maintain coverage",
+      "Switch to cone-based delivery with larger margins immediately"
+    ],
+    "explanation": "TG-135 recommends systematic errors >0.5 mm warrant investigation and correction. The 6% CTV coverage loss requires immediate action despite adequate margins.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During micro-MLC commissioning, Winston-Lutz analysis reveals a 0.3 mm systematic offset that varies with gantry angle (0.1-0.5 mm range). Small field output factors show 3% discrepancies compared to vendor data for fields <1.5 cm. What is the most likely root cause requiring investigation?",
+    "answer": "Mechanical flex in the micro-MLC mounting system affecting beam geometry",
+    "choices": [
+      "Incorrect detector positioning during small field measurements",
+      "Mechanical flex in the micro-MLC mounting system affecting beam geometry",
+      "Software calibration errors in the treatment planning system",
+      "Primary beam energy spectrum variations with field size"
+    ],
+    "explanation": "Gantry-angle dependent geometric errors combined with small field dosimetric discrepancies suggest mechanical instability in the collimation system rather than measurement or software issues.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A Monte Carlo study of detector response in 5 mm × 5 mm fields shows volume averaging contributes 2.1% uncertainty, energy response adds 1.3% uncertainty, and positioning uncertainty contributes 1.8% uncertainty. Using Type A uncertainty analysis, what is the combined standard uncertainty for output factor measurements?",
+    "answer": "2.9% combined standard uncertainty",
+    "choices": [
+      "5.2% combined standard uncertainty",
+      "2.9% combined standard uncertainty",
+      "1.4% combined standard uncertainty",
+      "3.8% combined standard uncertainty"
+    ],
+    "explanation": "Type A uncertainty analysis uses root sum of squares: √(2.1² + 1.3² + 1.8²) = √(4.41 + 1.69 + 3.24) = √9.34 = 2.9%.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Monte Carlo simulations show that for 6 MV beams in 8 mm diameter fields, the detector perturbation correction factor varies from 0.987 to 1.023 depending on detector composition. What primary physics mechanism accounts for this detector-specific variation in small fields?",
+    "answer": "Differential electron fluence perturbation due to atomic number mismatch",
+    "choices": [
+      "Bragg-Gray cavity theory breakdown in small volumes",
+      "Differential electron fluence perturbation due to atomic number mismatch",
+      "Primary photon attenuation variations with detector density",
+      "Secondary electron range exceeding field dimensions"
+    ],
+    "explanation": "In small fields, the perturbation correction factor is dominated by how different detector materials perturb the electron fluence spectrum due to atomic number differences from water.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "An FMEA analysis of cone-based SRS identifies cone selection error as having severity=8, occurrence=3, and detectability=4. After implementing barcode verification, detectability improves to 2. What is the reduction in Risk Priority Number?",
+    "answer": "RPN reduces from 96 to 48",
+    "choices": [
+      "RPN reduces from 96 to 48",
+      "RPN reduces from 64 to 32",
+      "RPN reduces from 84 to 42",
+      "RPN reduces from 72 to 36"
+    ],
+    "explanation": "RPN = Severity × Occurrence × Detectability. Initial: 8×3×4=96. After improvement: 8×3×2=48. The reduction is 96-48=48.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the tolerance for beam flatness for photon beams?",
+    "answer": "2%",
+    "choices": [
+      "1%",
+      "2%",
+      "3%",
+      "5%"
+    ],
+    "explanation": "TG-142 specifies a tolerance of 2% for beam flatness in photon beams for both daily and monthly QA procedures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary reference standard for absolute dose calibration in TG-51 protocol?",
+    "answer": "NIST-traceable ion chamber",
+    "choices": [
+      "NIST-traceable ion chamber",
+      "Farmer-type ion chamber",
+      "TLD dosimeters",
+      "Film dosimeters"
+    ],
+    "explanation": "TG-51 requires the use of a NIST-traceable ion chamber with a known calibration factor for absolute dose determination in water.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the recommended frequency for checking linear accelerator output constancy?",
+    "answer": "Daily",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Quarterly"
+    ],
+    "explanation": "According to TG-142, output constancy should be checked daily to ensure consistent beam delivery and patient safety.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator QA?",
+    "answer": "Multi-leaf collimator",
+    "choices": [
+      "Multi-leaf collimator",
+      "Medical linear chamber",
+      "Maximum leaf calibration",
+      "Machine level control"
+    ],
+    "explanation": "MLC stands for multi-leaf collimator, which is a beam-shaping device consisting of multiple tungsten leaves used to conform radiation beams to target volumes.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is stereotactic radiosurgery (SRS)?",
+    "answer": "A technique delivering high-dose radiation in a single fraction to small intracranial targets",
+    "choices": [
+      "A technique delivering high-dose radiation in a single fraction to small intracranial targets",
+      "A surgical procedure using gamma rays to remove brain tumors completely",
+      "A fractionated treatment protocol using stereotactic immobilization for precision",
+      "A diagnostic imaging technique combining CT and MRI for treatment planning"
+    ],
+    "explanation": "SRS is defined as the precise delivery of a large single dose of ionizing radiation to a small, well-defined intracranial target, typically in one session.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Coincidence of radiation isocenter with mechanical isocenter",
+    "choices": [
+      "Coincidence of radiation isocenter with mechanical isocenter",
+      "Accuracy of multileaf collimator positioning during treatment",
+      "Dose rate stability across different gantry angles",
+      "Image quality of cone-beam CT acquisition systems"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to assess the spatial accuracy of the radiation isocenter relative to the mechanical rotation isocenter of the linear accelerator.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary advantage of micro-MLCs in stereotactic treatments?",
+    "answer": "Enhanced conformality for small irregular targets",
+    "choices": [
+      "Enhanced conformality for small irregular targets",
+      "Reduced treatment delivery time compared to cones",
+      "Elimination of penumbra effects in beam edges",
+      "Automatic correction for patient motion during treatment"
+    ],
+    "explanation": "Micro-MLCs have smaller leaf widths (typically 2.5-5mm) compared to standard MLCs, allowing better conformality to small, irregular target volumes in stereotactic treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of radiation source does Gamma Knife use?",
+    "answer": "Cobalt-60 sources arranged in a hemispherical array",
+    "choices": [
+      "Cobalt-60 sources arranged in a hemispherical array",
+      "Linear accelerator with multiple fixed beam angles",
+      "Cesium-137 sources in a rotating gantry configuration",
+      "X-ray tube with stereotactic collimation system"
+    ],
+    "explanation": "Gamma Knife uses multiple Cobalt-60 sources (typically 192-201) arranged in a hemispherical geometry to deliver highly focused radiation to intracranial targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field dosimetry corrections become significant?",
+    "answer": "3 × 3 cm² or smaller at isocenter",
+    "choices": [
+      "3 × 3 cm² or smaller at isocenter",
+      "5 × 5 cm² or smaller at isocenter",
+      "2 × 2 cm² or smaller at isocenter",
+      "4 × 4 cm² or smaller at isocenter"
+    ],
+    "explanation": "Small field effects become significant for fields smaller than approximately 3 × 3 cm², where lateral charged particle equilibrium is compromised and detector response varies significantly.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "Which detector type is recommended by TG-155 for small field output factor measurements?",
+    "answer": "Synthetic diamond detectors for fields <2 cm",
+    "choices": [
+      "Synthetic diamond detectors for fields <2 cm",
+      "Ionization chambers for all field sizes",
+      "Silicon diodes exclusively for stereotactic fields",
+      "Film dosimetry for high spatial resolution"
+    ],
+    "explanation": "TG-155 recommends synthetic diamond detectors for very small fields due to their small sensitive volume, tissue equivalence, and minimal energy dependence.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by CyberKnife for patient positioning?",
+    "answer": "Real-time X-ray imaging with fiducial markers",
+    "choices": [
+      "Real-time X-ray imaging with fiducial markers",
+      "Surface monitoring with infrared camera systems",
+      "Cone-beam CT acquired before each beam",
+      "Electromagnetic transponder tracking technology"
+    ],
+    "explanation": "CyberKnife uses orthogonal X-ray imaging systems to track implanted fiducial markers or anatomical landmarks for real-time patient positioning correction during treatment delivery.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam with a 1 × 1 cm² field shows an output factor of 0.82 measured with a CC01 chamber and 0.88 with a diode detector. The Monte Carlo calculated correction factor for the chamber is 1.08. What is the most appropriate clinical output factor to use?",
+    "answer": "0.89 using the corrected chamber measurement",
+    "choices": [
+      "0.89 using the corrected chamber measurement",
+      "0.88 using the uncorrected diode measurement",
+      "0.85 as the average of both measurements",
+      "0.82 using the uncorrected chamber measurement"
+    ],
+    "explanation": "The corrected chamber measurement (0.82 × 1.08 = 0.89) is most appropriate as TG-155 recommends using correction factors for ion chambers in small fields, while diode measurements may have energy response issues.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A patient plan uses 15 non-coplanar beams with field sizes 1.2-2.8 cm. The planning system calculates 2400 cGy to PTV, but ion chamber measurement in a heterogeneous phantom gives 2640 cGy. All individual beam output factors agree within 2%. What explains this discrepancy?",
+    "answer": "Small field modeling errors in tissue heterogeneity corrections",
+    "choices": [
+      "Small field modeling errors in tissue heterogeneity corrections",
+      "Systematic calibration error in reference dosimetry setup",
+      "Incorrect application of daily output correction factors",
+      "Patient motion during the extended delivery time"
+    ],
+    "explanation": "Small field dose calculation algorithms may have increased uncertainty in heterogeneous media due to compromised lateral charged particle equilibrium and limitations in kernel-based calculations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "Winston-Lutz analysis shows consistent 0.8 mm isocenter deviation at gantry angles 90° and 270°, but <0.3 mm at 0° and 180°. The couch is positioned at 0°. What mechanical issue is most likely present?",
+    "answer": "Gantry bearing wear causing gravitational sag",
+    "choices": [
+      "Gantry bearing wear causing gravitational sag",
+      "Collimator rotation coupling misalignment",
+      "Patient couch vertical positioning drift",
+      "MLC calibration error affecting field center"
+    ],
+    "explanation": "The pattern of larger deviations at lateral gantry angles (90°, 270°) suggests gravitational effects on gantry mechanics, typically indicating bearing wear or structural deformation under gravity.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "Your Monte Carlo simulation for a 0.5×0.5 cm² field shows systematic 5% dose overestimation compared to diamond detector measurements. The electron transport cutoff is 10 keV and photon is 1 keV. What modification would most likely improve agreement?",
+    "answer": "Reduce electron transport cutoff to 1 keV",
+    "choices": [
+      "Reduce electron transport cutoff to 1 keV",
+      "Increase photon transport cutoff to 10 keV",
+      "Implement enhanced electron multiple scattering",
+      "Include atomic relaxation and Auger processes"
+    ],
+    "explanation": "In very small fields, low-energy electron transport becomes critical for accurate dose calculation. A 10 keV electron cutoff may be too high, leading to overestimation of dose in regions where low-energy electron equilibrium is important.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "An FMEA analysis for SRS treatments identifies that MLC positioning errors have a Risk Priority Number (RPN) of 336 (Severity=8, Occurrence=6, Detection=7). After implementing real-time MLC monitoring, Detection improves to 3. What is the new RPN?",
+    "answer": "144 indicating significant risk reduction",
+    "choices": [
+      "144 indicating significant risk reduction",
+      "168 indicating moderate risk reduction",
+      "192 indicating minimal risk improvement",
+      "288 indicating substantial risk reduction"
+    ],
+    "explanation": "RPN = Severity × Occurrence × Detection = 8 × 6 × 3 = 144. The improved detection capability reduces the RPN from 336 to 144, representing a significant risk reduction in the FMEA framework.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "In uncertainty budget analysis for small field dosimetry, the Type A uncertainty for repeat measurements is 1.2%, Type B uncertainty for detector calibration is 2.1%, and Type B for correction factors is 3.5%. What is the combined standard uncertainty?",
+    "answer": "4.2% combining all uncertainty components",
+    "choices": [
+      "4.2% combining all uncertainty components",
+      "6.8% as simple arithmetic sum",
+      "3.8% using dominant uncertainty method",
+      "5.1% excluding calibration uncertainty"
+    ],
+    "explanation": "Combined standard uncertainty = √(1.2² + 2.1² + 3.5²) = √(1.44 + 4.41 + 12.25) = √18.1 = 4.2%. Type A and Type B uncertainties are combined in quadrature according to GUM methodology.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a tolerance of ±3% for daily output constancy checks to ensure consistent dose delivery. This allows for normal day-to-day variations while flagging significant changes that require investigation.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary standard dosimetry protocol currently recommended by AAPM for absolute dose calibration of megavoltage photon beams?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-51",
+      "TG-21",
+      "TG-40",
+      "TG-25"
+    ],
+    "explanation": "TG-51 is the current AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams. It replaced the older TG-21 protocol and uses air-kerma based calibration factors.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the tolerance for beam flatness in the flattened region of a photon beam?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should be within ±3% across the flattened region of the beam profile. This ensures uniform dose distribution across the treatment field for consistent patient treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator quality assurance?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Imaging Detector",
+      "External Patient Imaging Display",
+      "Electronic Positioning Interface Device"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric quality assurance measurements. Modern EPIDs can provide quantitative dose information for treatment verification.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

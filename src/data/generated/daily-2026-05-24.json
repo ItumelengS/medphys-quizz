@@ -1,0 +1,257 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation and mechanical isocenters",
+    "choices": [
+      "To verify the coincidence of radiation and mechanical isocenters",
+      "To measure dose rate accuracy for small field treatments",
+      "To calibrate the micro-MLC leaf positioning system accuracy",
+      "To validate the stereotactic coordinate transformation matrix"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter of the treatment machine, which is critical for stereotactic accuracy. TG-142 recommends this test for SRS systems.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiation Treatment",
+      "Single Beam Radiosurgery Technique",
+      "Structured Beam Radiotherapy"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which delivers high doses of radiation to extracranial targets using stereotactic techniques with precise immobilization and targeting.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary radiation source used in the Leksell Gamma Knife system?",
+    "answer": "Cobalt-60 sources arranged in a hemispherical array",
+    "choices": [
+      "Cobalt-60 sources arranged in a hemispherical array",
+      "Linear accelerator with 6 MV photon beams",
+      "Cesium-137 sources in a circular configuration",
+      "Multiple kilovoltage X-ray tube assemblies"
+    ],
+    "explanation": "The Leksell Gamma Knife uses 192 or 201 Cobalt-60 sources (depending on model) arranged in a hemispherical pattern to focus radiation beams at a common isocenter for stereotactic radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What defines a small field in radiation therapy according to current consensus?",
+    "answer": "A field where lateral charged particle equilibrium is lost",
+    "choices": [
+      "A field where lateral charged particle equilibrium is lost",
+      "Any field smaller than 4 cm × 4 cm dimensions",
+      "A field with dose rate less than 400 cGy/min",
+      "Fields requiring stereotactic immobilization techniques"
+    ],
+    "explanation": "Small fields are defined by the loss of lateral charged particle equilibrium rather than by absolute size, as this affects dosimetry accuracy. TG-155 emphasizes this physics-based definition over arbitrary size cutoffs.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "Which TG report specifically addresses stereotactic body radiation therapy?",
+    "answer": "TG-101",
+    "choices": [
+      "TG-101",
+      "TG-135",
+      "TG-142",
+      "TG-218"
+    ],
+    "explanation": "TG-101 provides comprehensive guidance on stereotactic body radiation therapy, covering treatment planning, QA procedures, and clinical implementation. TG-135 focuses on small field dosimetry.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the recommended detector type for small field output factor measurements per TG-155?",
+    "answer": "Unshielded silicon diodes or diamond detectors",
+    "choices": [
+      "Unshielded silicon diodes or diamond detectors",
+      "Standard ionization chambers with air cavity",
+      "Thermoluminescent dosimeters in powder form",
+      "Film dosimeters with high spatial resolution"
+    ],
+    "explanation": "TG-155 recommends unshielded silicon diodes or diamond detectors for small field dosimetry due to their small sensitive volumes and minimal energy dependence compared to ionization chambers.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the typical fractionation scheme for single-fraction cranial SRS?",
+    "answer": "15-24 Gy delivered in one fraction",
+    "choices": [
+      "15-24 Gy delivered in one fraction",
+      "30-40 Gy delivered over 5 fractions",
+      "50-60 Gy delivered over 25 fractions",
+      "8-12 Gy delivered over 3 fractions"
+    ],
+    "explanation": "Single-fraction cranial SRS typically delivers 15-24 Gy depending on target size and location, taking advantage of the steep dose falloff achievable with stereotactic techniques as described in TG-101.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam small field measurement shows significant discrepancy between treatment planning system calculation and measurement. The field size is 1×1 cm². Monte Carlo simulation confirms measurement accuracy. You observe the TPS uses a pencil beam convolution algorithm with standard beam data. What is the most likely systematic cause requiring comprehensive investigation across multiple beam energies and field sizes?",
+    "answer": "Inadequate modeling of lateral electron disequilibrium in the dose calculation algorithm",
+    "choices": [
+      "Inadequate modeling of lateral electron disequilibrium in the dose calculation algorithm",
+      "Systematic detector positioning errors during beam data acquisition",
+      "Incorrect phantom scatter correction factors in the measurement protocol",
+      "Machine-specific output calibration drift affecting all field sizes equally"
+    ],
+    "explanation": "Pencil beam algorithms struggle with lateral electron disequilibrium in small fields, leading to systematic overestimation of dose. Monte Carlo algorithms better model particle transport physics. TG-155 emphasizes this limitation of older algorithms.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new SRS program, Winston-Lutz analysis reveals a systematic 0.8 mm offset that varies sinusoidally with gantry angle. The couch and collimator positions show minimal variation. Multiple measurement sessions confirm reproducibility. What underlying mechanical issue requires immediate investigation before clinical implementation?",
+    "answer": "Gantry bearing mechanical flex causing radiation isocenter displacement",
+    "choices": [
+      "Gantry bearing mechanical flex causing radiation isocenter displacement",
+      "Systematic calibration error in the EPID pixel-to-distance conversion",
+      "Temperature-dependent drift in the linear accelerator target position",
+      "Gravitational sagging of the treatment couch support structure"
+    ],
+    "explanation": "A sinusoidal pattern correlating with gantry angle indicates mechanical flex in the gantry bearing system, causing the radiation isocenter to move. This violates fundamental stereotactic accuracy requirements per TG-142.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-institutional SBRT trial requires dose reconstruction verification using heterogeneous phantoms. Your measurements with diamond detector show 4% higher dose than TPS in lung-equivalent material for a 2×2 cm field. Monte Carlo independent calculation agrees with measurement. What systematic commissioning deficiency most likely explains this multi-field size discrepancy?",
+    "answer": "Inadequate heterogeneity correction modeling for electron transport in low-density media",
+    "choices": [
+      "Inadequate heterogeneity correction modeling for electron transport in low-density media",
+      "Systematic energy dependence error in the diamond detector calibration coefficient",
+      "Incorrect tissue assignment in the phantom CT-to-density conversion table",
+      "Statistical uncertainty accumulation in the Monte Carlo dose calculation grid"
+    ],
+    "explanation": "Small fields in lung-equivalent material challenge dose algorithms due to altered electron transport and lack of lateral equilibrium. Many TPS algorithms inadequately model these effects, leading to systematic errors confirmed by Monte Carlo validation per TG-65.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Your department develops a Monte Carlo-based independent dose calculation system for SRS plan verification. Validation against measurements shows agreement within 2% for fields ≥2×2 cm but systematic 3-5% discrepancies for smaller fields. Your uncertainty budget analysis reveals measurement uncertainty <1.5%. What Monte Carlo modeling parameter requires optimization to achieve clinical acceptance criteria?",
+    "answer": "Inadequate electron transport cutoff energies causing premature particle termination in small volumes",
+    "choices": [
+      "Inadequate electron transport cutoff energies causing premature particle termination in small volumes",
+      "Insufficient statistical sampling leading to Type A uncertainty propagation",
+      "Systematic errors in the linear accelerator head geometry modeling specifications",
+      "Incorrect variance reduction techniques biasing dose scoring in high-gradient regions"
+    ],
+    "explanation": "Small field Monte Carlo calculations require lower electron transport cutoff energies to accurately model lateral disequilibrium. Default cutoffs may terminate particles prematurely, causing systematic dose underestimation as described in Monte Carlo commissioning literature.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142 recommendations, what is the tolerance limit for beam flatness in photon beams?",
+    "answer": "±3% for beam flatness",
+    "choices": [
+      "±3% for beam flatness",
+      "±2% for beam flatness",
+      "±5% for beam flatness",
+      "±1% for beam flatness"
+    ],
+    "explanation": "TG-142 specifies a tolerance of ±3% for photon beam flatness measurements during routine QA procedures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical physics?",
+    "answer": "Calibration of photon and electron beams",
+    "choices": [
+      "Calibration of photon and electron beams",
+      "Patient dose verification procedures",
+      "Treatment planning system validation",
+      "Portal imaging quality assurance"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, providing standardized calibration procedures.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "How frequently should output constancy checks be performed on linear accelerators according to standard QA protocols?",
+    "answer": "Daily before patient treatments",
+    "choices": [
+      "Daily before patient treatments",
+      "Weekly during morning warm-up",
+      "Monthly during scheduled maintenance",
+      "Quarterly with annual calibration"
+    ],
+    "explanation": "Daily output constancy checks are required before patient treatments to ensure beam output stability and patient safety, as specified in TG-142.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC QA primarily evaluate in linear accelerator systems?",
+    "answer": "Leaf positioning accuracy and leakage",
+    "choices": [
+      "Leaf positioning accuracy and leakage",
+      "Beam energy stability and uniformity",
+      "Portal imaging system calibration",
+      "Treatment couch positioning precision"
+    ],
+    "explanation": "MLC QA focuses on verifying the positional accuracy of individual leaves and measuring radiation leakage through and between leaves to ensure precise dose delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

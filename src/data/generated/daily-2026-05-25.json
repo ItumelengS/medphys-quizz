@@ -1,0 +1,274 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary difference between stereotactic radiosurgery (SRS) and stereotactic body radiotherapy (SBRT)?",
+    "answer": "SRS is single-fraction treatment while SBRT is hypofractionated",
+    "choices": [
+      "SRS is single-fraction treatment while SBRT is hypofractionated",
+      "SRS uses frame-based immobilization while SBRT uses frameless",
+      "SRS treats brain lesions while SBRT treats body lesions",
+      "SRS uses cone collimators while SBRT uses micro-MLCs"
+    ],
+    "explanation": "SRS is defined as single-fraction stereotactic treatment, while SBRT (also called SABR) is hypofractionated stereotactic treatment typically delivered in 2-8 fractions. Both can use various immobilization and delivery techniques.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What is the Winston-Lutz test primarily used to evaluate?",
+    "answer": "Coincidence of radiation and mechanical isocenter",
+    "choices": [
+      "Coincidence of radiation and mechanical isocenter",
+      "Small field output factor measurements accuracy",
+      "Micro-MLC leaf positioning and calibration",
+      "Patient setup accuracy for frameless treatments"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence of the radiation isocenter with the mechanical isocenter by imaging a small ball bearing from multiple gantry angles.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What does TG-101 primarily address in stereotactic radiotherapy?",
+    "answer": "Commissioning and QA of stereotactic body radiotherapy",
+    "choices": [
+      "Commissioning and QA of stereotactic body radiotherapy",
+      "Small field dosimetry measurement protocols",
+      "Gamma Knife quality assurance procedures",
+      "CyberKnife tracking system calibration methods"
+    ],
+    "explanation": "AAPM TG-101 provides guidance on commissioning, quality assurance, and clinical implementation of stereotactic body radiotherapy (SBRT).",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the defining characteristic of a small field in dosimetry?",
+    "answer": "Loss of lateral charged particle equilibrium",
+    "choices": [
+      "Loss of lateral charged particle equilibrium",
+      "Field size smaller than 4×4 cm² at isocenter",
+      "Inability to measure with standard ionization chambers",
+      "Presence of penumbra effects at field center"
+    ],
+    "explanation": "A small field is characterized by the loss of lateral charged particle equilibrium, which occurs when the field size approaches the range of secondary electrons.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the recommended detector for output factor measurements in fields smaller than 1×1 cm²?",
+    "answer": "Silicon diode detectors or diamond detectors",
+    "choices": [
+      "Silicon diode detectors or diamond detectors",
+      "Microchambers with volume less than 0.01 cm³",
+      "Film dosimetry with high resolution analysis",
+      "TLD chips with appropriate energy correction"
+    ],
+    "explanation": "TG-135 recommends silicon diode or diamond detectors for very small fields due to their small sensitive volumes and minimal energy dependence.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5-5.0 mm at isocenter projection",
+    "choices": [
+      "2.5-5.0 mm at isocenter projection",
+      "1.0-2.0 mm at isocenter projection",
+      "5.0-10.0 mm at isocenter projection",
+      "0.5-1.5 mm at isocenter projection"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm when projected to isocenter, providing improved conformality compared to standard MLCs.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "In Gamma Knife treatment planning, what is the typical maximum skull diameter that can be accommodated?",
+    "answer": "Approximately 170 mm in any direction",
+    "choices": [
+      "Approximately 170 mm in any direction",
+      "Approximately 200 mm in any direction",
+      "Approximately 150 mm in any direction",
+      "Approximately 180 mm in any direction"
+    ],
+    "explanation": "Gamma Knife systems typically accommodate skull diameters up to approximately 170 mm due to the fixed geometry of the collimator system.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of the CyberKnife's tracking system over frame-based stereotactic systems?",
+    "answer": "Real-time tumor tracking during treatment delivery",
+    "choices": [
+      "Real-time tumor tracking during treatment delivery",
+      "Higher dose rate delivery capabilities",
+      "Better conformality index achievements",
+      "Reduced treatment planning complexity"
+    ],
+    "explanation": "The CyberKnife's tracking system allows real-time monitoring and correction for tumor motion during treatment, eliminating the need for rigid immobilization frames.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6 MV beam 5×5 mm² field has an output factor of 0.72 measured with a diode, while the same field measures 0.68 with a microchamber. Monte Carlo calculations predict 0.74. Considering TG-135 guidelines and measurement uncertainties, what is the most appropriate approach to resolve this discrepancy?",
+    "answer": "Use Monte Carlo result with experimental validation using multiple detector types",
+    "choices": [
+      "Use Monte Carlo result with experimental validation using multiple detector types",
+      "Average all three measurements and apply a 5% uncertainty",
+      "Use diode measurement with volume-averaged correction factors",
+      "Perform EBT3 film measurement as the definitive reference"
+    ],
+    "explanation": "TG-135 recommends using Monte Carlo calculations as the primary method for very small field output factors, validated by multiple detector measurements. The discrepancy is within expected measurement uncertainties for small fields.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During SBRT lung treatment delivery, the tracking system shows a 3D tumor displacement of 8 mm, but the planned PTV margin is 5 mm. The beam is automatically paused. Considering dose distribution effects, motion interplay, and clinical constraints, what is the optimal management strategy?",
+    "answer": "Resume after repositioning and verify with 4D dose reconstruction",
+    "choices": [
+      "Resume after repositioning and verify with 4D dose reconstruction",
+      "Continue treatment with real-time adaptive dose compensation",
+      "Abort and replan with larger PTV margins",
+      "Switch to breath-hold technique and restart delivery"
+    ],
+    "explanation": "When tumor displacement exceeds PTV margins, repositioning is required. 4D dose reconstruction allows verification that the cumulative dose distribution remains acceptable, as recommended by TG-101.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A Winston-Lutz analysis reveals systematic 0.8 mm shifts varying sinusoidally with gantry angle, plus random 0.3 mm variations. The MLC-defined field shows additional 0.4 mm systematic offset. Considering mechanical tolerances and clinical impact, what is the most comprehensive corrective action?",
+    "answer": "Perform mechanical calibration addressing both gantry sag and MLC offset",
+    "choices": [
+      "Perform mechanical calibration addressing both gantry sag and MLC offset",
+      "Apply software correction factors for gantry angle dependency",
+      "Increase PTV margins by 1.0 mm to account for uncertainties",
+      "Recalibrate imaging system and repeat measurements"
+    ],
+    "explanation": "The sinusoidal gantry-angle dependence indicates mechanical sag, while the MLC offset suggests calibration issues. Both require mechanical/software corrections rather than just margin expansion for optimal stereotactic accuracy.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An FMEA analysis for CyberKnife treatments identifies imaging system failure (RPN=240) and tracking algorithm errors (RPN=180) as high-risk failure modes. Current detection probability is 0.3 for both. What systematic improvement strategy would most effectively reduce overall treatment risk?",
+    "answer": "Implement redundant imaging verification with automated cross-validation protocols",
+    "choices": [
+      "Implement redundant imaging verification with automated cross-validation protocols",
+      "Increase imaging frequency and manual verification checkpoints",
+      "Develop machine learning algorithms for improved tracking accuracy",
+      "Install backup tracking systems with independent positioning verification"
+    ],
+    "explanation": "Redundant imaging with automated cross-validation improves detection probability for both failure modes simultaneously, reducing RPN most effectively. This addresses the root cause rather than just consequences.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in daily QA checks?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±1% from baseline",
+      "±2% from baseline",
+      "±3% from baseline",
+      "±5% from baseline"
+    ],
+    "explanation": "TG-142 recommends a tolerance of ±3% from baseline for beam flatness during daily QA checks to ensure adequate beam uniformity for clinical treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 calibration protocol?",
+    "answer": "To determine absorbed dose to water for photon beams",
+    "choices": [
+      "To determine absorbed dose to water for photon beams",
+      "To measure beam energy for electron beams only",
+      "To calibrate portal imaging devices for treatment",
+      "To establish monitor unit calculations for planning"
+    ],
+    "explanation": "TG-51 is the AAPM protocol specifically designed for the calibration of photon and electron beams in terms of absorbed dose to water using ion chamber measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "According to TG-142, how frequently should MLC positional accuracy be checked?",
+    "answer": "Monthly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "explanation": "TG-142 specifies that MLC positional accuracy should be checked monthly with a tolerance of ±1 mm to ensure precise delivery of shaped radiation fields.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the recommended tolerance for output constancy in daily QA according to TG-142?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±2% from baseline",
+      "±3% from baseline",
+      "±4% from baseline",
+      "±5% from baseline"
+    ],
+    "explanation": "TG-142 establishes ±3% from baseline as the tolerance for daily output constancy checks to ensure consistent dose delivery throughout treatment courses.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

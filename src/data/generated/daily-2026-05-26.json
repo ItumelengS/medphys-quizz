@@ -1,0 +1,325 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation isocenter and mechanical isocenter",
+    "choices": [
+      "To verify the coincidence of radiation isocenter and mechanical isocenter",
+      "To measure the dose rate accuracy of the linear accelerator",
+      "To calibrate the multi-leaf collimator leaf positions and speeds",
+      "To determine the patient setup accuracy using imaging systems"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the radiation isocenter coincides with the mechanical isocenter of the gantry, collimator, and couch rotations, which is critical for SRS accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiation Treatment",
+      "Staged Boost Radiation Technique",
+      "Single Beam Radiosurgery Treatment"
+    ],
+    "explanation": "SBRT stands for Stereotactic Body Radiation Therapy, which delivers high doses of radiation to extracranial targets using precise stereotactic techniques.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field dosimetry considerations become important?",
+    "answer": "5 cm × 5 cm",
+    "choices": [
+      "3 cm × 3 cm",
+      "5 cm × 5 cm",
+      "2 cm × 2 cm",
+      "4 cm × 4 cm"
+    ],
+    "explanation": "Small field dosimetry considerations typically become important for field sizes below 3 cm × 3 cm, where lateral electronic equilibrium is not established and detector choice becomes critical.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the fundamental principle behind Gamma Knife radiosurgery?",
+    "answer": "Multiple convergent cobalt-60 beams focused on a single target",
+    "choices": [
+      "Multiple convergent cobalt-60 beams focused on a single target",
+      "Single high-energy photon beam with robotic positioning system",
+      "Rotating linear accelerator with micro-multileaf collimation techniques",
+      "Sequential arc therapy using variable dose rate modulation"
+    ],
+    "explanation": "Gamma Knife uses approximately 200 fixed cobalt-60 sources arranged in a hemispherical configuration that converge on a single focal point to deliver precise radiosurgery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the primary advantage of micro-MLCs over traditional circular collimators in SRS?",
+    "answer": "Better conformity to irregular target shapes",
+    "choices": [
+      "Better conformity to irregular target shapes",
+      "Higher maximum dose rates for treatment",
+      "Reduced radiation leakage between leaf gaps",
+      "Improved mechanical accuracy and stability"
+    ],
+    "explanation": "Micro-MLCs with leaf widths of 2.5-5 mm provide superior conformity to irregularly shaped targets compared to fixed circular collimators used in cone-based SRS systems.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "What is the recommended detector for small field output factor measurements according to TG-155?",
+    "answer": "Silicon diode or diamond detector",
+    "choices": [
+      "Silicon diode or diamond detector",
+      "Ion chamber with air cavity correction",
+      "Thermoluminescent dosimeter in water phantom",
+      "Film dosimetry with optical density analysis"
+    ],
+    "explanation": "TG-155 recommends silicon diodes or diamond detectors for small field measurements due to their small sensitive volumes and minimal energy dependence compared to ion chambers.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the typical accuracy requirement for mechanical isocenter in SRS systems?",
+    "answer": "≤1 mm diameter sphere",
+    "choices": [
+      "≤1 mm diameter sphere",
+      "≤2 mm diameter sphere",
+      "≤0.5 mm diameter sphere",
+      "≤1.5 mm diameter sphere"
+    ],
+    "explanation": "SRS systems typically require mechanical isocenter accuracy within a 1 mm diameter sphere to ensure precise dose delivery to small targets while sparing surrounding critical structures.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A CyberKnife system shows systematic tracking errors of 1.2 mm during respiratory motion management, while the planning target volume margin is 3 mm. The treatment involves a 2 cm diameter lung lesion with 54 Gy in 3 fractions. Considering the motion management uncertainties, what is the most appropriate action to optimize the therapeutic ratio?",
+    "answer": "Implement fiducial-based tracking with real-time motion correlation model updates",
+    "choices": [
+      "Implement fiducial-based tracking with real-time motion correlation model updates",
+      "Increase PTV margin to 5 mm and reduce fractionation to single session",
+      "Apply respiratory gating with 30% duty cycle and maintain current margins",
+      "Switch to cone-based collimation with larger field sizes for robustness"
+    ],
+    "explanation": "The systematic tracking error exceeds acceptable limits for SBRT. Fiducial-based tracking with updated correlation models can reduce systematic errors to <1 mm, maintaining steep dose gradients essential for lung SBRT while preserving normal tissue.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system, output factor measurements show 8% discrepancies between ion chamber and diode detector readings for 6×6 mm fields. The treatment planning system shows dose calculation errors of 5% in heterogeneous phantoms. What systematic approach should be prioritized to resolve these dosimetric inconsistencies?",
+    "answer": "Perform Monte Carlo validation of detector response in small fields with spectrum analysis",
+    "choices": [
+      "Perform Monte Carlo validation of detector response in small fields with spectrum analysis",
+      "Recalibrate both detectors using larger field reference conditions and interpolation",
+      "Adjust beam modeling parameters in TPS using averaged detector measurements",
+      "Implement plastic water phantom measurements with radiochromic film verification"
+    ],
+    "explanation": "The discrepancies suggest detector-specific response issues in small fields. Monte Carlo simulation can validate detector response corrections and beam spectrum changes in small fields, providing the fundamental data needed for accurate dosimetry per TG-155 recommendations.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-institutional SRS program reports varying Winston-Lutz results between identical linear accelerators (0.4 mm vs 1.1 mm maximum deviations). The physicist must establish a harmonized QA protocol accounting for different imaging systems, mechanical tolerances, and measurement methodologies. What is the most comprehensive approach to standardize the program?",
+    "answer": "Develop machine-specific tolerance matrices incorporating imaging resolution and mechanical baselines",
+    "choices": [
+      "Develop machine-specific tolerance matrices incorporating imaging resolution and mechanical baselines",
+      "Implement identical measurement software with standardized analysis algorithms across sites",
+      "Establish common mechanical adjustment procedures with vendor-specific calibration protocols",
+      "Create unified reporting templates with statistical process control for trending analysis"
+    ],
+    "explanation": "Different machine vintages and imaging systems have inherent performance variations. Machine-specific tolerance matrices account for these differences while maintaining clinical equivalence, following AAPM guidance for multi-site programs with heterogeneous equipment.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "An SRS program implementing cone-based and micro-MLC techniques shows plan quality variations dependent on target geometry. Conformity indices range from 1.15 to 2.8, with gradient indices from 2.1 to 4.6. Given competing clinical priorities of target coverage, conformity, and gradient, what optimization framework should guide technique selection?",
+    "answer": "Multi-objective optimization incorporating radiobiological models and organ-specific tolerance analysis",
+    "choices": [
+      "Multi-objective optimization incorporating radiobiological models and organ-specific tolerance analysis",
+      "Standardized technique selection based on target volume and proximity to critical structures",
+      "Automated planning with machine learning algorithms trained on historical plan outcomes",
+      "Physics-based scoring combining conformity metrics with dose-volume histogram analysis"
+    ],
+    "explanation": "The wide variation in plan metrics suggests need for individualized optimization. Multi-objective approaches incorporating radiobiology (TCP/NTCP models) provide clinically relevant guidance for balancing competing priorities, as recommended in advanced SRS planning protocols.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "A research protocol requires uncertainty budget quantification for small field dosimetry in heterogeneous media. Monte Carlo simulations show 2.3% statistical uncertainty (1σ), detector measurements have 1.8% reproducibility, and treatment planning calculations show 3.1% systematic deviations in bone interfaces. Using GUM methodology, what is the combined expanded uncertainty (k=2) for dose delivery validation?",
+    "answer": "8.6% expanded uncertainty incorporating systematic and random components",
+    "choices": [
+      "8.6% expanded uncertainty incorporating systematic and random components",
+      "7.2% expanded uncertainty using root-sum-square statistical combination",
+      "9.4% expanded uncertainty with conservative correlation coefficient assumptions",
+      "6.8% expanded uncertainty applying partial correlation analysis between components"
+    ],
+    "explanation": "Using GUM methodology: u_combined = √[(2.3)² + (1.8)² + (3.1)²] = 4.3%, giving expanded uncertainty U = k × u_combined = 2 × 4.3 = 8.6%. This accounts for statistical and systematic components in the uncertainty budget for research-level dosimetry.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "A Monte Carlo study of micro-MLC leaf transmission reveals 0.8% leakage with 15% statistical uncertainty per voxel. The clinical impact assessment requires 0.1% precision in normal tissue dose calculations. Assuming parallel computing with 64 cores and current simulation efficiency of 2×10⁶ histories/minute/core, what minimum computation time is required to achieve the target precision?",
+    "answer": "47 hours using variance reduction and statistical convergence analysis",
+    "choices": [
+      "47 hours using variance reduction and statistical convergence analysis",
+      "23 hours applying importance sampling with optimized geometry partitioning",
+      "31 hours using correlated sampling with geometric symmetry assumptions",
+      "38 hours implementing forced detection with Russian roulette techniques"
+    ],
+    "explanation": "To reduce uncertainty from 15% to 0.1% requires (15/0.1)² = 22,500× more histories. Current rate: 64×2×10⁶ = 1.28×10⁸ hist/min. Required: 22,500× increase ≈ 2.88×10¹² histories total, requiring ~47 hours with optimized variance reduction techniques.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "An FMEA analysis of robotic radiosurgery systems identifies intrafraction motion as the highest-risk failure mode (RPN=240). The fault tree analysis shows correlation between respiratory amplitude >8mm, tracking latency >150ms, and model prediction errors >1.5mm. What systematic risk mitigation strategy addresses the root cause failure mechanisms?",
+    "answer": "Implement redundant real-time monitoring with adaptive model updating and intervention thresholds",
+    "choices": [
+      "Implement redundant real-time monitoring with adaptive model updating and intervention thresholds",
+      "Establish conservative treatment margins with enhanced patient immobilization and gating protocols",
+      "Deploy machine learning prediction algorithms with predictive motion compensation techniques",
+      "Install secondary verification systems with independent tracking modalities and cross-validation"
+    ],
+    "explanation": "The high RPN indicates critical risk requiring systematic mitigation. Redundant monitoring addresses tracking latency, adaptive models handle prediction errors, and intervention thresholds manage amplitude variations, targeting all identified failure mechanisms per AAPM risk management protocols.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "A research investigation of detector response in small fields using EGSnrc Monte Carlo shows energy spectrum hardening effects of 2.8% for 5×5 mm fields compared to reference conditions. The measured detector correction factors show 4.2% deviations from calculated values. Considering cross-section uncertainties and transport physics, what is the dominant source of Monte Carlo systematic uncertainty?",
+    "answer": "Low-energy photon interaction cross-sections and condensed history transport approximations",
+    "choices": [
+      "Low-energy photon interaction cross-sections and condensed history transport approximations",
+      "Statistical convergence limitations and variance reduction technique implementation errors",
+      "Geometric modeling uncertainties and material composition specification accuracy",
+      "Boundary condition artifacts and voxel size discretization effects in transport"
+    ],
+    "explanation": "The 4.2% deviation between calculation and measurement in small fields indicates systematic physics modeling issues. Low-energy photon cross-sections and condensed history approximations are primary uncertainty sources in small field Monte Carlo, as identified in recent detector response literature.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for output constancy during daily quality assurance checks?",
+    "answer": "±3%",
+    "choices": [
+      "±1%",
+      "±2%",
+      "±3%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies that daily output constancy measurements should be within ±3% of the baseline value to ensure consistent beam delivery for patient treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary dosimetric protocol recommended by TG-51 for calibrating photon beams in water?",
+    "answer": "Ion chamber calibration in terms of absorbed dose to water",
+    "choices": [
+      "Ion chamber calibration in terms of absorbed dose to water",
+      "Ion chamber calibration in terms of air kerma",
+      "Thermoluminescent dosimeter calibration in water",
+      "Film dosimetry calibration in solid water"
+    ],
+    "explanation": "TG-51 established the protocol for calibrating photon and electron beams using ion chambers calibrated in terms of absorbed dose to water, replacing the previous air kerma-based TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the TG-142 recommended tolerance for beam flatness in photon beams?",
+    "answer": "±2%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±4%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should be within ±3% to ensure uniform dose distribution across the treatment field for optimal patient care.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does MLC stand for in the context of linear accelerator quality assurance?",
+    "answer": "Multileaf Collimator",
+    "choices": [
+      "Multileaf Collimator",
+      "Maximum Leaf Configuration",
+      "Monitor Level Control",
+      "Machine Learning Calibration"
+    ],
+    "explanation": "MLC stands for Multileaf Collimator, which is a beam-shaping device consisting of multiple movable leaves used to conform radiation fields to target volumes in modern radiotherapy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

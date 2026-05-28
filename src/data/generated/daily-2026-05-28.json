@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify mechanical and radiation isocenter coincidence",
+    "choices": [
+      "To verify mechanical and radiation isocenter coincidence",
+      "To measure dose rate accuracy and linearity",
+      "To calibrate the treatment planning system algorithms",
+      "To validate patient positioning and immobilization"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to assess the coincidence of mechanical rotation isocenter with radiation field center, critical for SRS accuracy per TG-142.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What defines a 'small field' in radiation therapy dosimetry according to current consensus?",
+    "answer": "A field where lateral charged particle equilibrium is absent",
+    "choices": [
+      "A field where lateral charged particle equilibrium is absent",
+      "Any field smaller than 4 cm × 4 cm",
+      "A field with less than 95% dose uniformity",
+      "Any field requiring special dosimetry protocols only"
+    ],
+    "explanation": "Small fields are defined by the absence of lateral charged particle equilibrium rather than absolute size, as stated in TG-155 and IAEA TRS-483.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary radiation delivery mechanism in GammaKnife radiosurgery?",
+    "answer": "Multiple fixed Cobalt-60 sources with collimator helmets",
+    "choices": [
+      "Multiple fixed Cobalt-60 sources with collimator helmets",
+      "Linear accelerator with micro-MLC beam shaping",
+      "Robotic arm with real-time imaging guidance",
+      "Rotating gantry with cone-based collimation systems"
+    ],
+    "explanation": "GammaKnife uses multiple fixed Cobalt-60 sources (typically 192 or 201) arranged in a hemisphere with interchangeable collimator helmets for beam focusing.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the main advantage of SBRT compared to conventional radiotherapy?",
+    "answer": "Delivery of ablative doses in fewer fractions",
+    "choices": [
+      "Delivery of ablative doses in fewer fractions",
+      "Use of lower total doses for treatment",
+      "Elimination of all setup uncertainties completely",
+      "Faster treatment delivery times per session"
+    ],
+    "explanation": "SBRT delivers high doses per fraction (typically >5 Gy) in 1-8 fractions, enabling biological dose escalation while maintaining normal tissue tolerance.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended dose calculation grid size for SRS treatments?",
+    "answer": "≤2 mm for target volumes and critical structures",
+    "choices": [
+      "≤2 mm for target volumes and critical structures",
+      "≤3 mm for all treatment planning calculations",
+      "≤1 mm only for targets smaller than 1 cm",
+      "≤5 mm with density correction factors applied"
+    ],
+    "explanation": "TG-101 recommends calculation grid sizes ≤2 mm for SRS to ensure adequate sampling of steep dose gradients around small targets.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in cranial SRS?",
+    "answer": "2.5-5.0 mm at isocenter projection",
+    "choices": [
+      "2.5-5.0 mm at isocenter projection",
+      "1.0-2.0 mm at isocenter projection",
+      "5.0-10.0 mm at isocenter projection",
+      "0.5-1.5 mm at isocenter projection"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5-5.0 mm projected at isocenter, providing improved conformality compared to standard 10 mm MLCs for small targets.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "According to TG-135, what is the recommended frequency for Winston-Lutz testing?",
+    "answer": "Monthly for SRS-capable linear accelerators",
+    "choices": [
+      "Monthly for SRS-capable linear accelerators",
+      "Weekly for all treatment delivery systems",
+      "Daily before each SRS treatment session",
+      "Quarterly with additional post-maintenance checks"
+    ],
+    "explanation": "TG-135 recommends monthly Winston-Lutz testing for SRS-capable linacs, with tolerance of ≤1 mm total displacement for the 95th percentile of measurements.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary correction applied to ion chamber measurements in small fields?",
+    "answer": "Output correction factors for detector response",
+    "choices": [
+      "Output correction factors for detector response",
+      "Temperature and pressure corrections only",
+      "Beam quality correction factors exclusively",
+      "Recombination and polarity corrections primarily"
+    ],
+    "explanation": "Small field output correction factors account for volume averaging, perturbation, and spectral effects that alter detector response compared to reference conditions.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A Winston-Lutz analysis reveals systematic shifts of 0.8 mm, 1.2 mm, and 0.6 mm for gantry angles 0°, 90°, and 270° respectively, with 2.1 mm at 180°. The collimator and couch show <0.5 mm deviations. What is the most likely mechanical issue requiring investigation?",
+    "answer": "Gantry bearing wear causing gravitational sagging at 180°",
+    "choices": [
+      "Gantry bearing wear causing gravitational sagging at 180°",
+      "Systematic couch rotation calibration offset error",
+      "MLC leaf positioning drift across all angles",
+      "Radiation isocenter drift due to magnetron aging"
+    ],
+    "explanation": "The pattern shows acceptable performance except at 180° gantry angle, indicating gravitational sag typical of gantry bearing wear. TG-142 tolerance is 1 mm for individual measurements.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During small field commissioning, your 0.5×0.5 cm field shows 15% higher output with a PTW 60019 microDiamond compared to Monte Carlo calculations, while larger fields agree within 2%. What commissioning strategy addresses this systematically?",
+    "answer": "Apply detector-specific correction factors from TRS-483 database",
+    "choices": [
+      "Apply detector-specific correction factors from TRS-483 database",
+      "Increase beam modeling grid resolution to 0.1 mm",
+      "Recalibrate the detector using Farmer chamber cross-reference",
+      "Modify electron transport parameters in treatment planning system"
+    ],
+    "explanation": "The discrepancy indicates detector response perturbation in small fields. IAEA TRS-483 provides field size dependent correction factors for specific detectors including the microDiamond.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "Your SBRT program shows 8% higher local control rates but 12% increased Grade 2+ toxicity compared to literature. Analysis reveals 95th percentile dose to organs at risk exceeds planning constraints in 23% of cases. What systematic intervention most effectively addresses this pattern?",
+    "answer": "Implement probabilistic planning with robust optimization techniques",
+    "choices": [
+      "Implement probabilistic planning with robust optimization techniques",
+      "Reduce prescription dose by 10% for all cases",
+      "Increase PTV margins by 2 mm in all directions",
+      "Switch from VMAT to static beam IMRT delivery"
+    ],
+    "explanation": "The pattern suggests setup/delivery uncertainties cause dose escalation to OARs. Probabilistic planning with robust optimization accounts for uncertainties during optimization rather than post-hoc margin expansion.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "A multi-institutional audit reveals 18% variation in small field dosimetry across GammaKnife centers using identical protocols. Monte Carlo analysis shows detector positioning uncertainties contribute 8% variance, with remaining sources unclear. What investigation methodology best identifies systematic error sources?",
+    "answer": "Comprehensive uncertainty budget analysis per GUM framework",
+    "choices": [
+      "Comprehensive uncertainty budget analysis per GUM framework",
+      "Standardized phantom measurements at all participating centers",
+      "Cross-calibration using mailed dosimetry audit systems",
+      "Implementation of real-time dosimetry monitoring protocols"
+    ],
+    "explanation": "GUM (Guide to Uncertainty in Measurement) framework systematically identifies and quantifies all uncertainty components, enabling targeted interventions for the largest contributors beyond detector positioning.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulation of your 6 mm cone shows 4.2% discrepancy in penumbra width compared to measurements using EBT3 film. Electron transport cutoff energies are 0.7/0.01 MeV (photon/electron). What computational parameter optimization most likely resolves this discrepancy?",
+    "answer": "Reduce electron transport cutoff to 0.1/0.001 MeV",
+    "choices": [
+      "Reduce electron transport cutoff to 0.1/0.001 MeV",
+      "Increase photon interaction forcing parameters by factor of 10",
+      "Implement millisecond temporal resolution for dose scoring",
+      "Apply Gaussian smoothing to phase space data"
+    ],
+    "explanation": "Penumbra accuracy in small fields requires precise electron transport modeling. Current cutoffs are too high for accurate dose deposition in penumbra regions where low-energy electrons dominate.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis of your CyberKnife program identifies respiratory tracking as highest risk (RPN=168). Failure mode is 'fiducial migration >3mm between imaging sessions'. What risk mitigation strategy provides optimal risk reduction while maintaining clinical efficiency?",
+    "answer": "Implement real-time fiducial position verification with adaptive replanning",
+    "choices": [
+      "Implement real-time fiducial position verification with adaptive replanning",
+      "Increase all respiratory motion margins by 5 mm",
+      "Require daily CT scans for all tracked patients",
+      "Eliminate respiratory tracking and use breath-hold techniques"
+    ],
+    "explanation": "Real-time verification with adaptive replanning directly addresses the failure mode while maintaining treatment efficiency. This approach reduces both occurrence probability and detection difficulty components of RPN.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt115",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of micro-MLC transmission shows 3.8% discrepancy compared to measurements for 1×1 cm fields. Your model uses homogeneous tungsten composition with 0.5 mm spatial resolution. What modeling refinement most effectively improves accuracy?",
+    "answer": "Implement heterogeneous leaf composition with manufacturing tolerances",
+    "choices": [
+      "Implement heterogeneous leaf composition with manufacturing tolerances",
+      "Increase spatial resolution to 0.1 mm throughout geometry",
+      "Add electromagnetic field effects in leaf positioning",
+      "Model individual leaf surface roughness characteristics"
+    ],
+    "explanation": "Micro-MLC leaves contain tungsten powder in polymer matrix with density variations. Manufacturing tolerances create composition gradients affecting transmission, particularly important for small field accuracy.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements on a linear accelerator?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a tolerance of ±3% for daily output constancy measurements to ensure consistent dose delivery. This tolerance balances practical measurement uncertainty with patient safety requirements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical linear accelerator calibration?",
+    "answer": "Absolute dose calibration using ion chamber measurements",
+    "choices": [
+      "Absolute dose calibration using ion chamber measurements",
+      "Relative dose distribution verification using film dosimetry",
+      "Patient-specific quality assurance using portal imaging",
+      "Beam energy verification using depth dose curves"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry, providing methodology for absolute dose calibration of photon and electron beams using ion chamber measurements in water.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "Which parameter is typically assessed during beam flatness measurements in linear accelerator QA?",
+    "answer": "Dose uniformity across the central 80% of field",
+    "choices": [
+      "Dose uniformity across the central 80% of field",
+      "Beam penetration depth at 50% dose level",
+      "Penumbra width at field edge boundaries",
+      "Leakage radiation outside treatment area"
+    ],
+    "explanation": "Beam flatness is defined as the dose uniformity across the central 80% of the radiation field, typically expressed as the ratio of maximum to minimum dose in this region.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

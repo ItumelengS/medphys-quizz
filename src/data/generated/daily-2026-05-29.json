@@ -1,0 +1,155 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What does SRS stand for in stereotactic radiosurgery?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Single Radiation Surgery",
+      "Stereotactic Radiation System",
+      "Single Range Stereotaxy"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a precise radiation therapy technique that delivers high doses in a single fraction to small targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test?",
+    "answer": "Verify coincidence of radiation and mechanical isocenter",
+    "choices": [
+      "Verify coincidence of radiation and mechanical isocenter",
+      "Measure small field output factors accurately",
+      "Calibrate micro-MLC leaf positioning systems",
+      "Determine beam penumbra for cone collimators"
+    ],
+    "explanation": "The Winston-Lutz test verifies the coincidence between the radiation isocenter and mechanical isocenter, essential for stereotactic treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of imaging does CyberKnife use for real-time tracking?",
+    "answer": "Orthogonal kV X-ray imaging",
+    "choices": [
+      "Orthogonal kV X-ray imaging",
+      "Single portal MV imaging",
+      "Continuous CT fluoroscopy",
+      "Dual energy cone beam CT"
+    ],
+    "explanation": "CyberKnife uses orthogonal kV X-ray imaging systems to track patient anatomy and tumor position in real-time during treatment delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt104",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field dosimetry considerations apply?",
+    "answer": "3 cm × 3 cm equivalent square",
+    "choices": [
+      "1 cm × 1 cm equivalent square",
+      "2 cm × 2 cm equivalent square",
+      "3 cm × 3 cm equivalent square",
+      "5 cm × 5 cm equivalent square"
+    ],
+    "explanation": "Small field dosimetry considerations typically apply for field sizes below 3 cm × 3 cm equivalent square, as recommended by TG-155.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the maximum acceptable Winston-Lutz deviation for SRS treatments?",
+    "answer": "1 mm radius from isocenter",
+    "choices": [
+      "0.5 mm radius from isocenter",
+      "1 mm radius from isocenter",
+      "1.5 mm radius from isocenter",
+      "2 mm radius from isocenter"
+    ],
+    "explanation": "The maximum acceptable Winston-Lutz deviation for SRS treatments is typically 1 mm radius from isocenter, as recommended by TG-142.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "How many Cobalt-60 sources are used in the Gamma Knife Perfexion unit?",
+    "answer": "192 Cobalt-60 sources arranged geometrically",
+    "choices": [
+      "192 Cobalt-60 sources arranged geometrically",
+      "201 Cobalt-60 sources arranged geometrically",
+      "256 Cobalt-60 sources arranged geometrically",
+      "320 Cobalt-60 sources arranged geometrically"
+    ],
+    "explanation": "The Gamma Knife Perfexion uses 192 Cobalt-60 sources arranged in a precise geometric configuration to focus radiation at the target.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for beam flatness in daily QA checks?",
+    "answer": "±3% from baseline",
+    "choices": [
+      "±1% from baseline",
+      "±3% from baseline",
+      "±5% from baseline",
+      "±2% from baseline"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should be within ±3% from baseline for daily QA measurements on linear accelerators.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary dosimetry protocol recommended by TG-51 for photon beam calibration?",
+    "answer": "Ion chamber dosimetry in water",
+    "choices": [
+      "Ion chamber dosimetry in water",
+      "Film dosimetry in solid water",
+      "Diode dosimetry in acrylic",
+      "TLD dosimetry in polystyrene"
+    ],
+    "explanation": "TG-51 establishes ion chamber dosimetry in water as the reference standard protocol for photon beam calibration in medical linear accelerators.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator QA systems?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "Enhanced Photon Intensity Detector",
+      "External Patient Imaging Display",
+      "Electronic Position Index Detector"
+    ],
+    "explanation": "EPID stands for Electronic Portal Imaging Device, which is used for patient positioning verification and increasingly for dosimetric QA applications.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

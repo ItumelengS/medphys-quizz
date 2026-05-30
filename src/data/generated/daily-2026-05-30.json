@@ -1,0 +1,240 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the definition of a small field in radiation therapy dosimetry?",
+    "answer": "A field where lateral electron equilibrium is absent",
+    "choices": [
+      "A field where lateral electron equilibrium is absent",
+      "A field with dimensions less than 2 cm × 2 cm",
+      "A field where photon scatter contribution is minimal",
+      "A field requiring micromultileaf collimator delivery"
+    ],
+    "explanation": "According to TG-155, small fields are defined by the absence of lateral charged particle equilibrium, not by absolute size criteria.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does the Winston-Lutz test primarily evaluate?",
+    "answer": "Mechanical isocenter accuracy of linear accelerator",
+    "choices": [
+      "Mechanical isocenter accuracy of linear accelerator",
+      "Output factor accuracy for small fields",
+      "Multileaf collimator positioning precision verification",
+      "Patient positioning system alignment quality"
+    ],
+    "explanation": "The Winston-Lutz test evaluates the coincidence of the radiation isocenter with the mechanical rotation isocenter using a ball bearing phantom.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the primary function of GammaKnife technology?",
+    "answer": "Intracranial stereotactic radiosurgery using cobalt sources",
+    "choices": [
+      "Intracranial stereotactic radiosurgery using cobalt sources",
+      "Extracranial stereotactic body radiotherapy delivery",
+      "Image-guided radiation therapy with tracking",
+      "Intensity-modulated radiation therapy planning optimization"
+    ],
+    "explanation": "GammaKnife is a dedicated stereotactic radiosurgery system using multiple cobalt-60 sources for intracranial treatments only.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the key distinguishing feature of CyberKnife technology?",
+    "answer": "Robotic linear accelerator with real-time tracking",
+    "choices": [
+      "Robotic linear accelerator with real-time tracking",
+      "Gamma radiation delivery using multiple sources",
+      "Rotating gantry with micro-multileaf collimators",
+      "Fixed beam arrangement with patient positioning"
+    ],
+    "explanation": "CyberKnife uses a lightweight linac mounted on a robotic arm with real-time image guidance and respiratory/tumor tracking capabilities.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A 6X FFF beam shows 15% output variation between 4×4 cm and 1×1 cm fields measured with different detectors. The farmer chamber reads 8% higher than diode for the 1×1 cm field. Monte Carlo simulation predicts 12% variation. What is the most likely cause of measurement discrepancy?",
+    "answer": "Volume averaging effect in farmer chamber overestimating small field dose",
+    "choices": [
+      "Volume averaging effect in farmer chamber overestimating small field dose",
+      "Energy dependence of diode response underestimating beam hardening",
+      "Monte Carlo statistical uncertainty affecting simulation accuracy",
+      "Machine output instability during measurement sequence"
+    ],
+    "explanation": "The farmer chamber's large sensitive volume causes significant volume averaging in small fields, leading to overestimation compared to the more appropriate diode detector.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning, Winston-Lutz analysis reveals 1.2 mm systematic offset with 0.8 mm random variation over all gantry angles. The treatment planning system shows 0.3 mm GTV-to-PTV margin for a 4 mm lesion. What action should be prioritized?",
+    "answer": "Correct systematic offset through mechanical adjustment before treating",
+    "choices": [
+      "Correct systematic offset through mechanical adjustment before treating",
+      "Increase PTV margin to account for observed uncertainty",
+      "Apply software-based correction factors to compensate offset",
+      "Document finding and proceed with current margin"
+    ],
+    "explanation": "The 1.2 mm systematic offset significantly exceeds acceptable tolerances for SRS and must be mechanically corrected before treatment delivery to ensure targeting accuracy.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A GammaKnife treatment shows dose rate variations of 8% between sectors during quality assurance. The cobalt sources are 2.5 years post-installation with expected 12% decay. Film dosimetry indicates asymmetric dose distribution. What is the most appropriate corrective action?",
+    "answer": "Perform individual source strength assessment and update treatment planning data",
+    "choices": [
+      "Perform individual source strength assessment and update treatment planning data",
+      "Apply uniform decay correction based on average source age",
+      "Increase treatment time proportionally to compensate lower output",
+      "Replace all sources due to excessive variation"
+    ],
+    "explanation": "Individual source variations require specific assessment and correction in the treatment planning system to maintain dose distribution accuracy, rather than uniform corrections.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "CyberKnife respiratory tracking shows 3 mm residual motion with 95% correlation. The planning target is 8 mm diameter with 1 mm margin. Real-time imaging indicates 2 mm systematic tracking lag. How should treatment margins be optimized?",
+    "answer": "Implement predictive algorithm to compensate systematic lag and increase margin",
+    "choices": [
+      "Implement predictive algorithm to compensate systematic lag and increase margin",
+      "Disable tracking and use larger margin for respiratory motion",
+      "Reduce treatment delivery rate to improve tracking accuracy",
+      "Apply gating technique instead of continuous tracking approach"
+    ],
+    "explanation": "Systematic tracking lag can be predicted and compensated algorithmically, while residual random motion requires appropriate margin expansion for safe delivery.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "FMEA analysis for micro-MLC SRS identifies leaf positioning error as high-risk failure mode. Risk Priority Number is 168 (Severity=8, Occurrence=3, Detection=7). Implementation of enhanced monitoring reduces Detection score to 3. What is the revised RPN and risk classification?",
+    "answer": "RPN=72, requiring continued monitoring with current controls",
+    "choices": [
+      "RPN=72, requiring continued monitoring with current controls",
+      "RPN=24, acceptable risk level with no further action",
+      "RPN=144, still requiring additional risk mitigation measures",
+      "RPN=96, borderline acceptable requiring periodic review"
+    ],
+    "explanation": "Revised RPN = 8×3×3 = 72. This represents significant risk reduction from 168, moving to moderate risk category requiring continued monitoring but no immediate additional measures.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Small field correction factors are determined using Monte Carlo with 10⁶ histories showing k_fclin,fref values of 0.956±0.018 for 1×1 cm field. Experimental validation using three detector types shows 0.962±0.012. What uncertainty should be assigned to the final correction factor?",
+    "answer": "±0.022 combining Monte Carlo and experimental uncertainties",
+    "choices": [
+      "±0.022 combining Monte Carlo and experimental uncertainties",
+      "±0.012 using only experimental measurement uncertainty",
+      "±0.018 using only Monte Carlo simulation uncertainty",
+      "±0.030 adding uncertainties arithmetically for conservatism"
+    ],
+    "explanation": "Combined uncertainty = √(0.018²+0.012²) = 0.022, properly accounting for both computational and experimental components according to uncertainty propagation principles.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy measurements?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±7%"
+    ],
+    "explanation": "TG-142 specifies a ±3% tolerance for daily output constancy checks to ensure consistent beam delivery between treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary standard protocol for absolute dose calibration of megavoltage photon beams in water?",
+    "answer": "TG-51",
+    "choices": [
+      "TG-21",
+      "TG-51",
+      "TG-40",
+      "TG-65"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, replacing the earlier TG-21 protocol.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "What is the recommended tolerance for beam flatness in a 6 MV photon beam according to TG-142?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±4%",
+      "±5%"
+    ],
+    "explanation": "TG-142 specifies that beam flatness should be within ±3% for photon beams to ensure uniform dose distribution across the treatment field.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What is the frequency requirement for MLC positional accuracy checks according to TG-142?",
+    "answer": "Weekly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annual"
+    ],
+    "explanation": "TG-142 recommends monthly checks of MLC leaf positional accuracy to ensure precise beam shaping for IMRT and VMAT treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

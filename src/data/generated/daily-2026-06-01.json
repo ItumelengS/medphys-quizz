@@ -1,0 +1,291 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the mechanical and radiation isocenter coincidence",
+    "choices": [
+      "To verify the mechanical and radiation isocenter coincidence",
+      "To measure the small field output factors",
+      "To calibrate the micro-MLC leaf positioning",
+      "To determine the beam penumbra width"
+    ],
+    "explanation": "The Winston-Lutz test uses a small ball bearing to verify that the mechanical rotation isocenter coincides with the radiation beam isocenter, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SBRT stand for in radiation therapy?",
+    "answer": "Stereotactic Body Radiation Therapy",
+    "choices": [
+      "Stereotactic Body Radiation Therapy",
+      "Small Beam Radiation Treatment",
+      "Stereotactic Brain Radiation Technique",
+      "Single Beam Radiosurgery Treatment"
+    ],
+    "explanation": "SBRT is the standard abbreviation for Stereotactic Body Radiation Therapy, which delivers high-dose radiation to extracranial targets using stereotactic techniques.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "What is the typical field size threshold below which small field dosimetry considerations apply?",
+    "answer": "Fields smaller than 2 cm × 2 cm",
+    "choices": [
+      "Fields smaller than 3 cm × 3 cm",
+      "Fields smaller than 5 cm × 5 cm",
+      "Fields smaller than 2 cm × 2 cm",
+      "Fields smaller than 1 cm × 1 cm"
+    ],
+    "explanation": "Small field dosimetry effects become significant for fields smaller than approximately 3 cm × 3 cm, where lateral electronic equilibrium is not fully established.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What type of radiation source does the Gamma Knife use?",
+    "answer": "Cobalt-60 gamma ray sources",
+    "choices": [
+      "Cobalt-60 gamma ray sources",
+      "Linear accelerator photon beams",
+      "Cesium-137 gamma ray sources",
+      "Iridium-192 gamma ray sources"
+    ],
+    "explanation": "The Gamma Knife uses multiple cobalt-60 sources arranged in a helmet-like configuration to deliver focused radiation to intracranial targets.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 mm at isocenter",
+    "choices": [
+      "2.5 mm at isocenter",
+      "5.0 mm at isocenter",
+      "1.0 mm at isocenter",
+      "10.0 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5 mm projected to isocenter, providing better conformality for small stereotactic targets compared to standard 5 mm or 10 mm MLCs.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "According to TG-101, what is the recommended positioning accuracy for single-fraction SRS?",
+    "answer": "≤ 1 mm translational uncertainty",
+    "choices": [
+      "≤ 1 mm translational uncertainty",
+      "≤ 2 mm translational uncertainty",
+      "≤ 3 mm translational uncertainty",
+      "≤ 0.5 mm translational uncertainty"
+    ],
+    "explanation": "TG-101 recommends that the overall geometric uncertainty should be ≤ 1 mm for single-fraction SRS treatments to maintain the steep dose gradients required.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary tracking method used by the CyberKnife system?",
+    "answer": "Real-time imaging with robotic correction",
+    "choices": [
+      "Real-time imaging with robotic correction",
+      "Respiratory gating with external markers",
+      "Stereotactic frame immobilization only",
+      "Electromagnetic transponder tracking only"
+    ],
+    "explanation": "The CyberKnife uses real-time imaging (X-ray or fiducial tracking) combined with a robotic arm to continuously adjust beam delivery and compensate for patient movement.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A facility is implementing SBRT for lung lesions and notices systematic geographic misses in the posterior region. The treatment planning system shows adequate PTV coverage, but post-treatment CBCT reveals consistent posterior underdosage. Winston-Lutz tests pass within tolerance. Monte Carlo dose calculations show 15% higher posterior doses than measurement. What is the most likely root cause requiring investigation?",
+    "answer": "Respiratory motion model inadequacy with posterior tumor drift",
+    "choices": [
+      "Respiratory motion model inadequacy with posterior tumor drift",
+      "Small field detector calibration errors in commissioning",
+      "MLC transmission modeling errors in the TPS",
+      "Systematic couch positioning errors during delivery"
+    ],
+    "explanation": "The combination of passing Winston-Lutz, TPS-measurement discrepancy only in posterior regions, and geographic miss pattern suggests respiratory motion modeling issues, particularly posterior drift that's inadequately captured by the 4DCT-based motion model.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system for SRS, output factors measured with three different detectors (PTW microDiamond, PTW 60019 microSilicon, and Exradin W2 plastic scintillator) show systematic variations of up to 8% for 1×1 cm fields. The variations are energy-dependent and increase with decreasing field size. All detectors are properly positioned and cross-calibrated. What is the primary physical phenomenon requiring correction?",
+    "answer": "Volume averaging effects combined with detector-specific energy response variations",
+    "choices": [
+      "Volume averaging effects combined with detector-specific energy response variations",
+      "Systematic positioning errors due to detector cable drag",
+      "Temperature and pressure correction factor errors",
+      "Beam hardening artifacts from the micro-MLC construction"
+    ],
+    "explanation": "The systematic, energy-dependent variations increasing with decreasing field size indicate volume averaging combined with detector-specific energy response differences in small fields where beam spectrum changes significantly.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "An SRS program experiences a cluster of treatment delivery timeouts on a TrueBeam system specifically during VMAT-SRS deliveries with >180-degree arcs. Standard VMAT treatments complete normally. Mechanical QA passes all tolerances. The timeouts correlate with high-modulation plans (>90% leaf motion). Log file analysis shows MLC positioning delays exceeding tolerance windows. What is the most likely systematic issue?",
+    "answer": "Micro-MLC servo response limitations at maximum dose rate with complex modulation",
+    "choices": [
+      "Micro-MLC servo response limitations at maximum dose rate with complex modulation",
+      "Gantry bearing wear causing speed fluctuations during rotation",
+      "IGRT system interference with MLC communication protocols",
+      "Treatment planning system optimization errors for rotational delivery"
+    ],
+    "explanation": "The specific combination of VMAT-SRS timeouts with high modulation suggests micro-MLC mechanical limitations where the servo system cannot maintain positioning accuracy at maximum dose rates with complex leaf patterns.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "A Gamma Knife center reports systematic underdosage in the superior brain regions compared to treatment planning predictions. Dosimetric verification with EBT3 film in a spherical phantom shows good agreement. Patient-specific QA with the same phantom setup passes within tolerance. Clinical outcomes suggest geographic miss pattern. The issue persists across different collimator sizes and shot patterns. What is the most probable systematic error?",
+    "answer": "Head positioning systematic error due to stereotactic frame reference point drift",
+    "choices": [
+      "Head positioning systematic error due to stereotactic frame reference point drift",
+      "MRI distortion artifacts affecting superior slice registration accuracy",
+      "Dose rate variations between different cobalt source positions",
+      "Treatment planning system calculation errors for oblique shot angles"
+    ],
+    "explanation": "The systematic superior region underdosage despite passing phantom QA suggests patient positioning errors, most likely from stereotactic frame reference point drift or systematic setup errors affecting the coordinate transformation.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "For a comprehensive uncertainty budget analysis of a CyberKnife SBRT program per TG-135, you must quantify all geometric and dosimetric uncertainty components. Given: image guidance uncertainty (0.5mm), mechanical isocenter wandering (0.3mm), treatment planning margin (1.2mm), and intrafraction motion (0.8mm). Using Monte Carlo propagation analysis, what is the total geometric uncertainty at 95% confidence level assuming all components are normally distributed and independent?",
+    "answer": "1.8 mm total geometric uncertainty (k=2 coverage factor)",
+    "choices": [
+      "1.8 mm total geometric uncertainty (k=2 coverage factor)",
+      "2.8 mm linear addition of all uncertainty components",
+      "1.6 mm quadrature sum without coverage factor",
+      "0.9 mm dominant uncertainty component analysis"
+    ],
+    "explanation": "Using Monte Carlo uncertainty propagation for independent normal distributions: σ_total = √(0.5² + 0.3² + 1.2² + 0.8²) = 1.6mm, then applying k=2 coverage factor for 95% confidence gives 1.8mm total uncertainty per TG-135 methodology.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "An FMEA analysis for a multi-platform SRS program (Gamma Knife, TrueBeam SRS, CyberKnife) identifies coordinate system transformation as a high-risk process. You must establish a quantitative risk priority number (RPN) for coordinate transformation errors. Given occurrence probability (O=3), detectability rating (D=7), and severity assessment (S=9), what is the calculated RPN and required risk mitigation strategy?",
+    "answer": "RPN = 189, requiring immediate process redesign and redundant verification",
+    "choices": [
+      "RPN = 189, requiring immediate process redesign and redundant verification",
+      "RPN = 63, acceptable with enhanced monitoring protocols",
+      "RPN = 126, moderate risk requiring procedural improvements only",
+      "RPN = 243, catastrophic risk requiring program suspension"
+    ],
+    "explanation": "RPN = O × D × S = 3 × 7 × 9 = 189. Per FMEA methodology, RPN >150 typically requires immediate action including process redesign and independent verification systems for coordinate transformations in stereotactic treatments.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended tolerance for daily output constancy checks on linear accelerators?",
+    "answer": "±3%",
+    "choices": [
+      "±2%",
+      "±3%",
+      "±5%",
+      "±1%"
+    ],
+    "explanation": "TG-142 recommends a ±3% tolerance for daily output constancy checks to ensure consistent beam delivery. This tolerance balances clinical requirements with practical measurement uncertainties.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in radiation therapy physics?",
+    "answer": "Calibration of photon and electron beams in water",
+    "choices": [
+      "Calibration of photon and electron beams in water",
+      "Quality assurance of multileaf collimators",
+      "Commissioning of treatment planning systems",
+      "Verification of patient dose calculations"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry, specifically addressing the calibration of external beam radiation therapy equipment using ion chamber measurements in water phantoms.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "According to TG-142, what is the recommended frequency for checking beam flatness and symmetry on linear accelerators?",
+    "answer": "Monthly",
+    "choices": [
+      "Daily",
+      "Weekly",
+      "Monthly",
+      "Annually"
+    ],
+    "explanation": "TG-142 recommends monthly checks for beam flatness and symmetry as these parameters are relatively stable but important for dose distribution uniformity. Daily checks focus on output constancy and basic safety interlocks.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What does EPID stand for in the context of linear accelerator quality assurance?",
+    "answer": "Electronic Portal Imaging Device",
+    "choices": [
+      "Electronic Portal Imaging Device",
+      "External Photon Intensity Detector",
+      "Energy Profile Imaging Display",
+      "Electronic Patient Identification Device"
+    ],
+    "explanation": "EPID refers to Electronic Portal Imaging Device, which is used for patient positioning verification and can also be utilized for dosimetric quality assurance measurements including transit dosimetry.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]

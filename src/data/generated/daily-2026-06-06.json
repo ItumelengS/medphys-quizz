@@ -1,0 +1,308 @@
+[
+  {
+    "id": "srt100",
+    "section_id": "srt",
+    "question": "What is the primary purpose of the Winston-Lutz test in stereotactic radiosurgery?",
+    "answer": "To verify the coincidence of radiation isocenter with mechanical isocenter",
+    "choices": [
+      "To verify the coincidence of radiation isocenter with mechanical isocenter",
+      "To measure the penumbra width of small radiation fields",
+      "To calibrate the linear accelerator output for stereotactic cones",
+      "To assess the flatness and symmetry of stereotactic beams"
+    ],
+    "explanation": "The Winston-Lutz test uses a ball bearing target to verify that the radiation isocenter coincides with the mechanical isocenter of the gantry, collimator, and couch rotations, which is critical for stereotactic accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt101",
+    "section_id": "srt",
+    "question": "What does SRS stand for in radiation therapy?",
+    "answer": "Stereotactic Radiosurgery",
+    "choices": [
+      "Stereotactic Radiosurgery",
+      "Single-fraction Radiation Surgery",
+      "Small-field Radiotherapy System",
+      "Stereoscopic Radiation Sequence"
+    ],
+    "explanation": "SRS stands for Stereotactic Radiosurgery, a technique that delivers a high dose of radiation to a small, well-defined target in a single fraction using stereotactic localization.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt102",
+    "section_id": "srt",
+    "question": "Which detector type is NOT recommended by TG-155 for small field relative dosimetry?",
+    "answer": "Standard 0.6 cm³ ionization chamber",
+    "choices": [
+      "Standard 0.6 cm³ ionization chamber",
+      "Synthetic diamond detector",
+      "Silicon diode detector",
+      "Plastic scintillation detector"
+    ],
+    "explanation": "TG-155 does not recommend standard large-volume ionization chambers for small field dosimetry due to volume averaging effects that compromise measurement accuracy.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt103",
+    "section_id": "srt",
+    "question": "What is the typical leaf width of micro-MLCs used in stereotactic treatments?",
+    "answer": "2.5 mm at isocenter",
+    "choices": [
+      "2.5 mm at isocenter",
+      "5.0 mm at isocenter",
+      "1.0 mm at isocenter",
+      "7.5 mm at isocenter"
+    ],
+    "explanation": "Micro-MLCs typically have leaf widths of 2.5 mm at isocenter, providing improved conformality for small target volumes compared to standard 5-10 mm MLC leaves.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt105",
+    "section_id": "srt",
+    "question": "What is the recommended minimum spatial resolution for image guidance in cranial SRS according to TG-135?",
+    "answer": "1 mm or better",
+    "choices": [
+      "1 mm or better",
+      "2 mm or better",
+      "0.5 mm or better",
+      "1.5 mm or better"
+    ],
+    "explanation": "TG-135 recommends spatial resolution of 1 mm or better for image guidance systems used in cranial SRS to ensure adequate positioning accuracy.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt106",
+    "section_id": "srt",
+    "question": "In CyberKnife treatments, what is the typical number of non-coplanar beam directions available?",
+    "answer": "Approximately 1200 positions",
+    "choices": [
+      "Approximately 1200 positions",
+      "Approximately 400 positions",
+      "Approximately 800 positions",
+      "Approximately 2000 positions"
+    ],
+    "explanation": "The CyberKnife robotic arm can position the linear accelerator at approximately 1200 non-coplanar positions around the patient, providing exceptional treatment flexibility.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt107",
+    "section_id": "srt",
+    "question": "What is the primary advantage of the Gamma Knife Icon over previous Gamma Knife models?",
+    "answer": "Frameless treatment capability with mask immobilization",
+    "choices": [
+      "Frameless treatment capability with mask immobilization",
+      "Increased number of cobalt-60 sources from 192 to 256",
+      "Ability to treat extracranial targets below the neck",
+      "Integration of flattening filter-free beam delivery modes"
+    ],
+    "explanation": "The Gamma Knife Icon introduced frameless treatment capability using thermoplastic masks and cone-beam CT guidance, expanding treatment options beyond frame-based stereotactic procedures.",
+    "difficulty": 2,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt108",
+    "section_id": "srt",
+    "question": "A Winston-Lutz analysis reveals systematic deviations of 1.2 mm in the anterior-posterior direction across all gantry angles, while lateral and superior-inferior deviations are within 0.3 mm. The patient couch has been verified as accurate. What is the most likely cause and appropriate corrective action?",
+    "answer": "Radiation isocenter offset requiring adjustment of treatment head alignment parameters",
+    "choices": [
+      "Radiation isocenter offset requiring adjustment of treatment head alignment parameters",
+      "Gantry sag requiring mechanical bearing replacement and recalibration procedures",
+      "Couch rotation calibration error requiring coordinate system transformation matrix updates",
+      "Image receptor positioning error requiring kV imaging system geometric correction"
+    ],
+    "explanation": "Systematic deviations in one direction across all gantry angles indicate a radiation isocenter offset, which requires adjustment of treatment head alignment parameters rather than mechanical corrections.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt109",
+    "section_id": "srt",
+    "question": "During commissioning of a new micro-MLC system for SRS, output factor measurements show 15% discrepancy between diamond detector and diode measurements for a 1×1 cm² field. Both detectors agree within 2% for fields >3×3 cm². What is the most appropriate next step?",
+    "answer": "Perform Monte Carlo dose calculations to determine reference correction factors for both detectors",
+    "choices": [
+      "Perform Monte Carlo dose calculations to determine reference correction factors for both detectors",
+      "Repeat measurements using plastic scintillation detector as the definitive reference standard",
+      "Apply manufacturer-provided beam quality correction factors and average the detector readings",
+      "Increase measurement integration time and implement signal processing noise reduction algorithms"
+    ],
+    "explanation": "For small field dosimetry discrepancies between detectors, Monte Carlo calculations provide the most reliable reference for determining appropriate correction factors, as recommended by TG-155 protocols.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt110",
+    "section_id": "srt",
+    "question": "A multi-institutional audit reveals 8% systematic dose overestimation in lung SBRT treatments using a specific TPS algorithm. Analysis shows correlation with low-density tissue interfaces and small field sizes. What is the most comprehensive corrective approach?",
+    "answer": "Implement algorithm-specific correction factors based on tissue density and field size analysis",
+    "choices": [
+      "Implement algorithm-specific correction factors based on tissue density and field size analysis",
+      "Switch to Monte Carlo dose calculation algorithms with enhanced electron transport modeling",
+      "Apply uniform 8% dose reduction factor to all lung SBRT prescription doses",
+      "Increase measurement point density in heterogeneous regions during treatment planning optimization"
+    ],
+    "explanation": "Systematic dose calculation errors in heterogeneous media require algorithm-specific corrections based on tissue density and field size, rather than uniform corrections or algorithm changes without proper validation.",
+    "difficulty": 9,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt111",
+    "section_id": "srt",
+    "question": "An FMEA analysis of cone-based SRS workflow identifies cone attachment as having RPN=180 (severity=9, occurrence=4, detection=5). Post-mitigation analysis shows detection improved to 2 while other scores remain unchanged. What is the revised RPN and risk category?",
+    "answer": "RPN=72, requiring continued monitoring with quarterly assessment intervals",
+    "choices": [
+      "RPN=72, requiring continued monitoring with quarterly assessment intervals",
+      "RPN=36, allowing transition to annual assessment with reduced monitoring frequency",
+      "RPN=144, requiring immediate implementation of additional mitigation strategies and controls",
+      "RPN=90, necessitating biannual assessment with enhanced detection protocol verification"
+    ],
+    "explanation": "Revised RPN = 9×4×2 = 72. Most FMEA protocols classify RPN 70-125 as moderate risk requiring continued monitoring, typically with quarterly assessment intervals for stereotactic procedures.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt112",
+    "section_id": "srt",
+    "question": "Monte Carlo simulation of a 6 MV beam through a 1.2 cm diameter stereotactic cone shows 12% dose enhancement at 1.5 cm depth compared to open field conditions. Statistical uncertainty is ±1.8% (k=2). What factor most likely contributes to this enhancement?",
+    "answer": "Electron return effect from high-Z collimating material increasing dose deposition",
+    "choices": [
+      "Electron return effect from high-Z collimating material increasing dose deposition",
+      "Reduced phantom scatter contribution requiring normalization factor adjustment for small fields",
+      "Spectral hardening from cone filtration increasing photon absorption coefficient values",
+      "Statistical noise amplification in small scoring volumes affecting dose calculation accuracy"
+    ],
+    "explanation": "The 12% dose enhancement in small cone-collimated beams is primarily due to electron return effect from tungsten collimating material, where scattered electrons re-enter the beam and increase dose deposition.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt113",
+    "section_id": "srt",
+    "question": "An uncertainty budget analysis for single-fraction cranial SRS reveals: positioning (σ=0.8mm), dose calculation (σ=2.1%), delivery (σ=1.4%), measurement (σ=1.8%). Using k=2 coverage factor, what is the combined expanded uncertainty for dose delivery?",
+    "answer": "5.4% expanded uncertainty requiring enhanced quality assurance protocols",
+    "choices": [
+      "5.4% expanded uncertainty requiring enhanced quality assurance protocols",
+      "3.2% expanded uncertainty meeting standard clinical tolerance specifications",
+      "4.8% expanded uncertainty necessitating treatment technique modification and optimization",
+      "6.1% expanded uncertainty demanding immediate protocol revision and additional safeguards"
+    ],
+    "explanation": "Combined standard uncertainty = √(2.1² + 1.4² + 1.8²) = 2.7%. Expanded uncertainty = 2 × 2.7% = 5.4%. This level typically requires enhanced QA protocols for single-fraction SRS.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "srt114",
+    "section_id": "srt",
+    "question": "Monte Carlo modeling of detector response in a 0.8×0.8 cm² field shows volume averaging correction factors of 0.94 (diamond), 1.06 (diode), and 1.02 (scintillator). Given reference dose rate of 485 cGy/min, what is the corrected dose rate using the diode?",
+    "answer": "458 cGy/min with 2.1% measurement uncertainty",
+    "choices": [
+      "458 cGy/min with 2.1% measurement uncertainty",
+      "514 cGy/min with 1.8% measurement uncertainty",
+      "485 cGy/min with 1.5% measurement uncertainty",
+      "471 cGy/min with 2.4% measurement uncertainty"
+    ],
+    "explanation": "For diode measurements, the detector over-responds in small fields. Corrected dose rate = measured rate / correction factor = 485 / 1.06 = 458 cGy/min. Monte Carlo-derived corrections typically have ~2% uncertainty.",
+    "difficulty": 10,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa100",
+    "section_id": "qa",
+    "question": "According to TG-142 recommendations, what is the tolerance limit for daily output constancy measurements on a linear accelerator?",
+    "answer": "±3% from baseline value",
+    "choices": [
+      "±1% from baseline value",
+      "±3% from baseline value",
+      "±5% from baseline value",
+      "±2% from baseline value"
+    ],
+    "explanation": "TG-142 specifies that daily output constancy should be within ±3% of the established baseline value to ensure consistent dose delivery.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa101",
+    "section_id": "qa",
+    "question": "What is the primary purpose of TG-51 protocol in medical linear accelerator commissioning?",
+    "answer": "Absolute dose calibration using ion chambers",
+    "choices": [
+      "Beam energy spectrum verification procedures",
+      "Absolute dose calibration using ion chambers",
+      "Multi-leaf collimator positioning accuracy tests",
+      "Patient-specific dosimetry verification methods"
+    ],
+    "explanation": "TG-51 is the AAPM protocol for clinical reference dosimetry of high-energy photon and electron beams, establishing absolute dose calibration standards.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa102",
+    "section_id": "qa",
+    "question": "For photon beam flatness measurements, what is the standard tolerance limit specified in TG-142?",
+    "answer": "±3% within the flattened region",
+    "choices": [
+      "±2% within the flattened region",
+      "±3% within the flattened region",
+      "±5% within the flattened region",
+      "±1% within the flattened region"
+    ],
+    "explanation": "TG-142 recommends that beam flatness should be within ±3% in the flattened portion of the beam profile for routine QA measurements.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  },
+  {
+    "id": "qa103",
+    "section_id": "qa",
+    "question": "What frequency does TG-142 recommend for multileaf collimator (MLC) positioning accuracy checks?",
+    "answer": "Monthly comprehensive MLC testing schedule",
+    "choices": [
+      "Weekly comprehensive MLC testing schedule",
+      "Monthly comprehensive MLC testing schedule",
+      "Quarterly comprehensive MLC testing schedule",
+      "Annual comprehensive MLC testing schedule"
+    ],
+    "explanation": "TG-142 recommends monthly testing of MLC positioning accuracy to ensure proper leaf positioning and minimize dose delivery errors in IMRT treatments.",
+    "difficulty": 1,
+    "disciplines": [
+      "physicist"
+    ]
+  }
+]
